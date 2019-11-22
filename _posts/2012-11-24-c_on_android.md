@@ -10,6 +10,8 @@ tags:
 published: true
 ---
 
+![图片](http://a2.qpic.cn/psb?/V118G3dh0IatwX/Afzoaoi1RhWWN99Njwaqi0iisv9wAJ**DTKlopad5Ow!/b/dIUBAAAAAAAA&ek=1&kp=1&pt=0&t=5&tl=3&su=0168223841&tm=1566108000&sce=0-12-12&rf=2-9)
+
 Terminal IDE是一个可扩展的终端应用，其包含了全功能的Java/HTML/Android开发套件。Terminal IDE集成了VIM, ssh, git等多个功能，其中强大之处，大家自己发觉，如果你用惯了Linux下的shell命令，那么用Terminal IDE你将会得心应手，喜欢上它的。
 
 <!--more-->

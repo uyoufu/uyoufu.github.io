@@ -741,7 +741,7 @@ version: 5.1.1
 #------------------#
 #  CDN加速全局配置
 #------------------#
-CDN:
-    npm: https://cdn.jsdelivr.net/npm/    #npm配置
-    gh: https://cdn.jsdelivr.net/gh/      #github配置
-    galensgangh: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/
+cdn:
+    npm: https://cdn.jsdelivr.net/npm   #npm配置
+    gh: https://cdn.jsdelivr.net/gh    #github配置
+    ggh: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io #github自己的配置

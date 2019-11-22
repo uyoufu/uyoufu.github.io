@@ -5,9 +5,9 @@
 
 # Site
 title: 明不知昔
-subtitle: GALENS's Blog
+subtitle: 明不知昔's Blog
 description: 面朝大海，春暖花开
-author: GALENS
+author: 明不知昔
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
 date_format: '%Y-%m-%d'
@@ -118,10 +118,10 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  categories: /categories/
-  about: /about/
+  categories: /categories/  
   archives: /archives/
   tags: /tags/
+  about: /about/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -325,7 +325,7 @@ post_wordcount:
 # Wechat Subscriber
 wechat_subscriber:
   enabled: true
-  qcode: /assets/images/wechat-qcode.jpg
+  qcode: /assets/images/info/wechat-qrcode.jpg
   description: 欢迎订阅 BIMFlying，这里分享关于 BIM 的一切。
 
 # Declare license on posts
@@ -737,3 +737,11 @@ images: assets/images
 
 # Theme version
 version: 5.1.1
+
+#------------------#
+#  CDN加速全局配置
+#------------------#
+CDN:
+    npm: https://cdn.jsdelivr.net/npm/    #npm配置
+    gh: https://cdn.jsdelivr.net/gh/      #github配置
+    galensgangh: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/

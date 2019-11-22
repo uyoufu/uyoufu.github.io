@@ -1,29 +1,26 @@
 ---
 layout: post
 title: 管理 Microstation CE 版本的环境配置
-categories: [二次开发, 环境配置]
-description: 管理 Microstation CE 版本的环境配置
-keywords: 二次开发, 环境配置
-typora-root-url: ..\..
+category: MS环境
+tagline: by 明不知昔
+tags: 
+  - Microstation
+published: true
 ---
 
-本文包将解释如何构建和管理 MicroStation CONNECT Edition（以下简称 MS ） 的环境配置
+本文将解释如何构建和管理 MicroStation CONNECT Edition（以下简称 MS ） 的环境配置
 
-[TOC]
+<!--more-->
 
 ## 概述
 
 Microstation 通过配置变量（configuration variables）来引导软件配置向正确的位置。
-
-![Configuration构成](/images/MicrostationConfigurationImage/Configuration构成.png)
 
 **配置变量** 被组织成以 _USTN_ 前缀开始的 **框架配置变量（Framework Configuration Variables）**和以 MS_ 为前缀开始的 **操作配置变量（Operational Configuration Variables)**。通常，框架配置变量用于设置基本路径，而操作配置变量用于指导 MS 内的程序流程。一些框架配置变量由MicroStation安装文件夹决定。其他框架配置变量默认设置为相对于安装文件夹的位置，但是可以在用户提供或编辑的配置文件中更改。
 
 MS 的 配置文件处理可以看作是一个简单的程序，其中一部分由系统配置文件提供，不应该由用户修改，另一部分由用户可修改的配置文件提供。所有配置文件都是简单的文本文件，可以使用任何文本编辑器检查，修改。
 
 系统配置文件位于 [C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\config](C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\config) 文件夹,同时用户可以修改的配置文件位于安装目录或其他指定的目录。系统配置文件在适当的时候将用户可修改的配置文件包含到配置文件处理流中。
-
-
 
 ### MS 配置
 
@@ -156,8 +153,6 @@ graph LR;
 
 此处至少有两个文件夹和一个文件，如果是基于 MS 平台的其它产品，还可能会有更多的文件夹及文件。
 
-![Configuration目录](/images/MicrostationConfigurationImage/Configuration目录.png)
-
 \Organization 文件夹是组织 CAD 标准所在的位置。可以通过在配置文件中使用 _USTN_ORGANIZATION（ORD是_USTN_CUSTOM_CONFIGURATION）指向不同的位置。该配置在 ConfigurationSetup.cfg中。
 
 ```
@@ -169,16 +164,10 @@ MicroStation CONNECT Edition 中的 \WorkSpaces 文件夹是工作集、设计�
 	
 #### 关于Organization目录
 
-![Organization目录](/images/MicrostationConfigurationImage/Organization目录.png)
-
 组织文件夹是存储自己的组织、单元格、dgnlib和其他与CAD标准相关的数据的地方。这些文件夹是空的，通过配置 standard .cfg 文件告诉MicroStation在何处查找种子文件等特定项。
 
 
-
-
 ### 配置变量定义及语法
-
-
 
 ### 配置文件加载顺序
 

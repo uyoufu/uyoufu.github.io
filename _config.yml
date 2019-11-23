@@ -671,15 +671,15 @@ vendors:
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/

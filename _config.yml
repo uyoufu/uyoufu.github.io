@@ -745,3 +745,5 @@ cdn:
     npm: https://cdn.jsdelivr.net/npm   #npm配置
     gh: https://cdn.jsdelivr.net/gh    #github配置
     ggh: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io #github自己的配置
+#增加看板娘#
+live2d: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js

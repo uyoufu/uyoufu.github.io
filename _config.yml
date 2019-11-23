@@ -683,7 +683,7 @@ vendors:
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.9/src/ua-parser.min.js
 
   # Internal version: 4.6.2 -real 4.7.0
   # See: http://fontawesome.io/
@@ -691,7 +691,7 @@ vendors:
 
   # Internal version: 1
   # https://www.algolia.com
-  algolia_instant_js:
+  algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js
   algolia_instant_css:
 
   # Internal version: 1.0.2
@@ -704,7 +704,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  canvas_nest: https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.0/canvas-nest.min.js
 
   # three
   three:

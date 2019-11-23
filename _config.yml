@@ -320,7 +320,7 @@ post_wordcount:
   item_text: true
   wordcount: true
   min2read: false
-  separated_meta: true
+  separated_meta: false
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -723,7 +723,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/zproo/canvas-ribbon
-  canvas_ribbon: https://cdn.jsdelivr.net/npm/hexo-cake-canvas-ribbon@1.0.0/index.min.js
+  canvas_ribbon:
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han

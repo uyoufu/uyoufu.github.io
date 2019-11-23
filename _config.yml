@@ -663,7 +663,7 @@ vendors:
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
   fancybox: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/fancybox.jquery.cjs.min.js
-  fancybox_css: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/scss/jquery.fancybox.scss
+  fancybox_css: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/css/jquery.fancybox.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
@@ -671,7 +671,7 @@ vendors:
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload: https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.4.0/dist/lazyload.min.js
+  lazyload: https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
@@ -683,16 +683,16 @@ vendors:
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser: https://cdn.jsdelivr.net/npm/ua_parser@1.2.6/src/js/ua_parser.min.js
+  ua_parser: https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.9/src/ua-parser.min.js
 
-  # Internal version: 4.6.2
+  # Internal version: 4.6.2 -real 4.7.0
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.jsdelivr.net/npm/fontawesome@5.6.3/index.min.js
+  fontawesome: https://cdn.jsdelivr.net/npm/fontawesome@4.7.0/index.min.js
 
   # Internal version: 1
   # https://www.algolia.com
-  algolia_instant_js:
-  algolia_instant_css:
+  algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js
+  algolia_instant_css: 
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
@@ -704,7 +704,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest: https://cdn.jsdelivr.net/npm/canvas_test@1.0.0/index.min.js
+  canvas_nest: https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.0/canvas-nest.min.js
 
   # three
   three: https://cdn.jsdelivr.net/npm/three@0.110.0/build/three.min.js
@@ -723,7 +723,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/zproo/canvas-ribbon
-  canvas_ribbon:
+  canvas_ribbon: https://cdn.jsdelivr.net/npm/hexo-cake-canvas-ribbon@1.0.0/index.min.js
 
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han

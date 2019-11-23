@@ -76,7 +76,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/images/info/galens-favicon.ico
+favicon: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/assets/images/info/galens-favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "Jekyll, NexT, simpleyyt, yitao"
@@ -234,7 +234,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-avatar: /assets/images/info/author.jpg
+avatar: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/assets/images/info/author.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -325,7 +325,7 @@ post_wordcount:
 # Wechat Subscriber
 wechat_subscriber:
   enabled: true
-  qcode: /assets/images/info/wechat-qrcode.jpg
+  qcode: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/assets/images/info/wechat-qrcode.jpg
   description: 欢迎订阅 BIMFlying，这里分享关于 BIM 的一切。
 
 # Declare license on posts
@@ -658,7 +658,7 @@ vendors:
   _internal: assets/lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/

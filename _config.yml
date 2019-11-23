@@ -663,7 +663,7 @@ vendors:
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
   fancybox: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/fancybox.jquery.cjs.min.js
-  fancybox_css:
+  fancybox_css: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/scss/jquery.fancybox.scss
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
@@ -707,11 +707,11 @@ vendors:
   canvas_nest: https://cdn.jsdelivr.net/npm/canvas_test@1.0.0/index.min.js
 
   # three
-  three:
+  three: https://cdn.jsdelivr.net/npm/three@0.110.0/build/three.min.js
 
   # three_waves
   # https://github.com/jjandxa/three_waves
-  three_waves:
+  three_waves: 
 
   # three_waves
   # https://github.com/jjandxa/canvas_lines

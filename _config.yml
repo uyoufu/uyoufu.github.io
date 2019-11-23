@@ -79,7 +79,7 @@ plugins:
 favicon: https://cdn.jsdelivr.net/gh/galensgan/galensgan.github.io/assets/images/info/galens-favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT, simpleyyt, yitao"
+keywords: "Jekyll, NexT, 明不知昔, galens"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -687,7 +687,7 @@ vendors:
 
   # Internal version: 4.6.2 -real 4.7.0
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.jsdelivr.net/npm/fontawesome@5.6.3/index.min.js
+  fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com

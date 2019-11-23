@@ -658,36 +658,36 @@ vendors:
   _internal: assets/lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
+  fancybox: https://cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/fancybox.jquery.cjs.min.js
   fancybox_css:
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.4.0/dist/lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.ui.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: https://cdn.jsdelivr.net/npm/ua_parser@1.2.6/src/js/ua_parser.min.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: https://cdn.jsdelivr.net/npm/fontawesome@5.6.3/index.min.js
 
   # Internal version: 1
   # https://www.algolia.com
@@ -704,7 +704,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  canvas_nest: https://cdn.jsdelivr.net/npm/canvas_test@1.0.0/index.min.js
 
   # three
   three:

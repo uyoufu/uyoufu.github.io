@@ -3,8 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <!--看板娘-->
-{% if site.live2d %}
-  <script src="{{ site.live2d }}"></script>
+{% if site.live2d.enable %}
+	<script src="{{ site.vendors.jquery }}"></script>
+	<script src="{{ site.vendors.fontawesome }}"></script>
+	<script src="{{ site.live2d.live2d_widget }}"></script>
 {% endif %}
 
 {% if site.pace %}

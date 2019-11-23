@@ -683,11 +683,11 @@ vendors:
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.9/src/ua-parser.min.js
 
   # Internal version: 4.6.2 -real 4.7.0
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.jsdelivr.net/npm/fontawesome@4.7.0/index.min.js
+  fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com

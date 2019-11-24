@@ -1,14 +1,20 @@
 ---
-layout: "post"
+layout: post
+category: 个人博客搭建
 title: Jekyll和Liquid语法文档
-categories: [新建博客, Jekyll]
-description: Jekyll和Liquid语法
-keywords: Jekyll, Liquid
+tagline: by 明不知昔
+tags: 
+  - 个人博客搭建
+  - Jekyll
+  - Liquid
+published: true
 ---
+
+![jekyll](https://jekyllrb.com/img/logo-2x.png)
 
 对于新手搭建博客时，我们一般会选择自己中意的主题来Fork，修改相关参数搭建自己的博客。但是每个人的审美不一样，想法也无法保证一致，这个时候我们就想自己对博客进行一些改造。本文介绍Jekyll相关语法。
 
-
+<!--more-->
 
 ## Jekyll 是什么
 

@@ -275,10 +275,10 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
@@ -450,6 +450,7 @@ gitalk:
 baidushare:
   type: button
 baidushare: true
+
 # Share
 #jiathis:
 # Warning: JiaThis does not support https.

@@ -49,7 +49,7 @@ markdown: kramdown
 kramdown:
     input: GFM
 
-#mermaid 类图
+#mermaid图
 #默认用jsdelivr加速，https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
 mermaid: # https://github.com/knsv/mermaid
   enable: true
@@ -659,7 +659,7 @@ canvas_ribbon: false
 script: # 需要在正文后调用的脚本或者插件的autoloader,用 - src :增加 
 - src: https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js # jQuery
 - src: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css # fontawesome
-
+- src: /assets/js/src/mermaid.js # mermaid
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
 # For example

@@ -31,8 +31,7 @@ MS 的 配置文件处理可以看作是一个简单的程序，其中一部分�
 MS 默认配置目录为 [ C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Default\ ](C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Default)
 
 #### MS 配置目录结构
-
-<div class="mermaid">
+``` mermaid
 graph LR;
 0{配置结构}-->1[Configuration];
     1-->11(Workspaces);
@@ -81,7 +80,7 @@ graph LR;
     	212-->2121(Dwg);
     	212-->2122(PEN)
     2-->213(VBA);
-</div>
+```
 
 上述为mermaid图，可能因为网站问题，不能显示，可见下面的文字表示：
 

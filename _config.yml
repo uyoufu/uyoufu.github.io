@@ -53,6 +53,9 @@ kramdown:
 #默认用jsdelivr加速，https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
 mermaid:
   enable: true
+  src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  stylesheet: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css
+  markdown_expand: true
   
 # Default Attributes
 ## Docs: https://jekyllrb.com/docs/configuration/#front-matter-defaults

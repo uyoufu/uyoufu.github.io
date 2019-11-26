@@ -6,11 +6,14 @@ tagline: by 明不知昔
 tags: 
   - Microstation
 published: true
+mermaid: true
 ---
 
 本文将解释如何构建和管理 MicroStation CONNECT Edition（以下简称 MS ） 的环境配置
 
 <!--more-->
+
+
 
 ## 概述
 
@@ -30,7 +33,7 @@ MS 默认配置目录为 [ C:\Program Files\Bentley\MicroStation CONNECT Edition
 
 #### MS 配置目录结构
 
-``` mermaid
+<div class="mermaid">
 graph LR;
 0{配置结构}-->1[Configuration];
     1-->11(Workspaces);
@@ -79,7 +82,7 @@ graph LR;
     	212-->2121(Dwg);
     	212-->2122(PEN)
     2-->213(VBA);
-```
+</div>
 
 上述为mermaid图，可能因为网站问题，不能显示，可见下面的文字表示：
 

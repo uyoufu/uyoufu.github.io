@@ -49,6 +49,11 @@ markdown: kramdown
 kramdown:
     input: GFM
 
+#mermaid 类图
+#默认用jsdelivr加速，https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
+mermaid:
+  enable: true
+  
 # Default Attributes
 ## Docs: https://jekyllrb.com/docs/configuration/#front-matter-defaults
 defaults:

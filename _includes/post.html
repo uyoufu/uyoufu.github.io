@@ -1,5 +1,10 @@
 
 <div id="posts" class="posts-expand">
+  <!--增加mermaid支持-->
+  {% if site.mermaid.enable %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
+  {% endif %}
+  
   {% assign post = page %}
   {% include _macro/post.html %}
   <div class="post-spread">

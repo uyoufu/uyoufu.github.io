@@ -32,57 +32,6 @@ MS 的 配置文件处理可以看作是一个简单的程序，其中一部分�
 MS 默认配置目录为 [ C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Default\ ](C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Default)
 
 #### MS 配置目录结构
-<div class="mermaid">
-graph LR;
-0{配置结构}-->1[Configuration];
-    1-->11(Workspaces);
-        11-->111(Example);
-            111-->1111(Standards);
-                1111-->11111(Cell);
-                1111-->11112(DgnLib);
-                    11112-->111121(GUI);
-            111-->1112(WorkSets);
-                1112-->11121(Building);
-                    11121-->111211(Data);
-                    11121-->111212(DGN);
-                    11121-->111213(DWG);
-                    11121-->111214(Out);
-                    11121-->111215(Standars);
-                        111215-->1112151(Cell);
-                        111215-->1112152(DgnLib);
-                        111215-->1112153(Seed);
-                        111215-->1112154(Etc...);
-                1112-->11122(Civil);
-                    11122-->111221(Data);
-                    11122-->111222(Etc...);
-                1112-->11123(General);
-                    11123-->111231(Data);
-                    11123-->111232(Etc...);
-                1112-->11124(Etc...);
-0-->2[Organization];
-    2-->21(Cell);
-    2-->22(Data);
-    2-->23(Dgn);
-    2-->24(DgnLib);
-        24-->241(ClashDetection);
-        24-->242(DrawComp);
-        24-->243(Etc...);
-    2-->25(Macros);
-    2-->26(Mareials);
-    	26-->261(Bump);
-    	26-->262(Pattern);
-    2-->27(MdlApps);
-    	27-->271(InteInt)
-    2-->28(Pltcfg);
-    2-->29(Seed);
-    2-->210(Spc);
-    2-->211(Symb);
-    2-->212(Tables);
-    	212-->2121(Dwg);
-    	212-->2122(PEN)
-    2-->213(VBA);
-</div>
-
 ``` mermaid
 graph LR;
 0{配置结构}-->1[Configuration];
@@ -133,6 +82,7 @@ graph LR;
     	212-->2122(PEN)
     2-->213(VBA);
 ```
+<!--
 上述为mermaid图，可能因为网站问题，不能显示，可见下面的文字表示：
 
 - 配置结构
@@ -199,7 +149,7 @@ graph LR;
       - PEN
 
     - VBA
-
+-->
 	
 #### 关于Configuration目录
 

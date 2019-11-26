@@ -8,6 +8,8 @@ document.write('<script src="{{ site.mermaid.src }}"></script>');
 $(".language-mermaid").attr("class", "mermaid");
 {% endif %}
 $(window).on("load", function () {
-  mermaid.init();
+  mermaid.initialize({
+	  startOnLoad:true,
+	  });
 });
 {% endif %}

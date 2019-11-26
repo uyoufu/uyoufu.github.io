@@ -53,7 +53,7 @@ kramdown:
 #默认用jsdelivr加速，https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
 mermaid:
   enable: true
-  src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  src: https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
   stylesheet: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css
   markdown_expand: true
   
@@ -654,6 +654,11 @@ canvas_sphere: false
 # Only fit scheme Pisces
 # Canvas-ribbon
 canvas_ribbon: false
+
+
+script: # 需要在正文后调用的脚本或者插件的autoloader,用 - src :增加 
+- src: https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js # jQuery
+- src: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js # live2d
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.

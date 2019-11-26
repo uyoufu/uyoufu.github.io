@@ -1,10 +1,9 @@
+<!--增加mermaid支持-->
+{% if page.mermaid %}
+  <script src="{{ site.cdn.ggh }}/assets/js/src/mermaid.js"></script>
+{% endif %}
 
-<div id="posts" class="posts-expand">
-  <!--增加mermaid支持-->
-  {% if page.mermaid %}
-  <script src="/assets/js/src/mermaid.js"></script>
-  {% endif %}
-  
+<div id="posts" class="posts-expand">  
   {% assign post = page %}
   {% include _macro/post.html %}
   <div class="post-spread">

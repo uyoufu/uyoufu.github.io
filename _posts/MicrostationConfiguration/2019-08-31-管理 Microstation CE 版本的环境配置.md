@@ -6,6 +6,7 @@ tagline: by 明不知昔
 tags: 
   - Microstation
 published: true
+mermaid: true
 ---
 
 本文将解释如何构建和管理 MicroStation CONNECT Edition（以下简称 MS ） 的环境配置

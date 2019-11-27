@@ -12,6 +12,8 @@ published: true
 
 <!--more-->
 
+<!--head-->
+
 <style>
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 @import url("https://s3.amazonaws.com/static.slid.es/fonts/montserrat/montserrat.css");

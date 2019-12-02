@@ -10,10 +10,10 @@ published: true
 
 
 <!--more-->
-
+<!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/black.css"-->
 <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
+<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h1>Reveal.js</h1>
@@ -22,14 +22,14 @@ published: true
 						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
 					</p>
 				</section>
-
+	
 				<section>
 					<h2>Hello There</h2>
 					<p>
 						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
 					</p>
 				</section>
-
+	
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
@@ -54,14 +54,14 @@ published: true
 						</a>
 					</section>
 				</section>
-
+	
 				<section>
 					<h2>Slides</h2>
 					<p>
 						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
 					</p>
 				</section>
-
+	
 				<section>
 					<h2>Point of View</h2>
 					<p>
@@ -74,39 +74,39 @@ published: true
 						(NOTE: Use ctrl + click in Linux.)
 					</p>
 				</section>
-
+	
 				<section>
 					<h2>Touch Optimized</h2>
 					<p>
 						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
 					</p>
 				</section>
-
+	
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
-
+	
 						Write content using inline or external Markdown.
 						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
+	
 						```
 						<section data-markdown>
 						  ## Markdown support
-
+	
 						  Write content using inline or external Markdown.
 						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
 						</section>
 						```
 					</script>
 				</section>
-
+	
 				<section>
 					<section id="fragments">
 						<h2>Fragments</h2>
 						<p>Hit the next arrow...</p>
 						<p class="fragment">... to step through ...</p>
 						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
+	
 						<aside class="notes">
 							This slide has fragments which are also stepped through in the notes window.
 						</aside>
@@ -128,7 +128,7 @@ published: true
 						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
 					</section>
 				</section>
-
+	
 				<section id="transitions">
 					<h2>Transition Styles</h2>
 					<p>
@@ -141,7 +141,7 @@ published: true
 						<a href="?transition=zoom#/transitions">Zoom</a>
 					</p>
 				</section>
-
+	
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
@@ -160,7 +160,7 @@ published: true
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
 					</p>
 				</section>
-
+	
 				<section>
 					<section data-background="#dddddd">
 						<h2>Slide Backgrounds</h2>
@@ -189,7 +189,7 @@ published: true
 						<h2>... and GIFs!</h2>
 					</section>
 				</section>
-
+	
 				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
 					<p>
@@ -197,7 +197,7 @@ published: true
 					</p>
 					<pre><code class="hljs javascript">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
 				</section>
-
+	
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
 					<p>
@@ -205,15 +205,16 @@ published: true
 					</p>
 					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
 				</section>
-
+	
 				<section data-background-iframe="https://hakim.se" data-background-interactive>
 					<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<h2>Iframe Backgrounds</h2>
 						<p>Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.</p>
 					</div>
 				</section>
-				
-				
+
+
+​				
 
 				<section>
 					<h2>Pretty Code</h2>
@@ -245,7 +246,7 @@ function Example() {
 						<li>Or here</li>
 					</ul>
 				</section>
-
+	
 				<section>
 					<h2>Fantastic Ordered List</h2>
 					<ol>
@@ -254,7 +255,7 @@ function Example() {
 						<li>Three!</li>
 					</ol>
 				</section>
-
+	
 				<section>
 					<h2>Tabular Tables</h2>
 					<table>
@@ -284,7 +285,7 @@ function Example() {
 						</tbody>
 					</table>
 				</section>
-
+	
 				<section>
 					<h2>Clever Quotes</h2>
 					<p>
@@ -295,7 +296,7 @@ function Example() {
 						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
 					</blockquote>
 				</section>
-
+	
 				<section>
 					<h2>Intergalactic Interconnections</h2>
 					<p>
@@ -303,23 +304,23 @@ function Example() {
 						<a href="#/2/3">like this</a>.
 					</p>
 				</section>
-
+	
 				<section>
 					<h2>Speaker View</h2>
 					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
 					<p>Press the <em>S</em> key to try it out.</p>
-
+	
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 					</aside>
 				</section>
-
+	
 				<section>
 					<h2>Export to PDF</h2>
 					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
 					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 				</section>
-
+	
 				<section>
 					<h2>Global State</h2>
 					<p>
@@ -328,7 +329,7 @@ function Example() {
 						apply broader style changes, like switching the page background.
 					</p>
 				</section>
-
+	
 				<section data-state="customevent">
 					<h2>State Events</h2>
 					<p>
@@ -347,7 +348,7 @@ Reveal.addEventListener( 'customevent', function() {
 						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
 					</p>
 				</section>
-
+	
 				<section>
 					<h2>Much more</h2>
 					<ul>
@@ -358,7 +359,7 @@ Reveal.addEventListener( 'customevent', function() {
 						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
 					</ul>
 				</section>
-
+	
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
@@ -366,11 +367,11 @@ Reveal.addEventListener( 'customevent', function() {
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 					</p>
 				</section>
-
+	
 			</div>
-
+	
 		</div>
-
+	
 		<script src="js/reveal.js"></script>
 
 <script>
@@ -381,9 +382,9 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				center: true,
 				hash: true,
-
+	
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
+	
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },

@@ -8,12 +8,15 @@ tags:
 published: true
 ---
 
-
 <!--more-->
-<!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/black.css"-->
-<div class="reveal">
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/black.css">
+
+<div class="reveal">
 <!-- Any section element inside of this container is displayed as a slide -->
+
 			<div class="slides">
 				<section>
 					<h1>Reveal.js</h1>
@@ -22,7 +25,9 @@ published: true
 						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
 					</p>
 				</section>
-	
+
+​	
+
 				<section>
 					<h2>Hello There</h2>
 					<p>

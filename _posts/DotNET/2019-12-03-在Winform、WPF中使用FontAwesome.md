@@ -21,8 +21,6 @@ published: true
 
 > Install-Package FontAwesome.Sharp 
 
-Windows 10 + Visual Studio 2013 + .NetFramework 3.5
-
 ## 功能
 
 将 FontAwesome 图标生成图片和 Icon 图标
@@ -37,6 +35,7 @@ Windows 10 + Visual Studio 2013 + .NetFramework 3.5
     * IconPictureBox 或者
     * IconSplitButton
 2. 当然，如果你只想为 icon 生成 bitmap，可以使用`ToBitmap()/ToImageSource`的扩展。如下：
+
 ```
 var bitmap = IconChar.BatteryEmpty.ToBitmap(16, Color.Black); // Windows Forms
 var image = IconChar.BatteryEmpty.ToImageSource(Brushes.Black, 16); // WPF

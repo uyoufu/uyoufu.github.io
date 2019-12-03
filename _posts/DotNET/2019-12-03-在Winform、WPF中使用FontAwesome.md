@@ -9,13 +9,17 @@ tags:
 published: true
 ---
 ![aa](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575367038265&di=c1b4abb41c717a4beded451e572b88ba&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3016701716%2C3766993118%26fm%3D214%26gp%3D0.jpg)
-今天在 github 上发现了一个可以在 Winform、WPF 中使用 Font Awesome 的项目。
+今天在 github 上发现了一个可以在 Winform、WPF 中使用 Font Awesome 的项目，本项目不需要自己安装 Font Awesome 字体，用起来很方便。
 
 <!--more-->
 
-项目地址：https://github.com/seayxu/FontAwesome
+项目地址：[https://github.com/awesome-inc/FontAwesome.Sharp](https://github.com/awesome-inc/FontAwesome.Sharp)
 
-## 开发环境
+## 安装
+
+在包管理器中添加 nuget 安装包。
+
+> Install-Package FontAwesome.Sharp 
 
 Windows 10 + Visual Studio 2013 + .NetFramework 3.5
 
@@ -23,43 +27,29 @@ Windows 10 + Visual Studio 2013 + .NetFramework 3.5
 
 将 FontAwesome 图标生成图片和 Icon 图标
 
-## 使用
+## Winform 上使用
 
-> 可以在 Windows Forms 和 WPF 程序中使用。
-
-*  添加类库，可以通过 nuget 安装。
-
-> PM Install-Package FontAwesomeNet
-
-* 添加 FontAwesomeNet 命名空间：FontAwesomeNet。
-
-* 示例
-
+1. 在 Winform 上可以使用下列类
+    * IconButton,
+    * IconToolStripButton,
+    * IconDropDownButton,
+    * IconMenuItem,
+    * IconPictureBox 或者
+    * IconSplitButton
+2. 当然，如果你只想为 icon 生成 bitmap，可以使用`ToBitmap()/ToImageSource`的扩展。如下：
 ```
-// get FontAwesome icon class names(type is Dictionary<string, int>)
-string[] names = FontAwesome.TypeDict.Select(v => v.Key).ToArray();
+var bitmap = IconChar.BatteryEmpty.ToBitmap(16, Color.Black); // Windows Forms
+var image = IconChar.BatteryEmpty.ToImageSource(Brushes.Black, 16); // WPF
 
-// use FontAwesome icon class name get FontAwesome icon Unicode value
-int val = FontAwesome.TypeDict["fa-heart"];//0xf004
-
-// defalut:
-Bitmap bmp = FontAwesome.GetImage(val);//0xf004
-Icon ico = FontAwesome.GetIcon(val);//0xf004
-
-// custom:
-FontAwesome.IconSize = 128;//change icon size
-FontAwesome.ForeColer = Color.Purple;//change icon forecolor
-Bitmap bmp = FontAwesome.GetImage(val);//0xf004
-Icon ico = FontAwesome.GetIcon(val);//0xf004
+var customFontBitmap = MyCustomFont.ToBitmap(MyEnum.SomeIcon, 16, Color.Black); // Windows Forms, custom font
+var customFontImage = MyCustomFont.ToImageSource(MyEnum.SomeIcon, Brushes.Black, 16); // WPF, custom font
 ```
 
-## 协议
+## WPF 上使用
 
- [MIT License](https://github.com/seayxu/FontAwesome/blob/master/LICENSE) 
-
-*如有问题，欢迎指出。*
+此处因为不需要，便暂时未做翻译，请直接参考：[https://github.com/awesome-inc/FontAwesome.Sharp](https://github.com/awesome-inc/FontAwesome.Sharp)
 
 ## 致谢
 
-本文转载于:[ https://my.oschina.net/sesametech/blog/1542840 ]( https://my.oschina.net/sesametech/blog/1542840 )
-
+1. 本文来源于:https://github.com/awesome-inc/FontAwesome.Sharp
+2. 图片来源于网络

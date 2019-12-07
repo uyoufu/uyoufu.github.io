@@ -15,7 +15,6 @@ published: true
 
 **目录**
 
-* TOC
 {:toc}
 
 ## 空格
@@ -280,4 +279,5 @@ Microsoft 有个 [`-ms-text-autospace`](http://msdn.microsoft.com/en-us/library/
 
 ## 致谢
 
-本文转载至[中文文案排版指北（简体中文版）](https://mazhuang.org/wiki/chinese-copywriting-guidelines/) 并在其基础上进行了修改整理。
+本文转载至 [中文文案排版指北（简体中文版）](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)并在其基础上进行了修改整理。
+

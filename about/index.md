@@ -1,11 +1,14 @@
 ---
 layout: page
+title: About Me
 type: about
 ---
 
-# 关于
+
 
 ![大海](http://img.netbian.com/file/2019/0220/52ea84369dd40268d595766c76fda7f3.jpg)
+
+
 
 想要写些什么，可是脑袋像生锈了似的，下笔之处，重若千钧，无灵无感，实在有些无力。
 

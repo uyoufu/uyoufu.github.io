@@ -1,7 +1,7 @@
 ---
 layout: post
 category: .NET
-title: C#中获取Graphics对象的方法
+title: C# 中获取 Graphics 对象的方法
 tagline: by 明不知昔
 tags: 
   - .NET
@@ -9,9 +9,10 @@ tags:
 published: true
 ---
 
-在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有三种获取方式
+在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。
 
 <!--more-->
+
 ## 正文
 
 1. 从Paint事件的参数中获取。

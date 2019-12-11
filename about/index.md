@@ -6,7 +6,7 @@ type: about
 
 
 
-![大海](http://img.netbian.com/file/2019/0220/52ea84369dd40268d595766c76fda7f3.jpg)
+![山水](http://img.netbian.com/file/2019/0220/52ea84369dd40268d595766c76fda7f3.jpg)
 
 
 

@@ -35,6 +35,15 @@ type: about
 - [x] 2019/11/25  增加对 reveal.js 的支持，可以推送slides到博客，实现在线预览
 - [x] 2019/11/26  增加对 mermaid 的支持，官方的 mermaid 不支持 markdown 中的 mermaid
 
-### Todo
+## Todo
 
 嗯，目前应该是没有什么需求了，要努力工作，多积累，多总结
+
+## Links
+
+- 个人博客：[明不知昔](https://noctiflorous.gitee.io/)
+
+- 免费影视资源：[www.66s.cc](www.66s.cc)
+
+- 博客大神：[星合の空 wu-kan](wu-kan.github.io)
+

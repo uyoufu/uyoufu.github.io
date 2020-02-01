@@ -1,7 +1,7 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）-Quick Start
+title: WPF MVVM Stylet使用文档（中文）02-Quick Start
 tagline: by 明不知昔
 tags: 
   - WPF
@@ -47,15 +47,15 @@ published: true
 
 1. 使用下面命令安装 Stylet 模板:
 
-```
-dotnet new -i Stylet.Templates
-```
+    ```
+    dotnet new -i Stylet.Templates
+    ```
 
 2. 使用下面的命令新建一个工程
 
-```
-dotnet new stylet -o MyStyletProject
-```
+    ```
+    dotnet new stylet -o MyStyletProject
+    ```
 
 3. 适当更改 MyStyletProject
 
@@ -73,14 +73,14 @@ dotnet new stylet -o MyStyletProject
 
 4. 接下来，您需要一个根 View 和一个 ViewModel。根 View 必须是一个 `Window` 或者 继承于 `Window` ，除了这个，没有其它任何限制，View 如下：
 
-```
-<Window x:Class="Stylet.Samples.Hello.RootView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Height="300" Width="300">
-    <TextBlock>Hello, World</TextBlock>
-</Window>
-```
+    ```
+    <Window x:Class="Stylet.Samples.Hello.RootView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            Height="300" Width="300">
+        <TextBlock>Hello, World</TextBlock>
+    </Window>
+    ```
 
 > ViewModel 可以是任何一个旧类(现在—您可能希望它是一个 Screen 或 Conductor)。
 >
@@ -90,9 +90,9 @@ dotnet new stylet -o MyStyletProject
 
 5. 接下来，您需要一个引导程序。现在，您不需要任何特殊的东西——只需要一些东西来标识根 ViewModel。然后，您将能够在这里配置 IoC容器 以及其他应用程序级的内容，如下：
 
-   | C# | VB.NET |
-   | ----|----|
-   | public class Bootstrapper : Bootstrapper<RootViewModel> <br>{<br> } | Public Class Bootstrapper     Inherits Bootstrapper(Of RootViewModel)   <br><br>End Cl |
+	| C# | VB.NET |
+	| ----|----|
+	| public class Bootstrapper : Bootstrapper<RootViewModel> <br>{<br> } | Public Class Bootstrapper     Inherits Bootstrapper(Of RootViewModel)   <br><br>End Cl |
 
 6. 最后，需要将其作为资源引用到您的 App.xaml 中。您需要删除 StartUri 属性，并为 Stylet 和您自己的应用程序添加 xmlns 条目。最后，您需要将 Stylet 的 ApplicationLoader 添加到资源中，并识别您在上面创建的引导程序 (Bootstrapper)。
 

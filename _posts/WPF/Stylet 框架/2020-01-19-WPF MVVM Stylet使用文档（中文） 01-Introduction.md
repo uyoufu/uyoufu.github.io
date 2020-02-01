@@ -1,7 +1,7 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）-Introduction
+title: WPF MVVM Stylet使用文档（中文）01-Introduction
 tagline: by 明不知昔
 tags: 
   - WPF

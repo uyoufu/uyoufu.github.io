@@ -1,7 +1,7 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）-Bootstrapper
+title: WPF MVVM Stylet使用文档（中文）03-Bootstrapper
 tagline: by 明不知昔
 tags: 
   - WPF

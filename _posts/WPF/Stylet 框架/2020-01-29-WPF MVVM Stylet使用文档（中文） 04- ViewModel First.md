@@ -1,7 +1,7 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）-ViewModel First
+title: WPF MVVM Stylet使用文档（中文）04-ViewModel First
 tagline: by 明不知昔
 tags: 
   - WPF

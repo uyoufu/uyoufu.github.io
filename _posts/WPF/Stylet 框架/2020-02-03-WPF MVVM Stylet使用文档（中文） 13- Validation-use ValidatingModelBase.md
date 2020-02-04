@@ -1,17 +1,13 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）12-Validation: Use ValidatingModelBase
+title: WPF MVVM Stylet使用文档（中文）13-Validation: Use ValidatingModelBase
 tagline: by 明不知昔
 tags: 
   - WPF
   - MVVM
 published: trues
 ---
-
-
-
-
 
 
 

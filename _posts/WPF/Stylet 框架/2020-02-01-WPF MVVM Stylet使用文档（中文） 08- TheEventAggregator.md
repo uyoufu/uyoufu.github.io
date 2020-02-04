@@ -1,7 +1,7 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）08-事件聚合器（The EventAggregator）
+title: WPF MVVM Stylet使用文档（中文）08-The EventAggregator
 tagline: by 明不知昔
 tags: 
   - WPF

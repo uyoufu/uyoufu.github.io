@@ -6,10 +6,12 @@ tagline: by 明不知昔
 tags: 
   - WPF
   - MVVM
-published: trues
+published: true
 ---
 
 
+
+<!--more-->
 
 Caliburn.Micro 附带了一个名为 IoC 的静态服务定位器。这让你可以从代码中的任何地方访问 IoC 容器，就像这样:
 

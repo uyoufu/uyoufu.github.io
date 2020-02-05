@@ -1,12 +1,12 @@
 ---
 layout: post
 category: MVVM
-title: WPF MVVM Stylet使用文档（中文）13-Validation: Use ValidatingModelBase
+title: WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase
 tagline: by 明不知昔
 tags: 
   - WPF
   - MVVM
-published: trues
+published: true
 ---
 
 
@@ -16,6 +16,8 @@ published: trues
 想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。
 
 <!--more-->
+
+
 
 输入验证是一个很大的领域，有很多方法可以实现它。最简单和最吸引人的是在你的属性的 setter 中抛出一个异常，像这样:
 

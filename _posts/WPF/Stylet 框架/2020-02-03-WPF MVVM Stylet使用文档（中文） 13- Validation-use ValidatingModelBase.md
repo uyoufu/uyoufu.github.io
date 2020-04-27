@@ -215,7 +215,7 @@ var viewModel = new UserViewModel(validatorAdapter);
 
 但是，我们可以配置 IoC 容器来完成这一任务。这里假设您使用的是 StyletIoC，尽管其他容器也可以进行类似的配置。
 
-在你的 `ConfigureIoC` 重写在你的 bootstrapper，首先，每当你要求一个 `IModelValidator<T> ` 时，告诉 StyletIoC 返回一个 `FluentValidationAdapter<T>` ，这样做:
+在你的 bootstrapper 中 重写 `ConfigureIoC`，首先，每当你要求一个 `IModelValidator<T> ` 时，告诉 StyletIoC 返回一个 `FluentValidationAdapter<T>` ，这样做:
 
 ``` C# 
 builder.Bind(typeof(IModelValidator<>)).To(typeof(FluentValidationAdapter<>));

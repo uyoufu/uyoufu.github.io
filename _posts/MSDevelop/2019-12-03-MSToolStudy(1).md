@@ -1,6 +1,6 @@
 ---
 layout: post
-category: MS二次开发
+category: MS Develop
 title: MS DgnTool 学习（一）
 tagline: by 明不知昔
 tags: 

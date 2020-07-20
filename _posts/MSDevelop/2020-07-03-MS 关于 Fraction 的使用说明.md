@@ -1,6 +1,6 @@
 ---
 layout: post
-category: MS二次开发
+category: MS Develop
 title: MS 关于 Fraction 的使用说明
 tagline: by 明不知昔
 tags: 

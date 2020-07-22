@@ -46,3 +46,4 @@ public class RebarDiameterConverter:StringConverter
 ```
 
 在 GetStandardValues 方法中，会传递下来一个 context, 而 context.Instance 就是调用该转换器的实例，所以，将它转换成相应的对象，然后利用对象里面的值来动态生成下拉选项。
+

@@ -48,6 +48,7 @@ highlight:
 markdown: kramdown
 kramdown:
     input: GFM
+    syntax_highlighter: rouge
 
 #mermaid图
 #默认用jsdelivr加速，https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js

@@ -2,7 +2,7 @@
 {% comment %} theme-definition(contentResult) {% endcomment %}
 
 <!-- 引用css -->
-{% endif site.post_theme.enabled %}
+{% if site.post_theme.enabled %}
 <link href="{{ '/_sass/_themes/' | append: site.post_theme.theme | append: '.css' | relative_url }}" rel="stylesheet" type="text/css" />
 {% endif %}
 post_theme:

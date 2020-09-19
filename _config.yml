@@ -365,6 +365,12 @@ custom_logo:
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
+# post theme
+# 文章主题，根据主题名称，加载不同的 css
+# 主题有：blueCyan
+post_theme:
+  enabled: true
+  theme: blue-cyan
 
 # ---------------------------------------------------------------
 # Third Party Services Settings

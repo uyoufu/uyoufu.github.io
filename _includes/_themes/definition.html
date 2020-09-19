@@ -1,0 +1,22 @@
+{% comment %} 传入的参数是 contentResult {% endcomment %}
+{% comment %} theme-definition(contentResult) {% endcomment %}
+
+<!-- 引用css -->
+{% endif site.post_theme.enabled %}
+<link href="{{ '/_sass/_themes/' | append: site.post_theme.theme | append: '.css' | relative_url }}" rel="stylesheet" type="text/css" />
+{% endif %}
+post_theme:
+  enabled: true
+<!-- 定义h1~h6
+将 <h1>text</h1> 改成 <h1><span>text</span></h1> 形式，方便进行css优化 -->
+{% for index in (1..6) %}
+  {% assign block_begin = '<h' | append: index | append: '>' %}
+  {% assign block_end = '</h' | append: index | append: '>' %}
+
+  {% assign blocks = contentResult | split: block_begin | shift %}
+  {% for block in blocks %}
+    {% assign code_content = block | split: block_end | first | prepend: block_begin | append: block_end %}
+    {% capture code_content_with_lineno %}{{ block_begin }}<section>{{ code_content }}</section>{{ block_end }}{% endcapture %}
+    {% assign contentResult = contentResult | replace: code_content, code_content_with_lineno %}
+  {% endfor %}
+{%endfor%}

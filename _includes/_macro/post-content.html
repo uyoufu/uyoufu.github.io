@@ -10,7 +10,9 @@
 {% endif %}
 
 <!-- 对主题进行定制 -->
-
+{% if site.post_theme.enabled %}
+  {% include _themes/definition.html %}
+{% endif %}
 
 <!-- 输出添加样式后的内容 -->
 {{ contentResult }}

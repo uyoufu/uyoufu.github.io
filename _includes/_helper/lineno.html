@@ -1,11 +1,12 @@
 {% comment %} lineno(source) {% endcomment %}
-{% comment %} 给代码添加序号 {% endcomment %}
-{% assign block_begin = '<pre class="highlight">' %}
+<!-- 给代码添加序号 有 class 名称为 language-xxx -->
+{% assign block_begin = '<pre class="language-">' %}
 {% assign block_end = '</pre>' %}
 
 {% comment %} This tag isn't in the site which is built locally. I don't know why? {% endcomment %}
 {% assign div_tag_begin = '' %}
 {% assign div_tag_end = '' %}
+
 {% unless source contains '<div class="highlight">' %}
   {% assign div_tag_begin = '<div class="highlight">' %}
   {% assign div_tag_end = '</div>' %}

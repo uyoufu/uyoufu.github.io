@@ -26,7 +26,9 @@ text-weight-[ thin, light, regular, medium, bold, bolder ]
 
 text-[ right, left, center, justify, bold, italic, no-wrap, stike, uppercase, lowercase, captitalize ]
 
+### 字体颜色
 
+text-[颜色名称]：text-teal
 
 ## [颜色](http://www.quasarchs.com/style/color-palette)
 

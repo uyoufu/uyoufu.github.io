@@ -1,7 +1,16 @@
+{% comment %} 设置文章内容的样式 {% endcomment %}
+
+{% assign contentResult = post.content %}
+
+{% comment %} 添加代码编号 {% endcomment %}
 {% if site.highlight.line_number %}
   {% assign source = post.content %}
   {% include _helper/lineno.html %}
-  {{ lineno }}
-{% else %}
-  {{ post.content }}
+  {% assign contentResult = lineno %}
 {% endif %}
+
+<!-- 对主题进行定制 -->
+
+
+<!-- 输出添加样式后的内容 -->
+{{ contentResult }}

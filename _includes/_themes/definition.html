@@ -1,5 +1,5 @@
-{% comment %} 传入的参数是 contentResult {% endcomment %}
-{% comment %} definition(contentResult) {% endcomment %}
+{% comment %} 传入的参数是 content_result {% endcomment %}
+{% comment %} definition(content_result) {% endcomment %}
 
 <!-- 引用css -->
 {% if site.post_theme.enabled %}
@@ -11,6 +11,6 @@
 {% for index in (1..6) %}
   {% assign replace_start = '<h' | append: index | append: '.*>' %}
   {% assign replace_end = '</h>' | append: index %}
-  {% contentResult = contentResult | replace_regex: replace_start, ('<h' | append: index | append: '><section>') %}
-  {% contentResult = contentResult | replace: replace_end, ('<section><h' | append: index | append: '>') %}
+  {% content_result = content_result | replace_regex: replace_start, ('<h' | append: index | append: '><section>') %}
+  {% content_result = content_result | replace: replace_end, ('<section><h' | append: index | append: '>') %}
 {% endfor %}

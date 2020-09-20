@@ -8,9 +8,9 @@
 
 <!-- 定义h1~h6
 将 <h1>text</h1> 改成 <h1><span>text</span></h1> 形式，方便进行css优化 -->
-{% for index in (1..6) %}
+<!-- {% for index in (1..6) %}
   {% assign replace_start = '<h' | append: index | append: '.*>' %}
   {% assign replace_end = '</h>' | append: index %}
   {% content_result = content_result | replace_regex: replace_start, ('<h' | append: index | append: '><section>') %}
   {% content_result = content_result | replace: replace_end, ('<section><h' | append: index | append: '>') %}
-{% endfor %}
+{% endfor %} -->

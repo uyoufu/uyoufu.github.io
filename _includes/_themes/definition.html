@@ -3,7 +3,7 @@
 
 <!-- 引用css -->
 {% if site.post_theme.enabled %}
-<link href="{{ '/_sass/_themes/' | append: site.post_theme.theme | append: '.css' | relative_url }}" rel="stylesheet" type="text/css" />
+<link href="{{ '/assets/css/themes/' | append: site.post_theme.theme | append: '.css' }}" rel="stylesheet" type="text/css" />
 {% endif %}
 
 <!-- 定义h1~h6
@@ -11,8 +11,8 @@
 {% for index in (1..6) %}
   {% assign replace_start = '<h' | append: index %}
   {% assign replace_end = '</h' | append: index | append: '>' %}
-  {% assign replace_start_to = replace_start | append: '><section ' %}
-  {% assign replace_end_to = '</section></h' | append: index | append: '>' %}
+  {% assign replace_start_to = replace_start | append: '><span ' %}
+  {% assign replace_end_to = '</span></h' | append: index | append: '>' %}
   {% assign content_result = content_result | replace: replace_start, replace_start_to %}
   {% assign content_result = content_result | replace: replace_end, replace_end_to %}
 {% endfor %}

@@ -11,6 +11,6 @@
 {% for index in (1..6) %}
   {% assign replace_start = '<h' | append: index | append: '.*>' %}
   {% assign replace_end = '</h>' | append: index %}
-  {% contentResult = contentResult | replace_regex: replace_start, '<h' | append: index | append: '><section>' %}
-  {% contentResult = contentResult | replace_regex: replace_end, '<section><h' | append: index | append: '>' %}
+  {% contentResult = contentResult | replace_regex: replace_start, ('<h' | append: index | append: '><section>') %}
+  {% contentResult = contentResult | replace_regex: replace_end, ('<section><h' | append: index | append: '>') %}
 {% endfor %}

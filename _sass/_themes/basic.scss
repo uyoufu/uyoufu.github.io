@@ -3,7 +3,8 @@
 // 覆盖 _post-expanded 里面的卡片布局
 .posts-expand {
     .post { 
-      margin-top: 50px; 
+      box-shadow: none;
+      padding: 0px;
     }
 }
 

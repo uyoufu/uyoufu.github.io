@@ -52,3 +52,8 @@ $jekyll-config-map : {{ config_map }};
 // Custom Layer
 // --------------------------------------------------
 @import "_custom/custom";
+
+// 导入 post 主题
+{% if site.post_theme.enabled %}
+@import "_themes/{{ site.post_theme.theme }}"
+{% endif %}

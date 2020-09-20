@@ -1,11 +1,6 @@
 {% comment %} 传入的参数是 content_result {% endcomment %}
 {% comment %} definition(content_result) {% endcomment %}
 
-<!-- 引用css -->
-{% if site.post_theme.enabled %}
-<link href="{{ site.css | relative_url }}/themes/{{ site.post_theme.theme | append: '.css' }}" rel="stylesheet" type="text/css" />
-{% endif %}
-
 <!-- 定义h1~h6
 将 <h1>text</h1> 改成 <h1><span>text</span></h1> 形式，方便进行css优化 -->
 {% for index in (1..6) %}

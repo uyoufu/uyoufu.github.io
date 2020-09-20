@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}"
+@import "{{ site.theme }}";
 
 
 /* 全局属性
@@ -9,7 +9,8 @@
  * 全文字体 font-family:ptima-Regular;
  * 英文换行 word-break:break-all;
  */
- .layout {
+
+  .layout {
     font-family:PingFangSC-Light;
   }
   /* 段落，下方未标注标签参数均同此处

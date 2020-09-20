@@ -1,9 +1,11 @@
 /*默认样式，最佳实践*/
 
 // 覆盖 _post-expanded 里面的卡片布局
-.post { 
-    margin-top: 50px; 
-  }
+.posts-expand {
+    .post { 
+      margin-top: 50px; 
+    }
+}
 
 /*全局属性*/
 .layout {

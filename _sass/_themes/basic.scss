@@ -178,16 +178,23 @@ pre {
   margin-bottom: 10px;
 }
 pre code {
-  display: -webkit-box !important;
+  // display: -webkit-box !important;
   font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
   border-radius: 0px;
   font-size: 12px;
   padding: 2px;
   -webkit-overflow-scrolling: touch;
 }
+
+// 设置高度后，也要同时设置代码行号的高度
 pre code span {
-  line-height: 26px;
+  line-height: 22px;
 }
+
+.gutter pre {
+  line-height: 22px;
+}
+
 
 /*行内代码*/
 p code, li code{

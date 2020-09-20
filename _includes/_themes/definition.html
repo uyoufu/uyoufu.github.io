@@ -3,7 +3,7 @@
 
 <!-- 引用css -->
 {% if site.post_theme.enabled %}
-<link href="{{ '/assets/css/themes/' | append: site.post_theme.theme | append: '.css' }}" rel="stylesheet" type="text/css" />
+<link href="{{ site.css | relative_url }}/themes/{{ site.post_theme.theme | append: '.css' }}" rel="stylesheet" type="text/css" />
 {% endif %}
 
 <!-- 定义h1~h6

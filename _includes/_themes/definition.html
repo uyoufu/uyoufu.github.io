@@ -14,5 +14,5 @@
   {% assign replace_start_to = '<h' | append: index | append: '><section>' %}
   {% assign replace_end_to = '</section></h' | append: index | append: '>' %}
   {% assign content_result = content_result | replace_regex: replace_start, replace_start_to %}
-  {% assign content_result = content_result | replace: replace_end, replace_end_to %}
+  {% assign content_result = content_result | replace_regex: replace_end, replace_end_to %}
 {% endfor %}

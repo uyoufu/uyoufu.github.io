@@ -565,6 +565,8 @@ Hello {{ 'now' | date: "%Y %h" }}  # 按指定日期格式输出当前时间
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year.
 ```
 
+它与 html 中的 `<!-- -->` 注释有些区别，`comment` 可以注释掉 jekyll 语句，而 html 中的注释则不行。
+
 #### 2. Raw
 
 临时禁止执行 Jekyll Tag 命令，在生成的内容里存在冲突的语法片段的情况下很有用。

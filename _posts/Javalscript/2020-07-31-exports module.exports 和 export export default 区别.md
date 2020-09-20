@@ -24,11 +24,7 @@ export / import : 只有es6 支持的导出引入
 
 这一刻起，我觉得是时候要把它们之间的关系都给捋清楚了，不然我得混乱死。话不多少，咱们开干！！
 
-
-
 <!--more-->
-
-
 
 # node模块
 
@@ -47,7 +43,7 @@ Node里面的模块系统遵循的是 CommonJS 规范。
 在一个 node 执行一个文件时，会给这个文件内生成一个 exports 和 module 对象，
 而 module 又有一个 exports 属性。他们都指向一块{}内存区域，关系如下图。
 
-``` js
+```js
 exports = module.exports = {};
 ```
 
@@ -55,7 +51,7 @@ exports = module.exports = {};
 
 那下面我们来看看代码的吧。
 
-``` js
+```js
 //utils.js
 let a = 100;
 
@@ -69,7 +65,7 @@ exports.a = 100; //修改内存里面的值为100
 exports = '指向其他内存区'; //这里把exports的指向指走
 ```
 
-``` js
+```js
 //test.js
 var a = require('/utils');
 console.log(a) // 打印为 {a : 100} 
@@ -79,7 +75,7 @@ console.log(a) // 打印为 {a : 100}
 
 简而言之，区分他们之间的区别就是 exports 只是 module.exports 的引用，辅助后者添加内容用的。下面的摘抄[nodejs官方的代码](https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_module_exports)：
 
-``` javascript
+```javascript
 function require(/* ... */) {
   const module = { exports: {} };
   ((module, exports) => {
@@ -110,7 +106,7 @@ function require(/* ... */) {
 
 ### 导出函数
 
-``` javascript
+```javascript
 // 定义模块
 // user.js
 const getName = () => {
@@ -120,21 +116,21 @@ const getName = () => {
 exports.getName = getName;
 ```
 
-``` javascript
+```javascript
 // 使用模块
 // index.js
 const user = require('./user');
 console.log(`User: ${user.getName()}`);
 ```
 
-``` javascript
+```javascript
 // 结果
 User: Jim
 ```
 
 ### 导出多个函数和值
 
-``` javascript
+```javascript
 // 定义
 // user.js
 const getName = () => {
@@ -152,7 +148,7 @@ exports.getLocation = getLocation;
 exports.dob = dateOfBirth;
 ```
 
-``` javascript
+```javascript
 // 使用
 // index.js
 const user = require('./user');
@@ -161,7 +157,7 @@ console.log(
 );
 ```
 
-``` javascript
+```javascript
 // 结果
 Jim lives in Munich and was born on 12.01.1982.
 ```
@@ -172,7 +168,7 @@ Jim lives in Munich and was born on 12.01.1982.
 
 我们可以在文件的任何地方导出方法或者值:
 
-``` javascript
+```javascript
 exports.getName = () => {
   return 'Jim';
 };
@@ -188,7 +184,7 @@ exports.dob = '12.01.1982';
 
 上面的方式是对函数和值进行分别导出，这种方式适合于帮助类。但当你只想导出一个对象的时候，可以使用 ` module.exports`:
 
-``` javascript
+```javascript
 class User {
   constructor(name, age, email) {
     this.name = name;
@@ -209,7 +205,7 @@ class User {
 module.exports = User;
 ```
 
-# ES6 中的模块导出导入
+## ES6 中的模块导出导入
 
 说实话，在 es 中的模块，就非常清晰了。不过也有一些细节的东西需要搞清楚。
 
@@ -222,13 +218,16 @@ module.exports = User;
 - export 与 export default 均可用于导出常量、函数、文件、模块等
 
 - 在一个文件或模块中，export、import 可以有多个，export default 仅有一个
+
 - 通过 export 方式导出，在导入时要加{ name }，export default 则不需要
+
 - export 导入时，只能使用定义时的名称，而 export default 导入时，可以是任意名称
+
 - export 能直接导出变量表达式，export default 不行
 
 上面的两种方式，export 适合于一个模块中有 0 个或者多个 export 的情况；export default 则只能有一个。
 
-``` javascript
+```javascript
 // 导出独立的特征
 // Exporting individual features
 export let name1, name2, …, nameN; // also var, const
@@ -273,4 +272,5 @@ export { default } from …;
 1. [exports、module.exports 和 export、export default 到底是咋回事](https://juejin.im/post/6844903489257095181)
 
 2. [Understanding module.exports and exports in Node.js](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
+
 3. [MDN export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export)

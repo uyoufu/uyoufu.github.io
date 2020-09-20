@@ -174,8 +174,7 @@ hr {
 
 /*代码块*/
 pre {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
 }
 pre code {
   // display: -webkit-box !important;
@@ -191,6 +190,7 @@ pre code span {
   line-height: 22px;
 }
 
+// 此处是代码行高度
 .gutter pre {
   line-height: 22px;
 }

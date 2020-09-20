@@ -10,9 +10,10 @@
 {% endif %}
 
 <!-- 对主题进行定制 -->
-<!-- {% if site.post_theme.enabled %}
+{% comment %}
+{% if site.post_theme.enabled %}
   {% include _themes/definition.html %}
-{% endif %} -->
-
+{% endif %}
+{% endcomment %}
 <!-- 输出添加样式后的内容 -->
 {{ content_result }}

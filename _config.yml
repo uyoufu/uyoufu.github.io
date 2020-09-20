@@ -367,10 +367,10 @@ highlight_theme: normal
 
 # post theme
 # 文章主题，根据主题名称，加载不同的 css
-# 主题有：blueCyan
+# 主题位置: _sass/_themes
 post_theme:
   enabled: true
-  theme: blue-cyan
+  theme: ink
 
 # ---------------------------------------------------------------
 # Third Party Services Settings

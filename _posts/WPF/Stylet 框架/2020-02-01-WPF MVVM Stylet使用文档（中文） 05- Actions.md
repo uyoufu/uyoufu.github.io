@@ -21,26 +21,10 @@ published: true
 
 Stylet 通过引入响应（Action） 解决了这个问题。看看这个:
 
+| C#                                                           | VB.NET                                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| class ViewModel <br />{    <br />       public void DoSomething()    <br />      {       <br />           Debug.WriteLine("DoSomething called");    <br />      } <br />} | Class ViewModel<br />     Public Sub DoSomething()<br />     Console.WriteLine("DoSomething called")<br />End Sub End Class |
 
-
-<table><tr><td>C#</td><td>VB.NET</td>
-<tr><td valign="top"><pre lang="csharp">
-class ViewModel
-{
-   public void DoSomething()
-   {
-      Debug.WriteLine(&quot;DoSomething called&quot;);
-   }
-}</pre>
-</td><td valign="top"><pre lang="vb.net">
-Class ViewModel
-&nbsp;
-  Public Sub DoSomething()
-&nbsp;
-  Console.WriteLine(&quot;DoSomething called&quot;)
-&nbsp;
-  End Sub
-End Class</pre></td></tr></table>
 
 ``` html
 <UserControl x:Class="MyNamespace.View"
@@ -75,6 +59,7 @@ Class ViewModel
 &nbsp;
   End Sub
 End Class</pre></td></tr></table>
+
 
 ``` html
 <UserControl x:Class="MyNamespace.View"

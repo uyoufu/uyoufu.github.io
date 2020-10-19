@@ -1,11 +1,9 @@
 /*默认样式，最佳实践*/
 
 // 覆盖 _post-expanded 里面的卡片布局
-.posts-expand {
-    .post:only-child { 
-      box-shadow: none;
-      padding: 0px;
-    }
+.posts-expand  article:only-child { 
+  box-shadow: none !important;
+  padding: 0px;
 }
 
 /*全局属性*/

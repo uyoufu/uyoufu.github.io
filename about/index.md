@@ -34,6 +34,7 @@ type: about
 - [x] 2019/11/24  增加 Live2d 功能
 - [x] 2019/11/25  增加对 reveal.js 的支持，可以推送slides到博客，实现在线预览
 - [x] 2019/11/26  增加对 mermaid 的支持，官方的 mermaid 不支持 markdown 中的 mermaid
+- [x] 2020/10/04  增加文章主题
 
 ## Todo
 

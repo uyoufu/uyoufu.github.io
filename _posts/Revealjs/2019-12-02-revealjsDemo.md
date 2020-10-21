@@ -11,7 +11,6 @@ published: true
 <!--more-->
 
 
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/black.css">
 
 <div class="reveal">

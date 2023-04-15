@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="MySql 从入门到精通教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql从入门到精通">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2020/P0HE12.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="MySql 从入门到精通教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
+<meta property="article:author" content="明不知昔">
+<meta property="article:tag" content="MySql">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2020/P0HE12.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MySql从入门到精通 | 星辰大海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">星辰大海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/P0HE12.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySql从入门到精通
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-09 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-09T00:00:00+08:00">2020-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-13 23:31:13" itemprop="dateModified" datetime="2023-04-13T23:31:13+08:00">2023-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/Database/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/Database/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/Database/Develop/Develop/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/Database/Develop/Develop/Database/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>MySql 从入门到精通教程</p>
+<span id="more"></span>
+<h2 id="数据库是什么">1. 数据库是什么</h2>
+<p>本节介绍数据库的基本概念，包括数据库存储方式、数据库技术的发展历史、数据库的存储结构以及数据库在开发中的作用。</p>
+<h3 id="数据存储方式">数据存储方式</h3>
+<p>计算机数据（Data）的存储一般以硬盘为数据存储空间资源，从而保证计算机内的数据能够持续保存。对于数据的处理，一般会采用数据库相关的技术进行处理，从而保证数据处理的高效性。</p>
+<h3 id="什么是数据库">什么是数据库</h3>
+<p>数据库是数据管理的有效技术，是由一批数据构成的有序集合，这些数据被存放在结构化的数据表里。数据表之间相互关联，反映客观事物间的本质联系。数据库能有效地帮助一个组织或企业科学地管理各类信息资源。</p>
+<h3 id="数据库的存储结构">数据库的存储结构</h3>
+<p>数据库的存储结构是指数据库中的物理数据和逻辑数据的表示形式、物理数据和逻辑数据之间关系映射方式的描述。在数据库技术中，可以使用两种形式描述客观现实的数据：物理数据描述和逻辑数据描述。物理数据和逻辑数据之间的转换通过数据库管理系统实现。</p>
+<h4 id="物理数据描述">物理数据描述</h4>
+<p>物理数据描述是指数据在存储设备上的存储方式，物理数据是实际存放在存储设备上的数据，这些数据也称为物理记录。根据物理记录存储的位置，又可以分为有序存储和无序存储。</p>
+<ul>
+<li>位（bit）：二进制的一个单位称为位，位只能取 1 或 0。</li>
+<li>字节（byte）：8 个位称为一个字节，可以存放对应 ASCII
+码的一个字符。</li>
+<li>字（word）：若干个字节组成一个字。一个字所含的二进制的位数称为字长，许多计算机的字长是不同的，例如计算机的字长可以是
+8 位、16 位、24 位、32 位等。</li>
+<li>块（block）：内存储器和外存储器交换信息的最小单位，又称为物理块或物理记录，每块的大小通常为
+256 字节、512 字节、1024 字节等。</li>
+<li>卷（volume）：一台输入输出设备所能装载的全部有用信息，例如磁带机的一盘磁带即为一卷，磁盘设备的一个盘组也是一卷。</li>
+<li>无序存储（unordered）：数据记录按照插入的顺序进行存储。</li>
+</ul>
+<h4 id="逻辑数据描述">逻辑数据描述</h4>
+<p>逻辑数据描述是指用户或程序员用于操作的数据形式，逻辑数据是一种抽象的概念，是对客观现实世界的反映和记录，这些数据也可以称为逻辑记录。</p>
+<ul>
+<li>实体（entity）：客观现实存在的东西使用实体来描述。实体既可以是具体的、有形的对象，也可以是抽象的、无形的对象。例如，一本书是一个有形对象，一次借书过程则是一个无形的对象。</li>
+<li>实体集（entities）：特性完全相同的同类实体的集合称为实体集。例如，一个图书馆所有的书籍是一个实体集，该图书馆的所有借书过程也是一个实体集。</li>
+<li>属性（attribute）：实体的特性称为属性。每个属性都有一个值域，这些值域可以是整数类型、浮点数类型、字符类型或日期类型等。例如，实体书的属性包括书名、书号、出版日期、页数、价格以及出版社等，这些属性对应的值域分别为字符类型、字符类型、日期类型、整数类型、浮点数类型和字符类型等。</li>
+<li>标识符（identifier）：能够唯一地标识每个实体的属性或属性集。例如，书的书号属性是实体书的标识符，借书过程实体的标识符包括借书证号、书号两个属性。</li>
+</ul>
+<p>这些逻辑数据最终要通过数据库管理系统来转换成物理数据。在数据库管理系统中，描述逻辑数据的术语包括哪些呢？</p>
+<ul>
+<li>数据项（data
+item）：也称为字段（field），标记实体属性的可以命名的最小信息单位，数据项的命名一般采用属性的描述性名称。这些名称可以是中文、英文或汉语拼音。</li>
+<li>元组（tuple）：也称为记录（record），数据项的集合称为元组。一个元组表示一个具体的实体。</li>
+<li>关系（relation）：在关系型数据库系统中，同一类元组所在的集合称为关系。关系适用于描述实体集，它包括一个实体集的所有元组。例如，所有的图书可以组成一个
+books 关系。</li>
+<li>键码（key）：在关系型数据库系统中，能够唯一地标识关系中每个元组的数据项或数据项的组合称为关系的键码。</li>
+</ul>
+<p>客观实体经过两层逻辑数据的描述，最后转变成实际存储的物理数据。
+从数据库系统应用角度来看，数据库系统常见的运行与应用结构有：客户端/服务器结构、浏览器/服务器结构。</p>
+<h2 id="数据库涉及到哪些技术">2. 数据库涉及到哪些技术？</h2>
+<p>本节主要介绍数据库涉及到的技术，包括数据库系统、SQL
+语言和数据库访问技术。</p>
+<h3 id="数据库系统">数据库系统</h3>
+<p>数据库管理系统（Database Management
+System，DBMS）是位于操作系统与用户之间的一种操纵和管理数据库的软件，按照一定的数据模型科学地组织和存储数据，同时可以提供数据高效地获取和维护。</p>
+<h4 id="数据定义功能">1) 数据定义功能</h4>
+<p>DBMS 提供数据定义语言（Data Definition
+Language，DDL），用户通过它可以方便地对数据库中的数据对象进行定义。</p>
+<h4 id="数据操纵功能">2) 数据操纵功能</h4>
+<p>DBMS 还提供数据操纵语言（Data Manipulation
+Language，DML），用户可以使用 DML
+操作数据，实现对数据库的基本操作，如查询、插入、删除和修改等。</p>
+<h4 id="数据库的运行管理">3) 数据库的运行管理</h4>
+<p>数据库在建立、运用和维护时由数据库管理系统统一管理、统一控制，以保证数据的安全性、完整性、多用户对数据的并发使用及发生故障后的系统恢复。例如：</p>
+<ul>
+<li>数据的完整性检查功能保证用户输入的数据应满足相应的约束条件；</li>
+<li>数据库的安全保护功能保证只有赋予权限的用户才能访问数据库中的数据；</li>
+<li>数据库的并发控制功能使多个用户可以在同一时刻并发地访问数据库的数据；</li>
+<li>数据库系统的故障恢复功能使数据库运行出现故障时可以进行数据库恢复，以保证数据库可靠地运行。</li>
+</ul>
+<h4 id="提供方便有效地存取数据库信息的接口和工具">4)
+提供方便、有效地存取数据库信息的接口和工具</h4>
+<p>编程人员可通过编程语言与数据库之间的接口进行数据库应用程序的开发。数据库管理员（Database
+Administrator，DBA）可通过提供的工具对数据库进行管理。</p>
+<h4 id="数据库的建立和维护功能">5) 数据库的建立和维护功能</h4>
+<p>数据库功能包括数据库初始数据的输入、转换功能，数据库的转储、恢复功能，数据库的重组织功能和性能监控、分析功能等。这些功能通常由一些使用程序来完成。</p>
+<figure>
+<img
+src="http://c.biancheng.net/uploads/allimg/190220/4-1Z220153J2254.gif"
+alt="完整的数据库系统结构关系" />
+<figcaption aria-hidden="true">完整的数据库系统结构关系</figcaption>
+</figure>
+<h2 id="了解sql语言">了解SQL语言</h2>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/mysql/">MySQL</a>
+服务器正确安装以后，就已经完成了一个完整的 DBMS
+的搭建，可以通过命令行管理工具或者图形化的管理工具对 MySQL
+数据库进行操作。这种操作实质上是通过结构化查询语言（Structured Query
+Language，SQL）来实现的，SQL 语言是各种数据库交互方式的基础。</p>
+<p>SQL
+是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。与其他程序设计语言（如C、<a
+target="_blank" rel="noopener" href="http://c.biancheng.net/java/">Java</a>等）不同的是，SQL
+由很少的关键字组成，每个 SQL 语句通过一个或多个关键字构成。</p>
+<p>SQL具有如下优点。</p>
+<ol type="1">
+<li><p>一体化：SQL集数据定义、数据操作和数据控制于一体，可以完成数据库中的全部工作。</p></li>
+<li><p>使用方式灵活：SQL具有两种使用方式，可以直接以命令方式交互使用；也可以嵌入使用，嵌入C、<a
+target="_blank" rel="noopener" href="http://c.biancheng.net/cplus/">C++</a>、Fortran、COBOL、Java等语言中使用。</p></li>
+<li><p>非过程化：只提操作要求，不必描述操作步骤，也不需要导航。使用时只需要告诉计算机“做什么”，而不需要告诉它“怎么做”。</p></li>
+<li><p>语言简洁、语法简单、好学好用：在ANSI标准中，只包含94个英文单词，核心功能只用6个动词，语法接近英语口语。</p></li>
+</ol>
+<blockquote>
+<p>注意：SQL 语句不区分大小写，许多 SQL 开发人员习惯对 SQL
+本身的关键字进行大写，而对表或者列的名称使用小写，这样可以提高代码的可阅读性和可维护性。本教程也按照这种方式组织
+SQL 语句。大多数数据库都支持通用的 SQL
+语句，同时不同的数据库具有各自特有的 SQL 语言特性。</p>
+</blockquote>
+<h2 id="数据库访问技术">数据库访问技术</h2>
+<p>数据库访问技术包括 ODBC、DAO、OLE DB 和 ADO。</p>
+<h3 id="odbc">ODBC</h3>
+<p>ODBC（Open Database
+Connectivity，开放数据库互连）是微软公司开放服务结构（Windows Open
+Services
+Architecture，WOSA）中有关数据库的一个组成部分，它建立了一组规范，并提供了一组对数据库访问的标准
+API（应用程序编程接口）。这些 API 利用 SQL 来完成其大部分任务。</p>
+<h3 id="dao">DAO</h3>
+<p>DAO（Data Access Object，数据访问对象集）是 Microsoft
+提供的基于一个数据库对象集合的访问技术，可以独立于 DBMS
+进行数据库的访问。</p>
+<h3 id="ole-db">OLE DB</h3>
+<p>OLE DB（Object Linking and Embedding
+Database，对象连接与嵌入）是微软战略性的通向不同数据源的低级应用程序接口。OLE
+DB
+不仅包括微软资助的标准数据接口，开放数据库连通性（ODBC）的结构化查询语言（SQL）能力，还具有面向其他非
+SQL 数据类型的通路。</p>
+<h3 id="ado">ADO</h3>
+<p>ADO（ActiveX Data Objects）是一个用于存取数据源的 COM
+组件，提供了编程语言和统一数据访问方式 OLE DB
+的一个中间层，允许开发人员编写访问数据的代码而不用关心数据库是如何实现的，只用关心到数据库的连接。</p>
+<h2 id="致谢">致谢</h2>
+<p>本文来源于：<a target="_blank" rel="noopener" href="http://c.biancheng.net">C 语言中文网</a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/MySql/" rel="tag"><i class="fa fa-tag"></i> MySql</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2019/33DD0CG.html" rel="prev" title="如何制作 Bentley 软件的离线安装包">
+      <i class="fa fa-chevron-left"></i> 如何制作 Bentley 软件的离线安装包
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2020/2HMJJW9.html" rel="next" title="ORD 环境变量汇总">
+      ORD 环境变量汇总 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">1. 数据库是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">数据存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">什么是数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">数据库的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">物理数据描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">逻辑数据描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B6%89%E5%8F%8A%E5%88%B0%E5%93%AA%E4%BA%9B%E6%8A%80%E6%9C%AF"><span class="nav-number">2.</span> <span class="nav-text">2. 数据库涉及到哪些技术？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text">数据库系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.1.</span> <span class="nav-text">1) 数据定义功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.2.</span> <span class="nav-text">2) 数据操纵功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86"><span class="nav-number">2.1.3.</span> <span class="nav-text">3) 数据库的运行管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B%E6%96%B9%E4%BE%BF%E6%9C%89%E6%95%88%E5%9C%B0%E5%AD%98%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%B7%A5%E5%85%B7"><span class="nav-number">2.1.4.</span> <span class="nav-text">4)
+提供方便、有效地存取数据库信息的接口和工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.5.</span> <span class="nav-text">5) 数据库的建立和维护功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3sql%E8%AF%AD%E8%A8%80"><span class="nav-number">3.</span> <span class="nav-text">了解SQL语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BF%E9%97%AE%E6%8A%80%E6%9C%AF"><span class="nav-number">4.</span> <span class="nav-text">数据库访问技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#odbc"><span class="nav-number">4.1.</span> <span class="nav-text">ODBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dao"><span class="nav-number">4.2.</span> <span class="nav-text">DAO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ole-db"><span class="nav-number">4.3.</span> <span class="nav-text">OLE DB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ado"><span class="nav-number">4.4.</span> <span class="nav-text">ADO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">5.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">633k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:35</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '63ece14861c297420892',
+      clientSecret: '731f0c050c35a3afee5aed41ca386decc768a3f0',
+      repo        : 'blog-comments',
+      owner       : 'galensgan',
+      admin       : ['galensgan'],
+      id          : 'b98c4e8655ec6ca4b911f46a16a2faf1',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

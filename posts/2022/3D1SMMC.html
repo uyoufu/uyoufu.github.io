@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试  框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、N">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET Core 单元测试从零基础到项目应用">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3D1SMMC.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试  框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、N">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-14T16:00:00.000Z">
+<meta property="article:author" content="明不知昔">
+<meta property="article:tag" content=".NET Core">
+<meta property="article:tag" content="单元测试">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3D1SMMC.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>.NET Core 单元测试从零基础到项目应用 | 星辰大海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">星辰大海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/3D1SMMC.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          .NET Core 单元测试从零基础到项目应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-15T00:00:00+08:00">2022-02-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">单元测试</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/DotNET/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/DotNET/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/DotNET/Develop/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/DotNET/Develop/Develop/DotNET/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">单元测试</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文讲述了如何在 .NET Core
+的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以
+get 以下知识：</p>
+<ul>
+<li>.NET 中现有单元测试框架有哪些</li>
+<li>为什么选择 MSTest 框架</li>
+<li>如何创建一个单元测试</li>
+<li>怎么运行单元测试</li>
+</ul>
+<h2 id="框架选型">框架选型</h2>
+<p>我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET
+官方推荐的单元测试有 3 种：xUnit、NUnit、MSTest。</p>
+<p>除了标注测试类和方法的特性用的不一样之外，它们是非常相似的。而 MSTest
+与 VisualStudio 集成度更高，所以本人建议使用 MSTest。</p>
+<p>StackOverflow 看到一条我很赞同的看法：</p>
+<blockquote>
+<p>其实不用顾虑那么多，随便选择吧，MSTest 对 VS
+的集成是最好的，而且也很容易上手，如果哪一天碰到它所无法解决的事情，切换到其他框架也非常简单，仅仅只是Nuget下个包，换下特性而已。</p>
+</blockquote>
+<h2 id="添加单元测试">添加单元测试</h2>
+<p>在 VS 中，选中方法名，右键 -&gt; 创建单元测试，点击确定。</p>
+<p>通过上述步骤，VS
+会自动创建一个单元测试项目，在该项目里面自动生成单元测试内容。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 标记测试类</span></span><br><span class="line">[<span class="meta">TestClass()</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MinioAdapterTests</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 标记测试方法</span></span><br><span class="line">    [<span class="meta">TestMethod()</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BucketExistsAsyncTest</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 在此处编写单元测试代码</span></span><br><span class="line">        Assert.Fail();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编写测试案例">编写测试案例</h2>
+<h3 id="依赖注入怎么测试">依赖注入怎么测试</h3>
+<p>ASP.NET Core 支持依赖关系注入 (DI)
+软件设计模式，并且默认注入了很多服务，具体可以参考 <a
+target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0#framework-provided-services">官方文档</a>,
+相信只要使用过依赖注入框架的同学，都会对此有不同深入的理解，在此无需赘言。</p>
+<p>然而，在引入 IOC 框架之后，对于之前常规的对于类的依赖（new
+Class）变成通过构造函数对于接口的依赖（ASP.NET CORE
+默认注入方式），这本身更加符合依赖倒置原则，但是对于单元测试来说确会带来另一个问题：</p>
+<p>由于层层依赖，导致在某个类的方法进行测试的时候，需要构造一大堆该类依赖的接口的实现，非常麻烦。</p>
+<p>这个时候，我们脑子里会下意识想一个问题：<strong>为什么常用的 .Net
+单元测试框架不支持依赖注入？</strong></p>
+<p>于是笔者带着这个问题在查阅了一些关于在单元测试中支持依赖注入的讨论<a
+target="_blank" rel="noopener" href="https://github.com/xunit/xunit/issues/687">Github
+Issue</a>,以及其他的相关文档，突然明白一个之前一直忽视但实际却非常重要的问题：</p>
+<blockquote>
+<p>在对于一个方法的单元测试中，我们应该关注的是这个方法内部的逻辑测试，而这个方法内部对于外部的依赖，则不在这个单元测试关注的范围内</p>
+</blockquote>
+<p>换言之，单元测试永远都只关注需要测试的方法内部的逻辑实现，至于外部依赖方法的测试，则应该放在另一个专门针对这个方法的单元测试用例中。</p>
+<p>弄清楚这个问题，我们才能更加理解另一个单元测试不可缺少的框架——<strong>Mock框架</strong>。在我们写的测试中，应该忽略外部依赖具体的实现，而是通过模拟该接口方法来显示的指定返回值，从而降低该返回值对于当前单元测试结果的影响，而
+Mock 框架（例如最常用的Moq），刚好可以满足我们对于接口的模拟需求。</p>
+<blockquote>
+<p>相信有同学跟我有同样的疑惑，并且当我尝试在 ASP.NET Core
+单元测试中的一切外部依赖通过 Mock
+的方式进行编写的时候，遇到了一些问题，下文会将这些问题一一道来，希望对有同样疑惑的同学有所帮助。</p>
+</blockquote>
+<h3 id="mock-框架选择">Mock 框架选择</h3>
+<p>在 .NET 中有几种 mock 框架可供选择，比如
+NMock、PhinoMocks、FakeItEasy和Moq。尽管Moq相对较新，但是它非常易用。不需要像传统的
+Record/Replay。并且使用 Moq 在 VS
+中可以得到智能提示。学习成本也不高。</p>
+<p>所以选择 <a target="_blank" rel="noopener" href="https://github.com/moq/moq4">Moq</a> 作为 Mock
+数据框架。Moq 有一个自动 Mock 库 <a
+target="_blank" rel="noopener" href="https://github.com/moq/Moq.AutoMocker">Moq.AutoMock</a>，建议安装该库。</p>
+<h3 id="moq-基本使用">Moq 基本使用</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mock = <span class="keyword">new</span> Mock&lt;ILoveThisLibrary&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// WOW! No record/replay weirdness?! :)</span></span><br><span class="line"><span class="comment">// 给 DownloadExists 传递一个参数，并使其返回 true</span></span><br><span class="line">mock.Setup(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>))</span><br><span class="line">      .Returns(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use the Object property on the mock to get a reference to the object</span></span><br><span class="line"><span class="comment">// implementing ILoveThisLibrary, and then exercise it by calling</span></span><br><span class="line"><span class="comment">// methods on it</span></span><br><span class="line">ILoveThisLibrary lovable = mock.Object;</span><br><span class="line"><span class="built_in">bool</span> download = lovable.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Verify that the given method was indeed called with the expected value at most once</span></span><br><span class="line">mock.Verify(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>), Times.AtMostOnce());</span><br></pre></td></tr></table></figure>
+<p>上面的方式可以简化成：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ILoveThisLibrary lovable = Mock.Of&lt;ILoveThisLibrary&gt;(l =&gt;</span><br><span class="line">    l.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>) == <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Exercise the instance returned by Mock.Of by calling methods on it...</span></span><br><span class="line"><span class="built_in">bool</span> download = lovable.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Simply assert the returned state:</span></span><br><span class="line">Assert.True(download);</span><br><span class="line">  </span><br><span class="line"><span class="comment">// If you really want to go beyond state testing and want to </span></span><br><span class="line"><span class="comment">// verify the mock interaction instead...</span></span><br><span class="line">Mock.Get(lovable).Verify(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>));</span><br></pre></td></tr></table></figure>
+<p>简而言之，Mock 数据的使用步骤可总结如下：</p>
+<ol type="1">
+<li>新建一个 Mock 实例 <code>mock</code></li>
+<li>通过 <code>mock</code> 设置方法的返回值</li>
+<li>通过 <code>mock.Object</code> 获取 Mock
+的对象来传递给目标方法使用</li>
+</ol>
+<h3 id="moq.automock-使用">Moq.AutoMock 使用</h3>
+<h4 id="基本使用方法">基本使用方法</h4>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mocker = <span class="keyword">new</span> AutoMocker();</span><br><span class="line"><span class="keyword">var</span> car = mocker.CreateInstance&lt;Car&gt;();</span><br><span class="line"></span><br><span class="line">car.DriveTrain.ShouldNotBeNull();</span><br><span class="line">car.DriveTrain.ShouldImplement&lt;IDriveTrain&gt;();</span><br><span class="line">Mock&lt;IDriveTrain&gt; mock = Mock.Get(car.DriveTrain);</span><br></pre></td></tr></table></figure>
+<h4 id="注入现有实例">注入现有实例</h4>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mocker = <span class="keyword">new</span> AutoMocker();</span><br><span class="line"></span><br><span class="line">mocker.Use&lt;IDriveTrain&gt;(<span class="keyword">new</span> DriveTrain());</span><br><span class="line"><span class="comment">// OR, setup a Mock</span></span><br><span class="line">mocker.Use&lt;IDriveTrain&gt;(x =&gt; x.Shaft.Length == <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = mocker.CreateInstance&lt;Car&gt;();</span><br></pre></td></tr></table></figure>
+<h2 id="结语">结语</h2>
+<h3 id="cicd-流程中应该包含单元测试">CI/CD 流程中应该包含单元测试</h3>
+<p>例如在编写 Repository
+层进行单元测试时，经常有同学会编写依赖于数据库数据的单元测试，这样并不利于随时随地的进行单元测试检查。</p>
+<p>如果将该流程放在 CI/CD
+中，在代码的发布过程中通过单元测试可以检查代码逻辑的正确性，同时依赖于数据库的单元测试将不会通过（通常情况下，生产环境和开发环境隔离），变相迫使开发小伙伴通过
+mock 方式模拟数据库返回结果。</p>
+<p>这个原则同样适用于不能依赖三方API编写单元测试。</p>
+<blockquote>
+<p>CI/CD 是一种通过在应用开发阶段引入<a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/automation/whats-it-automation">自动化</a>来频繁向客户交付应用的方法。CI/CD
+的核心概念是持续集成、<a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-continuous-delivery">持续交付</a>和持续部署。作为一个面向开发和运营团队的解决方案，CI/CD
+主要针对在集成新代码时所引发的问题（亦称："<a
+target="_blank" rel="noopener" href="https://www.solutionsiq.com/agile-glossary/integration-hell/">集成地狱</a>"）。</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-ci-cd">点击查看更多内容</a></p>
+</blockquote>
+<h3 id="单元测试覆盖率">单元测试覆盖率</h3>
+<p>通常很多开发 Leader
+都会要求开发团队编写单元测试，但是很少检查单元测试的质量，即单元测试最重要的指标——单元测试代码覆盖率，如果不注重覆盖率的提升，那么很有可能会导致开发成员为了单元测试而写单元测试，预期就会与实际情况相差甚远。</p>
+<p>保证单元测试代码覆盖率，将会大大降低代码变更带来的 Bug
+率，从而节省整体开发成本。</p>
+<h3 id="新人问题为何要写单元测试">新人问题：为何要写单元测试？</h3>
+<p>对于初次开始编写单元测试的开发人员，脑中经常会对此表示怀疑：我为什么要去验证一堆我自己写的正确的逻辑？</p>
+<p>实际这个问题包含了区分一个一般开发人员和优秀开发人员很重要的一个条件：他是否会反向思考当前逻辑的正确性。有了这种思维，看待问题才会从多个角度入手分析，对问题的本质掌握更加全面。</p>
+<p>不要怀疑，坚持写单元测试，因为这本身也是对反向思维的一种锻炼，以笔者的经验，只有当编写过一段时间之后，才会真正认识单元测试的魅力，并且开始非常习惯的在写一段逻辑之后，顺手写了对于它的单元测试。</p>
+<p>即使笔者也算很早就开始写单元测试了，但直到写这篇文章，仍然不断在加深对单元测试的认识。</p>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/RobotZero/p/6732728.html">C#常用单元测试框架比较：XUnit,
+NUnit, 和 Visual Studio(MSTest)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/core/testing/">Testing in
+.NET</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xboo/p/11811838.html">Asp.Net Core
+单元测试正确姿势</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/jara/p/7152843.html">C#单元测试：使用Moq框架Mock对象</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/NET-Core/" rel="tag"><i class="fa fa-tag"></i> .NET Core</a>
+              <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 单元测试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2022/28BGV5K.html" rel="prev" title=".NET Core中配置 JWT 授认证">
+      <i class="fa fa-chevron-left"></i> .NET Core中配置 JWT 授认证
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2022/2N5VCDY.html" rel="next" title="Minio-js的正确安装与使用">
+      Minio-js的正确安装与使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">框架选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">添加单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">编写测试案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%80%8E%E4%B9%88%E6%B5%8B%E8%AF%95"><span class="nav-number">3.1.</span> <span class="nav-text">依赖注入怎么测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mock-%E6%A1%86%E6%9E%B6%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.</span> <span class="nav-text">Mock 框架选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moq-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">Moq 基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moq.automock-%E4%BD%BF%E7%94%A8"><span class="nav-number">3.4.</span> <span class="nav-text">Moq.AutoMock 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.1.</span> <span class="nav-text">基本使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E5%85%A5%E7%8E%B0%E6%9C%89%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.4.2.</span> <span class="nav-text">注入现有实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cicd-%E6%B5%81%E7%A8%8B%E4%B8%AD%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.1.</span> <span class="nav-text">CI&#x2F;CD 流程中应该包含单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">4.2.</span> <span class="nav-text">单元测试覆盖率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E4%BA%BA%E9%97%AE%E9%A2%98%E4%B8%BA%E4%BD%95%E8%A6%81%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.3.</span> <span class="nav-text">新人问题：为何要写单元测试？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">633k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:35</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '63ece14861c297420892',
+      clientSecret: '731f0c050c35a3afee5aed41ca386decc768a3f0',
+      repo        : 'blog-comments',
+      owner       : 'galensgan',
+      admin       : ['galensgan'],
+      id          : '9f83aab88ae1f5423a0851b304d8613a',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

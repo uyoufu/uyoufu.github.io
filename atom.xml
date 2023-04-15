@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>星辰大海</title>
+  <icon>https://galens.uamazing.cn/icon.png</icon>
+  <subtitle>人生万事须自为，跬步江山即寥廓</subtitle>
+  <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
+  
+  <link href="https://galens.uamazing.cn/"/>
+  <updated>2023-04-14T16:00:00.000Z</updated>
+  <id>https://galens.uamazing.cn/</id>
+  
+  <author>
+    <name>明不知昔</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Powershell7 实用插件集</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1N5WRFM.html</id>
+    <published>2023-04-14T16:00:00.000Z</published>
+    <updated>2023-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文列举 Powershell7 中比较好用的插件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Powershell7" scheme="https://galens.uamazing.cn/tags/Powershell7/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>z.lua 安装</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1JSFERW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1JSFERW.html</id>
+    <published>2023-04-14T16:00:00.000Z</published>
+    <updated>2023-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;z.lua 是一个快速路径切换工具，它会跟踪你在 shell
+下访问过的路径，通过一套称为 Frecent 的机制（源自
+FireFox），经过一段简短的学习之后，z.lua
+会帮你跳转到所有匹配正则关键字的路径里 Frecent 值最高的那条路径去。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MS To Learn</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1H5NPNF.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1H5NPNF.html</id>
+    <published>2023-04-13T15:31:13.397Z</published>
+    <updated>2022-05-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Bentley-learn里面全都有。都是以前公开课的视频。VBA、C#和C++的三套&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Develop/Bentley/"/>
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Develop/Bentley/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/Bentley/Bentley/Develop/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Js 开发常用 npm 包合集</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
+    <published>2023-04-11T16:00:00.000Z</published>
+    <updated>2023-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
+npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    
+    <category term="Javasript" scheme="https://galens.uamazing.cn/tags/Javasript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows11 任务栏一直转圈的解决办法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2STY3BG.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2STY3BG.html</id>
+    <published>2023-04-11T16:00:00.000Z</published>
+    <updated>2023-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近一个朋友的 win11
+系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
+    
+    
+    <category term="Win11" scheme="https://galens.uamazing.cn/tags/Win11/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>廊道高程获取异常解决方法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/22EQ1WQ.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/22EQ1WQ.html</id>
+    <published>2023-04-02T16:00:00.000Z</published>
+    <updated>2023-04-02T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当模板导致生成的廊道高程获取异常时，可以使用如下方法解决。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Problems" scheme="https://galens.uamazing.cn/categories/Bentley/Problems/"/>
+    
+    
+    <category term="Problems" scheme="https://galens.uamazing.cn/tags/Problems/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode 中 Copilot 响应慢的解决办法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/13DV6YK.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/13DV6YK.html</id>
+    <published>2023-03-31T16:00:00.000Z</published>
+    <updated>2023-03-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当在 Visual Studio Code 中安装 Copilot
+插件后，发现其提示很慢，可能通过以下设置来减少响应延迟。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
+    
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NETCore设置跨域</title>
+    <link href="https://galens.uamazing.cn/posts/2023/NY7H5J.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/NY7H5J.html</id>
+    <published>2023-03-31T16:00:00.000Z</published>
+    <updated>2023-03-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure class=&quot;highlight c#&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; builder = WebApplication.CreateBuilder(args);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;builder.Services.AddCors(options =&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    options.AddDefaultPolicy(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        policy =&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            policy.WithOrigins(&lt;span class=&quot;string&quot;&gt;&amp;quot;http://example.com&amp;quot;&lt;/span&gt;,                           &lt;span class=&quot;string&quot;&gt;&amp;quot;http://www.contoso.com&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              .AllowAnyMethod()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            	.AllowAnyHeader();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;builder.Services.AddControllers();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = builder.Build();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseHttpsRedirection();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseStaticFiles();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseRouting();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 在静态文件后调用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseCors();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseAuthorization();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.MapControllers();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.Run();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/DotNetCore/"/>
+    
+    
+    <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给元素添加自定义数据的几种方式</title>
+    <link href="https://galens.uamazing.cn/posts/2023/283FNHQ.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/283FNHQ.html</id>
+    <published>2023-03-23T16:00:00.000Z</published>
+    <updated>2023-03-23T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考：&lt;a
+href=&quot;https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise&quot;&gt;Addin给元素添加自定义Linkage数据&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="数据存储" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows10 更新升级</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1D7C89K.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1D7C89K.html</id>
+    <published>2023-03-20T16:00:00.000Z</published>
+    <updated>2023-03-20T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当需要更新 win10 或者将 win7 更新到 win10 时，可以使用 microsoft
+提供的升级更新工具来进行操作。&lt;/p&gt;
+&lt;p&gt;&lt;a
+href=&quot;https://www.microsoft.com/zh-cn/software-download/windows10&quot;&gt;地址：下载
+Windows 10 (microsoft.com)&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/categories/Windows/"/>
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/Windows/System/"/>
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/Windows/System/System/"/>
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/categories/Windows/System/System/Windows/"/>
+    
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vite 配置别名</title>
+    <link href="https://galens.uamazing.cn/posts/2023/HR60E3.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/HR60E3.html</id>
+    <published>2023-03-16T16:00:00.000Z</published>
+    <updated>2023-03-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当以命令行方式运行 &lt;code&gt;vite&lt;/code&gt; 时，Vite 会自动解析 &lt;a
+href=&quot;https://cn.vitejs.dev/guide/#index-html-and-project-root&quot;&gt;项目根目录&lt;/a&gt;
+下名为 &lt;code&gt;vite.config.js&lt;/code&gt; 的文件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Vite" scheme="https://galens.uamazing.cn/categories/Vite/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vite/Javascript/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vite/Javascript/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vite/Javascript/Develop/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vite/Javascript/Develop/Develop/Javascript/"/>
+    
+    <category term="Vite" scheme="https://galens.uamazing.cn/categories/Vite/Javascript/Develop/Develop/Javascript/Vite/"/>
+    
+    
+    <category term="Vite" scheme="https://galens.uamazing.cn/tags/Vite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3 模板 vscode 代码片段</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3MXXBNW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3MXXBNW.html</id>
+    <published>2023-03-16T16:00:00.000Z</published>
+    <updated>2023-03-16T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Ctrl+Shift+p 搜
+&quot;代码片段(snipets)&quot;，新建一个应用于当前项目的代码版本，在文件中增加如下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Vue3-x/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/Vue/"/>
+    
+    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/Vue/Vue3-x/"/>
+    
+    
+    <category term="vue3" scheme="https://galens.uamazing.cn/tags/vue3/"/>
+    
+    <category term="snipets" scheme="https://galens.uamazing.cn/tags/snipets/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3 语法摘要</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3CG1P9K.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3CG1P9K.html</id>
+    <published>2023-03-16T16:00:00.000Z</published>
+    <updated>2023-03-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://obs.uamazing.cn:52443/public/files/images/directive.png&quot; alt=&quot;directive&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;本文将 Vue3 中的组合式语法精简为快速笔记，方便在使用中总览 Vue
+特性，灵活应用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该文不会介绍具体用法，建议先通读一遍 &lt;a
+href=&quot;https://cn.vuejs.org/guide/essentials/template-syntax.html#attribute-bindings&quot;&gt;官方帮助文档&lt;/a&gt;，记得风格偏好中选择自己喜欢的网络&lt;/p&gt;
+&lt;p&gt;如果某些概念读不懂，可以先去看官方文档&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Vue3-x/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/Vue/"/>
+    
+    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Vue3-x/Vue/Javascript/Develop/Develop/Javascript/Vue/Vue3-x/"/>
+    
+    
+    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NET Standard 项目单元测试时测试不运行</title>
+    <link href="https://galens.uamazing.cn/posts/2023/GDQD0X.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/GDQD0X.html</id>
+    <published>2023-03-11T16:00:00.000Z</published>
+    <updated>2023-03-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用 .NET Standard 2.1
+编写了一个类库，运行单元测试后，在测试资源管理器中，所有的单元测试方法都显示未运行。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img
+src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230312143919494.png&quot;
+alt=&quot;image-20230312143919494&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230312143919494&lt;/figcaption&gt;
+&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNET/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNET/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNET/Develop/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNET/Develop/Develop/DotNET/"/>
+    
+    
+    <category term=".NET" scheme="https://galens.uamazing.cn/tags/NET/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ORD安装提示Failed copy payload xx的解决办法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/304FHXE.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/304FHXE.html</id>
+    <published>2023-03-06T16:00:00.000Z</published>
+    <updated>2023-04-13T15:31:13.397Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230307212335456.png&quot; alt=&quot;image-20230307212335456&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Problems" scheme="https://galens.uamazing.cn/categories/Problems/"/>
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Problems/Bentley/"/>
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Problems/Bentley/Bentley/"/>
+    
+    <category term="Problems" scheme="https://galens.uamazing.cn/categories/Problems/Bentley/Bentley/Problems/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+    <category term="Bentley问题处理" scheme="https://galens.uamazing.cn/tags/Bentley%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NETCore 中配置 Swagger</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1EDD6ES.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1EDD6ES.html</id>
+    <published>2023-03-06T16:00:00.000Z</published>
+    <updated>2023-03-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger/_static/v6-swagger-info.png?view=aspnetcore-7.0&quot; alt=&quot;swagger&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;官方文档写得非常详细，本文只列出一些常用配置，方便拷贝进行快速配置使用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/"/>
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/DotNetCore/"/>
+    
+    
+    <category term=".NETCore" scheme="https://galens.uamazing.cn/tags/NETCore/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NETCore 批量注册 Service 到 IOC</title>
+    <link href="https://galens.uamazing.cn/posts/2023/23HY8MD.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/23HY8MD.html</id>
+    <published>2023-03-06T16:00:00.000Z</published>
+    <updated>2023-03-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Service 主要面向数据库，为数据库提供一个统一的 CURD
+接口。在日常的使用中，通常把 Service 层注册为 &lt;code&gt;Scoped&lt;/code&gt;
+类型，随着上下文变动。&lt;/p&gt;
+&lt;p&gt;在实际开发中，会有非常多的 Service，可以使用如下方法将这些 Service
+进行批量注册：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/"/>
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/DotNetCore/"/>
+    
+    
+    <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NET Core 中使用配置文件</title>
+    <link href="https://galens.uamazing.cn/posts/2023/D4VJ6Q.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/D4VJ6Q.html</id>
+    <published>2023-03-02T16:00:00.000Z</published>
+    <updated>2023-03-05T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ASP.NET Core
+中的应用程序可以使用一个或多个配置。本文主要介绍常用的配置类型，方便在项目中快速应用。将会介绍：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;p&gt;环境设置文件，&lt;code&gt;appsettings.&amp;#123;Environment&amp;#125;.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;例如，&lt;code&gt;appsettings.Production.json&lt;/code&gt; 和
+&lt;code&gt;appsettings.Development.json&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置文件，例如 &lt;code&gt;appsettings.json&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/"/>
+    
+    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/DotNetCore/DotNET/Develop/Develop/DotNET/DotNetCore/"/>
+    
+    
+    <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浮沉喧嚣不惊觉，一朝醒来入凡心</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1N11HYC.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1N11HYC.html</id>
+    <published>2023-03-01T16:00:00.000Z</published>
+    <updated>2023-03-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;很长一段时间没有提笔了，今日突然心有所感，借此机会便将脑中那飘渺的灵感记录下来，摘一段时光，以供未来思忆。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="2023年" scheme="https://galens.uamazing.cn/categories/2023%E5%B9%B4/"/>
+    
+    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/2023%E5%B9%B4/Inspiration/"/>
+    
+    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/2023%E5%B9%B4/Inspiration/Inspiration/"/>
+    
+    <category term="2023年" scheme="https://galens.uamazing.cn/categories/2023%E5%B9%B4/Inspiration/Inspiration/2023%E5%B9%B4/"/>
+    
+    
+    <category term="散文" scheme="https://galens.uamazing.cn/tags/%E6%95%A3%E6%96%87/"/>
+    
+    <category term="心有所感" scheme="https://galens.uamazing.cn/tags/%E5%BF%83%E6%9C%89%E6%89%80%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 获取当前程序运行路径的方法集合</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2JYPDKM.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2JYPDKM.html</id>
+    <published>2023-02-25T16:00:00.000Z</published>
+    <updated>2022-02-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍了如何在 C#
+中获取当前程序的运行路径，同时对比这些方法的差别。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="实用代码" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/DotNET/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/DotNET/Develop/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/DotNET/Develop/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/DotNET/Develop/Develop/DotNET/"/>
+    
+    <category term="实用代码" scheme="https://galens.uamazing.cn/categories/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/DotNET/Develop/Develop/DotNET/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
+    
+    
+    <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
+    
+  </entry>
+  
+</feed>

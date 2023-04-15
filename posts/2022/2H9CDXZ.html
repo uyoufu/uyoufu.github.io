@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="当我们全局引用UI框架（类似于 Quasar Framework）的时候，为了使得整个项目风格统一，需要对某些组件进行二次封装，使得可以集中管理组件风格，使得代码易于维护。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue 中完美地二次封装 UI 组件">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2022/2H9CDXZ.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="当我们全局引用UI框架（类似于 Quasar Framework）的时候，为了使得整个项目风格统一，需要对某些组件进行二次封装，使得可以集中管理组件风格，使得代码易于维护。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-05T16:00:00.000Z">
+<meta property="article:author" content="明不知昔">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2022/2H9CDXZ.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>vue 中完美地二次封装 UI 组件 | 星辰大海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">星辰大海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/2H9CDXZ.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue 中完美地二次封装 UI 组件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-06 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-06T00:00:00+08:00">2022-04-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/" itemprop="url" rel="index"><span itemprop="name">Vue2.x</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/Develop/Develop/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/Develop/Develop/Javascript/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-x/Vue/Javascript/Develop/Develop/Javascript/Vue/Vue2-x/" itemprop="url" rel="index"><span itemprop="name">Vue2.x</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>当我们全局引用UI框架（类似于 <a
+target="_blank" rel="noopener" href="http://www.quasarchs.com/">Quasar
+Framework</a>）的时候，为了使得整个项目风格统一，需要对某些组件进行二次封装，使得可以集中管理组件风格，使得代码易于维护。</p>
+<span id="more"></span>
+<h2 id="封装需求">封装需求</h2>
+<ul>
+<li><p>属性传递</p>
+<p>二次封装后的组件与被封装组件和具有同样的参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;xxx-xxx v-bind=&quot;$attrs&quot;&gt;</span><br><span class="line">&lt;/xxx-xxx&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>事件传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;xxx-xxx v-on=&quot;$listeners&quot;&gt;</span><br><span class="line">&lt;/xxx-xxx&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>插槽传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;xxx-xxx&gt;</span><br><span class="line">	&lt;template v-for=&quot;name in $scopedSlots&quot; :slot=&quot;name&quot;&gt;</span><br><span class="line">		&lt;slot :name=&quot;name&quot; /&gt;</span><br><span class="line">	&lt;/template&gt;</span><br><span class="line">&lt;/xxx-xxx&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="vue-相关知识点">vue 相关知识点</h2>
+<h3 id="vm.attrs"><a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-attrs">vm.$attrs</a></h3>
+<p>官方解释：</p>
+<blockquote>
+<p>包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定
+(<code>class</code> 和 <code>style</code> 除外)。当一个组件没有声明任何
+prop 时，这里会包含所有父作用域的绑定 (<code>class</code> 和
+<code>style</code> 除外)，并且可以通过 <code>v-bind="$attrs"</code>
+传入内部组件——在创建高级别的组件时非常有用。</p>
+</blockquote>
+<p>通俗的理解就是，子组件可以通过 <code>$attrs</code>
+可以访问父组件传过来的所有属性，但需要注意的是如果父组件所传的属性中有在子组件
+<code>props</code> 中有过声明，那么该属性不会出现在 <code>$attrs</code>
+对象中。</p>
+<h3 id="vm.listeners"><a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-listeners">vm.$listeners</a></h3>
+<p>官方解释：</p>
+<blockquote>
+<p>包含了父作用域中的 (不含 <code>.native</code> 修饰器的)
+<code>v-on</code> 事件监听器。它可以通过 <code>v-on="$listeners"</code>
+传入内部组件——在创建更高层次的组件时非常有用。</p>
+</blockquote>
+<h3 id="vm.props"><a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-props">vm.$props</a></h3>
+<p>官方解释：</p>
+<blockquote>
+<p>当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property
+的访问。</p>
+</blockquote>
+<h3 id="inheritattrs"><a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/index.html#inheritAttrs">inheritAttrs</a></h3>
+<p>官方的解释让人看着头大，通俗来讲，其实默认情况就是把
+<code>$attrs</code> 对象上没在子组件 <code>props</code>
+中声明的属性加在子组件的根 <code>html</code> 标签上。</p>
+<h3 id="vm.scopedslots"><a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-scopedSlots">vm.$scopedSlots</a></h3>
+<p>官方解释：</p>
+<blockquote>
+<p>用来访问<a
+target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-slots.html#作用域插槽">作用域插槽</a>。对于包括
+<code>默认 slot</code> 在内的每一个插槽，该对象都包含一个返回相应 VNode
+的函数。</p>
+</blockquote>
+<p>通俗讲，就是通过该属性，可以访问所有的插槽。</p>
+<h2 id="封装示例">封装示例</h2>
+<p>为了能够实现上述两个需求，我们使用
+<code>$attrs</code>、<code>$props</code>和<code>$listeners</code>
+这三个属性来实现。下文将通过封装 <code>quasar</code> 组件中的
+<code>QTable</code> 来举例说明</p>
+<h3 id="原始组件">原始组件</h3>
+<p>从 <a
+target="_blank" rel="noopener" href="http://www.quasarchs.com/vue-components/table#qtable-api">QTable
+API</a> 中我们可以知道，其有63个属性，19 个插槽，9
+个事件，在封装的时候，我们需要通过预设一些属性，使得表格符合我们的使用，但是又得保证其灵活性。</p>
+<figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/image-20220406214311656.png"
+alt="image-20220406214311656" />
+<figcaption aria-hidden="true">image-20220406214311656</figcaption>
+</figure>
+<h3 id="二次封装">二次封装</h3>
+<p>具体解释见里面的备注</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;q-table v-bind=&quot;$attrs&quot; :dense=&quot;dense&quot; v-on=&quot;$listeners&quot;&gt;</span><br><span class="line">    &lt;!--示例: 在封装组件中增加插槽，通过后备内容进行自定义，方便父组件覆盖当前插槽--&gt;</span><br><span class="line">    &lt;template v-slot:top=&quot;props&quot;&gt;</span><br><span class="line">      &lt;slot name=&quot;top&quot; v-bind=&quot;props&quot;&gt;</span><br><span class="line">        &lt;q-space /&gt;</span><br><span class="line">        &lt;q-input</span><br><span class="line">          v-model=&quot;filter&quot;</span><br><span class="line">          dense</span><br><span class="line">          debounce=&quot;300&quot;</span><br><span class="line">          placeholder=&quot;搜索&quot;</span><br><span class="line">          color=&quot;primary&quot;</span><br><span class="line">        &gt;</span><br><span class="line">          &lt;template v-slot:append&gt;</span><br><span class="line">            &lt;q-icon name=&quot;search&quot; /&gt;</span><br><span class="line">          &lt;/template&gt;</span><br><span class="line">        &lt;/q-input&gt;</span><br><span class="line">      &lt;/slot&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--根据父类插槽定义，传递插槽到被封装组件--&gt;</span><br><span class="line">    &lt;template v-for=&quot;slotName in scopedSlotsName&quot; v-slot:[slotName]=&quot;props&quot;&gt;</span><br><span class="line">      &lt;!-- v-bind 是向插槽中传递参数，使得父类的插槽可以使用--&gt;</span><br><span class="line">      &lt;slot :name=&quot;slotName&quot; v-bind=&quot;props&quot; /&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">  &lt;/q-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  // 默认为 true,为 true 时会把 `$attrs` 对象上没在子组件 `props` 中声明的属性加在子组件的根 `html` 标签上。</span><br><span class="line">  inheritAttrs: false,</span><br><span class="line"></span><br><span class="line">  props: &#123;</span><br><span class="line">    // 设置组件的默认值</span><br><span class="line">    dense: &#123;</span><br><span class="line">      type: Boolean,</span><br><span class="line">      default() &#123;</span><br><span class="line">        return true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      filter: &#x27;filter2&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  computed: &#123;</span><br><span class="line">    attrs() &#123;</span><br><span class="line">      // 因为 $attrs 不包含 $props 中的值，在此处对属性进行合并，然后供被封装组件使用</span><br><span class="line">      // 由于 Object.assign 是浅复制，所以不会影响字段的 getter 和 setter</span><br><span class="line">      return Object.assign(&#123;&#125;, this.$attrs, this.$props)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    // 作用域内的插槽名称</span><br><span class="line">    scopedSlotsName() &#123;</span><br><span class="line">      let keys = Object.keys(this.$scopedSlots)</span><br><span class="line">      // 过滤掉以$开头的字段,$ 开头的是 vue 框架的值</span><br><span class="line">      keys = keys.filter(key =&gt; !key.startsWith(&#x27;$&#x27;))</span><br><span class="line">      // 过滤掉已经添加插槽名称</span><br><span class="line">      const existSlotNames = [&#x27;top&#x27;]</span><br><span class="line">      keys = keys.filter(key =&gt; !existSlotNames.includes(key))</span><br><span class="line"></span><br><span class="line">      return keys</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="组件使用">组件使用</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;wrapped-table :data=&quot;data&quot; :columns=&quot;columns&quot; :dense=&quot;dense&quot;&gt;</span><br><span class="line">    &lt;template v-slot:body-cell-index=&quot;props&quot;&gt;</span><br><span class="line">      &lt;q-td&gt;&#123;&#123; props.value &#125;&#125;_1&lt;/q-td&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">  &lt;/wrapped-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import WrappedTable from &#x27;./index.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123; WrappedTable &#125;,</span><br><span class="line"></span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      columns: [</span><br><span class="line">        &#123;</span><br><span class="line">          name: &#x27;index&#x27;,</span><br><span class="line">          label: &#x27;序号&#x27;,</span><br><span class="line">          align: &#x27;left&#x27;,</span><br><span class="line">          field: &#x27;name&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: &#x27;name&#x27;,</span><br><span class="line">          align: &#x27;center&#x27;,</span><br><span class="line">          label: &#x27;名称&#x27;,</span><br><span class="line">          field: &#x27;name&#x27;,</span><br><span class="line">          sortable: true</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      data: [</span><br><span class="line">        &#123;</span><br><span class="line">          index: 1,</span><br><span class="line">          name: &#x27;Frozen Yogurt&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          index: 1,</span><br><span class="line">          name: &#x27;Ice cream sandwich&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line"></span><br><span class="line">      dense: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.codetd.com/article/13736693">解决Vue2.x中二次封装Vue组件时批量继承属性，方法，插槽的方法</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/zh_rey/article/details/106735049">Vue二次封装组件，并传递props和v-on事件</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038483387">基于UI库二次组件封装
+- SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021945187">浅谈 Vue2.4.0
+$attrs 与 inheritAttrs - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-slots.html">插槽 —
+Vue.js (vuejs.org)</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2022/1M5FEQF.html" rel="prev" title="Windows 中部署 Minio 独立对象存储服务">
+      <i class="fa fa-chevron-left"></i> Windows 中部署 Minio 独立对象存储服务
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2022/N9NB2K.html" rel="next" title="mongodb 中 project 时取数组的最后一个值">
+      mongodb 中 project 时取数组的最后一个值 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">封装需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">vue 相关知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vm.attrs"><span class="nav-number">2.1.</span> <span class="nav-text">vm.$attrs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vm.listeners"><span class="nav-number">2.2.</span> <span class="nav-text">vm.$listeners</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vm.props"><span class="nav-number">2.3.</span> <span class="nav-text">vm.$props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inheritattrs"><span class="nav-number">2.4.</span> <span class="nav-text">inheritAttrs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vm.scopedslots"><span class="nav-number">2.5.</span> <span class="nav-text">vm.$scopedSlots</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">封装示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%A7%8B%E7%BB%84%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">原始组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">二次封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">组件使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">633k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:35</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '63ece14861c297420892',
+      clientSecret: '731f0c050c35a3afee5aed41ca386decc768a3f0',
+      repo        : 'blog-comments',
+      owner       : 'galensgan',
+      admin       : ['galensgan'],
+      id          : '751437bf80575e939e744f052b875e6d',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

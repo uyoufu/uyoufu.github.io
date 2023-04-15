@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在利用 MS 二开的时候，图形变换经常用到，下面对图形变换相关知识进行简要总结。如果想更加深入地学习，可以阅读《计算机图形学》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图形变换">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2020/XDTNKH.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="在利用 MS 二开的时候，图形变换经常用到，下面对图形变换相关知识进行简要总结。如果想更加深入地学习，可以阅读《计算机图形学》">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/26/z47YA2dxCfiRlP9.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/26/ZqK6PpCMavHec2O.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/26/42dPCMbHVWrDuFJ.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/26/UWNbX63puslceHS.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/26/hwWdEaf6GM2BJgk.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/dO8EVqTNMxlDkWh.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/27/emy2cdqOwGDhH8A.png">
+<meta property="article:published_time" content="2020-07-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
+<meta property="article:author" content="明不知昔">
+<meta property="article:tag" content="Bentley 二次开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/26/z47YA2dxCfiRlP9.png">
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2020/XDTNKH.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>图形变换 | 星辰大海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">星辰大海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/XDTNKH.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图形变换
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-03T00:00:00+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-13 23:31:13" itemprop="dateModified" datetime="2023-04-13T23:31:13+08:00">2023-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/Develop/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/Develop/Bentley/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/Develop/Bentley/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/Develop/Bentley/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在利用 MS
+二开的时候，图形变换经常用到，下面对图形变换相关知识进行简要总结。如果想更加深入地学习，可以阅读《计算机图形学》</p>
+<span id="more"></span>
+<h2 id="二维几何变换">二维几何变换</h2>
+<h3 id="基本变换">基本变换</h3>
+<h4 id="平移">平移</h4>
+<p><img src="https://i.loli.net/2021/09/26/z47YA2dxCfiRlP9.png" /></p>
+<p>将 P 移到 P' 点，代数表达为： <span class="math display">\[
+\begin{align}
+x&#39;=x+t_x \\\\
+y&#39;=y+t_y
+\end{align}
+\]</span> 转化成矩阵表达为： <span class="math display">\[
+\displaylines{
+P&#39;= P+T \\
+P&#39;= \begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+  \end{bmatrix},
+P= \begin{bmatrix}
+   x \\
+   y \\
+  \end{bmatrix},
+T= \begin{bmatrix}
+   t_x \\
+   t_y \\
+  \end{bmatrix}
+}
+\]</span></p>
+<h4 id="旋转">旋转</h4>
+<p><img src="https://i.loli.net/2021/09/26/ZqK6PpCMavHec2O.png" /></p>
+<p>将 (x,y) 绕 (0,0) 旋转 θ 角，代数表达为： <span
+class="math display">\[
+\begin{aligned}
+x&#39;=xcos\theta-ysin\theta \\
+y&#39; =xsin\theta+ycos\theta
+\end{aligned}
+\]</span></p>
+<blockquote>
+<p>通过极坐标来推导</p>
+</blockquote>
+<p>转化为矩阵表达为： <span class="math display">\[
+\begin{align}
+P&#39;=R \cdot P \\
+R= \begin{bmatrix}
+   cos\theta &amp; -sin\theta \\
+   sin\theta &amp; cos\theta \\
+  \end{bmatrix}
+\end{align}
+\]</span></p>
+<blockquote>
+<p>对于绕任意点的旋转，可以将任意点先平移到原点，旋转之后，再反向平移，其矩阵表达式见齐次坐标章节。</p>
+</blockquote>
+<h4 id="缩放">缩放</h4>
+<p>绽放的代数表达为： <span class="math display">\[
+\begin{align}
+x&#39;=S_x\cdot x \\
+y&#39;=S_y\cdot y
+\end{align}
+\]</span> 转化为矩阵表达为： <span class="math display">\[
+\begin{align}
+P&#39;=S \cdot P \\
+S= \begin{bmatrix}
+   S_x \\
+   S_y \\
+  \end{bmatrix}
+\end{align}
+\]</span></p>
+<h3 id="齐次坐标">齐次坐标</h3>
+<p>从上面的基本变换中，我们可以看出，每个基本变换都可以表示为普通矩阵形式：
+<span class="math display">\[
+P&#39; = M_1 \cdot P + M_2
+\]</span></p>
+<ul>
+<li><p>对于平移</p>
+<p><span class="math inline">\(M_1\)</span> 为单位矩阵，<span
+class="math inline">\(M_2\)</span> 为平移的参数</p></li>
+<li><p>对于旋转和缩放</p>
+<p><span class="math inline">\(M_1\)</span>
+为以原点为基准的旋转缩放矩阵，<span class="math inline">\(M_2\)</span>
+为实际基准点的平移参数</p></li>
+</ul>
+<p>所以，为了利用这个公式产生先缩放，再旋转，后平移这样的变换顺序，必须一步一步地计算变换的坐标，不仅不方便使用，且效率低下。为了解决这个问题，将
+2x2 的矩阵扩充为 3x3 矩阵，从而将所有的变化组合成单一矩阵来表示。</p>
+<h4 id="齐次坐标-1"><a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-sg/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87">齐次坐标</a></h4>
+<p>将二维坐标表示 (x,y) 扩充到三维表示 (<span
+class="math inline">\(x_w,y_w,w\)</span>) ,称为<strong>齐次坐标</strong>
+(homogeneous coordinate) ，<strong>齐次坐标</strong> (homogeneous
+coordinates) 或<strong>投影坐标</strong> (projective coordinates)
+是指一个用于<a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/投影幾何">投影几何</a>里的坐标系统，如同用于<a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/欧氏几何">欧氏几何</a>里的<a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/笛卡儿坐标">笛卡儿坐标</a>一般。</p>
+<h4 id="齐次坐标的引入">齐次坐标的引入</h4>
+<p>在<strong>欧式空间</strong>里，两条公面的平行线无法相交，但是在<strong>投影空间</strong>(Projective
+Space)里不是这样。一个直观的表示如下：两条轨道的间距随着视线变远而逐渐变小，直到在无限远处相交。</p>
+<figure>
+<img
+src="https://xhy3054.github.io/assets/img/homogeneous_coordinates/railway.jpg"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>在欧式空间里采用<span class="math inline">\((x, y,
+z)\)</span>表示一个三维点，但是<strong>无穷远点</strong><span
+class="math inline">\((\infty, \infty,
+\infty)\)</span>在欧式空间里是没有意义的，<strong>在投影空间中进行图形和几何运算</strong>并不是一个简单的问题，为了解决这个问题，数学家　August
+Ferdinand Möbius　提出了齐次坐标系，使用 N+1 个量来表示　N
+维坐标。例如在二维齐次坐标系中，我们引入一个量w，将一个二维点<span
+class="math inline">\((x, y)\)</span>重新表示为<span
+class="math inline">\((X, Y, w)\)</span>的形式，其中转换关系为： <span
+class="math display">\[
+\begin{align}
+x = \frac{X}{w} \\
+y = \frac{Y}{w}
+\end{align}
+\]</span></p>
+<p>例如，欧式坐标中的一个二维点<span class="math inline">\((1,
+2)\)</span>可以在齐次坐标中表示为<span class="math inline">\((1, 2,
+1)\)</span>，如果点逐渐移动向无穷远处，其欧式坐标变为<span
+class="math inline">\((\infty, \infty,
+\infty)\)</span>，齐次坐标变为<span class="math inline">\((1, 2,
+0)\)</span>。其中齐次坐标在表示无穷远处的点时不需要用到<span
+class="math inline">\(\infty\)</span>。</p>
+<blockquote>
+<p>其中齐次坐标<span class="math inline">\((1, 2,
+1)\)</span>等价于齐次坐标<span class="math inline">\((2, 4,
+2)\)</span>…即<span class="math inline">\((k, 2k, k)，k \in
+R\)</span>，此处这些点具有<strong>尺度不变性</strong>，是齐性的（结构相似的），所以称为<strong>齐次坐标</strong></p>
+</blockquote>
+<h4 id="平行线相交的不太严格的证明">平行线相交的不太严格的证明</h4>
+<p>欧式空间中假设有如下两条平行线: <span class="math display">\[
+\begin{align}
+Ax + By + C = 0 \\
+Ax + By + D = 0
+\end{align}
+\]</span> 上面两条先在欧式空间中除非 <span class="math inline">\(C =
+D\)</span>，否则不相交。使用 <span class="math inline">\(\frac{x}{w},
+\frac{y}{w}\)</span> 替换 <span class="math inline">\(x, y\)</span>
+(正如前文提到的使用<span class="math inline">\(N+1\)</span>个量表示 N
+维坐标，这里增加了一个量 w)，可以得到： <span class="math display">\[
+\begin{align}
+Ax + By + Cw = 0 \\
+Ax + By + Dw = 0
+\end{align}
+\]</span> 上式可以得到解<span class="math inline">\((x, y,
+0)\)</span>，即两条平行线的齐次坐标表示在<span class="math inline">\((x,
+y, 0)\)</span>也就是无穷点处相遇</p>
+<blockquote>
+<p>当然这只是一个不严格不严谨的表示，齐次坐标真正的作用在于下文。</p>
+</blockquote>
+<h4 id="齐次坐标可以区分点与向量">齐次坐标可以区分点与向量</h4>
+<p>以二维空间为例，<span class="math inline">\((a, b)\)</span>
+这样的表示既可以是一个坐标表示，也可以是一个向量表示。假设这个坐标系
+<span class="math inline">\(xOy\)</span> 中两个基向量为 <span
+class="math inline">\(\vec{x}, \vec{y}\)</span>，坐标原点为
+o，则其中</p>
+<ul>
+<li>表示向量 <span class="math inline">\(\vec{v}\)</span> 时，代表 <span
+class="math inline">\(\vec{v} = a\vec{x} + b\vec{y}\)</span></li>
+<li>表示一个点 p 时，代表 $ p - o = a + b $</li>
+</ul>
+<p>如果没有附加说明，我们不能区别 <span class="math inline">\((a,
+b)\)</span>
+表示的是向量还是点。用三个量来表示的话，我们可以明确的区分向量和点</p>
+<ul>
+<li><p>齐次点 <span class="math inline">\((a, b, 1)\)</span></p>
+<p>取 <span class="math inline">\(w=1\)</span>
+是为了方便与欧拉坐标进行对应</p></li>
+<li><p>齐次向量 <span class="math inline">\((a, b, 0)\)</span></p>
+<p>欧拉坐标系中，向量是一个射向无穷远的射线，所以用 <span
+class="math inline">\(w=0\)</span> 来表示。</p></li>
+</ul>
+<h3 id="基于齐次坐标的矩阵表示">基于齐次坐标的矩阵表示</h3>
+<p>通过基本变换，可以很容易得到下列矩阵：</p>
+<h4 id="平移-1">平移</h4>
+<p>矩阵表达： <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  1 &amp; 0 &amp; t_x \\
+  0 &amp; 1 &amp; t_y \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span> 简写为： <span class="math display">\[
+P&#39;=T_{(t_x,t_y)} \cdot P
+\]</span></p>
+<p>逆平移变换为： <span class="math display">\[
+T_{(t_x,t_y)}^{-1} = \begin{bmatrix}
+  1 &amp; 0 &amp; -t_x \\
+  0 &amp; 1 &amp; -t_y \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="旋转-1">旋转</h4>
+<p>矩阵表达： <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  cos \theta &amp; -sin \theta &amp; 0 \\
+  sin \theta &amp; cos \theta  &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<p>简写为： <span class="math display">\[
+P&#39;=R_{(\theta)} \cdot P
+\]</span></p>
+<p>逆旋转变换为： <span class="math display">\[
+R_{(\theta)}^{-1} = \begin{bmatrix}
+  cos (-\theta) &amp; -sin (-\theta) &amp; 0 \\
+  sin (-\theta) &amp; cos (-\theta)  &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} = \begin{bmatrix}
+   cos \theta &amp; sin \theta &amp; 0 \\
+  -sin \theta &amp; cos \theta &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="缩放-1">缩放</h4>
+<p>矩阵表达： <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  S_x &amp; 0 &amp; 0 \\
+  0 &amp; S_y &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span> 简写为： <span class="math display">\[
+P&#39;=S_{(S_x,S_y)} \cdot P
+\]</span> 逆绽放矩阵为： <span class="math display">\[
+S_{(S_X,X_Y)}^{-1} = \begin{bmatrix}
+  \frac{1}{S_x} &amp; 0 &amp; 0 \\
+  0 &amp; \frac{1}{S_y} &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="反射镜像">反射（镜像）</h4>
+<p><img src="https://i.loli.net/2021/09/26/42dPCMbHVWrDuFJ.png" /></p>
+<h5 id="关于-x-轴镜像">关于 x 轴镜像</h5>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; -1 &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<h5 id="关于-y-轴镜像">关于 y 轴镜像</h5>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  -1 &amp; 0 &amp; 0 \\
+   0 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<h5 id="绕任意轴镜像">绕任意轴镜像</h5>
+<p>可以先将任意轴旋转到 x 或 y 轴上，然后再应用上述镜像矩阵。</p>
+<h4 id="错切">错切</h4>
+<p><img src="https://i.loli.net/2021/09/26/UWNbX63puslceHS.png" /></p>
+<h5 id="相对于-x-轴的-x-方向错切">相对于 x 轴的 x 方向错切</h5>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  1 &amp; sh_x &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<p>该矩阵将坐标转换成： <span class="math display">\[
+x&#39;=x+sh_x \cdot y \\
+y&#39;=y
+\]</span></p>
+<h5 id="相对于-y-轴的-y-方向错切">相对于 y 轴的 y 方向错切</h5>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  sh_y &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<p>该矩阵将坐标转换成： <span class="math display">\[
+\begin{align}
+x&#39;=x \\
+y&#39;=y+sh_y \cdot y
+\end{align}
+\]</span></p>
+<h3 id="逆变换">逆变换</h3>
+<p>将经过矩阵变换的点再逆反到原来的位置，需要对点进行逆变换。逆变换其实就是对原矩阵求逆。
+<span class="math display">\[
+\begin{align}
+P&#39; &amp;= M \cdot P \\
+M^{-1} \cdot P&#39; &amp;= M ^{-1} \cdot M \cdot P \\
+所以: P &amp;= M^{-1} \cdot P&#39;
+\end{align}
+\]</span> <strong>怎么求逆矩阵呢？</strong></p>
+<p>一般通过初等变换法求取矩阵的逆，详见《代数》。</p>
+<h3 id="二维复合变换">二维复合变换</h3>
+<p>利用矩阵表达式，可以将各个矩阵变换相乘，把任意的变换序列组合成一个复合的变换矩阵，提高计算效率。通过复合矩阵，可以实现图形的任意变化。</p>
+<blockquote>
+<p>复合变换矩阵是<strong>从右向左</strong>变换的。</p>
+</blockquote>
+<h4 id="复合二维平移">复合二维平移</h4>
+<p><span class="math display">\[
+\begin{bmatrix}
+  1 &amp; 0 &amp; t_{x2} \\
+  0 &amp; 1 &amp; t_{y2} \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\cdot   
+\begin{bmatrix}
+  1 &amp; 0 &amp; t_{x1} \\
+  0 &amp; 1 &amp; t_{y1} \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} =
+\cdot
+\begin{bmatrix}
+  1 &amp; 0 &amp; t_{x1}+t_{x2} \\
+  0 &amp; 1 &amp; t_{y1}+t_{y2} \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="复合二维旋转">复合二维旋转</h4>
+<p><span class="math display">\[
+R_{(\theta 2)} \cdot R_{(\theta 1)} = R_{(\theta1+\theta2)}
+\]</span></p>
+<h4 id="复合二维缩放">复合二维缩放</h4>
+<p><span class="math display">\[
+\begin{bmatrix}
+  S_{x2} &amp; 0 &amp; 0 \\
+  0 &amp; S_{y2} &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+  S_{x1} &amp; 0 &amp; 0 \\
+  0 &amp; S_{y1} &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix} =
+\begin{bmatrix}
+  S_{x1} \cdot S_{x2} &amp; 0 &amp; 0 \\
+  0 &amp; S_{y1} \cdot S_{y2} &amp; 0 \\
+  0 &amp; 0   &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="通用二维基准点旋转">通用二维基准点旋转</h4>
+<p>假设需要绕 <span class="math inline">\((x_r,y_r)\)</span>
+进行旋转，可以采用如下步骤实现：</p>
+<ol type="1">
+<li>平移对象使基准点位置移动到坐标原点</li>
+<li>将对象绕坐标原点进行旋转</li>
+<li>将对象平移回原位置</li>
+</ol>
+<p><span class="math display">\[
+\begin{bmatrix}
+  1 &amp; 0 &amp; x_r \\
+  0 &amp; 1 &amp; y_r \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+  cos \theta &amp; -sin \theta &amp; 0 \\
+  sin \theta &amp; cos \theta  &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+  1 &amp; 0 &amp; -x_r \\
+  0 &amp; 1 &amp; -y_r \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="通用二维基准点缩放">通用二维基准点缩放</h4>
+<p>假设需要绕 <span class="math inline">\((x_s,y_s)\)</span>
+进行缩放，可以采用如下步骤实现：</p>
+<ol type="1">
+<li>平移对象使旋转点与坐标原点重合</li>
+<li>将对象基于坐标原点进行缩放</li>
+<li>将对象平移回原位置</li>
+</ol>
+<p><span class="math display">\[
+\begin{bmatrix}
+  1 &amp; 0 &amp; x_s \\
+  0 &amp; 1 &amp; y_s \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+  S_x &amp; 0 &amp; 0 \\
+0 &amp; S_y  &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+  1 &amp; 0 &amp; -x_s \\
+  0 &amp; 1 &amp; -y_s \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="通用二维定向缩放">通用二维定向缩放</h4>
+<ol type="1">
+<li>先将定向缩放方向旋转至与 x 或 y 轴重合</li>
+<li>利用参数 <span class="math inline">\(S_x\)</span> 或 <span
+class="math inline">\(S_y\)</span> 进行缩放</li>
+<li>最后将对象旋转回原位置</li>
+</ol>
+<h3 id="矩阵的理解">矩阵的理解</h3>
+<strong>齐次矩阵各个分量的含义：</strong> $$
+<span class="math display">\[\begin{bmatrix}
+  a_{11}(x方向的缩放) &amp; a_{12}(x相对于y的变化量) &amp;
+a_{13}(x的平移值) \\
+  a_{21}(y相对于x的变化量) &amp; a_{22}(y方向的缩放) &amp;
+a_{23}(y的平移值) \\
+  0 &amp; 0 &amp; 1 \\
+  \end{bmatrix}\]</span>
+<p><span class="math display">\[\begin{align}
+&amp;--x 影响因子 \\
+&amp;--y影响因子 \\
+&amp;--齐次因子
+  \end{align}\]</span> $$</p>
+<p><strong>复合矩阵复合顺序：</strong></p>
+<p>在进行矩阵的复合时，<strong>一定下一个矩阵左乘上一个矩阵</strong>，千万不能弄反了。在变换时，是从右向左变换的。</p>
+<h3 id="二维坐标系间的变换">二维坐标系间的变换</h3>
+<p><img src="https://i.loli.net/2021/09/26/hwWdEaf6GM2BJgk.png" /></p>
+<p>在进行图形处理时，经常需要将对象从一个坐标系变换到另一个坐标系中，比如从对象的局部坐标系切换到世界坐标。</p>
+<p>如上图所示，为了将 P 的 xy 坐标变换到 x'y' 坐标，必须将 x'y' 轴叠加到
+xy 轴上，需要分两步进行：</p>
+<ol type="1">
+<li>将 x'y' 系统的坐标原点 <span
+class="math inline">\((x_0,y_0)\)</span> 平移到 xy 系统的原点 <span
+class="math inline">\((0,0)\)</span></li>
+<li>将 x' 轴旋转到 x 轴上（顺时针旋转 <span
+class="math inline">\(\theta\)</span> ）</li>
+</ol>
+<p><span class="math display">\[
+\begin{bmatrix}
+  const \theta &amp; -sin(-\theta) &amp; 0 \\
+  sin(-\theta) &amp; const \theta &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot  
+\begin{bmatrix}
+  1 &amp; 0 &amp; -x_0 \\
+  0 &amp; 1 &amp; -y_0 \\
+  0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<h2 id="三维几何变换">三维几何变换</h2>
+<p>三维几何变换的方法是在二维的基础上扩充了 Z 坐标而得到的。</p>
+<h3 id="三维平移">三维平移</h3>
+<p><span class="math display">\[
+\begin{bmatrix}
+x&#39; \\
+y&#39; \\
+z&#39; \\
+1
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; 0 &amp; t_y \\
+0 &amp; 0 &amp; 1 &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+\]</span></p>
+<h3 id="三维旋转">三维旋转</h3>
+<p>在三维空间中，图形对象可以绕任意轴进行旋转，但绕平行于坐标轴旋转是容易处理的。所以，我们通过适当的平移旋转，使得旋转轴与坐标轴对齐，然后再构建基于坐标轴的旋转矩阵，最后将上述矩阵复合成一个空间中的旋转矩阵。</p>
+<p><img src="https://i.loli.net/2021/09/27/dO8EVqTNMxlDkWh.png" /></p>
+<p>如果沿着坐标轴正半轴观察原点时，绕坐标轴的正向旋转方向是逆时针方向。</p>
+<h4 id="绕-z-轴旋转">绕 z 轴旋转</h4>
+<p><span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   z&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  cos \theta &amp; -sin \theta &amp; 0 &amp; 0\\
+  sin \theta &amp; cos \theta  &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  z \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="绕-x-轴旋转">绕 x 轴旋转</h4>
+<p>将 x 替换成 y，y 替换成 z，z 替换成 x 即可得到。 <span
+class="math display">\[
+\begin{bmatrix}
+   y&#39; \\
+   z&#39; \\
+   x&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  cos \theta &amp; -sin \theta &amp; 0 &amp; 0\\
+  sin \theta &amp; cos \theta  &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  y \\
+  z \\
+  x \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<p>标准形式： <span class="math display">\[
+\begin{bmatrix}
+   x&#39; \\
+   y&#39; \\
+   z&#39; \\
+   1 \\
+\end{bmatrix} =  
+\begin{bmatrix}
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; cos \theta  &amp; -sin \theta &amp; 0 \\
+  0 &amp; sin \theta  &amp; cos \theta &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot  
+\begin{bmatrix}
+   x \\
+   y \\
+   z \\
+   1 \\
+\end{bmatrix}
+\]</span></p>
+<h4 id="绕-y-轴旋转">绕 y 轴旋转</h4>
+<p>在上式中，将 x 替换成 y，y 替换成 z，z 替换成 x 即可得到。 <span
+class="math display">\[
+\begin{bmatrix}
+   z&#39; \\
+   x&#39; \\
+   y&#39; \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  cos \theta &amp; -sin \theta &amp; 0 &amp; 0\\
+  sin \theta &amp; cos \theta  &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  z \\
+  x \\
+  y \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<p>标准矩阵为： <span class="math display">\[
+\begin{bmatrix}
+   x \\
+   y \\
+   z \\
+   1 \\
+  \end{bmatrix} = \begin{bmatrix}
+  cos \theta &amp; 0 &amp; sin \theta &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0 \\
+  -sin \theta &amp; 0 &amp; cos \theta &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix} \cdot \begin{bmatrix}
+  x \\
+  y \\
+  z \\
+  1
+  \end{bmatrix}
+\]</span></p>
+<h4 id="绕任意轴旋转">绕任意轴旋转</h4>
+<ol type="1">
+<li>平移对象，使得旋转轴通过坐标原点</li>
+<li>旋转对象使得旋转轴与某一坐标轴重合</li>
+<li>绕该坐标轴完成指定的旋转</li>
+<li>利用逆旋转使旋转轴回到其原始方向</li>
+<li>利用逆平移使旋转轴回到其原始位置</li>
+</ol>
+<p><img src="https://i.loli.net/2021/09/27/emy2cdqOwGDhH8A.png" /></p>
+<h3 id="三维缩放">三维缩放</h3>
+<p><strong>缩放矩阵：</strong> <span class="math display">\[
+\begin{bmatrix}
+S_x &amp; 0 &amp; 0 &amp; 0 \\
+0   &amp; S_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; S_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> 相对于任意点 <span
+class="math inline">\((x_s,y_s,z_s)\)</span> 的缩放步骤：</p>
+<ol type="1">
+<li>平移给定点到原点</li>
+<li>使用上述矩阵相对于坐标原点进行缩放</li>
+<li>平移给定点回到原始位置</li>
+</ol>
+<h3 id="三维反射镜像">三维反射（镜像）</h3>
+<p><span class="math display">\[
+\begin{bmatrix}
+R_x &amp; 0 &amp; 0 &amp; 0 \\
+0   &amp; R_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; R_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>反射矩阵是缩放矩阵的特例，即缩放因子小于0时，就变成了反射。</p>
+<h3 id="投影到平面">投影到平面</h3>
+<p>当某一个轴的缩放因子为0时，代表向另外两个轴形成的平面进行投影。比如下列矩阵代表向
+<span class="math inline">\(z=t_z\)</span> 平面投影。 <span
+class="math display">\[
+\begin{bmatrix}
+R_x &amp; 0 &amp; 0 &amp; 0 \\
+0   &amp; R_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span>
+对于绕任意平面的投影，可以将投影平面旋转到标准平面，然后再进行标准投影变换。</p>
+<h3 id="三维错切">三维错切</h3>
+<p>三维错切与二维错切类似，不过前者较后者在每个方向上多一个影响变量。比如，影响
+x 方向的错切有 y 和 z 两个方向。</p>
+<h2 id="三维观察">三维观察</h2>
+<h3 id="二维观察显示流程">二维观察显示流程</h3>
+<ol type="1">
+<li>使用建模坐标 (MC) 变换构造世界坐标 (WC) 系场景</li>
+<li>将世界坐标转换为观察坐标 (VC)</li>
+<li>将观察坐标 (VC) 转换为规范化设备坐标 (NC)</li>
+<li>将规范化设备坐标 (NC) 映射到设备坐标 (DC)</li>
+</ol>
+<h3 id="三维观察显示流程">三维观察显示流程</h3>
+<p>三维场景视图的计算机生成步骤有点类似于拍一张照片的过程。</p>
+<ol type="1">
+<li>安放相机，即在场景中确定一个观察位置</li>
+<li>确定相机方向，即照相机朝哪个方向照及如果绕视线旋转照相机以确定相片的向上方向</li>
+<li>按照相机的 “裁剪窗口”（镜头）
+来修剪场景，让光线从可视表面<strong>投影</strong>到照相机的胶片上</li>
+</ol>
+<p>三维观察实际流程：</p>
+<ol type="1">
+<li>建模变换</li>
+<li>观察变换</li>
+<li>投影变换</li>
+<li>规范化变换和裁剪</li>
+<li>视口变换</li>
+</ol>
+<h3 id="局部坐标">局部坐标</h3>
+<p>局部坐标系中的坐标称之为局部坐标，在使用中，我们经常需要获取局部坐标，那么如何获取呢？</p>
+<p>这里再引用一下《飞出个未来》：</p>
+<blockquote>
+<p>引擎推动的不是飞船而是宇宙。飞船压根就没动过。</p>
+</blockquote>
+<p>仔细想想，计算机中摄像机的原理也是相通的。如果想换个角度观察一座山，您可以移动摄像机也可以……移动山。后者在实际中不可行，在计算机图形学中却十分方便。</p>
+<p>所以，在计算机图形变换过程中，我们操作的永远是图形。</p>
+<p>而局部坐标是图形的全局坐标通过矩阵变换，然后将图形的局部坐标系与世界坐标系重合，此时获得的世界坐标即为局部坐标。</p>
+<h3 id="局部坐标系转世界坐标系">局部坐标系转世界坐标系</h3>
+<p>在空间中，任意点的局部坐标系与世界坐标系的关系如下： <span
+class="math display">\[
+M_{local} \cdot P&#39; = M_{world} \cdot P
+\]</span> 通常情况下，世界坐标系 <span class="math inline">\(M_{world} =
+I\)</span>，即为单位矩阵。</p>
+<p>所以，局部坐标可由正式求得： <span class="math display">\[
+P&#39; = M_{local}^{-1} \cdot P
+\]</span>
+在实际的坐标变换中，如果想将世界坐标转换为局部坐标，我们可以：</p>
+<ol type="1">
+<li>构建局部坐标系矩阵 <span
+class="math inline">\(M_{local}\)</span></li>
+<li>对局部坐标系求逆得 <span
+class="math inline">\(M_{local}^{-1}\)</span></li>
+<li>用局部坐标系的逆矩阵左乘世界坐标系的矩阵</li>
+</ol>
+<blockquote>
+<p>从上面可以看出，要将对象转换到某个坐标系，只需要左乘这个坐标系的逆变换即可。</p>
+</blockquote>
+<h3 id="怎么构建某个坐标系的矩阵呢">怎么构建某个坐标系的矩阵呢</h3>
+<p>构建某个坐标系的矩阵其原理是将世界坐标系矩阵（单位矩阵）进行平移旋转。</p>
+<p>比如已知局部坐标系的原点为 <span
+class="math inline">\(O(x,y,z)\)</span> 和三个方向 <span
+class="math inline">\(V_x,V_y,V_z\)</span>，要求其坐标系矩阵，可以通过如下步骤：</p>
+<ol type="1">
+<li>先将单位矩阵平移到 O 点</li>
+<li>对平移后的矩阵进行旋转，使原三个轴与新轴对齐</li>
+</ol>
+<blockquote>
+<p>通过这种方法构建的矩阵是局部坐标系的度量矩阵，如果想要将局部坐标系的元素变换回世界坐标系中，需要左乘它的逆矩阵</p>
+</blockquote>
+<h2 id="扩充阅读">扩充阅读</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="http://www.opengl-tutorial.org/cn/beginners-tutorials/tutorial-3-matrices/#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87homogeneous-coordinates">矩阵</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26663064">矩阵的乘积/复合变换</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Bentley-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley 二次开发</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2020/3W94T82.html" rel="prev" title="LearnVue 介绍">
+      <i class="fa fa-chevron-left"></i> LearnVue 介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2020/4JEF7M.html" rel="next" title="MS 关于 Fraction 的使用说明">
+      MS 关于 Fraction 的使用说明 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">二维几何变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%98%E6%8D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">基本变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC"><span class="nav-number">1.1.2.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%A9%E6%94%BE"><span class="nav-number">1.1.3.</span> <span class="nav-text">缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">齐次坐标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">齐次坐标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">1.2.2.</span> <span class="nav-text">齐次坐标的引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E8%A1%8C%E7%BA%BF%E7%9B%B8%E4%BA%A4%E7%9A%84%E4%B8%8D%E5%A4%AA%E4%B8%A5%E6%A0%BC%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.2.3.</span> <span class="nav-text">平行线相交的不太严格的证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E5%8F%AF%E4%BB%A5%E5%8C%BA%E5%88%86%E7%82%B9%E4%B8%8E%E5%90%91%E9%87%8F"><span class="nav-number">1.2.4.</span> <span class="nav-text">齐次坐标可以区分点与向量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">基于齐次坐标的矩阵表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%A9%E6%94%BE-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E9%95%9C%E5%83%8F"><span class="nav-number">1.3.4.</span> <span class="nav-text">反射（镜像）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-x-%E8%BD%B4%E9%95%9C%E5%83%8F"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">关于 x 轴镜像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-y-%E8%BD%B4%E9%95%9C%E5%83%8F"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">关于 y 轴镜像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%95%E4%BB%BB%E6%84%8F%E8%BD%B4%E9%95%9C%E5%83%8F"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">绕任意轴镜像</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%99%E5%88%87"><span class="nav-number">1.3.5.</span> <span class="nav-text">错切</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E4%BA%8E-x-%E8%BD%B4%E7%9A%84-x-%E6%96%B9%E5%90%91%E9%94%99%E5%88%87"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">相对于 x 轴的 x 方向错切</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E4%BA%8E-y-%E8%BD%B4%E7%9A%84-y-%E6%96%B9%E5%90%91%E9%94%99%E5%88%87"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">相对于 y 轴的 y 方向错切</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E5%8F%98%E6%8D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">逆变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2"><span class="nav-number">1.5.</span> <span class="nav-text">二维复合变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E4%BA%8C%E7%BB%B4%E5%B9%B3%E7%A7%BB"><span class="nav-number">1.5.1.</span> <span class="nav-text">复合二维平移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E4%BA%8C%E7%BB%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">1.5.2.</span> <span class="nav-text">复合二维旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E4%BA%8C%E7%BB%B4%E7%BC%A9%E6%94%BE"><span class="nav-number">1.5.3.</span> <span class="nav-text">复合二维缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E4%BA%8C%E7%BB%B4%E5%9F%BA%E5%87%86%E7%82%B9%E6%97%8B%E8%BD%AC"><span class="nav-number">1.5.4.</span> <span class="nav-text">通用二维基准点旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E4%BA%8C%E7%BB%B4%E5%9F%BA%E5%87%86%E7%82%B9%E7%BC%A9%E6%94%BE"><span class="nav-number">1.5.5.</span> <span class="nav-text">通用二维基准点缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E4%BA%8C%E7%BB%B4%E5%AE%9A%E5%90%91%E7%BC%A9%E6%94%BE"><span class="nav-number">1.5.6.</span> <span class="nav-text">通用二维定向缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.6.</span> <span class="nav-text">矩阵的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB%E9%97%B4%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="nav-number">1.7.</span> <span class="nav-text">二维坐标系间的变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text">三维几何变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E5%B9%B3%E7%A7%BB"><span class="nav-number">2.1.</span> <span class="nav-text">三维平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">2.2.</span> <span class="nav-text">三维旋转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%95-z-%E8%BD%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">2.2.1.</span> <span class="nav-text">绕 z 轴旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%95-x-%E8%BD%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">2.2.2.</span> <span class="nav-text">绕 x 轴旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%95-y-%E8%BD%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">2.2.3.</span> <span class="nav-text">绕 y 轴旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%95%E4%BB%BB%E6%84%8F%E8%BD%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">2.2.4.</span> <span class="nav-text">绕任意轴旋转</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E7%BC%A9%E6%94%BE"><span class="nav-number">2.3.</span> <span class="nav-text">三维缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E5%8F%8D%E5%B0%84%E9%95%9C%E5%83%8F"><span class="nav-number">2.4.</span> <span class="nav-text">三维反射（镜像）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E5%88%B0%E5%B9%B3%E9%9D%A2"><span class="nav-number">2.5.</span> <span class="nav-text">投影到平面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E9%94%99%E5%88%87"><span class="nav-number">2.6.</span> <span class="nav-text">三维错切</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E8%A7%82%E5%AF%9F"><span class="nav-number">3.</span> <span class="nav-text">三维观察</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E8%A7%82%E5%AF%9F%E6%98%BE%E7%A4%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">二维观察显示流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E8%A7%82%E5%AF%9F%E6%98%BE%E7%A4%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">三维观察显示流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%9D%90%E6%A0%87"><span class="nav-number">3.3.</span> <span class="nav-text">局部坐标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%9D%90%E6%A0%87%E7%B3%BB%E8%BD%AC%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.4.</span> <span class="nav-text">局部坐标系转世界坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%9E%84%E5%BB%BA%E6%9F%90%E4%B8%AA%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E7%9F%A9%E9%98%B5%E5%91%A2"><span class="nav-number">3.5.</span> <span class="nav-text">怎么构建某个坐标系的矩阵呢</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%85%85%E9%98%85%E8%AF%BB"><span class="nav-number">4.</span> <span class="nav-text">扩充阅读</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">633k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:35</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '63ece14861c297420892',
+      clientSecret: '731f0c050c35a3afee5aed41ca386decc768a3f0',
+      repo        : 'blog-comments',
+      owner       : 'galensgan',
+      admin       : ['galensgan'],
+      id          : '1475d747731b59f5e656f18e1613c4ae',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

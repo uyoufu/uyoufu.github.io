@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">349</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -139,12 +139,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">196</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">103</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -237,27 +237,15 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/" itemprop="url" rel="index"><span itemprop="name">PaddleOCR</span></a>
+                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                  <a href="/categories/Develop/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/Python/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/Python/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/Python/Develop/Develop/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaddleOCR/Python/Develop/Develop/Python/PaddleOCR/" itemprop="url" rel="index"><span itemprop="name">PaddleOCR</span></a>
+                  <a href="/categories/Develop/Python/PaddleOCR/" itemprop="url" rel="index"><span itemprop="name">PaddleOCR</span></a>
                 </span>
             </span>
 
@@ -309,25 +297,25 @@ alt="anaconda download" />
 </figure></li>
 <li><p>下载完成后，双击安装程序进入图形界面</p></li>
 <li><p>默认安装位置为C盘，建议将安装位置更改到D盘：</p>
-<p><img src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_install_folder.png" alt="install config" style="zoom: 67%;" /></p></li>
+<p><img data-src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_install_folder.png" alt="install config" style="zoom: 67%;" /></p></li>
 <li><p>勾选conda加入环境变量，忽略警告：</p>
-<p><img src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_install_env.png" alt="add conda to path" style="zoom:67%;" /></p></li>
+<p><img data-src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_install_env.png" alt="add conda to path" style="zoom:67%;" /></p></li>
 </ul></li>
 </ul>
 <h3 id="打开终端并创建conda环境">打开终端并创建conda环境</h3>
 <ul>
 <li><p>打开Anaconda Prompt终端：左下角Windows Start Menu -&gt; Anaconda3
 -&gt; Anaconda Prompt启动控制台</p>
-<p><img src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_prompt.png" alt="anaconda download" style="zoom:67%;" /></p>
+<p><img data-src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/anaconda_prompt.png" alt="anaconda download" style="zoom:67%;" /></p>
 <ul>
 <li><p>创建新的conda环境</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在命令行输入以下命令，创建名为paddle_env的环境</span></span><br><span class="line"><span class="comment"># 此处为加速下载，使用清华源</span></span><br><span class="line">conda create <span class="literal">--name</span> paddle_env python=<span class="number">3.8</span> <span class="literal">--channel</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  <span class="comment"># 这是一行命令</span></span><br></pre></td></tr></table></figure>
 <p>该命令会创建1个名为paddle_env、python版本为3.8的可执行环境，根据网络状态，需要花费一段时间</p>
 <p>之后命令行中会输出提示信息，输入y并回车继续安装</p>
-<p><img src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/conda_new_env.png" alt="conda create" style="zoom:80%;" /></p></li>
+<p><img data-src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/conda_new_env.png" alt="conda create" style="zoom:80%;" /></p></li>
 <li><p>激活刚创建的conda环境，在命令行中输入以下命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 激活 paddle_env 环境</span></span><br><span class="line">conda activate paddle_env</span><br><span class="line"><span class="comment"># 查看当前python的位置</span></span><br><span class="line"><span class="built_in">where</span> python</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/conda_list_env.png" alt="create environment" style="zoom:80%;" /></p></li>
+<p><img data-src="https://github.com/PaddlePaddle/PaddleOCR/raw/release/2.6/doc/install/windows/conda_list_env.png" alt="create environment" style="zoom:80%;" /></p></li>
 </ul>
 <p>以上 anaconda 环境和 python 环境安装完毕!</p>
 <p>保持 <code>paddle_env</code>
@@ -498,20 +486,20 @@ target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-count">349</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-count">103</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-count">196</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -562,12 +550,12 @@ target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">633k</span>
+    <span title="站点总字数">642k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:35</span>
+    <span title="站点阅读时长">9:43</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

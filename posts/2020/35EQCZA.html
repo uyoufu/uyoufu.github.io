@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">349</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -138,12 +138,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">196</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">103</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -236,19 +236,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DotNET/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DotNET/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DotNET/Develop/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+                  <a href="/categories/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
                 </span>
             </span>
 
@@ -316,7 +308,7 @@ get 和 set 访问函数的公共属性在网格中是可以编辑的，如果�
 <p>下面我们来看看该如何使用，我们仍然在Form_load中添加代码如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PropertyManageCls pmc = <span class="keyword">new</span> PropertyManageCls();</span><br><span class="line">Property pp = <span class="keyword">new</span> Property(<span class="string">&quot;ID&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">pp.Category = <span class="string">&quot;基本信息&quot;</span>;</span><br><span class="line">pp.DisplayName = <span class="string">&quot;我的ID&quot;</span>;</span><br><span class="line">pmc.Add(pp);</span><br><span class="line">propertyGrid1.SelectObject=pmc;</span><br></pre></td></tr></table></figure>
 <p>显示结果：</p>
-<p><img src="https://i.loli.net/2020/07/21/hnxj6gibBDWHytu.png" /></p>
+<p><img data-src="https://i.loli.net/2020/07/21/hnxj6gibBDWHytu.png" /></p>
 <h2 id="实现下拉框">实现下拉框</h2>
 <p>要实现下拉框，需要使用类型转换器，继承与TypeConverter或者StringConverter，然后重写方法，代码如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下拉框类型转换器</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DropDownListConverter</span> : <span class="title">StringConverter</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">object</span>[] m_Objects;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DropDownListConverter</span>(<span class="params"><span class="built_in">object</span>[] objects</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        m_Objects = objects;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">bool</span> <span class="title">GetStandardValuesSupported</span>(<span class="params">ITypeDescriptorContext context</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">bool</span> <span class="title">GetStandardValuesExclusive</span>(<span class="params">ITypeDescriptorContext context</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//true下拉框不可编辑</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">override</span></span><br><span class="line">    System.ComponentModel.TypeConverter.<span class="function">StandardValuesCollection <span class="title">GetStandardValues</span>(<span class="params">ITypeDescriptorContext context</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//我们可以直接在内部定义一个数组，但并不建议这样做，这样对于下拉框的灵活性有很大影响</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StandardValuesCollection(m_Objects);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 此处一般是根据 context 中传递下来的 Instance，从中获取下拉的条件，动态生成下拉选项        </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -329,7 +321,7 @@ get 和 set 访问函数的公共属性在网格中是可以编辑的，如果�
 </ul>
 <p>效果图如下：</p>
 <figure>
-<img src="https://i.loli.net/2020/07/21/ipstk1OyB7FGbd9.png"
+<img data-src="https://i.loli.net/2020/07/21/ipstk1OyB7FGbd9.png"
 alt="20200721234055.png" />
 <figcaption aria-hidden="true">20200721234055.png</figcaption>
 </figure>
@@ -344,7 +336,7 @@ typeof(System.Drawing.Design.UITypeEditor))]</p></li>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form_load</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    PropertyManageCls pmc = <span class="keyword">new</span> PropertyManageCls();</span><br><span class="line">    Property pp = <span class="keyword">new</span> Property(txtname.Text,txtvalue.Text, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">    pp.Category = <span class="string">&quot;基本信息&quot;</span>;</span><br><span class="line">    pp.DisplayName = <span class="string">&quot;我的ID&quot;</span>;</span><br><span class="line">    pp.Editor= <span class="keyword">new</span> PropertyGridFileItem();<span class="comment">//Property的Editor属性就可以设置属性编辑</span></span><br><span class="line">    pmc.Add(pp);</span><br><span class="line">    propertyGrid1.SelectObject = pmc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>效果图如下：</p>
-<p><img src="https://i.loli.net/2020/07/21/NgqsPfShQpMvyTa.png" /></p>
+<p><img data-src="https://i.loli.net/2020/07/21/NgqsPfShQpMvyTa.png" /></p>
 <h2 id="自定义要显示的属性">自定义要显示的属性</h2>
 <p>PropertyGrid
 默认显示所有的公开属性，包括父类的公开属性。在使用的过程中，我们可能会有如下需求：</p>
@@ -526,20 +518,20 @@ PropertyGrid</a></p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-count">349</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-count">103</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-count">196</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -590,12 +582,12 @@ PropertyGrid</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">633k</span>
+    <span title="站点总字数">642k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:35</span>
+    <span title="站点阅读时长">9:43</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

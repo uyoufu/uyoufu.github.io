@@ -126,7 +126,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">349</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -136,12 +136,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">196</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">103</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -227,27 +227,15 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/" itemprop="url" rel="index"><span itemprop="name">Verdaccio</span></a>
+                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
+                  <a href="/categories/Develop/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/Javascript/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/Javascript/Develop/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/Javascript/Develop/Develop/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Verdaccio/Javascript/Develop/Develop/Javascript/Verdaccio/" itemprop="url" rel="index"><span itemprop="name">Verdaccio</span></a>
+                  <a href="/categories/Develop/Javascript/Verdaccio/" itemprop="url" rel="index"><span itemprop="name">Verdaccio</span></a>
                 </span>
             </span>
 
@@ -332,7 +320,7 @@ https，然后通过域名（https://mydomain.com:4433）访问 verdaccio
 <p>F12打开调试面板，查看网络项，发现读取 runtime, vendors, main
 等文件是失败的，查看其 headers，发现其请求的 url 是
 <code>https://mydomain.com/-/xx</code>, 端口莫名丢掉了。</p>
-<p><img src="https://s2.loli.net/2022/01/06/A5Slk24eLHWZaN3.png" /></p>
+<p><img data-src="https://s2.loli.net/2022/01/06/A5Slk24eLHWZaN3.png" /></p>
 <p>造成这种问题的原因是，在nginx的配置中，少了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location ~ ^/verdaccio/(.*)$ ...</span><br></pre></td></tr></table></figure>
 <p>这项配置。</p>
@@ -500,20 +488,20 @@ Verdaccio</a></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-count">349</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-count">103</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-count">196</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -564,12 +552,12 @@ Verdaccio</a></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">633k</span>
+    <span title="站点总字数">642k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:35</span>
+    <span title="站点阅读时长">9:43</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

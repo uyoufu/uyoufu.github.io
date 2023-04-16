@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">346</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">349</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -135,12 +135,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">196</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">560</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">103</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -233,19 +233,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                  <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/Bentley/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/Bentley/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                  <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
                 </span>
             </span>
 
@@ -306,7 +298,7 @@ leaderElement 传入进去，它里面会与 header 进行关联，并添加到 
 中。</p>
 <p>所以，真正的用法应该是开篇示例代码那样。</p>
 <h2 id="怎么让文字水平吸附为自动">怎么让文字水平吸附为自动？</h2>
-<p><img src="https://i.loli.net/2020/08/27/rqQXWp3zNHFnadt.png" /></p>
+<p><img data-src="https://i.loli.net/2020/08/27/rqQXWp3zNHFnadt.png" /></p>
 <p>如上图，如果不对参数进行设置，默认生成的引线标注是 1 和 2
 的样式，如果要得到 3 ，需要设置它的对齐方式。就是下面的代码：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DimensionElement dim = leaderElement <span class="keyword">as</span> DimensionElement;</span><br><span class="line">DimensionStyle ds = dim.GetDimensionStyle();</span><br><span class="line">ds.SetIntegerProp(<span class="number">0</span>, DimStyleProp.MLNote_HorAttachment_INTEGER);         </span><br><span class="line">dim.ApplyDimensionStyle(ds, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
@@ -481,20 +473,20 @@ NoteCellHeaderElement对象时，参数DPoint3d[] 中的点代表什么？</span
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">346</span>
+          <span class="site-state-item-count">349</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">560</span>
+        <span class="site-state-item-count">103</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">208</span>
+        <span class="site-state-item-count">196</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -545,12 +537,12 @@ NoteCellHeaderElement对象时，参数DPoint3d[] 中的点代表什么？</span
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">633k</span>
+    <span title="站点总字数">642k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:35</span>
+    <span title="站点阅读时长">9:43</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

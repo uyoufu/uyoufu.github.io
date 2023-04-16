@@ -27,6 +27,10 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="在进行Bentley二次开发的时候，通常我们需要向用户输出一些信息，比如操作的提示，错误的提示等等，本文特对这些方式进行总结，方便下次随心所欲地使用。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220512074020104.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220512074152131.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220512073913334.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220512073946491.png">
 <meta property="article:published_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -34,6 +38,7 @@
 <meta property="article:tag" content="Bentley">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220512074020104.png">
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/1NF37FV.html">
 
@@ -244,7 +249,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,72 +270,56 @@
       
         <p>在进行Bentley二次开发的时候，通常我们需要向用户输出一些信息，比如操作的提示，错误的提示等等，本文特对这些方式进行总结，方便下次随心所欲地使用。</p>
 <span id="more"></span>
-<h2 id="通知管理器">通知管理器</h2>
-<p>通过使用 NotificationManager
-向用户推送消息。可以用此类来生成提示、错误消息和警报对话框。</p>
-<figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074020104.png"
-alt="image-20220512074020104" />
-<figcaption aria-hidden="true">image-20220512074020104</figcaption>
-</figure>
+<h2 id="通知管理器"><a class="markdownIt-Anchor" href="#通知管理器"></a> 通知管理器</h2>
+<p>通过使用 NotificationManager 向用户推送消息。可以用此类来生成提示、错误消息和警报对话框。</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074020104.png" alt="image-20220512074020104" /></p>
 <table>
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 32%" />
-<col style="width: 28%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>DLL 名称</th>
 <th>命名空间</th>
 <th>类名</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Bentley.DgnPlatformNET.dll</td>
 <td>Bentley.DgnPlatformNET</td>
 <td>NotificationManager</td>
 </tr>
 </tbody>
 </table>
-<h3 id="源码注解">源码注解</h3>
+<h3 id="源码注解"><a class="markdownIt-Anchor" href="#源码注解"></a> 源码注解</h3>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//打开消息弹窗</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MessageBoxValue <span class="title">OpenMessageBox</span>(<span class="params">MessageBoxType mbType, <span class="built_in">string</span> message, MessageBoxIconType icon</span>)</span>;</span><br><span class="line"><span class="comment">//向MS的底部通知栏写入提示</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> StatusInt <span class="title">OutputMessage</span>(<span class="params">NotifyMessageDetails message</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">OutputPrompt</span>(<span class="params"><span class="built_in">string</span> prompt</span>)</span>;</span><br><span class="line"><span class="comment">//设置一个标志来分配（value==true时）事件，以便在执行费时算法时，刷新界面，从而不卡顿。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetDispatchEvents</span>(<span class="params"><span class="built_in">bool</span> <span class="keyword">value</span></span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> MessageBoxType</span><br><span class="line">&#123;</span><br><span class="line">    YesNo = <span class="number">-121</span>,</span><br><span class="line">    LargeOk = <span class="number">-119</span>,</span><br><span class="line">    YesNoCancel = <span class="number">-113</span>,</span><br><span class="line">    MediumAlert = <span class="number">-112</span>,</span><br><span class="line">    Ok = <span class="number">-97</span>,</span><br><span class="line">    OkCancel = <span class="number">-13</span>,</span><br><span class="line">    None = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> MessageBoxIconType</span><br><span class="line">&#123;</span><br><span class="line">    NoSymbol = <span class="number">0</span>,</span><br><span class="line">    Information = <span class="number">1</span>,</span><br><span class="line">    Question = <span class="number">2</span>,</span><br><span class="line">    Warning = <span class="number">3</span>,</span><br><span class="line">    Critical = <span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> MessageBoxValue</span><br><span class="line">&#123;</span><br><span class="line">    None = <span class="number">0</span>,</span><br><span class="line">    Apply = <span class="number">1</span>,</span><br><span class="line">    Reset = <span class="number">2</span>,</span><br><span class="line">    Ok = <span class="number">3</span>,</span><br><span class="line">    Cancel = <span class="number">4</span>,</span><br><span class="line">    Default = <span class="number">5</span>,</span><br><span class="line">    Yes = <span class="number">6</span>,</span><br><span class="line">    No = <span class="number">7</span>,</span><br><span class="line">    Retry = <span class="number">8</span>,</span><br><span class="line">    Stop = <span class="number">9</span>,</span><br><span class="line">    Help = <span class="number">10</span>,</span><br><span class="line">    YesToAll = <span class="number">11</span>,</span><br><span class="line">    NoToAll = <span class="number">12</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用">使用</h3>
+<h3 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h3>
 <ul>
-<li><p>OpenMessageBox方法</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOpenMessageBox</span>()</span></span><br><span class="line">&#123;  </span><br><span class="line">    NotificationManager.OpenMessageBox(NotificationManager.MessageBoxType.MediumAlert, <span class="string">&quot;Medium alert&quot;</span>,NotificationManager.MessageBoxIconType.Warning);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>OutputMessage方法</p>
+<li>
+<p>OpenMessageBox方法</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOpenMessageBox</span>()</span></span><br><span class="line">&#123;  </span><br><span class="line">    NotificationManager.OpenMessageBox(NotificationManager.MessageBoxType.MediumAlert, <span class="string">&quot;Medium alert&quot;</span>,NotificationManager.MessageBoxIconType.Warning);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>OutputMessage方法</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOutputMessage</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    OutputMessagePriority outputMessagePriority = OutputMessagePriority.Information;</span><br><span class="line">    <span class="built_in">string</span> briefMsg = <span class="string">&quot;this is a brief msg&quot;</span>;</span><br><span class="line">    <span class="built_in">string</span> detailMsg = <span class="string">&quot;this is a detail msg&quot;</span>;</span><br><span class="line">    NotifyTextAttributes notifyTextAttributes = NotifyTextAttributes.AlwaysBeveled;</span><br><span class="line">    NotifyMessageDetails notifyMessageDetails = <span class="keyword">new</span> NotifyMessageDetails(outputMessagePriority,briefMsg,detailMsg,notifyTextAttributes,OutputMessageAlert.Balloon);</span><br><span class="line">    NotificationManager.OutputMessage(notifyMessageDetails);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074152131.png"
-alt="image-20220512074152131" />
-<figcaption aria-hidden="true">image-20220512074152131</figcaption>
-</figure></li>
-<li><p>OutputPrompt方法</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074152131.png" alt="image-20220512074152131" /></p>
+</li>
+<li>
+<p>OutputPrompt方法</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOutputPrompt</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    NotificationManager.OutputPrompt(<span class="string">&quot;this is ouput prompt&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073913334.png"
-alt="image-20220512073913334" />
-<figcaption aria-hidden="true">image-20220512073913334</figcaption>
-</figure></li>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073913334.png" alt="image-20220512073913334" /></p>
+</li>
 </ul>
-<h2 id="消息中心messagecenter">消息中心（MessageCenter）</h2>
-<p>在 Bentley.MstnPlatformNET
-中也存在与消息管理器一样的类以供调用向用户传递消息。</p>
+<h2 id="消息中心messagecenter"><a class="markdownIt-Anchor" href="#消息中心messagecenter"></a> 消息中心（MessageCenter）</h2>
+<p>在 Bentley.MstnPlatformNET 中也存在与消息管理器一样的类以供调用向用户传递消息。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>DLL 名称</th>
 <th>命名空间</th>
 <th>类名</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ustation.dll</td>
 <td>Bentley.MstnPlatformNET</td>
 <td>MessageCenter</td>
@@ -339,18 +328,11 @@ alt="image-20220512073913334" />
 </table>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 其内部代码如下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MessageCenter</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> MessageCenter Instance &#123; <span class="keyword">get</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> StatusWarning &#123; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> StatusMessage &#123; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> StatusPrompt &#123; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> StatusCommand &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetStringFromMessageListResource</span>(<span class="params"><span class="built_in">int</span> listId, <span class="built_in">int</span> stringId</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowDebugMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, <span class="built_in">bool</span> openAlertBox</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowDebugMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, MessageAlert alertType</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowErrorMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, <span class="built_in">bool</span> openAlertBox</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowErrorMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, MessageAlert alertType</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowInfoMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, <span class="built_in">bool</span> openAlertBox</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowInfoMessage</span>(<span class="params"><span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, MessageAlert alertType</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowMessage</span>(<span class="params">MessageType messageType, <span class="built_in">string</span> briefMessage, <span class="built_in">string</span> detailedMessage, MessageAlert alertType</span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在使用时，通过单例来调用其中的实例方法：<code>MessageCenter.Instance.xxx</code></p>
-<h2 id="测试代码">测试代码</h2>
+<h2 id="测试代码"><a class="markdownIt-Anchor" href="#测试代码"></a> 测试代码</h2>
 <p>最后，附上 Notification Manager 测试代码的链接。</p>
-<p>加载编译之后的 ArticleSourceCode.dll，调用
-Key-in：<code>test message manager</code>，此时会弹出一个操作窗体，通过选择不同选项，即可查看相应方法的效果。</p>
-<figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073946491.png"
-alt="image-20220512073946491" />
-<figcaption aria-hidden="true">image-20220512073946491</figcaption>
-</figure>
-<p><a target="_blank" rel="noopener" href="https://github.com/GalensGan/ArticleSourceCode">&gt;
-GitHub源代码</a></p>
+<p>加载编译之后的 ArticleSourceCode.dll，调用 Key-in：<code>test message manager</code>，此时会弹出一个操作窗体，通过选择不同选项，即可查看相应方法的效果。</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073946491.png" alt="image-20220512073946491" /></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GalensGan/ArticleSourceCode">&gt; GitHub源代码</a></p>
 
     </div>
 
@@ -421,12 +403,12 @@ GitHub源代码</a></p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/2022/1C9ATGS.html" rel="prev" title="几何继承关系层次图">
-      <i class="fa fa-chevron-left"></i> 几何继承关系层次图
+    <a href="/posts/2022/38A8BYH.html" rel="prev" title="Bentley 中几何变换实例">
+      <i class="fa fa-chevron-left"></i> Bentley 中几何变换实例
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2022/1RDA3BV.html" rel="next" title="MS中各个对象获取的DTransform含义">
-      MS中各个对象获取的DTransform含义 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/2022/1CPW2GG.html" rel="next" title="由浅入深地理解样条曲线">
+      由浅入深地理解样条曲线 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -487,7 +469,7 @@ GitHub源代码</a></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">通知管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">源码注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E4%B8%AD%E5%BF%83messagecenter"><span class="nav-number">2.</span> <span class="nav-text">消息中心（MessageCenter）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">测试代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text"> 通知管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text"> 源码注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text"> 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E4%B8%AD%E5%BF%83messagecenter"><span class="nav-number">2.</span> <span class="nav-text"> 消息中心（MessageCenter）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text"> 测试代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -567,12 +549,12 @@ GitHub源代码</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

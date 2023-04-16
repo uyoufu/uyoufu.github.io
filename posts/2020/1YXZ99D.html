@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="概述（Overview） BindableCollection&lt;T&gt; 是 ObservableCollection&lt;T&gt; 的一个子类。如果你在你的 ViewModel 中有一个集合，并且想要将它用作你视图中的某个控件的 ItemsSource 等等，那么你就可以使用这个类（当一个项目被添加到&#x2F;从集合中移除时，视图会得到通知）。">
+  <meta name="description" content="概述（Overview） BindableCollection&lt;T&gt;  是 ObservableCollection&lt;T&gt; 的一个子类。如果你在你的 ViewModel 中有一个集合，并且想要将它用作你视图中的某个控件的 ItemsSource 等等，那么你就可以使用这个类（当一个项目被添加到&#x2F;从集合中移除时，视图会得到通知）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）12-BindableCollection">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1YXZ99D.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="概述（Overview） BindableCollection&lt;T&gt; 是 ObservableCollection&lt;T&gt; 的一个子类。如果你在你的 ViewModel 中有一个集合，并且想要将它用作你视图中的某个控件的 ItemsSource 等等，那么你就可以使用这个类（当一个项目被添加到&#x2F;从集合中移除时，视图会得到通知）。">
+<meta property="og:description" content="概述（Overview） BindableCollection&lt;T&gt;  是 ObservableCollection&lt;T&gt; 的一个子类。如果你在你的 ViewModel 中有一个集合，并且想要将它用作你视图中的某个控件的 ItemsSource 等等，那么你就可以使用这个类（当一个项目被添加到&#x2F;从集合中移除时，视图会得到通知）。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -269,46 +269,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述overview">概述（Overview）</h2>
-<p><code>BindableCollection&lt;T&gt;</code> 是 <a
-target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/ms668604%28v=vs.110%29.aspx"><code>ObservableCollection&lt;T&gt;</code></a>
-的一个子类。如果你在你的 ViewModel
-中有一个集合，并且想要将它用作你视图中的某个控件的
-<code>ItemsSource</code>
-等等，那么你就可以使用这个类（当一个项目被添加到/从集合中移除时，视图会得到通知）。</p>
+        <h2 id="概述overview"><a class="markdownIt-Anchor" href="#概述overview"></a> 概述（Overview）</h2>
+<p><code>BindableCollection&lt;T&gt; </code> 是 <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/ms668604%28v=vs.110%29.aspx"><code>ObservableCollection&lt;T&gt;</code></a> 的一个子类。如果你在你的 ViewModel 中有一个集合，并且想要将它用作你视图中的某个控件的 <code>ItemsSource</code> 等等，那么你就可以使用这个类（当一个项目被添加到/从集合中移除时，视图会得到通知）。</p>
 <span id="more"></span>
 <p>而且，它增加了一些有用的额外功能:</p>
 <ul>
-<li><p>新增<code>AddRange</code>、<code>RemoveRange</code>和<code>Refresh</code>方法</p></li>
-<li><p>是线程安全的</p></li>
+<li>
+<p>新增<code>AddRange</code>、<code>RemoveRange</code>和<code>Refresh</code>方法</p>
+</li>
+<li>
+<p>是线程安全的</p>
+</li>
 </ul>
-<h2 id="新方法">新方法</h2>
-<p><code>ObservableCollection&lt;T&gt;</code>缺少两个非常有用的方法:
-<code>AddRange</code> 和 <code>RemoveRange</code> 。</p>
-<p>它们的作用与您的预期相差无几，允许您立即添加/移除范围内的元素，而无需手动遍历每个元素，并在每个元素添加时调用
-<code>collection.Add (element)</code>(这使得触发大量的元素添加事件)。<code>AddRange</code>
-和 <code>RemoveRange</code> 只会在每个范围增加/删除时引发一组事件。</p>
+<h2 id="新方法"><a class="markdownIt-Anchor" href="#新方法"></a> 新方法</h2>
+<p><code>ObservableCollection&lt;T&gt; </code>缺少两个非常有用的方法: <code>AddRange</code> 和 <code>RemoveRange </code> 。</p>
+<p>它们的作用与您的预期相差无几，允许您立即添加/移除范围内的元素，而无需手动遍历每个元素，并在每个元素添加时调用 <code>collection.Add (element)</code>(这使得触发大量的元素添加事件)。<code>AddRange</code> 和 <code>RemoveRange</code> 只会在每个范围增加/删除时引发一组事件。</p>
 <p><code>刷新</code>方法很方便。</p>
-<p>它不会以任何方式修改集合，但会触发 <code>PropertyChanged</code> 和
-<code>CollectionChanged</code> 事件，向任何 UI
-元素表明集合已被修改，它们应该重新加载数据。</p>
+<p>它不会以任何方式修改集合，但会触发 <code>PropertyChanged</code> 和 <code>CollectionChanged</code> 事件，向任何 UI 元素表明集合已被修改，它们应该重新加载数据。</p>
 <p>这不是经常需要的，但当它真的有需要的时候。</p>
-<h2 id="线程安全thead-safety">线程安全（Thead Safety）</h2>
-<p>线程安全是通过将所有操作 (添加、删除、清除、重置等) 分派给 UI
-线程来实现的。分派使用<code>Execute.OnUIThreadSync</code>，意思是:</p>
+<h2 id="线程安全thead-safety"><a class="markdownIt-Anchor" href="#线程安全thead-safety"></a> 线程安全（Thead Safety）</h2>
+<p>线程安全是通过将所有操作 (添加、删除、清除、重置等) 分派给 UI 线程来实现的。分派使用<code>Execute.OnUIThreadSync</code>，意思是:</p>
 <ul>
-<li><p>这些操作是同步的:被调用的方法在操作完成之前不会返回。</p></li>
-<li><p>它们是自由的，如果你已经在 UI
-线程，操作将在这种情况下同步进行。</p></li>
-<li><p>所有 <code>PropertyChanged</code> 和
-<code>CollectionChanged</code> 事件总是在 UI 线程上引发。</p></li>
+<li>
+<p>这些操作是同步的:被调用的方法在操作完成之前不会返回。</p>
+</li>
+<li>
+<p>它们是自由的，如果你已经在 UI 线程，操作将在这种情况下同步进行。</p>
+</li>
+<li>
+<p>所有 <code>PropertyChanged</code> 和 <code>CollectionChanged </code> 事件总是在 UI 线程上引发。</p>
+</li>
 </ul>
-<p>这最后一点意味着与 <code>PropertyChagedBase</code> 有
-<code>PropertyChangedDispatcher</code>
-不同，<code>BindableCollection &lt; T &gt;</code> 上是没有
-<code>PropertyChangedDispatcher</code> 属性的——事件总是在 UI
-线程上,因为操作的属性与总是在 UI 线程上执行，所以，也没有
-<code>CollectionChangedDispatcher</code> 概念。</p>
+<p>这最后一点意味着与 <code>PropertyChagedBase</code> 有 <code>PropertyChangedDispatcher</code> 不同，<code>BindableCollection &lt; T &gt;</code> 上是没有 <code>PropertyChangedDispatcher</code>  属性的——事件总是在 UI 线程上,因为操作的属性与总是在 UI 线程上执行，所以，也没有 <code>CollectionChangedDispatcher</code> 概念。</p>
 
     </div>
 
@@ -378,12 +370,12 @@ target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/ms6
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/2020/3R00ZSM.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread">
-      <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread
+    <a href="/posts/2020/1HXBM8H.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase">
+      <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2020/AEXRX4.html" rel="next" title="WPF MVVM Stylet使用文档（中文）19-2 Debug Converter">
-      WPF MVVM Stylet使用文档（中文）19-2 Debug Converter <i class="fa fa-chevron-right"></i>
+    <a href="/posts/2020/1H4GT7T.html" rel="next" title="WPF MVVM Stylet使用文档（中文）11-Screens and Conductors">
+      WPF MVVM Stylet使用文档（中文）11-Screens and Conductors <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -444,7 +436,7 @@ target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/ms6
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0overview"><span class="nav-number">1.</span> <span class="nav-text">概述（Overview）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8thead-safety"><span class="nav-number">3.</span> <span class="nav-text">线程安全（Thead Safety）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0overview"><span class="nav-number">1.</span> <span class="nav-text"> 概述（Overview）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8thead-safety"><span class="nav-number">3.</span> <span class="nav-text"> 线程安全（Thead Safety）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -524,12 +516,12 @@ target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/ms6
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

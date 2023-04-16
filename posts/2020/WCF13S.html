@@ -267,7 +267,7 @@
       
         <p>本文主要介绍 scoop 初始安装及重置电脑后的恢复。</p>
 <span id="more"></span>
-<h2 id="安装">安装</h2>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
 <p>scoop 安装环境要求：</p>
 <ul>
 <li>Windows 版本不低于 Windows 7</li>
@@ -275,43 +275,40 @@
 <li>.NET Framework 4.5+</li>
 <li>用户名无中文</li>
 </ul>
-<p>首先，保证电脑有 PowerShell 3，如果没有，需要安装 Windows Management
-Framework，下载地址：https://www.microsoft.com/en-us/download/details.aspx?id=54616</p>
+<p>首先，保证电脑有 PowerShell 3，如果没有，需要安装 Windows Management Framework，下载地址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=54616">https://www.microsoft.com/en-us/download/details.aspx?id=54616</a></p>
 <p>将下列脚本保存为 .ps1 文件，然后用管理员身份运行即可</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># scoop.ps1</span></span><br><span class="line"><span class="comment"># 设置用户变量</span></span><br><span class="line">[<span class="type">environment</span>]::setEnvironmentVariable(<span class="string">&#x27;SCOOP&#x27;</span>,<span class="string">&#x27;D:\scoop&#x27;</span>,<span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"><span class="comment"># 启用</span></span><br><span class="line"><span class="variable">$env:SCOOP</span>=<span class="string">&#x27;D:\scoop&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置系统全局变量</span></span><br><span class="line">[<span class="type">environment</span>]::setEnvironmentVariable(<span class="string">&#x27;SCOOP_GLOBAL&#x27;</span>,<span class="string">&#x27;D:\scoop_global&#x27;</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line"><span class="comment"># 启用</span></span><br><span class="line"><span class="variable">$env:SCOOP_GLOBAL</span>=<span class="string">&#x27;D:\scoop_global&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许本地脚本执行</span></span><br><span class="line"><span class="built_in">set-executionpolicy</span> remotesigned <span class="literal">-s</span> cu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载安装scoop</span></span><br><span class="line"><span class="comment"># 官方</span></span><br><span class="line"><span class="comment"># iex (new-object net.webclient).downloadstring(&#x27;https://get.scoop.sh&#x27;)</span></span><br><span class="line"><span class="comment"># 或国内</span></span><br><span class="line"><span class="built_in">iwr</span> <span class="literal">-useb</span> https://gitee.com/RubyKids/scoop<span class="literal">-cn</span>/raw/main/install.ps1 | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 extras</span></span><br><span class="line">scoop bucket add extras https://github.com/lukesampson/scoop<span class="literal">-extras</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加自用源</span></span><br><span class="line">scoop bucket add uamazing https://gitee.com/galensgan/galens<span class="literal">-bucket</span>.git</span><br></pre></td></tr></table></figure>
-<h2 id="aria2-多线程下载">aria2 多线程下载</h2>
+<h2 id="aria2-多线程下载"><a class="markdownIt-Anchor" href="#aria2-多线程下载"></a> aria2 多线程下载</h2>
 <p>下载 aria2 多线程加速下载</p>
 <p><code>scoop install aria2</code></p>
 <p>设置 aria2 走代理</p>
-<p>打开 <code>C:\Users\%username%\.config\scoop\config.json</code>
-文件，在里面添加：</p>
+<p>打开 <code>C:\Users\%username%\.config\scoop\config.json</code> 文件，在里面添加：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// aria2 配置</span></span><br><span class="line">    <span class="attr">&quot;aria2-options&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;--check-certificate false&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;--https-proxy=http://192.168.3.14:7890&quot;</span><span class="punctuation">,</span> <span class="comment">// https 代理的地址</span></span><br><span class="line">        <span class="string">&quot;--http-proxy=http://192.168.3.14.7890&quot;</span> <span class="comment">// http 代理地址</span></span><br><span class="line">  	<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="重置后恢复">重置后恢复</h2>
-<p>由于电脑重置后，环境变量的丢失，导致原本安装的 scoop
-失效，此时只需要恢复其环境变量就可以了。</p>
+<h2 id="重置后恢复"><a class="markdownIt-Anchor" href="#重置后恢复"></a> 重置后恢复</h2>
+<p>由于电脑重置后，环境变量的丢失，导致原本安装的 scoop  失效，此时只需要恢复其环境变量就可以了。</p>
 <p>分别添加如下环境变量：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>变量名</th>
 <th>值</th>
 <th>操作</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>scoop</td>
 <td>局部 scoop 路径</td>
 <td>新增</td>
 </tr>
-<tr class="even">
+<tr>
 <td>scoop_global</td>
 <td>全局 scoop 路径新增</td>
 <td>新增</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>path</td>
-<td>scop 路径 + ''</td>
+<td>scop 路径 + ‘\shimm’</td>
 <td>追加</td>
 </tr>
 </tbody>
@@ -390,8 +387,8 @@ Framework，下载地址：https://www.microsoft.com/en-us/download/details.aspx
       <i class="fa fa-chevron-left"></i> js中对象的创建及理解
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2020/6W94V6.html" rel="next" title="CurveVector 相关实现笔记">
-      CurveVector 相关实现笔记 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/2020/35KNZY8.html" rel="next" title="用命令行安装mongodb指南">
+      用命令行安装mongodb指南 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -452,7 +449,7 @@ Framework，下载地址：https://www.microsoft.com/en-us/download/details.aspx
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aria2-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">aria2 多线程下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E5%90%8E%E6%81%A2%E5%A4%8D"><span class="nav-number">3.</span> <span class="nav-text">重置后恢复</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aria2-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text"> aria2 多线程下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E5%90%8E%E6%81%A2%E5%A4%8D"><span class="nav-number">3.</span> <span class="nav-text"> 重置后恢复</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -532,12 +529,12 @@ Framework，下载地址：https://www.microsoft.com/en-us/download/details.aspx
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

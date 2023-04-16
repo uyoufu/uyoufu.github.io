@@ -261,31 +261,24 @@
       
         <p>本文列举 Powershell7 中比较好用的插件。</p>
 <span id="more"></span>
-<h2 id="busybox">busybox</h2>
-<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux
-命令的精简实现，扩展了 powershell 命令。</p>
+<h2 id="busybox"><a class="markdownIt-Anchor" href="#busybox"></a> busybox</h2>
+<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux 命令的精简实现，扩展了 powershell 命令。</p>
 <p>安装方式：scoop</p>
-<h2 id="sudo">sudo</h2>
+<h2 id="sudo"><a class="markdownIt-Anchor" href="#sudo"></a> sudo</h2>
 <p>powershell 提权</p>
 <p>安装方式：scoop</p>
-<h2 id="oh-my-posh">oh-my-posh</h2>
+<h2 id="oh-my-posh"><a class="markdownIt-Anchor" href="#oh-my-posh"></a> oh-my-posh</h2>
 <p>powershell 样式美化</p>
-<p>安装方式：<a
-target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My
-Posh</a></p>
-<h2 id="z.lua">z.lua</h2>
+<p>安装方式：<a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My Posh</a></p>
+<h2 id="zlua"><a class="markdownIt-Anchor" href="#zlua"></a> z.lua</h2>
 <p>实现路径快速跳转</p>
-<p>参考：<a
-target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
-<h2 id="自定义别名">自定义别名</h2>
+<p>参考：<a target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
+<h2 id="自定义别名"><a class="markdownIt-Anchor" href="#自定义别名"></a> 自定义别名</h2>
 <p>可以自定义一些自己常用的别名，方便使用</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
-<h2 id="完整配置">完整配置</h2>
-<p>在 powershell 中输入<code>notepad $profile</code>
-来打开配置文件，如果没有的话，输入
-<code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
-<p><code>$profile</code>
-的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
+<h2 id="完整配置"><a class="markdownIt-Anchor" href="#完整配置"></a> 完整配置</h2>
+<p>在 powershell 中输入<code>notepad $profile</code> 来打开配置文件，如果没有的话，输入 <code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
+<p><code>$profile</code> 的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
 <p>配置后的文件内容如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># oh-my-posh初始化</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">&#x27;C:\Users\galens\.posh\montys.json&#x27;</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># z.lua 配置</span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> (&amp; &#123; (lua D:/Application/z.lua/z.lua <span class="literal">--init</span> powershell once enhanced) <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
 
@@ -424,7 +417,7 @@ target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/m
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text">busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text">oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z.lua"><span class="nav-number">4.</span> <span class="nav-text">z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">完整配置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text"> busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text"> sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text"> oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zlua"><span class="nav-number">4.</span> <span class="nav-text"> z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text"> 自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text"> 完整配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -504,12 +497,12 @@ target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/m
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

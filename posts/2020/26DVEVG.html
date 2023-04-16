@@ -246,7 +246,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>430</span>
+              <span>450</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,17 +267,14 @@
       
         <p>如何在 windows 中添加右键新建 .md 文件功能？</p>
 <span id="more"></span>
-<h2 id="正文">正文</h2>
-<p>新建一个 <code>.reg</code>
-的文本文件，将下列代码拷贝到里面，然后双击运行即可</p>
+<h2 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h2>
+<p>新建一个 <code>.reg</code> 的文本文件，将下列代码拷贝到里面，然后双击运行即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">[HKEY_CLASSES_ROOT\.md]</span><br><span class="line">@=&quot;Typora.exe&quot;</span><br><span class="line">[HKEY_CLASSES_ROOT\.md\ShellNew]</span><br><span class="line">&quot;NullFile&quot;=&quot;&quot;</span><br><span class="line">[HKEY_CLASSES_ROOT\Typora.exe]</span><br><span class="line">@=&quot;Markdown&quot;</span><br></pre></td></tr></table></figure>
 <p>解释</p>
-<p><code>@="Typora.exe"</code> 代表的是指定 .md 文件的运行程序
-<code>@="Markdown"</code> 代表的是右键时默认的文件名字，这样写新建为
-<code>新建Markdown.md</code> 文件，而且右键菜单中显示
-<code>MarkDown</code>。</p>
-<h2 id="致谢">致谢</h2>
-<p>原谅链接：https://stepneverstop.github.io/win-rightclick-create-md.html</p>
+<p><code>@=&quot;Typora.exe&quot;</code> 代表的是指定 .md 文件的运行程序<br />
+<code>@=&quot;Markdown&quot;</code> 代表的是右键时默认的文件名字，这样写新建为 <code>新建Markdown.md</code> 文件，而且右键菜单中显示 <code>MarkDown</code>。</p>
+<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<p>原谅链接：<a target="_blank" rel="noopener" href="https://stepneverstop.github.io/win-rightclick-create-md.html">https://stepneverstop.github.io/win-rightclick-create-md.html</a></p>
 
     </div>
 
@@ -413,7 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">2.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text"> 正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">2.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,12 +490,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

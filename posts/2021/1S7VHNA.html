@@ -270,7 +270,7 @@
       
         <p>免费申请证书来配置 https。</p>
 <span id="more"></span>
-<h2 id="httpsssl证书关系">HTTPS,SSL,证书关系</h2>
+<h2 id="httpsssl证书关系"><a class="markdownIt-Anchor" href="#httpsssl证书关系"></a> HTTPS,SSL,证书关系</h2>
 <ul>
 <li>HTTPS是通过HTTP + SSL组成</li>
 <li>SSL的实现是通过安装数字证书来实现</li>
@@ -278,52 +278,56 @@
 <li>数字证书包含了加解密的算法</li>
 <li>数字证书用于建立信任并且分发公钥</li>
 </ul>
-<h2 id="软件">软件</h2>
+<h2 id="软件"><a class="markdownIt-Anchor" href="#软件"></a> 软件</h2>
 <ul>
-<li><p>openssl</p>
-<p>用于生成密钥</p></li>
-<li><p>cerbot或者acme</p>
-<p>本文采用 <code>win-acme</code> 来获取证书</p></li>
+<li>
+<p>openssl</p>
+<p>用于生成密钥</p>
+</li>
+<li>
+<p>cerbot或者acme</p>
+<p>本文采用 <code>win-acme</code> 来获取证书</p>
+</li>
 </ul>
 <blockquote>
 <p>上述两个软件均可用 scoop 安装</p>
 </blockquote>
-<h2 id="通过openssl制作证书">通过openSSL制作证书</h2>
-<p>在说明证书制作过程前，先说明制作证书时，用到的几类文件的作用： .key
-文件：私钥 .csr
-文件：证书签名请求文件，含有公钥信息，<code>certificate signing request</code>
-的缩 .crt 文件：用 .csr 生成的证书文件，certificate
-的缩写,这就是数字证书</p>
+<h2 id="通过openssl制作证书"><a class="markdownIt-Anchor" href="#通过openssl制作证书"></a> 通过openSSL制作证书</h2>
+<p>在说明证书制作过程前，先说明制作证书时，用到的几类文件的作用：<br />
+.key 文件：私钥<br />
+.csr 文件：证书签名请求文件，含有公钥信息，<code>certificate signing request</code> 的缩<br />
+.crt 文件：用 .csr 生成的证书文件，certificate 的缩写,这就是数字证书</p>
 <p>生成自签名根证书：就是模仿证书权威机构的作用，给用户提供一个权威机构的根证书。在真实场景中，根证书是CA认证中心给自己颁发的证书,是信任链的起始点。任何安装CA根证书的服务器都意味着对这个CA认证中心是信任的。</p>
-<ol type="1">
-<li><p>生成CA 的私钥</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 2048</span><br></pre></td></tr></table></figure></li>
-<li><p>生成CA 证书请求文件</p>
+<ol>
+<li>
+<p>生成CA 的私钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 2048</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>生成CA 证书请求文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key ca.key -out ca.csr</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：</p>
 <ul>
-<li>如果要用 https，那么 common name
-那里应该是域名，否则会引起浏览器警告</li>
+<li>如果要用 https，那么 common name 那里应该是域名，否则会引起浏览器警告</li>
 <li>密码可以不输入</li>
 </ul>
 </blockquote>
 <p><strong>设置密码后的影响</strong></p>
-<p>我们在生成 RSA 私钥，即 ca.key
-时设置了密码，这样会导致在启动nginx服务时，每次需要输入密码。</p>
+<p>我们在生成 RSA 私钥，即 ca.key  时设置了密码，这样会导致在启动nginx服务时，每次需要输入密码。</p>
 <p>可能通过下列方式删除密码，生成一个没有密码的 RSA key：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in ca.key -out ca_no_pass.key</span><br></pre></td></tr></table></figure></li>
-<li><p>生成CA证书</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -days 365 -in ca.csr -signkey ca_no_pass.key -out ca.crt</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in ca.key -out ca_no_pass.key</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>生成CA证书</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -days 365 -in ca.csr -signkey ca_no_pass.key -out ca.crt</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="用win-acme给-windows-服务器添加ssllets-encrypt证书">用win-acme给
-windows 服务器添加SSL（Let's Encrypt）证书</h2>
+<h2 id="用win-acme给-windows-服务器添加ssllets-encrypt证书"><a class="markdownIt-Anchor" href="#用win-acme给-windows-服务器添加ssllets-encrypt证书"></a> 用win-acme给 windows 服务器添加SSL（Let’s Encrypt）证书</h2>
 <p>见参考[2]</p>
-<h2 id="参考">参考</h2>
-<p>[1]. https://www.jianshu.com/p/449047437697</p>
-<p>[2]. <a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/Gxiaopan/p/11872433.html">用win-acme给windows服务器添加SSL（Let's
-Encrypt）证书</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p>[1].  <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/449047437697">https://www.jianshu.com/p/449047437697</a></p>
+<p>[2]. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Gxiaopan/p/11872433.html">用win-acme给windows服务器添加SSL（Let’s Encrypt）证书</a></p>
 
     </div>
 
@@ -458,8 +462,7 @@ Encrypt）证书</a></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#httpsssl%E8%AF%81%E4%B9%A6%E5%85%B3%E7%B3%BB"><span class="nav-number">1.</span> <span class="nav-text">HTTPS,SSL,证书关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87openssl%E5%88%B6%E4%BD%9C%E8%AF%81%E4%B9%A6"><span class="nav-number">3.</span> <span class="nav-text">通过openSSL制作证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8win-acme%E7%BB%99-windows-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0ssllets-encrypt%E8%AF%81%E4%B9%A6"><span class="nav-number">4.</span> <span class="nav-text">用win-acme给
-windows 服务器添加SSL（Let&#39;s Encrypt）证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#httpsssl%E8%AF%81%E4%B9%A6%E5%85%B3%E7%B3%BB"><span class="nav-number">1.</span> <span class="nav-text"> HTTPS,SSL,证书关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text"> 软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87openssl%E5%88%B6%E4%BD%9C%E8%AF%81%E4%B9%A6"><span class="nav-number">3.</span> <span class="nav-text"> 通过openSSL制作证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8win-acme%E7%BB%99-windows-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0ssllets-encrypt%E8%AF%81%E4%B9%A6"><span class="nav-number">4.</span> <span class="nav-text"> 用win-acme给 windows 服务器添加SSL（Let’s Encrypt）证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -539,12 +542,12 @@ windows 服务器添加SSL（Let&#39;s Encrypt）证书</span></a></li><li class
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

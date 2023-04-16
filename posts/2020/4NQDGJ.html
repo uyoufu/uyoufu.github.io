@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="简介 有时候，查看 Stylet 在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。 值得庆幸的是，Stylet 可以很容易地配置来生成日志输出，因此您可以了解它在做什么。">
+  <meta name="description" content="简介 有时候，查看 Stylet 在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。 值得庆幸的是，Stylet 可以很容易地配置来生成日志输出，因此您可以了解它在做什么。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）18-Logging">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/4NQDGJ.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介 有时候，查看 Stylet 在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。 值得庆幸的是，Stylet 可以很容易地配置来生成日志输出，因此您可以了解它在做什么。">
+<meta property="og:description" content="简介 有时候，查看 Stylet 在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。 值得庆幸的是，Stylet 可以很容易地配置来生成日志输出，因此您可以了解它在做什么。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -269,38 +269,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="简介">简介</h2>
-<p>有时候，查看 Stylet
-在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。</p>
-<p>值得庆幸的是，Stylet
-可以很容易地配置来生成日志输出，因此您可以了解它在做什么。</p>
+        <h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>有时候，查看 Stylet 在幕后做了什么是很有用的，特别是当它没有做一些你期望它做的事情，或者做一些意想不到的事情的时候。</p>
+<p>值得庆幸的是，Stylet 可以很容易地配置来生成日志输出，因此您可以了解它在做什么。</p>
 <span id="more"></span>
-<h2 id="快速启动">快速启动</h2>
+<h2 id="快速启动"><a class="markdownIt-Anchor" href="#快速启动"></a> 快速启动</h2>
 <p>要快速启用日志记录，请在Bootstrapper的配置方法中放入以下内容:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnStart</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">   Stylet.Logging.LogManager.Enabled = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这将把日志消息打印到 Visual Studio
-的输出窗口。在内部，默认的日志记录器使用
-<code>Trace.WriteLine</code>。</p>
-<h2 id="定制日志">定制日志</h2>
-<p>当然，您可以向 Stylet 提供自己的日志记录器，Stylet
-将使用它来打印日志消息。</p>
+<p>这将把日志消息打印到 Visual Studio 的输出窗口。在内部，默认的日志记录器使用 <code>Trace.WriteLine</code>。</p>
+<h2 id="定制日志"><a class="markdownIt-Anchor" href="#定制日志"></a> 定制日志</h2>
+<p>当然，您可以向 Stylet 提供自己的日志记录器，Stylet 将使用它来打印日志消息。</p>
 <p>首先，定义一个实现 <code>Stylet.Logging.ILogger</code> 接口的类:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyLogger</span> : <span class="title">Stylet.Logging.ILogger</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyLogger</span>(<span class="params"><span class="built_in">string</span> loggerName</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// TODO</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Info</span>(<span class="params"><span class="built_in">string</span> format, <span class="keyword">params</span> <span class="built_in">object</span>[] args</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// TODO</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Warn</span>(<span class="params"><span class="built_in">string</span> format, <span class="keyword">params</span> <span class="built_in">object</span>[] args</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// TODO</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Error</span>(<span class="params">Exception exception, <span class="built_in">string</span> message = <span class="literal">null</span></span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// TODO</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，配置 LogManager
-来使用它。与之前一样，在你的Bootstrapper的配置方法:</p>
+<p>然后，配置 LogManager 来使用它。与之前一样，在你的Bootstrapper的配置方法:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnStart</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">   Stylet.Logging.LogManager.LoggerFactory = name =&gt; <span class="keyword">new</span> MyLogger(name);</span><br><span class="line">   Stylet.Logging.LogManager.Enabled = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2
-id="在应用程序中进行日志记录logging-within-your-application">在应用程序中进行日志记录（Logging
-within your Application）</h2>
-<p>我建议不要用 Stylet.Logging
-在其他地方进行日志记录。它是非常轻量级的，几乎没有任何特性——编写它的唯一原因是为了让
-Stylet 不依赖于日志框架来支持一个几乎永远不会被使用的特性。</p>
-<p><a target="_blank" rel="noopener" href="http://nlog-project.org/">NLog</a> 和 <a
-target="_blank" rel="noopener" href="http://logging.apache.org/log4net/">log4net</a>
-是两个主要的c#日志记录框架。如果您不想将您的应用程序与任何特定的日志记录框架耦合，那么可以考虑
-<a
-target="_blank" rel="noopener" href="https://github.com/net-commons/common-logging">Common.Logging</a>，它提供了一个与框架无关的接口，在这个接口后面可以连接
-NLog、log4net或其他框架。</p>
+<h2 id="在应用程序中进行日志记录logging-within-your-application"><a class="markdownIt-Anchor" href="#在应用程序中进行日志记录logging-within-your-application"></a> 在应用程序中进行日志记录（Logging within your Application）</h2>
+<p>我建议不要用 Stylet.Logging 在其他地方进行日志记录。它是非常轻量级的，几乎没有任何特性——编写它的唯一原因是为了让 Stylet 不依赖于日志框架来支持一个几乎永远不会被使用的特性。</p>
+<p><a target="_blank" rel="noopener" href="http://nlog-project.org/">NLog</a> 和 <a target="_blank" rel="noopener" href="http://logging.apache.org/log4net/">log4net</a> 是两个主要的c#日志记录框架。如果您不想将您的应用程序与任何特定的日志记录框架耦合，那么可以考虑 <a target="_blank" rel="noopener" href="https://github.com/net-commons/common-logging">Common.Logging</a>，它提供了一个与框架无关的接口，在这个接口后面可以连接 NLog、log4net或其他框架。</p>
 
     </div>
 
@@ -370,12 +355,12 @@ NLog、log4net或其他框架。</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/2020/1VM70C3.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）17-Design Mode Support">
-      <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）17-Design Mode Support
+    <a href="/posts/2020/3CQNFDK.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）14-1-Introduction of StyletIoC">
+      <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）14-1-Introduction of StyletIoC
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2020/39AEVSS.html" rel="next" title="WPF MVVM Stylet使用文档（中文）15-The ViewManager">
-      WPF MVVM Stylet使用文档（中文）15-The ViewManager <i class="fa fa-chevron-right"></i>
+    <a href="/posts/2020/1VM70C3.html" rel="next" title="WPF MVVM Stylet使用文档（中文）17-Design Mode Support">
+      WPF MVVM Stylet使用文档（中文）17-Design Mode Support <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -436,8 +421,7 @@ NLog、log4net或其他框架。</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">快速启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%88%B6%E6%97%A5%E5%BF%97"><span class="nav-number">3.</span> <span class="nav-text">定制日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95logging-within-your-application"><span class="nav-number">4.</span> <span class="nav-text">在应用程序中进行日志记录（Logging
-within your Application）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text"> 快速启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%88%B6%E6%97%A5%E5%BF%97"><span class="nav-number">3.</span> <span class="nav-text"> 定制日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95logging-within-your-application"><span class="nav-number">4.</span> <span class="nav-text"> 在应用程序中进行日志记录（Logging within your Application）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -517,12 +501,12 @@ within your Application）</span></a></li></ol></div>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -266,12 +266,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="技术选型">技术选型</h2>
+          <h2 id="技术选型"><a class="markdownIt-Anchor" href="#技术选型"></a> 技术选型</h2>
 <blockquote>
-<p>建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个
-<code>tools</code> 这样的工具库，显然更适合用 <code>rollup</code>
-打包。如果是开发的是一个业务组件（vue），则更加适合采用
-<code>@vue/cli</code> 的 <code>lib</code> 模式来构建。</p>
+<p>建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 <code>tools</code> 这样的工具库，显然更适合用 <code>rollup</code> 打包。如果是开发的是一个业务组件（vue），则更加适合采用 <code>@vue/cli</code> 的 <code>lib</code> 模式来构建。</p>
 </blockquote>
 <p>为什么一定要选择打包工具来开发 <code>npm</code> 包?</p>
 <ul>
@@ -279,12 +276,9 @@
 </ul>
 <p>为什么是 <code>rollup</code> 而不是 <code>webpack</code>?</p>
 <ul>
-<li>随着 <code>rollup</code> 和 <code>webpack</code>
-的版本更新，二者之间的差异性特性越来越小</li>
-<li><code>rollup</code>
-配置简单，支持同时打包输出多种规范的产物（iife、cjs、umd、esm、amd、system）</li>
-<li><code>webpack</code>
-功能强大社区丰富，更加适合大型应用；不支持打包输出为<code>es module</code>，而且产物不是很纯净</li>
+<li>随着 <code>rollup</code> 和 <code>webpack</code> 的版本更新，二者之间的差异性特性越来越小</li>
+<li><code>rollup</code> 配置简单，支持同时打包输出多种规范的产物（iife、cjs、umd、esm、amd、system）</li>
+<li><code>webpack</code> 功能强大社区丰富，更加适合大型应用；不支持打包输出为<code>es module</code>，而且产物不是很纯净</li>
 <li>构建<code>App应用</code>时，webpack比较合适；如果是<code>类库（纯js项目）</code>，rollup更加适合。</li>
 </ul>
           <!--noindex-->
@@ -389,12 +383,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="打包工具的选择">打包工具的选择</h2>
-<p>如果我们需要构建一个简单的小型应用并让它快速运行起来，可以使用
-<code>Parcel</code>；如果需要构建一个类库只需要导入很少第三方库，可以使用
-<code>Rollup</code>；如果需要构建一个复杂的应用，需要集成很多第三方库，并且需要代码分拆、HMR等功能，推荐使用
-<code>Webpack</code> <a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]</a>。</p>
+          <h2 id="打包工具的选择"><a class="markdownIt-Anchor" href="#打包工具的选择"></a> 打包工具的选择</h2>
+<p>如果我们需要构建一个简单的小型应用并让它快速运行起来，可以使用 <code>Parcel</code>；如果需要构建一个类库只需要导入很少第三方库，可以使用 <code>Rollup</code>；如果需要构建一个复杂的应用，需要集成很多第三方库，并且需要代码分拆、HMR等功能，推荐使用 <code>Webpack</code> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]</a>。</p>
 <p>所以，在开发工具库时，我们选择 <code>rollup</code> 作为打包工具。</p>
           <!--noindex-->
             <div class="post-button">
@@ -491,17 +481,16 @@ target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="添加用户">添加用户</h2>
+          <h2 id="添加用户"><a class="markdownIt-Anchor" href="#添加用户"></a> 添加用户</h2>
 <p>添加用户是通过终端电脑的npm来操作的，在输入下列命令后，根据要求输入用户名和密码即可。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm adduser --registry https://mydomain.com:port/</span><br></pre></td></tr></table></figure>
-<h2 id="授权验证">授权验证</h2>
-<h2 id="i18n">i18n</h2>
-<h2 id="发布包">发布包</h2>
+<h2 id="授权验证"><a class="markdownIt-Anchor" href="#授权验证"></a> 授权验证</h2>
+<h2 id="i18n"><a class="markdownIt-Anchor" href="#i18n"></a> i18n</h2>
+<h2 id="发布包"><a class="markdownIt-Anchor" href="#发布包"></a> 发布包</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish --registry https://mydomain.com:port/</span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://verdaccio.org/docs/configuration/">verdaccio
-官方配置文档</a></li>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://verdaccio.org/docs/configuration/">verdaccio 官方配置文档</a></li>
 </ol>
 
       
@@ -591,9 +580,7 @@ target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>为了在js开发中更加便利的模块化，解决开发中频繁地更新npm包的问题，决定搭建一个轻量的npm包管理服务。比较了
-verdaccio，cnpm 后，最后选择了
-verdaccio。因为它够方便和快速，同时也够用。</p>
+          <p>为了在js开发中更加便利的模块化，解决开发中频繁地更新npm包的问题，决定搭建一个轻量的npm包管理服务。比较了 verdaccio，cnpm 后，最后选择了 verdaccio。因为它够方便和快速，同时也够用。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/7MJX55.html#more" rel="contents">
@@ -685,8 +672,7 @@ verdaccio。因为它够方便和快速，同时也够用。</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>通过用户名和密码，利用 SSH
-登陆远程服务器进行服务器管理时，有如下缺点：</p>
+          <p>通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：</p>
 <ul>
 <li>每次输入密码，很麻烦，也不极客</li>
 <li>服务器开放账号密码登陆，容易补暴力破解</li>
@@ -883,14 +869,17 @@ verdaccio。因为它够方便和快速，同时也够用。</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>子文档是在一个 <code>Schema</code> 中嵌入另一个
-<code>Schema</code>，它的形式主要有两种：</p>
+          <p>子文档是在一个 <code>Schema</code> 中嵌入另一个 <code>Schema</code>，它的形式主要有两种：</p>
 <ul>
-<li><p>子文档是数组</p></li>
-<li><p>子文档是对象</p>
+<li>
+<p>子文档是数组</p>
+</li>
+<li>
+<p>子文档是对象</p>
 <blockquote>
 <p>注意，子文档是对象的情况只适用于 4.2.0 及以上的版本</p>
-</blockquote></li>
+</blockquote>
+</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -1071,9 +1060,7 @@ verdaccio。因为它够方便和快速，同时也够用。</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>如何在 Windows Server 2022 上安装 Docker 呢？经过实测，如果直接从
-Docker 官网下载 Docker Desktop
-进行安装，会出现启动失败的问题。特将正确的安装步骤记录如下：</p>
+          <p>如何在 Windows Server 2022 上安装 Docker 呢？经过实测，如果直接从 Docker 官网下载 Docker Desktop 进行安装，会出现启动失败的问题。特将正确的安装步骤记录如下：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2021/Q0YYS8.html#more" rel="contents">
@@ -1323,12 +1310,12 @@ Docker 官网下载 Docker Desktop
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

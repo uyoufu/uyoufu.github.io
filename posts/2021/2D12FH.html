@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="有时候我们需要在其它电脑上编译 Hexo 博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。">
+  <meta name="description" content="有时候我们需要在其它电脑上编译 Hexo 博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速搭建Hexo编译环境">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/2D12FH.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="有时候我们需要在其它电脑上编译 Hexo 博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。">
+<meta property="og:description" content="有时候我们需要在其它电脑上编译 Hexo 博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
@@ -262,33 +262,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>有时候我们需要在其它电脑上编译 Hexo
-博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。</p>
+        <p>有时候我们需要在其它电脑上编译 Hexo 博客，那么要如何快速搭建编译的环境呢，且听本文娓娓道来。如果涉及的环境已经存在或步骤已经执行过，请自行跳过。</p>
 <span id="more"></span>
-<h2 id="安装-npm">安装 npm</h2>
-<p>npm 是随 nodejs 安装而自动安装的，所以，我们只需要安装 nodejs
-即可。本人一般安装 nodejs 使用 scoop 来安装，命令行如下：</p>
+<h2 id="安装-npm"><a class="markdownIt-Anchor" href="#安装-npm"></a> 安装 npm</h2>
+<p>npm 是随 nodejs 安装而自动安装的，所以，我们只需要安装 nodejs 即可。本人一般安装 nodejs 使用 scoop 来安装，命令行如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install nodejs</span><br></pre></td></tr></table></figure>
-<h2 id="安装-git">安装 Git</h2>
-<p>Git 用于克隆源代码，当然源代码也可以手动下载，但是用 Git
-的话可以在另一台电脑修改博客后将更新推送到 GitHub。scoop
-安装命令如下：</p>
+<h2 id="安装-git"><a class="markdownIt-Anchor" href="#安装-git"></a> 安装 Git</h2>
+<p>Git 用于克隆源代码，当然源代码也可以手动下载，但是用 Git 的话可以在另一台电脑修改博客后将更新推送到 GitHub。scoop 安装命令如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br></pre></td></tr></table></figure>
-<h2 id="克隆仓库">克隆仓库</h2>
+<h2 id="克隆仓库"><a class="markdownIt-Anchor" href="#克隆仓库"></a> 克隆仓库</h2>
 <p>由于主题是作为博客的子模块，所以需要递归克隆整个项目：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone github地址 <span class="literal">--recursive</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装依赖包">安装依赖包</h2>
+<h2 id="安装依赖包"><a class="markdownIt-Anchor" href="#安装依赖包"></a> 安装依赖包</h2>
 <p>命令行进入到博客主目录中，运行下列语句安装依赖包：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>进入到 <code>./themes/next</code>
-目录，运行下列语句安装主题依赖包：</p>
+<p>进入到 <code>./themes/next</code> 目录，运行下列语句安装主题依赖包：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h2 id="安装pandoc">安装Pandoc</h2>
+<h2 id="安装pandoc"><a class="markdownIt-Anchor" href="#安装pandoc"></a> 安装Pandoc</h2>
 <p>hexo 需要 pandoc 支持，采用 scoop 安装，其命令如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install pandoc</span><br></pre></td></tr></table></figure>
-<h2 id="编译">编译</h2>
+<h2 id="编译"><a class="markdownIt-Anchor" href="#编译"></a> 编译</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
-
     </div>
 
     
@@ -424,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-npm"><span class="nav-number">1.</span> <span class="nav-text">安装 npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-git"><span class="nav-number">2.</span> <span class="nav-text">安装 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">克隆仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pandoc"><span class="nav-number">5.</span> <span class="nav-text">安装Pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">6.</span> <span class="nav-text">编译</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-npm"><span class="nav-number">1.</span> <span class="nav-text"> 安装 npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-git"><span class="nav-number">2.</span> <span class="nav-text"> 安装 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text"> 克隆仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text"> 安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pandoc"><span class="nav-number">5.</span> <span class="nav-text"> 安装Pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">6.</span> <span class="nav-text"> 编译</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -504,12 +498,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

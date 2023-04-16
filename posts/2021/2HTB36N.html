@@ -249,7 +249,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>715</span>
+              <span>784</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -270,40 +270,41 @@
       
         <p>本节主要阐述 Bentley 平台的坐标系系统。</p>
 <span id="more"></span>
-<h2 id="模型变换概念">模型变换概念</h2>
+<h2 id="模型变换概念"><a class="markdownIt-Anchor" href="#模型变换概念"></a> 模型变换概念</h2>
 <p>在进行模型变换过程中，有时候对模型与坐标系理解不通透，会导致变换过程变得很艰辛，因此将其关键概念总结如下：</p>
-<ol type="1">
-<li><p>所有的模型都是存储在全局世界坐标系下的</p></li>
-<li><p>我们在视图中观察到的模型，是程序将原模型左乘一个视图旋转矩阵，然后左乘一个投影矩阵投影到屏幕上产生的</p></li>
-<li><p>当将一个模型变换到局部坐标系后，再
-<code>AddToModel</code>，最后在世界坐标系中显示出来的模型就是局部坐标系的样子。</p></li>
-<li><p><code>引擎推动的不是飞船而是宇宙。飞船压根就没动过。</code></p>
+<ol>
+<li>
+<p>所有的模型都是存储在全局世界坐标系下的</p>
+</li>
+<li>
+<p>我们在视图中观察到的模型，是程序将原模型左乘一个视图旋转矩阵，然后左乘一个投影矩阵投影到屏幕上产生的</p>
+</li>
+<li>
+<p>当将一个模型变换到局部坐标系后，再 <code>AddToModel</code>，最后在世界坐标系中显示出来的模型就是局部坐标系的样子。</p>
+</li>
+<li>
+<p><code>引擎推动的不是飞船而是宇宙。飞船压根就没动过。</code></p>
 <p>引擎代表坐标系，图形中，坐标系只有一个世界坐标系，其它的局部坐标系是为了方便理解而产生出来的。坐标系的变换就是对模型的变换。</p>
-<p>所以在理解第 3
-条时，不能理解成将局部坐标系与世界坐标系对齐，而应理解成<strong>将世界坐标系与局部坐标系对齐（换言之，就是对模型进行仿射变换）</strong></p>
-<p>变换完成后，在视图中显示的就是局部坐标系下的状态了</p></li>
+<p>所以在理解第 3 条时，不能理解成将局部坐标系与世界坐标系对齐，而应理解成<strong>将世界坐标系与局部坐标系对齐（换言之，就是对模型进行仿射变换）</strong></p>
+<p>变换完成后，在视图中显示的就是局部坐标系下的状态了</p>
+</li>
 </ol>
-<h2 id="世界坐标系">世界坐标系</h2>
+<h2 id="世界坐标系"><a class="markdownIt-Anchor" href="#世界坐标系"></a> 世界坐标系</h2>
 <p>模型中，所有点的坐标都是依赖于世界坐标系的。</p>
-<h2 id="视图坐标系">视图坐标系</h2>
-<p>视图坐标系遵循右手定则，其中 Z 轴朝向屏幕外，X 轴水平向右，Y
-轴竖直向上。</p>
+<h2 id="视图坐标系"><a class="markdownIt-Anchor" href="#视图坐标系"></a> 视图坐标系</h2>
+<p>视图坐标系遵循右手定则，其中 Z 轴朝向屏幕外，X 轴水平向右，Y 轴竖直向上。</p>
 <p>因此，要获取垂直于屏幕的向量（在世界坐标系下的表达），可以通过如下步骤获取：</p>
-<ol type="1">
-<li>获取视图的旋转矩阵 <span class="math inline">\(R\)</span></li>
-<li>对旋转矩阵求逆 <span class="math inline">\(R^{-1}\)</span></li>
-<li>然后将点 <span class="math inline">\(V_{local}\)</span>（0,0,1）应用
-<span class="math inline">\(R^{-1}\)</span> 变换</li>
+<ol>
+<li>获取视图的旋转矩阵 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></li>
+<li>对旋转矩阵求逆 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R^{-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li>然后将点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi>l</mi><mi>o</mi><mi>c</mi><mi>a</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">V_{local}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（0,0,1）应用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R^{-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span> 变换</li>
 </ol>
 <blockquote>
-<p>因为 <span class="math inline">\(V_{local} = R \cdot
-V_{world}\)</span></p>
-<p>所以 <span class="math inline">\(R^{-1} \cdot V_{local} =
-V_{wold}\)</span></p>
+<p>因为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi>l</mi><mi>o</mi><mi>c</mi><mi>a</mi><mi>l</mi></mrow></msub><mo>=</mo><mi>R</mi><mo>⋅</mo><msub><mi>V</mi><mrow><mi>w</mi><mi>o</mi><mi>r</mi><mi>l</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">V_{local} = R \cdot V_{world}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>所以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><msub><mi>V</mi><mrow><mi>l</mi><mi>o</mi><mi>c</mi><mi>a</mi><mi>l</mi></mrow></msub><mo>=</mo><msub><mi>V</mi><mrow><mi>w</mi><mi>o</mi><mi>l</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">R^{-1} \cdot V_{local} = V_{wold}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 </blockquote>
-<h2 id="任意坐标系">任意坐标系</h2>
-<p>任意坐标系的<strong>度量矩阵</strong>是通过对单位矩阵的旋转平移后得到的。可以通过
-<code>DTranform3d</code> 中的一些静态方法生成。</p>
+<h2 id="任意坐标系"><a class="markdownIt-Anchor" href="#任意坐标系"></a> 任意坐标系</h2>
+<p>任意坐标系的<strong>度量矩阵</strong>是通过对单位矩阵的旋转平移后得到的。可以通过 <code>DTranform3d</code> 中的一些静态方法生成。</p>
 <p>如果想将任意坐标系下的元素变换到世界坐标系中，需要左乘度量矩阵的逆。</p>
 
     </div>
@@ -439,7 +440,7 @@ V_{wold}\)</span></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%98%E6%8D%A2%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">模型变换概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">世界坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">视图坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">4.</span> <span class="nav-text">任意坐标系</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%98%E6%8D%A2%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text"> 模型变换概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text"> 世界坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text"> 视图坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">4.</span> <span class="nav-text"> 任意坐标系</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -519,12 +520,12 @@ V_{wold}\)</span></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

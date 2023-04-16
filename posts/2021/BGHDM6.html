@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。">
+  <meta name="description" content="小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="功能分析与硬件选择">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/BGHDM6.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。">
+<meta property="og:description" content="小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -262,28 +262,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in
-one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。</p>
+        <p>小伙伴们，大家好，我是明不知昔。最近准备搭建一个all in one家庭服务器，于是将搭建过程做成系列视频，抛砖引玉，希望对新入门的小伙伴们有所帮助。</p>
 <span id="more"></span>
-<h2 id="什么是all-in-one">什么是all in one</h2>
-<p>All In One
-主机是指在底层虚拟机平台上创建软路由、NAS主机、Windows主机等虚拟主机，使一台主机可以扮演不同的角色来到达用户不同的需求。
-对于虚拟机，目前流行的有三个： https://zhuanlan.zhihu.com/p/166352130
+<h2 id="什么是all-in-one"><a class="markdownIt-Anchor" href="#什么是all-in-one"></a> 什么是all in one</h2>
+<p>All In One 主机是指在底层虚拟机平台上创建软路由、NAS主机、Windows主机等虚拟主机，使一台主机可以扮演不同的角色来到达用户不同的需求。<br />
+对于虚拟机，目前流行的有三个：<br />
+<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166352130">https://zhuanlan.zhihu.com/p/166352130</a><br />
 三者各有利弊，基于我的硬件情况，我选择了esxi。</p>
-<h2 id="需求分析">需求分析</h2>
-<p>我本人开始使用的软路由，但是随着需求增加，比如想具备nas功能，部署一个自己的网站，安装数据库等，软路由已经不能满足我的需求了。
+<h2 id="需求分析"><a class="markdownIt-Anchor" href="#需求分析"></a> 需求分析</h2>
+<p>我本人开始使用的软路由，但是随着需求增加，比如想具备nas功能，部署一个自己的网站，安装数据库等，软路由已经不能满足我的需求了。<br />
 目前我的需求主要有以下几个：</p>
-<ol type="1">
+<ol>
 <li>家庭网关</li>
 <li>出国旅游</li>
 <li>NAS</li>
-<li>Windows
-server(网站，数据库，当家庭电脑使用，如果今后内存增加，会考虑再安装一个win10，然后服务器换成Linux)</li>
+<li>Windows server(网站，数据库，当家庭电脑使用，如果今后内存增加，会考虑再安装一个win10，然后服务器换成Linux)</li>
 </ol>
-<h2 id="硬件选择">硬件选择</h2>
+<h2 id="硬件选择"><a class="markdownIt-Anchor" href="#硬件选择"></a> 硬件选择</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>名称</th>
 <th>品牌</th>
 <th>型号</th>
@@ -292,91 +290,91 @@ server(网站，数据库，当家庭电脑使用，如果今后内存增加，�
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>机箱</td>
 <td>途腾</td>
 <td></td>
 <td>123</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>风扇</td>
 <td></td>
 <td></td>
 <td>10.26*2</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CPU</td>
 <td>XEON(至强)</td>
 <td>e5 2650 v3</td>
 <td>180</td>
 <td>拼多多</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CPU散热器</td>
 <td></td>
 <td></td>
 <td>56.16</td>
 <td>拼多多</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>主板</td>
 <td>华南金牌</td>
 <td>x99 zd4 matx</td>
 <td>440</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>固态</td>
 <td></td>
 <td>512G</td>
 <td>262</td>
 <td>拼多多</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>硬盘</td>
 <td>希捷酷狼</td>
 <td>2T</td>
 <td>465*2</td>
 <td>淘宝</td>
 </tr>
-<tr class="even">
+<tr>
 <td>内存</td>
 <td>光威</td>
 <td>ddr4 3000 8G</td>
 <td>120*2</td>
 <td>闲鱼</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>网卡</td>
 <td></td>
 <td>4口</td>
 <td>110</td>
 <td>闲鱼</td>
 </tr>
-<tr class="even">
+<tr>
 <td>显卡</td>
 <td></td>
 <td>GTX650 2G</td>
 <td>240</td>
 <td>闲鱼</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>电源</td>
 <td>金牌</td>
 <td>500w</td>
 <td>95</td>
 <td>闲鱼</td>
 </tr>
-<tr class="even">
+<tr>
 <td>显示器</td>
 <td></td>
 <td>红米</td>
 <td>500</td>
 <td>闲鱼</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 <td>合计</td>
@@ -521,7 +519,7 @@ server(网站，数据库，当家庭电脑使用，如果今后内存增加，�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFall-in-one"><span class="nav-number">1.</span> <span class="nav-text">什么是all in one</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="nav-number">3.</span> <span class="nav-text">硬件选择</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFall-in-one"><span class="nav-number">1.</span> <span class="nav-text"> 什么是all in one</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text"> 需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="nav-number">3.</span> <span class="nav-text"> 硬件选择</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -601,12 +599,12 @@ server(网站，数据库，当家庭电脑使用，如果今后内存增加，�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">642k</span>
+    <span title="站点总字数">648k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:43</span>
+    <span title="站点阅读时长">9:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

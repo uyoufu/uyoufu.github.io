@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-04-15T16:00:00.000Z</updated>
+  <updated>2023-04-16T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis6 及以后版本安装为 windows 服务</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2N7QY7C.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2N7QY7C.html</id>
+    <published>2023-04-16T16:00:00.000Z</published>
+    <updated>2023-04-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;网上安装 redis 为 windows 服务的教程大多基于 redis3 编写的，然而这并不适用于 redis 更高的版本。redis 高版本安装为服务应使用如下方法：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Redis" scheme="https://galens.uamazing.cn/categories/Software/Redis/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Redis" scheme="https://galens.uamazing.cn/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>DockerCompose 搭建 MongoDB 副本集</title>
@@ -56,9 +79,9 @@
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
   </entry>
   
@@ -80,9 +103,9 @@
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
   </entry>
   
@@ -468,32 +491,6 @@
     
     
     <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.NETCore 中配置 Swagger</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1EDD6ES.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1EDD6ES.html</id>
-    <published>2023-03-06T16:00:00.000Z</published>
-    <updated>2023-03-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;img data-src=&quot;https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger/_static/v6-swagger-info.png?view=aspnetcore-7.0&quot; alt=&quot;swagger&quot; style=&quot;zoom:50%;&quot; /&gt;
-&lt;p&gt;官方文档写得非常详细，本文只列出一些常用配置，方便拷贝进行快速配置使用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/DotNetCore/"/>
-    
-    
-    <category term=".NETCore" scheme="https://galens.uamazing.cn/tags/NETCore/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

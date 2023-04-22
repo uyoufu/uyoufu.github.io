@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-04-16T16:00:00.000Z</updated>
+  <updated>2023-04-19T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从字意上理解 CSS 中的 justify 和 align</title>
+    <link href="https://galens.uamazing.cn/posts/2023/17Q11CW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/17Q11CW.html</id>
+    <published>2023-04-19T16:00:00.000Z</published>
+    <updated>2023-04-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在进行 CSS 样式编写时，经常会遇到 &lt;code&gt;align&lt;/code&gt; 和 &lt;code&gt;justify&lt;/code&gt; 这两个单词，比如：&lt;code&gt;justify-content&lt;/code&gt; 、&lt;code&gt;justify-items&lt;/code&gt;、&lt;code&gt;align-content&lt;/code&gt;、 &lt;code&gt;align-items&lt;/code&gt; 等。&lt;/p&gt;
+&lt;p&gt;在开发中，这个两个词意思相近，总是记不牢它们的用法，因此本文从其字面意思上梳理这两个单词的区别，方便记忆。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
+    
+    
+    <category term="[object Object]" scheme="https://galens.uamazing.cn/tags/object-Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库中实现数据继承的设计方法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2608835.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2608835.html</id>
+    <published>2023-04-19T16:00:00.000Z</published>
+    <updated>2023-04-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;遇到这么一个场景：需要根据分类树层级，使每个分类中定义的数据（以下简称：变量）可以像继承一样传递给子分类，而每个分类又可以单独对继承的变量进行设置，有的设置是专属的，有的设置又可以继续继承。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
+    
+    <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
+    
+    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis6 及以后版本安装为 windows 服务</title>
@@ -79,9 +126,9 @@
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
   </entry>
   
@@ -103,9 +150,9 @@
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
   </entry>
   
@@ -444,53 +491,6 @@
     
     
     <category term=".NET" scheme="https://galens.uamazing.cn/tags/NET/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ORD安装提示Failed copy payload xx的解决办法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/304FHXE.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/304FHXE.html</id>
-    <published>2023-03-06T16:00:00.000Z</published>
-    <updated>2023-04-13T15:31:13.397Z</updated>
-    
-    
-    <summary type="html">&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230307212335456.png&quot; alt=&quot;image-20230307212335456&quot; style=&quot;zoom:50%;&quot; /&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Problems" scheme="https://galens.uamazing.cn/categories/Bentley/Problems/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-    <category term="Bentley问题处理" scheme="https://galens.uamazing.cn/tags/Bentley%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.NETCore 批量注册 Service 到 IOC</title>
-    <link href="https://galens.uamazing.cn/posts/2023/23HY8MD.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/23HY8MD.html</id>
-    <published>2023-03-06T16:00:00.000Z</published>
-    <updated>2023-03-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Service 主要面向数据库，为数据库提供一个统一的 CURD 接口。在日常的使用中，通常把 Service 层注册为 &lt;code&gt;Scoped&lt;/code&gt;  类型，随着上下文变动。&lt;/p&gt;
-&lt;p&gt;在实际开发中，会有非常多的 Service，可以使用如下方法将这些 Service 进行批量注册：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/DotNetCore/"/>
-    
-    
-    <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
     
   </entry>
   

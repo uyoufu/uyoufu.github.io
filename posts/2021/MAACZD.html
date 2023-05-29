@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -134,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -281,16 +281,21 @@
 <li>Map-Reduce Function</li>
 <li>Single Purpose Aggreation Methods</li>
 </ul>
-<h2 id="aggregations-pipeline"><a class="markdownIt-Anchor" href="#aggregations-pipeline"></a> Aggregations Pipeline</h2>
+<h2 id="aggregations-pipeline">Aggregations Pipeline</h2>
 <p>聚合管道主要用于对数据的查询，转换和修改。</p>
 <p><strong>格式：</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.orders.aggregate(<span class="punctuation">[</span></span><br><span class="line">   <span class="punctuation">&#123;</span> $match<span class="punctuation">:</span> <span class="punctuation">&#123;</span> status<span class="punctuation">:</span> <span class="string">&quot;A&quot;</span> <span class="punctuation">&#125;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">   <span class="punctuation">&#123;</span> $group<span class="punctuation">:</span> <span class="punctuation">&#123;</span> _id<span class="punctuation">:</span> <span class="string">&quot;$cust_id&quot;</span><span class="punctuation">,</span> total<span class="punctuation">:</span> <span class="punctuation">&#123;</span> $sum<span class="punctuation">:</span> <span class="string">&quot;$amount&quot;</span> <span class="punctuation">&#125;</span> <span class="punctuation">&#125;</span> <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span>)</span><br></pre></td></tr></table></figure>
-<p>基础的聚合使用 <code>聚合操作</code> 来进行查询。聚合操作也可以在分布式集合（Sharding Collection）中使用。</p>
+<p>基础的聚合使用 <code>聚合操作</code>
+来进行查询。聚合操作也可以在分布式集合（Sharding
+Collection）中使用。</p>
 <p><strong>优化：</strong></p>
 <p>聚合管道还可以通过索引来优化性能。</p>
-<h2 id="single-purpose-aggregation-operations"><a class="markdownIt-Anchor" href="#single-purpose-aggregation-operations"></a> Single Purpose Aggregation Operations</h2>
-<p>Mongodb 使用 <code>estimateDocumentCount()</code>、<code>count()</code>、<code>distinct()</code> 来从集合中聚合文档。</p>
-<h2 id="map-reduce"><a class="markdownIt-Anchor" href="#map-reduce"></a> Map-Reduce</h2>
+<h2 id="single-purpose-aggregation-operations">Single Purpose
+Aggregation Operations</h2>
+<p>Mongodb 使用
+<code>estimateDocumentCount()</code>、<code>count()</code>、<code>distinct()</code>
+来从集合中聚合文档。</p>
+<h2 id="map-reduce">Map-Reduce</h2>
 <p>从 5.0 开始，map-reduce 已经弃用。</p>
 <p>Map-reduce 操作将大量的数据转成有用的聚合数据。</p>
 
@@ -428,7 +433,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregations-pipeline"><span class="nav-number">1.</span> <span class="nav-text"> Aggregations Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#single-purpose-aggregation-operations"><span class="nav-number">2.</span> <span class="nav-text"> Single Purpose Aggregation Operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-reduce"><span class="nav-number">3.</span> <span class="nav-text"> Map-Reduce</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregations-pipeline"><span class="nav-number">1.</span> <span class="nav-text">Aggregations Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#single-purpose-aggregation-operations"><span class="nav-number">2.</span> <span class="nav-text">Single Purpose
+Aggregation Operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-reduce"><span class="nav-number">3.</span> <span class="nav-text">Map-Reduce</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -444,20 +450,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -508,12 +514,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

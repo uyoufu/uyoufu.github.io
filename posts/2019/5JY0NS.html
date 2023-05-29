@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。">
+  <meta name="description" content="在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 中获取 Graphics 对象的方法">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2019/5JY0NS.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。">
+<meta property="og:description" content="在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="C#">
 <meta property="article:tag" content=".NET">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2019/5JY0NS.html">
@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -134,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -265,29 +265,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有 4 种获取方式。</p>
+        <p>在做自定义控件时或者GDI+的时候经常会遇到获取Graphics实例的问题。一般有
+4 种获取方式。</p>
 <span id="more"></span>
-<h2 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h2>
-<ol>
-<li>从Paint事件的参数中获取。<br />
-窗体和许多控件都有一个Paint事件，有一个PaintEventArgs类型的参数e</li>
+<h2 id="正文">正文</h2>
+<ol type="1">
+<li><p>从Paint事件的参数中获取。
+窗体和许多控件都有一个Paint事件，有一个PaintEventArgs类型的参数e
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Paint</span>(<span class="params"><span class="built_in">object</span> sender,System.Windows.Forms.PaintEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">           <span class="comment">//获取Graphic对象</span></span><br><span class="line">           Graphics g = e.Graphics;</span><br><span class="line">         <span class="comment">//书写绘图代码</span></span><br><span class="line">            g.DrawLine(<span class="keyword">new</span> Point(<span class="number">0</span>,<span class="number">0</span>),<span class="keyword">new</span> Point(<span class="number">1</span>,<span class="number">1</span>));</span><br><span class="line">            <span class="comment">//释放Graphic对象占用的资源</span></span><br><span class="line">            g.Dispose();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>用CreateGraphics方法创建
+如果需要在Paint方法以外绘图，可以通过控件或窗体的CreateGraphics方法来获取Graphics对象
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span>(Graphics g=<span class="keyword">new</span> Control().CreateGraphics())</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>对Image对象调用Graphics.FromImage获取 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Image对象</span></span><br><span class="line">Bitmap image1 = <span class="keyword">new</span> Bitmap(<span class="string">&quot;football.jpg&quot;</span>);</span><br><span class="line"><span class="comment">//窗体的绘图对象</span></span><br><span class="line">Graphics formE = e.Graphics;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>通过Graphics的FromHwnd函数 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HandleRef NullHandleRef = <span class="keyword">new</span> HandleRef(<span class="literal">null</span>, IntPtr.Zero);</span><br><span class="line"><span class="keyword">using</span> (Graphics g = Graphics.FromHwnd(NullHandleRef.Handle))</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
 </ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Paint</span>(<span class="params"><span class="built_in">object</span> sender,System.Windows.Forms.PaintEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">           <span class="comment">//获取Graphic对象</span></span><br><span class="line">           Graphics g = e.Graphics;</span><br><span class="line">         <span class="comment">//书写绘图代码</span></span><br><span class="line">            g.DrawLine(<span class="keyword">new</span> Point(<span class="number">0</span>,<span class="number">0</span>),<span class="keyword">new</span> Point(<span class="number">1</span>,<span class="number">1</span>));</span><br><span class="line">            <span class="comment">//释放Graphic对象占用的资源</span></span><br><span class="line">            g.Dispose();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>用CreateGraphics方法创建<br />
-如果需要在Paint方法以外绘图，可以通过控件或窗体的CreateGraphics方法来获取Graphics对象</li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span>(Graphics g=<span class="keyword">new</span> Control().CreateGraphics())</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>对Image对象调用Graphics.FromImage获取</li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Image对象</span></span><br><span class="line">Bitmap image1 = <span class="keyword">new</span> Bitmap(<span class="string">&quot;football.jpg&quot;</span>);</span><br><span class="line"><span class="comment">//窗体的绘图对象</span></span><br><span class="line">Graphics formE = e.Graphics;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>通过Graphics的FromHwnd函数</li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HandleRef NullHandleRef = <span class="keyword">new</span> HandleRef(<span class="literal">null</span>, IntPtr.Zero);</span><br><span class="line"><span class="keyword">using</span> (Graphics g = Graphics.FromHwnd(NullHandleRef.Handle))</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
-<p>本文转载于 <a target="_blank" rel="noopener" href="https://www.bbsmax.com/A/Gkz1ony25R/">https://www.bbsmax.com/A/Gkz1ony25R/</a></p>
+<h2 id="致谢">致谢</h2>
+<p>本文转载于 <a
+target="_blank" rel="noopener" href="https://www.bbsmax.com/A/Gkz1ony25R/">https://www.bbsmax.com/A/Gkz1ony25R/</a></p>
 
     </div>
 
@@ -347,8 +341,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
               <a href="/tags/NET/" rel="tag"><i class="fa fa-tag"></i> .NET</a>
+              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
           </div>
 
         
@@ -423,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text"> 正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">2.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">2.</span> <span class="nav-text">致谢</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -439,20 +433,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -503,12 +497,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

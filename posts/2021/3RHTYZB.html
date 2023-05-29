@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正文开始之前，我想我们需要弄明白几个问题：  tag 是什么？ 使用 tag 的好处？ tag 和 branch 的区别以及使用场景？">
+  <meta name="description" content="正文开始之前，我想我们需要弄明白几个问题：  tag 是什么？ 使用 tag 的好处？ tag 和 branch 的区别以及使用场景？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 中 branch 与 tag 的区别和使用场景">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/3RHTYZB.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="正文开始之前，我想我们需要弄明白几个问题：  tag 是什么？ 使用 tag 的好处？ tag 和 branch 的区别以及使用场景？">
+<meta property="og:description" content="正文开始之前，我想我们需要弄明白几个问题：  tag 是什么？ 使用 tag 的好处？ tag 和 branch 的区别以及使用场景？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.428Z">
@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -133,12 +133,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -265,27 +265,41 @@
 
       
         <p>正文开始之前，我想我们需要弄明白几个问题：</p>
-<ol>
+<ol type="1">
 <li>tag 是什么？</li>
 <li>使用 tag 的好处？</li>
 <li>tag 和 branch 的区别以及使用场景？</li>
 </ol>
 <span id="more"></span>
-<h2 id="tag-是什么"><a class="markdownIt-Anchor" href="#tag-是什么"></a> tag 是什么</h2>
-<p>tag , 翻译过来是标签的意思，顾名思义，标签是为了标记某种事物。 它实际上是 Git 版本库的一个快照，指向某个 commit 的指针。</p>
-<h2 id="使用tag-的好处"><a class="markdownIt-Anchor" href="#使用tag-的好处"></a> 使用tag 的好处</h2>
-<p>tag 的存在，是因为我们需要这种标记的功能。目前的项目开发中，当发布版本时 tag 就派上用场了。例如 v1.0.1，v1.0.2… ，发布的时候，只需要在 master 中打上一个标签就可以了，而不需要一个版本对应一个分支。</p>
-<h2 id="区别和使用场景"><a class="markdownIt-Anchor" href="#区别和使用场景"></a> 区别和使用场景</h2>
-<p>想到这里，你可能觉得 tag 和 branch 有点相似。没错，的确是有点像，但是它们的职责分工和本质都是不同的。</p>
+<h2 id="tag-是什么">tag 是什么</h2>
+<p>tag , 翻译过来是标签的意思，顾名思义，标签是为了标记某种事物。
+它实际上是 Git 版本库的一个快照，指向某个 commit 的指针。</p>
+<h2 id="使用tag-的好处">使用tag 的好处</h2>
+<p>tag
+的存在，是因为我们需要这种标记的功能。目前的项目开发中，当发布版本时 tag
+就派上用场了。例如 v1.0.1，v1.0.2… ，发布的时候，只需要在 master
+中打上一个标签就可以了，而不需要一个版本对应一个分支。</p>
+<h2 id="区别和使用场景">区别和使用场景</h2>
+<p>想到这里，你可能觉得 tag 和 branch
+有点相似。没错，的确是有点像，但是它们的职责分工和本质都是不同的。</p>
 <p>tag 对应某次 commit, 是一个点，是不可移动的。</p>
-<p>branch 对应一系列 commit，是很多点连成的一根线，有一个HEAD 指针，是可以依靠 HEAD 指针移动的。</p>
-<p>所以，两者的区别决定了使用方式，改动代码用 branch ,不改动只查看用 tag。</p>
-<p>tag 和 branch 的相互配合使用，有时候起到非常方便的效果，例如 已经发布了 v1.0 v2.0 v3.0 三个版本，这个时候，我突然想不改现有代码的前提下，在 v2.0 的基础上加个新功能，作为 v4.0 发布。就可以 检出 v2.0 的代码作为一个 branch ，然后作为开发分支。</p>
-<h2 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h2>
-<p>需要说明的是，创建 tag 是基于本地分支的 commit，而且与分支的推送是两回事，就是说分支已经推送到远程了，但是你的 tag 并没有，如果把 tag 推送到远程分支上，需要另外执行 tag 的推送命令。</p>
-<p><a href="/2020/189RMV7#%E6%A0%87%E7%AD%BE">点击查看关于tag的操作总结</a></p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p>本文参考自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lcgoing/article/details/86241784">https://blog.csdn.net/lcgoing/article/details/86241784</a></p>
+<p>branch 对应一系列 commit，是很多点连成的一根线，有一个HEAD
+指针，是可以依靠 HEAD 指针移动的。</p>
+<p>所以，两者的区别决定了使用方式，改动代码用 branch ,不改动只查看用
+tag。</p>
+<p>tag 和 branch 的相互配合使用，有时候起到非常方便的效果，例如
+已经发布了 v1.0 v2.0 v3.0
+三个版本，这个时候，我突然想不改现有代码的前提下，在 v2.0
+的基础上加个新功能，作为 v4.0 发布。就可以 检出 v2.0 的代码作为一个
+branch ，然后作为开发分支。</p>
+<h2 id="注意">注意</h2>
+<p>需要说明的是，创建 tag 是基于本地分支的
+commit，而且与分支的推送是两回事，就是说分支已经推送到远程了，但是你的
+tag 并没有，如果把 tag 推送到远程分支上，需要另外执行 tag
+的推送命令。</p>
+<p><a href="/2020/189RMV7#标签">点击查看关于tag的操作总结</a></p>
+<h2 id="参考">参考</h2>
+<p>本文参考自：https://blog.csdn.net/lcgoing/article/details/86241784</p>
 
     </div>
 
@@ -420,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text"> tag 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8tag-%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">2.</span> <span class="nav-text"> 使用tag 的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text"> 区别和使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">4.</span> <span class="nav-text"> 注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">tag 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8tag-%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">2.</span> <span class="nav-text">使用tag 的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">区别和使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -436,20 +450,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -500,12 +514,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

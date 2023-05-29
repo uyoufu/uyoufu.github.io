@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="什么是MongoDB副本集 副本集是一组mongod维护相同数据集的实例。">
+  <meta name="description" content="什么是MongoDB副本集 副本集是一组mongod维护相同数据集的实例。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb 配置副本集">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/28R2YWM.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="什么是MongoDB副本集 副本集是一组mongod维护相同数据集的实例。">
+<meta property="og:description" content="什么是MongoDB副本集 副本集是一组mongod维护相同数据集的实例。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/replication.png">
 <meta property="article:published_time" content="2021-04-20T16:00:00.000Z">
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -135,12 +135,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -270,75 +270,73 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="什么是mongodb副本集"><a class="markdownIt-Anchor" href="#什么是mongodb副本集"></a> 什么是MongoDB副本集</h2>
+        <h2 id="什么是mongodb副本集">什么是MongoDB副本集</h2>
 <p>副本集是一组mongod维护相同数据集的实例。</p>
-<img data-src="https://www.runoob.com/wp-content/uploads/2013/12/replication.png" style="zoom:80%;" />
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2013/12/replication.png" style="zoom:80%;" /></p>
 <span id="more"></span>
-<p>它提供了数据的冗余备份，并在多个服务器上存储数据副本，提高了数据的可用性， 并可以保证数据的安全性；还允许您从硬件故障和服务中断中恢复数据；实现自动故障转移，还可以采用分布式方式读取数据。</p>
-<h2 id="副本集的原理"><a class="markdownIt-Anchor" href="#副本集的原理"></a> 副本集的原理</h2>
+<p>它提供了数据的冗余备份，并在多个服务器上存储数据副本，提高了数据的可用性，
+并可以保证数据的安全性；还允许您从硬件故障和服务中断中恢复数据；实现自动故障转移，还可以采用分布式方式读取数据。</p>
+<h2 id="副本集的原理">副本集的原理</h2>
 <p>mongodb的复制至少需要两个节点。其中一个是主节点，负责处理客户端请求，其余的都是从节点，负责复制主节点上的数据。mongodb各个节点常见的搭配方式为：一主一从、一主多从。</p>
 <p>主节点记录在其上的所有操作oplog，从节点定期轮询主节点获取这些操作，然后对自己的数据副本执行这些操作，从而保证从节点的数据与主节点一致。</p>
 <p>通过在不同数据库服务器上提供多个数据副本，复制可提供一定级别的容错功能，以防止丢失单个数据库服务器。</p>
-<h2 id="配置流程"><a class="markdownIt-Anchor" href="#配置流程"></a> 配置流程</h2>
-<h3 id="新建目录"><a class="markdownIt-Anchor" href="#新建目录"></a> 新建目录</h3>
+<h2 id="配置流程">配置流程</h2>
+<h3 id="新建目录">新建目录</h3>
 <p>新建一个副本集数据目录。可以将下面的内容保存为 .bat 文件</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> D:\Scoop\persist\mongodb\current\data</span><br><span class="line"><span class="comment"># 创建副本集目录</span></span><br><span class="line">mkdir replicaSet</span><br><span class="line"><span class="built_in">cd</span> replicaSet</span><br><span class="line"><span class="comment"># 创建分级目录</span></span><br><span class="line">mkdir <span class="literal">-p</span> confs,key,log,replSet1,replSet2,replSet3</span><br></pre></td></tr></table></figure>
-<h3 id="生成密钥"><a class="markdownIt-Anchor" href="#生成密钥"></a> 生成密钥</h3>
+<h3 id="生成密钥">生成密钥</h3>
 <p>利用 openssl 生成密钥。可以使用 <code>scoop</code> 安装 openssl。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> key</span><br><span class="line">openssl rand <span class="literal">-base64</span> <span class="number">756</span> &gt; rs<span class="literal">-key</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改配置文件"><a class="markdownIt-Anchor" href="#修改配置文件"></a> 修改配置文件</h3>
+<h3 id="修改配置文件">修改配置文件</h3>
 <p>在 <code>confs</code> 目录新建下列文件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../confs</span><br><span class="line">// 新建下列 <span class="number">3</span> 个文件</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# mongodb config&quot;</span> &gt; mongodb27018.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# mongodb config&quot;</span> &gt; mongodb27019.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# mongodb config&quot;</span> &gt; mongodb27020.conf</span><br></pre></td></tr></table></figure>
 <p>以下列文件内容为模板，分别修改其副本集配置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mongod.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for documentation of all options, see:</span></span><br><span class="line"><span class="comment"># http://docs.mongodb.org/manual/reference/configuration-options/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Where and how to store data.</span></span><br><span class="line"><span class="attr">storage:</span></span><br><span class="line">  <span class="attr">dbPath:</span> <span class="string">D:\Program</span> <span class="string">Files\Scoop\apps\mongodb\current\data\rs\replSet1</span></span><br><span class="line">  <span class="attr">journal:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment">#  engine:</span></span><br><span class="line"><span class="comment">#  mmapv1:</span></span><br><span class="line"><span class="comment">#  wiredTiger:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># where to write logging data.</span></span><br><span class="line"><span class="attr">systemLog:</span></span><br><span class="line">  <span class="attr">destination:</span> <span class="string">file</span></span><br><span class="line">  <span class="attr">logAppend:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">path:</span>  <span class="string">D:\Program</span> <span class="string">Files\Scoop\apps\mongodb\current\data\rs\log\replSet1.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># network interfaces</span></span><br><span class="line"><span class="attr">net:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">27018</span></span><br><span class="line">  <span class="attr">bindIp:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="comment"># 如果需要局域网访问，上述 bindIp 应为 0.0.0.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#processManagement:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#security:</span></span><br><span class="line"><span class="attr">security:</span></span><br><span class="line">  <span class="attr">authorization:</span> <span class="string">enabled</span></span><br><span class="line">  <span class="attr">keyFile:</span> <span class="string">D:\Program</span> <span class="string">Files\Scoop\apps\mongodb\current\data\rs\key\rs-key</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#operationProfiling:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#replication:</span></span><br><span class="line"><span class="attr">replication:</span></span><br><span class="line">  <span class="attr">oplogSizeMB:</span> <span class="number">2048</span></span><br><span class="line">  <span class="attr">replSetName:</span> <span class="string">rs_auth</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#sharding:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Enterprise-Only Options:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#auditLog:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#snmp:</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装服务"><a class="markdownIt-Anchor" href="#安装服务"></a> 安装服务</h3>
+<h3 id="安装服务">安装服务</h3>
 <p>使用管理员打开 <code>PowerShell</code>，运行如下指令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入到目录</span></span><br><span class="line"><span class="built_in">cd</span> ..\..\..\bin\</span><br><span class="line"></span><br><span class="line">./mongod.exe <span class="literal">--config</span> <span class="string">&quot;D:\Program Files\Scoop\apps\mongodb\current\data\rs\confs\mongodb27018.conf&quot;</span> <span class="literal">--serviceName</span> mongodb27018 <span class="literal">--install</span></span><br><span class="line"></span><br><span class="line">./mongod.exe <span class="literal">--config</span> <span class="string">&quot;D:\Program Files\Scoop\apps\mongodb\current\data\rs\confs\mongodb27019.conf&quot;</span> <span class="literal">--serviceName</span> mongodb27019 <span class="literal">--install</span></span><br><span class="line"></span><br><span class="line">./mongod.exe <span class="literal">--config</span> <span class="string">&quot;D:\Program Files\Scoop\apps\mongodb\current\data\rs\confs\mongodb27020.conf&quot;</span> <span class="literal">--serviceName</span> mongodb27020 <span class="literal">--install</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注意</strong>：</p>
-<ol>
-<li>
-<p>要用管理员身份运行命令</p>
-</li>
-<li>
-<p>提示 <code>Error parsing command line:  Multiple occurrences of option &quot;--config</code> 错误</p>
-<p>这种情况是使用了 <code>mongod</code> 命令导致的，一定要跳转到 <code>mongod.exe</code> 目录执行 <code>mongod</code> 命令</p>
-</li>
-<li>
-<p>–config 后面的路径要全路径</p>
-</li>
-<li>
-<p>在命令行中，路径中有空格时，一定要加引号</p>
-</li>
+<ol type="1">
+<li><p>要用管理员身份运行命令</p></li>
+<li><p>提示
+<code>Error parsing command line:  Multiple occurrences of option "--config</code>
+错误</p>
+<p>这种情况是使用了 <code>mongod</code> 命令导致的，一定要跳转到
+<code>mongod.exe</code> 目录执行 <code>mongod</code> 命令</p></li>
+<li><p>--config 后面的路径要全路径</p></li>
+<li><p>在命令行中，路径中有空格时，一定要加引号</p></li>
 </ol>
 </blockquote>
-<h3 id="启动服务"><a class="markdownIt-Anchor" href="#启动服务"></a> 启动服务</h3>
+<h3 id="启动服务">启动服务</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">net start mongodb27018</span><br><span class="line">net start mongodb27019</span><br><span class="line">net start mongodb27020</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>若三个服务不能启动，请检查配置文件中的 <code>dbPath</code> 是否重复</p>
+<p>若三个服务不能启动，请检查配置文件中的 <code>dbPath</code>
+是否重复</p>
 </blockquote>
-<h3 id="初始化副本集"><a class="markdownIt-Anchor" href="#初始化副本集"></a> 初始化副本集</h3>
+<h3 id="初始化副本集">初始化副本集</h3>
 <p>使用 PowerShell 连接 mongoDB，连接任意一个端口即可。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">mongo <span class="literal">--host</span> <span class="number">127.0</span>.<span class="number">0.1</span> <span class="literal">--port</span> <span class="number">27018</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到 admin</span></span><br><span class="line">use admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义配置文件</span></span><br><span class="line"><span class="comment"># 配置中的 host 必须是本机的 ip，不能是 127.0.0.1，否则局域网无法访问</span></span><br><span class="line"><span class="comment"># 如果要通过域名访问，则必须是域名</span></span><br><span class="line">rsconf = &#123;</span><br><span class="line">  _id: <span class="string">&quot;rs_share&quot;</span>,</span><br><span class="line">  members: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="type">_id</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="type">host</span>: <span class="string">&quot;192.168.23.1:27018&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="type">_id</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="type">host</span>: <span class="string">&quot;192.168.23.1:27019&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="type">_id</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="type">host</span>: <span class="string">&quot;192.168.23.1:27020&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化副本集</span></span><br><span class="line">rs.initiate(rsconf)</span><br></pre></td></tr></table></figure>
 <p>当出现如下提示时，说明成功了：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">&quot;ok&quot;</span> : <span class="number">1</span> &#125;</span><br><span class="line">rs_auth:SECONDARY&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="新建用户"><a class="markdownIt-Anchor" href="#新建用户"></a> 新建用户</h3>
+<h3 id="新建用户">新建用户</h3>
 <p>继上述 Shell 进行操作，新建用户：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:<span class="string">&quot;root&quot;</span>,<span class="built_in">pwd</span>:<span class="string">&quot;root8888&quot;</span>,roles:[&#123;<span class="type">role</span>:<span class="string">&quot;userAdminAnyDatabase&quot;</span>,<span class="type">db</span>:<span class="string">&quot;admin&quot;</span>&#125;]&#125;)</span><br></pre></td></tr></table></figure>
 <p>如果需要改密码，可以:</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mongo <span class="literal">--host</span> <span class="number">127.0</span>.<span class="number">0.1</span> <span class="literal">--port</span> <span class="number">27018</span> <span class="literal">-u</span> root <span class="literal">-p</span> root8888</span><br><span class="line">use admin</span><br><span class="line">db.changeUserPassword(<span class="string">&#x27;root&#x27;</span>,<span class="string">&#x27;newpassword&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检验密码修改情况</span></span><br><span class="line">db.auth(<span class="string">&#x27;username&#x27;</span>,<span class="string">&#x27;password&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>新建账号后，需要重新连接 mongo：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">exit</span></span><br><span class="line"><span class="comment"># 重新连接</span></span><br><span class="line">mongo <span class="literal">--host</span> <span class="number">127.0</span>.<span class="number">0.1</span> <span class="literal">--port</span> <span class="number">27018</span> <span class="literal">-u</span> root <span class="literal">-p</span> root8888</span><br><span class="line">use admin</span><br><span class="line">db.grantRolesToUser(<span class="string">&quot;root&quot;</span>, [<span class="string">&quot;clusterAdmin&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将数据库 mongodbshare 权限赋予 root</span></span><br><span class="line">db.grantRolesToUser(<span class="string">&quot;root&quot;</span>, [&#123;<span class="type">role</span>: <span class="string">&quot;read&quot;</span>, <span class="type">db</span>: <span class="string">&#x27;mongodbshare&#x27;</span>&#125;])</span><br><span class="line">db.grantRolesToUser(<span class="string">&quot;root&quot;</span>, [&#123;<span class="type">role</span>: <span class="string">&quot;root&quot;</span>, <span class="type">db</span>: <span class="string">&#x27;admin&#x27;</span>&#125;])</span><br></pre></td></tr></table></figure>
-<h3 id="事务超时设置"><a class="markdownIt-Anchor" href="#事务超时设置"></a> 事务超时设置</h3>
+<h3 id="事务超时设置">事务超时设置</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.adminCommand( &#123; getParameter: <span class="number">1</span>, transactionLifetimeLimitSeconds: <span class="number">1</span> &#125; )  <span class="comment"># 默认是60</span></span><br><span class="line">db.adminCommand( &#123; getParameter: <span class="number">1</span>, maxTransactionLockRequestTimeoutMillis: <span class="number">1</span> &#125; ) <span class="comment"># 默认是5</span></span><br><span class="line"></span><br><span class="line">db.adminCommand( &#123; setParameter: <span class="number">1</span>, transactionLifetimeLimitSeconds: <span class="number">300</span> &#125; ) <span class="comment"># 修改事务超时时间为5分钟开启事务支持</span></span><br><span class="line">db.adminCommand( &#123; setParameter: <span class="number">1</span>, maxTransactionLockRequestTimeoutMillis: <span class="number">20</span> &#125; ) <span class="comment"># 修改事务获取锁的等待时间20毫秒</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>操作时，要连接主节点</p>
 </blockquote>
-<h2 id="mongoose-连接副本集"><a class="markdownIt-Anchor" href="#mongoose-连接副本集"></a> Mongoose 连接副本集</h2>
+<h2 id="mongoose-连接副本集">Mongoose 连接副本集</h2>
 <p>mongoose 中 url 的连接语句如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;mongodb://root:root8888@127.0.0.1:27026,127.0.0.1:27027,127.0.0.1:27028/iepAuth?authSource=admin&amp;replicaSet=rs_auth&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="备份与还原"><a class="markdownIt-Anchor" href="#备份与还原"></a> 备份与还原</h2>
-<p>备份与还原需要 <code>mongodump</code> 程序，该程序可由 <code>scoop</code> 安装。</p>
+<h2 id="备份与还原">备份与还原</h2>
+<p>备份与还原需要 <code>mongodump</code> 程序，该程序可由
+<code>scoop</code> 安装。</p>
 <p><strong>dump:</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodump <span class="literal">-h</span> localhost:<span class="number">27017</span> <span class="literal">-d</span> databaseName <span class="literal">-u</span> test <span class="literal">-p</span> testpwd <span class="literal">-o</span> D:\dump <span class="literal">--authenticationDatabase</span> admin</span><br></pre></td></tr></table></figure>
 <ul>
@@ -351,15 +349,19 @@
 </ul>
 <p><strong>restore</strong>:</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongorestore <span class="literal">-h</span> localhost:<span class="number">27018</span> <span class="literal">-u</span> root <span class="literal">-p</span> whfy8888 <span class="literal">--authenticationDatabase</span> admin <span class="literal">--objcheck</span> <span class="literal">--nsInclude</span>=swcooperation.* <span class="literal">--dir</span> D:\dump</span><br></pre></td></tr></table></figure>
-<h2 id="修改-rs-中的-config"><a class="markdownIt-Anchor" href="#修改-rs-中的-config"></a> 修改 rs 中的 config</h2>
-<p>假如要修改 rs 中 config 里面第一个 mongodb 实例的 host 值，配置方式如下：</p>
+<h2 id="修改-rs-中的-config">修改 rs 中的 config</h2>
+<p>假如要修改 rs 中 config 里面第一个 mongodb 实例的 host
+值，配置方式如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入数据库</span></span><br><span class="line">mongo <span class="literal">--host</span> <span class="number">127.0</span>.<span class="number">0.1</span> <span class="literal">--port</span> <span class="number">27018</span> <span class="literal">-u</span> root <span class="literal">-p</span> root8888</span><br><span class="line">use admin</span><br><span class="line"></span><br><span class="line">var config = rs.config()</span><br><span class="line">config.members[<span class="number">0</span>].host = <span class="string">&quot;yourdomain.com&quot;</span></span><br><span class="line">rs.reconfig(config)</span><br></pre></td></tr></table></figure>
-<h2 id="修改密码"><a class="markdownIt-Anchor" href="#修改密码"></a> 修改密码</h2>
+<h2 id="修改密码">修改密码</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入数据库</span></span><br><span class="line">mongo <span class="literal">--host</span> <span class="number">127.0</span>.<span class="number">0.1</span> <span class="literal">--port</span> <span class="number">27018</span> <span class="literal">-u</span> root <span class="literal">-p</span> root8888</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到 admin</span></span><br><span class="line">use admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">db.changeUserPassword(<span class="string">&quot;root&quot;</span>,<span class="string">&quot;newPassword&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dbabd/p/13259147.html">MongoDB 逻辑还原工具mongorestore</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.prisma.io/dataguide/mongodb/configuring-mongodb-user-accounts-and-authentication">How to manage users and authentication in MongoDB</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dbabd/p/13259147.html">MongoDB
+逻辑还原工具mongorestore</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.prisma.io/dataguide/mongodb/configuring-mongodb-user-accounts-and-authentication">How
+to manage users and authentication in MongoDB</a></li>
 </ol>
 
     </div>
@@ -495,7 +497,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmongodb%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text"> 什么是MongoDB副本集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text"> 副本集的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text"> 配置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="nav-number">3.1.</span> <span class="nav-text"> 新建目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5"><span class="nav-number">3.2.</span> <span class="nav-text"> 生成密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text"> 修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.4.</span> <span class="nav-text"> 安装服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.5.</span> <span class="nav-text"> 启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">3.6.</span> <span class="nav-text"> 初始化副本集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">3.7.</span> <span class="nav-text"> 新建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E8%B6%85%E6%97%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.8.</span> <span class="nav-text"> 事务超时设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mongoose-%E8%BF%9E%E6%8E%A5%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text"> Mongoose 连接副本集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F"><span class="nav-number">5.</span> <span class="nav-text"> 备份与还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-rs-%E4%B8%AD%E7%9A%84-config"><span class="nav-number">6.</span> <span class="nav-text"> 修改 rs 中的 config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text"> 修改密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmongodb%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">什么是MongoDB副本集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">副本集的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">配置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="nav-number">3.1.</span> <span class="nav-text">新建目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5"><span class="nav-number">3.2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.4.</span> <span class="nav-text">安装服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.5.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">3.6.</span> <span class="nav-text">初始化副本集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">3.7.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E8%B6%85%E6%97%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.8.</span> <span class="nav-text">事务超时设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mongoose-%E8%BF%9E%E6%8E%A5%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text">Mongoose 连接副本集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F"><span class="nav-number">5.</span> <span class="nav-text">备份与还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-rs-%E4%B8%AD%E7%9A%84-config"><span class="nav-number">6.</span> <span class="nav-text">修改 rs 中的 config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -511,20 +513,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -575,12 +577,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

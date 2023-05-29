@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文主要介绍 minio-js 的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行 minio-js 的使用教程，包括官网。所以本文对此进行总结。">
+  <meta name="description" content="本文主要介绍 minio-js 的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行 minio-js 的使用教程，包括官网。所以本文对此进行总结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Minio-js的正确安装与使用">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/2N5VCDY.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文主要介绍 minio-js 的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行 minio-js 的使用教程，包括官网。所以本文对此进行总结。">
+<meta property="og:description" content="本文主要介绍 minio-js 的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行 minio-js 的使用教程，包括官网。所以本文对此进行总结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-15T16:00:00.000Z">
@@ -126,7 +126,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -136,12 +136,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -260,33 +260,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文主要介绍 <code>minio-js</code> 的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行 <code>minio-js</code> 的使用教程，包括官网。所以本文对此进行总结。</p>
+        <p>本文主要介绍 <code>minio-js</code>
+的正确安装与使用。在网上搜了好久，都没有找到一个能正常运行
+<code>minio-js</code> 的使用教程，包括官网。所以本文对此进行总结。</p>
 <span id="more"></span>
-<h2 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h2>
-<h3 id="node-环境安装"><a class="markdownIt-Anchor" href="#node-环境安装"></a> node 环境安装</h3>
-<p>运行该示例包，需要在 node 环境下，一般使用这个包的，都有 node 环境，此处不再赘述。</p>
+<h2 id="正文">正文</h2>
+<h3 id="node-环境安装">node 环境安装</h3>
+<p>运行该示例包，需要在 node 环境下，一般使用这个包的，都有 node
+环境，此处不再赘述。</p>
 <blockquote>
 <p>如果没有 node 环境，可以使用 scoop 安装，很是方便。</p>
-<p>scoop 安装方法：<a href="https://galens.uamazing.cn/2020/14XXNWG.html">https://galens.uamazing.cn/2020/14XXNWG.html</a></p>
+<p>scoop 安装方法：https://galens.uamazing.cn/2020/14XXNWG.html</p>
 </blockquote>
-<h3 id="下载源码"><a class="markdownIt-Anchor" href="#下载源码"></a> 下载源码</h3>
+<h3 id="下载源码">下载源码</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/minio/minio<span class="literal">-js</span></span><br><span class="line"><span class="built_in">cd</span> minio<span class="literal">-js</span></span><br><span class="line"><span class="comment"># 安装依赖包</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 下面的步骤可选</span></span><br><span class="line"><span class="comment"># 代表将 minio-js 作为一个包安装到 nodejs 全局的 node_modules 中</span></span><br><span class="line"><span class="comment"># 由于是本地目录，所以 node_modules 中的 minio-js 相当于一个快捷方式</span></span><br><span class="line">npm install <span class="literal">-g</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>暂时没有发现 <code>npm install -g</code> 之后对于测试有什么方便的地方，所以本文就不运行该行命令</p>
+<p>暂时没有发现 <code>npm install -g</code>
+之后对于测试有什么方便的地方，所以本文就不运行该行命令</p>
 </blockquote>
-<h3 id="安装-minio"><a class="markdownIt-Anchor" href="#安装-minio"></a> 安装 minio</h3>
+<h3 id="安装-minio">安装 minio</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">--save</span> minio</span><br></pre></td></tr></table></figure>
-<h2 id="怎么运行示例"><a class="markdownIt-Anchor" href="#怎么运行示例"></a> 怎么运行示例</h2>
-<p>在项目的 examples 目录下，我们可以看到有很多的例子，如果要运行某个示例，运行如下命令：</p>
+<h2 id="怎么运行示例">怎么运行示例</h2>
+<p>在项目的 examples
+目录下，我们可以看到有很多的例子，如果要运行某个示例，运行如下命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">node relativePath</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果当前在 minio-js 目录，要运行 bucket-exists.js 示例</span></span><br><span class="line">node examples/bucket<span class="literal">-exists</span></span><br></pre></td></tr></table></figure>
-<h3 id="自定义测试"><a class="markdownIt-Anchor" href="#自定义测试"></a> 自定义测试</h3>
-<p>当然，自己也可以自定义 minio 运行脚本来进行测试。参考示例中的文件编写即可。</p>
+<h3 id="自定义测试">自定义测试</h3>
+<p>当然，自己也可以自定义 minio
+运行脚本来进行测试。参考示例中的文件编写即可。</p>
 <blockquote>
 <p><strong>注意：</strong></p>
 <p>只支持 CommonJs 语法，不支持 ES6 语法。</p>
 </blockquote>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
+<h2 id="参考">参考</h2>
+<ol type="1">
 <li><a target="_blank" rel="noopener" href="https://github.com/minio/minio-js">github 官方文档</a></li>
 </ol>
 
@@ -426,7 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text"> 正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text"> node 环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text"> 下载源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-minio"><span class="nav-number">1.3.</span> <span class="nav-text"> 安装 minio</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%BF%90%E8%A1%8C%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text"> 怎么运行示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.</span> <span class="nav-text"> 自定义测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">node 环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">下载源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-minio"><span class="nav-number">1.3.</span> <span class="nav-text">安装 minio</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%BF%90%E8%A1%8C%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">怎么运行示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.</span> <span class="nav-text">自定义测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -442,20 +448,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -506,12 +512,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1、概述 log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual  Studio2008 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。">
+  <meta name="description" content="1、概述 log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual Studio2008 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="非常完善的Log4net详细说明">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/S5J92W.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="1、概述 log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual  Studio2008 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。">
+<meta property="og:description" content="1、概述 log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual Studio2008 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -134,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -246,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>34k</span>
+              <span>33k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>31 分钟</span>
+              <span>30 分钟</span>
             </span>
 
         </div>
@@ -265,62 +265,74 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述"></a> 1、概述</h1>
-<p>log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual  Studio2008 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。</p>
+        <h1 id="概述">1、概述</h1>
+<p>log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net
+记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在
+Visual Studio2008 中使用 log4net
+快速创建系统日志，如何扩展以输出自定义字段。</p>
 <span id="more"></span>
-<h1 id="2-一个简单的使用实例"><a class="markdownIt-Anchor" href="#2-一个简单的使用实例"></a> 2、一个简单的使用实例</h1>
+<h1 id="一个简单的使用实例">2、一个简单的使用实例</h1>
 <ul>
-<li>
-<p>第一步：在项目中添加对 log4net.dll 的引用，这里引用版本是 1.2.10.0。</p>
-</li>
-<li>
-<p>第二步：程序启动时读取log4net的配置文件。</p>
+<li><p>第一步：在项目中添加对 log4net.dll 的引用，这里引用版本是
+1.2.10.0。</p></li>
+<li><p>第二步：程序启动时读取log4net的配置文件。</p>
 <p>如果是CS程序，在根目录的Program.cs中的Main方法中添加：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4net.Config.XmlConfigurator.Configure();</span><br></pre></td></tr></table></figure>
 <p>如果是BS程序，在根目录的Global.asax.cs（没有新建一个）中的Application_Start方法中添加：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4net.Config.XmlConfigurator.Configure();</span><br></pre></td></tr></table></figure>
 <p>无论BS还是CS程序都可直接在项目的AssemblyInfo.cs文件里添加以下的语句：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">assembly: log4net.Config .XmlConfigurator()</span>]</span><br></pre></td></tr></table></figure>
-<p>也可以使用自定义的配置文件，具体请参见4.4 关联配置文件。</p>
-</li>
-<li>
-<p>第三步：修改配置文件。如果是CS程序，则在默认的App.config文件（没有新建一个）中添加内容；如果是BS程序，则添加到Web.config文件中，添加内容一样，这里不再列出。</p>
+<p>也可以使用自定义的配置文件，具体请参见4.4 关联配置文件。</p></li>
+<li><p>第三步：修改配置文件。如果是CS程序，则在默认的App.config文件（没有新建一个）中添加内容；如果是BS程序，则添加到Web.config文件中，添加内容一样，这里不再列出。</p>
 <p>App.config文件添加内容如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">&quot;log4net&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">type</span>=<span class="string">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">log4net</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;LogFileAppender&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;ConsoleAppender&quot;</span> /&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;testApp.Logging&quot;</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;LogFileAppender&quot;</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.FileAppender&quot;</span> &gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;log-file.txt&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;AppendToFile&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Layout.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Header&quot;</span> <span class="attr">value</span>=<span class="string">&quot;[Header] &quot;</span>/&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Footer&quot;</span> <span class="attr">value</span>=<span class="string">&quot;[Footer] &quot;</span>/&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%d [%t] %-5p %c [%x]  - %m%n&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">filter</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Filter.LevelRangeFilter&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMax&quot;</span> <span class="attr">value</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;ConsoleAppender&quot;</span>  <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.ConsoleAppender&quot;</span> &gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Layout.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;%d [%t] %-5p %c [%x] - %m%n&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">log4net</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>第四步：在程序使用。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">&quot;log4net&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">type</span>=<span class="string">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">log4net</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;LogFileAppender&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;ConsoleAppender&quot;</span> /&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;testApp.Logging&quot;</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;LogFileAppender&quot;</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.FileAppender&quot;</span> &gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;log-file.txt&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;AppendToFile&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Layout.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Header&quot;</span> <span class="attr">value</span>=<span class="string">&quot;[Header] &quot;</span>/&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Footer&quot;</span> <span class="attr">value</span>=<span class="string">&quot;[Footer] &quot;</span>/&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%d [%t] %-5p %c [%x]  - %m%n&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">filter</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Filter.LevelRangeFilter&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMax&quot;</span> <span class="attr">value</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;ConsoleAppender&quot;</span>  <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.ConsoleAppender&quot;</span> &gt;</span></span><br><span class="line">​      <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Layout.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">​        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;%d [%t] %-5p %c [%x] - %m%n&quot;</span> /&gt;</span></span><br><span class="line">​      <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">​    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">log4net</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>第四步：在程序使用。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">log4net.ILog log = log4net.LogManager.GetLogger(<span class="string">&quot;testApp.Logging&quot;</span>);<span class="comment">//获取一个日志记录器</span></span><br><span class="line">log.Info(DateTime.Now.ToString() + <span class="string">&quot;: login success&quot;</span>);<span class="comment">//写入一条新log</span></span><br></pre></td></tr></table></figure>
-<p>这样就将信息同时输出到控制台和写入到文件名为 “log-file.txt” 的文件中，其中 “log-file.txt” 文件的路径是当前程序运行所在目录；也可以定义为绝对路径，配置如：</p>
-<p><code>&lt;param name=&quot;File&quot; value=&quot;C:/log-file.txt&quot; /&gt;</code> 就写入C盘根目录下log-file.txt文件中，具体使用技巧参见4.2.1。</p>
-<p>本例的实现请参见8.6附件。</p>
-</li>
+<p>这样就将信息同时输出到控制台和写入到文件名为 “log-file.txt”
+的文件中，其中 “log-file.txt”
+文件的路径是当前程序运行所在目录；也可以定义为绝对路径，配置如：</p>
+<p><code>&lt;param name="File" value="C:/log-file.txt" /&gt;</code>
+就写入C盘根目录下log-file.txt文件中，具体使用技巧参见4.2.1。</p>
+<p>本例的实现请参见8.6附件。</p></li>
 </ul>
-<h1 id="3-log4net的主要组成部分"><a class="markdownIt-Anchor" href="#3-log4net的主要组成部分"></a> 3、Log4net的主要组成部分</h1>
-<h2 id="31-appenders"><a class="markdownIt-Anchor" href="#31-appenders"></a> 3.1 Appenders</h2>
-<p>Appenders 用来定义日志的输出方式，即日志要写到那种介质上去。较常用的 Log4net 已经实现好了，直接在配置文件中调用即可，可参见上面配置文件例子；当然也可以自己写一个，需要从log4net.Appender.AppenderSkeleton 类继承。它还可以通过配置 Filters 和 Layout 来实现日志的过滤和输出格式。</p>
+<h1 id="log4net的主要组成部分">3、Log4net的主要组成部分</h1>
+<h2 id="appenders">3.1 Appenders</h2>
+<p>Appenders 用来定义日志的输出方式，即日志要写到那种介质上去。较常用的
+Log4net
+已经实现好了，直接在配置文件中调用即可，可参见上面配置文件例子；当然也可以自己写一个，需要从log4net.Appender.AppenderSkeleton
+类继承。它还可以通过配置 Filters 和 Layout
+来实现日志的过滤和输出格式。</p>
 <p>已经实现的输出方式有：</p>
-<p>AdoNetAppender 将日志记录到数据库中。可以采用 SQL 和存储过程两种方式。</p>
+<p>AdoNetAppender 将日志记录到数据库中。可以采用 SQL
+和存储过程两种方式。</p>
 <p>AnsiColorTerminalAppender 将日志高亮输出到 ANSI 终端。</p>
-<p>AspNetTraceAppender  能用 asp.net中Trace 的方式查看记录的日志。</p>
-<p>BufferingForwardingAppender 在输出到子 Appenders 之前先缓存日志事件。</p>
+<p>AspNetTraceAppender 能用 asp.net中Trace 的方式查看记录的日志。</p>
+<p>BufferingForwardingAppender 在输出到子 Appenders
+之前先缓存日志事件。</p>
 <p>ConsoleAppender 将日志输出到应用程序控制台。</p>
 <p>EventLogAppender 将日志写到 Windows Event Log。</p>
 <p>FileAppender 将日志输出到文件。</p>
 <p>ForwardingAppender 发送日志事件到子 Appenders。</p>
-<p>LocalSyslogAppender 将日志写到 local syslog service (仅用于 UNIX 环境下)。</p>
+<p>LocalSyslogAppender 将日志写到 local syslog service (仅用于 UNIX
+环境下)。</p>
 <p>MemoryAppender 将日志存到内存缓冲区。</p>
-<p>NetSendAppender 将日志输出到 Windows Messenger service. 这些日志信息将在用户终端的对话框中显示。</p>
-<p>OutputDebugStringAppender 将日志输出到 Debuger，如果程序没有 Debuger，就输出到系统 Debuger。如果系统 Debuger 也不可用，将忽略消息。</p>
-<p>RemoteSyslogAppender 通过 UDP 网络协议将日志写到 Remote syslog service。</p>
+<p>NetSendAppender 将日志输出到 Windows Messenger service.
+这些日志信息将在用户终端的对话框中显示。</p>
+<p>OutputDebugStringAppender 将日志输出到 Debuger，如果程序没有
+Debuger，就输出到系统 Debuger。如果系统 Debuger
+也不可用，将忽略消息。</p>
+<p>RemoteSyslogAppender 通过 UDP 网络协议将日志写到 Remote syslog
+service。</p>
 <p>RemotingAppender 通过 .NET Remoting 将日志写到远程接收端。</p>
 <p>RollingFileAppender 将日志以回滚文件的形式写到文件中。</p>
 <p>SmtpAppender 将日志写到邮件中。</p>
-<p>SmtpPickupDirAppender 将消息以文件的方式放入一个目录中，像 IIS SMTP agent 这样的 SMTP 代理就可以阅读或发送它们。</p>
+<p>SmtpPickupDirAppender 将消息以文件的方式放入一个目录中，像 IIS SMTP
+agent 这样的 SMTP 代理就可以阅读或发送它们。</p>
 <p>TelnetAppender 客户端通过 Telnet 来接受日志事件。</p>
 <p>TraceAppender 将日志写到 .NET trace 系统。</p>
-<p>UdpAppender 将日志以无连接 UDP 数据报的形式送到远程宿主或用 UdpClient 的形式广播。</p>
-<h2 id="32-filters"><a class="markdownIt-Anchor" href="#32-filters"></a> 3.2 Filters</h2>
+<p>UdpAppender 将日志以无连接 UDP 数据报的形式送到远程宿主或用 UdpClient
+的形式广播。</p>
+<h2 id="filters">3.2 Filters</h2>
 <p>使用过滤器可以过滤掉 Appender 输出的内容。过滤器通常有以下几种：</p>
 <p>DenyAllFilter 阻止所有的日志事件被记录</p>
 <p>LevelMatchFilter 只有指定等级的日志事件才被记录</p>
@@ -328,65 +340,102 @@
 <p>LoggerMatchFilter 与Logger名称匹配，才记录</p>
 <p>PropertyFilter 消息匹配指定的属性值时才被记录</p>
 <p>StringMathFilter 消息匹配指定的字符串才被记录</p>
-<h2 id="33-layouts"><a class="markdownIt-Anchor" href="#33-layouts"></a> 3.3 Layouts</h2>
+<h2 id="layouts">3.3 Layouts</h2>
 <p>Layout 用于控制 Appender 的输出格式，可以是线性的也可以是 XML。</p>
 <p>一个 Appender 只能有一个Layout。</p>
-<p>最常用的 Layout 应该是经典格式的 PatternLayout，其次是 SimpleLayout，RawTimeStampLayout 和 ExceptionLayout。然后还有 IRawLayout，XMLLayout 等几个，使用较少。Layout 可以自己实现，需要从log4net.Layout.LayoutSkeleton 类继承，来输出一些特殊需要的格式，在后面扩展时就重新实现了一个 Layout。</p>
+<p>最常用的 Layout 应该是经典格式的 PatternLayout，其次是
+SimpleLayout，RawTimeStampLayout 和 ExceptionLayout。然后还有
+IRawLayout，XMLLayout 等几个，使用较少。Layout
+可以自己实现，需要从log4net.Layout.LayoutSkeleton
+类继承，来输出一些特殊需要的格式，在后面扩展时就重新实现了一个
+Layout。</p>
 <p>SimpleLayout 简单输出格式，只输出日志级别与消息内容。</p>
 <p>RawTimeStampLayout 用来格式化时间，在向数据库输出时会用到。</p>
 <p>样式如 “yyyy-MM-dd HH:mm:ss“</p>
-<p>ExceptionLayout 需要给 Logger 的方法传入 Exception 对象作为参数才起作用，否则就什么也不输出。输出的时候会包含 Message 和 Trace。</p>
-<p>PatterLayout 使用最多的一个 Layout，能输出的信息很多，使用方式可参见上面例子中的配置文件。PatterLayout 的格式化字符串见文后附注8.1。</p>
-<h2 id="34-loggers"><a class="markdownIt-Anchor" href="#34-loggers"></a> 3.4 Loggers</h2>
-<p>Logger 是直接和应用程序交互的组件。Logger 只是产生日志，然后由它引用的 Appender 记录到指定的媒介，并由 Layout 控制输出格式。</p>
-<p>Logger 提供了多种方式来记录一个日志消息，也可以有多个 Logger 同时存在。每个实例化的 Logger 对象对被log4net 作为命名实体（Named   Entity）来维护。log4net 使用继承体系，也就是说假如存在两个 Logger，名字分别为 a.b.c 和 a.b。那么 a.b 就是 a.b.c 的祖先。每个 Logger 都继承了它祖先的属性。所有的 Logger 都从 Root 继承,Root 本身也是一个 Logger。</p>
+<p>ExceptionLayout 需要给 Logger 的方法传入 Exception
+对象作为参数才起作用，否则就什么也不输出。输出的时候会包含 Message 和
+Trace。</p>
+<p>PatterLayout 使用最多的一个
+Layout，能输出的信息很多，使用方式可参见上面例子中的配置文件。PatterLayout
+的格式化字符串见文后附注8.1。</p>
+<h2 id="loggers">3.4 Loggers</h2>
+<p>Logger 是直接和应用程序交互的组件。Logger
+只是产生日志，然后由它引用的 Appender 记录到指定的媒介，并由 Layout
+控制输出格式。</p>
+<p>Logger 提供了多种方式来记录一个日志消息，也可以有多个 Logger
+同时存在。每个实例化的 Logger 对象对被log4net 作为命名实体（Named
+Entity）来维护。log4net 使用继承体系，也就是说假如存在两个
+Logger，名字分别为 a.b.c 和 a.b。那么 a.b 就是 a.b.c 的祖先。每个 Logger
+都继承了它祖先的属性。所有的 Logger 都从 Root 继承,Root 本身也是一个
+Logger。</p>
 <p>日志的等级，它们由高到底分别为：</p>
-<p>OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG  &gt; ALL</p>
-<p>高于等级设定值方法（如何设置参见“配置文件详解”）都能写入日志， Off 所有的写入方法都不写到日志里，ALL则相反。例如当我们设成 Info 时，logger.Debug 就会被忽略而不写入文件，但是 FATAL,ERROR,WARN,INFO 会被写入，因为他们等级高于 INFO。</p>
+<p>OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG &gt; ALL</p>
+<p>高于等级设定值方法（如何设置参见“配置文件详解”）都能写入日志， Off
+所有的写入方法都不写到日志里，ALL则相反。例如当我们设成 Info
+时，logger.Debug 就会被忽略而不写入文件，但是 FATAL,ERROR,WARN,INFO
+会被写入，因为他们等级高于 INFO。</p>
 <p>在具体写日志时，一般可以这样理解日志等级：</p>
 <p>FATAL（致命错误）：记录系统中出现的能使用系统完全失去功能，服务停止，系统崩溃等使系统无法继续运行下去的错误。例如，数据库无法连接，系统出现死循环。</p>
 <p>ERROR（一般错误）：记录系统中出现的导致系统不稳定，部分功能出现混乱或部分功能失效一类的错误。例如，数据字段为空，数据操作不可完成，操作出现异常等。</p>
 <p>WARN（警告）：记录系统中不影响系统继续运行，但不符合系统运行正常条件，有可能引起系统错误的信息。例如，记录内容为空，数据内容不正确等。</p>
 <p>INFO（一般信息）：记录系统运行中应该让用户知道的基本信息。例如，服务开始运行，功能已经开户等。</p>
-<p>DEBUG （调试信息）：记录系统用于调试的一切信息，内容或者是一些关键数据内容的输出。</p>
-<p>Logger 实现的 ILog接口，ILog 定义了 5 个方法（Debug,Inof,Warn,Error,Fatal）分别对不同的日志等级记录日志。这 5 个方法还有 5 个重载。以 Debug 为例说明一下，其它的和它差不多。</p>
+<p>DEBUG
+（调试信息）：记录系统用于调试的一切信息，内容或者是一些关键数据内容的输出。</p>
+<p>Logger 实现的 ILog接口，ILog 定义了 5
+个方法（Debug,Inof,Warn,Error,Fatal）分别对不同的日志等级记录日志。这 5
+个方法还有 5 个重载。以 Debug 为例说明一下，其它的和它差不多。</p>
 <p>ILog中对Debug方法的定义如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message, Exception ex</span>)</span>;</span><br></pre></td></tr></table></figure>
 <p>还有一个布尔属性：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> IsDebugEnabled &#123; <span class="keyword">get</span>; &#125;</span><br></pre></td></tr></table></figure>
-<p>如果使用 Debug(object message, Exception ex)，则无论 Layout 中是否定义了 %exception，默认配置下日志都会输出 Exception。包括 Exception 的 Message 和 Trace。如果使用 Debug(object  message)，则日志是不会输出 Exception。</p>
-<p>最后还要说一个 LogManager 类，它用来管理所有的 Logger。它的 GetLogger 静态方法，可以获得配置文件中相应的 Logger：</p>
+<p>如果使用 Debug(object message, Exception ex)，则无论 Layout
+中是否定义了 %exception，默认配置下日志都会输出 Exception。包括
+Exception 的 Message 和 Trace。如果使用 Debug(object
+message)，则日志是不会输出 Exception。</p>
+<p>最后还要说一个 LogManager 类，它用来管理所有的 Logger。它的 GetLogger
+静态方法，可以获得配置文件中相应的 Logger：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">log4net.ILog log = log4net.LogManager.GetLogger(<span class="string">&quot;logger-name&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="meta">## 3.5 Object Renders</span></span><br></pre></td></tr></table></figure>
-<h2 id="35-object-renders"><a class="markdownIt-Anchor" href="#35-object-renders"></a> 3.5 Object Renders</h2>
-<p>它将告诉 logger 如何把一个对象转化为一个字符串记录到日志里。（ILog 中定义的接口接收的参数是 Object，而不是 String。）</p>
-<p>例如你想把 Orange 对象记录到日志中，但此时 logger 只会调用 Orange 默认的 ToString 方法而已。所以要定义一个 OrangeRender 类实现 log4net.ObjectRender.IObjectRender 接口，然后注册它（我们在本文中的扩展不使用这种方法，而是直接实现一个自定义的 Layout）。这时 logger 就会知道如何把 Orange 记录到日志中了。</p>
-<h2 id="36-repository"><a class="markdownIt-Anchor" href="#36-repository"></a> 3.6 Repository</h2>
+<h2 id="object-renders">3.5 Object Renders</h2>
+<p>它将告诉 logger 如何把一个对象转化为一个字符串记录到日志里。（ILog
+中定义的接口接收的参数是 Object，而不是 String。）</p>
+<p>例如你想把 Orange 对象记录到日志中，但此时 logger 只会调用 Orange
+默认的 ToString 方法而已。所以要定义一个 OrangeRender 类实现
+log4net.ObjectRender.IObjectRender
+接口，然后注册它（我们在本文中的扩展不使用这种方法，而是直接实现一个自定义的
+Layout）。这时 logger 就会知道如何把 Orange 记录到日志中了。</p>
+<h2 id="repository">3.6 Repository</h2>
 <p>Repository 主要用于日志对象组织结构的维护。</p>
-<h1 id="4-配置文件详解"><a class="markdownIt-Anchor" href="#4-配置文件详解"></a> 4、配置文件详解</h1>
-<h2 id="41-配置文件构成"><a class="markdownIt-Anchor" href="#41-配置文件构成"></a> 4.1 配置文件构成</h2>
-<p>主要有两大部分，一是申明一个名为 “log4net“ 的自定义配置节，如下所示：</p>
+<h1 id="配置文件详解">4、配置文件详解</h1>
+<h2 id="配置文件构成">4.1 配置文件构成</h2>
+<p>主要有两大部分，一是申明一个名为 “log4net“
+的自定义配置节，如下所示：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;configSections&gt;</span><br><span class="line">&lt;section name=<span class="string">&quot;log4net&quot;</span></span><br><span class="line">    type=<span class="string">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;</span> /&gt;</span><br><span class="line">&lt;/configSections&gt;</span><br></pre></td></tr></table></figure>
-<p>二是 <code>&lt;log4net&gt;</code> 节的具体配置，这是下面要重点说明的。</p>
-<h3 id="411-log4net"><a class="markdownIt-Anchor" href="#411-log4net"></a> 4.1.1 <code>&lt;log4net&gt;</code></h3>
+<p>二是 <code>&lt;log4net&gt;</code>
+节的具体配置，这是下面要重点说明的。</p>
+<h3 id="log4net">4.1.1 <code>&lt;log4net&gt;</code></h3>
 <p>所有的配置都要在 <code>&lt;log4net&gt;</code> 元素里定义。</p>
 <p>支持的属性：</p>
 <table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>debug</td>
 <td>可选，取值是true或false，默认是false。设置为true，开启log4net的内部调试。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>update</td>
 <td>可选，取值是Merge(合并)或Overwrite(覆盖)，默认值是Merge。设置为Overwrite，在提交配置的时候会重置已经配置过的库。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>threshold</td>
 <td>可选，取值是repository（库）中注册的level，默认值是ALL。</td>
 </tr>
@@ -395,74 +444,80 @@
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>appender</td>
 <td>0或多个</td>
 </tr>
-<tr>
+<tr class="even">
 <td>logger</td>
 <td>0或多个</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>renderer</td>
 <td>0或多个</td>
 </tr>
-<tr>
+<tr class="even">
 <td>root</td>
 <td>最多一个</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0或多个</td>
 </tr>
 </tbody>
 </table>
-<h3 id="412-root"><a class="markdownIt-Anchor" href="#412-root"></a> 4.1.2  <code>&lt;root&gt;</code></h3>
-<p>实际上就是一个根 logger，所有其它 logger 都默认继承它，如果配置文件里没有显式定义，则框架使用根日志中定义的属性。root 元素没有属性。</p>
+<h3 id="root">4.1.2 <code>&lt;root&gt;</code></h3>
+<p>实际上就是一个根 logger，所有其它 logger
+都默认继承它，如果配置文件里没有显式定义，则框架使用根日志中定义的属性。root
+元素没有属性。</p>
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>appender-ref</td>
 <td>0个或多个，要引用的appender的名字。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>level</td>
 <td>最多一个。 只有在这个级别或之上的事件才会被记录。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0个或多个， 设置一些参数。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="413-logger"><a class="markdownIt-Anchor" href="#413-logger"></a> 4.1.3  <code>&lt;logger&gt;</code></h3>
+<h3 id="logger">4.1.3 <code>&lt;logger&gt;</code></h3>
 <p>支持的属性：</p>
 <table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>name</td>
 <td>必须的，logger的名称</td>
 </tr>
-<tr>
+<tr class="even">
 <td>additivity</td>
 <td>可选，取值是true或false，默认值是true。设置为false时将阻止父logger中的appender。</td>
 </tr>
@@ -471,42 +526,43 @@
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>appender-ref</td>
 <td>0个或多个，要引用的appender的名字。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>level</td>
 <td>最多一个。 只有在这个级别或之上的事件才会被记录。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0个或多个， 设置一些参数。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="414-appender"><a class="markdownIt-Anchor" href="#414-appender"></a> 4.1.4  <code>&lt;appender&gt;</code></h3>
-<p>定义日志的输出方式，只能作为 log4net 的子元素。name属性必须唯一，type属性必须指定。</p>
+<h3 id="appender">4.1.4 <code>&lt;appender&gt;</code></h3>
+<p>定义日志的输出方式，只能作为 log4net
+的子元素。name属性必须唯一，type属性必须指定。</p>
 <p>支持的属性：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>name</td>
 <td>必须的，Appender对象的名称</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>必须的，Appender对象的输出类型</td>
 </tr>
@@ -514,44 +570,49 @@
 </table>
 <p>支持的子元素：</p>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 80%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>appender-ref</td>
 <td>0个或多个，允许此appender引用其他appender，并不是所以appender类型都支持。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>filter</td>
 <td>0个或多个，定义此app使用的过滤器。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>layout</td>
 <td>最多一个。定义appender使用的输出格式。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>param</td>
 <td>0个或多个， 设置Appender类中对应的属性的值。</td>
 </tr>
 </tbody>
 </table>
-<p>实际上 <code>&lt;appender&gt;</code> 所能包含的子元素远不止上面4个。</p>
-<h3 id="415-layout"><a class="markdownIt-Anchor" href="#415-layout"></a> 4.1.5  <code>&lt;layout&gt;</code></h3>
+<p>实际上 <code>&lt;appender&gt;</code>
+所能包含的子元素远不止上面4个。</p>
+<h3 id="layout">4.1.5 <code>&lt;layout&gt;</code></h3>
 <p>布局，只能作为 <code>&lt;appender&gt;</code> 的子元素。</p>
 <p>支持的属性：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>type</td>
 <td>必须的，Layout的类型</td>
 </tr>
@@ -560,30 +621,30 @@
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0个或多个， 设置一些参数。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="416-filter"><a class="markdownIt-Anchor" href="#416-filter"></a> 4.1.6  <code>&lt;filter&gt;</code></h3>
+<h3 id="filter">4.1.6 <code>&lt;filter&gt;</code></h3>
 <p>过滤器，只能作为 <code>&lt;appender&gt;</code> 的子元素。</p>
 <p>支持的属性：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>type</td>
 <td>必须的，Filter的类型</td>
 </tr>
@@ -592,38 +653,42 @@
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0个或多个， 设置一些参数。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="417-param"><a class="markdownIt-Anchor" href="#417-param"></a> 4.1.7  <code>&lt;param&gt;</code></h3>
+<h3 id="param">4.1.7 <code>&lt;param&gt;</code></h3>
 <p><code>&lt;param&gt;</code> 元素可以是任何元素的子元素。</p>
 <p>支持的属性：</p>
 <table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 93%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>name</td>
 <td>必须的，取值是父对象的参数名。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>value</td>
 <td>可选的，value和type中，必须有一个属性被指定。value是一个能被转化为参数值的字符串。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>type</td>
 <td>可选的，value和type中，必须有一个属性被指定。type是一个类型名，如果type不是在log4net程序集中定义的，就需要使用全名。</td>
 </tr>
@@ -632,25 +697,30 @@
 <p>支持的子元素：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>param</td>
 <td>0个或多个， 设置一些参数。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="42-appender-配置"><a class="markdownIt-Anchor" href="#42-appender-配置"></a> 4.2 <code>&lt;appender&gt;</code> 配置</h2>
-<p><code>&lt;appender&gt;</code> 在配置文件中至少有一个，也可以有多个，有些 <code>&lt;appender&gt;</code> 类型还可以引用其他 <code>&lt;appender&gt;</code> 类型，具体参数可参见上表。</p>
-<p>下面只对写入回滚文件与输出到数据库（这里使用 SQL 数据库）配置体会说一下，其他配置可参考官方网站：<a target="_blank" rel="noopener" href="http://logging.apache.org/log4net/release/config-examples.html">http://logging.apache.org/log4net/release/config-examples.html</a></p>
-<h3 id="421写入回滚文件"><a class="markdownIt-Anchor" href="#421写入回滚文件"></a> 4.2.1写入回滚文件</h3>
+<h2 id="appender-配置">4.2 <code>&lt;appender&gt;</code> 配置</h2>
+<p><code>&lt;appender&gt;</code>
+在配置文件中至少有一个，也可以有多个，有些 <code>&lt;appender&gt;</code>
+类型还可以引用其他 <code>&lt;appender&gt;</code>
+类型，具体参数可参见上表。</p>
+<p>下面只对写入回滚文件与输出到数据库（这里使用 SQL
+数据库）配置体会说一下，其他配置可参考官方网站：<a
+target="_blank" rel="noopener" href="http://logging.apache.org/log4net/release/config-examples.html">http://logging.apache.org/log4net/release/config-examples.html</a></p>
+<h3 id="写入回滚文件">4.2.1写入回滚文件</h3>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;ReflectionLayout&quot;</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.RollingFileAppender,log4net&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--日志文件路径，“/”与“/”作用相同，到达的目录相同，文件夹不存在则新建 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--按文件大小方式输出时在这里指定文件名，并且当天的日志在下一天时在文件名后自动追加当天日期形成新文件。--&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;!—按照日期形式输出时，直接连接元素 DatePattern 的 value 形成文件路径。此处使用这种方式 --&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--param的名称,可以直接查对应的appender类的属性名即可,这里要查的就是RollingFileAppender类的属性 --&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;D:/Log/&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--是否追加到文件--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;AppendToFile&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--记录日志写入文件时，不锁定文本文件，防止多线程时不能写Log,官方说线程非安全--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">lockingModel</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Appender.FileAppender+MinimalLock&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--使用Unicode编码--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Encoding</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--最多产生的日志文件数，超过则只保留最新的n个。设定值value=&quot;－1&quot;为不限文件数--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;MaxSizeRollBackups&quot;</span> <span class="attr">value</span>=<span class="string">&quot;10&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--是否只写到一个文件中--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;StaticLogFileName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--按照何种方式产生多个日志文件(日期[Date],文件大小[Size],混合[Composite])--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;RollingStyle&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Composite&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--按日期产生文件夹和文件名［在日期方式与混合方式下使用］--&gt;</span></span><br><span class="line">       &lt;!—此处按日期产生文件夹，文件名固定。注意&quot; 的位置--&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;DatePattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;yyyy-MM-dd/&quot;</span><span class="attr">ReflectionLayout.log</span>&quot;&quot;  /&gt;</span></span><br><span class="line"></span><br><span class="line">        &lt;!—这是按日期产生文件夹，并在文件名前也加上日期--&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;DatePattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;yyyyMMdd/yyyyMMdd&quot;</span><span class="attr">-TimerServer.log</span>&quot;&quot;  /&gt;</span></span><br><span class="line"></span><br><span class="line">        &lt;!—这是先按日期产生文件夹，再形成下一级固定的文件夹—&gt;</span><br><span class="line">       <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;DatePattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;yyyyMMdd/&quot;</span><span class="attr">TimerServer</span>/<span class="attr">TimerServer.log</span>&quot;&quot;  /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--每个文件的大小。只在混合方式与文件大小方式下使用。</span></span><br><span class="line"><span class="comment">超出大小后在所有文件名后自动增加正整数重新命名，数字最大的最早写入。</span></span><br><span class="line"><span class="comment">可用的单位:KB|MB|GB。不要使用小数,否则会一直写入当前日志--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;maximumFileSize&quot;</span> <span class="attr">value</span>=<span class="string">&quot;500KB&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">&lt;!--计数类型为1，2，3…--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;CountDirection&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">       &lt;!—过滤设置，LevelRangeFilter为使用的过滤器。 --&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">filter</span> <span class="attr">type</span>=<span class="string">&quot;log4net.Filter.LevelRangeFilter&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;LevelMax&quot;</span> <span class="attr">value</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">filter</span>&gt;</span> </span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--记录的格式。一般用log4net.Layout.PatternLayout布局--&gt;</span></span><br><span class="line">       &lt;!—此处用继承了log4net.Layout.PatternLayout的自定义布局，TGLog.ExpandLayout2</span><br><span class="line">为命名空间。%property&#123;Operator&#125;、%property&#123;Action&#125;是自定义的输出-－&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">&quot;TGLog.ExpandLayout2.ReflectionLayout,TGLog&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span></span></span><br><span class="line"><span class="tag"> <span class="attr">value</span>=<span class="string">&quot;记录时间：%date 线程ID:[%thread] 日志级别：%-5level 记录类：%logger     操作者ID：%property&#123;Operator&#125; 操作类型：%property&#123;Action&#125;%n             当前机器名:%property%n当前机器名及登录用户：%username   %n               记录位置：%location%n 消息描述：%property&#123;Message&#125;%n                    异常：%exception%n 消息：%message%newline%n%n&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>注意这些配置属性有些是可选的，如果需要，一定要写正确，否则要么输出的不是自己想要的结果，要么干脆不输出任何信息。</p>
-<h3 id="421写入sql数据库"><a class="markdownIt-Anchor" href="#421写入sql数据库"></a> 4.2.1写入SQL数据库</h3>
+<h3 id="写入sql数据库">4.2.1写入SQL数据库</h3>
 <p>需要在相应的数据库中准备好一张表，创建语句如下：</p>
 <p>CREATE TABLE [Log] (</p>
 <p>[ID] [int] IDENTITY (1, 1) NOT NULL ,</p>
@@ -668,483 +738,539 @@
 <p>[Location] [text] COLLATE Chinese_PRC_CI_AS NULL ,</p>
 <p>[Exception] [text] COLLATE Chinese_PRC_CI_AS NULL</p>
 <p>)</p>
-<appender name="ADONetAppender" type="log4net.Appender.ADONetAppender,log4net">
+<p><appender name="ADONetAppender" type="log4net.Appender.ADONetAppender,log4net"></p>
 <!--BufferSize为缓冲区大小，只有日志记录超设定值才会一块写入到数据库-->
-<p><bufferSize value="10" />&lt;!—或写为<param name="BufferSize" value="10" />–&gt;</p>
+<p><bufferSize value="10" />&lt;!—或写为<param name="BufferSize" value="10" />--&gt;</p>
 <!--引用-->
-<connectionType value="System.Data.SqlClient.SqlConnection,  System.Data, Version=1.0.3300.0, Culture=neutral,  PublicKeyToken=b77a5c561934e089" />
+<p><connectionType value="System.Data.SqlClient.SqlConnection,  System.Data, Version=1.0.3300.0, Culture=neutral,  PublicKeyToken=b77a5c561934e089" /></p>
 <!--连接数据库字符串-->
-<connectionString value="data  source=.;initial catalog=Test;integrated security=false;persist  security info=True;User ID=sa;Password=;" />
+<p><connectionString value="data  source=.;initial catalog=Test;integrated security=false;persist  security info=True;User ID=sa;Password=;" /></p>
 <!--插入到表Log-->
-<commandText value="INSERT  INTO Log  ([Date],[Thread],[Level],[Logger],[Operator],[Message],[ActionType],[Operand],[IP],[MachineName],[Browser],[Location],[Exception])  VALUES (@log_date, @thread, @log_level, @logger,@operator,  @message,@action_type,@operand,@ip,@machineName,@browser,@location,@exception)" />
+<p><commandText value="INSERT  INTO Log  ([Date],[Thread],[Level],[Logger],[Operator],[Message],[ActionType],[Operand],[IP],[MachineName],[Browser],[Location],[Exception])  VALUES (@log_date, @thread, @log_level, @logger,@operator,  @message,@action_type,@operand,@ip,@machineName,@browser,@location,@exception)" /></p>
 <p>&lt;!—日志记录时间，RawTimeStampLayout为默认的时间输出格式 --&gt;</p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@log_date" /></p>
-<p>​        <dbType value="DateTime" /></p>
-<p>​        <layout type="log4net.Layout.RawTimeStampLayout" /></p>
-<p>​      </parameter></p>
-<p>​      <!--线程号--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@thread" /></p>
-<p>​        <dbType value="String" /></p>
-<p>&lt;!—长度不可以省略，否则不会输出–&gt;</p>
-<p>​        <size value="100" /></p>
-<p>​        <layout type="log4net.Layout.PatternLayout"></p>
-<p>​          <conversionPattern value="%thread" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--日志等级--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@log_level" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="100" /></p>
-<p>​        <layout type="log4net.Layout.PatternLayout"></p>
-<p>​          <conversionPattern value="%level" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--日志记录类名称--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@logger" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="200" /></p>
-<p>​        <layout type="log4net.Layout.PatternLayout"></p>
-<p>​          <conversionPattern value="%logger" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@log_date" /></p>
+<p>​ <dbType value="DateTime" /></p>
+<p>​ <layout type="log4net.Layout.RawTimeStampLayout" /></p>
+<p>​ </parameter></p>
+<p>​ <!--线程号--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@thread" /></p>
+<p>​ <dbType value="String" /></p>
+<p>&lt;!—长度不可以省略，否则不会输出--&gt;</p>
+<p>​ <size value="100" /></p>
+<p>​ <layout type="log4net.Layout.PatternLayout"></p>
+<p>​ <conversionPattern value="%thread" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--日志等级--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@log_level" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="100" /></p>
+<p>​ <layout type="log4net.Layout.PatternLayout"></p>
+<p>​ <conversionPattern value="%level" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--日志记录类名称--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@logger" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="200" /></p>
+<p>​ <layout type="log4net.Layout.PatternLayout"></p>
+<p>​ <conversionPattern value="%logger" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
 <p>​</p>
-<p>​      <!--操作者。这个是自定义的输出字段，使用重新实现的布局器ReflectionLayout --></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@operator" /></p>
-<p>&lt;!—设置为Int32时只有bufferSize的 value&lt;=&quot;1&quot;才正确输出，没有找出原因。–&gt;</p>
-<p>​        <dbType value="Int16" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{Operator}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--操作对象--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@operand" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="300" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{Operand}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      &lt;!—IP地址–&gt;</p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@ip" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="20" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{IP}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--机器名--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@machineName" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="100" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{MachineName}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--浏览器--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@browser" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="50" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{Browser}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
+<p>​
+<!--操作者。这个是自定义的输出字段，使用重新实现的布局器ReflectionLayout --></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@operator" /></p>
+<p>&lt;!—设置为Int32时只有bufferSize的
+value&lt;="1"才正确输出，没有找出原因。--&gt;</p>
+<p>​ <dbType value="Int16" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{Operator}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--操作对象--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@operand" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="300" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{Operand}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ &lt;!—IP地址--&gt;</p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@ip" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="20" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{IP}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--机器名--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@machineName" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="100" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{MachineName}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--浏览器--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@browser" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="50" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{Browser}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
 <p>​</p>
-<p>​      &lt;!—日志消息–&gt;</p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@message" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="3000" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{Message}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      <!--动作类型--></p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@action_type" /></p>
-<p>​        <dbType value="Int16" /></p>
-<p>​        <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​          <conversionPattern value="%property{ActionType}" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
-<p>​      &lt;!—记录日志的位置–&gt;</p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@location" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="2000" /></p>
-<p>​        <layout type="log4net.Layout.PatternLayout"></p>
-<p>​          <conversionPattern value="%location" /></p>
-<p>​        </layout></p>
-<p>​      </parameter></p>
+<p>​ &lt;!—日志消息--&gt;</p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@message" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="3000" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{Message}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ <!--动作类型--></p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@action_type" /></p>
+<p>​ <dbType value="Int16" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{ActionType}" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
+<p>​ &lt;!—记录日志的位置--&gt;</p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@location" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="2000" /></p>
+<p>​ <layout type="log4net.Layout.PatternLayout"></p>
+<p>​ <conversionPattern value="%location" /></p>
+<p>​ </layout></p>
+<p>​ </parameter></p>
 <p>​</p>
-<p>​      &lt;!—异常信息。ExceptionLayout 为异常输出的默认格式–&gt;</p>
-<p>​      <parameter></p>
-<p>​        <parameterName value="@exception" /></p>
-<p>​        <dbType value="String" /></p>
-<p>​        <size value="4000" /></p>
-<p>​        <layout type="log4net.Layout.ExceptionLayout" /></p>
-<p>​      </parameter></p>
-</appender>
+<p>​ &lt;!—异常信息。ExceptionLayout 为异常输出的默认格式--&gt;</p>
+<p>​ <parameter></p>
+<p>​ <parameterName value="@exception" /></p>
+<p>​ <dbType value="String" /></p>
+<p>​ <size value="4000" /></p>
+<p>​ <layout type="log4net.Layout.ExceptionLayout" /></p>
+<p>​ </parameter></p>
+<p></appender></p>
 <p>注意：</p>
 <p>向表中输出的字段不能多于数据表本身字段，而反之则可以，但这些多余字段一定使其可以为空，否则便写不到数据库；</p>
 <p>输出字段的类型一定是对应数据表字段数据类型可以隐式转换的，而且长度也不能超过，否则也不能写入；</p>
 <p>数据表字段设置尽量可以为空，这样可以避免一条日志记录存在空数据导致后面的日志都记录不了。</p>
-<h2 id="43logger的配置"><a class="markdownIt-Anchor" href="#43logger的配置"></a> 4.3<logger>的配置</h2>
+<h2 id="的配置">4.3<logger>的配置</h2>
 <p>在配置文件<appender>中的配置好了输出的介质，格式，过滤方式，还要定义日志对象<logger>。</p>
-<p>在框架的体系里，所有的日志对象都是根日志(root   logger)的后代。 因此如果一个日志对象没有在配置文件里显式定义，则框架使用根日志中定义的属性。在<root>标签里，可以定义level级别值和Appender的列表。如果没有定义LEVEL的值，则缺省为DEBUG。可以通过<appender-ref>标签定义日志对象使用的Appender对象。<appender-ref>声明了在其他地方定义的Appender对象的一个引用。在一个logger对象中的设置会覆盖根日志的设置。而对Appender属性来说，子日志对象则会继承父日志对象的Appender列表。这种缺省的行为方式也可以通过显式地设定<logger>标签的additivity属性为false而改变。</p>
+<p>在框架的体系里，所有的日志对象都是根日志(root logger)的后代。
+因此如果一个日志对象没有在配置文件里显式定义，则框架使用根日志中定义的属性。在<root>标签里，可以定义level级别值和Appender的列表。如果没有定义LEVEL的值，则缺省为DEBUG。可以通过<appender-ref>标签定义日志对象使用的Appender对象。<appender-ref>声明了在其他地方定义的Appender对象的一个引用。在一个logger对象中的设置会覆盖根日志的设置。而对Appender属性来说，子日志对象则会继承父日志对象的Appender列表。这种缺省的行为方式也可以通过显式地设定<logger>标签的additivity属性为false而改变。</p>
 <p><root>不显式申明时使用默认的配置。我觉得在使用时不定义<root>,自定义多个<logger>,在程序中记录日志时直接使用<logger>的name来查找相应的<logger>，这样更灵活一些。例如：</p>
 <!--同时写两个文件和数据库-->
-<logger name="ReflectionLayout">
-<p>​      <level value="DEBUG"/></p>
-<p>​      <appender-ref ref="HashtableLayout"/></p>
-<p>​      <appender-ref ref="ReflectionLayout"/></p>
-<p>​      <appender-ref ref="ADONetAppender"/></p>
-</logger>
-<h2 id="44关联配置文件"><a class="markdownIt-Anchor" href="#44关联配置文件"></a> 4.4关联配置文件</h2>
-<p>log4net 默认关联的是应用程序的配置文件 App.config (BS 程序是 Web.config)，可以使用程序集自定义属性来进行设置。下面来介绍一下这个自定义属性：</p>
+<p><logger name="ReflectionLayout"></p>
+<p>​ <level value="DEBUG"/></p>
+<p>​ <appender-ref ref="HashtableLayout"/></p>
+<p>​ <appender-ref ref="ReflectionLayout"/></p>
+<p>​ <appender-ref ref="ADONetAppender"/></p>
+<p></logger></p>
+<h2 id="关联配置文件">4.4关联配置文件</h2>
+<p>log4net 默认关联的是应用程序的配置文件 App.config (BS 程序是
+Web.config)，可以使用程序集自定义属性来进行设置。下面来介绍一下这个自定义属性：</p>
 <p>log4net.Config.XmlConifguratorAttribute。</p>
 <p>XmlConfiguratorAttribute有3个属性：</p>
 <ul>
 <li>ConfigFile： 配置文件的名字，文件路径相对于应用程序目录</li>
 </ul>
-<p>(AppDomain.CurrentDomain.BaseDirectory)。ConfigFile 属性不能和 ConfigFileExtension 属性一起使用。</p>
+<p>(AppDomain.CurrentDomain.BaseDirectory)。ConfigFile 属性不能和
+ConfigFileExtension 属性一起使用。</p>
 <ul>
-<li>
-<p>ConfigFileExtension： 配置文件的扩展名，文件路径相对于应用程序的目录。ConfigFileExtension 属性不能和ConfigFile属性一起使用。</p>
-</li>
-<li>
-<p>Watch： 如果将Watch属性设置为true，就会监视配置文件。当配置文件发生变化的时候，就会重新加载。</p>
-</li>
+<li><p>ConfigFileExtension：
+配置文件的扩展名，文件路径相对于应用程序的目录。ConfigFileExtension
+属性不能和ConfigFile属性一起使用。</p></li>
+<li><p>Watch：
+如果将Watch属性设置为true，就会监视配置文件。当配置文件发生变化的时候，就会重新加载。</p></li>
 </ul>
-<p>如果 ConfigFile 和 ConfigFileExtension 都没有设置，则使用应用程序的配置文件 App.config（Web.config）。</p>
+<p>如果 ConfigFile 和 ConfigFileExtension
+都没有设置，则使用应用程序的配置文件 App.config（Web.config）。</p>
 <p>可以在项目的AssemblyInfo.cs文件里添加以下的语句：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//监视默认的配置文件，App.exe.config   </span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//监视配置文件，App.exe.log4net。</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(ConfigFileExtension = <span class="string">&quot;log4net&quot;</span>, Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用配置文件 log4net.config，不监视改变。注意 log4net.config 文件的目录，BS 程序在站点目录//下，CS 则在应用程序启动目录下，如调试时在 /bin/Debug 下，一般将文件属性的文件输出目录调为//始终复制即可</span></span><br><span class="line">[<span class="meta">assembly: log4net. Config.XmlConfigurator(ConfigFile = <span class="string">&quot;log4net.config&quot;</span>)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用配置文件log4net.config，不监视改变</span></span><br><span class="line">[<span class="meta">assembly: log4net. Config.XmlConfigurator()</span>]</span><br></pre></td></tr></table></figure>
-<p>也可以在 Global.asax 的 Application_Start 里或者是 Program.cs 中的 Main 方法中添加，注意这里一定是绝对路径，如下所示：</p>
+<p>也可以在 Global.asax 的 Application_Start 里或者是 Program.cs 中的
+Main 方法中添加，注意这里一定是绝对路径，如下所示：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在BS程序下，使用自定义的配置文件log4net.xml，使用Server.MapPath(&quot;~&quot;) + //@&quot;/log4net.xml”来取得路径。/log4net.xml为相对于站点的路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ConfigureAndWatch()相当于Configure(Watch = true)</span></span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> System.IO.FileInfo(Server.MapPath(<span class="string">&quot;~&quot;</span>) + <span class="string">@&quot;/log4net.xml&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是在CS程序下，可以用以下方法获得：</span></span><br><span class="line"><span class="built_in">string</span> assemblyFilePath = Assembly.GetExecutingAssembly().Location;</span><br><span class="line"><span class="built_in">string</span> assemblyDirPath = Path.GetDirectoryName(assemblyFilePath);</span><br><span class="line"><span class="built_in">string</span> configFilePath = assemblyDirPath + <span class="string">&quot; //log4net.xml&quot;</span>;</span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> FileInfo(configFilePath));</span><br></pre></td></tr></table></figure>
 <p>或直接使用绝对路径：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用自定义的配置文件，直接绝对路径为：c:/log4net.config</span></span><br><span class="line">log4net.Config.XmlConfigurator.Configure(<span class="keyword">new</span> System.IO.FileInfo(<span class="string">@&quot;c:/log4net.config&quot;</span>));</span><br></pre></td></tr></table></figure>
-<h1 id="5-如何记录日志"><a class="markdownIt-Anchor" href="#5-如何记录日志"></a> 5、如何记录日志</h1>
+<h1 id="如何记录日志">5、如何记录日志</h1>
 <p>Log4net使用很方便，先申明一个封装类ILog 的对象，如下：</p>
-<p>log4net.ILog log = log4net.LogManager.GetLogger(“ReflectionLayout”);</p>
-<p>其中&quot;ReflectionLayout&quot;便是我们自定义的日志对象<logger>的name的值。</p>
-<p>对应5个日志输出级别，log有5 个方法，每个方法都有两个重载，使用如下：</p>
+<p>log4net.ILog log =
+log4net.LogManager.GetLogger("ReflectionLayout");</p>
+<p>其中"ReflectionLayout"便是我们自定义的日志对象<logger>的name的值。</p>
+<p>对应5个日志输出级别，log有5
+个方法，每个方法都有两个重载，使用如下：</p>
 <p>try</p>
-<p>​            {</p>
-<p>​                log.Debug(“这是一个测试！”);</p>
-<p>​            }</p>
-<p>​            catch(Exception ec)</p>
-<p>​            {</p>
-<p>​                log.Error(“出现错误！”, ec);</p>
-<p>​         }</p>
+<p>​ {</p>
+<p>​ log.Debug("这是一个测试！");</p>
+<p>​ }</p>
+<p>​ catch(Exception ec)</p>
+<p>​ {</p>
+<p>​ log.Error("出现错误！", ec);</p>
+<p>​ }</p>
 <p>如果我们需要输出的消息是要区别开来，不按一个字符串全部输出，就需要进行一些扩展了。</p>
-<h1 id="6-log4net的简单扩展"><a class="markdownIt-Anchor" href="#6-log4net的简单扩展"></a> 6、Log4net的简单扩展</h1>
-<h2 id="61通过重写布局layout输出传入的-message对象的属性"><a class="markdownIt-Anchor" href="#61通过重写布局layout输出传入的-message对象的属性"></a> 6.1通过重写布局Layout输出传入的 message对象的属性</h2>
-<h3 id="611重写layout类"><a class="markdownIt-Anchor" href="#611重写layout类"></a> 6.1.1重写Layout类</h3>
+<h1 id="log4net的简单扩展">6、Log4net的简单扩展</h1>
+<h2
+id="通过重写布局layout输出传入的-message对象的属性">6.1通过重写布局Layout输出传入的
+message对象的属性</h2>
+<h3 id="重写layout类">6.1.1重写Layout类</h3>
 <p>通过继承log4net.Layout.PatternLayout类，使用log4net.Core.LoggingEvent类的方法得到了要输出的message类的名称，然后通过反射得到各个属性的值，使用PatternLayout类AddConverter方法传入得到的值。这里注意要引用用到的类的命名空间。</p>
 <p>代码见附注8.2。</p>
-<h3 id="612配置相应的配置文件"><a class="markdownIt-Anchor" href="#612配置相应的配置文件"></a> 6.1.2配置相应的配置文件</h3>
+<h3 id="配置相应的配置文件">6.1.2配置相应的配置文件</h3>
 <p>配置文件其他地方不用改动，只是需要改动<appender>中的<layout>。例如：</p>
-<layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog">
-<p>​        &lt;param name=“ConversionPattern”</p>
-<p>value=&quot;记录时间：%date    操作者ID：%property{Operator}</p>
-<p>操作类型：%property{Action}%n  消息描述：%property{Message}%n                    异常：%exception%n &quot; /&gt;</p>
-<p>​      </layout></p>
+<p><layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <param name="ConversionPattern"
+
+ value="记录时间：%date    操作者ID：%property{Operator}             
+
+操作类型：%property{Action}%n  消息描述：%property{Message}%n                    异常：%exception%n " /></p>
+<p>​ </layout></p>
 <p>其中<layout>的type由原来的log4net.Layout.PatternLayout换为自定义的TGLog.ExpandLayout2.ReflectionLayout（TGLog.ExpandLayout2为命名空间）。%property{Operator}输出的即为message类对象的属性Operator的值。数据库配置同样，相应的字段如果是自定义的，则输出选用自定义的<layout>。例：</p>
 <!--动作类型-->
-<parameter>
-<p>​      <parameterName value="@action_type" /></p>
-<p>​      <dbType value="Int16" /></p>
-<p>​      <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
-<p>​         <conversionPattern value="%property{ActionType}" /></p>
-<p>​      </layout></p>
-</parameter>
-<h3 id="613程序中如何使用"><a class="markdownIt-Anchor" href="#613程序中如何使用"></a> 6.1.3程序中如何使用</h3>
+<p><parameter></p>
+<p>​ <parameterName value="@action_type" /></p>
+<p>​ <dbType value="Int16" /></p>
+<p>​ <layout type="TGLog.ExpandLayout2.ReflectionLayout,TGLog"></p>
+<p>​ <conversionPattern value="%property{ActionType}" /></p>
+<p>​ </layout></p>
+<p></parameter></p>
+<h3 id="程序中如何使用">6.1.3程序中如何使用</h3>
 <p>和一般使用方法基本相同，只是传入的参数是一个自定义的类，类的属性和配置文件中<layout>所有的%property{属性}是一致的，即%property{属性}在输出的时候就查找传入message类中有无对应的属性，如果有就输出值，没有则输出null。例：</p>
-<p>log4net.ILog log = log4net.LogManager.GetLogger(“ReflectionLayout”);</p>
+<p>log4net.ILog log =
+log4net.LogManager.GetLogger("ReflectionLayout");</p>
 <p>try</p>
-<p>​            {</p>
-<p>​                log.Debug(new LogMessage(</p>
+<p>​ {</p>
+<p>​ log.Debug(new LogMessage(</p>
 <p>1,</p>
-<p>“操作对象：0”,</p>
+<p>"操作对象：0",</p>
 <p>(int)TGLog.ActionType.Other,</p>
-<p>“这是四个参数测试”)</p>
+<p>"这是四个参数测试")</p>
 <p>);</p>
-<p>​            }</p>
-<p>​            catch(Exception ec)</p>
-<p>​            {</p>
-<p>​                log.Error(new LogMessage(</p>
-<p>​                                    1,</p>
-<p>​                                    “操作对象：0”,</p>
-<p>​                                    (int)TGLog.ActionType.Other,</p>
-<p>​                                    “这是全部参数测试”,</p>
-<p>​                                    “192.168.1.1”,</p>
-<p>​                                    “MyComputer”,</p>
-<p>​                                    “Maxthon(MyIE2)Fans”),</p>
-<p>​                         ec</p>
+<p>​ }</p>
+<p>​ catch(Exception ec)</p>
+<p>​ {</p>
+<p>​ log.Error(new LogMessage(</p>
+<p>​ 1,</p>
+<p>​ "操作对象：0",</p>
+<p>​ (int)TGLog.ActionType.Other,</p>
+<p>​ "这是全部参数测试",</p>
+<p>​ "192.168.1.1",</p>
+<p>​ "MyComputer",</p>
+<p>​ "Maxthon(MyIE2)Fans"),</p>
+<p>​ ec</p>
 <p>);</p>
-<p>​      }</p>
+<p>​ }</p>
 <p>LogMessage的全部属性的构造方法如下：</p>
 <p>public LogMessage(</p>
-<p>​            int operatorID,</p>
-<p>​            string operand,</p>
-<p>​            int ActionType,</p>
-<p>​            string message,</p>
-<p>​            string ip,</p>
-<p>​            string machineName,</p>
-<p>​            string browser</p>
-<p>​            )</p>
-<p>​     {</p>
-<p>​            this.ActionType = ActionType;</p>
-<p>​            this.Operator = operatorID;</p>
-<p>​            this.Message = message;</p>
-<p>​            this.Operand = operand;</p>
-<p>​            this.IP = ip;</p>
-<p>​            this.Browser = browser;</p>
-<p>​            this.MachineName = machineName;</p>
+<p>​ int operatorID,</p>
+<p>​ string operand,</p>
+<p>​ int ActionType,</p>
+<p>​ string message,</p>
+<p>​ string ip,</p>
+<p>​ string machineName,</p>
+<p>​ string browser</p>
+<p>​ )</p>
+<p>​ {</p>
+<p>​ this.ActionType = ActionType;</p>
+<p>​ this.Operator = operatorID;</p>
+<p>​ this.Message = message;</p>
+<p>​ this.Operand = operand;</p>
+<p>​ this.IP = ip;</p>
+<p>​ this.Browser = browser;</p>
+<p>​ this.MachineName = machineName;</p>
 <p>}</p>
-<h2 id="62通过重新实现ilog接口来增加输入的参数"><a class="markdownIt-Anchor" href="#62通过重新实现ilog接口来增加输入的参数"></a> 6.2通过重新实现ILog接口来增加输入的参数</h2>
-<h3 id="621重写logimpllogmanager类及实现ilog接口"><a class="markdownIt-Anchor" href="#621重写logimpllogmanager类及实现ilog接口"></a> 6.2.1重写LogImpl，LogManager类及实现ILog接口</h3>
+<h2
+id="通过重新实现ilog接口来增加输入的参数">6.2通过重新实现ILog接口来增加输入的参数</h2>
+<h3
+id="重写logimpllogmanager类及实现ilog接口">6.2.1重写LogImpl，LogManager类及实现ILog接口</h3>
 <p>这种方式是通过构造一个名为IMyLog接口，是继承Ilog接口而来，然后分别在MyLogImpl，MyLogManager重新实现IMyLog接口，增加了每种方法的参数。MyLogImpl，MyLogManager分别继承LogImpl，LogManager而来。</p>
 <p>代码分别见8.3、8.4、8.5：</p>
-<h3 id="622配置相应的配置文件"><a class="markdownIt-Anchor" href="#622配置相应的配置文件"></a> 6.2.2配置相应的配置文件</h3>
+<h3 id="配置相应的配置文件-1">6.2.2配置相应的配置文件</h3>
 <p>配置文件其他地方不用改动，只是需要改动<appender>中的<layout>元素name为ConversionPattern的value中输出格式。例如：</p>
-<layout type=" log4net.Layout.PatternLayout ">
-<p>​        &lt;param name=“ConversionPattern”</p>
-<p>value=&quot;记录时间：%date    操作者ID：%property{Operator}</p>
-<p>操作类型：%property{Action}%n  消息描述：%property{Message}%n                    异常：%exception%n &quot; /&gt;</p>
-<p>​      </layout></p>
+<p><layout type=" log4net.Layout.PatternLayout "></p>
+<p>​ <param name="ConversionPattern"
+
+ value="记录时间：%date    操作者ID：%property{Operator}             
+
+操作类型：%property{Action}%n  消息描述：%property{Message}%n                    异常：%exception%n " /></p>
+<p>​ </layout></p>
 <p>%property{参数}中的参数在MyLogImpl类中定义，如语句：</p>
-<p>loggingEvent.Properties[“Operator”] = operatorID;</p>
+<p>loggingEvent.Properties["Operator"] = operatorID;</p>
 <p>就定义了Operator输出参数，即%property{Operator}输出的即为IMyLog中的参数operatorID的值。</p>
 <p>数据库配置同样。例：</p>
 <!--动作类型-->
-<parameter>
-<p>​      <parameterName value="@action_type" /></p>
-<p>​      <dbType value="Int16" /></p>
-<p>​      <layout type=" log4net.Layout.PatternLayout "></p>
-<p>​         <conversionPattern value="%property{ActionType}" /></p>
-<p>​      </layout></p>
-</parameter>
-<h3 id="623程序中如何使用"><a class="markdownIt-Anchor" href="#623程序中如何使用"></a> 6.2.3程序中如何使用</h3>
-<p>先引用IMyLog ，MyLogManager所在的命名空间，创建一个IMyLog对象，myLog的5 个方法，每个方法都有四个重载，增加了多参数的重载。例：</p>
-<p>IMyLog myLog = MyLogManager.GetLogger(“ExpandILog”);</p>
+<p><parameter></p>
+<p>​ <parameterName value="@action_type" /></p>
+<p>​ <dbType value="Int16" /></p>
+<p>​ <layout type=" log4net.Layout.PatternLayout "></p>
+<p>​ <conversionPattern value="%property{ActionType}" /></p>
+<p>​ </layout></p>
+<p></parameter></p>
+<h3 id="程序中如何使用-1">6.2.3程序中如何使用</h3>
+<p>先引用IMyLog
+，MyLogManager所在的命名空间，创建一个IMyLog对象，myLog的5
+个方法，每个方法都有四个重载，增加了多参数的重载。例：</p>
+<p>IMyLog myLog = MyLogManager.GetLogger("ExpandILog");</p>
 <p>try</p>
-<p>​            {</p>
-<p>myLog.Debug(“这是一个参数重载测试!”);</p>
+<p>​ {</p>
+<p>myLog.Debug("这是一个参数重载测试!");</p>
 <p>}</p>
-<p>​            catch(Exception ec)</p>
-<p>​            {</p>
-<p>​                log.Error(</p>
-<p>​                          1,</p>
-<p>​                          “操作对象：0”,</p>
-<p>​                          (int)TGLog.ActionType.Other,</p>
-<p>​                          “这是全部参数测试”,</p>
-<p>​                          “192.168.1.1”,</p>
-<p>​                          “MyComputer”,</p>
-<p>​                          “Maxthon(MyIE2)Fans”,</p>
-<p>​                          ec</p>
+<p>​ catch(Exception ec)</p>
+<p>​ {</p>
+<p>​ log.Error(</p>
+<p>​ 1,</p>
+<p>​ "操作对象：0",</p>
+<p>​ (int)TGLog.ActionType.Other,</p>
+<p>​ "这是全部参数测试",</p>
+<p>​ "192.168.1.1",</p>
+<p>​ "MyComputer",</p>
+<p>​ "Maxthon(MyIE2)Fans",</p>
+<p>​ ec</p>
 <p>);</p>
-<p>​      }</p>
-<h1 id="7-总结"><a class="markdownIt-Anchor" href="#7-总结"></a> 7、总结</h1>
-<p>Log4net 功能很多，这里只是对已经尝试用过的功能总结一下，普通写日志已经足够。需要注意的是：</p>
-<p>\1.            Log4net本身也有一些缺陷，比如一个记录引起了log4net本身的异常，就会使后面的日志无法记录下来，尤其是在写入数据库时。例如使用6.1扩展后，int型的属性在<appender >的元素<bufferSize>设置不为1时，<dbType value="Int32" />时，就不能输出到数据库，而<dbType value="Int16" />则没任何问题。</p>
-<p>\2.            Log4net本身出现了异常，比如配置文件出现错误，有些日志输出方式会记录下这些异常，例如应用程序控制台；有些则不会输出这些错误，如数据库与文件。</p>
-<p>\3.            扩展时也会留下一些问题。例如在使用6.1扩展输出字段时就会出现，在log.debug(object   message)中，如果message是一个自定义的类，属性与配置文件中输出设置也一致，构造函数时也只构造一个参数的实例，写文件与写数据库都成功，而将message按没有扩展的方式直接传入一个字符串，即log.debug(“信息内容”)使用则只能写入文件，而数据库则没写入。自定义的Layout 就是继承默认的PatternLayout，本来不应该出错，但出现了问题。原因分析是自定义的message类有类型为int的属性，作为一个对象传入时在默认值0，而直接使用字符串则int型的字段得不到默认值，引发异常。所以建议在有扩展存在时，最好多设几个<logger>,区分清楚，按照统一的形式记录日志，不要混合使用。</p>
-<p>\4.            配置文件的设置一定要准确，在一点不正确就会导致日志不能正常输出，所以在配置时先从最简单的开始，同时输出方式选择一种能输出log4net本身异常的方式，成功后一点一点加在新配置，这样出错了也容易找到那个地方配置有问题。</p>
-<p>\5.            log4net扩展性很强，几乎所有的组件都可以重写，在配置文件中配置好就可以使用。</p>
-<h1 id="8-附注"><a class="markdownIt-Anchor" href="#8-附注"></a> 8、附注：</h1>
-<h3 id="81patterlayout格式化字符表"><a class="markdownIt-Anchor" href="#81patterlayout格式化字符表"></a> 8.1PatterLayout格式化字符表</h3>
+<p>​ }</p>
+<h1 id="总结">7、总结</h1>
+<p>Log4net
+功能很多，这里只是对已经尝试用过的功能总结一下，普通写日志已经足够。需要注意的是：</p>
+<p>\1.
+Log4net本身也有一些缺陷，比如一个记录引起了log4net本身的异常，就会使后面的日志无法记录下来，尤其是在写入数据库时。例如使用6.1扩展后，int型的属性在<appender >的元素<bufferSize>设置不为1时，<dbType value="Int32" />时，就不能输出到数据库，而<dbType value="Int16" />则没任何问题。</p>
+<p>\2.
+Log4net本身出现了异常，比如配置文件出现错误，有些日志输出方式会记录下这些异常，例如应用程序控制台；有些则不会输出这些错误，如数据库与文件。</p>
+<p>\3.
+扩展时也会留下一些问题。例如在使用6.1扩展输出字段时就会出现，在log.debug(object
+message)中，如果message是一个自定义的类，属性与配置文件中输出设置也一致，构造函数时也只构造一个参数的实例，写文件与写数据库都成功，而将message按没有扩展的方式直接传入一个字符串，即log.debug(“信息内容”)使用则只能写入文件，而数据库则没写入。自定义的Layout
+就是继承默认的PatternLayout，本来不应该出错，但出现了问题。原因分析是自定义的message类有类型为int的属性，作为一个对象传入时在默认值0，而直接使用字符串则int型的字段得不到默认值，引发异常。所以建议在有扩展存在时，最好多设几个<logger>,区分清楚，按照统一的形式记录日志，不要混合使用。</p>
+<p>\4.
+配置文件的设置一定要准确，在一点不正确就会导致日志不能正常输出，所以在配置时先从最简单的开始，同时输出方式选择一种能输出log4net本身异常的方式，成功后一点一点加在新配置，这样出错了也容易找到那个地方配置有问题。</p>
+<p>\5.
+log4net扩展性很强，几乎所有的组件都可以重写，在配置文件中配置好就可以使用。</p>
+<h1 id="附注">8、附注：</h1>
+<h3 id="patterlayout格式化字符表">8.1PatterLayout格式化字符表</h3>
 <table>
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 97%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>转换字符</th>
 <th>效果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>a</td>
 <td>等价于appdomain</td>
 </tr>
-<tr>
+<tr class="even">
 <td>appdomain</td>
 <td>引发日志事件的应用程序域的友好名称。（使用中一般是可执行文件的名字。）</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>c</td>
 <td>等价于 logger</td>
 </tr>
-<tr>
+<tr class="even">
 <td>C</td>
 <td>等价于 type</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>class</td>
 <td>等价于 type</td>
 </tr>
-<tr>
+<tr class="even">
 <td>d</td>
 <td>等价于 date</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>date</td>
-<td>发生日志事件的本地时间。 使用 DE&gt;%utcdate 输出UTC时间。date后面还可以跟一个日期格式，用大括号括起来。DE&gt;例如：%date{HH:mm:ss,fff}或者%date{dd  MMM yyyy HH:mm:ss,fff}。如果date后面什么也不跟，将使用ISO8601 格式 。日期格式和.Net中DateTime类的ToString方法中使用的格式是一样。另外log4net还有3个自己的格式Formatter。 它们是 “ABSOLUTE”,  &quot;DATE&quot;和&quot;ISO8601&quot;分别代表 AbsoluteTimeDateFormatter,  DateTimeDateFormatter和Iso8601DateFormatter。例如：%date{ISO8601}或%date{ABSOLUTE}。它们的性能要好于ToString。</td>
+<td>发生日志事件的本地时间。 使用 DE&gt;%utcdate
+输出UTC时间。date后面还可以跟一个日期格式，用大括号括起来。DE&gt;例如：%date{HH:mm:ss,fff}或者%date{dd
+MMM yyyy HH:mm:ss,fff}。如果date后面什么也不跟，将使用ISO8601 格式
+。日期格式和.Net中DateTime类的ToString方法中使用的格式是一样。另外log4net还有3个自己的格式Formatter。
+它们是 "ABSOLUTE", "DATE"和"ISO8601"分别代表 AbsoluteTimeDateFormatter,
+DateTimeDateFormatter和Iso8601DateFormatter。例如：%date{ISO8601}或%date{ABSOLUTE}。它们的性能要好于ToString。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>exception</td>
 <td>异常信息日志事件中必须存了一个异常对象，如果日志事件不包含没有异常对象，将什么也不输出。异常输出完毕后会跟一个换行。一般会在输出异常前加一个换行，并将异常放在最后。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>F</td>
 <td>等价于 file</td>
 </tr>
-<tr>
+<tr class="even">
 <td>file</td>
 <td>发生日志请求的源代码文件的名字。警告：只在调试的时候有效。调用本地信息会影响性能。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>identity</td>
-<td>当前活动用户的名字(<a target="_blank" rel="noopener" href="http://Principal.Identity.Name">Principal.Identity.Name</a>).警告：会影响性能。（我测试的时候%identity返回都是空的。）</td>
+<td>当前活动用户的名字(Principal.Identity.Name).警告：会影响性能。（我测试的时候%identity返回都是空的。）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>l</td>
 <td>等价于 location</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>L</td>
 <td>等价于 line</td>
 </tr>
-<tr>
+<tr class="even">
 <td>location</td>
 <td>引发日志事件的方法（包括命名空间和类名），以及所在的源文件和行号。警告：会影响性能。没有pdb文件的话，只有方法名，没有源文件名和行号。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>level</td>
 <td>日志事件等级</td>
 </tr>
-<tr>
+<tr class="even">
 <td>line</td>
 <td>引发日志事件的行号警告：会影响性能。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>logger</td>
-<td>记录日志事件的Logger对象的名字。可以使用精度说明符控制Logger的名字的输出层级，默认输出全名。注意，精度符的控制是从右开始的。例如：logger 名为 “a.b.c”， 输出模型为%logger{2} ，将输出&quot;b.c&quot;。</td>
+<td>记录日志事件的Logger对象的名字。可以使用精度说明符控制Logger的名字的输出层级，默认输出全名。注意，精度符的控制是从右开始的。例如：logger
+名为 "a.b.c"， 输出模型为%logger{2} ，将输出"b.c"。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>m</td>
 <td>等价于 message</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>M</td>
 <td>等价于 method</td>
 </tr>
-<tr>
+<tr class="even">
 <td>message</td>
 <td>由应用程序提供给日志事件的消息。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>mdc</td>
-<td>MDC (旧为：ThreadContext.Properties) 现在是事件属性的一部分。 保留它是为了兼容性，它等价于 property。</td>
+<td>MDC (旧为：ThreadContext.Properties) 现在是事件属性的一部分。
+保留它是为了兼容性，它等价于 property。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>method</td>
 <td>发生日志请求的方法名（只有方法名而已）。警告：会影响性能。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>n</td>
 <td>等价于 newline</td>
 </tr>
-<tr>
+<tr class="even">
 <td>newline</td>
 <td>换行符</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ndc</td>
 <td>NDC (nested diagnostic context)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>p</td>
 <td>等价于 level</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>P</td>
 <td>等价于 property</td>
 </tr>
-<tr>
+<tr class="even">
 <td>properties</td>
 <td>等价于 property</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>property</td>
-<td>输出事件的特殊属性。例如： %property{user} 输出user属性。属性是由loggers或appenders添加到时间中的。 有一个默认的属性&quot;DE&gt;log4net:HostName&quot;总是会有。DE&gt;%property将输出所有的属性 。（扩展后可以使用）</td>
+<td>输出事件的特殊属性。例如： %property{user}
+输出user属性。属性是由loggers或appenders添加到时间中的。
+有一个默认的属性"DE&gt;log4net:HostName"总是会有。DE&gt;%property将输出所有的属性
+。（扩展后可以使用）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>r</td>
 <td>等价于 timestamp</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>t</td>
 <td>等价于 thread</td>
 </tr>
-<tr>
+<tr class="even">
 <td>timestamp</td>
 <td>从程序启动到事件发生所经过的毫秒数。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>thread</td>
 <td>引发日志事件的线程，如果没有线程名就使用线程号。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
-<td>引发日志请求的类的全名。.可以使用精度控制符。例如： 类名是 “log4net.Layout.PatternLayout”, 格式模型是%type{1} 将输出&quot;PatternLayout&quot;。（也是从右开始的。）警告：会影响性能。</td>
+<td>引发日志请求的类的全名。.可以使用精度控制符。例如： 类名是
+"log4net.Layout.PatternLayout", 格式模型是%type{1}
+将输出"PatternLayout"。（也是从右开始的。）警告：会影响性能。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>u</td>
 <td>等价于 identity</td>
 </tr>
-<tr>
+<tr class="even">
 <td>username</td>
 <td>当前用户的WindowsIdentity。（类似：HostName/Username）警告：会影响性能。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>utcdate</td>
-<td>发生日志事件的UTC时间。DE&gt;后面还可以跟一个日期格式，用大括号括起来。DE&gt;例如：%utcdate{HH:mm:ss,fff}或者%utcdate{dd  MMM yyyy HH:mm:ss,fff}。如果utcdate后面什么也不跟，将使用ISO8601 格式 。日期格式和.Net中DateTime类的ToString方法中使用的格式是一样。另外log4net还有3个自己的格式Formatter。 它们是 “ABSOLUTE”,  &quot;DATE&quot;和&quot;ISO8601&quot;分别代表 AbsoluteTimeDateFormatter,  DateTimeDateFormatter和Iso8601DateFormatter。例如：%date{ISO8601}或%date{ABSOLUTE}。它们的性能要好于ToString。</td>
+<td>发生日志事件的UTC时间。DE&gt;后面还可以跟一个日期格式，用大括号括起来。DE&gt;例如：%utcdate{HH:mm:ss,fff}或者%utcdate{dd
+MMM yyyy HH:mm:ss,fff}。如果utcdate后面什么也不跟，将使用ISO8601 格式
+。日期格式和.Net中DateTime类的ToString方法中使用的格式是一样。另外log4net还有3个自己的格式Formatter。
+它们是 "ABSOLUTE", "DATE"和"ISO8601"分别代表 AbsoluteTimeDateFormatter,
+DateTimeDateFormatter和Iso8601DateFormatter。例如：%date{ISO8601}或%date{ABSOLUTE}。它们的性能要好于ToString。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>w</td>
 <td>等价于 username</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>x</td>
 <td>等价于 ndc</td>
 </tr>
-<tr>
+<tr class="even">
 <td>X</td>
 <td>等价于 mdc</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>%</td>
 <td>%%输出一个百分号</td>
 </tr>
 </tbody>
 </table>
 <p>关于调用本地信息（caller location information）的说明：</p>
-<p>%type  %file %line %method %location %class %C %F %L %l  %M 都会调用本地信息。这样做会影响性能。本地信息使用System.Diagnostics.StackTrace得到。.Net  1.0 不支持System.Diagnostics.StackTrace 类。</p>
+<p>%type %file %line %method %location %class %C %F %L %l %M
+都会调用本地信息。这样做会影响性能。本地信息使用System.Diagnostics.StackTrace得到。.Net
+1.0 不支持System.Diagnostics.StackTrace 类。</p>
 <p>本地信息在调试模式下可以正常获取，在非调试模式下可能获取不到，或只能获取一部分。（根据我的测试，其实是需要有一个程序数据库（.pdb）文件。）</p>
 <p>%property属性要用代码来设置才能使用（也就是扩展一下），</p>
 <p>默认属性log4net:HostName不用设置。</p>
 <p>转义字符的修饰符：</p>
 <table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 14%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 36%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Format modifier</th>
 <th>left justify</th>
 <th>minimum width</th>
@@ -1153,35 +1279,35 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>%20logger</td>
 <td>false</td>
 <td>20</td>
 <td>none</td>
 <td>如果logger名不足20个字符，就在左边补空格。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>%-20logger</td>
 <td>true</td>
 <td>20</td>
 <td>none</td>
 <td>如果logger名不足20个字符，就在右边补空格。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>%.30logger</td>
 <td>NA</td>
 <td>none</td>
 <td>30</td>
 <td>超过30个字符将截断。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>%20.30logger</td>
 <td>false</td>
 <td>20</td>
 <td>30</td>
 <td>logger名要在20到30之间，少了在左边补空格，多了截断。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>%-20.30logger</td>
 <td>true</td>
 <td>20</td>
@@ -1190,7 +1316,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="82layout类代码"><a class="markdownIt-Anchor" href="#82layout类代码"></a> 8.2Layout类代码</h3>
+<h3 id="layout类代码">8.2Layout类代码</h3>
 <p>using System;</p>
 <p>using System.Collections.Generic;</p>
 <p>using System.Linq;</p>
@@ -1202,62 +1328,65 @@
 <p>using FastReflectionLib;</p>
 <p>namespace TGLog.ExpandLayout2</p>
 <p>{</p>
-<p>​    public class ReflectionLayout : PatternLayout</p>
-<p>​    {</p>
-<p>​        public ReflectionLayout()</p>
-<p>​        {</p>
-<p>​            this.AddConverter(“property”, typeof(ReflectionPatternConverter));</p>
-<p>​        }</p>
-<p>​    }</p>
-<p>​    public class ReflectionPatternConverter : PatternLayoutConverter</p>
-<p>​    {</p>
-<p>​        protected override void Convert(</p>
+<p>​ public class ReflectionLayout : PatternLayout</p>
+<p>​ {</p>
+<p>​ public ReflectionLayout()</p>
+<p>​ {</p>
+<p>​ this.AddConverter("property",
+typeof(ReflectionPatternConverter));</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ public class ReflectionPatternConverter : PatternLayoutConverter</p>
+<p>​ {</p>
+<p>​ protected override void Convert(</p>
 <p>System.IO.TextWriter writer,</p>
 <p>log4net.Core.LoggingEvent loggingEvent</p>
 <p>)</p>
-<p>​        {</p>
-<p>​            if (Option != null)</p>
-<p>​            {</p>
-<p>​                // 写入指定键的值</p>
-<p>​                WriteObject(</p>
+<p>​ {</p>
+<p>​ if (Option != null)</p>
+<p>​ {</p>
+<p>​ // 写入指定键的值</p>
+<p>​ WriteObject(</p>
 <p>writer,</p>
 <p>loggingEvent.Repository,</p>
 <p>LookupProperty(Option,</p>
 <p>loggingEvent)</p>
 <p>);</p>
-<p>​            }</p>
-<p>​            else</p>
-<p>​            {</p>
-<p>​                // 写入所有关键值对</p>
-<p>​                WriteDictionary(</p>
+<p>​ }</p>
+<p>​ else</p>
+<p>​ {</p>
+<p>​ // 写入所有关键值对</p>
+<p>​ WriteDictionary(</p>
 <p>writer,</p>
 <p>loggingEvent.Repository,</p>
 <p>loggingEvent.GetProperties()</p>
 <p>);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// 通过反射获取传入的日志对象的某个属性的值</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="property"></param></p>
-<p>​        /// <returns></returns></p>
-<p>​        private object LookupProperty(</p>
+<p>​ }</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// 通过反射获取传入的日志对象的某个属性的值</p>
+​///
+</summary>
+<p>​ /// <param name="property"></param></p>
+<p>​ /// <returns></returns></p>
+<p>​ private object LookupProperty(</p>
 <p>string property,</p>
 <p>log4net.Core.LoggingEvent loggingEvent)</p>
-<p>​        {</p>
-<p>​            object propertyValue = string.Empty;</p>
-<p>​            PropertyInfo propertyInfo =</p>
+<p>​ {</p>
+<p>​ object propertyValue = string.Empty;</p>
+<p>​ PropertyInfo propertyInfo =</p>
 <p>loggingEvent.MessageObject.GetType().GetProperty(property);</p>
-<p>​            if (propertyInfo != null)</p>
-<p>​            {</p>
-<p>​                propertyValue =</p>
+<p>​ if (propertyInfo != null)</p>
+<p>​ {</p>
+<p>​ propertyValue =</p>
 <p>propertyInfo.GetValue(loggingEvent.MessageObject, null);</p>
-<p>​            }</p>
-<p>​            return propertyValue;</p>
-<p>​        }</p>
-<p>​    }</p>
+<p>​ }</p>
+<p>​ return propertyValue;</p>
+<p>​ }</p>
+<p>​ }</p>
 <p>}</p>
-<h3 id="83-mylogimpl类代码"><a class="markdownIt-Anchor" href="#83-mylogimpl类代码"></a> 8.3 MyLogImpl类代码</h3>
+<h3 id="mylogimpl类代码">8.3 MyLogImpl类代码</h3>
 <p>using System;</p>
 <p>using System.Collections.Generic;</p>
 <p>using System.Linq;</p>
@@ -1265,146 +1394,175 @@
 <p>using log4net.Core;</p>
 <p>namespace TGLog.ExpandILog</p>
 <p>{</p>
-<p>​    public class MyLogImpl : LogImpl, IMyLog</p>
-<p>​    {</p>
-<p>​        /// <summary></p>
-<p>​        /// The fully qualified name of this declaring type not the type of any subclass.</p>
-<p>​        /// </summary></p>
-<p>​        private readonly static Type ThisDeclaringType = typeof(MyLogImpl);</p>
-<p>​        public MyLogImpl(ILogger logger)</p>
-<p>​            : base(logger)</p>
-<p>​        {</p>
-<p>​        }</p>
-<p>​        #region Implementation of IMyLog</p>
-<p>​        public void Debug(int operatorID, string operand, int actionType,object message,</p>
+<p>​ public class MyLogImpl : LogImpl, IMyLog</p>
+<p>​ {</p>
+​///
+<summary>
+<p>​ /// The fully qualified name of this declaring type not the type of
+any subclass.</p>
+​///
+</summary>
+<p>​ private readonly static Type ThisDeclaringType =
+typeof(MyLogImpl);</p>
+<p>​ public MyLogImpl(ILogger logger)</p>
+<p>​ : base(logger)</p>
+<p>​ {</p>
+<p>​ }</p>
+<p>​ #region Implementation of IMyLog</p>
+<p>​ public void Debug(int operatorID, string operand, int
+actionType,object message,</p>
 <p>string ip, string browser, string machineName)</p>
-<p>​        {</p>
-<p>​            Debug(operatorID,  operand,  actionType, message,</p>
-<p>ip,  browser, machineName, null);</p>
-<p>​        }</p>
-<p>​        public void Debug(int operatorID, string operand, int actionType,object message,</p>
-<p>string ip, string browser, string machineName, System.Exception t)</p>
-<p>​        {</p>
-<p>​            if (this.IsDebugEnabled)</p>
-<p>​            {</p>
-<p>​                LoggingEvent loggingEvent =</p>
+<p>​ {</p>
+<p>​ Debug(operatorID, operand, actionType, message,</p>
+<p>ip, browser, machineName, null);</p>
+<p>​ }</p>
+<p>​ public void Debug(int operatorID, string operand, int
+actionType,object message,</p>
+<p>string ip, string browser, string machineName, System.Exception
+t)</p>
+<p>​ {</p>
+<p>​ if (this.IsDebugEnabled)</p>
+<p>​ {</p>
+<p>​ LoggingEvent loggingEvent =</p>
 <p>new LoggingEvent(ThisDeclaringType, Logger.Repository,</p>
-<p>​                                       <a target="_blank" rel="noopener" href="http://Logger.Name">Logger.Name</a>, <a target="_blank" rel="noopener" href="http://Level.Info">Level.Info</a>, message, t);</p>
-<p>​                loggingEvent.Properties[“Operator”] = operatorID;</p>
-<p>​                loggingEvent.Properties[“Operand”] = operand;</p>
-<p>​                loggingEvent.Properties[“ActionType”] = actionType;</p>
-<p>​                loggingEvent.Properties[“IP”] = ip;</p>
-<p>​                loggingEvent.Properties[“Browser”] = browser;</p>
-<p>​                loggingEvent.Properties[“MachineName”] = machineName;</p>
-<p>​                Logger.Log(loggingEvent);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        public void Info(int operatorID, string operand, int actionType, object message,</p>
+<p>​ Logger.Name, Level.Info, message, t);</p>
+<p>​ loggingEvent.Properties["Operator"] = operatorID;</p>
+<p>​ loggingEvent.Properties["Operand"] = operand;</p>
+<p>​ loggingEvent.Properties["ActionType"] = actionType;</p>
+<p>​ loggingEvent.Properties["IP"] = ip;</p>
+<p>​ loggingEvent.Properties["Browser"] = browser;</p>
+<p>​ loggingEvent.Properties["MachineName"] = machineName;</p>
+<p>​ Logger.Log(loggingEvent);</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ public void Info(int operatorID, string operand, int actionType,
+object message,</p>
 <p>string ip, string browser, string machineName)</p>
-<p>​        {</p>
-<p>​            Info(operatorID, operand, actionType, message, ip, browser, machineName, null);</p>
-<p>​        }</p>
-<p>​        public void Info(int operatorID, string operand, int actionType, object message,</p>
-<p>string ip, string browser, string machineName, System.Exception t)</p>
-<p>​        {</p>
-<p>​            if (this.IsInfoEnabled)</p>
-<p>​            {</p>
-<p>​                LoggingEvent loggingEvent =</p>
+<p>​ {</p>
+<p>​ Info(operatorID, operand, actionType, message, ip, browser,
+machineName, null);</p>
+<p>​ }</p>
+<p>​ public void Info(int operatorID, string operand, int actionType,
+object message,</p>
+<p>string ip, string browser, string machineName, System.Exception
+t)</p>
+<p>​ {</p>
+<p>​ if (this.IsInfoEnabled)</p>
+<p>​ {</p>
+<p>​ LoggingEvent loggingEvent =</p>
 <p>new LoggingEvent(ThisDeclaringType, Logger.Repository,</p>
-<p><a target="_blank" rel="noopener" href="http://Logger.Name">Logger.Name</a>, <a target="_blank" rel="noopener" href="http://Level.Info">Level.Info</a>, message, t);</p>
-<p>​                loggingEvent.Properties[“Operator”] = operatorID;</p>
-<p>​                loggingEvent.Properties[“Operand”] = operand;</p>
-<p>​                loggingEvent.Properties[“ActionType”] = actionType;</p>
-<p>​                loggingEvent.Properties[“IP”] = ip;</p>
-<p>​                loggingEvent.Properties[“Browser”] = browser;</p>
-<p>​                loggingEvent.Properties[“MachineName”] = machineName;</p>
-<p>​                Logger.Log(loggingEvent);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        public void Warn(int operatorID, string operand, int actionType, object message,</p>
+<p>Logger.Name, Level.Info, message, t);</p>
+<p>​ loggingEvent.Properties["Operator"] = operatorID;</p>
+<p>​ loggingEvent.Properties["Operand"] = operand;</p>
+<p>​ loggingEvent.Properties["ActionType"] = actionType;</p>
+<p>​ loggingEvent.Properties["IP"] = ip;</p>
+<p>​ loggingEvent.Properties["Browser"] = browser;</p>
+<p>​ loggingEvent.Properties["MachineName"] = machineName;</p>
+<p>​ Logger.Log(loggingEvent);</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ public void Warn(int operatorID, string operand, int actionType,
+object message,</p>
 <p>string ip, string browser, string machineName)</p>
-<p>​        {</p>
-<p>​            Warn(operatorID, operand, actionType, message, ip, browser, machineName, null);</p>
-<p>​        }</p>
-<p>​        public void Warn(int operatorID, string operand, int actionType, object message,</p>
-<p>string ip, string browser, string machineName, System.Exception t)</p>
-<p>​        {</p>
-<p>​            if (this.IsWarnEnabled)</p>
-<p>​            {</p>
-<p>​                LoggingEvent loggingEvent =</p>
+<p>​ {</p>
+<p>​ Warn(operatorID, operand, actionType, message, ip, browser,
+machineName, null);</p>
+<p>​ }</p>
+<p>​ public void Warn(int operatorID, string operand, int actionType,
+object message,</p>
+<p>string ip, string browser, string machineName, System.Exception
+t)</p>
+<p>​ {</p>
+<p>​ if (this.IsWarnEnabled)</p>
+<p>​ {</p>
+<p>​ LoggingEvent loggingEvent =</p>
 <p>new LoggingEvent(ThisDeclaringType, Logger.Repository,</p>
-<p><a target="_blank" rel="noopener" href="http://Logger.Name">Logger.Name</a>, <a target="_blank" rel="noopener" href="http://Level.Info">Level.Info</a>, message, t);</p>
-<p>​                loggingEvent.Properties[“Operator”] = operatorID;</p>
-<p>​                loggingEvent.Properties[“Operand”] = operand;</p>
-<p>​                loggingEvent.Properties[“ActionType”] = actionType;</p>
-<p>​                loggingEvent.Properties[“IP”] = ip;</p>
-<p>​                loggingEvent.Properties[“Browser”] = browser;</p>
-<p>​                loggingEvent.Properties[“MachineName”] = machineName;</p>
-<p>​                Logger.Log(loggingEvent);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        public void Error(int operatorID, string operand, int actionType, object message,</p>
+<p>Logger.Name, Level.Info, message, t);</p>
+<p>​ loggingEvent.Properties["Operator"] = operatorID;</p>
+<p>​ loggingEvent.Properties["Operand"] = operand;</p>
+<p>​ loggingEvent.Properties["ActionType"] = actionType;</p>
+<p>​ loggingEvent.Properties["IP"] = ip;</p>
+<p>​ loggingEvent.Properties["Browser"] = browser;</p>
+<p>​ loggingEvent.Properties["MachineName"] = machineName;</p>
+<p>​ Logger.Log(loggingEvent);</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ public void Error(int operatorID, string operand, int actionType,
+object message,</p>
 <p>string ip, string browser, string machineName)</p>
-<p>​        {</p>
-<p>​            Error(operatorID, operand, actionType, message, ip, browser, machineName, null);</p>
-<p>​        }</p>
-<p>​        public void Error(int operatorID, string operand, int actionType, object message,</p>
-<p>string ip, string browser, string machineName, System.Exception t)</p>
-<p>​        {</p>
-<p>​            if (this.IsErrorEnabled)</p>
-<p>​            {</p>
-<p>​                LoggingEvent loggingEvent =</p>
+<p>​ {</p>
+<p>​ Error(operatorID, operand, actionType, message, ip, browser,
+machineName, null);</p>
+<p>​ }</p>
+<p>​ public void Error(int operatorID, string operand, int actionType,
+object message,</p>
+<p>string ip, string browser, string machineName, System.Exception
+t)</p>
+<p>​ {</p>
+<p>​ if (this.IsErrorEnabled)</p>
+<p>​ {</p>
+<p>​ LoggingEvent loggingEvent =</p>
 <p>new LoggingEvent(ThisDeclaringType, Logger.Repository,</p>
-<p><a target="_blank" rel="noopener" href="http://Logger.Name">Logger.Name</a>, <a target="_blank" rel="noopener" href="http://Level.Info">Level.Info</a>, message, t);</p>
-<p>​                loggingEvent.Properties[“Operator”] = operatorID;</p>
-<p>​                loggingEvent.Properties[“Operand”] = operand;</p>
-<p>​                loggingEvent.Properties[“ActionType”] = actionType;</p>
-<p>​                loggingEvent.Properties[“IP”] = ip;</p>
-<p>​                loggingEvent.Properties[“Browser”] = browser;</p>
-<p>​                loggingEvent.Properties[“MachineName”] = machineName;</p>
-<p>​                Logger.Log(loggingEvent);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        public void Fatal(int operatorID, string operand, int actionType, object message,</p>
+<p>Logger.Name, Level.Info, message, t);</p>
+<p>​ loggingEvent.Properties["Operator"] = operatorID;</p>
+<p>​ loggingEvent.Properties["Operand"] = operand;</p>
+<p>​ loggingEvent.Properties["ActionType"] = actionType;</p>
+<p>​ loggingEvent.Properties["IP"] = ip;</p>
+<p>​ loggingEvent.Properties["Browser"] = browser;</p>
+<p>​ loggingEvent.Properties["MachineName"] = machineName;</p>
+<p>​ Logger.Log(loggingEvent);</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ public void Fatal(int operatorID, string operand, int actionType,
+object message,</p>
 <p>string ip, string browser, string machineName)</p>
-<p>​        {</p>
-<p>​            Fatal(operatorID, operand, actionType, message, ip, browser, machineName, null);</p>
-<p>​        }</p>
-<p>​        public void Fatal(int operatorID, string operand, int actionType, object message,</p>
-<p>string ip, string browser, string machineName, System.Exception t)</p>
-<p>​        {</p>
-<p>​            if (this.IsFatalEnabled)</p>
-<p>​            {</p>
-<p>​                LoggingEvent loggingEvent =</p>
+<p>​ {</p>
+<p>​ Fatal(operatorID, operand, actionType, message, ip, browser,
+machineName, null);</p>
+<p>​ }</p>
+<p>​ public void Fatal(int operatorID, string operand, int actionType,
+object message,</p>
+<p>string ip, string browser, string machineName, System.Exception
+t)</p>
+<p>​ {</p>
+<p>​ if (this.IsFatalEnabled)</p>
+<p>​ {</p>
+<p>​ LoggingEvent loggingEvent =</p>
 <p>new LoggingEvent(ThisDeclaringType, Logger.Repository,</p>
-<p>​                                       <a target="_blank" rel="noopener" href="http://Logger.Name">Logger.Name</a>, <a target="_blank" rel="noopener" href="http://Level.Info">Level.Info</a>, message, t);</p>
-<p>​                loggingEvent.Properties[“Operator”] = operatorID;</p>
-<p>​                loggingEvent.Properties[“Operand”] = operand;</p>
-<p>​                loggingEvent.Properties[“ActionType”] = actionType;</p>
-<p>​                loggingEvent.Properties[“IP”] = ip;</p>
-<p>​                loggingEvent.Properties[“Browser”] = browser;</p>
-<p>​                loggingEvent.Properties[“MachineName”] = machineName;</p>
-<p>​                Logger.Log(loggingEvent);</p>
-<p>​            }</p>
-<p>​        }</p>
-<p>​        #endregion Implementation of IMyLog</p>
-<p>​    }</p>
+<p>​ Logger.Name, Level.Info, message, t);</p>
+<p>​ loggingEvent.Properties["Operator"] = operatorID;</p>
+<p>​ loggingEvent.Properties["Operand"] = operand;</p>
+<p>​ loggingEvent.Properties["ActionType"] = actionType;</p>
+<p>​ loggingEvent.Properties["IP"] = ip;</p>
+<p>​ loggingEvent.Properties["Browser"] = browser;</p>
+<p>​ loggingEvent.Properties["MachineName"] = machineName;</p>
+<p>​ Logger.Log(loggingEvent);</p>
+<p>​ }</p>
+<p>​ }</p>
+<p>​ #endregion Implementation of IMyLog</p>
+<p>​ }</p>
 <p>}</p>
-<h3 id="84-mylogmanager类代码"><a class="markdownIt-Anchor" href="#84-mylogmanager类代码"></a> 8.4 MyLogManager类代码</h3>
+<h3 id="mylogmanager类代码">8.4 MyLogManager类代码</h3>
 <p>#region Copyright &amp; License</p>
 <p>//</p>
 <p>// Copyright 2001-2005 The Apache Software Foundation</p>
 <p>//</p>
-<p>// Licensed under the Apache License, Version 2.0 (the “License”);</p>
-<p>// you may not use this file except in compliance with the License.</p>
+<p>// Licensed under the Apache License, Version 2.0 (the
+"License");</p>
+<p>// you may not use this file except in compliance with the
+License.</p>
 <p>// You may obtain a copy of the License at</p>
 <p>//</p>
-<p>// <a target="_blank" rel="noopener" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>// http://www.apache.org/licenses/LICENSE-2.0</p>
 <p>//</p>
-<p>// Unless required by applicable law or agreed to in writing, software</p>
-<p>// distributed under the License is distributed on an “AS IS” BASIS,</p>
-<p>// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</p>
-<p>// See the License for the specific language governing permissions and</p>
+<p>// Unless required by applicable law or agreed to in writing,
+software</p>
+<p>// distributed under the License is distributed on an "AS IS"
+BASIS,</p>
+<p>// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.</p>
+<p>// See the License for the specific language governing permissions
+and</p>
 <p>// limitations under the License.</p>
 <p>//</p>
 <p>#endregion</p>
@@ -1417,239 +1575,338 @@
 <p>using log4net.Repository.Hierarchy;</p>
 <p>namespace TGLog.ExpandILog</p>
 <p>{</p>
-<p>​    public class MyLogManager</p>
-<p>​    {</p>
-<p>​        #region Static Member Variables</p>
-<p>​        /// <summary></p>
-<p>​        /// The wrapper map to use to hold the <see cref="EventIDLogImpl"/> objects</p>
-<p>​        /// </summary></p>
-<p>​        private static readonly WrapperMap s_wrapperMap = new WrapperMap(newWrapperCreationHandler(WrapperCreationHandler));</p>
-<p>​        #endregion</p>
-<p>​        #region Constructor</p>
-<p>​        /// <summary></p>
-<p>​        /// Private constructor to prevent object creation</p>
-<p>​        /// </summary></p>
-<p>​        private MyLogManager() { }</p>
-<p>​        #endregion</p>
-<p>​        #region Type Specific Manager Methods</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns the named logger if it exists</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>If the named logger exists (in the default hierarchy) then it</p>
-<p>​        /// returns a reference to the logger, otherwise it returns</p>
-<p>​        /// <c>null</c>.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="name">The fully qualified logger name to look for</param></p>
-<p>​        /// <returns>The logger found, or null</returns></p>
-<p>​        public static IMyLog Exists(string name)</p>
-<p>​        {</p>
-<p>​            return Exists(Assembly.GetCallingAssembly(), name);</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns the named logger if it exists</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>If the named logger exists (in the specified domain) then it</p>
-<p>​        /// returns a reference to the logger, otherwise it returns</p>
-<p>​        /// <c>null</c>.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="domain">the domain to lookup in</param></p>
-<p>​        /// <param name="name">The fully qualified logger name to look for</param></p>
-<p>​        /// <returns>The logger found, or null</returns></p>
-<p>​        public static IMyLog Exists(string domain, string name)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.Exists(domain, name));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns the named logger if it exists</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>If the named logger exists (in the specified assembly’s domain) then it</p>
-<p>​        /// returns a reference to the logger, otherwise it returns</p>
-<p>​        /// <c>null</c>.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="assembly">the assembly to use to lookup the domain</param></p>
-<p>​        /// <param name="name">The fully qualified logger name to look for</param></p>
-<p>​        /// <returns>The logger found, or null</returns></p>
-<p>​        public static IMyLog Exists(Assembly assembly, string name)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.Exists(assembly, name));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns all the currently defined loggers in the default domain.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>The root logger is <b>not</b> included in the returned array.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <returns>All the defined loggers</returns></p>
-<p>​        public static IMyLog[] GetCurrentLoggers()</p>
-<p>​        {</p>
-<p>​            return GetCurrentLoggers(Assembly.GetCallingAssembly());</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns all the currently defined loggers in the specified domain.</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="domain">the domain to lookup in</param></p>
-<p>​        /// <remarks></p>
-<p>​        /// The root logger is <b>not</b> included in the returned array.</p>
-<p>​        /// </remarks></p>
-<p>​        /// <returns>All the defined loggers</returns></p>
-<p>​        public static IMyLog[] GetCurrentLoggers(string domain)</p>
-<p>​        {</p>
-<p>​            return WrapLoggers(LoggerManager.GetCurrentLoggers(domain));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Returns all the currently defined loggers in the specified assembly’s domain.</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="assembly">the assembly to use to lookup the domain</param></p>
-<p>​        /// <remarks></p>
-<p>​        /// The root logger is <b>not</b> included in the returned array.</p>
-<p>​        /// </remarks></p>
-<p>​        /// <returns>All the defined loggers</returns></p>
-<p>​        public static IMyLog[] GetCurrentLoggers(Assembly assembly)</p>
-<p>​        {</p>
-<p>​            return WrapLoggers(LoggerManager.GetCurrentLoggers(assembly));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Retrieve or create a named logger.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>Retrieve a logger named as the <paramref name="name"/></p>
-<p>​        /// parameter. If the named logger already exists, then the</p>
-<p>​        /// existing instance will be returned. Otherwise, a new instance is</p>
-<p>​        /// created.</para></p>
-<p>​        ///</p>
-<p>​        /// <para>By default, loggers do not have a set level but inherit</p>
-<p>​        /// it from the hierarchy. This is one of the central features of</p>
-<p>​        /// log4net.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="name">The name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(string name)</p>
-<p>​        {</p>
-<p>​            return GetLogger(Assembly.GetCallingAssembly(), name);</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Retrieve or create a named logger.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>Retrieve a logger named as the <paramref name="name"/></p>
-<p>​        /// parameter. If the named logger already exists, then the</p>
-<p>​        /// existing instance will be returned. Otherwise, a new instance is</p>
-<p>​        /// created.</para></p>
-<p>​        ///</p>
-<p>​        /// <para>By default, loggers do not have a set level but inherit</p>
-<p>​        /// it from the hierarchy. This is one of the central features of</p>
-<p>​        /// log4net.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="domain">the domain to lookup in</param></p>
-<p>​        /// <param name="name">The name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(string domain, string name)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.GetLogger(domain, name));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Retrieve or create a named logger.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// <para>Retrieve a logger named as the <paramref name="name"/></p>
-<p>​        /// parameter. If the named logger already exists, then the</p>
-<p>​        /// existing instance will be returned. Otherwise, a new instance is</p>
-<p>​        /// created.</para></p>
-<p>​        ///</p>
-<p>​        /// <para>By default, loggers do not have a set level but inherit</p>
-<p>​        /// it from the hierarchy. This is one of the central features of</p>
-<p>​        /// log4net.</para></p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="assembly">the assembly to use to lookup the domain</param></p>
-<p>​        /// <param name="name">The name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(Assembly assembly, string name)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.GetLogger(assembly, name));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// Get the logger for the fully qualified name of the type specified.</p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="type">The full name of <paramref name="type"/> will</p>
-<p>​        /// be used as the name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(Type type)</p>
-<p>​        {</p>
-<p>​            return GetLogger(Assembly.GetCallingAssembly(), type.FullName);</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// Get the logger for the fully qualified name of the type specified.</p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="domain">the domain to lookup in</param></p>
-<p>​        /// <param name="type">The full name of <paramref name="type"/> will</p>
-<p>​        /// be used as the name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(string domain, Type type)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.GetLogger(domain, type));</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
-<p>​        /// </summary></p>
-<p>​        /// <remarks></p>
-<p>​        /// Get the logger for the fully qualified name of the type specified.</p>
-<p>​        /// </remarks></p>
-<p>​        /// <param name="assembly">the assembly to use to lookup the domain</param></p>
-<p>​        /// <param name="type">The full name of <paramref name="type"/> will</p>
-<p>​        /// be used as the name of the logger to retrieve.</param></p>
-<p>​        /// <returns>the logger with the name specified</returns></p>
-<p>​        public static IMyLog GetLogger(Assembly assembly, Type type)</p>
-<p>​        {</p>
-<p>​            return WrapLogger(LoggerManager.GetLogger(assembly, type));</p>
-<p>​        }</p>
-<p>​        #endregion</p>
-<p>​        #region Extension Handlers</p>
-<p>​        /// <summary></p>
-<p>​        /// Lookup the wrapper object for the logger specified</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="logger">the logger to get the wrapper for</param></p>
-<p>​        /// <returns>the wrapper for the logger specified</returns></p>
-<p>​        private static IMyLog WrapLogger(ILogger logger)</p>
-<p>​        {</p>
-<p>​            return (IMyLog)s_wrapperMap.GetWrapper(logger);</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Lookup the wrapper objects for the loggers specified</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="loggers">the loggers to get the wrappers for</param></p>
-<p>​        /// <returns>Lookup the wrapper objects for the loggers specified</returns></p>
-<p>​        private static IMyLog[] WrapLoggers(ILogger[] loggers)</p>
-<p>​        {</p>
-<p>​            IMyLog[] results = new IMyLog[loggers.Length];</p>
-<p>​            for (int i = 0; i &lt; loggers.Length; i++)</p>
-<p>​            {</p>
-<p>​                results[i] = WrapLogger(loggers[i]);</p>
-<p>​            }</p>
-<p>​            return results;</p>
-<p>​        }</p>
-<p>​        /// <summary></p>
-<p>​        /// Method to create the <see cref="ILoggerWrapper"/> objects used by</p>
-<p>​        /// this manager.</p>
-<p>​        /// </summary></p>
-<p>​        /// <param name="logger">The logger to wrap</param></p>
-<p>​        /// <returns>The wrapper for the logger specified</returns></p>
-<p>​        private static ILoggerWrapper WrapperCreationHandler(ILogger logger)</p>
-<p>​        {</p>
-<p>​            return new MyLogImpl(logger);</p>
-<p>​        }</p>
-<p>​        #endregion</p>
-<p>​    }</p>
+<p>​ public class MyLogManager</p>
+<p>​ {</p>
+<p>​ #region Static Member Variables</p>
+​///
+<summary>
+<p>​ /// The wrapper map to use to hold the <see cref="EventIDLogImpl"/>
+objects</p>
+​///
+</summary>
+<p>​ private static readonly WrapperMap s_wrapperMap = new
+WrapperMap(newWrapperCreationHandler(WrapperCreationHandler));</p>
+<p>​ #endregion</p>
+<p>​ #region Constructor</p>
+​///
+<summary>
+<p>​ /// Private constructor to prevent object creation</p>
+​///
+</summary>
+<p>​ private MyLogManager() { }</p>
+<p>​ #endregion</p>
+<p>​ #region Type Specific Manager Methods</p>
+​///
+<summary>
+<p>​ /// Returns the named logger if it exists</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>If the named logger exists (in the default hierarchy) then it</p>
+<p>​ /// returns a reference to the logger, otherwise it returns</p>
+​/// <c>null</c>.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="name">The fully qualified logger name to look
+for</param></p>
+<p>​ /// <returns>The logger found, or null</returns></p>
+<p>​ public static IMyLog Exists(string name)</p>
+<p>​ {</p>
+<p>​ return Exists(Assembly.GetCallingAssembly(), name);</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Returns the named logger if it exists</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>If the named logger exists (in the specified domain) then it</p>
+<p>​ /// returns a reference to the logger, otherwise it returns</p>
+​/// <c>null</c>.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="domain">the domain to lookup in</param></p>
+<p>​ /// <param name="name">The fully qualified logger name to look
+for</param></p>
+<p>​ /// <returns>The logger found, or null</returns></p>
+<p>​ public static IMyLog Exists(string domain, string name)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.Exists(domain, name));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Returns the named logger if it exists</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>If the named logger exists (in the specified assembly's domain) then
+it</p>
+<p>​ /// returns a reference to the logger, otherwise it returns</p>
+​/// <c>null</c>.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="assembly">the assembly to use to lookup the
+domain</param></p>
+<p>​ /// <param name="name">The fully qualified logger name to look
+for</param></p>
+<p>​ /// <returns>The logger found, or null</returns></p>
+<p>​ public static IMyLog Exists(Assembly assembly, string name)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.Exists(assembly, name));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Returns all the currently defined loggers in the default
+domain.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+The root logger is <b>not</b> included in the returned array.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <returns>All the defined loggers</returns></p>
+<p>​ public static IMyLog[] GetCurrentLoggers()</p>
+<p>​ {</p>
+<p>​ return GetCurrentLoggers(Assembly.GetCallingAssembly());</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Returns all the currently defined loggers in the specified
+domain.</p>
+​///
+</summary>
+<p>​ /// <param name="domain">the domain to lookup in</param></p>
+<p>​ /// <remarks></p>
+<p>​ /// The root logger is <b>not</b> included in the returned
+array.</p>
+<p>​ /// </remarks></p>
+<p>​ /// <returns>All the defined loggers</returns></p>
+<p>​ public static IMyLog[] GetCurrentLoggers(string domain)</p>
+<p>​ {</p>
+<p>​ return WrapLoggers(LoggerManager.GetCurrentLoggers(domain));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Returns all the currently defined loggers in the specified
+assembly's domain.</p>
+​///
+</summary>
+<p>​ /// <param name="assembly">the assembly to use to lookup the
+domain</param></p>
+<p>​ /// <remarks></p>
+<p>​ /// The root logger is <b>not</b> included in the returned
+array.</p>
+<p>​ /// </remarks></p>
+<p>​ /// <returns>All the defined loggers</returns></p>
+<p>​ public static IMyLog[] GetCurrentLoggers(Assembly assembly)</p>
+<p>​ {</p>
+<p>​ return WrapLoggers(LoggerManager.GetCurrentLoggers(assembly));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Retrieve or create a named logger.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>Retrieve a logger named as the <paramref name="name"/></p>
+<p>​ /// parameter. If the named logger already exists, then the</p>
+<p>​ /// existing instance will be returned. Otherwise, a new instance
+is</p>
+​/// created.
+</para>
+<p>​ ///</p>
+​///
+<para>
+<p>By default, loggers do not have a set level but inherit</p>
+<p>​ /// it from the hierarchy. This is one of the central features
+of</p>
+​/// log4net.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="name">The name of the logger to
+retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(string name)</p>
+<p>​ {</p>
+<p>​ return GetLogger(Assembly.GetCallingAssembly(), name);</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Retrieve or create a named logger.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>Retrieve a logger named as the <paramref name="name"/></p>
+<p>​ /// parameter. If the named logger already exists, then the</p>
+<p>​ /// existing instance will be returned. Otherwise, a new instance
+is</p>
+​/// created.
+</para>
+<p>​ ///</p>
+​///
+<para>
+<p>By default, loggers do not have a set level but inherit</p>
+<p>​ /// it from the hierarchy. This is one of the central features
+of</p>
+​/// log4net.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="domain">the domain to lookup in</param></p>
+<p>​ /// <param name="name">The name of the logger to
+retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(string domain, string name)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.GetLogger(domain, name));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Retrieve or create a named logger.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+​///
+<para>
+<p>Retrieve a logger named as the <paramref name="name"/></p>
+<p>​ /// parameter. If the named logger already exists, then the</p>
+<p>​ /// existing instance will be returned. Otherwise, a new instance
+is</p>
+​/// created.
+</para>
+<p>​ ///</p>
+​///
+<para>
+<p>By default, loggers do not have a set level but inherit</p>
+<p>​ /// it from the hierarchy. This is one of the central features
+of</p>
+​/// log4net.
+</para>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="assembly">the assembly to use to lookup the
+domain</param></p>
+<p>​ /// <param name="name">The name of the logger to
+retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(Assembly assembly, string name)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.GetLogger(assembly, name));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+<p>​ /// Get the logger for the fully qualified name of the type
+specified.</p>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="type">The full name of <paramref name="type"/>
+will</p>
+<p>​ /// be used as the name of the logger to retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(Type type)</p>
+<p>​ {</p>
+<p>​ return GetLogger(Assembly.GetCallingAssembly(), type.FullName);</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+<p>​ /// Get the logger for the fully qualified name of the type
+specified.</p>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="domain">the domain to lookup in</param></p>
+<p>​ /// <param name="type">The full name of <paramref name="type"/>
+will</p>
+<p>​ /// be used as the name of the logger to retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(string domain, Type type)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.GetLogger(domain, type));</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Shorthand for <see cref="LogManager.GetLogger(string)"/>.</p>
+​///
+</summary>
+<p>​ /// <remarks></p>
+<p>​ /// Get the logger for the fully qualified name of the type
+specified.</p>
+<p>​ /// </remarks></p>
+<p>​ /// <param name="assembly">the assembly to use to lookup the
+domain</param></p>
+<p>​ /// <param name="type">The full name of <paramref name="type"/>
+will</p>
+<p>​ /// be used as the name of the logger to retrieve.</param></p>
+<p>​ /// <returns>the logger with the name specified</returns></p>
+<p>​ public static IMyLog GetLogger(Assembly assembly, Type type)</p>
+<p>​ {</p>
+<p>​ return WrapLogger(LoggerManager.GetLogger(assembly, type));</p>
+<p>​ }</p>
+<p>​ #endregion</p>
+<p>​ #region Extension Handlers</p>
+​///
+<summary>
+<p>​ /// Lookup the wrapper object for the logger specified</p>
+​///
+</summary>
+<p>​ /// <param name="logger">the logger to get the wrapper
+for</param></p>
+<p>​ /// <returns>the wrapper for the logger specified</returns></p>
+<p>​ private static IMyLog WrapLogger(ILogger logger)</p>
+<p>​ {</p>
+<p>​ return (IMyLog)s_wrapperMap.GetWrapper(logger);</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Lookup the wrapper objects for the loggers specified</p>
+​///
+</summary>
+<p>​ /// <param name="loggers">the loggers to get the wrappers
+for</param></p>
+<p>​ /// <returns>Lookup the wrapper objects for the loggers
+specified</returns></p>
+<p>​ private static IMyLog[] WrapLoggers(ILogger[] loggers)</p>
+<p>​ {</p>
+<p>​ IMyLog[] results = new IMyLog[loggers.Length];</p>
+<p>​ for (int i = 0; i &lt; loggers.Length; i++)</p>
+<p>​ {</p>
+<p>​ results[i] = WrapLogger(loggers[i]);</p>
+<p>​ }</p>
+<p>​ return results;</p>
+<p>​ }</p>
+​///
+<summary>
+<p>​ /// Method to create the <see cref="ILoggerWrapper"/> objects used
+by</p>
+<p>​ /// this manager.</p>
+​///
+</summary>
+<p>​ /// <param name="logger">The logger to wrap</param></p>
+<p>​ /// <returns>The wrapper for the logger specified</returns></p>
+<p>​ private static ILoggerWrapper WrapperCreationHandler(ILogger
+logger)</p>
+<p>​ {</p>
+<p>​ return new MyLogImpl(logger);</p>
+<p>​ }</p>
+<p>​ #endregion</p>
+<p>​ }</p>
 <p>}</p>
-<h3 id="85-imylog类代码"><a class="markdownIt-Anchor" href="#85-imylog类代码"></a> 8.5 IMyLog类代码</h3>
+<h3 id="imylog类代码">8.5 IMyLog类代码</h3>
 <p>using System;</p>
 <p>using System.Collections.Generic;</p>
 <p>using System.Linq;</p>
@@ -1657,43 +1914,55 @@
 <p>using log4net;</p>
 <p>namespace TGLog.ExpandILog</p>
 <p>{</p>
-<p>​    public interface IMyLog : ILog</p>
-<p>​    {</p>
-<p>​        void Debug(int operatorID, string operand, int actionType, object message,</p>
+<p>​ public interface IMyLog : ILog</p>
+<p>​ {</p>
+<p>​ void Debug(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName);</p>
-<p>​        void Debug(int operatorID, string operand, int actionType,object message,</p>
+<p>​ void Debug(int operatorID, string operand, int actionType,object
+message,</p>
 <p>string ip, string browser, string machineName, Exception t);</p>
-<p>​        void Info(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Info(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName);</p>
-<p>​        void Info(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Info(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName, Exception t);</p>
-<p>​        void Warn(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Warn(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName);</p>
-<p>​        void Warn(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Warn(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName, Exception t);</p>
-<p>​        void Error(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Error(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName);</p>
-<p>​        void Error(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Error(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName, Exception t);</p>
-<p>​        void Fatal(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Fatal(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName);</p>
-<p>​        void Fatal(int operatorID, string operand, int actionType, object message,</p>
+<p>​ void Fatal(int operatorID, string operand, int actionType, object
+message,</p>
 <p>string ip, string browser, string machineName, Exception t);</p>
-<p>​    }</p>
+<p>​ }</p>
 <p>}</p>
-<h3 id="86附件"><a class="markdownIt-Anchor" href="#86附件"></a> 8.6附件</h3>
-<p><a target="_blank" rel="noopener" href="http://files.cnblogs.com/longshizhong/%E4%BD%BF%E7%94%A8log4net%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97.rar">使用log4net记录日志</a></p>
-<h3 id="87参考"><a class="markdownIt-Anchor" href="#87参考"></a> 8.7参考</h3>
-<p>1、<a target="_blank" rel="noopener" href="http://peibing211.blog.163.com/blog/static/37116360200992811595469/">http://peibing211.blog.163.com/blog/static/37116360200992811595469/</a></p>
-<p>2、<a target="_blank" rel="noopener" href="http://www.cnblogs.com/qiangzi/archive/2009/09/10/1541023.html">http://www.cnblogs.com/qiangzi/archive/2009/09/10/1541023.html</a></p>
-<p>3、<a target="_blank" rel="noopener" href="http://blog.chinaunix.net/u/23701/showart_1414206.html">http://blog.chinaunix.net/u/23701/showart_1414206.html</a></p>
-<p>4、<a target="_blank" rel="noopener" href="http://itrust.cnblogs.com/archive/2005/01/25/97225.html">http://itrust.cnblogs.com/archive/2005/01/25/97225.html</a></p>
-<p>5、<a target="_blank" rel="noopener" href="http://www.cnitblog.com/seeyeah/archive/2009/09/20/61491.aspx">http://www.cnitblog.com/seeyeah/archive/2009/09/20/61491.aspx</a></p>
-<p>6、<a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhmore/archive/2009/03/19/1416707.html">http://www.cnblogs.com/zhmore/archive/2009/03/19/1416707.html</a></p>
-<p>7、<a target="_blank" rel="noopener" href="http://blog.shinylife.net/blog/article.asp?id=948">http://blog.shinylife.net/blog/article.asp?id=948</a></p>
-<p>8、<a target="_blank" rel="noopener" href="http://www.cnblogs.com/manhoo/archive/2009/06/25/1511066.html">http://www.cnblogs.com/manhoo/archive/2009/06/25/1511066.html</a></p>
-<h1 id="9-致谢"><a class="markdownIt-Anchor" href="#9-致谢"></a> 9、致谢</h1>
-<p>本方摘抄至<a target="_blank" rel="noopener" href="https://blog.csdn.net/binnygoal/article/details/79557746">非常完善的Log4net详细说明</a></p>
+<h3 id="附件">8.6附件</h3>
+<p><a
+target="_blank" rel="noopener" href="http://files.cnblogs.com/longshizhong/使用log4net记录日志.rar">使用log4net记录日志</a></p>
+<h3 id="参考">8.7参考</h3>
+<p>1、http://peibing211.blog.163.com/blog/static/37116360200992811595469/</p>
+<p>2、http://www.cnblogs.com/qiangzi/archive/2009/09/10/1541023.html</p>
+<p>3、http://blog.chinaunix.net/u/23701/showart_1414206.html</p>
+<p>4、http://itrust.cnblogs.com/archive/2005/01/25/97225.html</p>
+<p>5、http://www.cnitblog.com/seeyeah/archive/2009/09/20/61491.aspx</p>
+<p>6、http://www.cnblogs.com/zhmore/archive/2009/03/19/1416707.html</p>
+<p>7、http://blog.shinylife.net/blog/article.asp?id=948</p>
+<p>8、http://www.cnblogs.com/manhoo/archive/2009/06/25/1511066.html</p>
+<h1 id="致谢">9、致谢</h1>
+<p>本方摘抄至<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/binnygoal/article/details/79557746">非常完善的Log4net详细说明</a></p>
 
     </div>
 
@@ -1829,7 +2098,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text"> 1、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text"> 2、一个简单的使用实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-log4net%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text"> 3、Log4net的主要组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#31-appenders"><span class="nav-number">3.1.</span> <span class="nav-text"> 3.1 Appenders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32-filters"><span class="nav-number">3.2.</span> <span class="nav-text"> 3.2 Filters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33-layouts"><span class="nav-number">3.3.</span> <span class="nav-text"> 3.3 Layouts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34-loggers"><span class="nav-number">3.4.</span> <span class="nav-text"> 3.4 Loggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-object-renders"><span class="nav-number">3.5.</span> <span class="nav-text"> 3.5 Object Renders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36-repository"><span class="nav-number">3.6.</span> <span class="nav-text"> 3.6 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text"> 4、配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#41-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90"><span class="nav-number">4.1.</span> <span class="nav-text"> 4.1 配置文件构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#411-log4net"><span class="nav-number">4.1.1.</span> <span class="nav-text"> 4.1.1 &lt;log4net&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#412-root"><span class="nav-number">4.1.2.</span> <span class="nav-text"> 4.1.2  &lt;root&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#413-logger"><span class="nav-number">4.1.3.</span> <span class="nav-text"> 4.1.3  &lt;logger&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#414-appender"><span class="nav-number">4.1.4.</span> <span class="nav-text"> 4.1.4  &lt;appender&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#415-layout"><span class="nav-number">4.1.5.</span> <span class="nav-text"> 4.1.5  &lt;layout&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#416-filter"><span class="nav-number">4.1.6.</span> <span class="nav-text"> 4.1.6  &lt;filter&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#417-param"><span class="nav-number">4.1.7.</span> <span class="nav-text"> 4.1.7  &lt;param&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-appender-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text"> 4.2 &lt;appender&gt; 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#421%E5%86%99%E5%85%A5%E5%9B%9E%E6%BB%9A%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.1.</span> <span class="nav-text"> 4.2.1写入回滚文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#421%E5%86%99%E5%85%A5sql%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.2.2.</span> <span class="nav-text"> 4.2.1写入SQL数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43logger%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text"> 4.3的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#44%E5%85%B3%E8%81%94%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text"> 4.4关联配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text"> 5、如何记录日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-log4net%E7%9A%84%E7%AE%80%E5%8D%95%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text"> 6、Log4net的简单扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#61%E9%80%9A%E8%BF%87%E9%87%8D%E5%86%99%E5%B8%83%E5%B1%80layout%E8%BE%93%E5%87%BA%E4%BC%A0%E5%85%A5%E7%9A%84-message%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">6.1.</span> <span class="nav-text"> 6.1通过重写布局Layout输出传入的 message对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#611%E9%87%8D%E5%86%99layout%E7%B1%BB"><span class="nav-number">6.1.1.</span> <span class="nav-text"> 6.1.1重写Layout类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#612%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">6.1.2.</span> <span class="nav-text"> 6.1.2配置相应的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#613%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">6.1.3.</span> <span class="nav-text"> 6.1.3程序中如何使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#62%E9%80%9A%E8%BF%87%E9%87%8D%E6%96%B0%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3%E6%9D%A5%E5%A2%9E%E5%8A%A0%E8%BE%93%E5%85%A5%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text"> 6.2通过重新实现ILog接口来增加输入的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#621%E9%87%8D%E5%86%99logimpllogmanager%E7%B1%BB%E5%8F%8A%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3"><span class="nav-number">6.2.1.</span> <span class="nav-text"> 6.2.1重写LogImpl，LogManager类及实现ILog接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#622%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">6.2.2.</span> <span class="nav-text"> 6.2.2配置相应的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#623%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">6.2.3.</span> <span class="nav-text"> 6.2.3程序中如何使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text"> 7、总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E9%99%84%E6%B3%A8"><span class="nav-number">8.</span> <span class="nav-text"> 8、附注：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#81patterlayout%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E8%A1%A8"><span class="nav-number">8.0.1.</span> <span class="nav-text"> 8.1PatterLayout格式化字符表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#82layout%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.2.</span> <span class="nav-text"> 8.2Layout类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#83-mylogimpl%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.3.</span> <span class="nav-text"> 8.3 MyLogImpl类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#84-mylogmanager%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.4.</span> <span class="nav-text"> 8.4 MyLogManager类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#85-imylog%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.5.</span> <span class="nav-text"> 8.5 IMyLog类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#86%E9%99%84%E4%BB%B6"><span class="nav-number">8.0.6.</span> <span class="nav-text"> 8.6附件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#87%E5%8F%82%E8%80%83"><span class="nav-number">8.0.7.</span> <span class="nav-text"> 8.7参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-%E8%87%B4%E8%B0%A2"><span class="nav-number">9.</span> <span class="nav-text"> 9、致谢</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">2、一个简单的使用实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#log4net%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">3、Log4net的主要组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#appenders"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Appenders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filters"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 Filters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layouts"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Layouts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loggers"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 Loggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object-renders"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 Object Renders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repository"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">4、配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 配置文件构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#log4net"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 &lt;log4net&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#root"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 &lt;root&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logger"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 &lt;logger&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appender"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.1.4 &lt;appender&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout"><span class="nav-number">4.1.5.</span> <span class="nav-text">4.1.5 &lt;layout&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">4.1.6.</span> <span class="nav-text">4.1.6 &lt;filter&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#param"><span class="nav-number">4.1.7.</span> <span class="nav-text">4.1.7 &lt;param&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#appender-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 &lt;appender&gt; 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E5%9B%9E%E6%BB%9A%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1写入回滚文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%85%A5sql%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.2.2.</span> <span class="nav-text">4.2.1写入SQL数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">4.3的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text">4.4关联配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text">5、如何记录日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#log4net%E7%9A%84%E7%AE%80%E5%8D%95%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text">6、Log4net的简单扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E9%87%8D%E5%86%99%E5%B8%83%E5%B1%80layout%E8%BE%93%E5%87%BA%E4%BC%A0%E5%85%A5%E7%9A%84-message%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">6.1.</span> <span class="nav-text">6.1通过重写布局Layout输出传入的
+message对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%86%99layout%E7%B1%BB"><span class="nav-number">6.1.1.</span> <span class="nav-text">6.1.1重写Layout类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">6.1.2.</span> <span class="nav-text">6.1.2配置相应的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">6.1.3.</span> <span class="nav-text">6.1.3程序中如何使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E9%87%8D%E6%96%B0%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3%E6%9D%A5%E5%A2%9E%E5%8A%A0%E8%BE%93%E5%85%A5%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">6.2通过重新实现ILog接口来增加输入的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%86%99logimpllogmanager%E7%B1%BB%E5%8F%8A%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3"><span class="nav-number">6.2.1.</span> <span class="nav-text">6.2.1重写LogImpl，LogManager类及实现ILog接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">6.2.2配置相应的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">6.2.3程序中如何使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">7、总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E6%B3%A8"><span class="nav-number">8.</span> <span class="nav-text">8、附注：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#patterlayout%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E8%A1%A8"><span class="nav-number">8.0.1.</span> <span class="nav-text">8.1PatterLayout格式化字符表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.2.</span> <span class="nav-text">8.2Layout类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mylogimpl%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.3.</span> <span class="nav-text">8.3 MyLogImpl类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mylogmanager%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.4.</span> <span class="nav-text">8.4 MyLogManager类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#imylog%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.0.5.</span> <span class="nav-text">8.5 IMyLog类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%84%E4%BB%B6"><span class="nav-number">8.0.6.</span> <span class="nav-text">8.6附件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.0.7.</span> <span class="nav-text">8.7参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">9.</span> <span class="nav-text">9、致谢</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1845,20 +2115,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1909,12 +2179,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

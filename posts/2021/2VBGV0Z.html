@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -133,12 +133,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -259,39 +259,39 @@
       
         <p>在使用中，经常需要对 Benlety 中的对象进行克隆，以下进行总结。</p>
 <span id="more"></span>
-<h2 id="element-克隆"><a class="markdownIt-Anchor" href="#element-克隆"></a> Element 克隆</h2>
+<h2 id="element-克隆">Element 克隆</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>程序集</th>
 <th>命名空间</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Bentley.DgnPlatformNET.dll</td>
 <td>Bentley.DgnPlatformNET</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//复制元素</span></span><br><span class="line"><span class="keyword">using</span> (ElementCopyContext cc = <span class="keyword">new</span> ElementCopyContext(dgnModel)) </span><br><span class="line">&#123;</span><br><span class="line">    cc.WriteElements = <span class="literal">false</span>;  <span class="comment">//调整复制上下文环境不要立即写入元素</span></span><br><span class="line">    Element _cloneEle = cc.DoCopy(_el);</span><br><span class="line">    ElementPropertiesSetter eps = <span class="keyword">new</span> ElementPropertiesSetter();</span><br><span class="line">    eps.SetColor(lineColor);</span><br><span class="line">    eps.SetWeight(LineWeight);</span><br><span class="line">    eps.Apply(_cloneEle); <span class="comment">//设置颜色</span></span><br><span class="line">    _cloneEle.AddToModel();</span><br><span class="line">    <span class="keyword">return</span> _cloneEle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="solidkernelentity-克隆"><a class="markdownIt-Anchor" href="#solidkernelentity-克隆"></a> SolidKernelEntity 克隆</h2>
+<h2 id="solidkernelentity-克隆">SolidKernelEntity 克隆</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>程序集</th>
 <th>命名空间</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Bentley.DgnDisplayNet.dll</td>
 <td>Bentley.DgnPlatformNET</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 复制 SolidKernelEntity</span></span><br><span class="line">CopyEntity(<span class="keyword">out</span> SolidKernelEntity entityOut, SolidKernelEntity entityIn)</span><br></pre></td></tr></table></figure>
-<h2 id="curvevector-克隆"><a class="markdownIt-Anchor" href="#curvevector-克隆"></a> CurveVector 克隆</h2>
+<h2 id="curvevector-克隆">CurveVector 克隆</h2>
 <p>调用对象的 <code>Clone()</code> 方法。</p>
 
     </div>
@@ -427,7 +427,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E5%85%8B%E9%9A%86"><span class="nav-number">1.</span> <span class="nav-text"> Element 克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solidkernelentity-%E5%85%8B%E9%9A%86"><span class="nav-number">2.</span> <span class="nav-text"> SolidKernelEntity 克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curvevector-%E5%85%8B%E9%9A%86"><span class="nav-number">3.</span> <span class="nav-text"> CurveVector 克隆</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E5%85%8B%E9%9A%86"><span class="nav-number">1.</span> <span class="nav-text">Element 克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solidkernelentity-%E5%85%8B%E9%9A%86"><span class="nav-number">2.</span> <span class="nav-text">SolidKernelEntity 克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curvevector-%E5%85%8B%E9%9A%86"><span class="nav-number">3.</span> <span class="nav-text">CurveVector 克隆</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -443,20 +443,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -507,12 +507,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC 生成的 IContainer 引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。">
+  <meta name="description" content="使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC 生成的 IContainer 引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何获得Stylet中IContainer的引用">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/2MV52X2.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC 生成的 IContainer 引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。">
+<meta property="og:description" content="使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC 生成的 IContainer 引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -134,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -273,13 +273,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC 生成的 <code>IContainer</code> 引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。</p>
+        <p>使用 Stylet 框架进行 MVVM 开发，采用 IoC 时，我们可能需要传递 IoC
+生成的 <code>IContainer</code>
+引用，这样可以在其它地方自由地获取实例，比如整个程序的配置文件。</p>
 <span id="more"></span>
-<h2 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h2>
-<p>想要获取 <code>IContainer</code>，可以在 <code>Bootstrapper</code> 中获取。代码如下：</p>
+<h2 id="正文">正文</h2>
+<p>想要获取 <code>IContainer</code>，可以在 <code>Bootstrapper</code>
+中获取。代码如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> Stylet;</span><br><span class="line"><span class="keyword">using</span> StyletIoC;</span><br><span class="line"><span class="keyword">using</span> log4net.Core;</span><br><span class="line"><span class="keyword">using</span> log4net;</span><br><span class="line"><span class="keyword">using</span> Server.Pages;</span><br><span class="line"><span class="keyword">using</span> Server.Database;</span><br><span class="line"><span class="keyword">using</span> Server.Config;</span><br><span class="line"><span class="keyword">using</span> Server.Http;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Server</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Bootstrapper</span> : <span class="title">Bootstrapper</span>&lt;<span class="title">ShellViewModel</span>&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">readonly</span> ILog _logger = LogManager.GetLogger(<span class="keyword">typeof</span>(Bootstrapper));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> HttpServiceMain _httpServer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">ConfigureIoC</span>(<span class="params">IStyletIoCBuilder builder</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Configure the IoC container in here</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 注册 IoC</span></span><br><span class="line">            <span class="keyword">var</span> userConfig = <span class="keyword">new</span> UserConfig();</span><br><span class="line">            builder.Bind&lt;UserConfig&gt;().ToInstance(userConfig);</span><br><span class="line">            builder.Bind&lt;LiteDBManager&gt;().ToInstance(<span class="keyword">new</span> LiteDBManager(userConfig));</span><br><span class="line"></span><br><span class="line">            <span class="keyword">base</span>.ConfigureIoC(builder);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在此处获取 Container, 其它地方获取的都是空</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Configure</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Perform any other configuration before the application starts</span></span><br><span class="line">			</span><br><span class="line">            <span class="comment">// 加载静态网页服务</span></span><br><span class="line">            _httpServer = <span class="keyword">new</span> HttpServiceMain();</span><br><span class="line">            _httpServer.Start(Container);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 加载 websocket</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnStart</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Stylet.Logging.LogManager.Enabled = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 添加对所有未捕获异常的读取</span></span><br><span class="line">            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CurrentDomain_UnhandledException</span>(<span class="params"><span class="built_in">object</span> sender, UnhandledExceptionEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            _logger.Error(<span class="string">&quot;未捕获异常:&quot;</span> + e.ExceptionObject.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p>[1]. <a target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/wiki/IoC%3A-Static-Service-Locator">IoC: Static Service Locator</a></p>
+<h2 id="参考">参考</h2>
+<p>[1]. <a
+target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/wiki/IoC%3A-Static-Service-Locator">IoC:
+Static Service Locator</a></p>
 
     </div>
 
@@ -415,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text"> 正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,20 +436,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -495,12 +500,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

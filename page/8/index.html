@@ -121,7 +121,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -131,12 +131,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1NF37FV.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/38K28WD.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2022/1NF37FV.html" class="post-title-link" itemprop="url">如何调用 Microstation 的消息管理器</a>
+            <a href="/posts/2022/38K28WD.html" class="post-title-link" itemprop="url">C# 中如何向 Microstation 输出调试信息</a>
         </h2>
 
         <div class="post-meta">
@@ -214,7 +214,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-12T00:00:00+08:00">2022-05-12</time>
+              <time title="创建时间：2022-05-19 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-19T00:00:00+08:00">2022-05-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,14 +240,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>678</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -259,10 +259,133 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在进行Bentley二次开发的时候，通常我们需要向用户输出一些信息，比如操作的提示，错误的提示等等，本文特对这些方式进行总结，方便下次随心所欲地使用。</p>
+          <p>在进行 MS 开发时，有时候需要输出调试信息，方便查看，主要有 4
+种方式：</p>
+<ol type="1">
+<li>通过 P/Invoke 技术调用
+<code>void mdlDialog_dmsgsPrint(byte[] wMsg)</code> 方法来输出</li>
+<li>通过 <a href="https://galens.uamazing.cn/posts/2022/1NF37FV.html">MS
+消息管理器</a> 来输出，但是这种是输出是模态的，不太方便</li>
+<li>通过现有的 Log 库，比如 Log4net 来进行输出，在 MS 中无法打开 console
+进行输出，所以使用起来有些不方便</li>
+<li>自己写一个输出窗体，来显示调试信息</li>
+</ol>
+<p>本文介绍最简单的方式，即调用原生的消息输出窗体来展示。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/2022/1NF37FV.html#more" rel="contents">
+              <a class="btn" href="/posts/2022/38K28WD.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1RDA3BV.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2022/1RDA3BV.html" class="post-title-link" itemprop="url">MS中各个对象获取的DTransform含义</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-13T00:00:00+08:00">2022-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-06 00:00:00" itemprop="dateModified" datetime="2022-06-06T00:00:00+08:00">2022-06-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>699</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在进行矩阵转换时，谨记如下公式： <span class="math display">\[
+\begin{aligned}
+M_{world} \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
+E \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
+\therefore P_{world} &amp;= M_{local} \cdot P_{local} \\
+\end{aligned}
+\]</span> M
+可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。</p>
+<p>在理解 MS 中各个对象返回的 DTransform
+含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2022/1RDA3BV.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -361,6 +484,205 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/1C9ATGS.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1NF37FV.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2022/1NF37FV.html" class="post-title-link" itemprop="url">如何调用 Microstation 的消息管理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-12T00:00:00+08:00">2022-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/%E6%B6%88%E6%81%AF%E4%B8%AD%E5%BF%83/" itemprop="url" rel="index"><span itemprop="name">消息中心</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在进行Bentley二次开发的时候，通常我们需要向用户输出一些信息，比如操作的提示，错误的提示等等，本文特对这些方式进行总结，方便下次随心所欲地使用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2022/1NF37FV.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1CPW2GG.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2022/1CPW2GG.html" class="post-title-link" itemprop="url">由浅入深地理解样条曲线</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-12T00:00:00+08:00">2022-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-06 00:00:00" itemprop="dateModified" datetime="2022-07-06T00:00:00+08:00">2022-07-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2022/1CPW2GG.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -533,7 +855,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -552,8 +874,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u9 为例，其它版本的安装方法与该版本相同。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20230307213816049.png" alt="image-20230307213816049" /></p>
+          <p>本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD
+u9 为例，其它版本的安装方法与该版本相同。</p>
+<figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/image-20230307213816049.png"
+alt="image-20230307213816049" />
+<figcaption aria-hidden="true">image-20230307213816049</figcaption>
+</figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/3EFH36D.html#more" rel="contents">
@@ -626,7 +954,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>478</span>
+              <span>570</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -645,7 +973,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文汇总了 ORD 在启动过程中可能遇到的问题，方便再次遇到问题时能够快速定位并处理。</p>
+          <p>本文汇总了 ORD
+在启动过程中可能遇到的问题，方便再次遇到问题时能够快速定位并处理。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/1XTXTE4.html#more" rel="contents">
@@ -718,7 +1047,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>223</span>
+              <span>246</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -737,7 +1066,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220509162253268.png" alt="image-20220509162253268" /></p>
+          <figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/image-20220509162253268.png"
+alt="image-20220509162253268" />
+<figcaption aria-hidden="true">image-20220509162253268</figcaption>
+</figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/2BJZWZD.html#more" rel="contents">
@@ -840,350 +1174,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>DgnButtonEvent 有三个成员，分别是 RawPoint、Point和ViewPoin，它们的区别如下：</p>
+          <p>DgnButtonEvent 有三个成员，分别是
+RawPoint、Point和ViewPoin，它们的区别如下：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/192YQY2.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1A0Q13P.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-      <meta itemprop="name" content="明不知昔">
-      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="星辰大海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2022/1A0Q13P.html" class="post-title-link" itemprop="url">C# 通过 ()=>obj.Property 的形式获取实例和属性名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-06 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-06T00:00:00+08:00">2022-05-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-13 23:31:13" itemprop="dateModified" datetime="2023-04-13T23:31:13+08:00">2023-04-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/DotNET/%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">实用代码</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在利用反射编程的时候，我们有时候往往需要通过对象的属性来获取属性名和其对象，例 <code>()=&gt;obj.Property</code>。这样做的好处是：属性名称不再是字符串，而是直接从属性名获取，方便后期维护。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/2022/1A0Q13P.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/3HRNXN7.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-      <meta itemprop="name" content="明不知昔">
-      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="星辰大海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2022/3HRNXN7.html" class="post-title-link" itemprop="url">23 个设计模式速览</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-05T00:00:00+08:00">2022-05-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-06 00:00:00" itemprop="dateModified" datetime="2022-05-06T00:00:00+08:00">2022-05-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/DesignPattern/" itemprop="url" rel="index"><span itemprop="name">DesignPattern</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>14k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/2022/3HRNXN7.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/2AJRA04.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-      <meta itemprop="name" content="明不知昔">
-      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="星辰大海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2022/2AJRA04.html" class="post-title-link" itemprop="url">类关系图简记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-05T00:00:00+08:00">2022-05-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Develop/DesignPattern/" itemprop="url" rel="index"><span itemprop="name">DesignPattern</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>921</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>类关系记忆技巧总结如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>分类</th>
-<th>箭头特征</th>
-<th>记忆技巧</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>箭头方向</td>
-<td>从子类指向父类</td>
-<td>定义子类需要通过 extends 关键字指定父类子类一定是知道父类定义的，但父类并不知道子类的定义只有知道对方信息时才能指向对方箭头的方向是从子类指向父类</td>
-</tr>
-<tr>
-<td>继承/实现</td>
-<td>用线条连接两个类； 空心三角箭头表示继承或实现</td>
-<td>实线表示继承，是is-a的关系，表示扩展，不虚，很结实</td>
-</tr>
-<tr>
-<td>虚线表示实现，虚线代表“虚”无实体</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>关联/依赖</td>
-<td>用线条连接两个类； 普通箭头表示关联或依赖</td>
-<td>虚线表示依赖关系：临时用一下，若即若离，虚无缥缈，若有若无表示一种使用关系，一个类需要借助另一个类来实现功能一般一个类将另一个类作为参数使用，或作为返回值</td>
-</tr>
-<tr>
-<td>实线表示关联关系：关系稳定，实打实的关系，“铁哥们”表示一个类对象和另一个类对象有关联通常一个类中有另一个类对象作为属性</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>组合/聚合</td>
-<td>用菱形表示：像一个盛东西的器皿（如盘子）</td>
-<td>聚合：空心菱形，代表空器皿里可以放很多相同的东西，聚集在一起（箭头方向所指的类）整体和局部的关系，两者有独立的生命周期，是 has-a 的关系弱关系，消极的词：弱-空</td>
-</tr>
-<tr>
-<td>组合：实心菱形，代表器皿里已经有实体结构的存在，生死与共整体与局部的关系，和聚合关系对比，关系更加强烈，两者具有相同的生命周期，contains-a 的关系强关系，积极的词；强-满</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/2022/2AJRA04.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1274,20 +1269,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1338,12 +1333,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -1479,6 +1474,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

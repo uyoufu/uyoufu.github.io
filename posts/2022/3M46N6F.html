@@ -27,13 +27,11 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文介绍了如何在 eggjs 中给路径添加别名并实现 vscode 的智能提示。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220315151928119.png">
 <meta property="article:published_time" content="2022-03-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-14T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="eggjs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220315151928119.png">
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3M46N6F.html">
 
@@ -125,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -135,12 +133,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -244,7 +242,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>855</span>
+              <span>799</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,28 +263,37 @@
       
         <p>本文介绍了如何在 eggjs 中给路径添加别名并实现 vscode 的智能提示。</p>
 <span id="more"></span>
-<h2 id="配置别名"><a class="markdownIt-Anchor" href="#配置别名"></a> 配置别名</h2>
-<h3 id="安装依赖"><a class="markdownIt-Anchor" href="#安装依赖"></a> 安装依赖</h3>
+<h2 id="配置别名">配置别名</h2>
+<h3 id="安装依赖">安装依赖</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm i <span class="literal">--save</span> module<span class="literal">-alias</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn add module<span class="literal">-alias</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置-packagejson-文件"><a class="markdownIt-Anchor" href="#配置-packagejson-文件"></a> 配置 <code>package.json</code> 文件</h3>
+<h3 id="配置-package.json-文件">配置 <code>package.json</code> 文件</h3>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Aliases</span></span><br><span class="line"><span class="attr">&quot;_moduleAliases&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;@&quot;</span>      <span class="punctuation">:</span> <span class="string">&quot;./app&quot;</span><span class="punctuation">,</span> <span class="comment">//  . represent application&#x27;s root</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="加载配置"><a class="markdownIt-Anchor" href="#加载配置"></a> 加载配置</h3>
+<h3 id="加载配置">加载配置</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">configWillLoad</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 此时 config 文件已经被读取并合并，但是还并未生效</span></span><br><span class="line">  <span class="comment">// 这是应用层修改配置的最后时机</span></span><br><span class="line">  <span class="comment">// 注意：此函数只支持同步调用    </span></span><br><span class="line">  <span class="built_in">require</span>(<span class="string">&#x27;module-alias/register&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注意：</strong></p>
 <p>因为需要将该代码放置在所有使用路径别名代码的前面，因此在这里将此引用放置在app.js中，当然，也可以在所需的地方进行单独引用（不推荐）</p>
 </blockquote>
-<h3 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h3>
+<h3 id="使用">使用</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> utils = <span class="built_in">require</span>(<span class="string">&#x27;@/utils/index.js&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ied-实现对别名的智能提示"><a class="markdownIt-Anchor" href="#ied-实现对别名的智能提示"></a> IED 实现对别名的智能提示</h2>
-<p>在根目录中创建 <code>jsconfig.json</code> 文件，里面添加如下内容：</p>
+<h2 id="ied-实现对别名的智能提示">IED 实现对别名的智能提示</h2>
+<p>在根目录中创建 <code>jsconfig.json</code>
+文件，里面添加如下内容：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处是根，如果已经存在配置，则去掉外层大括号</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;baseUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;paths&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;@/*&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;app/*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>至此，<code>vscode</code> 即可智能提示了。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220315151928119.png" alt="image-20220315151928119" /></p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li>[module-alias](<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/module-alias">module-alias - npm (npmjs.com)</a>)</li>
-<li>[egg.js 路径别名配置 module-alias](<a target="_blank" rel="noopener" href="https://blog.csdn.net/pyp_demon/article/details/108329015">egg.js 路径别名配置 module-alias_pyp_demon的博客-CSDN博客</a>)</li>
+<figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/image-20220315151928119.png"
+alt="image-20220315151928119" />
+<figcaption aria-hidden="true">image-20220315151928119</figcaption>
+</figure>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+href="%5Bmodule-alias%20-%20npm%20(npmjs.com)%5D(https://www.npmjs.com/package/module-alias)">module-alias</a></li>
+<li><a
+href="%5Begg.js%20路径别名配置%20module-alias_pyp_demon的博客-CSDN博客%5D(https://blog.csdn.net/pyp_demon/article/details/108329015)">egg.js
+路径别名配置 module-alias</a></li>
 </ol>
 
     </div>
@@ -422,7 +429,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text"> 配置别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.</span> <span class="nav-text"> 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-packagejson-%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text"> 配置 package.json 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text"> 加载配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ied-%E5%AE%9E%E7%8E%B0%E5%AF%B9%E5%88%AB%E5%90%8D%E7%9A%84%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text"> IED 实现对别名的智能提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text">配置别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-package.json-%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">配置 package.json 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">加载配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ied-%E5%AE%9E%E7%8E%B0%E5%AF%B9%E5%88%AB%E5%90%8D%E7%9A%84%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">IED 实现对别名的智能提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -438,20 +445,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -502,12 +509,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-04-19T16:00:00.000Z</updated>
+  <updated>2023-05-25T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,6 +17,93 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>新版 Edge 取消圆角样式</title>
+    <link href="https://galens.uamazing.cn/posts/2023/77AD03.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/77AD03.html</id>
+    <published>2023-05-25T16:00:00.000Z</published>
+    <updated>2023-05-25T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;新版 Edge 浏览器引入了圆角的样式，可以通过以下方式进行关闭：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;在地址栏中输入：edge://flags&lt;/li&gt;
+&lt;li&gt;搜索 Microsoft Edge rounded</summary>
+        
+      
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Edge" scheme="https://galens.uamazing.cn/categories/Software/Edge/"/>
+    
+    
+    <category term="Edge" scheme="https://galens.uamazing.cn/tags/Edge/"/>
+    
+    <category term="software" scheme="https://galens.uamazing.cn/tags/software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qusar 中 Table 虚拟滚动切换后数据显示不全的解决办法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/34QSN23.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/34QSN23.html</id>
+    <published>2023-05-14T16:00:00.000Z</published>
+    <updated>2023-05-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在使用 Quasar 中的 Table
+控件时，当用户选择全部后，由于数据较多，会导致响应会非常卡顿，为了解决这个问题，于是向
+Table 增加虚拟滚动的功能。&lt;/p&gt;
+&lt;p&gt;可是当进行页面切换时，发现不能完整的显示当前页的数据，每行最多只有 12
+条数据。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    <category term="Quasar" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Quasar/"/>
+    
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
+    
+    <category term="Qusar" scheme="https://galens.uamazing.cn/tags/Qusar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多个数据的展开与压缩</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2812PDV.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2812PDV.html</id>
+    <published>2023-05-05T16:00:00.000Z</published>
+    <updated>2023-05-06T00:47:01.439Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在开发中，遇到一个需求，需要将一组数据，将连续出现的部分压缩成 n*y
+的形式，比如：&lt;code&gt;20 30 30 20&lt;/code&gt; 压缩后的结果应为
+&lt;code&gt;20 2x30 20&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;同时也要对压缩的数据进行解压还原。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Algorithm" scheme="https://galens.uamazing.cn/categories/Develop/Algorithm/"/>
+    
+    
+    <category term="Algorithm" scheme="https://galens.uamazing.cn/tags/Algorithm/"/>
+    
+    <category term="数据处理" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从字意上理解 CSS 中的 justify 和 align</title>
     <link href="https://galens.uamazing.cn/posts/2023/17Q11CW.html"/>
     <id>https://galens.uamazing.cn/posts/2023/17Q11CW.html</id>
@@ -24,7 +111,10 @@
     <updated>2023-04-19T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在进行 CSS 样式编写时，经常会遇到 &lt;code&gt;align&lt;/code&gt; 和 &lt;code&gt;justify&lt;/code&gt; 这两个单词，比如：&lt;code&gt;justify-content&lt;/code&gt; 、&lt;code&gt;justify-items&lt;/code&gt;、&lt;code&gt;align-content&lt;/code&gt;、 &lt;code&gt;align-items&lt;/code&gt; 等。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;在进行 CSS 样式编写时，经常会遇到 &lt;code&gt;align&lt;/code&gt; 和
+&lt;code&gt;justify&lt;/code&gt; 这两个单词，比如：&lt;code&gt;justify-content&lt;/code&gt;
+、&lt;code&gt;justify-items&lt;/code&gt;、&lt;code&gt;align-content&lt;/code&gt;、
+&lt;code&gt;align-items&lt;/code&gt; 等。&lt;/p&gt;
 &lt;p&gt;在开发中，这个两个词意思相近，总是记不牢它们的用法，因此本文从其字面意思上梳理这两个单词的区别，方便记忆。&lt;/p&gt;</summary>
     
     
@@ -71,7 +161,9 @@
     <updated>2023-04-16T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;网上安装 redis 为 windows 服务的教程大多基于 redis3 编写的，然而这并不适用于 redis 更高的版本。redis 高版本安装为服务应使用如下方法：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;网上安装 redis 为 windows 服务的教程大多基于 redis3
+编写的，然而这并不适用于 redis 更高的版本。redis
+高版本安装为服务应使用如下方法：&lt;/p&gt;</summary>
     
     
     
@@ -94,7 +186,8 @@
     <updated>2023-04-15T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文介绍如何在 windows 环境中通过 docker-compose 创建 MongoDB 副本集。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文介绍如何在 windows 环境中通过 docker-compose 创建 MongoDB
+副本集。&lt;/p&gt;</summary>
     
     
     
@@ -140,8 +233,15 @@
     <updated>2023-04-14T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230415233342204.png&quot; alt=&quot;image-20230415233342204&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。&lt;/p&gt;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img
+src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230415233342204.png&quot;
+alt=&quot;image-20230415233342204&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230415233342204&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;使用 Docker Compose
+可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker
+的应用程序工具。&lt;/p&gt;</summary>
     
     
     
@@ -153,6 +253,32 @@
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>z.lua 安装</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1JSFERW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1JSFERW.html</id>
+    <published>2023-04-14T16:00:00.000Z</published>
+    <updated>2023-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;z.lua 是一个快速路径切换工具，它会跟踪你在 shell
+下访问过的路径，通过一套称为 Frecent 的机制（源自
+FireFox），经过一段简短的学习之后，z.lua
+会帮你跳转到所有匹配正则关键字的路径里 Frecent 值最高的那条路径去。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
     
   </entry>
   
@@ -178,29 +304,6 @@
     <category term="Powershell7" scheme="https://galens.uamazing.cn/tags/Powershell7/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>z.lua 安装</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1JSFERW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1JSFERW.html</id>
-    <published>2023-04-14T16:00:00.000Z</published>
-    <updated>2023-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;z.lua 是一个快速路径切换工具，它会跟踪你在 shell 下访问过的路径，通过一套称为 Frecent 的机制（源自 FireFox），经过一段简短的学习之后，z.lua 会帮你跳转到所有匹配正则关键字的路径里 Frecent 值最高的那条路径去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
     
   </entry>
   
@@ -231,7 +334,8 @@
     <updated>2023-04-11T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的 npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
+npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
     
     
     
@@ -252,7 +356,8 @@
     <updated>2023-04-11T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近一个朋友的 win11 系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;最近一个朋友的 win11
+系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
     
     
     
@@ -294,7 +399,8 @@
     <updated>2023-03-31T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;当在 Visual Studio Code 中安装 Copilot 插件后，发现其提示很慢，可能通过以下设置来减少响应延迟。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;当在 Visual Studio Code 中安装 Copilot
+插件后，发现其提示很慢，可能通过以下设置来减少响应延迟。&lt;/p&gt;</summary>
     
     
     
@@ -344,7 +450,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;参考：&lt;a</summary>
+    <summary type="html">&lt;p&gt;参考：&lt;a
+href=&quot;https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise&quot;&gt;Addin给元素添加自定义Linkage数据&lt;</summary>
         
       
     
@@ -369,8 +476,11 @@
     <updated>2023-03-20T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;当需要更新 win10 或者将 win7 更新到 win10 时，可以使用 microsoft 提供的升级更新工具来进行操作。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/zh-cn/software-download/windows10&quot;&gt;地址：下载 Windows 10 (microsoft.com)&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;当需要更新 win10 或者将 win7 更新到 win10 时，可以使用 microsoft
+提供的升级更新工具来进行操作。&lt;/p&gt;
+&lt;p&gt;&lt;a
+href=&quot;https://www.microsoft.com/zh-cn/software-download/windows10&quot;&gt;地址：下载
+Windows 10 (microsoft.com)&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -391,7 +501,9 @@
     <updated>2023-03-16T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;当以命令行方式运行 &lt;code&gt;vite&lt;/code&gt; 时，Vite 会自动解析 &lt;a href=&quot;https://cn.vitejs.dev/guide/#index-html-and-project-root&quot;&gt;项目根目录&lt;/a&gt; 下名为 &lt;code&gt;vite.config.js&lt;/code&gt; 的文件。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;当以命令行方式运行 &lt;code&gt;vite&lt;/code&gt; 时，Vite 会自动解析 &lt;a
+href=&quot;https://cn.vitejs.dev/guide/#index-html-and-project-root&quot;&gt;项目根目录&lt;/a&gt;
+下名为 &lt;code&gt;vite.config.js&lt;/code&gt; 的文件。&lt;/p&gt;</summary>
     
     
     
@@ -403,94 +515,6 @@
     
     
     <category term="Vite" scheme="https://galens.uamazing.cn/tags/Vite/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3 模板 vscode 代码片段</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3MXXBNW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3MXXBNW.html</id>
-    <published>2023-03-16T16:00:00.000Z</published>
-    <updated>2023-03-16T16:00:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Ctrl+Shift+p 搜 “代码片段(snipets)”，新建一个应用于当前项目的代码版本，在文件中增加如下内容：&lt;/p&gt;
-&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue3-x/"/>
-    
-    
-    <category term="vue3" scheme="https://galens.uamazing.cn/tags/vue3/"/>
-    
-    <category term="snipets" scheme="https://galens.uamazing.cn/tags/snipets/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3 语法摘要</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3CG1P9K.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3CG1P9K.html</id>
-    <published>2023-03-16T16:00:00.000Z</published>
-    <updated>2023-03-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/directive.png&quot; alt=&quot;directive&quot; style=&quot;zoom:50%;&quot; /&gt;
-&lt;p&gt;本文将 Vue3 中的组合式语法精简为快速笔记，方便在使用中总览 Vue 特性，灵活应用。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;该文不会介绍具体用法，建议先通读一遍 &lt;a href=&quot;https://cn.vuejs.org/guide/essentials/template-syntax.html#attribute-bindings&quot;&gt;官方帮助文档&lt;/a&gt;，记得风格偏好中选择自己喜欢的网络&lt;/p&gt;
-&lt;p&gt;如果某些概念读不懂，可以先去看官方文档&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue3-x/"/>
-    
-    
-    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.NET Standard 项目单元测试时测试不运行</title>
-    <link href="https://galens.uamazing.cn/posts/2023/GDQD0X.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/GDQD0X.html</id>
-    <published>2023-03-11T16:00:00.000Z</published>
-    <updated>2023-03-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;使用 .NET Standard 2.1 编写了一个类库，运行单元测试后，在测试资源管理器中，所有的单元测试方法都显示未运行。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230312143919494.png&quot; alt=&quot;image-20230312143919494&quot; /&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    
-    <category term=".NET" scheme="https://galens.uamazing.cn/tags/NET/"/>
     
   </entry>
   

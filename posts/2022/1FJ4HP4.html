@@ -20,22 +20,19 @@
     var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文主要总结 DgnPrimitiveTool 的触发逻辑，同时介绍其中的参数设置。">
+  <meta name="description" content="本文主要总结 DgnPrimitiveTool 的触发逻辑，同时介绍其中的参数设置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DgnPrimitiveTool 使用文档">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/1FJ4HP4.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文主要总结 DgnPrimitiveTool 的触发逻辑，同时介绍其中的参数设置。">
+<meta property="og:description" content="本文主要总结 DgnPrimitiveTool 的触发逻辑，同时介绍其中的参数设置。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220520131412036.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/DgnPrimitiveTool%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B-schetch.png">
 <meta property="article:published_time" content="2022-05-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-19T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="Bentley">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220520131412036.png">
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/1FJ4HP4.html">
 
@@ -127,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">352</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -137,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">199</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">105</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -246,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>638</span>
+              <span>689</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,53 +262,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文主要总结 DgnPrimitiveTool 的触发逻辑，同时介绍其中的参数设置。</p>
+        <p>本文主要总结 DgnPrimitiveTool
+的触发逻辑，同时介绍其中的参数设置。</p>
 <span id="more"></span>
-<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
-<p>DgnPrimitiveTool 继承自 DgnTool，它增加了动态显示、回退相关的事件回调。</p>
-<h2 id="继承关系"><a class="markdownIt-Anchor" href="#继承关系"></a> 继承关系</h2>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220520131412036.png" alt="image-20220520131412036" /></p>
-<h2 id="动态显示"><a class="markdownIt-Anchor" href="#动态显示"></a> 动态显示</h2>
+<h2 id="简介">简介</h2>
+<p>DgnPrimitiveTool 继承自
+DgnTool，它增加了动态显示、回退相关的事件回调。</p>
+<h2 id="继承关系">继承关系</h2>
+<figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/image-20220520131412036.png"
+alt="image-20220520131412036" />
+<figcaption aria-hidden="true">image-20220520131412036</figcaption>
+</figure>
+<h2 id="动态显示">动态显示</h2>
 <table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 81%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>函数名称</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>BeginDynamics</td>
 <td>打开动态显示</td>
 </tr>
-<tr>
+<tr class="even">
 <td>EndDynamics</td>
 <td>关闭动态显示</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>OnDynamicFrame</td>
-<td>在此处进行动态元素的显示；<br />动态元素显示需要使用 RedrawElems，详见相关文章</td>
+<td>在此处进行动态元素的显示；<br />动态元素显示需要使用
+RedrawElems，详见相关文章</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ctrlz-回退"><a class="markdownIt-Anchor" href="#ctrlz-回退"></a> Ctrl+Z 回退</h2>
+<h2 id="ctrlz-回退">Ctrl+Z 回退</h2>
 <p>通过以下步骤方式可以开启 Ctrl+Z 回退回调功能</p>
-<ol>
-<li>在 <code>OnPostInstall</code> 中调用方法 <code>EnableUndoPreviousStep()</code> 打开回退功能</li>
+<ol type="1">
+<li>在 <code>OnPostInstall</code> 中调用方法
+<code>EnableUndoPreviousStep()</code> 打开回退功能</li>
 <li>重写 <code>OnUndoPreviousStep</code> 事件</li>
 </ol>
-<h2 id="onrestarttool"><a class="markdownIt-Anchor" href="#onrestarttool"></a> OnRestartTool</h2>
-<p>本类中新增一个抽象方法 <code>OnRestartTool</code>，当外部事件可能使当前工具的状态失效时调用。</p>
-<p>例如 undo 操作，它可能使对元素的任何引用失效，或者导致引用的绑定/取绑。</p>
-<p>在这个事件回调中，需要初始化新实例并调用 <code>InstallTool</code>，或者调用 <code>ExitTool</code> 来退出工具。</p>
-<h2 id="单次触发模式"><a class="markdownIt-Anchor" href="#单次触发模式"></a> 单次触发模式</h2>
+<h2 id="onrestarttool">OnRestartTool</h2>
+<p>本类中新增一个抽象方法
+<code>OnRestartTool</code>，当外部事件可能使当前工具的状态失效时调用。</p>
+<p>例如 undo
+操作，它可能使对元素的任何引用失效，或者导致引用的绑定/取绑。</p>
+<p>在这个事件回调中，需要初始化新实例并调用
+<code>InstallTool</code>，或者调用 <code>ExitTool</code>
+来退出工具。</p>
+<h2 id="单次触发模式">单次触发模式</h2>
 <p>Single-shot模式的意思就是你执行完一个命令后就会回到系统默认命令，往往是选择工具命令。</p>
 <p>当不处于Single-shot模式时，执行完当前命令后仍然保持这个命令。比如你执行了画线命令，画完后仍然可以继续画线而不用再选择画线命令。</p>
 <p>这个选项目前已经被废弃。</p>
-<p>详见 <a target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise/171116/msce-c-single-shot-mode-single-shot-mode/492647#492647">single-shot mode</a></p>
-<h2 id="执行流程"><a class="markdownIt-Anchor" href="#执行流程"></a> 执行流程</h2>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/DgnPrimitiveTool%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B-schetch.png" alt="DgnPrimitiveTool执行流程-schetch" /></p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p>详见 <a
+target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise/171116/msce-c-single-shot-mode-single-shot-mode/492647#492647">single-shot
+mode</a></p>
+<h2 id="执行流程">执行流程</h2>
+<figure>
+<img
+src="https://obs.uamazing.cn:52443/public/files/images/DgnPrimitiveTool执行流程-schetch.png"
+alt="DgnPrimitiveTool执行流程-schetch" />
+<figcaption
+aria-hidden="true">DgnPrimitiveTool执行流程-schetch</figcaption>
+</figure>
+<h2 id="参考">参考</h2>
 <p>《Microstation API Document》</p>
 <p><a href="">DgnTool详细说明文档</a></p>
 
@@ -449,7 +471,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text"> 继承关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%98%BE%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text"> 动态显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctrlz-%E5%9B%9E%E9%80%80"><span class="nav-number">4.</span> <span class="nav-text"> Ctrl+Z 回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onrestarttool"><span class="nav-number">5.</span> <span class="nav-text"> OnRestartTool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E6%AC%A1%E8%A7%A6%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text"> 单次触发模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text"> 执行流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">继承关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%98%BE%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">动态显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctrlz-%E5%9B%9E%E9%80%80"><span class="nav-number">4.</span> <span class="nav-text">Ctrl+Z 回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onrestarttool"><span class="nav-number">5.</span> <span class="nav-text">OnRestartTool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E6%AC%A1%E8%A7%A6%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">单次触发模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">执行流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -465,20 +487,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">352</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">199</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -529,12 +551,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">650k</span>
+    <span title="站点总字数">646k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:51</span>
+    <span title="站点阅读时长">9:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

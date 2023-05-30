@@ -2732,6 +2732,7 @@ body {
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   letter-spacing: 0.5rem;
+  cursor: pointer;
 }
 
 /* .post-body {
@@ -3303,5 +3304,13 @@ p a {
 /*代码块边框线*/
 .highlight .table-container{
   border: solid 1px #dfe2e5;
+}
+
+.search-popup .search-result-container{
+  padding-left: 30px;
+}
+
+.search-popup .search-result-list{
+  margin: 0px;
 }
 

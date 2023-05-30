@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.0.0-rc1">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0-rc1">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,14 +13,13 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"galens.uamazing.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由浅入深地理解样条曲线">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/1CPW2GG.html">
@@ -33,26 +32,21 @@
 <meta property="article:published_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-05T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="Bentley">
+<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220705222132936.png">
 
+
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/1CPW2GG.html">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
 
-  <title>由浅入深地理解样条曲线 | 星辰大海</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2022/1CPW2GG.html","path":"posts/2022/1CPW2GG.html","title":"由浅入深地理解样条曲线"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>由浅入深地理解样条曲线 | 星辰大海</title>
   
 
 
@@ -60,58 +54,40 @@
 
 
 
+
+
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 <link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">星辰大海</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">星辰大海</p>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -119,34 +95,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">355</span></a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">203</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">106</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">356</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,113 +107,188 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
     </div>
   </div>
 
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BFb%C3%A9zier-curve"><span class="nav-number">2.</span> <span class="nav-text">贝塞尔曲线（Bézier curve）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">2.1.1.</span> <span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E8%AF%B4%E6%98%8E"><span class="nav-number">2.1.2.</span> <span class="nav-text">其它说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.3.</span> <span class="nav-text">线性贝塞尔曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%BD%A2%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.4.</span> <span class="nav-text">异形曲线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BFb-spline"><span class="nav-number">3.</span> <span class="nav-text">B样条曲线（B-Spline）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">3.2.</span> <span class="nav-text">理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.2.2.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">节点向量的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E5%8F%96%E5%80%BC"><span class="nav-number">3.4.</span> <span class="nav-text">节点向量的取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E6%AD%A5%E9%95%BF%E5%8F%96%E5%80%BC"><span class="nav-number">3.5.</span> <span class="nav-text">节点向量的步长取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%AA%E6%95%B0%E7%A1%AE%E5%AE%9A"><span class="nav-number">3.6.</span> <span class="nav-text">节点的个数确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E5%AE%9A%E4%B9%89%E5%8C%BA%E9%97%B4"><span class="nav-number">3.7.</span> <span class="nav-text">有效定义区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9C%AC%E8%B4%A8"><span class="nav-number">3.8.</span> <span class="nav-text">b 样条本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">3.9.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">3.10.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%87%E5%8C%80uniform-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.11.</span> <span class="nav-text">均匀（uniform） b 样条曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%9D%87%E5%8C%80quasi-uniform-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.12.</span> <span class="nav-text">准均匀（quasi-uniform） b
+样条曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5-bezier-%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.13.</span> <span class="nav-text">分段 Bezier 曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E5%8C%85%E5%90%AB%E7%BA%BF%E6%AE%B5"><span class="nav-number">3.14.</span> <span class="nav-text">曲线包含线段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%BB%8F%E8%BF%87%E6%8E%A7%E5%88%B6%E7%82%B9"><span class="nav-number">3.15.</span> <span class="nav-text">曲线经过控制点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E4%B8%8E%E6%9F%90%E7%9B%B4%E7%BA%BFl%E7%9B%B8%E5%88%87"><span class="nav-number">3.16.</span> <span class="nav-text">曲线与某直线L相切</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.17.</span> <span class="nav-text">闭曲线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E6%9C%89%E7%90%86b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BFnurbs"><span class="nav-number">4.</span> <span class="nav-text">非均匀有理B样条曲线（NURBS）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#order%E9%98%B6%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">Order（阶数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control-point-%E4%B8%8E-knot"><span class="nav-number">4.2.</span> <span class="nav-text">Control Point 与 Knot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#weight"><span class="nav-number">4.3.</span> <span class="nav-text">Weight</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b%C3%A9zierb-splinenurbs-%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">Bézier、B-Spline、NURBS 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#msbsplinecurvemicrostation%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">6.</span> <span class="nav-text">MSBsplineCurve（Microstation中的对象）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pole-and-knot-counts"><span class="nav-number">6.1.</span> <span class="nav-text">Pole and knot counts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E4%BD%8D%E7%BD%AE"><span class="nav-number">6.2.</span> <span class="nav-text">B样条曲线上的参数化位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%8E%A7%E5%88%B6%E7%82%B9%E7%9A%84-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">6.3.</span> <span class="nav-text">通过控制点的 b 样条曲线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
 </div>
-    </header>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">356</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">203</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener me" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
 
     
-  <div class="reading-progress-bar"></div>
+  </aside>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+    </div>
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1CPW2GG.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
       <meta itemprop="name" content="明不知昔">
-      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="星辰大海">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="由浅入深地理解样条曲线 | 星辰大海">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           由浅入深地理解样条曲线
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-12T00:00:00+08:00">2022-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-06 00:00:00" itemprop="dateModified" datetime="2022-07-06T00:00:00+08:00">2022-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
-                </span>
-            </span>
+      <time title="创建时间：2022-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-12T00:00:00+08:00">2022-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-06 00:00:00" itemprop="dateModified" datetime="2022-07-06T00:00:00+08:00">2022-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bentley/" itemprop="url" rel="index"><span itemprop="name">Bentley</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bentley/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" itemprop="url" rel="index"><span itemprop="name">几何变换</span></a>
+        </span>
+    </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>10k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -271,10 +296,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。</p>
 <span id="more"></span>
 <h2 id="前言">前言</h2>
 <p>在阅读本文之前，请先静下心来，一步一步理解公式，不要因公式复杂而望而却步。如果慢慢理解，它其实也挺简单。</p>
@@ -290,8 +312,7 @@ class="math inline">\(B_i(t)\)</span> 是线性空间中的基函数。</p>
 <p>n 维线性空间不是指笛卡尔坐标系下的 n
 维，而是线性代数上的维度，如果对这个概念不是很清楚，可以查阅相关书籍，当然，上述的这个理解方式也可以忽略。</p>
 <h2 id="贝塞尔曲线bézier-curve">贝塞尔曲线（Bézier curve）</h2>
-<p><a target="_blank" rel="noopener" href="https://www.jasondavies.com/animated-bezier/"><img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220513132345112.png"
+<p><a target="_blank" rel="noopener" href="https://www.jasondavies.com/animated-bezier/"><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220513132345112.png"
 alt="点击图片可查看动画" /></a></p>
 <h3 id="定义">定义</h3>
 <p><span class="math display">\[
@@ -531,8 +552,7 @@ class="math inline">\(T_i\)</span>）上的基函数</li>
 样条就会产生不同的效果。</p>
 <p>如果节点向量没有任何特别的结构，那么产生的曲线不会与控制折线（<em>polyline</em>）的第一边（<em>leg</em>）和最后一边（<em>leg</em>）接触，如下面图所示。</p>
 <figure>
-<img
-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-open-1.jpg"
+<img data-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-open-1.jpg"
 alt="open" />
 <figcaption aria-hidden="true">open</figcaption>
 </figure>
@@ -542,16 +562,14 @@ alt="open" />
 <span class="math inline">\(k(代表阶数)\)</span>。这就产生了所谓的
 <strong>clamped</strong> b 样条曲线。参见下图。</p>
 <figure>
-<img
-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-clamped-1.jpg"
+<img data-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-clamped-1.jpg"
 alt="clamped" />
 <figcaption aria-hidden="true">clamped</figcaption>
 </figure>
 <p>通过重复某些节点和控制点，产生的曲线会是闭（<strong>closed</strong>）曲线。
 这种情况，产生的曲线的开始和结尾连接在一起形成了一个闭环如下图所示。</p>
 <figure>
-<img
-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-closed-1.jpg"
+<img data-src="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bs-cv-closed-1.jpg"
 alt="close" />
 <figcaption aria-hidden="true">close</figcaption>
 </figure>
@@ -590,8 +608,7 @@ class="math display">\[
 <p>假设一个 4 阶 b 样条有 5
 个控制点，其基函数的区间可以用下图来表示：</p>
 <figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
 alt="image-20220707124032974" />
 <figcaption aria-hidden="true">image-20220707124032974</figcaption>
 </figure>
@@ -612,8 +629,7 @@ N_{0,k}(t)P_0+N_{1,k}(t)P_1+N_{2,k}(t)P_2+N_{3,k}(t)P_3+N_{4,k}(t)P_4
 \]</span> 由于是 4 阶 5 点，所以有 9 个节点，8
 个节点区间，因此可以画出基函数的有效区间图如下：</p>
 <figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
 alt="image-20220707124032974" />
 <figcaption aria-hidden="true">image-20220707124032974</figcaption>
 </figure>
@@ -801,8 +817,7 @@ class="math inline">\(\vec{CE}\)</span>。</p>
 <p>如果要保证插入的直线在控制点范围内是一条直线，还必须保证线段的首尾点分别具有
 1 个重复度。</p>
 <figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/image-20220709181500332.png"
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220709181500332.png"
 alt="image-20220709181500332" />
 <figcaption aria-hidden="true">image-20220709181500332</figcaption>
 </figure>
@@ -869,8 +884,7 @@ NURBS，即非均匀有理B样条来解决这个问题</p>
 <p>Bezier 曲线只是 B样条的一个特例而已，而 B样条又是 NURBS
 的一个特例，它们的关系可以图示为：</p>
 <figure>
-<img
-src="https://obs.uamazing.cn:52443/public/files/images/relationshipAmongCurves.png"
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/relationshipAmongCurves.png"
 alt="relationshipAmongCurves" />
 <figcaption aria-hidden="true">relationshipAmongCurves</figcaption>
 </figure>
@@ -970,44 +984,44 @@ Curves: Closed Curves</a></p>
     
     
     
-        <div class="reward-container">
-  <div>Buy me a coffee</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信">
+        <span>微信</span>
       </div>
-      
-      <div style="display: inline-block;">
+      <div>
         <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
 
   </div>
 </div>
 
-        
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
-  <div class="followme">
-    <p>欢迎关注我的其它发布渠道</p>
+  <div class="social-list">
 
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+      <div class="social-item">
+          <span class="social-link">
             <span class="icon">
               <i class="fab fa-weixin"></i>
             </span>
 
             <span class="label">公众号</span>
-          </a>
-        </div>
+          </span>
 
-        <div class="social-item">
+          <img class="social-item-img" src="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+      </div>
+
+      <div class="social-item">
           <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
             <span class="icon">
               <i class="fa fa-book-reader"></i>
@@ -1015,389 +1029,117 @@ Curves: Closed Curves</a></p>
 
             <span class="label">简书</span>
           </a>
-        </div>
-    </div>
+      </div>
   </div>
+</div>
 
-
-      <footer class="post-footer">
-          
           <div class="post-tags">
-              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/Bentley/" rel="tag"><i class="fa fa-tag"></i> Bentley</a>
+              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/posts/2022/38A8BYH.html" rel="prev" title="Bentley 中几何变换实例">
-      <i class="fa fa-chevron-left"></i> Bentley 中几何变换实例
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/2022/1NF37FV.html" rel="next" title="如何调用 Microstation 的消息管理器">
-      如何调用 Microstation 的消息管理器 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2022/1NF37FV.html" rel="prev" title="如何调用 Microstation 的消息管理器">
+                  <i class="fa fa-chevron-left"></i> 如何调用 Microstation 的消息管理器
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2022/1C9ATGS.html" rel="next" title="几何继承关系层次图">
+                  几何继承关系层次图 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
-    <div class="comments" id="gitalk-container"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BFb%C3%A9zier-curve"><span class="nav-number">2.</span> <span class="nav-text">贝塞尔曲线（Bézier curve）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">2.1.1.</span> <span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E8%AF%B4%E6%98%8E"><span class="nav-number">2.1.2.</span> <span class="nav-text">其它说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.3.</span> <span class="nav-text">线性贝塞尔曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%BD%A2%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.4.</span> <span class="nav-text">异形曲线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BFb-spline"><span class="nav-number">3.</span> <span class="nav-text">B样条曲线（B-Spline）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">3.2.</span> <span class="nav-text">理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.2.2.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">节点向量的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E5%8F%96%E5%80%BC"><span class="nav-number">3.4.</span> <span class="nav-text">节点向量的取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%90%91%E9%87%8F%E7%9A%84%E6%AD%A5%E9%95%BF%E5%8F%96%E5%80%BC"><span class="nav-number">3.5.</span> <span class="nav-text">节点向量的步长取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%AA%E6%95%B0%E7%A1%AE%E5%AE%9A"><span class="nav-number">3.6.</span> <span class="nav-text">节点的个数确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E5%AE%9A%E4%B9%89%E5%8C%BA%E9%97%B4"><span class="nav-number">3.7.</span> <span class="nav-text">有效定义区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9C%AC%E8%B4%A8"><span class="nav-number">3.8.</span> <span class="nav-text">b 样条本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">3.9.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">3.10.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%87%E5%8C%80uniform-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.11.</span> <span class="nav-text">均匀（uniform） b 样条曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%9D%87%E5%8C%80quasi-uniform-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.12.</span> <span class="nav-text">准均匀（quasi-uniform） b
-样条曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5-bezier-%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.13.</span> <span class="nav-text">分段 Bezier 曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E5%8C%85%E5%90%AB%E7%BA%BF%E6%AE%B5"><span class="nav-number">3.14.</span> <span class="nav-text">曲线包含线段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%BB%8F%E8%BF%87%E6%8E%A7%E5%88%B6%E7%82%B9"><span class="nav-number">3.15.</span> <span class="nav-text">曲线经过控制点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E4%B8%8E%E6%9F%90%E7%9B%B4%E7%BA%BFl%E7%9B%B8%E5%88%87"><span class="nav-number">3.16.</span> <span class="nav-text">曲线与某直线L相切</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.17.</span> <span class="nav-text">闭曲线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E6%9C%89%E7%90%86b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BFnurbs"><span class="nav-number">4.</span> <span class="nav-text">非均匀有理B样条曲线（NURBS）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#order%E9%98%B6%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">Order（阶数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control-point-%E4%B8%8E-knot"><span class="nav-number">4.2.</span> <span class="nav-text">Control Point 与 Knot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#weight"><span class="nav-number">4.3.</span> <span class="nav-text">Weight</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b%C3%A9zierb-splinenurbs-%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">Bézier、B-Spline、NURBS 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#msbsplinecurvemicrostation%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">6.</span> <span class="nav-text">MSBsplineCurve（Microstation中的对象）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pole-and-knot-counts"><span class="nav-number">6.1.</span> <span class="nav-text">Pole and knot counts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E4%BD%8D%E7%BD%AE"><span class="nav-number">6.2.</span> <span class="nav-text">B样条曲线上的参数化位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%8E%A7%E5%88%B6%E7%82%B9%E7%9A%84-b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-number">6.3.</span> <span class="nav-text">通过控制点的 b 样条曲线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="明不知昔"
-      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-  <p class="site-author-name" itemprop="name">明不知昔</p>
-  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+    </footer>
+  </article>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">355</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">106</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">203</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">明不知昔</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">646k</span>
-    <span class="post-meta-divider">|</span>
+    <span title="站点总字数">647k</span>
+  </span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9:47</span>
+    <span title="站点阅读时长">9:48</span>
+  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-<script data-pjax>
-if (document.querySelectorAll('pre.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
-    mermaid.initialize({
-      theme    : 'forest',
-      logLevel : 3,
-      flowchart: { curve     : 'linear' },
-      gantt    : { axisFormat: '%m/%d/%Y' },
-      sequence : { actorMargin: 50 }
-    });
-  }, window.mermaid);
-}
-</script>
-
-
-    <div id="pjax">
-  
-
-  
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '63ece14861c297420892',
-      clientSecret: '731f0c050c35a3afee5aed41ca386decc768a3f0',
-      repo        : 'blog-comments',
-      owner       : 'galensgan',
-      admin       : ['galensgan'],
-      id          : 'c60af4e6a9ecc654fb7105e993cb24a1',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
     </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.3/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c60af4e6a9ecc654fb7105e993cb24a1"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
 </body>
 </html>

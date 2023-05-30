@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-05-25T16:00:00.000Z</updated>
+  <updated>2023-05-29T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git中 子模块的添加与删除</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2Y0295C.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2Y0295C.html</id>
+    <published>2023-05-29T16:00:00.000Z</published>
+    <updated>2023-05-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在使用 hexo
+搭建博客时，往往需要添加主题来美化博客。这个时候，通常在自己的主仓库中使用子模块来进行维护。&lt;/p&gt;
+&lt;p&gt;使用子模块，既能够保持主仓库与主题的联结，又不会增加主仓库的体积，需要更新时，只需要在子模块中更新一下就可以了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Git" scheme="https://galens.uamazing.cn/categories/Software/Git/"/>
+    
+    
+    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
+    
+    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Git" scheme="https://galens.uamazing.cn/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>新版 Edge 取消圆角样式</title>
@@ -82,7 +111,7 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <link href="https://galens.uamazing.cn/posts/2023/2812PDV.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2812PDV.html</id>
     <published>2023-05-05T16:00:00.000Z</published>
-    <updated>2023-05-06T00:47:01.439Z</updated>
+    <updated>2023-05-29T09:49:11.718Z</updated>
     
     
     <summary type="html">&lt;p&gt;在开发中，遇到一个需求，需要将一组数据，将连续出现的部分压缩成 n*y
@@ -234,8 +263,7 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img
-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230415233342204.png&quot;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230415233342204.png&quot;
 alt=&quot;image-20230415233342204&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230415233342204&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -253,6 +281,31 @@ alt=&quot;image-20230415233342204&quot; /&gt;
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Powershell7 实用插件集</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1N5WRFM.html</id>
+    <published>2023-04-14T16:00:00.000Z</published>
+    <updated>2023-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文列举 Powershell7 中比较好用的插件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Powershell7" scheme="https://galens.uamazing.cn/tags/Powershell7/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -279,31 +332,6 @@ FireFox），经过一段简短的学习之后，z.lua
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Powershell7 实用插件集</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1N5WRFM.html</id>
-    <published>2023-04-14T16:00:00.000Z</published>
-    <updated>2023-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文列举 Powershell7 中比较好用的插件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Powershell7" scheme="https://galens.uamazing.cn/tags/Powershell7/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -490,31 +518,6 @@ Windows 10 (microsoft.com)&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vite 配置别名</title>
-    <link href="https://galens.uamazing.cn/posts/2023/HR60E3.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/HR60E3.html</id>
-    <published>2023-03-16T16:00:00.000Z</published>
-    <updated>2023-03-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当以命令行方式运行 &lt;code&gt;vite&lt;/code&gt; 时，Vite 会自动解析 &lt;a
-href=&quot;https://cn.vitejs.dev/guide/#index-html-and-project-root&quot;&gt;项目根目录&lt;/a&gt;
-下名为 &lt;code&gt;vite.config.js&lt;/code&gt; 的文件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vite" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vite/"/>
-    
-    
-    <category term="Vite" scheme="https://galens.uamazing.cn/tags/Vite/"/>
     
   </entry>
   

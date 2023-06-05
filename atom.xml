@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-05-29T16:00:00.000Z</updated>
+  <updated>2023-06-04T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 OfficeToolPlus 安装和激活 Office</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3H07Q23.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3H07Q23.html</id>
+    <published>2023-06-04T16:00:00.000Z</published>
+    <updated>2023-06-04T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;Office Tool Plus&lt;/a&gt;
+是一个强大且实用的 Office 部署工具。&lt;/p&gt;
+&lt;p&gt;Office Tool Plus 基于 &lt;a href=&quot;https://aka.ms/ODT&quot;&gt;Office
+部署工具&lt;/a&gt; 和 &lt;a
+href=&quot;https://docs.microsoft.com/en-us/DeployOffice/vlactivation/tools-to-manage-volume-activation-of-office&quot;&gt;OSPP&lt;/a&gt;
+制作，可以很方便的部署 Office，其内置迅雷引擎可帮助您更快地下载
+Office，当然，你也可以使用 Office Tool Plus
+内置的各种小工具或者功能快捷、方便地激活和管理 Office 哦！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Office" scheme="https://galens.uamazing.cn/categories/Software/Office/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Office" scheme="https://galens.uamazing.cn/tags/Office/"/>
+    
+  </entry>
   
   <entry>
     <title>Git中 子模块的添加与删除</title>
@@ -493,31 +523,6 @@ href=&quot;https://communities.bentley.com/communities/other_communities/chinafi
     
     
     <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows10 更新升级</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1D7C89K.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1D7C89K.html</id>
-    <published>2023-03-20T16:00:00.000Z</published>
-    <updated>2023-03-20T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当需要更新 win10 或者将 win7 更新到 win10 时，可以使用 microsoft
-提供的升级更新工具来进行操作。&lt;/p&gt;
-&lt;p&gt;&lt;a
-href=&quot;https://www.microsoft.com/zh-cn/software-download/windows10&quot;&gt;地址：下载
-Windows 10 (microsoft.com)&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
-    
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
     
   </entry>
   

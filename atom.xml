@@ -17,6 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VSCode 中 Copilot 不进行提示</title>
+    <link href="https://galens.uamazing.cn/posts/2023/25NK7XP.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/25NK7XP.html</id>
+    <published>2023-06-04T16:00:00.000Z</published>
+    <updated>2023-06-04T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 vscode 中安装了 copilot 后，当编写代码时，若 copilot
+不转圈(不工作)，可能是 copilot 没有登陆成功导致的。重启</summary>
+        
+      
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
+    
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用 OfficeToolPlus 安装和激活 Office</title>
     <link href="https://galens.uamazing.cn/posts/2023/3H07Q23.html"/>
     <id>https://galens.uamazing.cn/posts/2023/3H07Q23.html</id>
@@ -206,9 +236,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
-    
     <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
     
   </entry>
   
@@ -238,29 +268,6 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>如何获取 docker 容器 IP</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Z6QFVS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Z6QFVS.html</id>
-    <published>2023-04-15T16:00:00.000Z</published>
-    <updated>2023-04-15T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录了几种获取 Docker 容器的 IP 地址的方式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>DockerCompose 搭建 MongoDB 副本集</title>
     <link href="https://galens.uamazing.cn/posts/2023/2HA8DCX.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2HA8DCX.html</id>
@@ -281,6 +288,29 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何获取 docker 容器 IP</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2Z6QFVS.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2Z6QFVS.html</id>
+    <published>2023-04-15T16:00:00.000Z</published>
+    <updated>2023-04-15T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录了几种获取 Docker 容器的 IP 地址的方式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
   </entry>
   
@@ -308,9 +338,9 @@ alt=&quot;image-20230415233342204&quot; /&gt;
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
   </entry>
   
@@ -385,28 +415,6 @@ FireFox），经过一段简短的学习之后，z.lua
   </entry>
   
   <entry>
-    <title>Js 开发常用 npm 包合集</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
-    <published>2023-04-11T16:00:00.000Z</published>
-    <updated>2023-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
-npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    
-    <category term="Javasript" scheme="https://galens.uamazing.cn/tags/Javasript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>windows11 任务栏一直转圈的解决办法</title>
     <link href="https://galens.uamazing.cn/posts/2023/2STY3BG.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2STY3BG.html</id>
@@ -425,6 +433,28 @@ npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
     
     
     <category term="Win11" scheme="https://galens.uamazing.cn/tags/Win11/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Js 开发常用 npm 包合集</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
+    <published>2023-04-11T16:00:00.000Z</published>
+    <updated>2023-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
+npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    
+    <category term="Javasript" scheme="https://galens.uamazing.cn/tags/Javasript/"/>
     
   </entry>
   
@@ -493,36 +523,6 @@ npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
     
     
     <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给元素添加自定义数据的几种方式</title>
-    <link href="https://galens.uamazing.cn/posts/2023/283FNHQ.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/283FNHQ.html</id>
-    <published>2023-03-23T16:00:00.000Z</published>
-    <updated>2023-03-23T16:00:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;参考：&lt;a
-href=&quot;https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise&quot;&gt;Addin给元素添加自定义Linkage数据&lt;</summary>
-        
-      
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="数据存储" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
     
   </entry>
   

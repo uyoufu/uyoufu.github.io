@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-04T16:00:00.000Z</updated>
+  <updated>2023-06-12T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Powershell 安装 NerdFonts 字体</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2SJBCB8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2SJBCB8.html</id>
+    <published>2023-06-12T16:00:00.000Z</published>
+    <updated>2023-06-12T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://www.nerdfonts.com/assets/img/nerd-fonts-logo.svg&quot;
+alt=&quot;image-20230613234640253&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230613234640253&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;为了支持 &lt;code&gt;oh-my-posh&lt;/code&gt; 的美化，我们需要在 powershell 中安装
+&lt;code&gt;NerdFonts&lt;/code&gt; 字体。下面将分别介绍在不同场景下 PowerShell
+的字体安装方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="PowerShell" scheme="https://galens.uamazing.cn/tags/PowerShell/"/>
+    
+    <category term="NerdFonts" scheme="https://galens.uamazing.cn/tags/NerdFonts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文理清在 vue2.x 中 compositionAPI 与 optionsAPI 混合使用要点</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3E7GWG0.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3E7GWG0.html</id>
+    <published>2023-06-07T16:00:00.000Z</published>
+    <updated>2023-06-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;由于项目基于 vue2 框架，随着项目规模的增加，mixin
+的组织方式越来越不方便维护，因此将其升级到 vue2.7，使用 composition API
+与 options API 混合开发。&lt;/p&gt;
+&lt;p&gt;本文将一步一步梳理混合开发的步骤及要点，让大家对混合开发有一个全局的掌握。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
+    
+    <category term="Vue2.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue2-x/"/>
+    
+    
+    <category term="vue2.x" scheme="https://galens.uamazing.cn/tags/vue2-x/"/>
+    
+    <category term="compositionAPI" scheme="https://galens.uamazing.cn/tags/compositionAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode 中 Copilot 不进行提示</title>
@@ -236,9 +298,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
-    
     <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
+    
+    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -415,28 +477,6 @@ FireFox），经过一段简短的学习之后，z.lua
   </entry>
   
   <entry>
-    <title>windows11 任务栏一直转圈的解决办法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2STY3BG.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2STY3BG.html</id>
-    <published>2023-04-11T16:00:00.000Z</published>
-    <updated>2023-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近一个朋友的 win11
-系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
-    
-    
-    <category term="Win11" scheme="https://galens.uamazing.cn/tags/Win11/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Js 开发常用 npm 包合集</title>
     <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
     <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
@@ -459,6 +499,28 @@ npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
   </entry>
   
   <entry>
+    <title>windows11 任务栏一直转圈的解决办法</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2STY3BG.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2STY3BG.html</id>
+    <published>2023-04-11T16:00:00.000Z</published>
+    <updated>2023-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近一个朋友的 win11
+系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
+    
+    
+    <category term="Win11" scheme="https://galens.uamazing.cn/tags/Win11/"/>
+    
+  </entry>
+  
+  <entry>
     <title>廊道高程获取异常解决方法</title>
     <link href="https://galens.uamazing.cn/posts/2023/22EQ1WQ.html"/>
     <id>https://galens.uamazing.cn/posts/2023/22EQ1WQ.html</id>
@@ -476,53 +538,6 @@ npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
     
     
     <category term="Problems" scheme="https://galens.uamazing.cn/tags/Problems/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode 中 Copilot 响应慢的解决办法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/13DV6YK.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/13DV6YK.html</id>
-    <published>2023-03-31T16:00:00.000Z</published>
-    <updated>2023-03-31T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当在 Visual Studio Code 中安装 Copilot
-插件后，发现其提示很慢，可能通过以下设置来减少响应延迟。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
-    
-    
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.NETCore设置跨域</title>
-    <link href="https://galens.uamazing.cn/posts/2023/NY7H5J.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/NY7H5J.html</id>
-    <published>2023-03-31T16:00:00.000Z</published>
-    <updated>2023-03-31T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure class=&quot;highlight c#&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; builder = WebApplication.CreateBuilder(args);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;builder.Services.AddCors(options =&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    options.AddDefaultPolicy(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        policy =&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            policy.WithOrigins(&lt;span class=&quot;string&quot;&gt;&amp;quot;http://example.com&amp;quot;&lt;/span&gt;,                           &lt;span class=&quot;string&quot;&gt;&amp;quot;http://www.contoso.com&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              .AllowAnyMethod()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            	.AllowAnyHeader();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;builder.Services.AddControllers();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = builder.Build();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseHttpsRedirection();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseStaticFiles();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseRouting();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 在静态文件后调用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseCors();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.UseAuthorization();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.MapControllers();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.Run();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="DotNetCore" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/DotNetCore/"/>
-    
-    
-    <category term=".NET Core" scheme="https://galens.uamazing.cn/tags/NET-Core/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-12T16:00:00.000Z</updated>
+  <updated>2023-06-16T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>向心而行</title>
+    <link href="https://galens.uamazing.cn/posts/2027/218KCWH.html"/>
+    <id>https://galens.uamazing.cn/posts/2027/218KCWH.html</id>
+    <published>2027-06-10T16:00:00.000Z</published>
+    <updated>2023-06-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;从益阳到武昌，再次踏上了去武汉的旅途，这是六月份第二次奔赴武汉。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/Inspiration/"/>
+    
+    <category term="2017年" scheme="https://galens.uamazing.cn/categories/Inspiration/2017%E5%B9%B4/"/>
+    
+    
+    <category term="散文" scheme="https://galens.uamazing.cn/tags/%E6%95%A3%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新建 Markdown</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3ZD64ZX.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3ZD64ZX.html</id>
+    <published>2023-06-17T15:29:02.856Z</published>
+    <updated>2023-06-17T15:29:26.976Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;uuid: be846c30-0d23-11ee-b81b-e3907563f99c uuid:
+bdd45610-0d23-11ee-b81b-e3907563f99c uuid:
+bd2662d0-0d23-11ee-b81b-e3907563f99c</summary>
+        
+      
+    
+    
+    
+    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/Inspiration/"/>
+    
+    <category term="2018年" scheme="https://galens.uamazing.cn/categories/Inspiration/2018%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python 中函数的参数</title>
+    <link href="https://galens.uamazing.cn/posts/2023/JKVCZP.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/JKVCZP.html</id>
+    <published>2023-06-13T16:00:00.000Z</published>
+    <updated>2023-06-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;函数的参数有 4 种，本文对这 4
+种进行简要列举，方便回忆，详细请阅读后文中的参考链接。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Python" scheme="https://galens.uamazing.cn/categories/Develop/Python/"/>
+    
+    <category term="Base" scheme="https://galens.uamazing.cn/categories/Develop/Python/Base/"/>
+    
+    
+    <category term="Python" scheme="https://galens.uamazing.cn/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Powershell 安装 NerdFonts 字体</title>
@@ -370,9 +442,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
   </entry>
   
@@ -400,9 +472,9 @@ alt=&quot;image-20230415233342204&quot; /&gt;
     <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
   </entry>
   
@@ -473,71 +545,6 @@ FireFox），经过一段简短的学习之后，z.lua
     
     <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Js 开发常用 npm 包合集</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
-    <published>2023-04-11T16:00:00.000Z</published>
-    <updated>2023-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
-npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    
-    <category term="Javasript" scheme="https://galens.uamazing.cn/tags/Javasript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows11 任务栏一直转圈的解决办法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2STY3BG.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2STY3BG.html</id>
-    <published>2023-04-11T16:00:00.000Z</published>
-    <updated>2023-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近一个朋友的 win11
-系统，开机进入系统后，鼠标悬停到任务栏时一直转圈，在其它位置正常，但是无法打开其它任何界面。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
-    
-    
-    <category term="Win11" scheme="https://galens.uamazing.cn/tags/Win11/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>廊道高程获取异常解决方法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/22EQ1WQ.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/22EQ1WQ.html</id>
-    <published>2023-04-02T16:00:00.000Z</published>
-    <updated>2023-04-02T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当模板导致生成的廊道高程获取异常时，可以使用如下方法解决。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Problems" scheme="https://galens.uamazing.cn/categories/Bentley/Problems/"/>
-    
-    
-    <category term="Problems" scheme="https://galens.uamazing.cn/tags/Problems/"/>
     
   </entry>
   

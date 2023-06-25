@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-17T16:00:00.000Z</updated>
+  <updated>2023-06-24T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JitsiMeet docker 部署及设置 jw 授权</title>
+    <link href="https://galens.uamazing.cn/posts/2023/9Q7N69.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/9Q7N69.html</id>
+    <published>2023-06-24T16:00:00.000Z</published>
+    <updated>2023-06-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230625233244755.png&quot;
+alt=&quot;image-20230625233244755&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230625233244755&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;jitsi 是一款开源的视屏会议软件，最大支持 75
+人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 设置代理</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3R4JKDX.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3R4JKDX.html</id>
+    <published>2023-06-20T16:00:00.000Z</published>
+    <updated>2023-06-20T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 windows 中使用 docker
+拉取镜像时，有时候国内镜像源无法使用，需要使用 docker
+官方的镜像源这时需要给 docker 设置代理来提升下载速度。&lt;/p&gt;
+&lt;p&gt;本文记录了在 docker desktop 中设置代理的方法和注意事项。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>《非暴力沟通》读书笔记</title>
@@ -376,29 +429,6 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>如何获取 docker 容器 IP</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Z6QFVS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Z6QFVS.html</id>
-    <published>2023-04-15T16:00:00.000Z</published>
-    <updated>2023-04-15T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录了几种获取 Docker 容器的 IP 地址的方式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>DockerCompose 搭建 MongoDB 副本集</title>
     <link href="https://galens.uamazing.cn/posts/2023/2HA8DCX.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2HA8DCX.html</id>
@@ -419,6 +449,29 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何获取 docker 容器 IP</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2Z6QFVS.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2Z6QFVS.html</id>
+    <published>2023-04-15T16:00:00.000Z</published>
+    <updated>2023-04-15T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录了几种获取 Docker 容器的 IP 地址的方式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
   </entry>
   
@@ -500,47 +553,6 @@ FireFox），经过一段简短的学习之后，z.lua
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MS To Learn</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1H5NPNF.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1H5NPNF.html</id>
-    <published>2023-04-13T15:31:13.397Z</published>
-    <updated>2022-05-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Bentley-learn里面全都有。都是以前公开课的视频。VBA、C#和C++的三套&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Js 开发常用 npm 包合集</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1KT0Y3S.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1KT0Y3S.html</id>
-    <published>2023-04-11T16:00:00.000Z</published>
-    <updated>2023-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文根据日常开发需求，通过对比现有各个包，总结出在个人认知范围内认为最为合适的
-npm 包。方便在后续项目中应用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    
-    <category term="Javasript" scheme="https://galens.uamazing.cn/tags/Javasript/"/>
     
   </entry>
   

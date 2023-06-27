@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-24T16:00:00.000Z</updated>
+  <updated>2023-06-26T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JitsiMeet 获取所有的房间列表</title>
+    <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当部署 jitsi-meet
+后，若与现有的系统进行集成，需要获取当前所有活动的房间列表来方便管理。此时需要通过
+prosody 提供的 lua 插件来实现。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文基于 docker 部署 jitsi-meet&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
   
   <entry>
     <title>JitsiMeet docker 部署及设置 jw 授权</title>
@@ -78,7 +134,7 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     
     
     <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://picx.zhimg.com/v2-a806ce0971eddfde09491a2fdeac92fc_720w.jpg&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;读完《非暴力沟通》，略有所得，于是整理其中的立刻心得，以便在日常使用。&lt;/p&gt;</summary>
+&lt;p&gt;读完《非暴力沟通》，略有所得，于是整理其中的阅读心得，以便在日常使用。&lt;/p&gt;</summary>
     
     
     
@@ -397,9 +453,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
-    
     <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
     
   </entry>
   
@@ -502,57 +558,6 @@ alt=&quot;image-20230415233342204&quot; /&gt;
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Powershell7 实用插件集</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1N5WRFM.html</id>
-    <published>2023-04-14T16:00:00.000Z</published>
-    <updated>2023-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文列举 Powershell7 中比较好用的插件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Powershell7" scheme="https://galens.uamazing.cn/tags/Powershell7/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>z.lua 安装</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1JSFERW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1JSFERW.html</id>
-    <published>2023-04-14T16:00:00.000Z</published>
-    <updated>2023-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;z.lua 是一个快速路径切换工具，它会跟踪你在 shell
-下访问过的路径，通过一套称为 Frecent 的机制（源自
-FireFox），经过一段简短的学习之后，z.lua
-会帮你跳转到所有匹配正则关键字的路径里 Frecent 值最高的那条路径去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/tags/Powershell/"/>
     
   </entry>
   

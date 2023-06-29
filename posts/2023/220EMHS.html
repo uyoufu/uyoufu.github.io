@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">212</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">377</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">379</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E5%B0%84-prosody-%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">映射 prosody 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-.env-%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">修改 .env 文件加载插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E6%94%BE%E8%A1%8C-7280tcp-%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.3.</span> <span class="nav-text">防火墙放行 7280&#x2F;tcp 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">nginx 反向代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E6%88%BF%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">获取当前所有房间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%88%BF%E9%97%B4%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-number">2.2.</span> <span class="nav-text">获取房间的成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BA%86%E8%A7%A3%E6%8F%92%E4%BB%B6%E6%A8%A1%E5%9D%97"><span class="nav-number">3.</span> <span class="nav-text">如何了解插件模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E5%B0%84-prosody-%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">映射 prosody 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-.env-%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">修改 .env 文件加载插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E6%94%BE%E8%A1%8C-7280tcp-%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.3.</span> <span class="nav-text">防火墙放行 7280&#x2F;tcp 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">nginx 反向代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E6%88%BF%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">获取当前所有房间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%88%BF%E9%97%B4%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-number">2.2.</span> <span class="nav-text">获取房间的成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">377</span>
+          <span class="site-state-item-count">379</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">212</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -263,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -288,8 +288,10 @@ prosody 提供的 lua 插件来实现。</p>
 </blockquote>
 <span id="more"></span>
 <p>阅读本文时请保证有 <a href="/posts/2023/9Q7N69.html">JitsiMeet docker
-部署及设置 jw 授权</a> 相关知识前提。</p>
+部署及设置 jw 授权</a> 相关知识作为前提。</p>
 <h2 id="配置">配置</h2>
+<p>使用 jitsi 提供的 <code>muc_census,muc_size</code>
+两个插件来实现，具体配置步骤如下：</p>
 <h3 id="映射-prosody-端口">映射 prosody 端口</h3>
 <p>在 prosody 配置中，添加 ports 端口映射</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ...</span></span><br><span class="line">prosody:</span><br><span class="line">  ports:</span><br><span class="line">    - <span class="number">7280</span>:<span class="number">5280</span></span><br></pre></td></tr></table></figure>
@@ -326,25 +328,6 @@ prosody 提供的 lua 插件来实现。</p>
 参数，<code>token</code> 中 payload 的 room 值必须包含查询的房间名或者为
 <code>*</code> 号</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https:/gravatar.com/avatar/abc123&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jdoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abcd:a1b2c3-d4e5f6-0abc1-23de-abcdef01fedcba&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a123-123-456-789&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jitsi&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my_client&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.jit.si&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;test,test-other,so-on&quot;</span><span class="punctuation">,</span> <span class="comment">// 或者 *</span></span><br><span class="line">    <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1500006923</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="如何了解插件模块">如何了解插件模块</h2>
-<p>可用 lua 插件位于 <a
-target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins</a>，可以查看源代码理解其功能。</p>
-<p>如果需要修改插件，可以通过以下步骤修改：</p>
-<ol type="1">
-<li><p>打开 docker，切换到【Container】，进入到 <code>prosody</code>
-容器中</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20230627230120904.png"
-alt="image-20230627230120904" />
-<figcaption aria-hidden="true">image-20230627230120904</figcaption>
-</figure></li>
-<li><p>找到【Files/prosody-plugins】，找到想要修改的插件，双击修改并保存，然后重启容器即可应用修改</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20230627230335324.png"
-alt="image-20230627230335324" />
-<figcaption aria-hidden="true">image-20230627230335324</figcaption>
-</figure></li>
-</ol>
 <h2 id="参考">参考</h2>
 <p><a
 target="_blank" rel="noopener" href="https://community.jitsi.org/t/get-the-list-of-rooms/14895">Get the
@@ -426,6 +409,9 @@ at master · jitsi/jitsi-meet · GitHub</a></p>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/2023/2QBX38K.html" rel="next" title="JitsiMeet 私有化部署获取事件回调">
+                  JitsiMeet 私有化部署获取事件回调 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -458,13 +444,13 @@ at master · jitsi/jitsi-meet · GitHub</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">671k</span>
+    <span title="站点总字数">675k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10:10</span>
+    <span title="站点阅读时长">10:14</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

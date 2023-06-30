@@ -24,14 +24,11 @@
     <updated>2023-06-29T16:00:00.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;安装方法&quot;&gt;安装方法&lt;/h2&gt;
-&lt;h2</summary>
-        
-      
+    <summary type="html">&lt;p&gt;有些时候我们可能需要预定会议，同时允许会议的成员提前加入到会议中，根据
+jitsi-meet
+的逻辑，第一个加入的成员必定为主持人(modertator)，为了保证主持人是会议的预定者，在预定者加入时，我们需要修改预订者的角色为
+moderator。&lt;/p&gt;
+&lt;p&gt;本文将介绍如何通过JWT 认证来设置用户的主持人角色。&lt;/p&gt;</summary>
     
     
     
@@ -56,6 +53,34 @@
     
     <summary type="html">&lt;p&gt;在搭建 jitsi-meet
 后，有时候希望会议中不显示房间名称，而是显示自定义的主题，可以通过以下方法实现。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 中 Prosody 插件配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
+    <published>2023-06-27T16:00:00.000Z</published>
+    <updated>2023-06-27T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
+服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
+&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -102,60 +127,6 @@
   </entry>
   
   <entry>
-    <title>JitsiMeet 中 Prosody 插件配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
-    <published>2023-06-27T16:00:00.000Z</published>
-    <updated>2023-06-27T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
-服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
-&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -182,6 +153,32 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   
@@ -566,9 +563,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
-    
     <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
+    
+    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

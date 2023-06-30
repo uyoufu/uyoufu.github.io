@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="安装方法 参考 Set role for meeting participants with API nvonahsen&#x2F;jitsi-token-moderation-plugin: Lua plugin for jitsi which determines whether users are moderator or not based on token contents (gith">
+    <meta name="description" content="有些时候我们可能需要预定会议，同时允许会议的成员提前加入到会议中，根据 jitsi-meet 的逻辑，第一个加入的成员必定为主持人(modertator)，为了保证主持人是会议的预定者，在预定者加入时，我们需要修改预订者的角色为 moderator。 本文将介绍如何通过JWT 认证来设置用户的主持人角色。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JitsiMeet 通过 JWT 配置用户的主持人角色">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/2SE43YW.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="安装方法 参考 Set role for meeting participants with API nvonahsen&#x2F;jitsi-token-moderation-plugin: Lua plugin for jitsi which determines whether users are moderator or not based on token contents (gith">
+<meta property="og:description" content="有些时候我们可能需要预定会议，同时允许会议的成员提前加入到会议中，根据 jitsi-meet 的逻辑，第一个加入的成员必定为主持人(modertator)，为了保证主持人是会议的预定者，在预定者加入时，我们需要修改预订者的角色为 moderator。 本文将介绍如何通过JWT 认证来设置用户的主持人角色。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-06-29T16:00:00.000Z">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">安装方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E6%8F%90"><span class="nav-number">1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -262,7 +262,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>175</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -279,7 +279,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="安装方法">安装方法</h2>
+    <div class="post-body" itemprop="articleBody"><p>有些时候我们可能需要预定会议，同时允许会议的成员提前加入到会议中，根据
+jitsi-meet
+的逻辑，第一个加入的成员必定为主持人(modertator)，为了保证主持人是会议的预定者，在预定者加入时，我们需要修改预订者的角色为
+moderator。</p>
+<p>本文将介绍如何通过JWT 认证来设置用户的主持人角色。</p>
+<span id="more"></span>
+<h2 id="前提">前提</h2>
+<p>该方式需要使用 JWT 认证的方式。转到 <a
+href="/posts/2023/9Q7N69.html">JitsiMeet docker 部署及设置 jw 授权</a>
+了解如果配置 JWT。</p>
+<h2 id="安装">安装</h2>
+<ul>
+<li><p>从 <a
+target="_blank" rel="noopener" href="https://github.com/nvonahsen/jitsi-token-moderation-plugin/blob/master/mod_token_moderation.lua">jitsi-token-moderation-plugin</a>
+下载该插件</p></li>
+<li><p>按 <a
+href="/posts/2023/3G2MHZ7.html#在-docker-中使用自定义的插件">在 docker
+中使用自定义的插件</a> 方法安装插件</p></li>
+</ul>
+<h2 id="使用">使用</h2>
+<p>在生成 token 时，包含 <code>moderator</code> 参数即可，例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https:/gravatar.com/avatar/abc123&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jdoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abcd:a1b2c3-d4e5f6-0abc1-23de-abcdef01fedcba&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a123-123-456-789&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_app_id&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_room&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;moderator&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;nbf&quot;</span><span class="punctuation">:</span> <span class="number">1664475176</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1695998576</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<p>moderator 的值是 boolean 值</p>
+</blockquote>
+<p>当用户使用该 token 加入房间时，就自动设置为主持人了。</p>
 <h2 id="参考">参考</h2>
 <p><a
 target="_blank" rel="noopener" href="https://community.jitsi.org/t/set-role-for-meeting-participants-with-api/72642">Set
@@ -389,13 +415,13 @@ based on token contents (github.com)</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">676k</span>
+    <span title="站点总字数">677k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10:15</span>
+    <span title="站点阅读时长">10:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

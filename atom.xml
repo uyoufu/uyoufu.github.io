@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-27T16:00:00.000Z</updated>
+  <updated>2023-06-29T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,19 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JitsiMeet 中 Prosody 插件配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
-    <published>2023-06-27T16:00:00.000Z</published>
-    <updated>2023-06-27T16:00:00.000Z</updated>
+    <title>JitsiMeet 通过 JWT 配置用户的主持人角色</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2SE43YW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2SE43YW.html</id>
+    <published>2023-06-29T16:00:00.000Z</published>
+    <updated>2023-06-29T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
-服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
-&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装方法&quot;&gt;安装方法&lt;/h2&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 为房间添加描述</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3JD9V8X.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3JD9V8X.html</id>
+    <published>2023-06-28T16:00:00.000Z</published>
+    <updated>2023-06-28T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在搭建 jitsi-meet
+后，有时候希望会议中不显示房间名称，而是显示自定义的主题，可以通过以下方法实现。&lt;/p&gt;</summary>
     
     
     
@@ -76,18 +102,18 @@
   </entry>
   
   <entry>
-    <title>JitsiMeet 获取所有的房间列表</title>
-    <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
+    <title>JitsiMeet 中 Prosody 插件配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
+    <published>2023-06-27T16:00:00.000Z</published>
+    <updated>2023-06-27T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;当部署 jitsi-meet
-后，若与现有的系统进行集成，需要获取当前所有活动的房间列表来方便管理。此时需要通过
-prosody 提供的 lua 插件来实现。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
+服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
+&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 部署 jitsi-meet&lt;/p&gt;
+&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -99,9 +125,7 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
     
   </entry>
   
@@ -128,6 +152,36 @@ href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 获取所有的房间列表</title>
+    <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当部署 jitsi-meet
+后，若与现有的系统进行集成，需要获取当前所有活动的房间列表来方便管理。此时需要通过
+prosody 提供的 lua 插件来实现。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文基于 docker 部署 jitsi-meet&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -512,57 +566,9 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
-    
     <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Redis6 及以后版本安装为 windows 服务</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2N7QY7C.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2N7QY7C.html</id>
-    <published>2023-04-16T16:00:00.000Z</published>
-    <updated>2023-04-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;网上安装 redis 为 windows 服务的教程大多基于 redis3
-编写的，然而这并不适用于 redis 更高的版本。redis
-高版本安装为服务应使用如下方法：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Redis" scheme="https://galens.uamazing.cn/categories/Software/Redis/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Redis" scheme="https://galens.uamazing.cn/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何获取 docker 容器 IP</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Z6QFVS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Z6QFVS.html</id>
-    <published>2023-04-15T16:00:00.000Z</published>
-    <updated>2023-04-15T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录了几种获取 Docker 容器的 IP 地址的方式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
     
   </entry>
   

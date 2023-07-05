@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-06-29T16:00:00.000Z</updated>
+  <updated>2023-07-04T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webview2 部分终端打开是白板状态</title>
+    <link href="https://galens.uamazing.cn/posts/2023/RCK0T6.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/RCK0T6.html</id>
+    <published>2023-07-03T16:00:00.000Z</published>
+    <updated>2023-07-04T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 WPF 中使用 &lt;code&gt;webview2&lt;/code&gt;
+组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;webview2 环境缺失或版本不对&lt;/li&gt;
+&lt;li&gt;可能安装了某个软件，其注入 dll 到 webview2 失败&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以通过以下步骤来详细排查&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    <category term="Webview2" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Webview2/"/>
+    
+    
+    <category term="Webview2" scheme="https://galens.uamazing.cn/tags/Webview2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mongodb 数据库备份与还原</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2ZVSC2C.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2ZVSC2C.html</id>
+    <published>2023-07-02T16:00:00.000Z</published>
+    <updated>2023-07-02T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;MongoDB 中使用 &lt;code&gt;mongodump&lt;/code&gt; 来对整个数据库进行备份，使用
+&lt;code&gt;mongorestore&lt;/code&gt; 来将数据从备份中还原。&lt;/p&gt;
+&lt;p&gt;本文介绍一种常用的备份还原的参数设置，可以在实际工作中直接使用&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
+    
+    <category term="Mongodb" scheme="https://galens.uamazing.cn/categories/Develop/Database/Mongodb/"/>
+    
+    
+    <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
+    
+  </entry>
   
   <entry>
     <title>JitsiMeet 通过 JWT 配置用户的主持人角色</title>
@@ -378,7 +432,7 @@ alt=&quot;image-20230613234640253&quot; /&gt;
     <link href="https://galens.uamazing.cn/posts/2023/3H07Q23.html"/>
     <id>https://galens.uamazing.cn/posts/2023/3H07Q23.html</id>
     <published>2023-06-04T16:00:00.000Z</published>
-    <updated>2023-06-04T16:00:00.000Z</updated>
+    <updated>2023-07-02T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;Office Tool Plus&lt;/a&gt;
@@ -388,7 +442,11 @@ alt=&quot;image-20230613234640253&quot; /&gt;
 href=&quot;https://docs.microsoft.com/en-us/DeployOffice/vlactivation/tools-to-manage-volume-activation-of-office&quot;&gt;OSPP&lt;/a&gt;
 制作，可以很方便的部署 Office，其内置迅雷引擎可帮助您更快地下载
 Office，当然，你也可以使用 Office Tool Plus
-内置的各种小工具或者功能快捷、方便地激活和管理 Office 哦！&lt;/p&gt;</summary>
+内置的各种小工具或者功能快捷、方便地激活和管理 Office 哦！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;系统要求：Windows 10 或更高版本，不支持其他操作系统（例如 Linux 或
+macOS）。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -516,56 +574,6 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     <category term="Algorithm" scheme="https://galens.uamazing.cn/tags/Algorithm/"/>
     
     <category term="数据处理" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从字意上理解 CSS 中的 justify 和 align</title>
-    <link href="https://galens.uamazing.cn/posts/2023/17Q11CW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/17Q11CW.html</id>
-    <published>2023-04-19T16:00:00.000Z</published>
-    <updated>2023-04-19T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在进行 CSS 样式编写时，经常会遇到 &lt;code&gt;align&lt;/code&gt; 和
-&lt;code&gt;justify&lt;/code&gt; 这两个单词，比如：&lt;code&gt;justify-content&lt;/code&gt;
-、&lt;code&gt;justify-items&lt;/code&gt;、&lt;code&gt;align-content&lt;/code&gt;、
-&lt;code&gt;align-items&lt;/code&gt; 等。&lt;/p&gt;
-&lt;p&gt;在开发中，这个两个词意思相近，总是记不牢它们的用法，因此本文从其字面意思上梳理这两个单词的区别，方便记忆。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
-    
-    
-    <category term="[object Object]" scheme="https://galens.uamazing.cn/tags/object-Object/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库中实现数据继承的设计方法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2608835.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2608835.html</id>
-    <published>2023-04-19T16:00:00.000Z</published>
-    <updated>2023-04-19T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;遇到这么一个场景：需要根据分类树层级，使每个分类中定义的数据（以下简称：变量）可以像继承一样传递给子分类，而每个分类又可以单独对继承的变量进行设置，有的设置是专属的，有的设置又可以继续继承。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
-    
-    <category term="数据库设计" scheme="https://galens.uamazing.cn/categories/Develop/Database/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="Database" scheme="https://galens.uamazing.cn/tags/Database/"/>
-    
-    <category term="数据库设计" scheme="https://galens.uamazing.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

@@ -17,9 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>webview2 部分终端打开是白板状态</title>
-    <link href="https://galens.uamazing.cn/posts/2023/RCK0T6.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/RCK0T6.html</id>
+    <title>webview2 打开网页时一片空白</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1Q13G3F.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1Q13G3F.html</id>
     <published>2023-07-03T16:00:00.000Z</published>
     <updated>2023-07-04T16:00:00.000Z</updated>
     
@@ -30,7 +30,7 @@
 &lt;li&gt;webview2 环境缺失或版本不对&lt;/li&gt;
 &lt;li&gt;可能安装了某个软件，其注入 dll 到 webview2 失败&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;可以通过以下步骤来详细排查&lt;/p&gt;</summary>
+&lt;p&gt;可以通过以下步骤来详细排查：&lt;/p&gt;</summary>
     
     
     
@@ -547,7 +547,7 @@ Table 增加虚拟滚动的功能。&lt;/p&gt;
     
     <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
     
-    <category term="Qusar" scheme="https://galens.uamazing.cn/tags/Qusar/"/>
+    <category term="Quasar" scheme="https://galens.uamazing.cn/tags/Quasar/"/>
     
   </entry>
   

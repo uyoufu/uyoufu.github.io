@@ -27,8 +27,9 @@
 <meta property="og:description" content="由于项目基于 vue2 框架，随着项目规模的增加，mixin 的组织方式越来越不方便维护，因此将其升级到 vue2.7，使用 composition API 与 options API 混合开发。 本文将一步一步梳理混合开发的步骤及要点，让大家对混合开发有一个全局的掌握。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-10T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
+<meta property="article:tag" content="NexT">
 <meta property="article:tag" content="vue2.x">
 <meta property="article:tag" content="compositionAPI">
 <meta name="twitter:card" content="summary">
@@ -91,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">205</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">383</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">207</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">386</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +143,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E4%B8%8E%E7%8E%B0%E6%9C%89%E4%BB%A3%E7%A0%81%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91"><span class="nav-number">1.</span> <span class="nav-text">怎么与现有代码混合开发</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E5%90%8E%E7%A7%BB%E6%A4%8D%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.</span> <span class="nav-text">向后移植的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%A2%AB%E5%AF%BC%E5%87%BA%E7%9A%84-api-%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.</span> <span class="nav-text">关于被导出的 API 的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E-vue3-%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="nav-number">3.</span> <span class="nav-text">与 Vue3 的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue2.x-%E5%8D%87%E7%BA%A7%E4%B8%BA-vue2.7"><span class="nav-number">4.</span> <span class="nav-text">vue2.x 升级为 vue2.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8vue2.x%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8-compositionapi"><span class="nav-number">5.</span> <span class="nav-text">如何在vue2.x项目中使用
+compositionAPI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">5.1.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E9%9C%80%E7%9F%A5"><span class="nav-number">5.2.</span> <span class="nav-text">开发需知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ref-%E4%B8%8E-reactive"><span class="nav-number">5.3.</span> <span class="nav-text">ref 与 reactive</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">383</span>
+          <span class="site-state-item-count">386</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +170,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">205</span>
+        <span class="site-state-item-count">207</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -243,6 +245,13 @@
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-11 00:00:00" itemprop="dateModified" datetime="2023-07-11T00:00:00+08:00">2023-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
@@ -270,14 +279,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>136</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -292,7 +301,115 @@
 与 options API 混合开发。</p>
 <p>本文将一步一步梳理混合开发的步骤及要点，让大家对混合开发有一个全局的掌握。</p>
 <span id="more"></span>
-<h2 id="怎么与现有代码混合开发">怎么与现有代码混合开发</h2>
+<h2 id="向后移植的功能">向后移植的功能</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://vuejs.org/guide/extras/composition-api-faq.html">Composition
+API</a></li>
+<li>SFC <a
+target="_blank" rel="noopener" href="https://vuejs.org/api/sfc-script-setup.html"><code>&lt;script setup&gt;</code></a></li>
+<li>SFC <a
+target="_blank" rel="noopener" href="https://vuejs.org/api/sfc-css-features.html#v-bind-in-css">CSS
+v-bind</a></li>
+<li><code>defineComponent()</code>：具有改进的类型推断（与Vue.extend相比）</li>
+<li><code>h()、useSlot()、useAttrs()、useCssModules()</code></li>
+<li><code>set()、del()</code>和 <code>nextTick()</code> 在 ESM
+构建中也作为命名导出提供</li>
+<li>支持
+<code>emits</code>，但仅用作类型检查用途（不影响运行时行为）。</li>
+<li>Vue2.7 还支持在模板表达式中使用 ESNext 语法</li>
+<li>在模版里面用可选链，如<code>formData?.userInfo?.userId</code></li>
+</ol>
+<h2 id="关于被导出的-api-的注意事项">关于被导出的 API 的注意事项</h2>
+<ul>
+<li><p>在 ESM 构建版本中，这些 API 会 (且仅会) 被导出为具名 API：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue, &#123; ref &#125; from &quot;vue&quot;;</span><br><span class="line"></span><br><span class="line">Vue.ref; // undefined，请换为使用具名导出的 API</span><br></pre></td></tr></table></figure></li>
+<li><p>在 UMD 和 CJS 构建版本里，这些 API 会被导出为全局对象
+<code>Vue</code> 的属性。</p></li>
+<li><p>当调用外置的 CJS 版本进行打包时，打包工具应该有能力处理与 ESM
+模块的互操作 (ESM interop)。</p></li>
+</ul>
+<h2 id="与-vue3-的差异">与 Vue3 的差异</h2>
+<p>Composition API 使用 Vue2 的基于 getter/setter
+的响应式系统进行反向移植，以确保浏览器兼容性。这意味着与 Vue3 的基于
+proxy 的系统存在一些重要的行为差异：</p>
+<ul>
+<li>所有 Vue2 更改检测警告仍然适用；</li>
+<li>reactive()、ref() 和 shallowReactive()
+将直接转换原始对象而不是创建代理：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html复制代码// 在2.7中可行，在3.x中不可行</span><br><span class="line">reactive(foo) === foo</span><br></pre></td></tr></table></figure>
+<ul>
+<li>readonly()
+确实创建了一个单独的对象，但它不会跟踪新添加的属性并且不适用于数组；</li>
+<li>避免在 reactive() 中使用数组作为 root
+值，因为如果没有属性访问，则不会跟踪数组的变化（这将导致警告）；</li>
+<li>Reactivity APIs 忽略带有 symbol 键的属性。</li>
+</ul>
+<p>此外，以下功能是未移植的：</p>
+<ul>
+<li>❌ createApp()（Vue2 没有独立的应用范围）</li>
+<li>❌ 在 <code>&lt;script setup&gt;</code> 顶层使用 <code>await</code>
+(Vue 2 不支持异步组件初始化)</li>
+<li>❌ 模板表达式中的 TypeScript 语法（与 Vue2 解析器不兼容）</li>
+<li>❌ Reactivity transform（仍处于试验阶段）</li>
+<li>❌ options 组件不支持 expose
+选项（但在<code>&lt;script setup&gt;</code> 中支持
+<code>defineExpose()</code> )</li>
+</ul>
+<h2 id="vue2.x-升级为-vue2.7">vue2.x 升级为 vue2.7</h2>
+<p>请查看官方升级文档 <a
+target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#升级指南">升级指南</a></p>
+<h2 id="如何在vue2.x项目中使用-compositionapi">如何在vue2.x项目中使用
+compositionAPI</h2>
+<h3 id="适用场景">适用场景</h3>
+<p>当将 vue2.x 升级到 vue2.7 后，有时候需要维护原来的组件，分 3
+种情况讨论：</p>
+<ol type="1">
+<li>若修改原来的功能，建议直接使用选项式 API 的方式开发，因为在
+<code>setup</code> 中无法获取到 <code>this</code>，无法调用一些现有的
+data、methods 等等。</li>
+<li>若新增加功能且与现有功能不耦合，可以直接添加 <code>setup()</code>
+函数，在该函数中增加新功能逻辑。当然，若有多个功能，可以将功能拆分成多个文件，然后在
+<code>setup()</code> 函数中来聚合</li>
+<li>若开发新组件，可以直接使用 <code>&lt;script setup&gt;</code>
+的方式</li>
+</ol>
+<h3 id="开发需知">开发需知</h3>
+<ol type="1">
+<li><p><code>reactive()、ref()、shallowReactive()</code>
+将直接转换原始对象而不是创建代理</p></li>
+<li><p>使用组件时，不要使用自闭合标签，应
+<code>&lt;component&gt;&lt;/component&gt;</code></p></li>
+<li><p>对于数组，使用 <code>ref</code>，不要使用
+<code>reactive</code></p></li>
+</ol>
+<h3 id="ref-与-reactive"><code>ref</code> 与 <code>reactive</code></h3>
+<ul>
+<li><code>reactive</code> 一般用于对象/数组类型的数据，都不需要使用
+<code>.value</code>；</li>
+<li><code>ref</code>一般用于基础数据类型的数据，在 JS
+中读取和修改时，需要使用
+<code>.value</code>，在模版中使用时则不需要；</li>
+<li><code>reactive</code> 可以修改深层属性值，并保持响应；</li>
+<li><code>reactive</code> 返回值和源对象不同；</li>
+<li><code>reactive</code>的属性值可以是 <code>ref</code>值；</li>
+<li><code>ref</code> 本质也是
+<code>reactive</code>，<code>ref(obj)</code>等价于
+<code>reactive(&#123;value: obj&#125;)</code>。</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此报以诚挚谢意！</p>
+<ol type="1">
+<li><p><a target="_blank" rel="noopener" href="https://blog.vuejs.org/posts/vue-2-7-naruto">Vue 2.7
+"Naruto" Released | The Vue Point (vuejs.org)</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html">迁移至
+Vue 2.7 — Vue.js (vuejs.org)</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://juejin.cn/post/7158362697803759624">Vue2.7正式发布，终于可以在Vue2项目中使用Vue3的特性了
+- 掘金 (juejin.cn)</a></p></li>
+</ol>
 
     </div>
 
@@ -349,6 +466,7 @@
 </div>
 
           <div class="post-tags">
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
               <a href="/tags/vue2-x/" rel="tag"><i class="fa fa-tag"></i> vue2.x</a>
               <a href="/tags/compositionAPI/" rel="tag"><i class="fa fa-tag"></i> compositionAPI</a>
           </div>
@@ -397,13 +515,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">684k</span>
+    <span title="站点总字数">689k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10:22</span>
+    <span title="站点阅读时长">10:26</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -81,7 +81,13 @@ alt=&quot;async-await&quot; /&gt;
     <updated>2023-07-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;今天是周五，如往常一样，是徒步回家的一天。出发的时候，几滴小雨已经开始孤零零地落着，我完全忽视了它们，开始循着回家的路，在小道上“噔噔噔”地小跑起来。&lt;/p&gt;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230717000711448.png&quot;
+alt=&quot;image-20230717000711448&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717000711448&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;今天是周五，如往常一样，是徒步回家的一天。出发的时候，几滴小雨已经开始孤零零地落着，我没理会它们，循着回家的路，就在小道上“噔噔噔”地小跑起来。&lt;/p&gt;
+&lt;p&gt;跑出几公里后，在一个路口处，刚好遇到了红灯，就停了下来，霎那间，我觉自己仿佛一台过载地的发动机，从内到外都是如火地滚烫，不断地吭哧吭哧地向外冒着热气，空气一吸进肺里，就变得焦灼起来。突然间，一阵花香飘来，香气中带有一丝齁甜，浓郁而沁人心脾。&lt;/p&gt;</summary>
     
     
     
@@ -261,32 +267,6 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -313,6 +293,32 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   

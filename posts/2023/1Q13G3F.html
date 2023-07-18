@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">207</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">387</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">389</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,7 @@ process failed ExitCode:-1073740760</span></a></li></ol></li><li class="nav-item
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">387</span>
+          <span class="site-state-item-count">389</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +168,7 @@ process failed ExitCode:-1073740760</span></a></li></ol></li><li class="nav-item
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">207</span>
+        <span class="site-state-item-count">208</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -273,7 +273,7 @@ process failed ExitCode:-1073740760</span></a></li></ol></li><li class="nav-item
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.7k</span>
+      <span>4.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -324,19 +324,23 @@ dll 属于哪个程序，可以对该程序进行修复或者卸载</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">#</span> 例如出现如下错误，说明是 Ldxghijt64.dll 注入失败导致的</span><br><span class="line"></span><br><span class="line">Code Integrity determined that a process (<span class="keyword">\Device</span><span class="keyword">\HarddiskVolume</span>5<span class="keyword">\Program</span> Files (x86)<span class="keyword">\Microsoft</span><span class="keyword">\EdgeWebView</span><span class="keyword">\Application</span><span class="keyword">\1</span>14.0.1823.67<span class="keyword">\msedgewebview</span>2.exe) attempted to load <span class="keyword">\Device</span><span class="keyword">\HarddiskVolume</span>5<span class="keyword">\Windows</span><span class="keyword">\System</span>32<span class="keyword">\Ldxghijt</span>64.dll that did not meet the Microsoft signing level requirements.</span><br></pre></td></tr></table></figure></li>
 <li><p>方法 2：添加环境变量
 <code>WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS =--disable-features=RendererCodeIntegrity</code>
-来取消第三方 dll 注入</p></li>
+来取消第三方 dll 注入</p>
+<p>命令行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 powershell 中使用</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS&#x27;</span>, <span class="string">&#x27;--disable-features=RendererCodeIntegrity`&#x27;</span> , <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="参考">参考</h2>
 <ol type="1">
-<li><p><a
+<li><a
 target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/2761#issuecomment-1240969009">WebView2_Child
-process failed ExitCode:-1073740760</a></p></li>
-<li><p><a
+process failed ExitCode:-1073740760</a></li>
+<li><a
 target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3191">Why
 webview2 is displayed as a white screen, but other computers can use the
-same application</a></p></li>
-<li><p>https://github.com/MicrosoftEdge/WebView2Feedback/issues/349#issuecomment-1250870240</p></li>
-<li><p>https://support.templafy.com/hc/en-us/articles/10510746266525-How-to-repair-Webview2-Runtime</p></li>
+same application</a></li>
+<li>https://github.com/MicrosoftEdge/WebView2Feedback/issues/349#issuecomment-1250870240</li>
+<li>https://support.templafy.com/hc/en-us/articles/10510746266525-How-to-repair-Webview2-Runtime</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/569337543">ldxghijt64.dll
+是个什么东西？ - 知乎 (zhihu.com)</a></li>
 </ol>
 
     </div>
@@ -441,13 +445,13 @@ same application</a></p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">713k</span>
+    <span title="站点总字数">716k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10:48</span>
+    <span title="站点阅读时长">10:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

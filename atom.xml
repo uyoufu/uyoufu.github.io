@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-07-13T16:00:00.000Z</updated>
+  <updated>2023-07-17T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非备案域名使用80和443端口进行访问</title>
+    <link href="https://galens.uamazing.cn/posts/2023/GKK56K.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/GKK56K.html</id>
+    <published>2023-07-17T16:00:00.000Z</published>
+    <updated>2023-07-17T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/80ToAny.png&quot;
+alt=&quot;80ToAny&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;80ToAny&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要
+125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁
+80 8080 443 8443
+等这些常用的端口，导致我们不能使用http的默认端口，在使用域名进行访问时，必须要指定端口，这有点不够优雅。&lt;/p&gt;
+&lt;p&gt;本文将提供一个不加端口访问自建服务器资源的方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
+    
+    
+    <category term="个人博客" scheme="https://galens.uamazing.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 中对跨域的 iframe 进行缓存</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1EARQ0T.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1EARQ0T.html</id>
+    <published>2023-07-17T16:00:00.000Z</published>
+    <updated>2023-07-17T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 vue 应用程序中，有时候需要使用 &lt;code&gt;iframe&lt;/code&gt;
+嵌入其它网站的内容，并希望可以缓存 &lt;code&gt;iframe&lt;/code&gt;
+的状态。但如果被链接的源(origin) 与当前的 origin
+不同时，&lt;code&gt;iframe&lt;/code&gt;
+就会发生跨域加载，这个时候，就不能在当前程序中获取 iframe 中的内容，包括
+src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe
+时对状态进行恢复。&lt;/p&gt;
+&lt;p&gt;可以按以下方法来实现对 iframe 的缓存：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
+    
+    <category term="VueBasic" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/VueBasic/"/>
+    
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
+    
+    <category term="iframe" scheme="https://galens.uamazing.cn/tags/iframe/"/>
+    
+  </entry>
   
   <entry>
     <title>vue3 如何在 setup 中调用异步方法</title>
@@ -272,6 +336,32 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -298,32 +388,6 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   
@@ -517,69 +581,6 @@ alt=&quot;image-20230613234640253&quot; /&gt;
     <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
     
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 OfficeToolPlus 安装和激活 Office</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3H07Q23.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3H07Q23.html</id>
-    <published>2023-06-04T16:00:00.000Z</published>
-    <updated>2023-07-02T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;Office Tool Plus&lt;/a&gt;
-是一个强大且实用的 Office 部署工具。&lt;/p&gt;
-&lt;p&gt;Office Tool Plus 基于 &lt;a href=&quot;https://aka.ms/ODT&quot;&gt;Office
-部署工具&lt;/a&gt; 和 &lt;a
-href=&quot;https://docs.microsoft.com/en-us/DeployOffice/vlactivation/tools-to-manage-volume-activation-of-office&quot;&gt;OSPP&lt;/a&gt;
-制作，可以很方便的部署 Office，其内置迅雷引擎可帮助您更快地下载
-Office，当然，你也可以使用 Office Tool Plus
-内置的各种小工具或者功能快捷、方便地激活和管理 Office 哦！&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;系统要求：Windows 10 或更高版本，不支持其他操作系统（例如 Linux 或
-macOS）。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Office" scheme="https://galens.uamazing.cn/categories/Software/Office/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Office" scheme="https://galens.uamazing.cn/tags/Office/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git中 子模块的添加与删除</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Y0295C.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Y0295C.html</id>
-    <published>2023-05-29T16:00:00.000Z</published>
-    <updated>2023-05-29T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在使用 hexo
-搭建博客时，往往需要添加主题来美化博客。这个时候，通常在自己的主仓库中使用子模块来进行维护。&lt;/p&gt;
-&lt;p&gt;使用子模块，既能够保持主仓库与主题的联结，又不会增加主仓库的体积，需要更新时，只需要在子模块中更新一下就可以了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Git" scheme="https://galens.uamazing.cn/categories/Software/Git/"/>
-    
-    
-    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
-    
-    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Git" scheme="https://galens.uamazing.cn/tags/Git/"/>
     
   </entry>
   

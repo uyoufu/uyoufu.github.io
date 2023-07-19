@@ -24,11 +24,7 @@
     <updated>2023-07-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/80ToAny.png&quot;
-alt=&quot;80ToAny&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;80ToAny&lt;/figcaption&gt;
-&lt;/figure&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要
 125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁
 80 8080 443 8443

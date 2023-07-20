@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-07-17T16:00:00.000Z</updated>
+  <updated>2023-07-19T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蚕豆病日常生活注意事项</title>
+    <link href="https://galens.uamazing.cn/posts/2023/22G3VVV.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/22G3VVV.html</id>
+    <published>2023-07-19T16:00:00.000Z</published>
+    <updated>2023-07-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;什么是蚕豆病&quot;&gt;什么是蚕豆病&lt;/h2&gt;
+&lt;p&gt;蚕豆病是一种遗传性疾病，体内缺乏6-磷酸葡萄糖脱氢酶（G-6-PD），孩子食用蚕豆后引发红细胞破裂，血红蛋白经过尿液被排出体外，导致重度贫血，尿出酱油尿，精神不济，如果不及时治疗，可致昏迷、惊厥和急性肾衰竭，孩子甚至有生命危险，所以发病后应及时就医诊治。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ChildCare" scheme="https://galens.uamazing.cn/categories/ChildCare/"/>
+    
+    
+    <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>非备案域名使用80和443端口进行访问</title>
@@ -332,32 +352,6 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -384,6 +378,32 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   
@@ -547,36 +567,6 @@ alt=&quot;image-20230613234640253&quot; /&gt;
     <category term="vue2.x" scheme="https://galens.uamazing.cn/tags/vue2-x/"/>
     
     <category term="compositionAPI" scheme="https://galens.uamazing.cn/tags/compositionAPI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode 中 Copilot 不进行提示</title>
-    <link href="https://galens.uamazing.cn/posts/2023/25NK7XP.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/25NK7XP.html</id>
-    <published>2023-06-04T16:00:00.000Z</published>
-    <updated>2023-06-04T16:00:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在 vscode 中安装了 copilot 后，当编写代码时，若 copilot
-不转圈(不工作)，可能是 copilot 没有登陆成功导致的。重启</summary>
-        
-      
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
-    
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
   </entry>
   

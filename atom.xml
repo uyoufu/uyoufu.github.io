@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-07-19T16:00:00.000Z</updated>
+  <updated>2023-07-26T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 中检测 Webview2 是否安装</title>
+    <link href="https://galens.uamazing.cn/posts/2023/210TYTX.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/210TYTX.html</id>
+    <published>2023-07-26T16:00:00.000Z</published>
+    <updated>2023-07-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 C# 中主要有两种方式来检测 Webview2 是否已经安装：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;p&gt;通过
+&lt;code&gt;CoreWebView2Environment.GetAvailableBrowserVersionString()&lt;/code&gt;
+返回值来判断&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过注册表值来判断&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这种方式不是很稳定，有时候用户的注册会缺失&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    <category term="Webview2" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Webview2/"/>
+    
+    
+    <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
+    
+    <category term="webview2" scheme="https://galens.uamazing.cn/tags/webview2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>了解儿童生长标准，呵护宝宝健康成长</title>
+    <link href="https://galens.uamazing.cn/posts/2023/NWS6ZT.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/NWS6ZT.html</id>
+    <published>2023-07-24T16:00:00.000Z</published>
+    <updated>2023-07-24T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值，
+了解孩子身心发展的现状是否在正常范围内，为孩子的茁壮健康成长保驾护航。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ChildCare" scheme="https://galens.uamazing.cn/categories/ChildCare/"/>
+    
+    
+    <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>一文带你全面了解蚕豆病</title>
@@ -212,6 +273,8 @@ alt=&quot;image-20230717000711448&quot; /&gt;
     
     <category term="Webview2" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Webview2/"/>
     
+    
+    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
     
     <category term="Webview2" scheme="https://galens.uamazing.cn/tags/Webview2/"/>
     
@@ -504,70 +567,6 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     
     
     <category term="Python" scheme="https://galens.uamazing.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Powershell 安装 NerdFonts 字体</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2SJBCB8.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2SJBCB8.html</id>
-    <published>2023-06-12T16:00:00.000Z</published>
-    <updated>2023-06-12T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://www.nerdfonts.com/assets/img/nerd-fonts-logo.svg&quot;
-alt=&quot;image-20230613234640253&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230613234640253&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;为了支持 &lt;code&gt;oh-my-posh&lt;/code&gt; 的美化，我们需要在 powershell 中安装
-&lt;code&gt;NerdFonts&lt;/code&gt; 字体。下面将分别介绍在不同场景下 PowerShell
-的字体安装方法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Powershell" scheme="https://galens.uamazing.cn/categories/Software/Powershell/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="PowerShell" scheme="https://galens.uamazing.cn/tags/PowerShell/"/>
-    
-    <category term="NerdFonts" scheme="https://galens.uamazing.cn/tags/NerdFonts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文理清在 vue2.x 中 compositionAPI 与 optionsAPI 混合使用要点</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3E7GWG0.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3E7GWG0.html</id>
-    <published>2023-06-07T16:00:00.000Z</published>
-    <updated>2023-07-10T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;由于项目基于 vue2 框架，随着项目规模的增加，mixin
-的组织方式越来越不方便维护，因此将其升级到 vue2.7，使用 composition API
-与 options API 混合开发。&lt;/p&gt;
-&lt;p&gt;本文将一步一步梳理混合开发的步骤及要点，让大家对混合开发有一个全局的掌握。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="Vue2.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue2-x/"/>
-    
-    
-    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
-    
-    <category term="vue2.x" scheme="https://galens.uamazing.cn/tags/vue2-x/"/>
-    
-    <category term="compositionAPI" scheme="https://galens.uamazing.cn/tags/compositionAPI/"/>
     
   </entry>
   

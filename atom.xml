@@ -17,6 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>flex 布局中在 flex-grow 元素里显示滚动条</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3FEED8Y.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3FEED8Y.html</id>
+    <published>2023-07-26T16:00:00.000Z</published>
+    <updated>2023-07-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230727230710866.png&quot;
+alt=&quot;image-20230727230710866&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230710866&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;如何实现：容器的高度随内容增加而增高，使某个元素占满剩余空间，当达到最大值时，若该元素溢出后则显示滚动条。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
+    
+    <category term="实例" scheme="https://galens.uamazing.cn/categories/Develop/CSS/%E5%AE%9E%E4%BE%8B/"/>
+    
+    
+    <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 中检测 Webview2 是否安装</title>
     <link href="https://galens.uamazing.cn/posts/2023/210TYTX.html"/>
     <id>https://galens.uamazing.cn/posts/2023/210TYTX.html</id>
@@ -58,7 +86,12 @@
     <updated>2023-07-24T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值，
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230727230001381.png&quot;
+alt=&quot;image-20230727230001381&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230001381&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值，
 了解孩子身心发展的现状是否在正常范围内，为孩子的茁壮健康成长保驾护航。&lt;/p&gt;</summary>
     
     
@@ -409,6 +442,32 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -435,32 +494,6 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   
@@ -536,30 +569,6 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     
     
     <category term="读书笔记" scheme="https://galens.uamazing.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 中函数的参数</title>
-    <link href="https://galens.uamazing.cn/posts/2023/JKVCZP.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/JKVCZP.html</id>
-    <published>2023-06-13T16:00:00.000Z</published>
-    <updated>2023-06-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;函数的参数有 4 种，本文对这 4
-种进行简要列举，方便回忆，详细请阅读后文中的参考链接。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Python" scheme="https://galens.uamazing.cn/categories/Develop/Python/"/>
-    
-    <category term="Base" scheme="https://galens.uamazing.cn/categories/Develop/Python/Base/"/>
-    
-    
-    <category term="Python" scheme="https://galens.uamazing.cn/tags/Python/"/>
     
   </entry>
   

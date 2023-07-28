@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-07-27T16:00:00.000Z</updated>
+  <updated>2023-07-26T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1NC047X.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1NC047X.html</id>
+    <title>父元素仅设置max-height，子元素高度百分之100，溢出后如何显示滚动条</title>
+    <link href="https://galens.uamazing.cn/posts/2023/27DHP6N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/27DHP6N.html</id>
     <published>2023-07-27T16:00:00.000Z</published>
-    <updated>2023-07-27T16:00:00.000Z</updated>
+    <updated>2023-07-26T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍了如何实现：&lt;/p&gt;
@@ -410,6 +410,34 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>JitsiMeet 中 Prosody 插件配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
+    <published>2023-06-27T16:00:00.000Z</published>
+    <updated>2023-06-27T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
+服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
+&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JitsiMeet 私有化部署获取事件回调</title>
     <link href="https://galens.uamazing.cn/posts/2023/2QBX38K.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2QBX38K.html</id>
@@ -441,60 +469,6 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>JitsiMeet 中 Prosody 插件配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
-    <published>2023-06-27T16:00:00.000Z</published>
-    <updated>2023-06-27T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
-服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
-&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JitsiMeet 获取所有的房间列表</title>
     <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
     <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
@@ -521,6 +495,32 @@ prosody 提供的 lua 插件来实现。&lt;/p&gt;
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 进行压力测试</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
+    <published>2023-06-26T16:00:00.000Z</published>
+    <updated>2023-06-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
+后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
+href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
+工具来进行测试评估。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   

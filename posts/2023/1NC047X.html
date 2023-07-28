@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="2017 年的年假还没过完，便买了车票奔向项目部，因为年初的原因，直达的票很难买，我便取了个折中的办法，从黔江坐汽车，经过秀山，再途径张家界，最后坐火车到项目部。">
+    <meta name="description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="张家界游记">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2018/DRBTMR.html">
+<meta property="og:title" content="父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1NC047X.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="2017 年的年假还没过完，便买了车票奔向项目部，因为年初的原因，直达的票很难买，我便取了个折中的办法，从黔江坐汽车，经过秀山，再途径张家界，最后坐火车到项目部。">
+<meta property="og:description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-06-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-16T16:00:00.000Z">
+<meta property="article:published_time" content="2023-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-27T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="散文">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2018/DRBTMR.html">
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1NC047X.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2018/DRBTMR.html","path":"posts/2018/DRBTMR.html","title":"张家界游记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2023/1NC047X.html","path":"posts/2023/1NC047X.html","title":"父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>张家界游记 | 星辰大海</title>
+<title>父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条 | 星辰大海</title>
   
 
 
@@ -128,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -141,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">演示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2018/DRBTMR.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/1NC047X.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -221,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="张家界游记 | 星辰大海">
+      <meta itemprop="name" content="父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条 | 星辰大海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          张家界游记
+          父元素仅设置 max-height, 子元素高度100%, 溢出后显示滚动条
         </h1>
 
         <div class="post-meta-container">
@@ -237,14 +238,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-06-17 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-17T00:00:00+08:00">2018-06-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-17 00:00:00" itemprop="dateModified" datetime="2023-06-17T00:00:00+08:00">2023-06-17</time>
+      <time title="创建时间：2023-07-28 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-28T00:00:00+08:00">2023-07-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,11 +246,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Inspiration/" itemprop="url" rel="index"><span itemprop="name">Inspiration</span></a>
+          <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Inspiration/2018%E5%B9%B4/" itemprop="url" rel="index"><span itemprop="name">2018年</span></a>
+          <a href="/categories/Develop/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Develop/CSS/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
         </span>
     </span>
 
@@ -267,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>987</span>
+      <span>874</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -284,16 +282,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>2017
-年的年假还没过完，便买了车票奔向项目部，因为年初的原因，直达的票很难买，我便取了个折中的办法，从黔江坐汽车，经过秀山，再途径张家界，最后坐火车到项目部。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文介绍了如何实现：</p>
+<p>父元素仅设置 max-height，子元素的高度为
+100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。</p>
 <span id="more"></span>
-<p>自从毕业之后，就没有正正经经的出去玩过，趁着假期，到心心念念的张家界看看。为了这个心愿，特意买了一个单反，然后就坐着车抵达了。初五的下午抵达张家界，安顿好到之后，便一个人出去觅食，打了个的士，在地图上很近，但是居然要我10块钱，有一点不愿，但是想想，自己是出来玩儿的，为嘛那么斤斤计较，开心就好，便很高兴的上车了。</p>
-<p>来到步行街，走了一大圈，居然都没有发现一个比较平民的能填饱肚子的地方。最后地儿是找到了，但是真的贼贵，一个茄子要10块，这导致我今天的晚餐就是一个茄子。</p>
-<p>最后去超市买了一堆零食，然后看看时间还挺早的，就去网吧呆到11点的样子，玩儿了一会儿天刀，玩儿了几把英雄联盟，唯一的感受就是，卡蜜儿有时候厉害，有时候又是弱鸡。</p>
-<p>回到住的地方已经12点了，折腾折腾wifi，看看电视剧，居然已经到3点了。心想，明天还要去天门山呢？这个状态怎么能够醒得来啊！简直了，然后设了两个闹钟，一个6:45的，一个7:10的，可是后面的一个闹钟没响，导致睡到了9点，起床洗漱，然后准备出发天门山。</p>
-<p>来到售票大厅，我的天，那么长的队，得到天黑啊……干脆算了，去报个团，明天游一天吧，今天就回去上网好了。来到旅行社一了解，得知张家界森林公园这一个地方，于是又坐车到张家界森林公园。这儿的风景确实不错，一张门票可以使用四天，可是当我看到地图的时候，四天哪能够游完啊！沿着台阶，慢慢的登顶。因为天气冷，又下雨，地很滑，走得很慢，沿途的风景很美，山也很壮观。来到黄石寨顶的时候，眼前豁然开朗，有一种千里冰封，万里雪飘的爽飒和壮阔，有一种白装素裹的妖娆，有一种海阔天空的舒畅。</p>
-<p>下山坐了一次索道，这是我人生中第一次坐索道，感觉很好，不是很怕，但是天气原因，雾气太重，看不清下面的风景，我想，夏天应该会很好。</p>
-<p>晚上回到住处，发现没什么事儿干，去网吧happy到00:00，可是钱没用完，但也得走了，否则明天肯定起不来了，回去还是看看电视剧，又到3点了。起来得很晚，不过睡得还不错，第二天入口都已经14:00了，随便看看就回去吧，地图害了我，本来觉得一会儿就到的地方，要走很久，买的是18:16的票，最后几经周折，终于赶上火车，完美的结束了张家界之行。</p>
+<h2 id="思路">思路</h2>
+<ol type="1">
+<li>由于父元素没有设置 <code>height</code> 属性，因此子元素不能使用
+<code>height:100%</code> 来跟随父元素的变化</li>
+<li>通过 flex 布局，将子元素设置成 <code>flex:1</code>
+来让其与父元素同高</li>
+<li>再设置子元素 <code>overflow:auth;flext-wrap:nowrap;</code>
+来显示滚动条</li>
+</ol>
+<h2 id="实现">实现</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>    </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#app</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;  </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="comment">/* height: 100%; 此处不能使用这个属性，因为父类没有设置 height,因此无法计算高度*/</span></span><br><span class="line">  <span class="attribute">flex</span>:<span class="number">1</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="演示">演示</h2>
+<p><a
+target="_blank" rel="noopener" href="https://runjs.work/projects/8ad36ef2669942a5">父元素设置max-height，子元素高度100%实现
+(runjs.work)</a></p>
 
     </div>
 
@@ -350,21 +358,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%95%A3%E6%96%87/" rel="tag"><i class="fa fa-tag"></i> 散文</a>
+              <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2018/1945B98.html" rel="prev" title="战胜梦境">
-                  <i class="fa fa-chevron-left"></i> 战胜梦境
+                <a href="/posts/2023/3FEED8Y.html" rel="prev" title="flex 布局中在 flex-grow 元素里显示滚动条">
+                  <i class="fa fa-chevron-left"></i> flex 布局中在 flex-grow 元素里显示滚动条
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2018/1GY6GF5.html" rel="next" title="被一颗无垢之心净化">
-                  被一颗无垢之心净化 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -452,7 +457,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"b3c1d8d7fce2432fdcb8cb28e743731c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"91513ec64b592937a2bba6c621929182"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

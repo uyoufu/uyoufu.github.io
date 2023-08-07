@@ -29,8 +29,8 @@
 <meta property="article:published_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="Bentley">
+<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
 
@@ -290,7 +290,7 @@
 <p>通过使用 NotificationManager
 向用户推送消息。可以用此类来生成提示、错误消息和警报对话框。</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074020104.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220512074020104.png"
 alt="image-20220512074020104" />
 <figcaption aria-hidden="true">image-20220512074020104</figcaption>
 </figure>
@@ -324,14 +324,14 @@ alt="image-20220512074020104" />
 <li><p>OutputMessage方法</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOutputMessage</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    OutputMessagePriority outputMessagePriority = OutputMessagePriority.Information;</span><br><span class="line">    <span class="built_in">string</span> briefMsg = <span class="string">&quot;this is a brief msg&quot;</span>;</span><br><span class="line">    <span class="built_in">string</span> detailMsg = <span class="string">&quot;this is a detail msg&quot;</span>;</span><br><span class="line">    NotifyTextAttributes notifyTextAttributes = NotifyTextAttributes.AlwaysBeveled;</span><br><span class="line">    NotifyMessageDetails notifyMessageDetails = <span class="keyword">new</span> NotifyMessageDetails(outputMessagePriority,briefMsg,detailMsg,notifyTextAttributes,OutputMessageAlert.Balloon);</span><br><span class="line">    NotificationManager.OutputMessage(notifyMessageDetails);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512074152131.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220512074152131.png"
 alt="image-20220512074152131" />
 <figcaption aria-hidden="true">image-20220512074152131</figcaption>
 </figure></li>
 <li><p>OutputPrompt方法</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">NotificationManagerOutputPrompt</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    NotificationManager.OutputPrompt(<span class="string">&quot;this is ouput prompt&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073913334.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220512073913334.png"
 alt="image-20220512073913334" />
 <figcaption aria-hidden="true">image-20220512073913334</figcaption>
 </figure></li>
@@ -362,7 +362,7 @@ alt="image-20220512073913334" />
 <p>加载编译之后的 ArticleSourceCode.dll，调用
 Key-in：<code>test message manager</code>，此时会弹出一个操作窗体，通过选择不同选项，即可查看相应方法的效果。</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220512073946491.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220512073946491.png"
 alt="image-20220512073946491" />
 <figcaption aria-hidden="true">image-20220512073946491</figcaption>
 </figure>
@@ -424,8 +424,8 @@ GitHub源代码</a></p>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/Bentley/" rel="tag"><i class="fa fa-tag"></i> Bentley</a>
+              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 

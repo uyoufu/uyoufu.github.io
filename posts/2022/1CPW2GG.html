@@ -26,17 +26,17 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文简要介绍计算机图图形学中的常用的各个样条曲线，同时梳理他们的之间的关系。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220705222132936.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220707133020413.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220707134509292.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220705222132936.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707133020413.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707134509292.png">
 <meta property="article:published_time" content="2022-05-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-05T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="Bentley">
+<meta property="article:tag" content="Bentley二次开发">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20220705222132936.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220705222132936.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/1CPW2GG.html">
@@ -312,7 +312,7 @@ class="math inline">\(B_i(t)\)</span> 是线性空间中的基函数。</p>
 <p>n 维线性空间不是指笛卡尔坐标系下的 n
 维，而是线性代数上的维度，如果对这个概念不是很清楚，可以查阅相关书籍，当然，上述的这个理解方式也可以忽略。</p>
 <h2 id="贝塞尔曲线bézier-curve">贝塞尔曲线（Bézier curve）</h2>
-<p><a target="_blank" rel="noopener" href="https://www.jasondavies.com/animated-bezier/"><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220513132345112.png"
+<p><a target="_blank" rel="noopener" href="https://www.jasondavies.com/animated-bezier/"><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220513132345112.png"
 alt="点击图片可查看动画" /></a></p>
 <h3 id="定义">定义</h3>
 <p><span class="math display">\[
@@ -577,7 +577,7 @@ alt="close" />
 <p>从公式定义中，可以得知，第 i 个 k 阶 b 样条曲线的基函数等于第 i 个
 k-1 阶基函数和第 i+1 个 k-1
 阶基函数的线性插值。它们的关系可以用下图来表示。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220705222132936.png" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220705222132936.png" style="max-width:400px"></p>
 <p>从上图中，我们可以看到，如果要求第 0 个 5 阶 b 样条函数基函数，则需要
 5 个 1 阶基函数，需要 6 个节点。由此，可以得到如下结论： <span
 class="math display">\[
@@ -608,7 +608,7 @@ class="math display">\[
 <p>假设一个 4 阶 b 样条有 5
 个控制点，其基函数的区间可以用下图来表示：</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707124032974.png"
 alt="image-20220707124032974" />
 <figcaption aria-hidden="true">image-20220707124032974</figcaption>
 </figure>
@@ -629,7 +629,7 @@ N_{0,k}(t)P_0+N_{1,k}(t)P_1+N_{2,k}(t)P_2+N_{3,k}(t)P_3+N_{4,k}(t)P_4
 \]</span> 由于是 4 阶 5 点，所以有 9 个节点，8
 个节点区间，因此可以画出基函数的有效区间图如下：</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707124032974.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707124032974.png"
 alt="image-20220707124032974" />
 <figcaption aria-hidden="true">image-20220707124032974</figcaption>
 </figure>
@@ -785,7 +785,7 @@ A[P(t)]= \sum_i^nA[P_i]N_{i,k}(t),t \in [t_{k-1},t_{n+1}]
 <p>例如：<span class="math inline">\(\vec{T} =
 [0,1,2,3,4,5,6,7]\)</span></p>
 <p>均匀 b 样条曲线有一个非常重要的特点，先上图：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707133020413.png" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707133020413.png" style="max-width:400px"></p>
 <p>均匀 b 样条曲线的起点位于 B 点垂直于AC两个点连线的 1/3 处，方向为
 <span class="math inline">\(\vec{AC}\)</span>，终点位于 D 点垂直于 CE
 两个点连线的 1/3，方向为 <span
@@ -800,7 +800,7 @@ class="math inline">\(\vec{CE}\)</span>。</p>
 <li>它的起终点分别为控制点的起终点</li>
 <li>起始节点与终止节点都有 k 个重复度</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220707134509292.png" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220707134509292.png" style="max-width:400px"></p>
 <blockquote>
 <p>小提示：</p>
 <p>如果想让 b 样条曲线经过起终点，可以让起始节点都具有 k 个重复度</p>
@@ -817,7 +817,7 @@ class="math inline">\(\vec{CE}\)</span>。</p>
 <p>如果要保证插入的直线在控制点范围内是一条直线，还必须保证线段的首尾点分别具有
 1 个重复度。</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20220709181500332.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220709181500332.png"
 alt="image-20220709181500332" />
 <figcaption aria-hidden="true">image-20220709181500332</figcaption>
 </figure>
@@ -884,7 +884,7 @@ NURBS，即非均匀有理B样条来解决这个问题</p>
 <p>Bezier 曲线只是 B样条的一个特例而已，而 B样条又是 NURBS
 的一个特例，它们的关系可以图示为：</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/relationshipAmongCurves.png"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/relationshipAmongCurves.png"
 alt="relationshipAmongCurves" />
 <figcaption aria-hidden="true">relationshipAmongCurves</figcaption>
 </figure>
@@ -1034,8 +1034,8 @@ Curves: Closed Curves</a></p>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/Bentley/" rel="tag"><i class="fa fa-tag"></i> Bentley</a>
+              <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
               <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 

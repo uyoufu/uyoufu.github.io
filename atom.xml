@@ -50,7 +50,7 @@
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230727230710866.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230710866.png&quot;
 alt=&quot;image-20230727230710866&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230710866&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -68,6 +68,8 @@ alt=&quot;image-20230727230710866&quot; /&gt;
     
     
     <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -114,7 +116,7 @@ alt=&quot;image-20230727230710866&quot; /&gt;
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230727230001381.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230001381.png&quot;
 alt=&quot;image-20230727230001381&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230001381&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -128,6 +130,8 @@ alt=&quot;image-20230727230001381&quot; /&gt;
     
     <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
     
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
   </entry>
   
   <entry>
@@ -138,7 +142,7 @@ alt=&quot;image-20230727230001381&quot; /&gt;
     <updated>2023-07-19T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/can-dou-bing.jpg&quot; alt=&quot;can-dou-bing&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/can-dou-bing.jpg&quot; alt=&quot;can-dou-bing&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;什么是蚕豆病&quot;&gt;什么是蚕豆病&lt;/h2&gt;
 &lt;p&gt;蚕豆病是一种遗传性疾病，体内缺乏6-磷酸葡萄糖脱氢酶（G-6-PD），孩子食用蚕豆后引发红细胞破裂，血红蛋白经过尿液被排出体外，导致重度贫血，尿出酱油尿，精神不济，如果不及时治疗，可致昏迷、惊厥和急性肾衰竭，孩子甚至有生命危险，所以发病后应及时就医诊治。&lt;/p&gt;</summary>
     
@@ -148,6 +152,8 @@ alt=&quot;image-20230727230001381&quot; /&gt;
     
     
     <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -159,7 +165,7 @@ alt=&quot;image-20230727230001381&quot; /&gt;
     <updated>2023-07-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要
 125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁
 80 8080 443 8443
@@ -174,6 +180,8 @@ alt=&quot;image-20230727230001381&quot; /&gt;
     <category term="个人博客" scheme="https://galens.uamazing.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -220,7 +228,7 @@ src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/async-await.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png&quot;
 alt=&quot;async-await&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;async-await&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -243,6 +251,8 @@ alt=&quot;async-await&quot; /&gt;
     
     <category term="Vue3.x" scheme="https://galens.uamazing.cn/tags/Vue3-x/"/>
     
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
   </entry>
   
   <entry>
@@ -254,7 +264,7 @@ alt=&quot;async-await&quot; /&gt;
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230717005034407.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717005034407.png&quot;
 alt=&quot;image-20230717005034407&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717005034407&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -271,6 +281,8 @@ alt=&quot;image-20230717005034407&quot; /&gt;
     
     <category term="梦" scheme="https://galens.uamazing.cn/tags/%E6%A2%A6/"/>
     
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
   </entry>
   
   <entry>
@@ -282,7 +294,7 @@ alt=&quot;image-20230717005034407&quot; /&gt;
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230717000711448.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717000711448.png&quot;
 alt=&quot;image-20230717000711448&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717000711448&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -299,6 +311,8 @@ alt=&quot;image-20230717000711448&quot; /&gt;
     <category term="散文" scheme="https://galens.uamazing.cn/tags/%E6%95%A3%E6%96%87/"/>
     
     <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -330,6 +344,8 @@ alt=&quot;image-20230717000711448&quot; /&gt;
     <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
     
     <category term="Webview2" scheme="https://galens.uamazing.cn/tags/Webview2/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -435,6 +451,8 @@ moderator。&lt;/p&gt;
     
     <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
     
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
   </entry>
   
   <entry>
@@ -533,7 +551,7 @@ href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet
     
     
     <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20230625233244755.png&quot;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png&quot;
 alt=&quot;image-20230625233244755&quot; /&gt;
 &lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230625233244755&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -550,6 +568,8 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -574,6 +594,8 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     
     
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

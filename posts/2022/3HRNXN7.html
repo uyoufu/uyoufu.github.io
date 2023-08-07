@@ -26,35 +26,36 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F_%E7%B1%BB%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F_%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%8D%95%E7%BA%AF%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E6%A0%91.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E9%80%8F%E6%98%8E.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E5%AE%89%E5%85%A8.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E5%A4%8D%E6%9D%82.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F_%E4%BB%85%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E6%9E%84%E4%BB%B6.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F_%E4%BB%85%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F_%E6%89%A9%E5%B1%95.gif">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F_%E7%B1%BB%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F_%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%8D%95%E7%BA%AF%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E6%A0%91.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E9%80%8F%E6%98%8E.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E5%AE%89%E5%85%A8.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F_%E5%A4%8D%E6%9D%82.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F_%E4%BB%85%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E6%9E%84%E4%BB%B6.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F_%E4%BB%85%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F_%E6%89%A9%E5%B1%95.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.gif">
 <meta property="article:published_time" content="2022-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-05T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="设计模式">
 <meta property="article:tag" content="一页笔记">
+<meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3HRNXN7.html">
@@ -387,7 +388,7 @@ Method Pattern）。</p>
 <li>抽象产品（Product）：是简单工厂创建的所有对象的父类，负责描述所有实例共有的公共接口。</li>
 <li>具体产品（ConcreteProduct）：是简单工厂模式的创建目标。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/简单工厂模式.png" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/简单工厂模式.png" style="max-width:400px"></p>
 <h4 id="优点">优点</h4>
 <ol type="1">
 <li>工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端可以免除直接创建产品对象的职责，很方便的创建出相应的产品。工厂和产品的职责区分明确。</li>
@@ -413,7 +414,7 @@ newProduct() 来创建产品。</li>
 <li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。</li>
 <li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/工厂方法模式.gif" style="max-width:500px"/></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/工厂方法模式.gif" style="max-width:500px"/></p>
 <blockquote>
 <p>Client
 中通过从配置文件中读取需要实例化的工厂名称，所以它不需要依赖具体的工厂</p>
@@ -452,7 +453,7 @@ Factory）：主要是实现抽象工厂中的多个抽象方法，完成具体�
 <li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能，抽象工厂模式有多个抽象产品。</li>
 <li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间是多对一的关系。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/抽象工厂模式.gif" style="max-width:500px"/></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/抽象工厂模式.gif" style="max-width:500px"/></p>
 <h4 id="特点">特点</h4>
 <p>抽象工厂模式是工厂方法模式的升级版本，工厂方法模式只生产一个等级的产品，而抽象工厂模式可生产多个等级的产品。</p>
 <p>使用抽象工厂模式一般要满足以下条件：</p>
@@ -474,7 +475,7 @@ Factory）：主要是实现抽象工厂中的多个抽象方法，完成具体�
 <p>单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。</p>
 <h4 id="结构-3">结构</h4>
 <p>单例模式有多种实现方式，常用的有<strong>懒汉模式</strong>和<strong>饿汉模式</strong>。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/单例模式.gif" style="max-width:400px"/></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单例模式.gif" style="max-width:400px"/></p>
 <h4 id="特点-1">特点</h4>
 <p>单例模式有 3 个特点：</p>
 <ol type="1">
@@ -508,7 +509,7 @@ getResult()。</p></li>
 <li><p>具体建造者(Concrete Builder）：实现 Builder
 接口，完成复杂产品的各个部件的具体创建方法。</p></li>
 <li><p>指挥者（Director）：它调用建造者对象中的部件构造与装配方法完成复杂对象的创建，在指挥者中不涉及具体产品的信息。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/建造者模式.gif" style="max-width:400px"/></p></li>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/建造者模式.gif" style="max-width:400px"/></p></li>
 </ol>
 <blockquote>
 <p>为什么需要指挥者呢？</p>
@@ -540,7 +541,7 @@ getResult()。</p></li>
 <p>原型（Prototype）模式的定义如下：用一个已经创建的实例作为原型，通过<strong>复制</strong>该原型对象来创建一个和原型相同或相似的新对象。</p>
 <p>在这里，原型实例指定了要创建的对象的种类。用复制的方式创建对象非常高效，根本无须知道对象创建的细节。</p>
 <h4 id="结构-5">结构</h4>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/原型模式.gif" style="max-width:450px"/></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/原型模式.gif" style="max-width:450px"/></p>
 <h4 id="优点-5">优点</h4>
 <ol type="1">
 <li>Java 中自带的原型模式基于内存二进制流的复制，在性能上比直接 new
@@ -580,9 +581,9 @@ getResult()。</p></li>
 <li>适配器（Adapter）类：它是一个转换器，通过继承或引用适配者的对象，把适配者接口转换成目标接口，让客户按目标接口的格式访问适配者。</li>
 </ol>
 <p><strong>类模式：</strong></p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/适配器模式_类模式.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_类模式.gif" style="max-width:500px"></p>
 <p><strong>对象模式：</strong></p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/适配器模式_对象模式.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_对象模式.gif" style="max-width:500px"></p>
 <h4 id="优点-6">优点</h4>
 <ol type="1">
 <li>客户端通过适配器可以透明地调用目标接口。</li>
@@ -610,7 +611,7 @@ getResult()。</p></li>
 Subject）类：实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象。</li>
 <li>代理（Proxy）类：提供了与真实主题相同的接口，其内部含有对真实主题的引用，它可以访问、控制或扩展真实主题的功能。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/代理模式.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/代理模式.gif" style="max-width:500px"></p>
 <h4 id="优点-7">优点</h4>
 <ol type="1">
 <li>代理模式在客户端与目标对象之间起到一个中介作用和保护目标对象的作用；</li>
@@ -644,7 +645,7 @@ Subject）类：实现了抽象主题中的具体业务，是代理对象所代�
 <li>设计代理以前真实主题必须事先存在，不太灵活。</li>
 </ol>
 <p>采用动态代理模式可以解决以上问题，在程序运行中，将真实主题通过反射实例化，然后传入代理中，这样就只需一个代理即可。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/动态代理.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/动态代理.gif" style="max-width:500px"></p>
 <h3 id="享元模式">享元模式</h3>
 <h4 id="定义-7">定义</h4>
 <p>享元（Flyweight）模式的定义：运用共享技术来有效地支持大量细粒度对象的复用。它通过共享已经存在的对象来大幅度减少需要创建的对象数量、避免大量相似类的开销，从而提高系统资源的利用率。</p>
@@ -666,7 +667,7 @@ Flyweight)角色：是不可以共享的外部状态，它以参数的形式注�
 <li>享元工厂（Flyweight
 Factory）角色：负责创建和管理享元角色。当客户对象请求一个享元对象时，享元工厂检査系统中是否存在符合要求的享元对象，如果存在则提供给客户；如果不存在的话，则创建一个新的享元对象。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/享元模式.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/享元模式.gif" style="max-width:500px"></p>
 <h4 id="优点-8">优点</h4>
 <p>相同对象只要保存一份，这降低了系统中对象的数量，从而降低了系统中细粒度对象给内存带来的压力。</p>
 <h4 id="缺点-8">缺点</h4>
@@ -686,13 +687,13 @@ Factory）角色：负责创建和管理享元角色。当客户对象请求一�
 </ol>
 <h4 id="扩展-1">扩展</h4>
 <p>享元模式当没有外部状态的时候，就退化成简单享元模式，用于单纯的对象缓存。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/单纯享元模式.gif" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单纯享元模式.gif" style="max-width:400px"></p>
 <h3 id="组合模式">组合模式</h3>
 <h4 id="定义-8">定义</h4>
 <p>组合（Composite
 Pattern）模式的定义：有时又叫作整体-部分（Part-Whole）模式，它是一种将对象组合成树状的层次结构的模式，用来表示“整体-部分”的关系，使用户对单个对象和组合对象具有一致的访问性，属于结构型设计模式。</p>
 <p>组合模式一般用来描述整体与部分的关系，它将对象组织到树形结构中，顶层的节点被称为根节点，根节点下面可以包含树枝节点和叶子节点，树枝节点下面又可以包含树枝节点和叶子节点，树形结构图如下：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/组合模式树.png" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式树.png" style="max-width:400px"></p>
 <p>由上图可以看出，其实根节点和树枝节点本质上属于同一种数据类型，可以作为容器使用；而叶子节点与树枝节点在语义上不属于用一种类型。但是在组合模式中，会把树枝节点和叶子节点看作属于同一种数据类型（用统一接口定义），让它们具备一致行为。</p>
 <p>这样，在组合模式中，整个树形结构中的对象都属于同一种类型，带来的好处就是用户不需要辨别是树枝节点还是叶子节点，可以直接进行操作，给用户的使用带来极大的便利。</p>
 <h4 id="优点-9">优点</h4>
@@ -720,10 +721,10 @@ Add()、Remove()、GetChild() 等方法。</li>
 <p>在该方式中，由于抽象构件声明了所有子类中的全部方法，所以客户端无须区别树叶对象和树枝对象，对客户端来说是透明的。但其缺点是：树叶构件本来没有
 Add()、Remove() 及 GetChild()
 方法，却要实现它们（空实现或抛异常），这样会带来一些安全性问题。其结构图下图所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/组合模式_透明.gif" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_透明.gif" style="max-width:400px"></p>
 <p><strong>安全方式</strong></p>
 <p>在该方式中，将管理子构件的方法移到树枝构件中，抽象构件和树叶构件没有对子对象的管理方法，这样就避免了上一种方式的安全性问题，但由于叶子和分支有不同的接口，客户端在调用时要知道树叶对象和树枝对象的存在，所以失去了透明性。其结构如下图所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/组合模式_安全.gif" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_安全.gif" style="max-width:400px"></p>
 <h4 id="应用场景-2">应用场景</h4>
 <ol type="1">
 <li>在需要表示一个对象整体与部分的层次结构的场合。</li>
@@ -731,7 +732,7 @@ Add()、Remove() 及 GetChild()
 </ol>
 <h4 id="扩展-2">扩展</h4>
 <p>如果对前面介绍的组合模式中的树叶节点和树枝节点进行抽象，也就是说树叶节点和树枝节点还有子节点，这时组合模式就扩展成复杂的组合模式了。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/组合模式_复杂.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_复杂.gif" style="max-width:500px"></p>
 <h3 id="装饰器模式">装饰器模式</h3>
 <h4 id="定义-9">定义</h4>
 <p>装饰器（Decorator）模式的定义：指在不改变现有对象结构的情况下，动态地给该对象增加一些职责（即增加其额外功能）的模式，它属于对象结构型模式。</p>
@@ -744,7 +745,7 @@ Add()、Remove() 及 GetChild()
 <li>抽象装饰（Decorator）角色：<strong>继承抽象构件</strong>，并包含具体构件的实例，可以通过其子类扩展具体构件的功能。</li>
 <li>具体装饰（ConcreteDecorator）角色：实现抽象装饰的相关方法，并给具体构件对象添加附加的责任。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/装饰器模式.gif" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式.gif" style="max-width:400px"></p>
 <blockquote>
 <p>注意：</p>
 <p>传入装饰器的不是具体构件，而是抽象构件。</p>
@@ -769,10 +770,10 @@ Add()、Remove() 及 GetChild()
 个角色不是任何时候都要存在的，在有些应用环境下模式是可以简化的，如以下两种情况。</p>
 <ol type="1">
 <li><p>如果只有一个具体构件而没有抽象构件时，可以让抽象装饰继承具体构件</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/装饰器模式_仅一个具体构件.gif" style="max-width:350px"></p></li>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体构件.gif" style="max-width:350px"></p></li>
 <li><p>如果只有一个具体装饰时，可以将抽象装饰和具体装饰合并</p>
 <p>这一条很好理解，只有一个具体类时，就没有必要抽象了。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/装饰器模式_仅一个具体装饰.gif" style="max-width:400px"></p></li>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体装饰.gif" style="max-width:400px"></p></li>
 </ol>
 <h3 id="外观模式">外观模式</h3>
 <h4 id="定义-10">定义</h4>
@@ -787,7 +788,7 @@ Add()、Remove() 及 GetChild()
 System）角色：实现系统的部分功能，客户可以通过外观角色访问它。</li>
 <li>客户（Client）角色：通过一个外观角色访问各个子系统的功能。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/外观模式.gif" style="max-width:400px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式.gif" style="max-width:400px"></p>
 <h4 id="优点-11">优点</h4>
 <ol type="1">
 <li>降低了子系统与客户端之间的耦合度，使得子系统的变化不会影响调用它的客户类。</li>
@@ -808,7 +809,7 @@ System）角色：实现系统的部分功能，客户可以通过外观角色�
 </ol>
 <h4 id="扩展-4">扩展</h4>
 <p>在外观模式中，当增加或移除子系统时需要修改外观类，这违背了“开闭原则”。如果引入抽象外观类，则在一定程度上解决了该问题，其结构图如下所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/外观模式_扩展.gif" style="max-width:450px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式_扩展.gif" style="max-width:450px"></p>
 <h3 id="桥接模式">桥接模式</h3>
 <h4 id="定义-11">定义</h4>
 <p>桥接（Bridge）模式的定义如下：<strong>将抽象与实现分离</strong>，使它们可以独立变化。它是用组合关系代替继承关系来实现，从而降低了抽象和实现这两个可变维度的耦合度。</p>
@@ -827,7 +828,7 @@ Abstraction）角色：是抽象化角色的子类，实现父类中的业务方
 <li>具体实现化（Concrete
 Implementor）角色：给出实现化角色接口的具体实现。</li>
 </ol>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/桥接模式.gif" style="max-width:500px"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/桥接模式.gif" style="max-width:500px"></p>
 <h4 id="优点-12">优点</h4>
 <ol type="1">
 <li>抽象与实现分离，扩展能力强</li>
@@ -886,7 +887,7 @@ Expression）角色：也是抽象表达式的子类，用来实现文法中与�
 <li>客户端（Client）：主要任务是将需要分析的句子或表达式转换成使用解释器对象描述的抽象语法树，然后调用解释器的解释方法，当然也可以通过环境角色间接访问解释器的解释方法。</li>
 </ol>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/解释器模式.gif"
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/解释器模式.gif"
 alt="解释器模式" />
 <figcaption aria-hidden="true">解释器模式</figcaption>
 </figure>
@@ -978,19 +979,20 @@ Pattern</a></li>
           <div class="post-tags">
               <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
               <a href="/tags/%E4%B8%80%E9%A1%B5%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 一页笔记</a>
+              <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/2AJRA04.html" rel="prev" title="类关系图简记">
-                  <i class="fa fa-chevron-left"></i> 类关系图简记
+                <a href="/posts/2022/33P3D91.html" rel="prev" title="Bentley工程属性入门">
+                  <i class="fa fa-chevron-left"></i> Bentley工程属性入门
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/1A0Q13P.html" rel="next" title="C# 通过 ()=>obj.Property 的形式获取实例和属性名">
-                  C# 通过 ()=>obj.Property 的形式获取实例和属性名 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2022/2AJRA04.html" rel="next" title="类关系图简记">
+                  类关系图简记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

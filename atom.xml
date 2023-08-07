@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-07-26T16:00:00.000Z</updated>
+  <updated>2023-08-06T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重装 windows 系统</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2CR6PKS.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2CR6PKS.html</id>
+    <published>2023-08-06T16:00:00.000Z</published>
+    <updated>2023-08-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何彻底重装 windows
+系统，按照本教程一步一步进行安装，重装系统非常简单。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重装相对于重置可以让系统更纯净。有时候电脑被病毒感染后，重置往往不能解决问题，此时就需要进行重装。&lt;/p&gt;
+&lt;p&gt;若只需要重置电脑，win10
+及以上的版本在设置有重置功能，可以就此跳过本文。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
+    
+    
+    <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
   
   <entry>
     <title>父元素仅设置max-height，子元素高度百分之100，溢出后如何显示滚动条</title>
@@ -568,32 +597,6 @@ alt=&quot;image-20230625233244755&quot; /&gt;
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 设置代理</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3R4JKDX.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3R4JKDX.html</id>
-    <published>2023-06-20T16:00:00.000Z</published>
-    <updated>2023-06-20T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 windows 中使用 docker
-拉取镜像时，有时候国内镜像源无法使用，需要使用 docker
-官方的镜像源这时需要给 docker 设置代理来提升下载速度。&lt;/p&gt;
-&lt;p&gt;本文记录了在 docker desktop 中设置代理的方法和注意事项。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/Software/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     

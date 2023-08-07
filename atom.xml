@@ -46,6 +46,36 @@
   </entry>
   
   <entry>
+    <title>如何优雅地实现 echarts 的自适应</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1G6444M.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1G6444M.html</id>
+    <published>2023-08-06T16:00:00.000Z</published>
+    <updated>2023-08-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;要实现 echarts 窗口自适应变化，可以使用 ResizeObserver API
+监听容器元素的大小变化，并在容器大小变化时调用 echarts 实例的
+&lt;code&gt;resize()&lt;/code&gt; 方法重新渲染图表。&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
+    
+    <category term="Vue2.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue2-x/"/>
+    
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
+    
+    <category term="Vue2.x" scheme="https://galens.uamazing.cn/tags/Vue2-x/"/>
+    
+  </entry>
+  
+  <entry>
     <title>父元素仅设置max-height，子元素高度百分之100，溢出后如何显示滚动条</title>
     <link href="https://galens.uamazing.cn/posts/2023/27DHP6N.html"/>
     <id>https://galens.uamazing.cn/posts/2023/27DHP6N.html</id>
@@ -455,36 +485,6 @@ moderator。&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>JitsiMeet 中 Prosody 插件配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
-    <published>2023-06-27T16:00:00.000Z</published>
-    <updated>2023-06-27T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
-服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
-&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JitsiMeet 私有化部署获取事件回调</title>
     <link href="https://galens.uamazing.cn/posts/2023/2QBX38K.html"/>
     <id>https://galens.uamazing.cn/posts/2023/2QBX38K.html</id>
@@ -512,6 +512,36 @@ moderator。&lt;/p&gt;
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet 中 Prosody 插件配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3G2MHZ7.html</id>
+    <published>2023-06-27T16:00:00.000Z</published>
+    <updated>2023-06-27T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在私有化部署 jitsi-meet 后，通过配置其中的 prosody
+服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。&lt;/p&gt;
+&lt;p&gt;本文将简要介绍 prosody 插件系统，方便读者快速上手。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文基于 docker 的安装方式来进行介绍&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   
@@ -568,37 +598,6 @@ href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet
     <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
     
     <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet docker 部署及设置 jw 授权</title>
-    <link href="https://galens.uamazing.cn/posts/2023/9Q7N69.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/9Q7N69.html</id>
-    <published>2023-06-24T16:00:00.000Z</published>
-    <updated>2023-06-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png&quot;
-alt=&quot;image-20230625233244755&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230625233244755&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;jitsi 是一款开源的视屏会议软件，最大支持 75
-人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

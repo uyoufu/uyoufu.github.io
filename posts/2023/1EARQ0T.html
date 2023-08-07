@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">207</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">395</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">208</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">111</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">396</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">395</span>
+          <span class="site-state-item-count">396</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">207</span>
+        <span class="site-state-item-count">208</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -270,14 +270,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>3.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -306,7 +306,7 @@ DOM，再重新插入到页面中。这样对普通元素是没有影响的，�
 很特别，<strong>当其插入到页面时会重新加载，这是浏览器特性，与 Vue
 无关。</strong></p></li>
 <li><p>保存 iframe 实例，当组件挂载后添加到对应位置</p>
-<p>失败的原因与第 1 点相同，当其插入到页面时会重新加载。</p></li>
+<p>失败的原因与第 1 点相同，当其重新插入到页面时会重新加载。</p></li>
 </ol>
 <h2 id="解决方案">解决方案</h2>
 <h3 id="实现步骤">实现步骤</h3>
@@ -315,19 +315,23 @@ DOM，再重新插入到页面中。这样对普通元素是没有影响的，�
 渲染到页面中，路由切换时通过 <code>v-show</code> 改变显/隐。</p>
 </blockquote>
 <ol type="1">
-<li>在路由注册时，将 component 赋值为一个空组件
-<code>index.vue</code></li>
+<li>在路由中，将 component 赋值为一个空组件 <code>index.vue</code></li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path: &quot;/chathub&quot;,</span><br><span class="line">  name: &quot;chathub&quot;,</span><br><span class="line">  component: ()=&gt;import(&quot;@/chathub/index.vue&quot;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><strong>index.js 代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;iframe-example-index row justify-center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;column justify-center text-h6 text-secondary&quot;&gt;加载中...&lt;/div&gt;    </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; onMounted, ref &#125; from &#x27;vue&#x27;</span><br><span class="line">import store from &#x27;@/store/index&#x27;</span><br><span class="line">import &#123; useRoute &#125; from &#x27;@/compositions/vueRouter&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;iframeContainer&quot;,</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const src = ref(&quot;www.baidu.com&quot;)</span><br><span class="line"></span><br><span class="line">    function getIframeElement() &#123;</span><br><span class="line">      const iframeElement = document.getElementById(&#x27;iframe-example-body&#x27;)</span><br><span class="line">      return iframeElement</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    async function restoreSrc() &#123;</span><br><span class="line">      const iframeElement = getIframeElement()</span><br><span class="line">      if (!iframeElement) return</span><br><span class="line"></span><br><span class="line">      // 设置值</span><br><span class="line">      iframeElement.setAttribute(&#x27;src&#x27;, src.value)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function initIFrame(force = false) &#123;</span><br><span class="line">      if (!force &amp;&amp; iframeSetting.initialized) return</span><br><span class="line"></span><br><span class="line">      console.log(&#x27;开始创建 iframe&#x27;)</span><br><span class="line"></span><br><span class="line">      // 初始化 iframe</span><br><span class="line">      const iframeTemp = document.createElement(&#x27;iframe&#x27;)</span><br><span class="line">      iframeTemp.setAttribute(&#x27;id&#x27;, &#x27;iframe-example-body&#x27;)</span><br><span class="line">      iframeTemp.setAttribute(&#x27;width&#x27;, &#x27;100%&#x27;)</span><br><span class="line">      iframeTemp.setAttribute(&#x27;height&#x27;, &#x27;100%&#x27;)</span><br><span class="line">      const container = document.getElementById(&#x27;iframe-example-container&#x27;)</span><br><span class="line">      // 判断是否有 children,有的话，移除</span><br><span class="line">      if (container.children.length &gt; 0) &#123;</span><br><span class="line">        container.removeChild(container.children[0])</span><br><span class="line">      &#125;</span><br><span class="line">      container.appendChild(iframeTemp)</span><br><span class="line">      iframeTemp.setAttribute(&#x27;src&#x27;, src.value)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    onMounted(async () =&gt; &#123;</span><br><span class="line">      // 修改 iframe</span><br><span class="line">      getIframeElement()</span><br><span class="line"></span><br><span class="line">      // 创建一个 iframe，保存到 iframe-example-container children 中</span><br><span class="line">      initIFrame()</span><br><span class="line"></span><br><span class="line">      // 从 url 中获取 src</span><br><span class="line">      await restoreSrc()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return &#123; src &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">.iframe-example-index &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0px;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2" type="1">
-<li>在 router-view 处，渲染 iframe，通过 <code>v-if</code>、
-<code>v-show</code> 来控制显示隐藏</li>
+<li>在 router-view 处，加载一个 container 容器组件，通过
+<code>v-if</code>、 <code>v-show</code> 来控制显示隐藏</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ChatHub v-if=&quot;chatHubVisited&quot; v-show=&quot;isChatHubPage&quot;&gt;&lt;/ChatHub&gt;</span><br><span class="line"></span><br><span class="line">&lt;router-view v-slot=&quot;&#123; Component &#125;&quot;&gt;</span><br><span class="line">  &lt;keep-alive :include=&quot;keepAliveList&quot;&gt;</span><br><span class="line">    &lt;component :is=&quot;Component&quot;&gt;&lt;/component&gt;</span><br><span class="line">  &lt;/keep-alive&gt;</span><br><span class="line">&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Container v-if=&quot;iframeVisited&quot; v-show=&quot;isIFramePageVisible&quot;&gt;&lt;/Container&gt;</span><br><span class="line"></span><br><span class="line">&lt;router-view v-slot=&quot;&#123; Component &#125;&quot;&gt;</span><br><span class="line">  &lt;keep-alive :include=&quot;keepAliveList&quot;&gt;</span><br><span class="line">    &lt;component :is=&quot;Component&quot;&gt;&lt;/component&gt;</span><br><span class="line">  &lt;/keep-alive&gt;</span><br><span class="line">&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>container.js 代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;iframe-example-container&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 <ol start="3" type="1">
-<li>监听路由的变化，改变 iframe 的显/隐</li>
+<li>通过监听路由path的变化，改变 ChatHub 的显/隐，间接控制 iframe
+的显示</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const isChatHubPage = ref(false)</span><br><span class="line">// 这里是个优化，想的是只有页面访问过该路由才渲染，没访问过就不渲染该组件</span><br><span class="line">const chatHubVisited = ref(false) </span><br><span class="line"></span><br><span class="line">watch(</span><br><span class="line">  () =&gt; routes.path,</span><br><span class="line">  (value) =&gt; &#123;</span><br><span class="line">    if (value === &#x27;/chathub&#x27;) &#123;</span><br><span class="line">      chatHubVisited.value = true</span><br><span class="line">      isChatHubPage.value = true</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      isChatHubPage.value = false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    immediate: true</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const isIFramePageVisible = ref(false)</span><br><span class="line">// 这里是个优化，想的是只有页面访问过该路由才渲染，没访问过就不渲染该组件</span><br><span class="line">const iframeVisited = ref(false) </span><br><span class="line"></span><br><span class="line">watch(</span><br><span class="line">  () =&gt; routes.path,</span><br><span class="line">  (value) =&gt; &#123;</span><br><span class="line">    if (value === &#x27;/iframe&#x27;) &#123;</span><br><span class="line">      iframeVisited.value = true</span><br><span class="line">      isIFramePageVisible.value = true</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      isIFramePageVisible.value = false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    immediate: true</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <h3 id="注意事项">注意事项</h3>
 <p>iframe 只有处于显示时，才会加载 iframe 里面的内容。因此，必须保证
 iframe 不在后台实例化，可以通过以下方式实现：</p>
@@ -453,13 +457,13 @@ KeepAlive 为什么不能缓存 iframe</a></p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">726k</span>
+    <span title="站点总字数">729k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:01</span>
+    <span title="站点阅读时长">11:03</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

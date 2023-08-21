@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-08-06T16:00:00.000Z</updated>
+  <updated>2023-08-19T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>免费的视频剪辑素材资源</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1YG7ZB2.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1YG7ZB2.html</id>
+    <published>2023-08-19T16:00:00.000Z</published>
+    <updated>2023-08-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近在工作上要制作几个微课，平时感觉制作一个视频还挺简单的，当到实际上手的时候，才发现力不从心，特别是素材，无从找起，因此本文对如何收集素材进行一个简要总结，以便今后更加高效的使用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文随着视频剪辑的熟练度增加，会不定期进行更新&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Skill" scheme="https://galens.uamazing.cn/categories/Skill/"/>
+    
+    <category term="Video" scheme="https://galens.uamazing.cn/categories/Skill/Video/"/>
+    
+    
+    <category term="Skill" scheme="https://galens.uamazing.cn/tags/Skill/"/>
+    
+    <category term="Video" scheme="https://galens.uamazing.cn/tags/Video/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Copilot 的免费替代软件</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1T84381.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1T84381.html</id>
+    <published>2023-08-08T16:00:00.000Z</published>
+    <updated>2023-08-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/mmexport1691536191853.png&quot;
+alt=&quot;img&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;img&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Copilot
+对于提升开发效率有很大的帮助，可以大大减少开发中的复制粘贴、重复写低逻辑代码的时间，同时还可以在没有思路时，提供一个参考方向。就像一个不那么资深的助手，在辅助你编程。&lt;/p&gt;
+&lt;p&gt;截止目前为止，Github Copilot 已经开始收费，每月 10 美元，包年 100
+美元。因此本文收录一些免费的平替软件，以备不时之需，有时间再来做一个详细的测试。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
+    
+    
+    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iEPC 设计协同使用教程</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2W88WG9.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2W88WG9.html</id>
+    <published>2023-08-08T16:00:00.000Z</published>
+    <updated>2023-08-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230809125317359.png&quot;
+alt=&quot;image-20230809125317359&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230809125317359&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;iEPC数字化全过程工程管理平台（以下简称
+iEPC）是一个集项目管理、OA办公、BIM生命周期应用、工程AI
+等多功能于一体的综合性平台，它打通了从设计到施工和运营的工程项目全生命周期管理流程，为工程建设进行高效的数字化赋能。&lt;/p&gt;
+&lt;p&gt;本文将介绍如何基于该平台实现设计协同。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="iEPC" scheme="https://galens.uamazing.cn/categories/Software/iEPC/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="iEPC" scheme="https://galens.uamazing.cn/tags/iEPC/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
   
   <entry>
     <title>重装 windows 系统</title>
@@ -511,93 +603,6 @@ moderator。&lt;/p&gt;
     <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 私有化部署获取事件回调</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2QBX38K.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2QBX38K.html</id>
-    <published>2023-06-27T16:00:00.000Z</published>
-    <updated>2023-06-27T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;私有化部署 jitsi-meet 后，可以通过 prosody 服务的
-&lt;code&gt;event_sync_component&lt;/code&gt; 插件来向指定服务器回调事件。&lt;/p&gt;
-&lt;p&gt;该插件支持的事件有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;房间创建&lt;/li&gt;
-&lt;li&gt;房间释放&lt;/li&gt;
-&lt;li&gt;用户加入&lt;/li&gt;
-&lt;li&gt;用户退出&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="jitsi" scheme="https://galens.uamazing.cn/tags/jitsi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 获取所有的房间列表</title>
-    <link href="https://galens.uamazing.cn/posts/2023/220EMHS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/220EMHS.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当部署 jitsi-meet
-后，若与现有的系统进行集成，需要获取当前所有活动的房间列表来方便管理。此时需要通过
-prosody 提供的 lua 插件来实现。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文基于 docker 部署 jitsi-meet&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 进行压力测试</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G78E45.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G78E45.html</id>
-    <published>2023-06-26T16:00:00.000Z</published>
-    <updated>2023-06-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;当私有化部署 jitsi-meet
-后，需要对它进行压力测试来评估其性能，通过官方提供的 &lt;a
-href=&quot;https://github.com/jitsi/jitsi-meet-torture&quot;&gt;jitsi/jitsi-meet-torture&lt;/a&gt;
-工具来进行测试评估。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
     
   </entry>
   

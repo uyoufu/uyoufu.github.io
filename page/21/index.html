@@ -205,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2021/WYBXRB.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2021/1P39N8S.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -223,7 +223,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2021/WYBXRB.html" class="post-title-link" itemprop="url">ORD安装完成一打开报错</a>
+          <a href="/posts/2021/1P39N8S.html" class="post-title-link" itemprop="url">ORD打印图片是黑色</a>
         </h2>
 
         <div class="post-meta-container">
@@ -264,7 +264,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>610</span>
+      <span>91</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -282,17 +282,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在ORD安装完成后，一打开软件就弹出崩溃界面，在错误文件的
-<code>Managed Call Stack:</code> 处有如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Managed Call Stack:</span><br><span class="line"> 0: Boolean get_EnablePerformanceChanges() from Bentley.ECObjects.ECObjects in Bentley.ECObjects3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4</span><br><span class="line"> 1: Bentley.DgnPlatformNET.BentleyStatus Initialize() from Bentley.DgnPlatformNET.DgnPlatformLib in Bentley.DgnPlatformNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4</span><br><span class="line"> 2: UInt32 wWinMainCRTStartup()</span><br><span class="line"> 3: UInt32 wWinMainCRTStartup()</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/2021/WYBXRB.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>在 ORD
+中进行批量打印时，发现无法打印图片，图片范围全是黑色的，可以通过如下方式解决：</p>
+<figure>
+<img data-src="https://img.uamazing.cn:52443/2021/11/1638153837_企业微信截图_16366214984716.png"
+alt="企业微信截图_16366214984716.png" />
+<figcaption
+aria-hidden="true">企业微信截图_16366214984716.png</figcaption>
+</figure>
+<p>将 <code>Print raster images</code> 勾选即可。</p>
+
       
     </div>
 

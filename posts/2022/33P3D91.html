@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。">
+    <meta name="description" content="本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bentley工程属性入门">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/33P3D91.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。">
+<meta property="og:description" content="本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-26T16:00:00.000Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ec"><span class="nav-number">2.</span> <span class="nav-text">EC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89-ecinstance"><span class="nav-number">2.1.</span> <span class="nav-text">查询所有 ECInstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E7%89%B9%E5%AE%9A-ecinstance"><span class="nav-number">2.2.</span> <span class="nav-text">查询特定 ECInstance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itemtype"><span class="nav-number">3.</span> <span class="nav-text">ItemType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xattribute"><span class="nav-number">4.</span> <span class="nav-text">XAttribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text"> 序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ec"><span class="nav-number">2.</span> <span class="nav-text"> EC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89-ecinstance"><span class="nav-number">2.1.</span> <span class="nav-text"> 查询所有 ECInstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E7%89%B9%E5%AE%9A-ecinstance"><span class="nav-number">2.2.</span> <span class="nav-text"> 查询特定 ECInstance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itemtype"><span class="nav-number">3.</span> <span class="nav-text"> ItemType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xattribute"><span class="nav-number">4.</span> <span class="nav-text"> XAttribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -283,34 +283,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn
-保存自己的数据。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。</p>
 <span id="more"></span>
-<h2 id="序">序</h2>
-<p>对于工程信息，主要分为<strong>几何数据</strong>与<strong>工程数据</strong>两个部分，对于几何数据，Bentley采用模型来表达。而工程数据，起初
-Bentley 采用 XAttribute 的方式在 dgn
-文件中开辟一个特定空间存储非几何数据，但是在由于没有统一数据存储的方式和格式，导致不同专业软件之间的信息无法交流。最后，Bentley
-经过大量的摸索和借鉴形成了一套系统的数据解决方案系统 ECFramework
-(Engineering Content Framework )，通过这套方案
-Bentley真正实现各个专业软件之间数据的无损流动和互动。</p>
+<h2 id="序"><a class="markdownIt-Anchor" href="#序"></a> 序</h2>
+<p>对于工程信息，主要分为<strong>几何数据</strong>与<strong>工程数据</strong>两个部分，对于几何数据，Bentley采用模型来表达。而工程数据，起初 Bentley 采用 XAttribute 的方式在 dgn 文件中开辟一个特定空间存储非几何数据，但是在由于没有统一数据存储的方式和格式，导致不同专业软件之间的信息无法交流。最后，Bentley 经过大量的摸索和借鉴形成了一套系统的数据解决方案系统 ECFramework (Engineering Content Framework )，通过这套方案  Bentley真正实现各个专业软件之间数据的无损流动和互动。</p>
 <p>对于仅需要向 dgn 保存自己工具所产生的数据，可以有如下三种方式：</p>
-<ol type="1">
+<ol>
 <li>EC</li>
 <li>ItemType</li>
 <li>XAttribute</li>
 </ol>
-<h2 id="ec">EC</h2>
-<h3 id="查询所有-ecinstance">查询所有 ECInstance</h3>
-<h3 id="查询特定-ecinstance">查询特定 ECInstance</h3>
-<h2 id="itemtype">ItemType</h2>
-<h2 id="xattribute">XAttribute</h2>
-<h2 id="参考">参考</h2>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/csharp">Bentley
-软件开发教程 C#语言</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/csharp/rgcgyp#2lqg5">工程信息数据开发API(EC框架)</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/nkoply/qdgygi#AgunG">MicroStation二次开发基础教学（七）</a></p>
+<h2 id="ec"><a class="markdownIt-Anchor" href="#ec"></a> EC</h2>
+<h3 id="查询所有-ecinstance"><a class="markdownIt-Anchor" href="#查询所有-ecinstance"></a> 查询所有 ECInstance</h3>
+<h3 id="查询特定-ecinstance"><a class="markdownIt-Anchor" href="#查询特定-ecinstance"></a> 查询特定 ECInstance</h3>
+<h2 id="itemtype"><a class="markdownIt-Anchor" href="#itemtype"></a> ItemType</h2>
+<h2 id="xattribute"><a class="markdownIt-Anchor" href="#xattribute"></a> XAttribute</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/csharp">Bentley 软件开发教程 C#语言</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/csharp/rgcgyp#2lqg5">工程信息数据开发API(EC框架) </a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/nkoply/qdgygi#AgunG">MicroStation二次开发基础教学（七）</a></p>
 
     </div>
 
@@ -380,8 +371,8 @@ target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/nkoply
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/3HRNXN7.html" rel="next" title="23 个设计模式速览">
-                  23 个设计模式速览 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2022/2AJRA04.html" rel="next" title="类关系图简记">
+                  类关系图简记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -415,13 +406,13 @@ target="_blank" rel="noopener" href="https://www.yuque.com/bentleysystems/nkoply
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

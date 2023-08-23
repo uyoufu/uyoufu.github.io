@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介（Introduction） “设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或 Expression Blend 中时，显示的是 XAML 的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自 ViewModel 的一些虚拟值。 Stylet">
+    <meta name="description" content="简介（Introduction） “设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或 Expression Blend 中时，显示的是 XAML 的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自 ViewModel 的一些虚拟值。 Stylet 对设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）17-Design Mode Support">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1VM70C3.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介（Introduction） “设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或 Expression Blend 中时，显示的是 XAML 的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自 ViewModel 的一些虚拟值。 Stylet">
+<meta property="og:description" content="简介（Introduction） “设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或 Expression Blend 中时，显示的是 XAML 的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自 ViewModel 的一些虚拟值。 Stylet 对设计模式">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,15 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bintroduction"><span class="nav-number">1.</span> <span class="nav-text">简介（Introduction）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AA%E6%9C%89%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E6%B2%A1%E6%9C%89%E7%BB%91%E5%AE%9Aintellisense-only-no-bindings"><span class="nav-number">2.</span> <span class="nav-text">只有智能感知，没有绑定（IntelliSense
-only, no bindings）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E5%92%8C%E8%99%9A%E6%8B%9F%E6%95%B0%E6%8D%AE%E8%AE%A9%E8%AE%BE%E8%AE%A1%E5%99%A8%E5%AE%9E%E4%BE%8B%E5%8C%96%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Bintellisense-and-dummy-data-letting-the-designer-instantiate-the-viewmodel"><span class="nav-number">3.</span> <span class="nav-text">智能感知和虚拟数据，让设计器实例化视图模型（Intellisense
-and Dummy Data, letting the Designer instantiate the ViewModel）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E6%88%91%E8%99%9A%E6%8B%9F%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%BD%8D%E5%99%A8-intellisense-and-dummy-data-using-a-viewmodellocator"><span class="nav-number">4.</span> <span class="nav-text">智能感知我虚拟数据，使用视图模型定位器
-（Intellisense and Dummy Data, using a ViewModelLocator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%90%AF%E7%94%A8%E4%B8%8D%E5%90%AF%E7%94%A8%E6%8C%89%E9%92%AEenablingdisabling-buttons-at-design-time"><span class="nav-number">5.</span> <span class="nav-text">在设计时启用&#x2F;不启用按钮（Enabling&#x2F;Disabling
-Buttons at Design Time）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9B%BF%E4%BB%A3%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Busing-substitute-viewmodels"><span class="nav-number">6.</span> <span class="nav-text">使用替代视图模型（Using
-Substitute ViewModels）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-stylet-%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%89%BE%E5%88%B0%E6%88%91%E7%9A%84-viewmodel-why-cant-stylet-find-my-viewmodel-automatically"><span class="nav-number">7.</span> <span class="nav-text">为什么
-Stylet 不能自动找到我的 ViewModel ?（Why can&#39;t Stylet find my ViewModel
-automatically?）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sview.model-and-embedded-views"><span class="nav-number">8.</span> <span class="nav-text">s:View.Model and Embedded
-Views</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bintroduction"><span class="nav-number">1.</span> <span class="nav-text"> 简介（Introduction）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AA%E6%9C%89%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E6%B2%A1%E6%9C%89%E7%BB%91%E5%AE%9Aintellisense-only-no-bindings"><span class="nav-number">2.</span> <span class="nav-text"> 只有智能感知，没有绑定（IntelliSense only, no bindings）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E5%92%8C%E8%99%9A%E6%8B%9F%E6%95%B0%E6%8D%AE%E8%AE%A9%E8%AE%BE%E8%AE%A1%E5%99%A8%E5%AE%9E%E4%BE%8B%E5%8C%96%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Bintellisense-and-dummy-data-letting-the-designer-instantiate-the-viewmodel"><span class="nav-number">3.</span> <span class="nav-text"> 智能感知和虚拟数据，让设计器实例化视图模型（Intellisense and Dummy Data, letting the Designer instantiate the ViewModel）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%84%9F%E7%9F%A5%E6%88%91%E8%99%9A%E6%8B%9F%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%BD%8D%E5%99%A8-intellisense-and-dummy-data-using-a-viewmodellocator"><span class="nav-number">4.</span> <span class="nav-text"> 智能感知我虚拟数据，使用视图模型定位器 （Intellisense and Dummy Data, using a ViewModelLocator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%90%AF%E7%94%A8%E4%B8%8D%E5%90%AF%E7%94%A8%E6%8C%89%E9%92%AEenablingdisabling-buttons-at-design-time"><span class="nav-number">5.</span> <span class="nav-text"> 在设计时启用&#x2F;不启用按钮（Enabling&#x2F;Disabling Buttons at Design Time）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9B%BF%E4%BB%A3%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Busing-substitute-viewmodels"><span class="nav-number">6.</span> <span class="nav-text"> 使用替代视图模型（Using Substitute ViewModels）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-stylet-%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%89%BE%E5%88%B0%E6%88%91%E7%9A%84-viewmodel-why-cant-stylet-find-my-viewmodel-automatically"><span class="nav-number">7.</span> <span class="nav-text"> 为什么 Stylet 不能自动找到我的 ViewModel ?（Why can’t Stylet find my ViewModel automatically?）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sviewmodel-and-embedded-views"><span class="nav-number">8.</span> <span class="nav-text"> s:View.Model and Embedded Views</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,7 +157,7 @@ Views</span></a></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -176,7 +168,7 @@ Views</span></a></li></ol></div>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -281,7 +273,7 @@ Views</span></a></li></ol></div>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.8k</span>
+      <span>8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -298,143 +290,80 @@ Views</span></a></li></ol></div>
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介introduction">简介（Introduction）</h2>
-<p>“设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或
-Expression Blend 中时，显示的是 XAML
-的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自
-ViewModel 的一些虚拟值。</p>
-<p>Stylet
-对设计模式有一些基本的支持。本文记录了它，并提供了如何使用它以及如何利用现有的
-XAML 特性来增强设计时体验的说明。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介introduction"><a class="markdownIt-Anchor" href="#简介introduction"></a> 简介（Introduction）</h2>
+<p>“设计模式”或“设计时”指的是项目加载到 Visual Studio XAML 设计器或 Expression Blend 中时，显示的是 XAML 的呈现版本。大多数情况下，设计人员不会尝试评和估任何绑定，也不会为它们提供任何智能感知。然而，通过一些配置，您可以获得可爱的智能感知，并在视图中显示来自 ViewModel 的一些虚拟值。</p>
+<p>Stylet 对设计模式有一些基本的支持。本文记录了它，并提供了如何使用它以及如何利用现有的 XAML 特性来增强设计时体验的说明。</p>
 <span id="more"></span>
-<p>这里显示的所有示例都可以在 <a
-target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Samples/Stylet.Samples.DesignMode">DesignMode
-sample project</a>中的 "ready to run" 里面找到。</p>
-<h2
-id="只有智能感知没有绑定intellisense-only-no-bindings">只有智能感知，没有绑定（IntelliSense
-only, no bindings）</h2>
-<p>这是最基本的技巧，你只需要做很少的额外工作。您将获得绑定的智能感知(至少在
-Visual Studio 2013 及以上版本中)，但是您不会在视图中看到来自 ViewModel
-的任何虚拟数据。</p>
-<p>首先，需要在视图的根目录中声明以下内容。如果你在 Visual Studio 2013
-中创建了一个 UserControl，这些将会被默认添加。</p>
+<p>这里显示的所有示例都可以在 <a target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Samples/Stylet.Samples.DesignMode">DesignMode sample project</a>中的 “ready to run” 里面找到。</p>
+<h2 id="只有智能感知没有绑定intellisense-only-no-bindings"><a class="markdownIt-Anchor" href="#只有智能感知没有绑定intellisense-only-no-bindings"></a> 只有智能感知，没有绑定（IntelliSense only, no bindings）</h2>
+<p>这是最基本的技巧，你只需要做很少的额外工作。您将获得绑定的智能感知(至少在 Visual Studio 2013 及以上版本中)，但是您不会在视图中看到来自 ViewModel 的任何虚拟数据。</p>
+<p>首先，需要在视图的根目录中声明以下内容。如果你在 Visual Studio 2013 中创建了一个 UserControl，这些将会被默认添加。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; </span><br><span class="line">xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; </span><br><span class="line">mc:Ignorable=&quot;d&quot; </span><br></pre></td></tr></table></figure>
 <p>你还需要为你的视图模型添加一个命名空间:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:vms=&quot;clr-namespace:DesignMode.ViewModels&quot;</span><br></pre></td></tr></table></figure>
-<p>一旦你有了这个，你需要一个额外的神奇的一行，它告诉 XAML
-设计器，这个视图的 <code>DataContext</code> 是你的
-<code>SampleViewModel</code>，绑定智能感知应该使用这个属性:</p>
+<p>一旦你有了这个，你需要一个额外的神奇的一行，它告诉 XAML 设计器，这个视图的 <code>DataContext</code> 是你的 <code>SampleViewModel</code>，绑定智能感知应该使用这个属性:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d:DataContext=&quot;&#123;d:DesignInstance vms:SampleViewModel&#125;&quot;</span><br></pre></td></tr></table></figure>
 <p>把它们放在一起，你会得到这样的结果:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;DesignMode.Views.SampleView&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">&quot;d&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:vms</span>=<span class="string">&quot;clr-namespace:DesignMode.ViewModels&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">d:DataContext</span>=<span class="string">&quot;&#123;d:DesignInstance vms:SampleViewModel&#125;&quot;</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2
-id="智能感知和虚拟数据让设计器实例化视图模型intellisense-and-dummy-data-letting-the-designer-instantiate-the-viewmodel">智能感知和虚拟数据，让设计器实例化视图模型（Intellisense
-and Dummy Data, letting the Designer instantiate the ViewModel）</h2>
-<p>除了让 XAML 设计人员为我们实例化 ViewModel
-之外，这种技术与前面的技术非常相似。设计器将使用这个ViewModel
-实例来获取绑定的虚拟数据。</p>
-<p>为了让设计器能够做到这一点，ViewModel
-必须有一个无参数的构造函数。这既是祝福也是诅咒。好的方面是，它为您提供了一个将一些虚拟数据注入
-ViewModel 属性以供设计人员使用的好地方。不好的一面是你的 ViewModel
-现在包含了只会被设计师使用的代码…</p>
+<h2 id="智能感知和虚拟数据让设计器实例化视图模型intellisense-and-dummy-data-letting-the-designer-instantiate-the-viewmodel"><a class="markdownIt-Anchor" href="#智能感知和虚拟数据让设计器实例化视图模型intellisense-and-dummy-data-letting-the-designer-instantiate-the-viewmodel"></a> 智能感知和虚拟数据，让设计器实例化视图模型（Intellisense and Dummy Data, letting the Designer instantiate the ViewModel）</h2>
+<p>除了让 XAML 设计人员为我们实例化 ViewModel 之外，这种技术与前面的技术非常相似。设计器将使用这个ViewModel 实例来获取绑定的虚拟数据。</p>
+<p>为了让设计器能够做到这一点，ViewModel 必须有一个无参数的构造函数。这既是祝福也是诅咒。好的方面是，它为您提供了一个将一些虚拟数据注入 ViewModel 属性以供设计人员使用的好地方。不好的一面是你的 ViewModel 现在包含了只会被设计师使用的代码…</p>
 <blockquote>
-<p><strong>注意：</strong>在设计时没有访问 IoC
-容器的权限(任何请求访问的人将被带到后台…处理)。因此，如果您的ViewModel
-有任何依赖项，它们在设计时将不可用。通常这不是问题:
-只有属性被访问(没有方法被调用)，所以您不应该做任何需要访问某个依赖项的事情。只要把它记在心里。</p>
+<p>**注意：**在设计时没有访问 IoC 容器的权限(任何请求访问的人将被带到后台…处理)。因此，如果您的ViewModel 有任何依赖项，它们在设计时将不可用。通常这不是问题: 只有属性被访问(没有方法被调用)，所以您不应该做任何需要访问某个依赖项的事情。只要把它记在心里。</p>
 </blockquote>
 <p>以这种方式编写的支持设计模式的示例视图模型如下所示:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SampleViewModel</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IUserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> CurrentUserName &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SampleViewModel</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.CurrentUserName = <span class="string">&quot;Dummy Username&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SampleViewModel</span>(<span class="params">IUserService userService</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.userService = userService;</span><br><span class="line">        <span class="keyword">this</span>.CurrentUserName = <span class="keyword">this</span>.userService.CurrentUser.UserName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>注意：</strong>StyletIoC
-总是会选择具有最多可解析参数的构造函数，它也会调用接受
-<code>IUserService</code>
-的重载。另一方面，设计器总是调用无参数的构造函数。</p>
+<p>**注意：**StyletIoC 总是会选择具有最多可解析参数的构造函数，它也会调用接受 <code>IUserService</code> 的重载。另一方面，设计器总是调用无参数的构造函数。</p>
 </blockquote>
-<p>如果 ViewModel 通常只有一个无参数的构造函数，那么可以使用
-<code>Execute.InDesignMode</code> 或者
-<code>Execute: Dispatching to the UI thread</code>，如下:</p>
+<p>如果 ViewModel 通常只有一个无参数的构造函数，那么可以使用 <code>Execute.InDesignMode</code> 或者 <code>Execute: Dispatching to the UI thread</code>，如下:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SampleViewModel</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> SomeText &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SampleViewModel</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Execute.InDesignMode)</span><br><span class="line">            <span class="keyword">this</span>.SomeText = <span class="string">&quot;Dummy Text&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">this</span>.SomeText = <span class="string">&quot;Actual Text&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不管怎样，一旦你有了一个 ViewModel
-的无参数构造函数，设计师可以使用，你可以告诉设计师实例化它使用:</p>
+<p>不管怎样，一旦你有了一个 ViewModel 的无参数构造函数，设计师可以使用，你可以告诉设计师实例化它使用:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d:DataContext=&quot;&#123;d:DesignInstance vms:SampleViewModel, IsDesignTimeCreatable=True&#125;&quot;</span><br></pre></td></tr></table></figure>
 <p>或者，如下完整版本：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;DesignMode.Views.SampleView&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">&quot;d&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:vms</span>=<span class="string">&quot;clr-namespace:DesignMode.ViewModels&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">d:DataContext</span>=<span class="string">&quot;&#123;d:DesignInstance vms:SampleViewModel, IsDesignTimeCreatable=True&#125;&quot;</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2
-id="智能感知我虚拟数据使用视图模型定位器-intellisense-and-dummy-data-using-a-viewmodellocator">智能感知我虚拟数据，使用视图模型定位器
-（Intellisense and Dummy Data, using a ViewModelLocator）</h2>
-<p>前面的方法有一个很大的缺点: 它要求 ViewModel
-知道设计模式，并且包含只在设计时调用的代码。这被一些人认为是一种巨大的代码味道。</p>
-<p>另一种方法是使用
-ViewModelLocator——一个只在设计时使用的类，它可以实例化和配置您的
-viewmodel。这意味着任何设计时都可以进入
-ViewModelLocator，并且不进入各个视图。</p>
+<h2 id="智能感知我虚拟数据使用视图模型定位器-intellisense-and-dummy-data-using-a-viewmodellocator"><a class="markdownIt-Anchor" href="#智能感知我虚拟数据使用视图模型定位器-intellisense-and-dummy-data-using-a-viewmodellocator"></a> 智能感知我虚拟数据，使用视图模型定位器 （Intellisense and Dummy Data, using a ViewModelLocator）</h2>
+<p>前面的方法有一个很大的缺点: 它要求 ViewModel 知道设计模式，并且包含只在设计时调用的代码。这被一些人认为是一种巨大的代码味道。</p>
+<p>另一种方法是使用 ViewModelLocator——一个只在设计时使用的类，它可以实例化和配置您的 viewmodel。这意味着任何设计时都可以进入 ViewModelLocator，并且不进入各个视图。</p>
 <p>如果这听起来很复杂，请原谅我。这一切在一分钟内就会变得明晰。</p>
 <p>首先，让我们构建一个 SampleViewModel：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SampleViewModel</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IUserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> CurrentUserName &#123; <span class="keyword">get</span>;<span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SampleViewModel</span>(<span class="params">IUserService userService</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.userService = userService;</span><br><span class="line">        <span class="keyword">this</span>.CurrentUserName = <span class="keyword">this</span>.userService.CurrentUser.UserName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>拉下来，我们需要一个
-ViewModelLocator，这是一个简单的类，每个视图模型包含一个属性，我们可能想在设计时访问:</p>
+<p>拉下来，我们需要一个 ViewModelLocator，这是一个简单的类，每个视图模型包含一个属性，我们可能想在设计时访问:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ViewModelLocator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> SampleViewModel SampleViewModel</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> vm = <span class="keyword">new</span> SampleViewModel();</span><br><span class="line">            vm.CurrentUserName = <span class="string">&quot;Dummy Username&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span> vm;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意到 ViewModel 是如何仅在需要时实例化的吗? 这是因为
-ViewModelLocator
-本身将在运行时实例化，但是它的属性将只在设计时访问。</p>
+<p>注意到 ViewModel 是如何仅在需要时实例化的吗? 这是因为 ViewModelLocator 本身将在运行时实例化，但是它的属性将只在设计时访问。</p>
 <p>接下来，让我们把它添加到我们的应用程序的资源中，这样它就可以用于我们的视图:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Application</span> <span class="attr">x:Class</span>=<span class="string">&quot;DesignMode.App&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:local</span>=<span class="string">&quot;clr-namespace:DesignMode&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:ApplicationLoader</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">s:ApplicationLoader.Bootstrapper</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">local:Bootstrapper</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">s:ApplicationLoader.Bootstrapper</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">local:ViewModelLocator</span> <span class="attr">x:Key</span>=<span class="string">&quot;ViewModelLocator&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">s:ApplicationLoader</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Application</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后在视图中使用：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;DesignMode.Views.SampleView&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">&quot;d&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:vms</span>=<span class="string">&quot;clr-namespace:DesignMode.ViewModels&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">d:DataContext</span>=<span class="string">&quot;&#123;Binding Source=&#123;StaticResource ViewModelLocator&#125;, Path=SampleViewModel&#125;&quot;</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2
-id="在设计时启用不启用按钮enablingdisabling-buttons-at-design-time">在设计时启用/不启用按钮（Enabling/Disabling
-Buttons at Design Time）</h2>
-<p>在上面的所有例子中，我们只绑定了视图的 <code>DataContext</code>
-：我们没有对它的 “View. actiontarget |Actions#the-viewactiontarget”
-做任何事情。这意味着按钮的可启用性不会反映保护属性的值(如果它存在的话)——它总是被启用的。</p>
-<p><strong>注意：</strong>默认情况下，Stylet
-会绑定视图。当它实例化视图时，<code>ActionTarget</code>
-指向相应的视图模型。然而，在设计时，Stylet 并不负责实例化视图，因此
-<code>View.ActionTarget</code> 不绑定。</p>
-<p>如果你想让按钮的 enabledless 反映它的保护属性，你需要添加:
-<code>s:View.ActionTarget="&#123;Binding&#125;"</code>到你的视图，例如:</p>
+<h2 id="在设计时启用不启用按钮enablingdisabling-buttons-at-design-time"><a class="markdownIt-Anchor" href="#在设计时启用不启用按钮enablingdisabling-buttons-at-design-time"></a> 在设计时启用/不启用按钮（Enabling/Disabling Buttons at Design Time）</h2>
+<p>在上面的所有例子中，我们只绑定了视图的 <code>DataContext</code> ：我们没有对它的 “View. actiontarget |Actions#the-viewactiontarget” 做任何事情。这意味着按钮的可启用性不会反映保护属性的值(如果它存在的话)——它总是被启用的。</p>
+<p>**注意：**默认情况下，Stylet 会绑定视图。当它实例化视图时，<code>ActionTarget</code> 指向相应的视图模型。然而，在设计时，Stylet 并不负责实例化视图，因此 <code>View.ActionTarget</code> 不绑定。</p>
+<p>如果你想让按钮的 enabledless 反映它的保护属性，你需要添加: <code>s:View.ActionTarget=&quot;&#123;Binding&#125;&quot;</code>到你的视图，例如:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;DesignMode.Views.SampleView&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">&quot;d&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:vms</span>=<span class="string">&quot;clr-namespace:DesignMode.ViewModels&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">d:DataContext</span>=<span class="string">&quot;&#123;d:DesignInstance vms:SampleViewModel, IsDesignTimeCreatable=True&#125;&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">s:View.ActionTarget</span>=<span class="string">&quot;&#123;Binding&#125;&quot;</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2
-id="使用替代视图模型using-substitute-viewmodels">使用替代视图模型（Using
-Substitute ViewModels）</h2>
-<p>另一个解决"视图模型知道设计时，但它其它不应该知道"这个问题的办法是你的视图实现一个接口(真正的接口,或在头部假装实现一个)，然后，构造
-design-time-only
-视图并实现相同的接口，同时包含虚拟数据。然后在设计时以相同的方式绑定它:
-<code>d:DataContext="&#123;d:DesignInstance vms:DummyViewModel, IsDesignTimeCreatable=True&#125;"</code>。但是，对于大多数开发人员来说，这样的开销太大了。</p>
-<p>WPF也有一个设计时数据的概念，<a
-target="_blank" rel="noopener" href="http://blogs.msdn.com/b/wpfsldesigner/archive/2010/06/30/sample-data-wpf%20-and-silverlight-designer.aspx">参见例子</a>。</p>
-<h2
-id="为什么-stylet-不能自动找到我的-viewmodel-why-cant-stylet-find-my-viewmodel-automatically">为什么
-Stylet 不能自动找到我的 ViewModel ?（Why can't Stylet find my ViewModel
-automatically?）</h2>
-<p>由于 Stylet 能够获取一个
-ViewModel，并查找和实例化它的视图，您可能会想问为什么它不能以另一种方式做到这一点:
-也就是说，在设计时，为给定的视图自动找到正确的
-ViewModel，并用正确的依赖项实例化它。这是一个非常糟糕的想法，原因有很多:</p>
-<ol type="1">
-<li><p>我们需要添加一种将 View 名称转换为 ViewModel 名称的方法，这增加了
-<code>ViewManager</code> 的复杂性(特别是对于任何提供自己的
-<code>ViewManager</code> 的人来说)。</p></li>
-<li><p>我们需要在设计时实例化一个适当的
-<code>IViewManager</code>实现。由于用户可以提供自己的实现，这意味着打开整个
-IoC
-容器。因为这依赖于正确地设置了引导程序的程序集属性，所以我们需要打开整个引导程序。这可能会产生令人讨厌的副作用(请考虑启动执行网络提交、文件系统访问等的服务)。</p></li>
-<li><p>我们需要提供一个具有所有依赖关系的
-ViewModel。这意味着实例化服务，这可能会产生令人讨厌的副作用。</p></li>
-<li><p>ViewModel
-可能不会包含合适的虚拟数据，所以我们没有获得太多。</p></li>
-<li><p>由于我们太过聪明而导致某些服务以错误的方式启动，因此出现设计器错误(或者更糟，出现网络/文件系统副作用)，调试起来很痛苦，我们不应该把这种情况强加于人。</p></li>
+<h2 id="使用替代视图模型using-substitute-viewmodels"><a class="markdownIt-Anchor" href="#使用替代视图模型using-substitute-viewmodels"></a> 使用替代视图模型（Using Substitute ViewModels）</h2>
+<p>另一个解决&quot;视图模型知道设计时，但它其它不应该知道&quot;这个问题的办法是你的视图实现一个接口(真正的接口,或在头部假装实现一个)，然后，构造 design-time-only 视图并实现相同的接口，同时包含虚拟数据。然后在设计时以相同的方式绑定它: <code>d:DataContext=&quot;&#123;d:DesignInstance vms:DummyViewModel, IsDesignTimeCreatable=True&#125;&quot;</code>。但是，对于大多数开发人员来说，这样的开销太大了。</p>
+<p>WPF也有一个设计时数据的概念，[参见例子](<a target="_blank" rel="noopener" href="http://blogs.msdn.com/b/wpfsldesigner/archive/2010/06/30/sample-data-wpf">http://blogs.msdn.com/b/wpfsldesigner/archive/2010/06/30/sample-data-wpf</a> -and-silverlight-designer.aspx)。</p>
+<h2 id="为什么-stylet-不能自动找到我的-viewmodel-why-cant-stylet-find-my-viewmodel-automatically"><a class="markdownIt-Anchor" href="#为什么-stylet-不能自动找到我的-viewmodel-why-cant-stylet-find-my-viewmodel-automatically"></a> 为什么 Stylet 不能自动找到我的 ViewModel ?（Why can’t Stylet find my ViewModel automatically?）</h2>
+<p>由于 Stylet 能够获取一个 ViewModel，并查找和实例化它的视图，您可能会想问为什么它不能以另一种方式做到这一点: 也就是说，在设计时，为给定的视图自动找到正确的 ViewModel，并用正确的依赖项实例化它。这是一个非常糟糕的想法，原因有很多:</p>
+<ol>
+<li>
+<p>我们需要添加一种将 View 名称转换为 ViewModel 名称的方法，这增加了 <code>ViewManager</code> 的复杂性(特别是对于任何提供自己的 <code>ViewManager</code> 的人来说)。</p>
+</li>
+<li>
+<p>我们需要在设计时实例化一个适当的 <code>IViewManager</code>实现。由于用户可以提供自己的实现，这意味着打开整个 IoC 容器。因为这依赖于正确地设置了引导程序的程序集属性，所以我们需要打开整个引导程序。这可能会产生令人讨厌的副作用(请考虑启动执行网络提交、文件系统访问等的服务)。</p>
+</li>
+<li>
+<p>我们需要提供一个具有所有依赖关系的 ViewModel。这意味着实例化服务，这可能会产生令人讨厌的副作用。</p>
+</li>
+<li>
+<p>ViewModel 可能不会包含合适的虚拟数据，所以我们没有获得太多。</p>
+</li>
+<li>
+<p>由于我们太过聪明而导致某些服务以错误的方式启动，因此出现设计器错误(或者更糟，出现网络/文件系统副作用)，调试起来很痛苦，我们不应该把这种情况强加于人。</p>
+</li>
 </ol>
-<h2 id="sview.model-and-embedded-views">s:View.Model and Embedded
-Views</h2>
-<p>如果你有一个内嵌视图(例如
-<code>&lt;ContentControl s:View.Model="&#123;Binding SomeChildViewModel&#125;"/&gt;</code>)在您的视图中，然后
-Stylet 将在 View for ViewModelType.SomeChildViewModel
-行简单地显示一条消息。而不是试图找到正确的视图。这与我们没有自动定位
-ViewModels 的原因非常相似: 这意味着打开 IoC 容器(我们需要找到用户的
-<code>IViewManager</code>
-实现)，这意味着运行引导程序，这让我们可以做真正危险的事情。最好避免。</p>
+<h2 id="sviewmodel-and-embedded-views"><a class="markdownIt-Anchor" href="#sviewmodel-and-embedded-views"></a> s:View.Model and Embedded Views</h2>
+<p>如果你有一个内嵌视图(例如 <code>&lt;ContentControl s:View.Model=&quot;&#123;Binding SomeChildViewModel&#125;&quot;/&gt;</code>)在您的视图中，然后 Stylet 将在 View for ViewModelType.SomeChildViewModel 行简单地显示一条消息。而不是试图找到正确的视图。这与我们没有自动定位 ViewModels 的原因非常相似: 这意味着打开 IoC 容器(我们需要找到用户的 <code>IViewManager</code> 实现)，这意味着运行引导程序，这让我们可以做真正危险的事情。最好避免。</p>
 
     </div>
 
@@ -499,13 +428,13 @@ ViewModels 的原因非常相似: 这意味着打开 IoC 容器(我们需要找�
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/4NQDGJ.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）18-Logging">
-                  <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）18-Logging
+                <a href="/posts/2020/39AEVSS.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）15-The ViewManager">
+                  <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）15-The ViewManager
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2020/1SHECQH.html" rel="next" title="WPF MVVM Stylet使用文档（中文）16-Listening to INotifyPropertyChanged">
-                  WPF MVVM Stylet使用文档（中文）16-Listening to INotifyPropertyChanged <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2020/1HXBM8H.html" rel="next" title="WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase">
+                  WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -539,13 +468,13 @@ ViewModels 的原因非常相似: 这意味着打开 IoC 容器(我们需要找�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

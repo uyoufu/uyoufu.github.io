@@ -19,14 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u11 为例，其它版本的安装方法与该版本相同。   image-20230307213816049">
+    <meta name="description" content="本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u11 为例，其它版本的安装方法与该版本相同。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ORD 及 swBentley 安装教程">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3EFH36D.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u11 为例，其它版本的安装方法与该版本相同。   image-20230307213816049">
+<meta property="og:description" content="本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u11 为例，其它版本的安装方法与该版本相同。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230530095409381.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16521749963686.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213254437.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175143781.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175314700.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180523865.png">
@@ -40,7 +44,7 @@
 <meta property="article:tag" content="ORD使用">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213254437.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3EFH36D.html">
@@ -100,7 +104,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -151,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">安装要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">下载安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%8E%9F%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">卸载原安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD-ord-%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">卸载 ORD 程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD-connection-client-%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.2.</span> <span class="nav-text">卸载 Connection Client 程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%8D%B8%E8%BD%BD%E6%AE%8B%E7%95%99"><span class="nav-number">3.3.</span> <span class="nav-text">删除卸载残留</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">开始安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E9%99%86bentley%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">登陆Bentley账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.1.</span> <span class="nav-text">注册账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B3%E8%AF%B7%E6%8E%88%E6%9D%83"><span class="nav-number">5.2.</span> <span class="nav-text">申请授权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-swsetup"><span class="nav-number">6.</span> <span class="nav-text">下载 SwSetup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB-swbentley"><span class="nav-number">7.</span> <span class="nav-text">激活 SwBentley</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85swbentley"><span class="nav-number">8.</span> <span class="nav-text">安装SwBentley</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text"> 安装要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text"> 下载安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%8E%9F%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text"> 卸载原安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD-ord-%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text"> 卸载 ORD 程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD-connection-client-%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.2.</span> <span class="nav-text"> 卸载 Connection Client 程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%8D%B8%E8%BD%BD%E6%AE%8B%E7%95%99"><span class="nav-number">3.3.</span> <span class="nav-text"> 删除卸载残留</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text"> 开始安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E9%99%86bentley%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text"> 登陆Bentley账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.1.</span> <span class="nav-text"> 注册账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B3%E8%AF%B7%E6%8E%88%E6%9D%83"><span class="nav-number">5.2.</span> <span class="nav-text"> 申请授权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-swsetup"><span class="nav-number">6.</span> <span class="nav-text"> 下载 SwSetup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB-swbentley"><span class="nav-number">7.</span> <span class="nav-text"> 激活 SwBentley</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85swbentley"><span class="nav-number">8.</span> <span class="nav-text"> 安装SwBentley</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -177,7 +181,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -278,7 +282,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.3k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -295,136 +299,113 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD
-u11 为例，其它版本的安装方法与该版本相同。</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png"
-alt="image-20230307213816049" />
-<figcaption aria-hidden="true">image-20230307213816049</figcaption>
-</figure>
+    <div class="post-body" itemprop="articleBody"><p>本文介绍了 OpenRoads Designer（以下简称 ORD）的安装教程。本教程以 ORD u11 为例，其它版本的安装方法与该版本相同。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png" alt="image-20230307213816049" /></p>
 <span id="more"></span>
-<h2 id="安装要求">安装要求</h2>
-<p>由于 ORD 软件默认安装在 C 盘，所以需要保证 C 盘有足够的空间大小，ORD
-最小所需安装空间约为：<strong>20G ！</strong>。</p>
+<h2 id="安装要求"><a class="markdownIt-Anchor" href="#安装要求"></a> 安装要求</h2>
+<p>由于 ORD 软件默认安装在 C 盘，所以需要保证 C 盘有足够的空间大小，ORD 最小所需安装空间约为：<strong>20G ！</strong>。</p>
 <blockquote>
 <p>ORD 安装时支持自定义安装位置，可以选择安装在其它盘，减少 C 盘占用</p>
 </blockquote>
-<h2 id="下载安装包">下载安装包</h2>
-<p>安装包可以从 <code>iEPC</code>
-的知识管理中下载，也可以从同事处拷贝，由于网速原因，此处不再另外单独给下载链接。</p>
-<h2 id="卸载原安装">卸载原安装</h2>
+<h2 id="下载安装包"><a class="markdownIt-Anchor" href="#下载安装包"></a> 下载安装包</h2>
+<p>安装包可以从 <code>iEPC</code> 的知识管理中下载，也可以从同事处拷贝，由于网速原因，此处不再另外单独给下载链接。</p>
+<h2 id="卸载原安装"><a class="markdownIt-Anchor" href="#卸载原安装"></a> 卸载原安装</h2>
 <p>根据以下步骤进行依次卸载或者删除：</p>
-<h3 id="卸载-ord-程序">卸载 ORD 程序</h3>
+<h3 id="卸载-ord-程序"><a class="markdownIt-Anchor" href="#卸载-ord-程序"></a> 卸载 ORD 程序</h3>
 <p>打开程序和功能面板，卸载 ORD</p>
 <blockquote>
-<p>快捷打开方式： win+R，然后输入 <code>appwiz.cpl</code>
-，点击确定。</p>
+<p>快捷打开方式： win+R，然后输入 <code>appwiz.cpl</code> ，点击确定。</p>
 </blockquote>
-<h3 id="卸载-connection-client-程序">卸载 Connection Client 程序</h3>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230530095409381.png"
-alt="image-20230530095409381" />
-<figcaption aria-hidden="true">image-20230530095409381</figcaption>
-</figure>
-<h3 id="删除卸载残留">删除卸载残留</h3>
-<ol type="1">
-<li><p>删除安装目录</p>
-<p>默认为：
-<code>C:\Program Files\Bentley\OpenRoads Designer CE 10.11\OpenRoadsDesigner</code></p></li>
-<li><p>删除程序配置目录</p>
+<h3 id="卸载-connection-client-程序"><a class="markdownIt-Anchor" href="#卸载-connection-client-程序"></a> 卸载 Connection Client 程序</h3>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230530095409381.png" alt="image-20230530095409381" /></p>
+<h3 id="删除卸载残留"><a class="markdownIt-Anchor" href="#删除卸载残留"></a> 删除卸载残留</h3>
+<ol>
+<li>
+<p>删除安装目录</p>
+<p>默认为： <code>C:\Program Files\Bentley\OpenRoads Designer CE 10.11\OpenRoadsDesigner</code></p>
+</li>
+<li>
+<p>删除程序配置目录</p>
 <p><code>C:\ProgramData\Bentley\OpenRoads Designer CE 10.11</code></p>
-<p><code>C:\ProgramData\Bentley\OpenRoadsDesigner</code></p></li>
-<li><p>删除用户配置目录</p>
-<p><code>C:\Users\%username%\AppData\Local\Bentley\OpenRoadsDesigner</code></p></li>
-<li><p>删除注册表</p>
-<p>以管理员身份运行 <code>cmd</code> 或者 <code>posershell</code>，按
-<code>ctrl+x</code> 会弹出快捷菜单：</p>
+<p><code>C:\ProgramData\Bentley\OpenRoadsDesigner</code></p>
+</li>
+<li>
+<p>删除用户配置目录</p>
+<p><code>C:\Users\%username%\AppData\Local\Bentley\OpenRoadsDesigner</code></p>
+</li>
+<li>
+<p>删除注册表</p>
+<p>以管理员身份运行 <code>cmd</code> 或者 <code>posershell</code>，按 <code>ctrl+x</code> 会弹出快捷菜单：</p>
 <ul>
 <li>windows 10 选择 <code>Windows Powershell 管理员(A)</code></li>
 <li>windows 11 选择 <code>终端管理员(A)</code></li>
 </ul>
 <p>可以快速打开 powershell。</p>
 <p>将以下代码拷贝到里面，按 Enter 即可：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 ConnectClient</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/CONNECTIONClient /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/CONNECTIONClient /f</span><br><span class="line"><span class="comment"># 删除 ORD</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/OpenRoadsDesigner /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/OpenRoadsDesigner /f</span><br><span class="line"><span class="comment"># 删除 License 服务</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/LicenseService /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/LicenseService /f</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 ConnectClient</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/CONNECTIONClient /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/CONNECTIONClient /f</span><br><span class="line"><span class="comment"># 删除 ORD</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/OpenRoadsDesigner /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/OpenRoadsDesigner /f</span><br><span class="line"><span class="comment"># 删除 License 服务</span></span><br><span class="line">reg delete HKCU/HKEY_CURRENT_USER/Software/Bentley/LicenseService /f</span><br><span class="line">reg delete HKCU/HKEY_LOCAL_MACHINE/Software/Bentley/LicenseService /f</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="开始安装">开始安装</h2>
-<ol type="1">
-<li><p>解压软件</p>
+<h2 id="开始安装"><a class="markdownIt-Anchor" href="#开始安装"></a> 开始安装</h2>
+<ol>
+<li>
+<p>解压软件</p>
 <p>安装包下载完成后，解压文件，其中文件如下图所示：</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/企业微信截图_16521749963686.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-<li><p>单击 <em>Setup_OpenRoadsDesignerx64_10.09.00.091.exe</em>
-进行安装</p></li>
-<li><p>配置安装路径</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16521749963686.png" alt="img" /></p>
+</li>
+<li>
+<p>单击 <em>Setup_OpenRoadsDesignerx64_10.09.00.091.exe</em> 进行安装</p>
+</li>
+<li>
+<p>配置安装路径</p>
 <p>点击 <code>Configure</code> 跳转到安装配置界面，如下图所示</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213254437.png" alt="image-20230307213254437" style="zoom: 50%;" /></p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png"
-alt="image-20230307213816049" />
-<figcaption aria-hidden="true">image-20230307213816049</figcaption>
-</figure>
-<p>配置完成后，勾选
-<code>I accept the End User License Agreement</code>，然后点击
-<code>Install</code> 进行安装。</p>
-<p>现在不需要其它操作，静候程序自动安装完成即可!</p></li>
-<li><p>关闭 CONNECTION Client 自启动</p>
-<p><code>CONNECTION Client</code>
-安装完成后，会默认开机启动，既影响开机速度，又影响使用体验。关闭位置如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175143781.png" style="max-width:min(100%,600px)"></p>
-<p>在任务管理器的启动栏中，找到上述三个启动项，右键，关闭。</p></li>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213254437.png" alt="image-20230307213254437" style="zoom: 50%;" />
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230307213816049.png" alt="image-20230307213816049" /></p>
+<p>配置完成后，勾选 <code>I accept the End User License Agreement</code>，然后点击 <code>Install</code> 进行安装。</p>
+<p>现在不需要其它操作，静候程序自动安装完成即可!</p>
+</li>
+<li>
+<p>关闭 CONNECTION Client 自启动</p>
+<p><code>CONNECTION Client</code> 安装完成后，会默认开机启动，既影响开机速度，又影响使用体验。关闭位置如下：</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175143781.png" style="max-width:min(100%,600px)">
+<p>在任务管理器的启动栏中，找到上述三个启动项，右键，关闭。</p>
+</li>
 </ol>
-<h2 id="登陆bentley账号">登陆Bentley账号</h2>
-<p>在打开 ORD 时，会要求登陆
-<code>CONNECTION Client</code>，其登陆界面如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175314700.png" style="max-width:min(100%,200px)"></p>
-<p>输入账号（账号是邮箱），点击
-<code>Next</code>，再输入密码进行登陆。</p>
-<h3 id="注册账号">注册账号</h3>
-<p>如果没有账号，需要点击 <code>立即注册</code> 进行注册。也可以<a
-target="_blank" rel="noopener" href="https://ims.bentley.com/">点击此处</a> 快速跳转到注册界面。</p>
-<h3 id="申请授权">申请授权</h3>
-<p>新注册账户需要管理员进行授权才能使用 ORD。将申请的账号发给
-<em>管理员</em>，在管理员授权以后，重新登陆
-<code>CONNECTION Client</code> ，即可正常使用 ORD。</p>
-<h2 id="下载-swsetup">下载 SwSetup</h2>
-<p>到目前为止，ORD 不具有任何企业定制化的设置在里面，此时需要通过
-<code>SwSetup</code> 安装 <code>SwBentley</code>，从而使 ORD
-可以开始应用于生产环境。</p>
-<p><code>SwSetup</code> 可在 <code>iEPC</code>
-的知识管理中下载，此处没有直链。</p>
+<h2 id="登陆bentley账号"><a class="markdownIt-Anchor" href="#登陆bentley账号"></a> 登陆Bentley账号</h2>
+<p>在打开 ORD 时，会要求登陆 <code>CONNECTION Client</code>，其登陆界面如下：</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510175314700.png" style="max-width:min(100%,200px)">
+<p>输入账号（账号是邮箱），点击 <code>Next</code>，再输入密码进行登陆。</p>
+<h3 id="注册账号"><a class="markdownIt-Anchor" href="#注册账号"></a> 注册账号</h3>
+<p>如果没有账号，需要点击 <code>立即注册</code> 进行注册。也可以<a target="_blank" rel="noopener" href="https://ims.bentley.com/">点击此处</a> 快速跳转到注册界面。</p>
+<h3 id="申请授权"><a class="markdownIt-Anchor" href="#申请授权"></a> 申请授权</h3>
+<p>新注册账户需要管理员进行授权才能使用 ORD。将申请的账号发给 <em>管理员</em>，在管理员授权以后，重新登陆 <code>CONNECTION Client</code> ，即可正常使用 ORD。</p>
+<h2 id="下载-swsetup"><a class="markdownIt-Anchor" href="#下载-swsetup"></a> 下载 SwSetup</h2>
+<p>到目前为止，ORD 不具有任何企业定制化的设置在里面，此时需要通过 <code>SwSetup</code> 安装 <code>SwBentley</code>，从而使 ORD 可以开始应用于生产环境。</p>
+<p><code>SwSetup</code> 可在 <code>iEPC</code> 的知识管理中下载，此处没有直链。</p>
 <blockquote>
 <p><strong>注意：</strong></p>
 <p>下载时、解压时、使用时可能会被杀毒软件提示是病毒，从而不能被隔离。可以关闭杀毒软件再试，被报病毒是由于该软件需要用管理员权限启动，所以会被误报。</p>
 </blockquote>
-<h2 id="激活-swbentley">激活 SwBentley</h2>
+<h2 id="激活-swbentley"><a class="markdownIt-Anchor" href="#激活-swbentley"></a> 激活 SwBentley</h2>
 <p><strong>注册必读：</strong></p>
-<p><strong>申请码与电脑硬件数量及类型相关，比如增减U
-盘、移动硬盘、软件狗等会使激活码变动（鼠标、键盘、显示器没有影响），因此在申请时，确保当前电脑处于常用的硬件安装状态。</strong></p>
-<p>当打开 <code>swSetup</code>
-时，若未注册，则会弹出新用户注册界面，如下图所示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180523865.png" style="max-width:min(100%,400px)"></p>
+<p><strong>申请码与电脑硬件数量及类型相关，比如增减U 盘、移动硬盘、软件狗等会使激活码变动（鼠标、键盘、显示器没有影响），因此在申请时，确保当前电脑处于常用的硬件安装状态。</strong></p>
+<p>当打开 <code>swSetup</code> 时，若未注册，则会弹出新用户注册界面，如下图所示：</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180523865.png" style="max-width:min(100%,400px)">
 <p>点击 <code>获得注册码</code></p>
 <p>随后弹出注册申请界面，如下图所示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180648349.png" style="max-width:min(100%,300px)"></p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180648349.png" style="max-width:min(100%,300px)">
 <p>填入相关信息，单击发送。</p>
 <p>若申请通过，将会通过用户邮箱发送用户注册码。</p>
 <blockquote>
 <p>激活码可能会被邮箱识别成垃圾邮件，所以可以在垃圾箱中查看下是否有激活码接收。</p>
 </blockquote>
-<h2 id="安装swbentley">安装SwBentley</h2>
+<h2 id="安装swbentley"><a class="markdownIt-Anchor" href="#安装swbentley"></a> 安装SwBentley</h2>
 <p><code>swSetup</code> 激活后，就可以进行更新了。</p>
-<p>在更新之前，需要先 <strong>关闭 ORD</strong>，然后再打开
-<code>swSetup.exe</code>，此时会出现下图所示界面：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180955637.png" style="max-width:min(100%,350px)"></p>
-<p>点击 <code>更新</code>，更新完成后，<code>SwBentley</code>
-也就安装完成了。</p>
+<p>在更新之前，需要先 <strong>关闭 ORD</strong>，然后再打开 <code>swSetup.exe</code>，此时会出现下图所示界面：</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220510180955637.png" style="max-width:min(100%,350px)">
+<p>点击 <code>更新</code>，更新完成后，<code>SwBentley</code> 也就安装完成了。</p>
 <blockquote>
 <p>额外补充：</p>
-<p>swSetup 的激活码与 SwBentley 是绑定的，只要激活了 swSetup，SwBentley
-也就激活了。</p>
+<p>swSetup 的激活码与 SwBentley  是绑定的，只要激活了 swSetup，SwBentley 也就激活了。</p>
 </blockquote>
 
     </div>
@@ -532,13 +513,13 @@ target="_blank" rel="noopener" href="https://ims.bentley.com/">点击此处</a> 
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

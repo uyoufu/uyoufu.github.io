@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。">
+    <meta name="description" content="本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="23 个设计模式速览">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3HRNXN7.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。">
+<meta property="og:description" content="本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.gif">
@@ -48,6 +48,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.gif">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F_%E6%89%A9%E5%B1%95.gif">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.gif">
 <meta property="article:published_time" content="2022-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-05T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -115,7 +116,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -166,7 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-number">1.</span> <span class="nav-text">概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">创建型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">简单工厂模式（静态工厂方法模式）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">2.1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">2.1.4.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">缺点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.2.4.</span> <span class="nav-text">应用场景：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">2.3.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-2"><span class="nav-number">2.3.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-2"><span class="nav-number">2.3.5.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E7%82%B9-1"><span class="nav-number">2.4.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-3"><span class="nav-number">2.4.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-3"><span class="nav-number">2.4.5.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.5.</span> <span class="nav-text">建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-3"><span class="nav-number">2.5.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">2.5.3.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-4"><span class="nav-number">2.5.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-4"><span class="nav-number">2.5.5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB"><span class="nav-number">2.5.6.</span> <span class="nav-text">与工厂模式区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.6.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-4"><span class="nav-number">2.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-5"><span class="nav-number">2.6.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-5"><span class="nav-number">2.6.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-5"><span class="nav-number">2.6.4.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">结构型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">适配模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-5"><span class="nav-number">3.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-6"><span class="nav-number">3.1.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-6"><span class="nav-number">3.1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-6"><span class="nav-number">3.1.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.1.5.</span> <span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-6"><span class="nav-number">3.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-7"><span class="nav-number">3.2.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-7"><span class="nav-number">3.2.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-7"><span class="nav-number">3.2.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1"><span class="nav-number">3.2.5.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">3.2.6.</span> <span class="nav-text">动态代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">享元模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-7"><span class="nav-number">3.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-8"><span class="nav-number">3.3.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-8"><span class="nav-number">3.3.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-8"><span class="nav-number">3.3.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1"><span class="nav-number">3.3.5.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-1"><span class="nav-number">3.3.6.</span> <span class="nav-text">扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">组合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-8"><span class="nav-number">3.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-9"><span class="nav-number">3.4.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-9"><span class="nav-number">3.4.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-9"><span class="nav-number">3.4.4.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="nav-number">3.4.5.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-2"><span class="nav-number">3.4.6.</span> <span class="nav-text">扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.5.</span> <span class="nav-text">装饰器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-9"><span class="nav-number">3.5.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-10"><span class="nav-number">3.5.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-10"><span class="nav-number">3.5.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-10"><span class="nav-number">3.5.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-3"><span class="nav-number">3.5.5.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-3"><span class="nav-number">3.5.6.</span> <span class="nav-text">扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.6.</span> <span class="nav-text">外观模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-10"><span class="nav-number">3.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-11"><span class="nav-number">3.6.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-11"><span class="nav-number">3.6.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-11"><span class="nav-number">3.6.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-4"><span class="nav-number">3.6.5.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-4"><span class="nav-number">3.6.6.</span> <span class="nav-text">扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.7.</span> <span class="nav-text">桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-11"><span class="nav-number">3.7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-12"><span class="nav-number">3.7.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-12"><span class="nav-number">3.7.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-12"><span class="nav-number">3.7.4.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-5"><span class="nav-number">3.7.5.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">行为型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">解释器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-12"><span class="nav-number">4.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-13"><span class="nav-number">4.1.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-13"><span class="nav-number">4.1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-13"><span class="nav-number">4.1.4.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">备忘录模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.3.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.4.</span> <span class="nav-text">中介模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">迭代器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.6.</span> <span class="nav-text">访问者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.7.</span> <span class="nav-text">策略模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.8.</span> <span class="nav-text">状态模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.9.</span> <span class="nav-text">职责链模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.10.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.11.</span> <span class="nav-text">模板模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-number">1.</span> <span class="nav-text"> 概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text"> 创建型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text"> 简单工厂模式（静态工厂方法模式）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">2.1.4.</span> <span class="nav-text"> 缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text"> 工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-2"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-2"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-2"><span class="nav-number">2.2.3.</span> <span class="nav-text"> 缺点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.2.4.</span> <span class="nav-text"> 应用场景：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text"> 抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-3"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">2.3.3.</span> <span class="nav-text"> 特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-3"><span class="nav-number">2.3.4.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-3"><span class="nav-number">2.3.5.</span> <span class="nav-text"> 缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text"> 单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-3"><span class="nav-number">2.4.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-4"><span class="nav-number">2.4.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E7%82%B9-2"><span class="nav-number">2.4.3.</span> <span class="nav-text"> 特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-4"><span class="nav-number">2.4.4.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-4"><span class="nav-number">2.4.5.</span> <span class="nav-text"> 缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.5.</span> <span class="nav-text"> 建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-4"><span class="nav-number">2.5.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-5"><span class="nav-number">2.5.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">2.5.3.</span> <span class="nav-text"> 扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-5"><span class="nav-number">2.5.4.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-5"><span class="nav-number">2.5.5.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB"><span class="nav-number">2.5.6.</span> <span class="nav-text"> 与工厂模式区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.6.</span> <span class="nav-text"> 原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-5"><span class="nav-number">2.6.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-6"><span class="nav-number">2.6.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-6"><span class="nav-number">2.6.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-6"><span class="nav-number">2.6.4.</span> <span class="nav-text"> 缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text"> 结构型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text"> 适配模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-6"><span class="nav-number">3.1.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-7"><span class="nav-number">3.1.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-7"><span class="nav-number">3.1.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-7"><span class="nav-number">3.1.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.1.5.</span> <span class="nav-text"> 使用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text"> 代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-7"><span class="nav-number">3.2.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-8"><span class="nav-number">3.2.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-8"><span class="nav-number">3.2.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-8"><span class="nav-number">3.2.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="nav-number">3.2.5.</span> <span class="nav-text"> 使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">3.2.6.</span> <span class="nav-text"> 动态代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text"> 享元模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-8"><span class="nav-number">3.3.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-9"><span class="nav-number">3.3.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-9"><span class="nav-number">3.3.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-9"><span class="nav-number">3.3.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="nav-number">3.3.5.</span> <span class="nav-text"> 应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-2"><span class="nav-number">3.3.6.</span> <span class="nav-text"> 扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text"> 组合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-9"><span class="nav-number">3.4.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-10"><span class="nav-number">3.4.2.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-10"><span class="nav-number">3.4.3.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-10"><span class="nav-number">3.4.4.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-3"><span class="nav-number">3.4.5.</span> <span class="nav-text"> 应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-3"><span class="nav-number">3.4.6.</span> <span class="nav-text"> 扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.5.</span> <span class="nav-text"> 装饰器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-10"><span class="nav-number">3.5.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-11"><span class="nav-number">3.5.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-11"><span class="nav-number">3.5.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-11"><span class="nav-number">3.5.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-4"><span class="nav-number">3.5.5.</span> <span class="nav-text"> 应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-4"><span class="nav-number">3.5.6.</span> <span class="nav-text"> 扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.6.</span> <span class="nav-text"> 外观模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-11"><span class="nav-number">3.6.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-12"><span class="nav-number">3.6.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-12"><span class="nav-number">3.6.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-12"><span class="nav-number">3.6.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-5"><span class="nav-number">3.6.5.</span> <span class="nav-text"> 应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95-5"><span class="nav-number">3.6.6.</span> <span class="nav-text"> 扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.7.</span> <span class="nav-text"> 桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-12"><span class="nav-number">3.7.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-13"><span class="nav-number">3.7.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-13"><span class="nav-number">3.7.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-13"><span class="nav-number">3.7.4.</span> <span class="nav-text"> 缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-6"><span class="nav-number">3.7.5.</span> <span class="nav-text"> 应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text"> 行为型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text"> 解释器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-13"><span class="nav-number">4.1.1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84-14"><span class="nav-number">4.1.2.</span> <span class="nav-text"> 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-14"><span class="nav-number">4.1.3.</span> <span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-14"><span class="nav-number">4.1.4.</span> <span class="nav-text"> 缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text"> 备忘录模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.3.</span> <span class="nav-text"> 观察者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.4.</span> <span class="nav-text"> 中介模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text"> 迭代器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.6.</span> <span class="nav-text"> 访问者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.7.</span> <span class="nav-text"> 策略模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.8.</span> <span class="nav-text"> 状态模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.9.</span> <span class="nav-text"> 职责链模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.10.</span> <span class="nav-text"> 命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.11.</span> <span class="nav-text"> 模板模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,7 +182,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -192,7 +193,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -310,43 +311,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文指在对 GoF 提出的 23
-条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。</p>
 <span id="more"></span>
-<h2 id="概览">概览</h2>
+<h2 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h2>
 <table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th>关系</th>
+<tr>
+<th>关系\模式</th>
 <th>创建型模式</th>
 <th>结构型模式</th>
 <th>行为型模式</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>类模式</td>
 <td>1-工厂方法模式</td>
 <td>1-适配器模式</td>
 <td>1-解释器模式 <br />2-模板方法模式</td>
 </tr>
-<tr class="even">
+<tr>
 <td>对象模式</td>
-<td>1-抽象工厂模式<br />2-建造者模式<br />3-原型模式
-<br />4-单例模式</td>
-<td>1-适配器模式(对象) <br />2-桥接模式 <br />3-组合模式
-<br />4-装饰模式<br />5-外观模式 <br />6-享元模式 <br />7-代理模式</td>
-<td>1-职责链模式 <br />2-命令模式 <br />3-迭代器模式 <br />4-中介者模式
-<br />5-备忘录模式 <br />6-观察者模式 <br />7-状态模式 <br />8-策略模式
-<br />9-访问者模式</td>
+<td>1-抽象工厂模式<br />2-建造者模式<br />3-原型模式 <br />4-单例模式</td>
+<td>1-适配器模式(对象) <br />2-桥接模式 <br />3-组合模式 <br />4-装饰模式<br />5-外观模式 <br />6-享元模式 <br />7-代理模式</td>
+<td>1-职责链模式 <br />2-命令模式 <br />3-迭代器模式 <br />4-中介者模式 <br />5-备忘录模式 <br />6-观察者模式 <br />7-状态模式 <br />8-策略模式 <br />9-访问者模式</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>顺口溜</td>
 <td>单见公园愁<br /><code>小创这只单身狗见到公园里的情侣就发愁</code></td>
 <td>世代想组装外桥<br /><code>小结世代想组装一个外国的桥梁</code></td>
@@ -361,204 +351,195 @@
 <p>釆用组合或聚合来组合对象。</p>
 <p>它处理的是对象之间的关系，运行时发生变化，属于动态关系。</p>
 <p>按照设计原则来说，<strong>组合优于继承</strong>，所以可以尽可能选择<strong>对象模式</strong>。</p>
-<h2 id="创建型模式">创建型模式</h2>
+<h2 id="创建型模式"><a class="markdownIt-Anchor" href="#创建型模式"></a> 创建型模式</h2>
 <p>创建型模式的主要关注点是“<strong>怎样创建对象</strong>”，它的主要特点是“<strong>将对象的创建与使用分离</strong>”。</p>
 <p>这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。</p>
 <p>创建型模式分为以下几种。</p>
-<ol type="1">
+<ol>
 <li>单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。</li>
 <li>原型（Prototype）模式：将一个对象作为原型，通过对其进行复制而克隆出多个和原型类似的新实例。</li>
 <li>工厂方法（FactoryMethod）模式：定义一个用于创建产品的接口，由子类决定生产什么产品。</li>
 <li>抽象工厂（AbstractFactory）模式：提供一个创建产品族的接口，其每个子类可以生产一系列相关的产品。</li>
 <li>建造者（Builder）模式：将一个复杂对象分解成多个相对简单的部分，然后根据不同需要分别创建它们，最后构建成该复杂对象。</li>
 </ol>
-<h3
-id="简单工厂模式静态工厂方法模式">简单工厂模式（静态工厂方法模式）</h3>
-<h4 id="定义">定义</h4>
+<h3 id="简单工厂模式静态工厂方法模式"><a class="markdownIt-Anchor" href="#简单工厂模式静态工厂方法模式"></a> 简单工厂模式（静态工厂方法模式）</h3>
+<h4 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h4>
 <p>定义一个创建产品对象的工厂接口，将产品对象的实际创建工作推迟到具体子工厂类当中。这满足创建型模式中所要求的“创建与使用相分离”的特点。</p>
 <p>如果要创建的产品不多，只要一个工厂类就可以完成，这种模式叫“简单工厂模式”。</p>
-<p>在简单工厂模式中创建实例的方法通常为静态（static）方法，因此简单工厂模式（Simple
-Factory Pattern）<strong>又叫作静态工厂方法模式</strong>（Static Factory
-Method Pattern）。</p>
+<p>在简单工厂模式中创建实例的方法通常为静态（static）方法，因此简单工厂模式（Simple Factory Pattern）<strong>又叫作静态工厂方法模式</strong>（Static Factory Method Pattern）。</p>
 <p>简单工厂模式不在 GoF 23 种设计模式之列。</p>
-<h4 id="结构">结构</h4>
+<h4 id="结构"><a class="markdownIt-Anchor" href="#结构"></a> 结构</h4>
 <p>简单工厂模式的主要角色如下：</p>
-<ol type="1">
+<ol>
 <li>简单工厂（SimpleFactory）：是简单工厂模式的核心，负责实现创建所有实例的内部逻辑。工厂类的创建产品类的方法可以被外界直接调用，创建所需的产品对象。</li>
 <li>抽象产品（Product）：是简单工厂创建的所有对象的父类，负责描述所有实例共有的公共接口。</li>
 <li>具体产品（ConcreteProduct）：是简单工厂模式的创建目标。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/简单工厂模式.png" style="max-width:400px"></p>
-<h4 id="优点">优点</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/简单工厂模式.png" style="max-width:400px">
+<h4 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h4>
+<ol>
 <li>工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端可以免除直接创建产品对象的职责，很方便的创建出相应的产品。工厂和产品的职责区分明确。</li>
 <li>客户端无需知道所创建具体产品的类名，只需知道参数即可。</li>
 <li>也可以引入配置文件，在不修改客户端代码的情况下更换和添加新的具体产品类。</li>
 </ol>
-<h4 id="缺点">缺点</h4>
-<ol type="1">
+<h4 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h4>
+<ol>
 <li>简单工厂模式的工厂类单一，负责所有产品的创建，职责过重，一旦异常，整个系统将受影响。且工厂类代码会非常臃肿，违背高聚合原则。</li>
 <li>使用简单工厂模式会增加系统中类的个数（引入新的工厂类），增加系统的复杂度和理解难度</li>
 <li>系统扩展困难，一旦增加新产品不得不修改工厂逻辑，在产品类型较多时，可能造成逻辑过于复杂（违背了开闭原则）</li>
-<li>简单工厂模式使用了 static
-工厂方法，造成工厂角色无法形成基于继承的等级结构。</li>
+<li>简单工厂模式使用了 static 工厂方法，造成工厂角色无法形成基于继承的等级结构。</li>
 </ol>
-<h3 id="工厂方法模式">工厂方法模式</h3>
-<h4 id="结构-1">结构</h4>
+<h3 id="工厂方法模式"><a class="markdownIt-Anchor" href="#工厂方法模式"></a> 工厂方法模式</h3>
+<h4 id="结构-2"><a class="markdownIt-Anchor" href="#结构-2"></a> 结构</h4>
 <p>工厂方法模式的主要角色如下。</p>
-<ol type="1">
-<li>抽象工厂（Abstract
-Factory）：提供了创建产品的接口，调用者通过它访问具体工厂的工厂方法
-newProduct() 来创建产品。</li>
+<ol>
+<li>抽象工厂（Abstract Factory）：提供了创建产品的接口，调用者通过它访问具体工厂的工厂方法 newProduct() 来创建产品。</li>
 <li>具体工厂（ConcreteFactory）：主要是实现抽象工厂中的抽象方法，完成具体产品的创建。</li>
 <li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。</li>
 <li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/工厂方法模式.gif" style="max-width:500px"/></p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/工厂方法模式.gif" style="max-width:500px"/>
 <blockquote>
-<p>Client
-中通过从配置文件中读取需要实例化的工厂名称，所以它不需要依赖具体的工厂</p>
+<p>Client 中通过从配置文件中读取需要实例化的工厂名称，所以它不需要依赖具体的工厂</p>
 </blockquote>
-<h4 id="优点-1">优点：</h4>
+<h4 id="优点-2"><a class="markdownIt-Anchor" href="#优点-2"></a> 优点：</h4>
 <ul>
 <li>用户只需要知道具体工厂的名称就可得到所要的产品，无须知道产品的具体创建过程。</li>
 <li>灵活性增强，对于新产品的创建，只需多写一个相应的工厂类。</li>
 <li>典型的解耦框架。高层模块只需要知道产品的抽象类，无须关心其他实现类，满足迪米特法则、依赖倒置原则和里氏替换原则。</li>
 </ul>
-<h4 id="缺点-1">缺点：</h4>
+<h4 id="缺点-2"><a class="markdownIt-Anchor" href="#缺点-2"></a> 缺点：</h4>
 <ul>
 <li>类的个数容易过多，增加复杂度</li>
 <li>增加了系统的抽象性和理解难度</li>
-<li>抽象产品只能生产一种产品，此弊端可使用 <strong>抽象工厂模式</strong>
-解决。</li>
+<li>抽象产品只能生产一种产品，此弊端可使用 <strong>抽象工厂模式</strong> 解决。</li>
 </ul>
-<h4 id="应用场景">应用场景：</h4>
+<h4 id="应用场景"><a class="markdownIt-Anchor" href="#应用场景"></a> 应用场景：</h4>
 <ul>
-<li>客户只知道创建产品的工厂名，而不知道具体的产品名。如 TCL
-电视工厂、海信电视工厂等。</li>
+<li>客户只知道创建产品的工厂名，而不知道具体的产品名。如 TCL 电视工厂、海信电视工厂等。</li>
 <li>创建对象的任务由多个具体子工厂中的某一个完成，而抽象工厂只提供创建产品的接口。</li>
 <li>客户不关心创建产品的细节，只关心产品的品牌</li>
 </ul>
-<h3 id="抽象工厂模式">抽象工厂模式</h3>
-<h4 id="定义-1">定义</h4>
+<h3 id="抽象工厂模式"><a class="markdownIt-Anchor" href="#抽象工厂模式"></a> 抽象工厂模式</h3>
+<h4 id="定义-2"><a class="markdownIt-Anchor" href="#定义-2"></a> 定义</h4>
 <p><strong>抽象工厂模式</strong>是一种为访问类提供一个创建一组相关或相互依赖对象的接口，且访问类无须指定所要产品的具体类就能得到同族的不同等级的产品的模式结构。</p>
-<h4 id="结构-2">结构</h4>
+<h4 id="结构-3"><a class="markdownIt-Anchor" href="#结构-3"></a> 结构</h4>
 <p>抽象工厂模式的主要角色如下。</p>
-<ol type="1">
-<li>抽象工厂（Abstract
-Factory）：提供了创建产品的接口，它包含多个创建产品的方法
-newProduct()，可以创建多个不同等级的产品。</li>
-<li>具体工厂（Concrete
-Factory）：主要是实现抽象工厂中的多个抽象方法，完成具体产品的创建。</li>
+<ol>
+<li>抽象工厂（Abstract Factory）：提供了创建产品的接口，它包含多个创建产品的方法 newProduct()，可以创建多个不同等级的产品。</li>
+<li>具体工厂（Concrete Factory）：主要是实现抽象工厂中的多个抽象方法，完成具体产品的创建。</li>
 <li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能，抽象工厂模式有多个抽象产品。</li>
 <li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间是多对一的关系。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/抽象工厂模式.gif" style="max-width:500px"/></p>
-<h4 id="特点">特点</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/抽象工厂模式.gif" style="max-width:500px"/>
+<h4 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h4>
 <p>抽象工厂模式是工厂方法模式的升级版本，工厂方法模式只生产一个等级的产品，而抽象工厂模式可生产多个等级的产品。</p>
 <p>使用抽象工厂模式一般要满足以下条件：</p>
 <ul>
 <li>系统中有多个产品族，每个具体工厂创建同一族但属于不同等级结构的产品。</li>
 <li>系统一次只可能消费其中某一族产品，即同族的产品一起使用。</li>
 </ul>
-<h4 id="优点-2">优点</h4>
+<h4 id="优点-3"><a class="markdownIt-Anchor" href="#优点-3"></a> 优点</h4>
 <p>抽象工厂模式除了具有工厂方法模式的优点外，其他主要优点如下：</p>
 <ul>
 <li>可以在类的内部对产品族中相关联的多等级产品共同管理，而不必专门引入多个新的类来进行管理。</li>
 <li>当需要产品族时，抽象工厂可以保证客户端始终只使用同一个产品的产品组。</li>
 <li>抽象工厂增强了程序的可扩展性，当增加一个新的产品族时，不需要修改原代码，满足开闭原则。</li>
 </ul>
-<h4 id="缺点-2">缺点</h4>
+<h4 id="缺点-3"><a class="markdownIt-Anchor" href="#缺点-3"></a> 缺点</h4>
 <p>当产品族中需要增加一个新的产品时，所有的工厂类都需要进行修改。增加了系统的抽象性和理解难度。</p>
-<h3 id="单例模式">单例模式</h3>
-<h4 id="定义-2">定义</h4>
+<h3 id="单例模式"><a class="markdownIt-Anchor" href="#单例模式"></a> 单例模式</h3>
+<h4 id="定义-3"><a class="markdownIt-Anchor" href="#定义-3"></a> 定义</h4>
 <p>单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。</p>
-<h4 id="结构-3">结构</h4>
+<h4 id="结构-4"><a class="markdownIt-Anchor" href="#结构-4"></a> 结构</h4>
 <p>单例模式有多种实现方式，常用的有<strong>懒汉模式</strong>和<strong>饿汉模式</strong>。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单例模式.gif" style="max-width:400px"/></p>
-<h4 id="特点-1">特点</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单例模式.gif" style="max-width:400px"/>
+<h4 id="特点-2"><a class="markdownIt-Anchor" href="#特点-2"></a> 特点</h4>
 <p>单例模式有 3 个特点：</p>
-<ol type="1">
+<ol>
 <li>单例类只有一个实例对象；</li>
 <li>该单例对象必须由单例类自行创建；</li>
 <li>单例类对外提供一个访问该单例的全局访问点。</li>
 </ol>
-<h4 id="优点-3">优点</h4>
-<ol type="1">
+<h4 id="优点-4"><a class="markdownIt-Anchor" href="#优点-4"></a> 优点</h4>
+<ol>
 <li>单例模式可以保证内存里只有一个实例，减少了内存的开销。</li>
 <li>可以避免对资源的多重占用。</li>
 <li>单例模式设置全局访问点，可以优化和共享资源的访问。</li>
 </ol>
-<h4 id="缺点-3">缺点</h4>
-<ol type="1">
+<h4 id="缺点-4"><a class="markdownIt-Anchor" href="#缺点-4"></a> 缺点</h4>
+<ol>
 <li>单例模式一般没有接口，扩展困难。如果要扩展，则除了修改原来的代码，没有第二种途径，违背开闭原则。</li>
 <li>在并发测试中，单例模式不利于代码调试。在调试过程中，如果单例中的代码没有执行完，也不能模拟生成一个新的对象。</li>
 <li>单例模式的功能代码通常写在一个类中，如果功能设计不合理，则很容易违背单一职责原则。</li>
 </ol>
-<h3 id="建造者模式">建造者模式</h3>
-<h4 id="定义-3">定义</h4>
+<h3 id="建造者模式"><a class="markdownIt-Anchor" href="#建造者模式"></a> 建造者模式</h3>
+<h4 id="定义-4"><a class="markdownIt-Anchor" href="#定义-4"></a> 定义</h4>
 <p>建造者（Builder）模式的定义：指将一个复杂对象的构造与它的表示分离，使同样的构建过程可以创建不同的表示，这样的设计模式被称为建造者模式。</p>
 <p>它是将一个复杂的对象分解为多个简单的对象，然后一步一步构建而成。它将变与不变相分离，即产品的组成部分是不变的，但每一部分是可以灵活选择的。</p>
-<h4 id="结构-4">结构</h4>
-<p>建造者（Builder）模式由产品、抽象建造者、具体建造者、指挥者等 4
-个要素构成：</p>
-<ol type="1">
-<li><p>产品角色（Product）：它是包含多个组成部件的复杂对象，由具体建造者来创建其各个零部件。</p></li>
-<li><p>抽象建造者（Builder）：它是一个包含创建产品各个子部件的抽象方法的接口，通常还包含一个返回复杂产品的方法
-getResult()。</p></li>
-<li><p>具体建造者(Concrete Builder）：实现 Builder
-接口，完成复杂产品的各个部件的具体创建方法。</p></li>
-<li><p>指挥者（Director）：它调用建造者对象中的部件构造与装配方法完成复杂对象的创建，在指挥者中不涉及具体产品的信息。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/建造者模式.gif" style="max-width:400px"/></p></li>
+<h4 id="结构-5"><a class="markdownIt-Anchor" href="#结构-5"></a> 结构</h4>
+<p>建造者（Builder）模式由产品、抽象建造者、具体建造者、指挥者等 4 个要素构成：</p>
+<ol>
+<li>
+<p>产品角色（Product）：它是包含多个组成部件的复杂对象，由具体建造者来创建其各个零部件。</p>
+</li>
+<li>
+<p>抽象建造者（Builder）：它是一个包含创建产品各个子部件的抽象方法的接口，通常还包含一个返回复杂产品的方法 getResult()。</p>
+</li>
+<li>
+<p>具体建造者(Concrete Builder）：实现 Builder 接口，完成复杂产品的各个部件的具体创建方法。</p>
+</li>
+<li>
+<p>指挥者（Director）：它调用建造者对象中的部件构造与装配方法完成复杂对象的创建，在指挥者中不涉及具体产品的信息。</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/建造者模式.gif" style="max-width:400px"/>
+</li>
 </ol>
 <blockquote>
 <p>为什么需要指挥者呢？</p>
 <p>这是为了将组装过程与实际建造分离</p>
 </blockquote>
-<h4 id="扩展">扩展</h4>
+<h4 id="扩展"><a class="markdownIt-Anchor" href="#扩展"></a> 扩展</h4>
 <p>建造者（Builder）模式在应用过程中可以根据需要改变，如果创建的产品种类只有一种，只需要一个具体建造者，这时可以省略掉抽象建造者，甚至可以省略掉指挥者角色。</p>
-<h4 id="优点-4">优点</h4>
-<ol type="1">
+<h4 id="优点-5"><a class="markdownIt-Anchor" href="#优点-5"></a> 优点</h4>
+<ol>
 <li>封装性好，构建和表示分离。</li>
 <li>扩展性好，各个具体的建造者相互独立，有利于系统的解耦。</li>
 <li>客户端不必知道产品内部组成的细节，建造者可以对创建过程逐步细化，而不对其它模块产生任何影响，便于控制细节风险。</li>
 </ol>
-<h4 id="缺点-4">缺点</h4>
-<ol type="1">
+<h4 id="缺点-5"><a class="markdownIt-Anchor" href="#缺点-5"></a> 缺点</h4>
+<ol>
 <li>产品的组成部分必须相同，这限制了其使用范围。</li>
 <li>如果产品的内部变化复杂，如果产品内部发生变化，则建造者也要同步修改，后期维护成本较大。</li>
 </ol>
-<h4 id="与工厂模式区别">与工厂模式区别</h4>
+<h4 id="与工厂模式区别"><a class="markdownIt-Anchor" href="#与工厂模式区别"></a> 与工厂模式区别</h4>
 <p>建造者（Builder）模式和工厂模式的区别：</p>
-<ol type="1">
+<ol>
 <li>建造者模式更加注重方法的调用顺序，工厂模式注重创建对象。</li>
 <li>创建对象的力度不同，建造者模式创建复杂的对象，由各种复杂的部件组成，工厂模式创建出来的对象都一样</li>
 <li>关注重点不一样，工厂模式只需要把对象创建出来就可以了，而建造者模式不仅要创建出对象，还要知道对象由哪些部件组成。</li>
 <li>建造者模式根据建造过程中的顺序不一样，最终对象部件组成也不一样。</li>
 </ol>
-<h3 id="原型模式">原型模式</h3>
-<h4 id="定义-4">定义</h4>
+<h3 id="原型模式"><a class="markdownIt-Anchor" href="#原型模式"></a> 原型模式</h3>
+<h4 id="定义-5"><a class="markdownIt-Anchor" href="#定义-5"></a> 定义</h4>
 <p>原型（Prototype）模式的定义如下：用一个已经创建的实例作为原型，通过<strong>复制</strong>该原型对象来创建一个和原型相同或相似的新对象。</p>
 <p>在这里，原型实例指定了要创建的对象的种类。用复制的方式创建对象非常高效，根本无须知道对象创建的细节。</p>
-<h4 id="结构-5">结构</h4>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/原型模式.gif" style="max-width:450px"/></p>
-<h4 id="优点-5">优点</h4>
-<ol type="1">
-<li>Java 中自带的原型模式基于内存二进制流的复制，在性能上比直接 new
-一个对象更加优良。</li>
+<h4 id="结构-6"><a class="markdownIt-Anchor" href="#结构-6"></a> 结构</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/原型模式.gif" style="max-width:450px"/>
+<h4 id="优点-6"><a class="markdownIt-Anchor" href="#优点-6"></a> 优点</h4>
+<ol>
+<li>Java 中自带的原型模式基于内存二进制流的复制，在性能上比直接 new 一个对象更加优良。</li>
 <li>可以使用深克隆方式保存对象的状态，使用原型模式将对象复制一份，并将其状态保存起来，简化了创建对象的过程，以便在需要的时候使用（例如恢复到历史某一状态），可辅助实现撤销操作。</li>
 </ol>
-<h4 id="缺点-5">缺点</h4>
-<ol type="1">
+<h4 id="缺点-6"><a class="markdownIt-Anchor" href="#缺点-6"></a> 缺点</h4>
+<ol>
 <li>需要为每一个类都配置一个 clone 方法</li>
-<li>clone
-方法位于类的内部，当对已有类进行改造的时候，需要修改代码，违背了开闭原则。</li>
+<li>clone 方法位于类的内部，当对已有类进行改造的时候，需要修改代码，违背了开闭原则。</li>
 <li>当实现深克隆时，需要编写较为复杂的代码，而且当对象之间存在多重嵌套引用时，为了实现深克隆，每一层对象对应的类都必须支持深克隆，实现起来会比较麻烦。因此，深克隆、浅克隆需要运用得当。</li>
 </ol>
-<h2 id="结构型模式">结构型模式</h2>
+<h2 id="结构型模式"><a class="markdownIt-Anchor" href="#结构型模式"></a> 结构型模式</h2>
 <p>由于组合关系或聚合关系比继承关系耦合度低，满足“合成复用原则”，所以对象结构型模式比类结构型模式具有更大的灵活性。</p>
 <p>结构型模式分为以下 7 种：</p>
-<ol type="1">
+<ol>
 <li>代理（Proxy）模式：为某对象提供一种代理以控制对该对象的访问。即客户端通过代理间接地访问该对象，从而限制、增强或修改该对象的一些特性。</li>
 <li>适配器（Adapter）模式：将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类能一起工作。</li>
 <li>桥接（Bridge）模式：将抽象与实现分离，使它们可以独立变化。它是用组合关系代替继承关系来实现的，从而降低了抽象和实现这两个可变维度的耦合度。</li>
@@ -567,59 +548,57 @@ getResult()。</p></li>
 <li>享元（Flyweight）模式：运用共享技术来有效地支持大量细粒度对象的复用。</li>
 <li>组合（Composite）模式：将对象组合成树状层次结构，使用户对单个对象和组合对象具有一致的访问性。</li>
 </ol>
-<p>以上 7
-种结构型模式，除了<strong>适配器模式</strong>分为类结构型模式和对象结构型模式两种，其他的全部属于对象结构型模式。</p>
-<h3 id="适配模式">适配模式</h3>
-<h4 id="定义-5">定义</h4>
+<p>以上 7 种结构型模式，除了<strong>适配器模式</strong>分为类结构型模式和对象结构型模式两种，其他的全部属于对象结构型模式。</p>
+<h3 id="适配模式"><a class="markdownIt-Anchor" href="#适配模式"></a> 适配模式</h3>
+<h4 id="定义-6"><a class="markdownIt-Anchor" href="#定义-6"></a> 定义</h4>
 <p>适配器模式（Adapter）的定义如下：将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类能一起工作。</p>
 <p>适配器模式分为类结构型模式和对象结构型模式两种，前者类之间的耦合度比后者高，且要求程序员了解现有组件库中的相关组件的内部结构，所以应用相对较少些。</p>
-<h4 id="结构-6">结构</h4>
+<h4 id="结构-7"><a class="markdownIt-Anchor" href="#结构-7"></a> 结构</h4>
 <p>适配器模式（Adapter）包含以下主要角色。</p>
-<ol type="1">
+<ol>
 <li>目标（Target）接口：当前系统业务所期待的接口，它可以是抽象类或接口。</li>
 <li>适配者（Adaptee）类：它是被访问和适配的现存组件库中的组件接口。</li>
 <li>适配器（Adapter）类：它是一个转换器，通过继承或引用适配者的对象，把适配者接口转换成目标接口，让客户按目标接口的格式访问适配者。</li>
 </ol>
 <p><strong>类模式：</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_类模式.gif" style="max-width:500px"></p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_类模式.gif" style="max-width:500px">
 <p><strong>对象模式：</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_对象模式.gif" style="max-width:500px"></p>
-<h4 id="优点-6">优点</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/适配器模式_对象模式.gif" style="max-width:500px">
+<h4 id="优点-7"><a class="markdownIt-Anchor" href="#优点-7"></a> 优点</h4>
+<ol>
 <li>客户端通过适配器可以透明地调用目标接口。</li>
 <li>复用了现存的类，程序员不需要修改原有代码而重用现有的适配者类。</li>
 <li>将目标类和适配者类解耦，解决了目标类和适配者类接口不一致的问题。</li>
 <li>在很多业务场景中符合开闭原则。</li>
 </ol>
-<h4 id="缺点-6">缺点</h4>
-<ol type="1">
+<h4 id="缺点-7"><a class="markdownIt-Anchor" href="#缺点-7"></a> 缺点</h4>
+<ol>
 <li>适配器编写过程需要结合业务场景全面考虑，可能会增加系统的复杂性。</li>
 <li>增加代码阅读难度，降低代码可读性，过多使用适配器会使系统代码变得凌乱。</li>
 </ol>
-<h4 id="使用场景">使用场景</h4>
-<ol type="1">
+<h4 id="使用场景"><a class="markdownIt-Anchor" href="#使用场景"></a> 使用场景</h4>
+<ol>
 <li>需要开发的具有某种业务功能的组件在现有的组件库中已经存在，但它们与当前系统的接口规范不兼容，如果重新开发这些组件成本又很高，这时用适配器模式能很好地解决这些问题。</li>
 <li>后端数据存储需要支持多种数据库，可以将数据操作抽象成接口，然后编写不同的适配器继承该接口的同时，去适配不同类型的数据库</li>
 </ol>
-<h3 id="代理模式">代理模式</h3>
-<h4 id="定义-6">定义</h4>
+<h3 id="代理模式"><a class="markdownIt-Anchor" href="#代理模式"></a> 代理模式</h3>
+<h4 id="定义-7"><a class="markdownIt-Anchor" href="#定义-7"></a> 定义</h4>
 <p>由于某些原因需要给某对象提供一个代理以<strong>控制对该对象的访问</strong>。这时，访问对象不适合或者不能直接引用目标对象，代理对象作为访问对象和目标对象之间的中介。</p>
-<h4 id="结构-7">结构</h4>
-<ol type="1">
+<h4 id="结构-8"><a class="markdownIt-Anchor" href="#结构-8"></a> 结构</h4>
+<ol>
 <li>抽象主题（Subject）类：通过接口或抽象类声明真实主题和代理对象实现的业务方法。</li>
-<li>真实主题（Real
-Subject）类：实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象。</li>
+<li>真实主题（Real Subject）类：实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象。</li>
 <li>代理（Proxy）类：提供了与真实主题相同的接口，其内部含有对真实主题的引用，它可以访问、控制或扩展真实主题的功能。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/代理模式.gif" style="max-width:500px"></p>
-<h4 id="优点-7">优点</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/代理模式.gif" style="max-width:500px">
+<h4 id="优点-8"><a class="markdownIt-Anchor" href="#优点-8"></a> 优点</h4>
+<ol>
 <li>代理模式在客户端与目标对象之间起到一个中介作用和保护目标对象的作用；</li>
 <li>代理对象可以扩展目标对象的功能；</li>
 <li>代理模式能将客户端与目标对象分离，在一定程度上降低了系统的耦合度，增加了程序的可扩展性。</li>
 </ol>
-<h4 id="缺点-7">缺点</h4>
-<ol type="1">
+<h4 id="缺点-8"><a class="markdownIt-Anchor" href="#缺点-8"></a> 缺点</h4>
+<ol>
 <li>代理模式会造成系统设计中类的数量增加；</li>
 <li>在客户端和目标对象之间增加一个代理对象，会造成请求处理速度变慢；</li>
 <li>增加了系统的复杂度。</li>
@@ -627,238 +606,224 @@ Subject）类：实现了抽象主题中的具体业务，是代理对象所代�
 <blockquote>
 <p>那么如何解决以上提到的缺点呢？答案是可以使用动态代理方式</p>
 </blockquote>
-<h4 id="使用场景-1">使用场景</h4>
+<h4 id="使用场景-2"><a class="markdownIt-Anchor" href="#使用场景-2"></a> 使用场景</h4>
 <p>当无法或不想直接引用某个对象或访问某个对象存在困难时，可以通过代理对象来间接访问。使用代理模式主要有两个目的：一是保护目标对象，二是增强目标对象。</p>
 <p>前面分析了代理模式的结构与特点，现在来分析以下的应用场景。</p>
-<ol type="1">
+<ol>
 <li>远程代理，这种方式通常是为了隐藏目标对象存在于不同地址空间的事实，方便客户端访问。例如，用户申请某些网盘空间时，会在用户的文件系统中建立一个虚拟的硬盘，用户访问虚拟硬盘时实际访问的是网盘空间。</li>
 <li>虚拟代理，这种方式通常用于要创建的目标对象开销很大时。例如，下载一幅很大的图像需要很长时间，因某种计算比较复杂而短时间无法完成，这时可以先用小比例的虚拟代理替换真实的对象，消除用户对服务器慢的感觉。</li>
 <li>安全代理，这种方式通常用于控制不同种类客户对真实对象的访问权限。</li>
 <li>智能指引，主要用于调用目标对象时，代理附加一些额外的处理功能。例如，增加计算真实对象的引用次数的功能，这样当该对象没有被引用时，就可以自动释放它。</li>
-<li>延迟加载，指为了提高系统的性能，延迟对目标的加载，比如 C# 中的 Lazy
-类。</li>
+<li>延迟加载，指为了提高系统的性能，延迟对目标的加载，比如 C# 中的 Lazy 类。</li>
 </ol>
-<h4 id="动态代理">动态代理</h4>
+<h4 id="动态代理"><a class="markdownIt-Anchor" href="#动态代理"></a> 动态代理</h4>
 <p>在前面介绍的代理模式中，代理类中包含了对真实主题的引用，这种方式存在两个缺点。</p>
-<ol type="1">
+<ol>
 <li>真实主题与代理主题一一对应，增加真实主题也要增加代理。</li>
 <li>设计代理以前真实主题必须事先存在，不太灵活。</li>
 </ol>
 <p>采用动态代理模式可以解决以上问题，在程序运行中，将真实主题通过反射实例化，然后传入代理中，这样就只需一个代理即可。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/动态代理.gif" style="max-width:500px"></p>
-<h3 id="享元模式">享元模式</h3>
-<h4 id="定义-7">定义</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/动态代理.gif" style="max-width:500px">
+<h3 id="享元模式"><a class="markdownIt-Anchor" href="#享元模式"></a> 享元模式</h3>
+<h4 id="定义-8"><a class="markdownIt-Anchor" href="#定义-8"></a> 定义</h4>
 <p>享元（Flyweight）模式的定义：运用共享技术来有效地支持大量细粒度对象的复用。它通过共享已经存在的对象来大幅度减少需要创建的对象数量、避免大量相似类的开销，从而提高系统资源的利用率。</p>
-<h4 id="结构-8">结构</h4>
+<h4 id="结构-9"><a class="markdownIt-Anchor" href="#结构-9"></a> 结构</h4>
 <p>享元模式的定义提出了两个要求，细粒度和共享对象。因为要求细粒度，所以不可避免地会使对象数量多且性质相近，此时我们就将这些对象的信息分为两个部分：内部状态和外部状态。</p>
-<ol type="1">
+<ol>
 <li>内部状态指对象共享出来的信息，存储在享元信息内部，并且不回随环境的改变而改变；</li>
 <li>外部状态指对象得以依赖的一个标记，随环境的改变而改变，不可共享。</li>
 </ol>
 <p>比如，连接池中的连接对象，保存在连接对象中的用户名、密码、连接URL等信息，在创建对象的时候就设置好了，不会随环境的改变而改变，这些为内部状态。而当每个连接要被回收利用时，我们需要将它标记为可用状态，这些为外部状态。</p>
 <p><strong>享元模式的本质是缓存共享对象，降低内存消耗</strong>。</p>
 <p>享元模式的主要角色有如下：</p>
-<ol type="1">
+<ol>
 <li>抽象享元角色（Flyweight）：是所有的具体享元类的基类，为具体享元规范需要实现的公共接口，非享元的外部状态以参数的形式通过方法传入。</li>
-<li>具体享元（Concrete
-Flyweight）角色：实现抽象享元角色中所规定的接口。</li>
-<li>非享元（Unsharable
-Flyweight)角色：是不可以共享的外部状态，它以参数的形式注入具体享元的相关方法中。</li>
-<li>享元工厂（Flyweight
-Factory）角色：负责创建和管理享元角色。当客户对象请求一个享元对象时，享元工厂检査系统中是否存在符合要求的享元对象，如果存在则提供给客户；如果不存在的话，则创建一个新的享元对象。</li>
+<li>具体享元（Concrete Flyweight）角色：实现抽象享元角色中所规定的接口。</li>
+<li>非享元（Unsharable Flyweight)角色：是不可以共享的外部状态，它以参数的形式注入具体享元的相关方法中。</li>
+<li>享元工厂（Flyweight Factory）角色：负责创建和管理享元角色。当客户对象请求一个享元对象时，享元工厂检査系统中是否存在符合要求的享元对象，如果存在则提供给客户；如果不存在的话，则创建一个新的享元对象。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/享元模式.gif" style="max-width:500px"></p>
-<h4 id="优点-8">优点</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/享元模式.gif" style="max-width:500px">
+<h4 id="优点-9"><a class="markdownIt-Anchor" href="#优点-9"></a> 优点</h4>
 <p>相同对象只要保存一份，这降低了系统中对象的数量，从而降低了系统中细粒度对象给内存带来的压力。</p>
-<h4 id="缺点-8">缺点</h4>
-<ol type="1">
+<h4 id="缺点-9"><a class="markdownIt-Anchor" href="#缺点-9"></a> 缺点</h4>
+<ol>
 <li>为了使对象可以共享，需要将一些不能共享的状态外部化，这将增加程序的复杂性。</li>
 <li>读取享元模式的外部状态会使得运行时间稍微变长。</li>
 </ol>
-<h4 id="应用场景-1">应用场景</h4>
+<h4 id="应用场景-2"><a class="markdownIt-Anchor" href="#应用场景-2"></a> 应用场景</h4>
 <p>当系统中多处需要同一组信息时，可以把这些信息封装到一个对象中，然后对该对象进行缓存，这样，一个对象就可以提供给多出需要使用的地方，避免大量同一对象的多次创建，降低大量内存空间的消耗。</p>
-<p>享元模式其实是 <strong>工厂方法模式</strong>
-的一个改进机制，享元模式同样要求创建一个或一组对象，并且就是通过工厂方法模式生成对象的，只不过享元模式为工厂方法模式增加了缓存这一功能。</p>
+<p>享元模式其实是 <strong>工厂方法模式</strong> 的一个改进机制，享元模式同样要求创建一个或一组对象，并且就是通过工厂方法模式生成对象的，只不过享元模式为工厂方法模式增加了缓存这一功能。</p>
 <p>享元模式是通过减少内存中对象的数量来节省内存空间的，所以以下几种情形适合采用享元模式：</p>
-<ol type="1">
+<ol>
 <li>系统中存在大量相同或相似的对象，这些对象耗费大量的内存资源。</li>
 <li>大部分的对象可以按照内部状态进行分组，且可将不同部分外部化，这样每一个组只需保存一个内部状态。</li>
 <li>由于享元模式需要额外维护一个保存享元的数据结构，所以应当在有足够多的享元实例时才值得使用享元模式。</li>
 </ol>
-<h4 id="扩展-1">扩展</h4>
+<h4 id="扩展-2"><a class="markdownIt-Anchor" href="#扩展-2"></a> 扩展</h4>
 <p>享元模式当没有外部状态的时候，就退化成简单享元模式，用于单纯的对象缓存。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单纯享元模式.gif" style="max-width:400px"></p>
-<h3 id="组合模式">组合模式</h3>
-<h4 id="定义-8">定义</h4>
-<p>组合（Composite
-Pattern）模式的定义：有时又叫作整体-部分（Part-Whole）模式，它是一种将对象组合成树状的层次结构的模式，用来表示“整体-部分”的关系，使用户对单个对象和组合对象具有一致的访问性，属于结构型设计模式。</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/单纯享元模式.gif" style="max-width:400px">
+<h3 id="组合模式"><a class="markdownIt-Anchor" href="#组合模式"></a> 组合模式</h3>
+<h4 id="定义-9"><a class="markdownIt-Anchor" href="#定义-9"></a> 定义</h4>
+<p>组合（Composite Pattern）模式的定义：有时又叫作整体-部分（Part-Whole）模式，它是一种将对象组合成树状的层次结构的模式，用来表示“整体-部分”的关系，使用户对单个对象和组合对象具有一致的访问性，属于结构型设计模式。</p>
 <p>组合模式一般用来描述整体与部分的关系，它将对象组织到树形结构中，顶层的节点被称为根节点，根节点下面可以包含树枝节点和叶子节点，树枝节点下面又可以包含树枝节点和叶子节点，树形结构图如下：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式树.png" style="max-width:400px"></p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式树.png" style="max-width:400px">
 <p>由上图可以看出，其实根节点和树枝节点本质上属于同一种数据类型，可以作为容器使用；而叶子节点与树枝节点在语义上不属于用一种类型。但是在组合模式中，会把树枝节点和叶子节点看作属于同一种数据类型（用统一接口定义），让它们具备一致行为。</p>
 <p>这样，在组合模式中，整个树形结构中的对象都属于同一种类型，带来的好处就是用户不需要辨别是树枝节点还是叶子节点，可以直接进行操作，给用户的使用带来极大的便利。</p>
-<h4 id="优点-9">优点</h4>
-<ol type="1">
+<h4 id="优点-10"><a class="markdownIt-Anchor" href="#优点-10"></a> 优点</h4>
+<ol>
 <li>组合模式使得客户端代码可以一致地处理单个对象和组合对象，无须关心自己处理的是单个对象，还是组合对象，这简化了客户端代码；</li>
 <li>更容易在组合体内加入新的对象，客户端不会因为加入了新的对象而更改源代码，满足“开闭原则”；</li>
 </ol>
-<h4 id="缺点-9">缺点</h4>
-<ol type="1">
+<h4 id="缺点-10"><a class="markdownIt-Anchor" href="#缺点-10"></a> 缺点</h4>
+<ol>
 <li>设计较复杂，客户端需要花更多时间理清类之间的层次关系；</li>
 <li>不容易限制容器中的构件；</li>
 <li>不容易用继承的方法来增加构件的新功能；</li>
 </ol>
-<h4 id="结构-9">结构</h4>
+<h4 id="结构-10"><a class="markdownIt-Anchor" href="#结构-10"></a> 结构</h4>
 <p>组合模式包含以下主要角色。</p>
-<ol type="1">
+<ol>
 <li>抽象构件（Component）角色：它的主要作用是为树叶构件和树枝构件声明公共接口，并实现它们的默认行为。在透明式的组合模式中抽象构件还声明访问和管理子类的接口；在安全式的组合模式中不声明访问和管理子类的接口，管理工作由树枝构件完成。（总的抽象类或接口，定义一些通用的方法，比如新增、删除）</li>
 <li>树叶构件（Leaf）角色：是组合中的叶节点对象，它没有子节点，用于继承或实现抽象构件。</li>
-<li>树枝构件（Composite）角色 /
-中间构件：是组合中的分支节点对象，它有子节点，用于继承和实现抽象构件。它的主要作用是存储和管理子部件，通常包含
-Add()、Remove()、GetChild() 等方法。</li>
+<li>树枝构件（Composite）角色 / 中间构件：是组合中的分支节点对象，它有子节点，用于继承和实现抽象构件。它的主要作用是存储和管理子部件，通常包含 Add()、Remove()、GetChild() 等方法。</li>
 </ol>
 <p>组合模式分为透明式的组合模式和安全式的组合模式。</p>
 <p><strong>透明方式</strong></p>
-<p>在该方式中，由于抽象构件声明了所有子类中的全部方法，所以客户端无须区别树叶对象和树枝对象，对客户端来说是透明的。但其缺点是：树叶构件本来没有
-Add()、Remove() 及 GetChild()
-方法，却要实现它们（空实现或抛异常），这样会带来一些安全性问题。其结构图下图所示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_透明.gif" style="max-width:400px"></p>
+<p>在该方式中，由于抽象构件声明了所有子类中的全部方法，所以客户端无须区别树叶对象和树枝对象，对客户端来说是透明的。但其缺点是：树叶构件本来没有 Add()、Remove() 及 GetChild() 方法，却要实现它们（空实现或抛异常），这样会带来一些安全性问题。其结构图下图所示：</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_透明.gif" style="max-width:400px">
 <p><strong>安全方式</strong></p>
 <p>在该方式中，将管理子构件的方法移到树枝构件中，抽象构件和树叶构件没有对子对象的管理方法，这样就避免了上一种方式的安全性问题，但由于叶子和分支有不同的接口，客户端在调用时要知道树叶对象和树枝对象的存在，所以失去了透明性。其结构如下图所示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_安全.gif" style="max-width:400px"></p>
-<h4 id="应用场景-2">应用场景</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_安全.gif" style="max-width:400px">
+<h4 id="应用场景-3"><a class="markdownIt-Anchor" href="#应用场景-3"></a> 应用场景</h4>
+<ol>
 <li>在需要表示一个对象整体与部分的层次结构的场合。</li>
 <li>要求对用户隐藏组合对象与单个对象的不同，用户可以用统一的接口使用组合结构中的所有对象的场合。</li>
 </ol>
-<h4 id="扩展-2">扩展</h4>
+<h4 id="扩展-3"><a class="markdownIt-Anchor" href="#扩展-3"></a> 扩展</h4>
 <p>如果对前面介绍的组合模式中的树叶节点和树枝节点进行抽象，也就是说树叶节点和树枝节点还有子节点，这时组合模式就扩展成复杂的组合模式了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_复杂.gif" style="max-width:500px"></p>
-<h3 id="装饰器模式">装饰器模式</h3>
-<h4 id="定义-9">定义</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/组合模式_复杂.gif" style="max-width:500px">
+<h3 id="装饰器模式"><a class="markdownIt-Anchor" href="#装饰器模式"></a> 装饰器模式</h3>
+<h4 id="定义-10"><a class="markdownIt-Anchor" href="#定义-10"></a> 定义</h4>
 <p>装饰器（Decorator）模式的定义：指在不改变现有对象结构的情况下，动态地给该对象增加一些职责（即增加其额外功能）的模式，它属于对象结构型模式。</p>
-<h4 id="结构-10">结构</h4>
+<h4 id="结构-11"><a class="markdownIt-Anchor" href="#结构-11"></a> 结构</h4>
 <p>通常情况下，扩展一个类的功能会使用继承方式来实现。但继承具有静态特征，耦合度高，并且随着扩展功能的增多，子类会很膨胀。如果使用组合关系来创建一个包装对象（即装饰对象）来包裹真实对象，并在保持真实对象的类结构不变的前提下，为其提供额外的功能，这就是装饰器模式的目标。下面来分析其基本结构和实现方法。</p>
 <p>装饰器模式主要包含以下角色：</p>
-<ol type="1">
+<ol>
 <li>抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。</li>
 <li>具体构件（ConcreteComponent）角色：实现抽象构件，通过装饰角色为其添加一些职责。</li>
 <li>抽象装饰（Decorator）角色：<strong>继承抽象构件</strong>，并包含具体构件的实例，可以通过其子类扩展具体构件的功能。</li>
 <li>具体装饰（ConcreteDecorator）角色：实现抽象装饰的相关方法，并给具体构件对象添加附加的责任。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式.gif" style="max-width:400px"></p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式.gif" style="max-width:400px">
 <blockquote>
 <p>注意：</p>
 <p>传入装饰器的不是具体构件，而是抽象构件。</p>
 </blockquote>
-<h4 id="优点-10">优点</h4>
-<ol type="1">
+<h4 id="优点-11"><a class="markdownIt-Anchor" href="#优点-11"></a> 优点</h4>
+<ol>
 <li>装饰器是继承的有力补充，比继承灵活，在不改变原有对象的情况下，动态的给一个对象扩展功能，即插即用</li>
 <li>通过使用不用装饰类及这些装饰类的排列组合，可以实现不同效果</li>
 <li>装饰器模式完全遵守开闭原则</li>
 </ol>
-<h4 id="缺点-10">缺点</h4>
+<h4 id="缺点-11"><a class="markdownIt-Anchor" href="#缺点-11"></a> 缺点</h4>
 <p>装饰器模式会增加许多子类，过度使用会增加程序得复杂性。</p>
-<h4 id="应用场景-3">应用场景</h4>
+<h4 id="应用场景-4"><a class="markdownIt-Anchor" href="#应用场景-4"></a> 应用场景</h4>
 <p>装饰器模式通常在以下几种情况使用。</p>
 <ul>
 <li>当需要给一个现有类添加附加职责，而又<strong>不能采用生成子类</strong>的方法进行扩充时。例如，该类被隐藏或者该类是终极类或者采用继承方式会产生大量的子类。</li>
 <li>当需要通过对现有的一组基本功能进行<strong>排列组合</strong>而产生非常多的功能时，采用继承关系很难实现，而采用装饰器模式却很好实现。</li>
 <li>当对象的功能要求可以动态地添加，也可以再动态地撤销时。</li>
 </ul>
-<h4 id="扩展-3">扩展</h4>
-<p>装饰器模式所包含的 4
-个角色不是任何时候都要存在的，在有些应用环境下模式是可以简化的，如以下两种情况。</p>
-<ol type="1">
-<li><p>如果只有一个具体构件而没有抽象构件时，可以让抽象装饰继承具体构件</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体构件.gif" style="max-width:350px"></p></li>
-<li><p>如果只有一个具体装饰时，可以将抽象装饰和具体装饰合并</p>
+<h4 id="扩展-4"><a class="markdownIt-Anchor" href="#扩展-4"></a> 扩展</h4>
+<p>装饰器模式所包含的 4 个角色不是任何时候都要存在的，在有些应用环境下模式是可以简化的，如以下两种情况。</p>
+<ol>
+<li>
+<p>如果只有一个具体构件而没有抽象构件时，可以让抽象装饰继承具体构件</p>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体构件.gif" style="max-width:350px">
+</li>
+<li>
+<p>如果只有一个具体装饰时，可以将抽象装饰和具体装饰合并</p>
 <p>这一条很好理解，只有一个具体类时，就没有必要抽象了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体装饰.gif" style="max-width:400px"></p></li>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/装饰器模式_仅一个具体装饰.gif" style="max-width:400px">
+</li>
 </ol>
-<h3 id="外观模式">外观模式</h3>
-<h4 id="定义-10">定义</h4>
+<h3 id="外观模式"><a class="markdownIt-Anchor" href="#外观模式"></a> 外观模式</h3>
+<h4 id="定义-11"><a class="markdownIt-Anchor" href="#定义-11"></a> 定义</h4>
 <p>外观（Facade）模式又叫作门面模式，是一种通过为多个复杂的子系统提供一个一致的接口，而使这些子系统更加容易被访问的模式。该模式对外有一个统一接口，外部应用程序不用关心内部子系统的具体细节，这样会大大降低应用程序的复杂度，提高了程序的可维护性。</p>
 <p>在日常编码工作中，我们都在有意无意的大量使用外观模式。只要是高层模块需要调度多个子系统（2个以上的类对象），我们都会自觉地创建一个新的类封装这些子系统，提供精简的接口，让高层模块可以更加容易地间接调用这些子系统的功能。尤其是现阶段各种第三方SDK、开源类库，很大概率都会使用外观模式。</p>
 <p>外观（Facade）模式是“迪米特法则”的典型应用。</p>
-<h4 id="结构-11">结构</h4>
+<h4 id="结构-12"><a class="markdownIt-Anchor" href="#结构-12"></a> 结构</h4>
 <p>外观（Facade）模式包含以下主要角色。</p>
-<ol type="1">
+<ol>
 <li>外观（Facade）角色：为多个子系统对外提供一个共同的接口。</li>
-<li>子系统（Sub
-System）角色：实现系统的部分功能，客户可以通过外观角色访问它。</li>
+<li>子系统（Sub System）角色：实现系统的部分功能，客户可以通过外观角色访问它。</li>
 <li>客户（Client）角色：通过一个外观角色访问各个子系统的功能。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式.gif" style="max-width:400px"></p>
-<h4 id="优点-11">优点</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式.gif" style="max-width:400px">
+<h4 id="优点-12"><a class="markdownIt-Anchor" href="#优点-12"></a> 优点</h4>
+<ol>
 <li>降低了子系统与客户端之间的耦合度，使得子系统的变化不会影响调用它的客户类。</li>
 <li>对客户屏蔽了子系统组件，减少了客户处理的对象数目，并使得子系统使用起来更加容易。</li>
 <li>降低了大型软件系统中的编译依赖性，简化了系统在不同平台之间的移植过程，因为编译一个子系统不会影响其他的子系统，也不会影响外观对象。</li>
 </ol>
-<h4 id="缺点-11">缺点</h4>
-<ol type="1">
+<h4 id="缺点-12"><a class="markdownIt-Anchor" href="#缺点-12"></a> 缺点</h4>
+<ol>
 <li>不能很好地限制客户使用子系统类，很容易带来未知风险。</li>
 <li>增加新的子系统可能需要修改外观类或客户端的源代码，违背了“开闭原则”。</li>
 </ol>
-<h4 id="应用场景-4">应用场景</h4>
+<h4 id="应用场景-5"><a class="markdownIt-Anchor" href="#应用场景-5"></a> 应用场景</h4>
 <p>通常在以下情况下可以考虑使用外观模式：</p>
-<ol type="1">
+<ol>
 <li>对分层结构系统构建时，使用外观模式定义子系统中每层的入口点可以简化子系统之间的依赖关系。</li>
 <li>当一个复杂系统的子系统很多时，外观模式可以为系统设计一个简单的接口供外界访问。</li>
 <li>当客户端与多个子系统之间存在很大的联系时，引入外观模式可将它们分离，从而提高子系统的独立性和可移植性。</li>
 </ol>
-<h4 id="扩展-4">扩展</h4>
+<h4 id="扩展-5"><a class="markdownIt-Anchor" href="#扩展-5"></a> 扩展</h4>
 <p>在外观模式中，当增加或移除子系统时需要修改外观类，这违背了“开闭原则”。如果引入抽象外观类，则在一定程度上解决了该问题，其结构图如下所示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式_扩展.gif" style="max-width:450px"></p>
-<h3 id="桥接模式">桥接模式</h3>
-<h4 id="定义-11">定义</h4>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/外观模式_扩展.gif" style="max-width:450px">
+<h3 id="桥接模式"><a class="markdownIt-Anchor" href="#桥接模式"></a> 桥接模式</h3>
+<h4 id="定义-12"><a class="markdownIt-Anchor" href="#定义-12"></a> 定义</h4>
 <p>桥接（Bridge）模式的定义如下：<strong>将抽象与实现分离</strong>，使它们可以独立变化。它是用组合关系代替继承关系来实现，从而降低了抽象和实现这两个可变维度的耦合度。</p>
 <p>通过上面的讲解，我们能很好的感觉到桥接模式遵循了里氏替换原则和依赖倒置原则，最终实现了开闭原则，对修改关闭，对扩展开放。这里将桥接模式的优缺点总结如下。</p>
 <blockquote>
 <p>我认为桥接模式叫做<strong>属性设置模式</strong>更为贴切。</p>
 <p>当一个对象有多个变化维度时，将对象独立成基本对象和变化对象，在初始化基本对象时，传入变化对象，从而使得基本对象有多种组合情况。</p>
 </blockquote>
-<h4 id="结构-12">结构</h4>
+<h4 id="结构-13"><a class="markdownIt-Anchor" href="#结构-13"></a> 结构</h4>
 <p>桥接（Bridge）模式包含以下主要角色：</p>
-<ol type="1">
+<ol>
 <li>抽象化（Abstraction）角色：定义抽象类，并包含一个对实现化对象的引用。</li>
-<li>扩展抽象化（Refined
-Abstraction）角色：是抽象化角色的子类，实现父类中的业务方法，并通过组合关系调用实现化角色中的业务方法。</li>
+<li>扩展抽象化（Refined Abstraction）角色：是抽象化角色的子类，实现父类中的业务方法，并通过组合关系调用实现化角色中的业务方法。</li>
 <li>实现化（Implementor）角色：定义实现化角色的接口，供扩展抽象化角色调用。</li>
-<li>具体实现化（Concrete
-Implementor）角色：给出实现化角色接口的具体实现。</li>
+<li>具体实现化（Concrete Implementor）角色：给出实现化角色接口的具体实现。</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/桥接模式.gif" style="max-width:500px"></p>
-<h4 id="优点-12">优点</h4>
-<ol type="1">
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/桥接模式.gif" style="max-width:500px">
+<h4 id="优点-13"><a class="markdownIt-Anchor" href="#优点-13"></a> 优点</h4>
+<ol>
 <li>抽象与实现分离，扩展能力强</li>
 <li>符合开闭原则</li>
 <li>符合合成复用原则</li>
 <li>其实现细节对客户透明</li>
 </ol>
-<h4 id="缺点-12">缺点</h4>
+<h4 id="缺点-13"><a class="markdownIt-Anchor" href="#缺点-13"></a> 缺点</h4>
 <p>由于聚合关系建立在抽象层，要求开发者针对抽象化进行设计与编程，能正确地识别出系统中两个独立变化的维度，这增加了系统的理解与设计难度。</p>
-<h4 id="应用场景-5">应用场景</h4>
+<h4 id="应用场景-6"><a class="markdownIt-Anchor" href="#应用场景-6"></a> 应用场景</h4>
 <p>当一个类内部具备两种或多种变化维度时，使用桥接模式可以解耦这些变化的维度，使高层代码架构稳定。</p>
 <p>桥接模式通常适用于以下场景。</p>
-<ol type="1">
+<ol>
 <li>当一个类存在多个独立变化的维度，且些维度都需要进行扩展时。</li>
 <li>当一个系统不希望使用继承或因为多层次继承导致系统类的个数急剧增加时。</li>
 </ol>
 <p>桥接模式的一个常见使用场景就是替换继承。我们知道，继承拥有很多优点，比如，抽象、封装、多态等，父类封装共性，子类实现特性。继承可以很好的实现代码复用（封装）的功能，但这也是继承的一大缺点。</p>
 <p>因为父类拥有的方法，子类也会继承得到，无论子类需不需要，这说明继承具备强侵入性（父类代码侵入子类），同时会导致子类臃肿。因此，在设计模式中，有一个原则为优先使用组合/聚合，而不是继承。</p>
-<h2 id="行为型模式">行为型模式</h2>
+<h2 id="行为型模式"><a class="markdownIt-Anchor" href="#行为型模式"></a> 行为型模式</h2>
 <p>行为型模式分为<strong>类行为模式</strong>和<strong>对象行为模式</strong>，前者采用继承机制来在类间分派行为，后者采用组合或聚合在对象间分配行为。由于组合关系或聚合关系比继承关系耦合度低，满足“合成复用原则”，所以对象行为模式比类行为模式具有更大的灵活性。</p>
-<p>行为型模式是 GoF <a
-target="_blank" rel="noopener" href="http://c.biancheng.net/design_pattern/">设计模式</a>中最为庞大的一类，它包含以下
-11 种模式。</p>
-<ol type="1">
-<li>模板方法（Template
-Method）模式：定义一个操作中的算法骨架，将算法的一些步骤延迟到子类中，使得子类在可以不改变该算法结构的情况下重定义该算法的某些特定步骤。</li>
+<p>行为型模式是 GoF <a target="_blank" rel="noopener" href="http://c.biancheng.net/design_pattern/">设计模式</a>中最为庞大的一类，它包含以下 11 种模式。</p>
+<ol>
+<li>模板方法（Template Method）模式：定义一个操作中的算法骨架，将算法的一些步骤延迟到子类中，使得子类在可以不改变该算法结构的情况下重定义该算法的某些特定步骤。</li>
 <li>策略（Strategy）模式：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，且算法的改变不会影响使用算法的客户。</li>
 <li>命令（Command）模式：将一个请求封装为一个对象，使发出请求的责任和执行请求的责任分割开。</li>
-<li>职责链（Chain of
-Responsibility）模式：把请求从链中的一个对象传到下一个对象，直到请求被响应为止。通过这种方式去除对象之间的耦合。</li>
+<li>职责链（Chain of Responsibility）模式：把请求从链中的一个对象传到下一个对象，直到请求被响应为止。通过这种方式去除对象之间的耦合。</li>
 <li>状态（State）模式：允许一个对象在其内部状态发生改变时改变其行为能力。</li>
 <li>观察者（Observer）模式：多个对象间存在一对多关系，当一个对象发生改变时，把这种改变通知给其他多个对象，从而影响其他对象的行为。</li>
 <li>中介者（Mediator）模式：定义一个中介对象来简化原有对象之间的交互关系，降低系统中对象间的耦合度，使原有对象之间不必相互了解。</li>
@@ -867,59 +832,47 @@ Responsibility）模式：把请求从链中的一个对象传到下一个对象
 <li>备忘录（Memento）模式：在不破坏封装性的前提下，获取并保存一个对象的内部状态，以便以后恢复它。</li>
 <li>解释器（Interpreter）模式：提供如何定义语言的文法，以及对语言句子的解释方法，即解释器。</li>
 </ol>
-<p>以上 11
-种行为型模式，除了模板方法模式和解释器模式是类行为型模式，其他的全部属于对象行为型模式。</p>
-<h3 id="解释器模式">解释器模式</h3>
-<h4 id="定义-12">定义</h4>
+<p>以上 11 种行为型模式，除了模板方法模式和解释器模式是类行为型模式，其他的全部属于对象行为型模式。</p>
+<h3 id="解释器模式"><a class="markdownIt-Anchor" href="#解释器模式"></a> 解释器模式</h3>
+<h4 id="定义-13"><a class="markdownIt-Anchor" href="#定义-13"></a> 定义</h4>
 <p>解释器（Interpreter）模式的定义：给分析对象定义一个语言，并定义该语言的文法表示，再设计一个解析器来解释语言中的句子。也就是说，用编译语言的方式来分析应用中的实例。这种模式实现了文法表达式处理的接口，该接口解释一个特定的上下文。</p>
 <p>这里提到的文法和句子的概念同编译原理中的描述相同，“文法”指语言的语法规则，而“句子”是语言集中的元素。例如，汉语中的句子有很多，“我是中国人”是其中的一个句子，可以用一棵语法树来直观地描述语言中的句子。</p>
-<h4 id="结构-13">结构</h4>
+<h4 id="结构-14"><a class="markdownIt-Anchor" href="#结构-14"></a> 结构</h4>
 <p>解释器模式包含以下主要角色：</p>
-<ol type="1">
-<li>抽象表达式（Abstract
-Expression）角色：定义解释器的接口，约定解释器的解释操作，主要包含解释方法
-interpret()。</li>
-<li>终结符表达式（Terminal
-Expression）角色：是抽象表达式的子类，用来实现文法中与终结符相关的操作，文法中的每一个终结符都有一个具体终结表达式与之相对应。</li>
-<li>非终结符表达式（Nonterminal
-Expression）角色：也是抽象表达式的子类，用来实现文法中与非终结符相关的操作，文法中的每条规则都对应于一个非终结符表达式。</li>
+<ol>
+<li>抽象表达式（Abstract Expression）角色：定义解释器的接口，约定解释器的解释操作，主要包含解释方法 interpret()。</li>
+<li>终结符表达式（Terminal Expression）角色：是抽象表达式的子类，用来实现文法中与终结符相关的操作，文法中的每一个终结符都有一个具体终结表达式与之相对应。</li>
+<li>非终结符表达式（Nonterminal Expression）角色：也是抽象表达式的子类，用来实现文法中与非终结符相关的操作，文法中的每条规则都对应于一个非终结符表达式。</li>
 <li>环境（Context）角色：通常包含各个解释器需要的数据或是公共的功能，一般用来传递被所有解释器共享的数据，后面的解释器可以从这里获取这些值。</li>
 <li>客户端（Client）：主要任务是将需要分析的句子或表达式转换成使用解释器对象描述的抽象语法树，然后调用解释器的解释方法，当然也可以通过环境角色间接访问解释器的解释方法。</li>
 </ol>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/解释器模式.gif"
-alt="解释器模式" />
-<figcaption aria-hidden="true">解释器模式</figcaption>
-</figure>
-<h4 id="优点-13">优点</h4>
-<ol type="1">
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.gif" alt="解释器模式" /></p>
+<h4 id="优点-14"><a class="markdownIt-Anchor" href="#优点-14"></a> 优点</h4>
+<ol>
 <li>扩展性好。由于在解释器模式中使用类来表示语言的文法规则，因此可以通过继承等机制来改变或扩展文法。</li>
 <li>容易实现。在语法树中的每个表达式节点类都是相似的，所以实现其文法较为容易。</li>
 </ol>
-<h4 id="缺点-13">缺点</h4>
-<ol type="1">
+<h4 id="缺点-14"><a class="markdownIt-Anchor" href="#缺点-14"></a> 缺点</h4>
+<ol>
 <li>执行效率较低。解释器模式中通常使用大量的循环和递归调用，当要解释的句子较复杂时，其运行速度很慢，且代码的调试过程也比较麻烦。</li>
 <li>会引起类膨胀。解释器模式中的每条规则至少需要定义一个类，当包含的文法规则很多时，类的个数将急剧增加，导致系统难以管理与维护。</li>
 <li>可应用的场景比较少。在软件开发中，需要定义语言文法的应用实例非常少，所以这种模式很少被使用到。</li>
 </ol>
-<h3 id="备忘录模式">备忘录模式</h3>
-<h3 id="观察者模式">观察者模式</h3>
-<h3 id="中介模式">中介模式</h3>
-<h3 id="迭代器模式">迭代器模式</h3>
-<h3 id="访问者模式">访问者模式</h3>
-<h3 id="策略模式">策略模式</h3>
-<h3 id="状态模式">状态模式</h3>
-<h3 id="职责链模式">职责链模式</h3>
-<h3 id="命令模式">命令模式</h3>
-<h3 id="模板模式">模板模式</h3>
-<h2 id="参考">参考</h2>
-<ol type="1">
-<li><a
-target="_blank" rel="noopener" href="http://c.biancheng.net/design_pattern/">Java设计模式：23种设计模式全面解析（超级详细）</a></li>
+<h3 id="备忘录模式"><a class="markdownIt-Anchor" href="#备忘录模式"></a> 备忘录模式</h3>
+<h3 id="观察者模式"><a class="markdownIt-Anchor" href="#观察者模式"></a> 观察者模式</h3>
+<h3 id="中介模式"><a class="markdownIt-Anchor" href="#中介模式"></a> 中介模式</h3>
+<h3 id="迭代器模式"><a class="markdownIt-Anchor" href="#迭代器模式"></a> 迭代器模式</h3>
+<h3 id="访问者模式"><a class="markdownIt-Anchor" href="#访问者模式"></a> 访问者模式</h3>
+<h3 id="策略模式"><a class="markdownIt-Anchor" href="#策略模式"></a> 策略模式</h3>
+<h3 id="状态模式"><a class="markdownIt-Anchor" href="#状态模式"></a> 状态模式</h3>
+<h3 id="职责链模式"><a class="markdownIt-Anchor" href="#职责链模式"></a> 职责链模式</h3>
+<h3 id="命令模式"><a class="markdownIt-Anchor" href="#命令模式"></a> 命令模式</h3>
+<h3 id="模板模式"><a class="markdownIt-Anchor" href="#模板模式"></a> 模板模式</h3>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/design_pattern/">Java设计模式：23种设计模式全面解析（超级详细）</a></li>
 <li>《图解设计模式》</li>
-<li><a
-target="_blank" rel="noopener" href="https://www.dofactory.com/net/interpreter-design-pattern">Design
-Pattern</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.dofactory.com/net/interpreter-design-pattern">Design Pattern</a></li>
 </ol>
 
     </div>
@@ -986,13 +939,13 @@ Pattern</a></li>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/33P3D91.html" rel="prev" title="Bentley工程属性入门">
-                  <i class="fa fa-chevron-left"></i> Bentley工程属性入门
+                <a href="/posts/2022/2AJRA04.html" rel="prev" title="类关系图简记">
+                  <i class="fa fa-chevron-left"></i> 类关系图简记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/2AJRA04.html" rel="next" title="类关系图简记">
-                  类关系图简记 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2022/1A0Q13P.html" rel="next" title="C# 通过 ()=>obj.Property 的形式获取实例和属性名">
+                  C# 通过 ()=>obj.Property 的形式获取实例和属性名 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -1026,13 +979,13 @@ Pattern</a></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

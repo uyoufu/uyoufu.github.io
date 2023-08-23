@@ -19,13 +19,14 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="async-await  到目前为止，vue3 中的 setup 本身不能是异步函数，因此我们如果需要使用 async 函数，要将异步操作包装起来。可以通过以下方式实现：">
+    <meta name="description" content="到目前为止，vue3 中的 setup 本身不能是异步函数，因此我们如果需要使用 async 函数，要将异步操作包装起来。可以通过以下方式实现：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue3 如何在 setup 中调用异步方法">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/2KBPKH9.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="async-await  到目前为止，vue3 中的 setup 本身不能是异步函数，因此我们如果需要使用 async 函数，要将异步操作包装起来。可以通过以下方式实现：">
+<meta property="og:description" content="到目前为止，vue3 中的 setup 本身不能是异步函数，因此我们如果需要使用 async 函数，要将异步操作包装起来。可以通过以下方式实现：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png">
 <meta property="article:published_time" content="2023-07-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-13T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -33,6 +34,7 @@
 <meta property="article:tag" content="Vue3.x">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/2KBPKH9.html">
@@ -92,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%E4%BD%BF%E7%94%A8-suspense"><span class="nav-number">1.</span> <span class="nav-text">方法一：使用 suspense</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%E4%BD%BF%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">方法二：使用生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%E5%B0%86%E8%B0%83%E7%94%A8%E5%8C%85%E8%A3%B9%E5%9C%A8%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0%E4%B8%AD"><span class="nav-number">3.</span> <span class="nav-text">方法三：将调用包裹在异步函数中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%E4%BD%BF%E7%94%A8-suspense"><span class="nav-number">1.</span> <span class="nav-text"> 方法一：使用 suspense</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%E4%BD%BF%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text"> 方法二：使用生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%E5%B0%86%E8%B0%83%E7%94%A8%E5%8C%85%E8%A3%B9%E5%9C%A8%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0%E4%B8%AD"><span class="nav-number">3.</span> <span class="nav-text"> 方法三：将调用包裹在异步函数中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +171,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -288,34 +290,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png"
-alt="async-await" />
-<figcaption aria-hidden="true">async-await</figcaption>
-</figure>
-<p>到目前为止，vue3 中的 <code>setup</code>
-本身不能是异步函数，因此我们如果需要使用 <code>async</code>
-函数，要将异步操作包装起来。可以通过以下方式实现：</p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png" alt="async-await" /></p>
+<p>到目前为止，vue3 中的 <code>setup</code> 本身不能是异步函数，因此我们如果需要使用 <code>async</code> 函数，要将异步操作包装起来。可以通过以下方式实现：</p>
 <span id="more"></span>
-<h2 id="方法一使用-suspense">方法一：使用 suspense</h2>
-<p>使用suspense 包裹你的组件，然后使用
-<code>async setup()</code>。这种方式目前为实验性功能，不稳定。</p>
+<h2 id="方法一使用-suspense"><a class="markdownIt-Anchor" href="#方法一使用-suspense"></a> 方法一：使用 suspense</h2>
+<p>使用suspense 包裹你的组件，然后使用 <code>async setup()</code>。这种方式目前为实验性功能，不稳定。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;Suspense&gt;</span><br><span class="line">  &lt;!-- 具有深层异步依赖的组件 --&gt;</span><br><span class="line">  &lt;Dashboard /&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 在 #fallback 插槽中显示 “正在加载中” --&gt;</span><br><span class="line">  &lt;template #fallback&gt;</span><br><span class="line">    Loading...</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/Suspense&gt;</span><br><span class="line"></span><br><span class="line"># 若使用 script setup 语法时，可以直接在里面使用 await 等待异步返回</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  async setup() &#123;</span><br><span class="line">    // 在 `setup` 内部使用 `await` 需要非常小心</span><br><span class="line">    // 因为大多数组合式 API 函数只会在</span><br><span class="line">    // 第一个 `await` 之前工作</span><br><span class="line">    const res = await fetch(...)</span><br><span class="line">    const posts = await res.json()</span><br><span class="line">    return &#123;</span><br><span class="line">      posts</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="方法二使用生命周期钩子">方法二：使用生命周期钩子</h2>
+<h2 id="方法二使用生命周期钩子"><a class="markdownIt-Anchor" href="#方法二使用生命周期钩子"></a> 方法二：使用生命周期钩子</h2>
 <p>可以在生命周期钩子中调用异步方法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const users = ref([]);</span><br><span class="line">    onBeforeMount(async () =&gt; &#123;</span><br><span class="line">      const res = await axios.get(&quot;https://jsonplaceholder.typicode.com/users&quot;);</span><br><span class="line">      users.value = res.data;</span><br><span class="line">      console.log(res);</span><br><span class="line">    &#125;);</span><br><span class="line">    return &#123;</span><br><span class="line">      users,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2
-id="方法三将调用包裹在异步函数中">方法三：将调用包裹在异步函数中</h2>
+<h2 id="方法三将调用包裹在异步函数中"><a class="markdownIt-Anchor" href="#方法三将调用包裹在异步函数中"></a> 方法三：将调用包裹在异步函数中</h2>
 <p>该方法与 方法二 原理相同：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123; message &#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const message = ref(&#x27;&#x27;);</span><br><span class="line"></span><br><span class="line">    async function fetchData() &#123;</span><br><span class="line">      const response = await fetch(&#x27;/api/data&#x27;);</span><br><span class="line">      const data = await response.json();</span><br><span class="line">      message.value = data.message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData();</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      message,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>本文参考了以下文章，在此报以诚挚谢意！</p>
-<ol type="1">
-<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shiazhen/p/14986454.html">vue3.0
-中 如何在setup中使用async await</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/suspense.html#combining-with-other-components">Suspense
-| Vue.js (vuejs.org)</a></p></li>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shiazhen/p/14986454.html">vue3.0 中 如何在setup中使用async await</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/suspense.html#combining-with-other-components">Suspense | Vue.js (vuejs.org)</a></p>
+</li>
 </ol>
 
     </div>
@@ -422,13 +417,13 @@ target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/suspen
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

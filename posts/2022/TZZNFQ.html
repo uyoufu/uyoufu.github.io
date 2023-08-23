@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文总结了 mongoDB 中的查询和映射操作符。  具体使用方法可以单击操作符跳转查看">
+    <meta name="description" content="本文总结了 mongoDB 中的查询和映射操作符。  具体使用方法可以单击操作符跳转查看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Query 和 Projection 操作符">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/TZZNFQ.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文总结了 mongoDB 中的查询和映射操作符。  具体使用方法可以单击操作符跳转查看">
+<meta property="og:description" content="本文总结了 mongoDB 中的查询和映射操作符。  具体使用方法可以单击操作符跳转查看">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-30T16:00:00.000Z">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,9 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#query-selectors%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">1.</span> <span class="nav-text">Query Selectors，查询操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#comparison%E6%AF%94%E8%BE%83"><span class="nav-number">1.1.</span> <span class="nav-text">Comparison，比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical%E9%80%BB%E8%BE%91"><span class="nav-number">1.2.</span> <span class="nav-text">Logical，逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#element%E5%8D%95%E5%85%83"><span class="nav-number">1.3.</span> <span class="nav-text">Element，单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evaluation%E5%88%A4%E6%96%AD"><span class="nav-number">1.4.</span> <span class="nav-text">Evaluation，判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geospatial%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4"><span class="nav-number">1.5.</span> <span class="nav-text">Geospatial，地理空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array%E6%95%B0%E7%BB%84"><span class="nav-number">1.6.</span> <span class="nav-text">Array，数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitwise%E4%BD%8D"><span class="nav-number">1.7.</span> <span class="nav-text">Bitwise，位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#projection-operators%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">Projection
-Operators，映射操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#miscellaneous-operators%E5%85%B6%E5%AE%83%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">Miscellaneous
-Operators，其它操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#query-selectors%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">1.</span> <span class="nav-text"> Query Selectors，查询操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#comparison%E6%AF%94%E8%BE%83"><span class="nav-number">1.1.</span> <span class="nav-text"> Comparison，比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical%E9%80%BB%E8%BE%91"><span class="nav-number">1.2.</span> <span class="nav-text"> Logical，逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#element%E5%8D%95%E5%85%83"><span class="nav-number">1.3.</span> <span class="nav-text"> Element，单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evaluation%E5%88%A4%E6%96%AD"><span class="nav-number">1.4.</span> <span class="nav-text"> Evaluation，判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geospatial%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4"><span class="nav-number">1.5.</span> <span class="nav-text"> Geospatial，地理空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array%E6%95%B0%E7%BB%84"><span class="nav-number">1.6.</span> <span class="nav-text"> Array，数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitwise%E4%BD%8D"><span class="nav-number">1.7.</span> <span class="nav-text"> Bitwise，位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#projection-operators%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text"> Projection Operators，映射操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#miscellaneous-operators%E5%85%B6%E5%AE%83%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text"> Miscellaneous Operators，其它操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +156,7 @@ Operators，其它操作符</span></a></li><li class="nav-item nav-level-2"><a c
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +167,7 @@ Operators，其它操作符</span></a></li><li class="nav-item nav-level-2"><a c
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -293,401 +291,257 @@ Operators，其它操作符</span></a></li><li class="nav-item nav-level-2"><a c
 <p>具体使用方法可以单击操作符跳转查看</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="query-selectors查询操作符">Query Selectors，查询操作符</h2>
-<h3 id="comparison比较">Comparison，比较</h3>
-<p>For comparison of different BSON type values, see the <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/#std-label-bson-types-comparison-order">specified
-BSON comparison order</a>.</p>
+<h2 id="query-selectors查询操作符"><a class="markdownIt-Anchor" href="#query-selectors查询操作符"></a> Query Selectors，查询操作符</h2>
+<h3 id="comparison比较"><a class="markdownIt-Anchor" href="#comparison比较"></a> Comparison，比较</h3>
+<p>For comparison of different BSON type values, see the <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/#std-label-bson-types-comparison-order">specified BSON comparison order</a>.</p>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/eq/#mongodb-query-op.-eq"><code>$eq</code></a></td>
-<td style="text-align: left;">Matches values that are equal to a
-specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/eq/#mongodb-query-op.-eq"><code>$eq</code></a></td>
+<td style="text-align:left">Matches values that are equal to a specified value.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/gt/#mongodb-query-op.-gt"><code>$gt</code></a></td>
-<td style="text-align: left;">Matches values that are greater than a
-specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/gt/#mongodb-query-op.-gt"><code>$gt</code></a></td>
+<td style="text-align:left">Matches values that are greater than a specified value.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/gte/#mongodb-query-op.-gte"><code>$gte</code></a></td>
-<td style="text-align: left;">Matches values that are greater than or
-equal to a specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/gte/#mongodb-query-op.-gte"><code>$gte</code></a></td>
+<td style="text-align:left">Matches values that are greater than or equal to a specified value.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/in/#mongodb-query-op.-in"><code>$in</code></a></td>
-<td style="text-align: left;">Matches any of the values specified in an
-array.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/in/#mongodb-query-op.-in"><code>$in</code></a></td>
+<td style="text-align:left">Matches any of the values specified in an array.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/lt/#mongodb-query-op.-lt"><code>$lt</code></a></td>
-<td style="text-align: left;">Matches values that are less than a
-specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/lt/#mongodb-query-op.-lt"><code>$lt</code></a></td>
+<td style="text-align:left">Matches values that are less than a specified value.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/lte/#mongodb-query-op.-lte"><code>$lte</code></a></td>
-<td style="text-align: left;">Matches values that are less than or equal
-to a specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/lte/#mongodb-query-op.-lte"><code>$lte</code></a></td>
+<td style="text-align:left">Matches values that are less than or equal to a specified value.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/ne/#mongodb-query-op.-ne"><code>$ne</code></a></td>
-<td style="text-align: left;">Matches all values that are not equal to a
-specified value.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/ne/#mongodb-query-op.-ne"><code>$ne</code></a></td>
+<td style="text-align:left">Matches all values that are not equal to a specified value.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nin/#mongodb-query-op.-nin"><code>$nin</code></a></td>
-<td style="text-align: left;">Matches none of the values specified in an
-array.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nin/#mongodb-query-op.-nin"><code>$nin</code></a></td>
+<td style="text-align:left">Matches none of the values specified in an array.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="logical逻辑">Logical，逻辑</h3>
+<h3 id="logical逻辑"><a class="markdownIt-Anchor" href="#logical逻辑"></a> Logical，逻辑</h3>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/and/#mongodb-query-op.-and"><code>$and</code></a></td>
-<td style="text-align: left;">Joins query clauses with a logical
-<code>AND</code> returns all documents that match the conditions of both
-clauses.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/and/#mongodb-query-op.-and"><code>$and</code></a></td>
+<td style="text-align:left">Joins query clauses with a logical <code>AND</code> returns all documents that match the conditions of both clauses.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/not/#mongodb-query-op.-not"><code>$not</code></a></td>
-<td style="text-align: left;">Inverts the effect of a query expression
-and returns documents that do <em>not</em> match the query
-expression.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/not/#mongodb-query-op.-not"><code>$not</code></a></td>
+<td style="text-align:left">Inverts the effect of a query expression and returns documents that do <em>not</em> match the query expression.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nor/#mongodb-query-op.-nor"><code>$nor</code></a></td>
-<td style="text-align: left;">Joins query clauses with a logical
-<code>NOR</code> returns all documents that fail to match both
-clauses.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nor/#mongodb-query-op.-nor"><code>$nor</code></a></td>
+<td style="text-align:left">Joins query clauses with a logical <code>NOR</code> returns all documents that fail to match both clauses.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/or/#mongodb-query-op.-or"><code>$or</code></a></td>
-<td style="text-align: left;">Joins query clauses with a logical
-<code>OR</code> returns all documents that match the conditions of
-either clause.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/or/#mongodb-query-op.-or"><code>$or</code></a></td>
+<td style="text-align:left">Joins query clauses with a logical <code>OR</code> returns all documents that match the conditions of either clause.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="element单元">Element，单元</h3>
+<h3 id="element单元"><a class="markdownIt-Anchor" href="#element单元"></a> Element，单元</h3>
 <table>
-<colgroup>
-<col style="width: 52%" />
-<col style="width: 47%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/exists/#mongodb-query-op.-exists"><code>$exists</code></a></td>
-<td style="text-align: left;">Matches documents that have the specified
-field.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/exists/#mongodb-query-op.-exists"><code>$exists</code></a></td>
+<td style="text-align:left">Matches documents that have the specified field.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/type/#mongodb-query-op.-type"><code>$type</code></a></td>
-<td style="text-align: left;">Selects documents if a field is of the
-specified type.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/type/#mongodb-query-op.-type"><code>$type</code></a></td>
+<td style="text-align:left">Selects documents if a field is of the specified type.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="evaluation判断">Evaluation，判断</h3>
+<h3 id="evaluation判断"><a class="markdownIt-Anchor" href="#evaluation判断"></a> Evaluation，判断</h3>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/expr/#mongodb-query-op.-expr"><code>$expr</code></a></td>
-<td style="text-align: left;">Allows use of aggregation expressions
-within the query language.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/expr/#mongodb-query-op.-expr"><code>$expr</code></a></td>
+<td style="text-align:left">Allows use of aggregation expressions within the query language.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/jsonSchema/#mongodb-query-op.-jsonSchema"><code>$jsonSchema</code></a></td>
-<td style="text-align: left;">Validate documents against the given JSON
-Schema.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/jsonSchema/#mongodb-query-op.-jsonSchema"><code>$jsonSchema</code></a></td>
+<td style="text-align:left">Validate documents against the given JSON Schema.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/mod/#mongodb-query-op.-mod"><code>$mod</code></a></td>
-<td style="text-align: left;">Performs a modulo operation on the value
-of a field and selects documents with a specified result.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/mod/#mongodb-query-op.-mod"><code>$mod</code></a></td>
+<td style="text-align:left">Performs a modulo operation on the value of a field and selects documents with a specified result.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/regex/#mongodb-query-op.-regex"><code>$regex</code></a></td>
-<td style="text-align: left;">Selects documents where values match a
-specified regular expression.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/regex/#mongodb-query-op.-regex"><code>$regex</code></a></td>
+<td style="text-align:left">Selects documents where values match a specified regular expression.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/text/#mongodb-query-op.-text"><code>$text</code></a></td>
-<td style="text-align: left;">Performs text search.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/text/#mongodb-query-op.-text"><code>$text</code></a></td>
+<td style="text-align:left">Performs text search.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/where/#mongodb-query-op.-where"><code>$where</code></a></td>
-<td style="text-align: left;">Matches documents that satisfy a
-JavaScript expression.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/where/#mongodb-query-op.-where"><code>$where</code></a></td>
+<td style="text-align:left">Matches documents that satisfy a JavaScript expression.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="geospatial地理空间">Geospatial，地理空间</h3>
+<h3 id="geospatial地理空间"><a class="markdownIt-Anchor" href="#geospatial地理空间"></a> Geospatial，地理空间</h3>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoIntersects/#mongodb-query-op.-geoIntersects"><code>$geoIntersects</code></a></td>
-<td style="text-align: left;">Selects geometries that intersect with a
-<a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/glossary/#std-term-GeoJSON">GeoJSON</a>
-geometry. The <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a>
-index supports <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoIntersects/#mongodb-query-op.-geoIntersects"><code>$geoIntersects</code></a>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoIntersects/#mongodb-query-op.-geoIntersects"><code>$geoIntersects</code></a></td>
+<td style="text-align:left">Selects geometries that intersect with a <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/glossary/#std-term-GeoJSON">GeoJSON</a> geometry. The <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a> index supports <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoIntersects/#mongodb-query-op.-geoIntersects"><code>$geoIntersects</code></a>.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoWithin/#mongodb-query-op.-geoWithin"><code>$geoWithin</code></a></td>
-<td style="text-align: left;">Selects geometries within a bounding <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/geojson/#std-label-geospatial-indexes-store-geojson">GeoJSON
-geometry</a>. The <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a>
-and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a>
-indexes support <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoWithin/#mongodb-query-op.-geoWithin"><code>$geoWithin</code></a>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoWithin/#mongodb-query-op.-geoWithin"><code>$geoWithin</code></a></td>
+<td style="text-align:left">Selects geometries within a bounding <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/geojson/#std-label-geospatial-indexes-store-geojson">GeoJSON geometry</a>. The <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a> and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a> indexes support <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/geoWithin/#mongodb-query-op.-geoWithin"><code>$geoWithin</code></a>.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/near/#mongodb-query-op.-near"><code>$near</code></a></td>
-<td style="text-align: left;">Returns geospatial objects in proximity to
-a point. Requires a geospatial index. The <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a>
-and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a>
-indexes support <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/near/#mongodb-query-op.-near"><code>$near</code></a>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/near/#mongodb-query-op.-near"><code>$near</code></a></td>
+<td style="text-align:left">Returns geospatial objects in proximity to a point. Requires a geospatial index. The <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a> and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a> indexes support <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/near/#mongodb-query-op.-near"><code>$near</code></a>.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nearSphere/#mongodb-query-op.-nearSphere"><code>$nearSphere</code></a></td>
-<td style="text-align: left;">Returns geospatial objects in proximity to
-a point on a sphere. Requires a geospatial index. The <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a>
-and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a>
-indexes support <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nearSphere/#mongodb-query-op.-nearSphere"><code>$nearSphere</code></a>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nearSphere/#mongodb-query-op.-nearSphere"><code>$nearSphere</code></a></td>
+<td style="text-align:left">Returns geospatial objects in proximity to a point on a sphere. Requires a geospatial index. The <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2dsphere/">2dsphere</a> and <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/core/2d/">2d</a> indexes support <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/nearSphere/#mongodb-query-op.-nearSphere"><code>$nearSphere</code></a>.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="array数组">Array，数组</h3>
+<h3 id="array数组"><a class="markdownIt-Anchor" href="#array数组"></a> Array，数组</h3>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/all/#mongodb-query-op.-all"><code>$all</code></a></td>
-<td style="text-align: left;">Matches arrays that contain all elements
-specified in the query.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/all/#mongodb-query-op.-all"><code>$all</code></a></td>
+<td style="text-align:left">Matches arrays that contain all elements specified in the query.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/elemMatch/#mongodb-query-op.-elemMatch"><code>$elemMatch</code></a></td>
-<td style="text-align: left;">Selects documents if element in the array
-field matches all the specified <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/elemMatch/#mongodb-query-op.-elemMatch"><code>$elemMatch</code></a>
-conditions.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/elemMatch/#mongodb-query-op.-elemMatch"><code>$elemMatch</code></a></td>
+<td style="text-align:left">Selects documents if element in the array field matches all the specified <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/elemMatch/#mongodb-query-op.-elemMatch"><code>$elemMatch</code></a> conditions.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/size/#mongodb-query-op.-size"><code>$size</code></a></td>
-<td style="text-align: left;">Selects documents if the array field is a
-specified size.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/size/#mongodb-query-op.-size"><code>$size</code></a></td>
+<td style="text-align:left">Selects documents if the array field is a specified size.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="bitwise位">Bitwise，位</h3>
+<h3 id="bitwise位"><a class="markdownIt-Anchor" href="#bitwise位"></a> Bitwise，位</h3>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAllClear/#mongodb-query-op.-bitsAllClear"><code>$bitsAllClear</code></a></td>
-<td style="text-align: left;">Matches numeric or binary values in which
-a set of bit positions <em>all</em> have a value of <code>0</code>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAllClear/#mongodb-query-op.-bitsAllClear"><code>$bitsAllClear</code></a></td>
+<td style="text-align:left">Matches numeric or binary values in which a set of bit positions <em>all</em> have a value of <code>0</code>.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAllSet/#mongodb-query-op.-bitsAllSet"><code>$bitsAllSet</code></a></td>
-<td style="text-align: left;">Matches numeric or binary values in which
-a set of bit positions <em>all</em> have a value of <code>1</code>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAllSet/#mongodb-query-op.-bitsAllSet"><code>$bitsAllSet</code></a></td>
+<td style="text-align:left">Matches numeric or binary values in which a set of bit positions <em>all</em> have a value of <code>1</code>.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAnyClear/#mongodb-query-op.-bitsAnyClear"><code>$bitsAnyClear</code></a></td>
-<td style="text-align: left;">Matches numeric or binary values in which
-<em>any</em> bit from a set of bit positions has a value of
-<code>0</code>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAnyClear/#mongodb-query-op.-bitsAnyClear"><code>$bitsAnyClear</code></a></td>
+<td style="text-align:left">Matches numeric or binary values in which <em>any</em> bit from a set of bit positions has a value of <code>0</code>.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAnySet/#mongodb-query-op.-bitsAnySet"><code>$bitsAnySet</code></a></td>
-<td style="text-align: left;">Matches numeric or binary values in which
-<em>any</em> bit from a set of bit positions has a value of
-<code>1</code>.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/bitsAnySet/#mongodb-query-op.-bitsAnySet"><code>$bitsAnySet</code></a></td>
+<td style="text-align:left">Matches numeric or binary values in which <em>any</em> bit from a set of bit positions has a value of <code>1</code>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="projection-operators映射操作符">Projection
-Operators，映射操作符</h2>
+<h2 id="projection-operators映射操作符"><a class="markdownIt-Anchor" href="#projection-operators映射操作符"></a> Projection Operators，映射操作符</h2>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/positional/#mongodb-projection-proj.-"><code>$</code></a></td>
-<td style="text-align: left;">Projects the first element in an array
-that matches the query condition.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/positional/#mongodb-projection-proj.-"><code>$</code></a></td>
+<td style="text-align:left">Projects the first element in an array that matches the query condition.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/elemMatch/#mongodb-projection-proj.-elemMatch"><code>$elemMatch</code></a></td>
-<td style="text-align: left;">Projects the first element in an array
-that matches the specified <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/elemMatch/#mongodb-projection-proj.-elemMatch"><code>$elemMatch</code></a>
-condition.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/elemMatch/#mongodb-projection-proj.-elemMatch"><code>$elemMatch</code></a></td>
+<td style="text-align:left">Projects the first element in an array that matches the specified <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/elemMatch/#mongodb-projection-proj.-elemMatch"><code>$elemMatch</code></a> condition.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/meta/#mongodb-expression-exp.-meta"><code>$meta</code></a></td>
-<td style="text-align: left;">Projects the document's score assigned
-during <a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/text/#mongodb-query-op.-text"><code>$text</code></a>
-operation.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/meta/#mongodb-expression-exp.-meta"><code>$meta</code></a></td>
+<td style="text-align:left">Projects the document’s score assigned during <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/text/#mongodb-query-op.-text"><code>$text</code></a> operation.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/slice/#mongodb-projection-proj.-slice"><code>$slice</code></a></td>
-<td style="text-align: left;">Limits the number of elements projected
-from an array. Supports skip and limit slices.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/projection/slice/#mongodb-projection-proj.-slice"><code>$slice</code></a></td>
+<td style="text-align:left">Limits the number of elements projected from an array. Supports skip and limit slices.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="miscellaneous-operators其它操作符">Miscellaneous
-Operators，其它操作符</h2>
+<h2 id="miscellaneous-operators其它操作符"><a class="markdownIt-Anchor" href="#miscellaneous-operators其它操作符"></a> Miscellaneous Operators，其它操作符</h2>
 <table>
-<colgroup>
-<col style="width: 59%" />
-<col style="width: 40%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/comment/#mongodb-query-op.-comment"><code>$comment</code></a></td>
-<td style="text-align: left;">Adds a comment to a query predicate.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/comment/#mongodb-query-op.-comment"><code>$comment</code></a></td>
+<td style="text-align:left">Adds a comment to a query predicate.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/rand/#mongodb-query-op.-rand"><code>$rand</code></a></td>
-<td style="text-align: left;">Generates a random float between 0 and
-1.</td>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/rand/#mongodb-query-op.-rand"><code>$rand</code></a></td>
+<td style="text-align:left">Generates a random float between 0 and 1.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="参考">参考</h2>
-<p><a
-href="%5BQuery%20and%20Projection%20Operators%20—%20MongoDB%20Manual%5D(https://www.mongodb.com/docs/manual/reference/operator/query/)">Query
-and Projection Operators</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p>[Query and Projection Operators](<a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/">Query and Projection Operators — MongoDB Manual</a>)</p>
 
     </div>
 
@@ -791,13 +645,13 @@ and Projection Operators</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

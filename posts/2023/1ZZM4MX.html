@@ -19,13 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="image-20230415233342204  使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。">
+    <meta name="description" content="使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Compose 的简明使用">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1ZZM4MX.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="image-20230415233342204  使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。">
+<meta property="og:description" content="使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png">
 <meta property="article:published_time" content="2023-04-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-14T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -33,6 +35,7 @@
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1ZZM4MX.html">
@@ -92,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">docker-compose 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yml-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">yml 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text">配置示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.</span> <span class="nav-text">顶层元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version"><span class="nav-number">3.3.</span> <span class="nav-text">version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#services"><span class="nav-number">3.4.</span> <span class="nav-text">services</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#image"><span class="nav-number">3.4.1.</span> <span class="nav-text">image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#build"><span class="nav-number">3.4.2.</span> <span class="nav-text">build</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#command"><span class="nav-number">3.4.3.</span> <span class="nav-text">command</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#expose"><span class="nav-number">3.4.4.</span> <span class="nav-text">expose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ports"><span class="nav-number">3.4.5.</span> <span class="nav-text">ports</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#depends_on"><span class="nav-number">3.4.6.</span> <span class="nav-text">depends_on</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#networks"><span class="nav-number">3.5.</span> <span class="nav-text">networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volumes"><span class="nav-number">3.6.</span> <span class="nav-text">volumes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#build-1"><span class="nav-number">4.1.</span> <span class="nav-text">build</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">4.2.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#up"><span class="nav-number">4.3.</span> <span class="nav-text">up</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stop"><span class="nav-number">4.4.</span> <span class="nav-text">stop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">4.5.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">4.6.</span> <span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logs"><span class="nav-number">4.7.</span> <span class="nav-text">logs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text"> docker-compose 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yml-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> yml 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text"> 配置示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.</span> <span class="nav-text"> 顶层元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version"><span class="nav-number">3.3.</span> <span class="nav-text"> version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#services"><span class="nav-number">3.4.</span> <span class="nav-text"> services</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#image"><span class="nav-number">3.4.1.</span> <span class="nav-text"> image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#buildcompose-file-build-reference"><span class="nav-number">3.4.2.</span> <span class="nav-text"> [build](Compose file build reference)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#command"><span class="nav-number">3.4.3.</span> <span class="nav-text"> command</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#expose"><span class="nav-number">3.4.4.</span> <span class="nav-text"> expose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ports"><span class="nav-number">3.4.5.</span> <span class="nav-text"> ports</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#depends_on"><span class="nav-number">3.4.6.</span> <span class="nav-text"> depends_on</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#networks"><span class="nav-number">3.5.</span> <span class="nav-text"> networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volumes"><span class="nav-number">3.6.</span> <span class="nav-text"> volumes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text"> 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#build"><span class="nav-number">4.1.</span> <span class="nav-text"> build</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">4.2.</span> <span class="nav-text"> config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#up"><span class="nav-number">4.3.</span> <span class="nav-text"> up</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stop"><span class="nav-number">4.4.</span> <span class="nav-text"> stop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">4.5.</span> <span class="nav-text"> rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">4.6.</span> <span class="nav-text"> ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logs"><span class="nav-number">4.7.</span> <span class="nav-text"> logs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -280,211 +283,163 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png"
-alt="image-20230415233342204" />
-<figcaption aria-hidden="true">image-20230415233342204</figcaption>
-</figure>
-<p>使用 Docker Compose
-可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker
-的应用程序工具。</p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png" alt="image-20230415233342204" /></p>
+<p>使用 Docker Compose 可以轻松、高效的管理容器，它是一个用于定义和运行多容器 Docker 的应用程序工具。</p>
 <span id="more"></span>
-<h2 id="简介">简介</h2>
-<p>compose、machine 和 swarm 是docker
-原生提供的三大编排工具。简称docker三剑客。</p>
-<p>Docker Compose能够在 Docker 节点上，以单引擎模式(Single-Engine
-Mode)进行多容器应用的部
-署和管理。多数的现代应用通过多个更小的微服务互相协同来组成一个完整可用的应用。</p>
-<p>部署和管理繁多的服务是困难的。而这正是 Docker Compose
-要解决的问题。Docker Compose 并不 是通过脚本和各种冗长的 docker
-命令来将应用组件组织起来，而是通过一个声明式的配置文件描述整
-个应用，从而使用一条命令完成部署。</p>
-<p>应用部署成功后，还可以通过一系列简单的命令实现对其完整声
-明周期的管理。甚至，配置文件还可以置于版本控制系统中进行存储和管理。</p>
-<h2 id="docker-compose-安装">docker-compose 安装</h2>
-<p>从 compose v2 开始，docker-compose 的指令大部分已经集成到了 docker
-中，可以通过 docker compose（而不是 docker-compose）来使用。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>compose、machine 和 swarm 是docker 原生提供的三大编排工具。简称docker三剑客。</p>
+<p>Docker Compose能够在 Docker 节点上，以单引擎模式(Single-Engine Mode)进行多容器应用的部 署和管理。多数的现代应用通过多个更小的微服务互相协同来组成一个完整可用的应用。</p>
+<p>部署和管理繁多的服务是困难的。而这正是 Docker Compose 要解决的问题。Docker Compose 并不 是通过脚本和各种冗长的 docker 命令来将应用组件组织起来，而是通过一个声明式的配置文件描述整 个应用，从而使用一条命令完成部署。</p>
+<p>应用部署成功后，还可以通过一系列简单的命令实现对其完整声 明周期的管理。甚至，配置文件还可以置于版本控制系统中进行存储和管理。</p>
+<h2 id="docker-compose-安装"><a class="markdownIt-Anchor" href="#docker-compose-安装"></a> docker-compose 安装</h2>
+<p>从 compose v2 开始，docker-compose 的指令大部分已经集成到了 docker 中，可以通过 docker compose（而不是 docker-compose）来使用。</p>
 <p>如果要使用 docker-compose，则需要单独安装程序，方法如下：</p>
 <p>使用 scoop 安装 docker-compose</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install docker<span class="literal">-compose</span></span><br></pre></td></tr></table></figure>
-<h2 id="yml-配置文件">yml 配置文件</h2>
-<p>Docker Compose 使用 YAML 文件来定义多服务的应用。YAML 是 JSON
-的一个子集，因此也可以使用JSON。</p>
-<p>Docker Compose 默认使用文件名 compose.yaml。当然，也可以使用 -f
-参数指定具体文件。</p>
+<h2 id="yml-配置文件"><a class="markdownIt-Anchor" href="#yml-配置文件"></a> yml 配置文件</h2>
+<p>Docker Compose 使用 YAML 文件来定义多服务的应用。YAML 是 JSON 的一个子集，因此也可以使用JSON。</p>
+<p>Docker Compose 默认使用文件名 compose.yaml。当然，也可以使用 -f 参数指定具体文件。</p>
 <p>docker-compose 按以下顺序使用配置文件：</p>
 <p><code>compose.yaml compose.yml docker-compose.yaml docker-compose.yml compose.yaml</code></p>
-<h3 id="配置示例">配置示例</h3>
+<h3 id="配置示例"><a class="markdownIt-Anchor" href="#配置示例"></a> 配置示例</h3>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># compose 文件 API 的版本号</span></span><br><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.9&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="comment"># mysql</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="comment"># 指定镜像名称</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql/mysql:5.7</span></span><br><span class="line">    <span class="comment"># 重启方式</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="comment"># 容器名称</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql57</span></span><br><span class="line">    <span class="comment"># 端口映射 本机:容器</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3306</span><span class="string">:3306</span></span><br><span class="line">    <span class="comment"># 挂载卷 本机:容器</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/data/edu-bom/mysql/test:/var/lib/mysql</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">./mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="comment"># 设置 root 密码</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">admin</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">net:</span></span><br><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">./edu-eureka-boot</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8761</span><span class="string">:8761</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">edu-eureka-boot</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">edu-eureka-boot</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">edu/edu-eureka-boot:1.0</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mysql57</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">net:</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">    <span class="attr">net:</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">    <span class="attr">vol:</span></span><br></pre></td></tr></table></figure>
-<h3 id="顶层元素">顶层元素</h3>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png"
-alt="image-20230415233342204" />
-<figcaption aria-hidden="true">image-20230415233342204</figcaption>
-</figure>
-<p>Docker Compose 的 YAML 文件包含 6
-个顶层元素，分别是：version、services、networks、volumes、configs、secrets。</p>
-<h3 id="version"><a
-target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/04-version-and-name/">version</a></h3>
-<p><strong>version</strong>
-截止目前（2023-04-15）已经弃用。它应总是位于文件的第一行。它定义了
-Compose 文件格式(主要是 API)的版本。注意，version 并非定义 Docker
-Compose 或 Docker 引擎的版本号。</p>
-<p>指定要使用的 Compose
-文件版本时，请确保同时指定<em>主要</em>版本号和<em>次要</em>版本号。如果没有给出次要版本，
-<code>0</code>则默认使用而不是最新的次要版本。</p>
+<h3 id="顶层元素"><a class="markdownIt-Anchor" href="#顶层元素"></a> 顶层元素</h3>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230415233342204.png" alt="image-20230415233342204" /></p>
+<p>Docker Compose 的 YAML 文件包含 6 个顶层元素，分别是：version、services、networks、volumes、configs、secrets。</p>
+<h3 id="version"><a class="markdownIt-Anchor" href="#version"></a> <a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/04-version-and-name/">version</a></h3>
+<p><strong>version</strong> 截止目前（2023-04-15）已经弃用。它应总是位于文件的第一行。它定义了 Compose 文件格式(主要是 API)的版本。注意，version 并非定义 Docker Compose 或 Docker 引擎的版本号。</p>
+<p>指定要使用的 Compose 文件版本时，请确保同时指定<em>主要</em>版本号和<em>次要</em>版本号。如果没有给出次要版本， <code>0</code>则默认使用而不是最新的次要版本。</p>
 <p>Docker Engine 支持的 Compose 文件版本如下：</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;"><strong>Compose file format</strong></th>
-<th style="text-align: left;"><strong>Docker Engine
-release</strong></th>
+<tr>
+<th style="text-align:left"><strong>Compose file format</strong></th>
+<th style="text-align:left"><strong>Docker Engine release</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Compose specification</td>
-<td style="text-align: left;">19.03.0+</td>
+<tr>
+<td style="text-align:left">Compose specification</td>
+<td style="text-align:left">19.03.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">3.8</td>
-<td style="text-align: left;">19.03.0+</td>
+<tr>
+<td style="text-align:left">3.8</td>
+<td style="text-align:left">19.03.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">3.7</td>
-<td style="text-align: left;">18.06.0+</td>
+<tr>
+<td style="text-align:left">3.7</td>
+<td style="text-align:left">18.06.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">3.6</td>
-<td style="text-align: left;">18.02.0+</td>
+<tr>
+<td style="text-align:left">3.6</td>
+<td style="text-align:left">18.02.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">17.12.0+</td>
+<tr>
+<td style="text-align:left">3.5</td>
+<td style="text-align:left">17.12.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">3.4</td>
-<td style="text-align: left;">17.09.0+</td>
+<tr>
+<td style="text-align:left">3.4</td>
+<td style="text-align:left">17.09.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">3.3</td>
-<td style="text-align: left;">17.06.0+</td>
+<tr>
+<td style="text-align:left">3.3</td>
+<td style="text-align:left">17.06.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">3.2</td>
-<td style="text-align: left;">17.04.0+</td>
+<tr>
+<td style="text-align:left">3.2</td>
+<td style="text-align:left">17.04.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">3.1</td>
-<td style="text-align: left;">1.13.1+</td>
+<tr>
+<td style="text-align:left">3.1</td>
+<td style="text-align:left">1.13.1+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">3.0</td>
-<td style="text-align: left;">1.13.0+</td>
+<tr>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">1.13.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">17.12.0+</td>
+<tr>
+<td style="text-align:left">2.4</td>
+<td style="text-align:left">17.12.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2.3</td>
-<td style="text-align: left;">17.06.0+</td>
+<tr>
+<td style="text-align:left">2.3</td>
+<td style="text-align:left">17.06.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">2.2</td>
-<td style="text-align: left;">1.13.0+</td>
+<tr>
+<td style="text-align:left">2.2</td>
+<td style="text-align:left">1.13.0+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">1.12.0+</td>
+<tr>
+<td style="text-align:left">2.1</td>
+<td style="text-align:left">1.12.0+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">2.0</td>
-<td style="text-align: left;">1.10.0+</td>
+<tr>
+<td style="text-align:left">2.0</td>
+<td style="text-align:left">1.10.0+</td>
 </tr>
 </tbody>
 </table>
-<h3 id="services"><a
-target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/05-services/">services</a></h3>
-<p><strong>services</strong>
-用于定义不同的应用服务。上边的例子定义了两个服务:一个名为
-lagou-mysql数据库服 务以及一个名为lagou-eureka的微服。Docker Compose
-会将每个服务部署在各自的容器中。</p>
+<h3 id="services"><a class="markdownIt-Anchor" href="#services"></a> <a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/05-services/">services</a></h3>
+<p><strong>services</strong> 用于定义不同的应用服务。上边的例子定义了两个服务:一个名为 lagou-mysql数据库服 务以及一个名为lagou-eureka的微服。Docker Compose 会将每个服务部署在各自的容器中。</p>
 <p>service 中很多配置项，下面根据日常使用的一致频率来分别进行介绍。</p>
-<h4 id="image">image</h4>
+<h4 id="image"><a class="markdownIt-Anchor" href="#image"></a> image</h4>
 <p>指定 image 名称。</p>
-<h4 id="build"><a
-href="Compose%20file%20build%20reference">build</a></h4>
-<p>指定 Dockfile 所在的文件位置，可以是绝对位置或者相对位置，Compose
-会自动利用这路径下的 Dockfile 来自动构建出image，然后使用该 image
-进行容器的设定。</p>
+<h4 id="buildcompose-file-build-reference"><a class="markdownIt-Anchor" href="#buildcompose-file-build-reference"></a> [build](Compose file build reference)</h4>
+<p>指定 Dockfile 所在的文件位置，可以是绝对位置或者相对位置，Compose 会自动利用这路径下的 Dockfile 来自动构建出image，然后使用该 image 进行容器的设定。</p>
 <p><strong>使用默认文件名：</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.9&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">webapp:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">./dir</span> <span class="comment">#直接指定路径，前提要 dockfile 文件名刚好是 Dockerfile</span></span><br></pre></td></tr></table></figure>
 <p><strong>使用自定义文件名：</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.9&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">webapp:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">./dir</span> <span class="comment">#透过 context 来指定路径</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile-alternate</span> <span class="comment">#说明要执行编译的 Dockfile 文件名</span></span><br><span class="line">      <span class="attr">args:</span> <span class="comment"># 指定编译 image 时，所需要的 arguments</span></span><br><span class="line">        <span class="attr">buildno:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h4 id="command">command</h4>
+<h4 id="command"><a class="markdownIt-Anchor" href="#command"></a> command</h4>
 <p>用来覆盖容器启动后默认执行的动作。</p>
-<h4 id="expose">expose</h4>
+<h4 id="expose"><a class="markdownIt-Anchor" href="#expose"></a> expose</h4>
 <p>开放 port 给 container 连线，但没有映射到 host 上</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">expose:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;3000&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;8000&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="ports">ports</h4>
+<h4 id="ports"><a class="markdownIt-Anchor" href="#ports"></a> ports</h4>
 <p>将 port 绑定在 host 上，然后就能在 host 的环境，与容器做交互</p>
-<h4 id="depends_on">depends_on</h4>
+<h4 id="depends_on"><a class="markdownIt-Anchor" href="#depends_on"></a> depends_on</h4>
 <p>当使用 docker-compose up 时，依照依赖顺序来启动。</p>
 <p>当使用 docker-compose stop 时，依照依赖顺序的反序来关闭容器。</p>
 <blockquote>
 <p>只是启动顺序，但是不会等待容器的状态到 Ready</p>
-<p>如果要等待，可以使用 <a
-target="_blank" rel="noopener" href="https://github.com/vishnubob/wait-for-it">vishnubob/wait-for-it</a>、<a
-target="_blank" rel="noopener" href="https://github.com/Eficode/wait-for">eficode/wait-for</a>
-来实现</p>
+<p>如果要等待，可以使用 <a target="_blank" rel="noopener" href="https://github.com/vishnubob/wait-for-it">vishnubob/wait-for-it</a>、<a target="_blank" rel="noopener" href="https://github.com/Eficode/wait-for">eficode/wait-for</a> 来实现</p>
 </blockquote>
-<h3 id="networks"><a
-target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/06-networks/">networks</a></h3>
-<p><strong>networks</strong> 用于指引 Docker
-创建新的网络。默认情况下，Docker Compose 会创建 bridge 网络。
-这是一种单主机网络，只能够实现同一主机上容器的连接。当然，也可以使用
-driver 属性来指定不 同的网络类型。</p>
+<h3 id="networks"><a class="markdownIt-Anchor" href="#networks"></a> <a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/06-networks/">networks</a></h3>
+<p><strong>networks</strong> 用于指引 Docker 创建新的网络。默认情况下，Docker Compose 会创建 bridge 网络。 这是一种单主机网络，只能够实现同一主机上容器的连接。当然，也可以使用 driver 属性来指定不 同的网络类型。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">frontend:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">awesome/webapp</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">front-tier</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">back-tier</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">front-tier:</span></span><br><span class="line">  <span class="attr">back-tier:</span></span><br></pre></td></tr></table></figure>
-<h3 id="volumes"><a
-target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/07-volumes/">volumes</a></h3>
-<p>顶层的 volumes
-为所有的服务提供公共的挂载卷，方便其它服务通过该位置进行共享和备份。</p>
+<h3 id="volumes"><a class="markdownIt-Anchor" href="#volumes"></a> <a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/07-volumes/">volumes</a></h3>
+<p>顶层的 volumes 为所有的服务提供公共的挂载卷，方便其它服务通过该位置进行共享和备份。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">backend:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">awesome/database</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db-data:/etc/data</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">backup:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">backup-service</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db-data:/var/lib/backup/data</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">db-data:</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用命令">常用命令</h2>
-<h3 id="build-1">build</h3>
-<p>docker-compose build [options] [SERVICE...]</p>
+<h2 id="常用命令"><a class="markdownIt-Anchor" href="#常用命令"></a> 常用命令</h2>
+<h3 id="build"><a class="markdownIt-Anchor" href="#build"></a> build</h3>
+<p>docker-compose build [options] [SERVICE…]</p>
 <p>重新 build 该项目所有 service 的 image</p>
-<p>--force-rm 删除临时容器</p>
-<p>--no-cache 就不用cache</p>
-<p>--pull 尝试拉取最新的image版本</p>
-<h3 id="config">config</h3>
+<p>–force-rm 删除临时容器</p>
+<p>–no-cache 就不用cache</p>
+<p>–pull 尝试拉取最新的image版本</p>
+<h3 id="config"><a class="markdownIt-Anchor" href="#config"></a> config</h3>
 <p>验证 compose 文件格式，错误会显示错误原因</p>
-<h3 id="up">up</h3>
-<p>docker-compose up [options] [SERVICE...]</p>
-<p>等于一整组的动作，重新 create container，start container，link
-each</p>
+<h3 id="up"><a class="markdownIt-Anchor" href="#up"></a> up</h3>
+<p>docker-compose up [options] [SERVICE…]</p>
+<p>等于一整组的动作，重新 create container，start container，link each</p>
 <p>-d 将在后台运行</p>
-<p>--scale SERVICE_NAME=NUM，用来水平伸缩指定service的数量</p>
-<h3 id="stop">stop</h3>
-<p>docker-compose stop [options] [SERVICE...]</p>
+<p>–scale SERVICE_NAME=NUM，用来水平伸缩指定service的数量</p>
+<h3 id="stop"><a class="markdownIt-Anchor" href="#stop"></a> stop</h3>
+<p>docker-compose stop [options] [SERVICE…]</p>
 <p>停止状态是 running 的容器</p>
-<h3 id="rm">rm</h3>
-<p>docker-compose rm [options] [SERVICE...]</p>
-<p>会删除所有状态是 stopped 的容器，所以建议事先使用上面的stop
-来停止容器后再进行删除</p>
-<h3 id="ps">ps</h3>
-<p>docker-compose ps [options] [SERVICE...]</p>
+<h3 id="rm"><a class="markdownIt-Anchor" href="#rm"></a> rm</h3>
+<p>docker-compose rm [options] [SERVICE…]</p>
+<p>会删除所有状态是 stopped 的容器，所以建议事先使用上面的stop 来停止容器后再进行删除</p>
+<h3 id="ps"><a class="markdownIt-Anchor" href="#ps"></a> ps</h3>
+<p>docker-compose ps [options] [SERVICE…]</p>
 <p>列出容器清单</p>
-<h3 id="logs">logs</h3>
-<p>docker-compose logs [options] [SERVICE...]</p>
+<h3 id="logs"><a class="markdownIt-Anchor" href="#logs"></a> logs</h3>
+<p>docker-compose logs [options] [SERVICE…]</p>
 <p>如果没指定 service name，则把所有 service 的 log 都输出</p>
-<h2 id="参考">参考</h2>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/">docker compose
-官方文档</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.51cto.com/u_14129797/5201531">全网最详细的Docker-Compose详细教程</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/">docker compose 官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_14129797/5201531">全网最详细的Docker-Compose详细教程</a></p>
 
     </div>
 
@@ -590,13 +545,13 @@ target="_blank" rel="noopener" href="https://blog.51cto.com/u_14129797/5201531">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

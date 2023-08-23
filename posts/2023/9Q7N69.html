@@ -19,13 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="image-20230625233244755  jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。">
+    <meta name="description" content="jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JitsiMeet docker 部署及设置 jw 授权">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/9Q7N69.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="image-20230625233244755  jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。">
+<meta property="og:description" content="jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png">
+<meta property="og:image" content="https://jitsi.github.io/handbook/assets/images/docker-jitsi-meet-afafdf87fea30a2fa6412baa4a3f8248.png">
 <meta property="article:published_time" content="2023-06-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-06-24T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -33,6 +35,7 @@
 <meta property="article:tag" content="Jitsi">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/9Q7N69.html">
@@ -92,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-docker-desktop"><span class="nav-number">1.1.</span> <span class="nav-text">安装 docker-desktop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-docker-jitsi-meet"><span class="nav-number">1.2.</span> <span class="nav-text">下载 docker-jitsi-meet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%89%80%E9%9C%80%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text">新建所需配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-.env-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">修改 .env 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-docker-compose.yml"><span class="nav-number">1.5.</span> <span class="nav-text">启动 docker-compose.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.6.</span> <span class="nav-text">防火墙开放端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text">配置端口转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">1.8.</span> <span class="nav-text">配置 nginx 反向代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt-%E8%AE%A4%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text">jwt 认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-iframe-%E9%9B%86%E6%88%90%E8%BF%9B%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">通过 IFrame 集成进现有系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jitsi-%E7%9B%B8%E5%85%B3%E9%95%9C%E5%83%8F%E7%AE%80%E4%BB%8B"><span class="nav-number">4.</span> <span class="nav-text">jitsi 相关镜像简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text"> 安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-docker-desktop"><span class="nav-number">1.1.</span> <span class="nav-text"> 安装 docker-desktop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-docker-jitsi-meet"><span class="nav-number">1.2.</span> <span class="nav-text"> 下载 docker-jitsi-meet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%89%80%E9%9C%80%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text"> 新建所需配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-env-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text"> 修改 .env 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-docker-composeyml"><span class="nav-number">1.5.</span> <span class="nav-text"> 启动 docker-compose.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.6.</span> <span class="nav-text"> 防火墙开放端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text"> 配置端口转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">1.8.</span> <span class="nav-text"> 配置 nginx 反向代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt-%E8%AE%A4%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text"> jwt 认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-iframe-%E9%9B%86%E6%88%90%E8%BF%9B%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text"> 通过 IFrame 集成进现有系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jitsi-%E7%9B%B8%E5%85%B3%E9%95%9C%E5%83%8F%E7%AE%80%E4%BB%8B"><span class="nav-number">4.</span> <span class="nav-text"> jitsi 相关镜像简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -280,126 +283,114 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png"
-alt="image-20230625233244755" />
-<figcaption aria-hidden="true">image-20230625233244755</figcaption>
-</figure>
-<p>jitsi 是一款开源的视屏会议软件，最大支持 75
-人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。</p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png" alt="image-20230625233244755" /></p>
+<p>jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 windows 的 docker 中安装和使用 jitsi。</p>
 <span id="more"></span>
-<h2 id="安装步骤">安装步骤</h2>
-<h3 id="安装-docker-desktop">安装 docker-desktop</h3>
-<p>从 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Download
-Docker Desktop | Docker</a> 下载安装</p>
-<h3 id="下载-docker-jitsi-meet">下载 docker-jitsi-meet</h3>
-<p>从 <a
-target="_blank" rel="noopener" href="https://github.com/jitsi/docker-jitsi-meet/releases/latest">latest
-release</a>
-下载安装文件，该文件为源码，下载后解压到自己希望安装的目录即可。</p>
-<h3 id="新建所需配置目录">新建所需配置目录</h3>
+<h2 id="安装步骤"><a class="markdownIt-Anchor" href="#安装步骤"></a> 安装步骤</h2>
+<h3 id="安装-docker-desktop"><a class="markdownIt-Anchor" href="#安装-docker-desktop"></a> 安装 docker-desktop</h3>
+<p>从 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Download Docker Desktop | Docker</a> 下载安装</p>
+<h3 id="下载-docker-jitsi-meet"><a class="markdownIt-Anchor" href="#下载-docker-jitsi-meet"></a> 下载 docker-jitsi-meet</h3>
+<p>从 <a target="_blank" rel="noopener" href="https://github.com/jitsi/docker-jitsi-meet/releases/latest">latest release</a> 下载安装文件，该文件为源码，下载后解压到自己希望安装的目录即可。</p>
+<h3 id="新建所需配置目录"><a class="markdownIt-Anchor" href="#新建所需配置目录"></a> 新建所需配置目录</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从命令行进入到安装的目录，假设目录为：D:\Develop\TestTemp\docker-jitsi-meet-stable-8615</span></span><br><span class="line"><span class="built_in">cd</span> d:</span><br><span class="line"><span class="built_in">cd</span> D:\Develop\TestTemp\docker<span class="literal">-jitsi-meet-stable-8615</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在用户目录下新建.jitsi-meet-cfg，在里面新建以下目录：</span></span><br><span class="line"><span class="comment"># web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri</span></span><br><span class="line"><span class="comment"># 可以在 powershell 中使用下列命令批量新建</span></span><br><span class="line"><span class="built_in">echo</span> web,transcripts,prosody/config,prosody/prosody<span class="literal">-plugins-custom</span>,jicofo,jvb,jigasi,jibri | % &#123; mkdir <span class="string">&quot;~/.jitsi-meet-cfg/<span class="variable">$_</span>&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="修改-.env-配置文件">修改 .env 配置文件</h3>
-<p>将目录中的 <code>.env.example</code>文件重命名为
-<code>.env</code>，使用记事本打开编辑，以下仅列出修改的部分：</p>
+<h3 id="修改-env-配置文件"><a class="markdownIt-Anchor" href="#修改-env-配置文件"></a> 修改 .env 配置文件</h3>
+<p>将目录中的 <code>.env.example</code>文件重命名为 <code>.env</code>，使用记事本打开编辑，以下仅列出修改的部分：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改docker对外暴露的端口</span></span><br><span class="line"><span class="comment"># Exposed HTTP port</span></span><br><span class="line">HTTP_PORT=<span class="number">7080</span></span><br><span class="line"><span class="comment"># Exposed HTTPS port</span></span><br><span class="line">HTTPS_PORT=<span class="number">7043</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改访问的网址</span></span><br><span class="line"><span class="comment"># Public URL for the web service (required)</span></span><br><span class="line"><span class="comment"># 如果是本机测试，不要添加协议，但要添加端口，如下</span></span><br><span class="line"><span class="comment"># PUBLIC_URL=192.168.3.240:7043</span></span><br><span class="line">PUBLIC_URL=https://yourdomain</span><br><span class="line"><span class="comment"># 容器主机的 IP, 当服务器位于 NAT 环境时，需要配置</span></span><br><span class="line">JVB_ADVERTISE_IPS=<span class="number">192.168</span>.<span class="number">23.12</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 jwt 认证</span></span><br><span class="line"><span class="comment"># Enable authentication</span></span><br><span class="line">ENABLE_AUTH=<span class="number">1</span></span><br><span class="line"><span class="comment"># 创建房间后，其他人只需要输入房间名称即可进入</span></span><br><span class="line"><span class="comment"># Enable guest access</span></span><br><span class="line">ENABLE_GUESTS=<span class="number">1</span></span><br><span class="line"><span class="comment"># Select authentication type: internal, jwt, ldap or matrix</span></span><br><span class="line">AUTH_TYPE=jwt</span><br><span class="line"><span class="comment"># JWT authentication</span></span><br><span class="line"><span class="comment"># Application identifier</span></span><br><span class="line">JWT_APP_ID=my_jitsi_app_id</span><br><span class="line"><span class="comment"># Application secret known only to your token generator</span></span><br><span class="line">JWT_APP_SECRET=my_jitsi_app_secret</span><br></pre></td></tr></table></figure>
-<h3 id="启动-docker-compose.yml">启动 docker-compose.yml</h3>
+<h3 id="启动-docker-composeyml"><a class="markdownIt-Anchor" href="#启动-docker-composeyml"></a> 启动 docker-compose.yml</h3>
 <p><code>docker-compose up -d</code></p>
-<h3 id="防火墙开放端口">防火墙开放端口</h3>
+<h3 id="防火墙开放端口"><a class="markdownIt-Anchor" href="#防火墙开放端口"></a> 防火墙开放端口</h3>
 <p>docker-jitsi-meeting 中的通信结构如下图所示</p>
-<p><img data-src="https://jitsi.github.io/handbook/assets/images/docker-jitsi-meet-afafdf87fea30a2fa6412baa4a3f8248.png" /></p>
+<p><img data-src="https://jitsi.github.io/handbook/assets/images/docker-jitsi-meet-afafdf87fea30a2fa6412baa4a3f8248.png" alt="" /></p>
 <ul>
-<li><p><code>80,443/tcp</code> 是 UI 的 web 端口</p>
-<p>80,443 通过 <a href="#修改%20.env%20配置文件">修改 .env 配置文件</a>
-章节进行指定，本文中分别修改为：7080，7043</p></li>
-<li><p><code>10000/udp</code> 是 RTP media 端口</p></li>
+<li>
+<p><code>80,443/tcp</code> 是 UI 的 web 端口</p>
+<p>80,443 通过 [修改 .env 配置文件](#修改 .env 配置文件) 章节进行指定，本文中分别修改为：7080，7043</p>
+</li>
+<li>
+<p><code>10000/udp</code> 是 RTP media 端口</p>
+</li>
 </ul>
 <p>通过以下命令新建防火墙入站规则：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开放 tcp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-tcp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="number">7043</span>,<span class="number">7080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开放 udp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-udp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=UDP localport=<span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置端口转发">配置端口转发</h3>
-<p>若服务器位于 NAT 中，需要在 NAT 中配置端口转发，将外网的
-<code>80/tcp,443/tcp,10000/udp</code>
-端口分别转发到服务器对应的端口上。</p>
-<h3 id="配置-nginx-反向代理">配置 nginx 反向代理</h3>
-<p>有时候外网的<code>80,443</code> 被 nginx 占用了，我们需要设置 nginx
-反向代理 jitsi，此时需要将 <code>10000/udp</code> 转发到 docker
-所在服务器，然后在 nginx 中添加如下设置：</p>
+<h3 id="配置端口转发"><a class="markdownIt-Anchor" href="#配置端口转发"></a> 配置端口转发</h3>
+<p>若服务器位于 NAT 中，需要在 NAT 中配置端口转发，将外网的 <code>80/tcp,443/tcp,10000/udp</code> 端口分别转发到服务器对应的端口上。</p>
+<h3 id="配置-nginx-反向代理"><a class="markdownIt-Anchor" href="#配置-nginx-反向代理"></a> 配置 nginx 反向代理</h3>
+<p>有时候外网的<code>80,443</code> 被 nginx 占用了，我们需要设置 nginx 反向代理 jitsi，此时需要将 <code>10000/udp</code> 转发到 docker 所在服务器，然后在 nginx 中添加如下设置：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nginx.conf 主文件</span></span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> mime.types;</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># http_servers/jitsi.conf</span></span><br><span class="line">	<span class="comment"># jitsi 会议配置</span></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">443</span> ssl;</span><br><span class="line">        <span class="attribute">server_name</span>  yourdomain;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#ssl_certificate      F:/encrypt/keys/web/iepc/iepc.shenweitech.cn-chain.pem;</span></span><br><span class="line">        <span class="comment">#ssl_certificate_key  F:/encrypt/keys/web/iepc/iepc.shenweitech.cn-key.pem;</span></span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_certificate</span>      F:/encrypt/keys/root/fullchain.pem;</span><br><span class="line">        <span class="attribute">ssl_certificate_key</span>  F:/encrypt/keys/root/privkey.pem;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_session_cache</span>    shared:SSL:<span class="number">1m</span>;</span><br><span class="line">        <span class="attribute">ssl_session_timeout</span>  <span class="number">5m</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;</span><br><span class="line">        <span class="attribute">ssl_prefer_server_ciphers</span>  <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> / &#123;			</span><br><span class="line">            <span class="attribute">proxy_pass</span>   https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_connect_timeout</span> <span class="number">600</span>;</span><br><span class="line">            <span class="attribute">proxy_read_timeout</span> <span class="number">600</span>;			</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;	   </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> /xmpp-websocket &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> /colibri-ws &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	</span><br><span class="line">        <span class="attribute">add_header</span> Access-Control-Allow-Origin <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        <span class="attribute">default_type</span> <span class="string">&#x27;text/html&#x27;</span>;</span><br><span class="line">        <span class="attribute">charset</span> utf-<span class="number">8</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>完成上述步骤的设置后，即可通过 <code>https://yourdomain</code>
-来进行访问了</p>
-<h2 id="jwt-认证">jwt 认证</h2>
-<p>jitsi 默认任何人都可以创建房间，为了使自建的 jitsi
-资源不被恶意使用，需要限制创建房间的权限。</p>
-<p>通过 <a href="#修改%20.env%20配置文件">修改 .env 配置文件</a>
-来添加权限认证，当 <code>ENABLE_AUTH=1</code> 后，只有有合法正确的
-<code>jwt</code> 值时，才可以新建房间。</p>
+<p>完成上述步骤的设置后，即可通过 <code>https://yourdomain</code> 来进行访问了</p>
+<h2 id="jwt-认证"><a class="markdownIt-Anchor" href="#jwt-认证"></a> jwt 认证</h2>
+<p>jitsi 默认任何人都可以创建房间，为了使自建的 jitsi 资源不被恶意使用，需要限制创建房间的权限。</p>
+<p>通过 [修改 .env 配置文件](#修改 .env 配置文件) 来添加权限认证，当 <code>ENABLE_AUTH=1</code> 后，只有有合法正确的 <code>jwt</code> 值时，才可以新建房间。</p>
 <p><strong>jwt 的 payload 内容如下：</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https:/gravatar.com/avatar/abc123&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jdoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abcd:a1b2c3-d4e5f6-0abc1-23de-abcdef01fedcba&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a123-123-456-789&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jitsi&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my_client&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.jit.si&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1500006923</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>可以通过 <a target="_blank" rel="noopener" href="https://jwt.io/#debugger-io">JSON Web Tokens -
-jwt.io</a> 来生成 token，然后按在 url 后面添加
-<code>jwt=your-token</code> 参数来传递授权。</p>
+<p>可以通过 <a target="_blank" rel="noopener" href="https://jwt.io/#debugger-io">JSON Web Tokens - jwt.io</a> 来生成 token，然后按在 url 后面添加 <code>jwt=your-token</code> 参数来传递授权。</p>
 <p>例如：<code>https://your-domain/room-name?jwt=your-token</code></p>
-<h2 id="通过-iframe-集成进现有系统">通过 IFrame 集成进现有系统</h2>
+<h2 id="通过-iframe-集成进现有系统"><a class="markdownIt-Anchor" href="#通过-iframe-集成进现有系统"></a> 通过 IFrame 集成进现有系统</h2>
 <p>可以使用 IFrame API与现有系统进行集成。</p>
-<ol type="1">
-<li><p>加载 <code>external_api</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;https://&lt;your-domain&gt;/external_api.js&#x27;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>实例化 api</p>
+<ol>
+<li>
+<p>加载 <code>external_api</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;https://&lt;your-domain&gt;/external_api.js&#x27;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>实例化 api</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api = <span class="keyword">new</span> <span class="title class_">JitsiMeetExternalAPI</span>(domain, options)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>domain 不带协议号（https/http）</li>
-<li>options 见 <a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe#creating-the-jitsi-meet-api-object">IFrame
-API | Jitsi Meet</a></li>
-</ul></li>
+<li>options 见 <a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe#creating-the-jitsi-meet-api-object">IFrame API | Jitsi Meet</a></li>
+</ul>
+</li>
 </ol>
-<h2 id="jitsi-相关镜像简介">jitsi 相关镜像简介</h2>
+<h2 id="jitsi-相关镜像简介"><a class="markdownIt-Anchor" href="#jitsi-相关镜像简介"></a> jitsi 相关镜像简介</h2>
 <ul>
-<li><p>base</p>
-<p>Debian stable base image with the S6 Overlay for process control and
-the Jitsi repositories enabled. All other images are based on this
-one.</p></li>
-<li><p>base-java</p>
-<p>Same as the above, plus Java (OpenJDK).</p></li>
-<li><p>web</p>
+<li>
+<p>base</p>
+<p>Debian stable base image with the S6 Overlay for process control and the Jitsi repositories enabled. All other images are based on this one.</p>
+</li>
+<li>
+<p>base-java</p>
+<p>Same as the above, plus Java (OpenJDK).</p>
+</li>
+<li>
+<p>web</p>
 <blockquote>
 <p>Jitsi Meet web UI, served with nginx.</p>
 </blockquote>
-<p>Jitsi Meet 的 web 界面</p></li>
-<li><p>prosody</p>
+<p>Jitsi Meet 的 web 界面</p>
+</li>
+<li>
+<p>prosody</p>
 <blockquote>
 <p>Prosody, the XMPP server.</p>
 </blockquote>
-<p>用于即时通讯的开源库</p></li>
-<li><p>jicofo</p>
-<p>Jicofo, the XMPP focus component.</p></li>
-<li><p>jvb</p>
+<p>用于即时通讯的开源库</p>
+</li>
+<li>
+<p>jicofo</p>
+<p>Jicofo, the XMPP focus component.</p>
+</li>
+<li>
+<p>jvb</p>
 <blockquote>
 <p>Jitsi Videobridge, the video router.</p>
 </blockquote>
-<p>Jitsi 的视屏中转中心，处理视屏流的分发</p></li>
-<li><p>jigasi</p>
-<p>Jigasi, the SIP (audio only) gateway.</p></li>
-<li><p>jibri</p>
-<p>Jibri, the broadcasting infrastructure.</p></li>
+<p>Jitsi 的视屏中转中心，处理视屏流的分发</p>
+</li>
+<li>
+<p>jigasi</p>
+<p>Jigasi, the SIP (audio only) gateway.</p>
+</li>
+<li>
+<p>jibri</p>
+<p>Jibri, the broadcasting infrastructure.</p>
+</li>
 </ul>
-<h2 id="参考">参考</h2>
-<p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">lib-jitsi-meet/doc/tokens.md
-at master · jitsi/lib-jitsi-meet · GitHub</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker#quick-start">Self-Hosting
-Guide - Docker | Jitsi Meet</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe/#creating-the-jitsi-meet-api-object">IFrame
-API | Jitsi Meet</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://meetrix.io/blog/webrtc/jitsi/jitsi_meet_front_end_customization.html">A
-tutorial on how to customize the Jitsi meet front end -
-Meetrix.IO</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">JSON
-Web Token (JWT) authentication Prosody plugin</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">lib-jitsi-meet/doc/tokens.md at master · jitsi/lib-jitsi-meet · GitHub</a></p>
+<p><a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker#quick-start">Self-Hosting Guide - Docker | Jitsi Meet</a></p>
+<p><a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe/#creating-the-jitsi-meet-api-object">IFrame API | Jitsi Meet</a></p>
+<p><a target="_blank" rel="noopener" href="https://meetrix.io/blog/webrtc/jitsi/jitsi_meet_front_end_customization.html">A tutorial on how to customize the Jitsi meet front end - Meetrix.IO</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">JSON Web Token (JWT) authentication Prosody plugin</a></p>
 
     </div>
 
@@ -505,13 +496,13 @@ Web Token (JWT) authentication Prosody plugin</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="MongDB 中 $in 查询操作符是非常强大的，但是在使用中有可能受 Mysql 的使用习惯所影响，导致忽略了 $in 的一些高级用法，比如对数组字段也可以使用 $in。 本文对 $in 的使用进行详细的总结。">
+    <meta name="description" content="MongDB 中 $in 查询操作符是非常强大的，但是在使用中有可能受 Mysql 的使用习惯所影响，导致忽略了 $in 的一些高级用法，比如对数组字段也可以使用 $in。 本文对 $in 的使用进行详细的总结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB 中 $in 的效率用法">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/2V5ECSD.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="MongDB 中 $in 查询操作符是非常强大的，但是在使用中有可能受 Mysql 的使用习惯所影响，导致忽略了 $in 的一些高级用法，比如对数组字段也可以使用 $in。 本文对 $in 的使用进行详细的总结。">
+<meta property="og:description" content="MongDB 中 $in 查询操作符是非常强大的，但是在使用中有可能受 Mysql 的使用习惯所影响，导致忽略了 $in 的一些高级用法，比如对数组字段也可以使用 $in。 本文对 $in 的使用进行详细的总结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-08-28T16:00:00.000Z">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%95%B0%E7%BB%84-in-%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">非数组 $in 数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84-in-%E6%95%B0%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text">数组 $in 数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D"><span class="nav-number">4.</span> <span class="nav-text">正则匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%95%B0%E7%BB%84-in-%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text"> 非数组 $in 数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84-in-%E6%95%B0%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text"> 数组 $in 数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D"><span class="nav-number">4.</span> <span class="nav-text"> 正则匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -167,7 +167,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -282,32 +282,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>MongDB 中 <code>$in</code>
-查询操作符是非常强大的，但是在使用中有可能受 Mysql
-的使用习惯所影响，导致忽略了 <code>$in</code>
-的一些高级用法，比如对数组字段也可以使用 <code>$in</code>。</p>
+    <div class="post-body" itemprop="articleBody"><p>MongDB 中 <code>$in</code> 查询操作符是非常强大的，但是在使用中有可能受 Mysql 的使用习惯所影响，导致忽略了 <code>$in</code> 的一些高级用法，比如对数组字段也可以使用 <code>$in</code>。</p>
 <p>本文对 <code>$in</code> 的使用进行详细的总结。</p>
 <span id="more"></span>
-<h2 id="语法">语法</h2>
+<h2 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h2>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">field</span>: &#123; <span class="attr">$in</span>: [&lt;value1&gt;, &lt;value2&gt;, ... &lt;valueN&gt; ] &#125; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="非数组-in-数组">非数组 $in 数组</h2>
-<p>如果 <code>field</code>
-是一个非数组，则会对遍历数组中的所有元素来进行匹配。因此，如果
-<code>$in</code> 后面的数组过大，会导致性能问题。</p>
+<h2 id="非数组-in-数组"><a class="markdownIt-Anchor" href="#非数组-in-数组"></a> 非数组 $in 数组</h2>
+<p>如果 <code>field</code> 是一个非数组，则会对遍历数组中的所有元素来进行匹配。因此，如果 <code>$in</code> 后面的数组过大，会导致性能问题。</p>
 <p>可能对 <code>field</code> 来建立索引提高匹配速度</p>
-<h2 id="数组-in-数组">数组 $in 数组</h2>
-<p><code>field</code> 的值也可以是一个数组，当 <code>field</code>
-数组中至少有一个元素位于 <code>$in</code>
-后面的数组中时，就匹配成功。</p>
-<h2 id="正则匹配">正则匹配</h2>
-<p><code>$in</code> 后面的数组中的值可以是正则表达式，形式为
-<code>/pattern/</code>。但是不能使用 <code>$regex</code>
-操作表达式。</p>
+<h2 id="数组-in-数组"><a class="markdownIt-Anchor" href="#数组-in-数组"></a> 数组 $in 数组</h2>
+<p><code>field</code> 的值也可以是一个数组，当 <code>field</code> 数组中至少有一个元素位于 <code>$in</code> 后面的数组中时，就匹配成功。</p>
+<h2 id="正则匹配"><a class="markdownIt-Anchor" href="#正则匹配"></a> 正则匹配</h2>
+<p><code>$in</code> 后面的数组中的值可以是正则表达式，形式为 <code>/pattern/</code>。但是不能使用 <code>$regex</code> 操作表达式。</p>
 <p>例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="property">inventory</span>.<span class="title function_">find</span>( &#123; <span class="attr">tags</span>: &#123; <span class="attr">$in</span>: [ <span class="regexp">/^be/</span>, <span class="regexp">/^st/</span> ] &#125; &#125; )</span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2>
-<p><a
-target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/in/">MongoDB-$in</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/operator/query/in/">MongoDB-$in</a></p>
 
     </div>
 
@@ -411,13 +401,13 @@ target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/referen
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介（Summary） Execute 是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了 Application.Current.Dispatcher，并提供使其更容易和更简洁使用的方法。 它还提供了一个属性的帮助类：Execute.InDesignMode。当且仅当 Visual Studio 或 Expression Blend 设计器处于活动状态，并且代码为了">
+    <meta name="description" content="简介（Summary） Execute 是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了 Application.Current.Dispatcher，并提供使其更容易和更简洁使用的方法。 它还提供了一个属性的帮助类：Execute.InDesignMode。当且仅当 Visual Studio 或 Expression Blend 设计器处于活动状态，并且代码为了设计时显示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/3R00ZSM.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介（Summary） Execute 是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了 Application.Current.Dispatcher，并提供使其更容易和更简洁使用的方法。 它还提供了一个属性的帮助类：Execute.InDesignMode。当且仅当 Visual Studio 或 Expression Blend 设计器处于活动状态，并且代码为了">
+<meta property="og:description" content="简介（Summary） Execute 是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了 Application.Current.Dispatcher，并提供使其更容易和更简洁使用的方法。 它还提供了一个属性的帮助类：Execute.InDesignMode。当且仅当 Visual Studio 或 Expression Blend 设计器处于活动状态，并且代码为了设计时显示">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">211</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">399</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">213</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">400</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,8 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bsummary"><span class="nav-number">1.</span> <span class="nav-text">简介（Summary）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86details"><span class="nav-number">2.</span> <span class="nav-text">详细（Details）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#execute.onuithread"><span class="nav-number">2.1.</span> <span class="nav-text">Execute.OnUIThread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#execute.onuithreadsync"><span class="nav-number">2.2.</span> <span class="nav-text">Execute.OnUIThreadSync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#execute.onuithreadasync"><span class="nav-number">2.3.</span> <span class="nav-text">Execute.OnUIThreadAsync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#execute.posttouithread"><span class="nav-number">2.4.</span> <span class="nav-text">Execute.PostToUIThread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#execute.posttouithreadasync"><span class="nav-number">2.5.</span> <span class="nav-text">Execute.PostToUIThreadAsync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95advanced-unit-testing"><span class="nav-number">2.6.</span> <span class="nav-text">高级：单元测试（Advanced:
-Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E5%99%A8the-dispatcher"><span class="nav-number">2.7.</span> <span class="nav-text">分配器（The Dispatcher）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Fdesign-mode"><span class="nav-number">2.8.</span> <span class="nav-text">设计模式（Design Mode）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bsummary"><span class="nav-number">1.</span> <span class="nav-text"> 简介（Summary）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86details"><span class="nav-number">2.</span> <span class="nav-text"> 详细（Details）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#executeonuithread"><span class="nav-number">2.1.</span> <span class="nav-text"> Execute.OnUIThread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#executeonuithreadsync"><span class="nav-number">2.2.</span> <span class="nav-text"> Execute.OnUIThreadSync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#executeonuithreadasync"><span class="nav-number">2.3.</span> <span class="nav-text"> Execute.OnUIThreadAsync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#executeposttouithread"><span class="nav-number">2.4.</span> <span class="nav-text"> Execute.PostToUIThread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#executeposttouithreadasync"><span class="nav-number">2.5.</span> <span class="nav-text"> Execute.PostToUIThreadAsync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95advanced-unit-testing"><span class="nav-number">2.6.</span> <span class="nav-text"> 高级：单元测试（Advanced: Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E5%99%A8the-dispatcher"><span class="nav-number">2.7.</span> <span class="nav-text"> 分配器（The Dispatcher）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Fdesign-mode"><span class="nav-number">2.8.</span> <span class="nav-text"> 设计模式（Design Mode）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +157,7 @@ Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-li
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">399</span>
+          <span class="site-state-item-count">400</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +168,7 @@ Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-li
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">211</span>
+        <span class="site-state-item-count">213</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -274,7 +273,7 @@ Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-li
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -291,109 +290,75 @@ Unit Testing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-li
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介summary">简介（Summary）</h2>
-<p><code>Execute</code>
-是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了
-<code>Application.Current.Dispatcher</code>，并提供使其更容易和更简洁使用的方法。</p>
-<p>它还提供了一个属性的帮助类：<code>Execute.InDesignMode</code>。当且仅当
-Visual Studio 或 Expression Blend
-设计器处于活动状态，并且代码为了设计时显示提供虚拟数据时。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介summary"><a class="markdownIt-Anchor" href="#简介summary"></a> 简介（Summary）</h2>
+<p><code>Execute</code> 是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了 <code>Application.Current.Dispatcher</code>，并提供使其更容易和更简洁使用的方法。</p>
+<p>它还提供了一个属性的帮助类：<code>Execute.InDesignMode</code>。当且仅当 Visual Studio 或 Expression Blend 设计器处于活动状态，并且代码为了设计时显示提供虚拟数据时。</p>
 <p>下表给出了它提供的方法的总结，后面给出了更深入的解释：</p>
 <table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 27%" />
-<col style="width: 30%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Method</th>
-<th style="text-align: center;">Inline if possible</th>
-<th style="text-align: center;">Waits for Completion</th>
+<th style="text-align:center">Inline if possible</th>
+<th style="text-align:center">Waits for Completion</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Execute.OnUIThread</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✘</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✘</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Execute.OnUIThreadSync</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✔ (Blocks)</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔ (Blocks)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Execute.OnUIThreadAsync</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✔ (Task)</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔ (Task)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Execute.PostToUIThread</td>
-<td style="text-align: center;">✘</td>
-<td style="text-align: center;">✘</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">✘</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Execute.PostToUIThreadAsync</td>
-<td style="text-align: center;">✘</td>
-<td style="text-align: center;">✔ (Task)</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">✔ (Task)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Inline if possible</strong>:
-该方法将检查当前线程是否为UI线程。如果是，则委托将同步运行。如果不是，那么它将以某种形式被分派到UI线程。</p>
-<p><strong>Waits for completion:</strong>
-要么阻塞直到委托完成执行，要么返回一个任务，该任务在委托完成执行时完成。</p>
+<p><strong>Inline if possible</strong>: 该方法将检查当前线程是否为UI线程。如果是，则委托将同步运行。如果不是，那么它将以某种形式被分派到UI线程。</p>
+<p><strong>Waits for completion:</strong> 要么阻塞直到委托完成执行，要么返回一个任务，该任务在委托完成执行时完成。</p>
 <span id="more"></span>
-<h2 id="详细details">详细（Details）</h2>
-<h3 id="execute.onuithread">Execute.OnUIThread</h3>
-<p>检查当前线程是否为 UI
-线程。如果是，则委托将同步运行。如果不是，委托将被分派到UI线程，并在将来的某个时候运行。在这种情况下，<code>Execute.OnUIThread</code>
-将不会等待委托完成。</p>
+<h2 id="详细details"><a class="markdownIt-Anchor" href="#详细details"></a> 详细（Details）</h2>
+<h3 id="executeonuithread"><a class="markdownIt-Anchor" href="#executeonuithread"></a> Execute.OnUIThread</h3>
+<p>检查当前线程是否为 UI 线程。如果是，则委托将同步运行。如果不是，委托将被分派到UI线程，并在将来的某个时候运行。在这种情况下，<code>Execute.OnUIThread</code> 将不会等待委托完成。</p>
 <p>这反映了传统的模式:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InvokeIfRequired</span>(<span class="params">Action action</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (Application.Current.Dispatcher.CheckAccess())</span><br><span class="line">        action();</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Application.Current.Dispatcher.BeginInvoke(action);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="execute.onuithreadsync">Execute.OnUIThreadSync</h3>
-<p>检查当前线程是否为 UI
-线程。如果是，那么它将同步运行委托。如果不是，那么它将分派委托在UI线程上运行，并且阻塞，直到它完成执行。</p>
-<p>因此，它与 <code>Execute.OnUIThread</code>
-非常相似。除了它会在委托完成执行后才返回。</p>
-<h3 id="execute.onuithreadasync">Execute.OnUIThreadAsync</h3>
-<p>检查当前线程是否为 UI
-线程。如果是，那么它将同步运行委托，并返回一个已完成的任务。如果不是，那么它将分派委托在将来的某个时候在
-UI 线程上运行，并返回一个任务，该任务将在委托完成执行后完成。</p>
+<h3 id="executeonuithreadsync"><a class="markdownIt-Anchor" href="#executeonuithreadsync"></a> Execute.OnUIThreadSync</h3>
+<p>检查当前线程是否为 UI 线程。如果是，那么它将同步运行委托。如果不是，那么它将分派委托在UI线程上运行，并且阻塞，直到它完成执行。</p>
+<p>因此，它与 <code>Execute.OnUIThread</code> 非常相似。除了它会在委托完成执行后才返回。</p>
+<h3 id="executeonuithreadasync"><a class="markdownIt-Anchor" href="#executeonuithreadasync"></a> Execute.OnUIThreadAsync</h3>
+<p>检查当前线程是否为 UI 线程。如果是，那么它将同步运行委托，并返回一个已完成的任务。如果不是，那么它将分派委托在将来的某个时候在 UI 线程上运行，并返回一个任务，该任务将在委托完成执行后完成。</p>
 <p>因此，它实际上是 <code>Execute.OnUIThreadSync</code> 的异步版本。</p>
-<h3 id="execute.posttouithread">Execute.PostToUIThread</h3>
-<p>无论当前线程是否为 UI 线程，都将在将来的某个时候在 UI
-线程上发布要运行的委托。</p>
-<h3 id="execute.posttouithreadasync">Execute.PostToUIThreadAsync</h3>
-<p>无论当前线程是否为 UI 线程，都将在将来的某个时候在 UI
-线程上发布要运行的委托，并返回一个任务，该任务将在委托执行完成时完成。</p>
-<p><strong>BEWARE</strong> 你绝对不能做
-<code>Execute.PostToUIThreadAsync(() =&gt; something(foo)).Wait()</code>
-这样的事情。如果从UI线程执行此操作，将导致死锁。这种方法对
-<code>Execute.PostXXX</code>
-没有意义，请使用<code>Execute.OnUIThreadSync</code> or
-<code>Execute.OnUIThreadAsync</code> 来代替。</p>
-<h3 id="高级单元测试advanced-unit-testing">高级：单元测试（Advanced:
-Unit Testing）</h3>
-<h3 id="分配器the-dispatcher">分配器（The Dispatcher）</h3>
-<p><code>Execute</code> 实际上有一个来自
-<code>Application.Current.Dispatcher</code> 的抽象级别。</p>
-<p><code>Execute.Dispatcher</code> 是类型 <code>IDispatcher</code>
-的静态属性，被 <code>Execute</code> 用于分派委托。</p>
-<p>该属性永远不能为空，默认为 <code>IDispatcher</code>
-的实现，它同步执行所有操作。然后在 <code>BootstrapperBase</code>
-中覆盖它，成为 <code>Application.Current.Dispatcher</code>
-的包装器。</p>
-<p>这种行为意味着使用 <code>Execute</code>
-方法的方法可以进行单元测试，或者在设计时使用。</p>
-<p>在单元测试中，所有的 <code>Execute</code>
-方法将同步运行它们的委托(因为调度程序不可用)。</p>
-<p>如果需要，你也可以设置 <code>Execute.Dispatcher</code>,
-为您的单元测试提供一个自定义的 <code>IDispatcher</code> 实现。</p>
-<h3 id="设计模式design-mode">设计模式（Design Mode）</h3>
-<p><code>Execute.InDesignMode</code>
-也是可设置的，这将覆盖<em>“实际”</em>值。</p>
+<h3 id="executeposttouithread"><a class="markdownIt-Anchor" href="#executeposttouithread"></a> Execute.PostToUIThread</h3>
+<p>无论当前线程是否为 UI 线程，都将在将来的某个时候在 UI 线程上发布要运行的委托。</p>
+<h3 id="executeposttouithreadasync"><a class="markdownIt-Anchor" href="#executeposttouithreadasync"></a> Execute.PostToUIThreadAsync</h3>
+<p>无论当前线程是否为 UI 线程，都将在将来的某个时候在 UI 线程上发布要运行的委托，并返回一个任务，该任务将在委托执行完成时完成。</p>
+<p><strong>BEWARE</strong> 你绝对不能做 <code>Execute.PostToUIThreadAsync(() =&gt; something(foo)).Wait()</code> 这样的事情。如果从UI线程执行此操作，将导致死锁。这种方法对 <code>Execute.PostXXX</code> 没有意义，请使用<code>Execute.OnUIThreadSync</code> or <code>Execute.OnUIThreadAsync</code> 来代替。</p>
+<h3 id="高级单元测试advanced-unit-testing"><a class="markdownIt-Anchor" href="#高级单元测试advanced-unit-testing"></a> 高级：单元测试（Advanced: Unit Testing）</h3>
+<h3 id="分配器the-dispatcher"><a class="markdownIt-Anchor" href="#分配器the-dispatcher"></a> 分配器（The Dispatcher）</h3>
+<p><code>Execute</code> 实际上有一个来自 <code>Application.Current.Dispatcher</code> 的抽象级别。</p>
+<p><code>Execute.Dispatcher</code> 是类型 <code>IDispatcher</code> 的静态属性，被 <code>Execute</code> 用于分派委托。</p>
+<p>该属性永远不能为空，默认为 <code>IDispatcher</code> 的实现，它同步执行所有操作。然后在 <code>BootstrapperBase</code> 中覆盖它，成为 <code>Application.Current.Dispatcher</code> 的包装器。</p>
+<p>这种行为意味着使用 <code>Execute</code> 方法的方法可以进行单元测试，或者在设计时使用。</p>
+<p>在单元测试中，所有的 <code>Execute</code> 方法将同步运行它们的委托(因为调度程序不可用)。</p>
+<p>如果需要，你也可以设置  <code>Execute.Dispatcher</code>, 为您的单元测试提供一个自定义的 <code>IDispatcher</code> 实现。</p>
+<h3 id="设计模式design-mode"><a class="markdownIt-Anchor" href="#设计模式design-mode"></a> 设计模式（Design Mode）</h3>
+<p><code>Execute.InDesignMode</code> 也是可设置的，这将覆盖*“实际”*值。</p>
 <p>预计您几乎永远都不需要这样做，但有时为了单元测试奇怪的小边缘情况(在Stylet中有一些这样的情况)，这种情况它是不可用的。</p>
 
     </div>
@@ -459,8 +424,8 @@ Unit Testing）</h3>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/1H4GT7T.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）11-Screens and Conductors">
-                  <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）11-Screens and Conductors
+                <a href="/posts/2020/1YXZ99D.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）12-BindableCollection">
+                  <i class="fa fa-chevron-left"></i> WPF MVVM Stylet使用文档（中文）12-BindableCollection
                 </a>
             </div>
             <div class="post-nav-item">
@@ -499,13 +464,13 @@ Unit Testing）</h3>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">732k</span>
+    <span title="站点总字数">739k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:06</span>
+    <span title="站点阅读时长">11:12</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

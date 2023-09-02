@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="技术选型  建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 tools 这样的工具库，显然更适合用 rollup 打包。如果是开发的是一个业务组件（vue），则更加适合采用 @vue&#x2F;cli 的 lib 模式来构建。  为什么一定要选择打包工具来开发 npm 包?  不一定非要使用构建工具来开发，使用构建工具主要是为了使用它强大的生态系统。比如代码风格检测、本地服务">
+    <meta name="description" content="技术选型  建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 tools 这样的工具库，显然更适合用 rollup 打包。如果是开发的是一个业务组件（vue），则更加适合采用 @vue&#x2F;cli 的 lib 模式来构建。  为什么一定要选择打包工具来开发 npm 包?  不一定非要使用构建工具来开发，使用构建工具主要是为了使用它强大的生态系统。比如代码风">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm包开发建议">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/31N5JWW.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="技术选型  建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 tools 这样的工具库，显然更适合用 rollup 打包。如果是开发的是一个业务组件（vue），则更加适合采用 @vue&#x2F;cli 的 lib 模式来构建。  为什么一定要选择打包工具来开发 npm 包?  不一定非要使用构建工具来开发，使用构建工具主要是为了使用它强大的生态系统。比如代码风格检测、本地服务">
+<meta property="og:description" content="技术选型  建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 tools 这样的工具库，显然更适合用 rollup 打包。如果是开发的是一个业务组件（vue），则更加适合采用 @vue&#x2F;cli 的 lib 模式来构建。  为什么一定要选择打包工具来开发 npm 包?  不一定非要使用构建工具来开发，使用构建工具主要是为了使用它强大的生态系统。比如代码风">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-09T16:00:00.000Z">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">402</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">112</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">403</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text"> 技术选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 完整的开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E7%90%86%E7%9A%84%E5%8C%85%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text"> 合理的包结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">4.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">技术选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">完整的开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E7%90%86%E7%9A%84%E5%8C%85%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">合理的包结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">4.</span> <span class="nav-text">致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,13 +156,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">402</span>
+          <span class="site-state-item-count">403</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">112</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -289,9 +289,12 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="技术选型"><a class="markdownIt-Anchor" href="#技术选型"></a> 技术选型</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="技术选型">技术选型</h2>
 <blockquote>
-<p>建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个 <code>tools</code> 这样的工具库，显然更适合用 <code>rollup</code> 打包。如果是开发的是一个业务组件（vue），则更加适合采用 <code>@vue/cli</code> 的 <code>lib</code> 模式来构建。</p>
+<p>建议根据所开发的npm包功能，选择更加快速且合理的打包方案。如果开发的是一个
+<code>tools</code> 这样的工具库，显然更适合用 <code>rollup</code>
+打包。如果是开发的是一个业务组件（vue），则更加适合采用
+<code>@vue/cli</code> 的 <code>lib</code> 模式来构建。</p>
 </blockquote>
 <p>为什么一定要选择打包工具来开发 <code>npm</code> 包?</p>
 <ul>
@@ -299,14 +302,17 @@
 </ul>
 <p>为什么是 <code>rollup</code> 而不是 <code>webpack</code>?</p>
 <ul>
-<li>随着 <code>rollup</code> 和 <code>webpack</code> 的版本更新，二者之间的差异性特性越来越小</li>
-<li><code>rollup</code> 配置简单，支持同时打包输出多种规范的产物（iife、cjs、umd、esm、amd、system）</li>
-<li><code>webpack</code> 功能强大社区丰富，更加适合大型应用；不支持打包输出为<code>es module</code>，而且产物不是很纯净</li>
+<li>随着 <code>rollup</code> 和 <code>webpack</code>
+的版本更新，二者之间的差异性特性越来越小</li>
+<li><code>rollup</code>
+配置简单，支持同时打包输出多种规范的产物（iife、cjs、umd、esm、amd、system）</li>
+<li><code>webpack</code>
+功能强大社区丰富，更加适合大型应用；不支持打包输出为<code>es module</code>，而且产物不是很纯净</li>
 <li>构建<code>App应用</code>时，webpack比较合适；如果是<code>类库（纯js项目）</code>，rollup更加适合。</li>
 </ul>
 <span id="more"></span>
-<h2 id="完整的开发流程"><a class="markdownIt-Anchor" href="#完整的开发流程"></a> 完整的开发流程</h2>
-<ol>
+<h2 id="完整的开发流程">完整的开发流程</h2>
+<ol type="1">
 <li>初始化项目</li>
 <li>创建合理的目录结构</li>
 <li>配置 <code>eslint</code> 统一代码风格</li>
@@ -322,12 +328,13 @@
 <li>发布包到 <code>npm</code></li>
 <li>提交代码到 <code>git</code> 仓库</li>
 </ol>
-<h2 id="合理的包结构"><a class="markdownIt-Anchor" href="#合理的包结构"></a> 合理的包结构</h2>
+<h2 id="合理的包结构">合理的包结构</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">├── bin  <span class="comment">// 用于存放可执行二进制文件的目录</span></span><br><span class="line">├── <span class="title function_">dist</span>(lib)  <span class="comment">// 产物输出目录</span></span><br><span class="line">├── docs <span class="comment">// 文档说明</span></span><br><span class="line">├── examples <span class="comment">// 示例</span></span><br><span class="line">├── package.<span class="property">json</span></span><br><span class="line">├── <span class="variable constant_">README</span>.<span class="property">md</span> <span class="comment">// 包说明，会在npm展示</span></span><br><span class="line">├── scripts <span class="comment">// 脚本</span></span><br><span class="line">├── <span class="title function_">src</span>(packages) <span class="comment">// 源码</span></span><br><span class="line">├── test <span class="comment">// 单元测试</span></span><br><span class="line">└── ...  <span class="comment">// 一些配置文件（eg: eslint、babel）</span></span><br></pre></td></tr></table></figure>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<h2 id="致谢">致谢</h2>
 <p>本文摘抄于以下文章，在此致以诚挚谢意！</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6945376222863949831">开发一个规范的 npm 包</a></li>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6945376222863949831">开发一个规范的
+npm 包</a></li>
 </ol>
 
     </div>
@@ -432,13 +439,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">741k</span>
+    <span title="站点总字数">735k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:13</span>
+    <span title="站点阅读时长">11:09</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

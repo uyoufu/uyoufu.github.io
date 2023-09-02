@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">402</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">112</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">403</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text"> 通过 .  方式获取属性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="nav-number">2.</span> <span class="nav-text"> 通过 [] 获取属性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#objectkeys%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text"> Object.keys()方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#objectgetownpropertynames"><span class="nav-number">4.</span> <span class="nav-text"> Object.getOwnPropertyNames()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forin"><span class="nav-number">5.</span> <span class="nav-text"> for…in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">6.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-.-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">通过 . 方式获取属性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="nav-number">2.</span> <span class="nav-text">通过 [] 获取属性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object.keys%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">Object.keys()方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object.getownpropertynames"><span class="nav-number">4.</span> <span class="nav-text">Object.getOwnPropertyNames()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for...in"><span class="nav-number">5.</span> <span class="nav-text">for...in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">6.</span> <span class="nav-text">致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,13 +156,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">402</span>
+          <span class="site-state-item-count">403</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">112</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -291,30 +291,33 @@
     
     <div class="post-body" itemprop="articleBody"><p>js 对象获取属性有多种方法。</p>
 <span id="more"></span>
-<h2 id="通过-方式获取属性值"><a class="markdownIt-Anchor" href="#通过-方式获取属性值"></a> 通过 <code>. </code> 方式获取属性值</h2>
+<h2 id="通过-.-方式获取属性值">通过 <code>.</code> 方式获取属性值</h2>
 <p>key是静态的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;<span class="attr">name</span>: <span class="string">&quot;zhang&quot;</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="通过-获取属性值"><a class="markdownIt-Anchor" href="#通过-获取属性值"></a> 通过 <code>[]</code> 获取属性值</h2>
+<h2 id="通过-获取属性值">通过 <code>[]</code> 获取属性值</h2>
 <p>key是动态的，可以是字符串，或者数字的形式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = &#123;<span class="string">&quot;apple&quot;</span>: <span class="number">3</span>, <span class="string">&quot;pear&quot;</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123;<span class="attr">name</span>: <span class="string">&quot;zhang&quot;</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits[<span class="string">&quot;apple&quot;</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="number">1</span>]);  <span class="comment">// 注意这里的写法跟数组容易混淆，cc仍是对象，不是数组</span></span><br></pre></td></tr></table></figure>
 <p>通过使用这种方式，可以在属性名定义和使用上实现解耦。</p>
-<h2 id="objectkeys方式"><a class="markdownIt-Anchor" href="#objectkeys方式"></a> Object.keys()方式</h2>
-<p>这是对象内置属性方法: <strong>Object.keys()</strong>；该方法返回一个数组，数组内包括 <strong>对象内可枚举属性以及方法名称</strong></p>
+<h2 id="object.keys方式">Object.keys()方式</h2>
+<p>这是对象内置属性方法:
+<strong>Object.keys()</strong>；该方法返回一个数组，数组内包括
+<strong>对象内可枚举属性以及方法名称</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = &#123;<span class="string">&quot;apple&quot;</span>: <span class="number">3</span>, <span class="string">&quot;pear&quot;</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> keys= <span class="title class_">Object</span>.<span class="title function_">keys</span>(fruits);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(keys); <span class="comment">// 输出 keys [&quot;apple&quot;, &quot;pear&quot;]</span></span><br></pre></td></tr></table></figure>
-<h2 id="objectgetownpropertynames"><a class="markdownIt-Anchor" href="#objectgetownpropertynames"></a> Object.getOwnPropertyNames()</h2>
-<p>方法返回一个 <strong>指定对象</strong> 所有自身属性的属性名（包括<strong>不可枚举属性</strong>, 但不包括 Symbol 值作为名称的属性）组成的<strong>数组.</strong>（<strong>不可枚举: 比如属性是一个js方法</strong>）</p>
+<h2 id="object.getownpropertynames">Object.getOwnPropertyNames()</h2>
+<p>方法返回一个 <strong>指定对象</strong>
+所有自身属性的属性名（包括<strong>不可枚举属性</strong>, 但不包括 Symbol
+值作为名称的属性）组成的<strong>数组.</strong>（<strong>不可枚举:
+比如属性是一个js方法</strong>）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = &#123;<span class="string">&quot;apple&quot;</span>: <span class="number">3</span>, <span class="string">&quot;pear&quot;</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> keys = <span class="title class_">Object</span>.<span class="title function_">getOwnPropertyNames</span>(fruits);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(keys);　　<span class="comment">// 输出 keys [&quot;apple&quot;, &quot;pear&quot;]</span></span><br></pre></td></tr></table></figure>
-<h2 id="forin"><a class="markdownIt-Anchor" href="#forin"></a> for…in</h2>
-<p>最原始的 <strong>for…in</strong> 循环</p>
+<h2 id="for...in">for...in</h2>
+<p>最原始的 <strong>for...in</strong> 循环</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = &#123;<span class="string">&quot;apple&quot;</span>: <span class="number">3</span>, <span class="string">&quot;pear&quot;</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> keys =[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fruits)&#123;</span><br><span class="line">    keys.<span class="title function_">push</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(keys);   <span class="comment">// 输出 keys [&quot;apple&quot;, &quot;pear&quot;]</span></span><br></pre></td></tr></table></figure>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
-<ol>
-<li>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangyi9343/p/9298276.html">JS获取对象“属性”的方法</a></p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012491783/article/details/86540044">js对象获取属性的方法(.和[]方式)</a></p>
-</li>
+<h2 id="致谢">致谢</h2>
+<ol type="1">
+<li><p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/yangyi9343/p/9298276.html">JS获取对象“属性”的方法</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/u012491783/article/details/86540044">js对象获取属性的方法(.和[]方式)</a></p></li>
 </ol>
 
     </div>
@@ -419,13 +422,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">741k</span>
+    <span title="站点总字数">735k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:13</span>
+    <span title="站点阅读时长">11:09</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

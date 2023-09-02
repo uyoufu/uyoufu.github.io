@@ -26,7 +26,6 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文列举 Powershell7 中比较好用的插件。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png">
 <meta property="article:published_time" content="2023-04-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-14T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -34,7 +33,6 @@
 <meta property="article:tag" content="Powershell7">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html">
@@ -94,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">402</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">214</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">112</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">403</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -145,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text"> busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text"> sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text"> oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zlua"><span class="nav-number">4.</span> <span class="nav-text"> z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text"> 自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text"> 完整配置</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text">busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text">oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z.lua"><span class="nav-number">4.</span> <span class="nav-text">z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">完整配置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,13 +158,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">402</span>
+          <span class="site-state-item-count">403</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">112</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -265,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>851</span>
+      <span>874</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -284,26 +282,37 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文列举 Powershell7 中比较好用的插件。</p>
 <span id="more"></span>
-<h2 id="busybox"><a class="markdownIt-Anchor" href="#busybox"></a> busybox</h2>
-<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux 命令的精简实现，扩展了 powershell 命令。</p>
+<h2 id="busybox">busybox</h2>
+<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux
+命令的精简实现，扩展了 powershell 命令。</p>
 <p>安装方式：scoop</p>
-<h2 id="sudo"><a class="markdownIt-Anchor" href="#sudo"></a> sudo</h2>
+<h2 id="sudo">sudo</h2>
 <p>powershell 提权</p>
 <p>安装方式：<code>scoop install sudo</code></p>
-<h2 id="oh-my-posh"><a class="markdownIt-Anchor" href="#oh-my-posh"></a> oh-my-posh</h2>
+<h2 id="oh-my-posh">oh-my-posh</h2>
 <p>powershell 样式美化</p>
-<p>安装方式：<a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My Posh</a></p>
+<p>安装方式：<a
+target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My
+Posh</a></p>
 <p>自己使用的主题为 <code>montys</code>：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png" alt="image-20230613224321201" /></p>
-<h2 id="zlua"><a class="markdownIt-Anchor" href="#zlua"></a> z.lua</h2>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png"
+alt="image-20230613224321201" />
+<figcaption aria-hidden="true">image-20230613224321201</figcaption>
+</figure>
+<h2 id="z.lua">z.lua</h2>
 <p>实现路径快速跳转</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
-<h2 id="自定义别名"><a class="markdownIt-Anchor" href="#自定义别名"></a> 自定义别名</h2>
+<p>参考：<a
+target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
+<h2 id="自定义别名">自定义别名</h2>
 <p>可以自定义一些自己常用的别名，方便使用</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
-<h2 id="完整配置"><a class="markdownIt-Anchor" href="#完整配置"></a> 完整配置</h2>
-<p>在 powershell 中输入<code>notepad $profile</code> 来打开配置文件，如果没有的话，输入 <code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
-<p><code>$profile</code> 的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
+<h2 id="完整配置">完整配置</h2>
+<p>在 powershell 中输入<code>notepad $profile</code>
+来打开配置文件，如果没有的话，输入
+<code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
+<p><code>$profile</code>
+的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
 <p>配置后的文件内容如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># oh-my-posh初始化</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">&#x27;C:\Users\galens\.posh\montys.json&#x27;</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># z.lua 配置</span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> (&amp; &#123; (lua D:/Application/z.lua/z.lua <span class="literal">--init</span> powershell once enhanced) <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
 
@@ -411,13 +420,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">741k</span>
+    <span title="站点总字数">735k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:13</span>
+    <span title="站点阅读时长">11:09</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

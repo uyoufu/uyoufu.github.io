@@ -27,8 +27,9 @@
     <summary type="html">&lt;p&gt;搭建了个人博客之后，如何托管博客网站就成了必须要解决的问题，基于国内的网络环境，如果部署在国外的网站上，访问速度上不去；如果选择国内的托管，大部分收费；如果使用家庭服务器，则备案又是一个问题。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;补充说明下为什么要备案：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;备案后，可以通过 Http 默认端口访问网站，否则就得在域名后缀一个&lt;code&gt;:端口&lt;/code&gt;，很难看&lt;/li&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;备案后，可以通过 Http
+默认端口访问网站，否则就得在域名后缀一个&lt;code&gt;:端口&lt;/code&gt;，很难看&lt;/li&gt;
 &lt;li&gt;没备案，你将网站发给其他人，像微信、QQ会提示链接有风险，别人不敢打开&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
@@ -64,6 +65,31 @@
   </entry>
   
   <entry>
+    <title>免费制作 MG 动画</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2WHBPR.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2WHBPR.html</id>
+    <published>2023-08-27T16:00:00.000Z</published>
+    <updated>2023-08-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在进行视屏制作的过程中，有时候我们需要插入一些 MG(Motion Graphics)
+动画，一般使用 AE 制作，但是对于一些简单的文字、流程动画，使用 AE
+就杀鸡用牛刀了，因此我们一般使用一些速成的方式来制作。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Skill" scheme="https://galens.uamazing.cn/categories/Skill/"/>
+    
+    <category term="Video" scheme="https://galens.uamazing.cn/categories/Skill/Video/"/>
+    
+    
+    <category term="Skill" scheme="https://galens.uamazing.cn/tags/Skill/"/>
+    
+    <category term="Video" scheme="https://galens.uamazing.cn/tags/Video/"/>
+    
+  </entry>
+  
+  <entry>
     <title>VisualAssistX破解安装教程(一手资料)</title>
     <link href="https://galens.uamazing.cn/posts/2023/11S1RTW.html"/>
     <id>https://galens.uamazing.cn/posts/2023/11S1RTW.html</id>
@@ -71,7 +97,10 @@
     <updated>2023-08-22T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Visual Assist X（以下简称 VAX）是一款功能强大的 Visual Studio 插件，它可以具有强大的&lt;a href=&quot;https://www.wholetomato.com/features&quot;&gt;代码导航、代码重构、代码生成、代码校正等 12 项主要功能&lt;/a&gt;，简而言之，用上它之后，编程更加高效了。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Visual Assist X（以下简称 VAX）是一款功能强大的 Visual Studio
+插件，它可以具有强大的&lt;a
+href=&quot;https://www.wholetomato.com/features&quot;&gt;代码导航、代码重构、代码生成、代码校正等
+12 项主要功能&lt;/a&gt;，简而言之，用上它之后，编程更加高效了。&lt;/p&gt;
 &lt;p&gt;本文将介绍如何安装与破解&lt;/p&gt;</summary>
     
     
@@ -123,9 +152,15 @@
     <updated>2023-08-08T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/mmexport1691536191853.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Copilot 对于提升开发效率有很大的帮助，可以大大减少开发中的复制粘贴、重复写低逻辑代码的时间，同时还可以在没有思路时，提供一个参考方向。就像一个不那么资深的助手，在辅助你编程。&lt;/p&gt;
-&lt;p&gt;截止目前为止，Github Copilot 已经开始收费，每月 10 美元，包年 100 美元。因此本文收录一些免费的平替软件，以备不时之需，有时间再来做一个详细的测试。&lt;/p&gt;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/mmexport1691536191853.png&quot;
+alt=&quot;img&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;img&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Copilot
+对于提升开发效率有很大的帮助，可以大大减少开发中的复制粘贴、重复写低逻辑代码的时间，同时还可以在没有思路时，提供一个参考方向。就像一个不那么资深的助手，在辅助你编程。&lt;/p&gt;
+&lt;p&gt;截止目前为止，Github Copilot 已经开始收费，每月 10 美元，包年 100
+美元。因此本文收录一些免费的平替软件，以备不时之需，有时间再来做一个详细的测试。&lt;/p&gt;</summary>
     
     
     
@@ -150,8 +185,14 @@
     <updated>2023-08-08T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230809125317359.png&quot; alt=&quot;image-20230809125317359&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;iEPC数字化全过程工程管理平台（以下简称 iEPC）是一个集项目管理、OA办公、BIM生命周期应用、工程AI 等多功能于一体的综合性平台，它打通了从设计到施工和运营的工程项目全生命周期管理流程，为工程建设进行高效的数字化赋能。&lt;/p&gt;
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230809125317359.png&quot;
+alt=&quot;image-20230809125317359&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230809125317359&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;iEPC数字化全过程工程管理平台（以下简称
+iEPC）是一个集项目管理、OA办公、BIM生命周期应用、工程AI
+等多功能于一体的综合性平台，它打通了从设计到施工和运营的工程项目全生命周期管理流程，为工程建设进行高效的数字化赋能。&lt;/p&gt;
 &lt;p&gt;本文将介绍如何基于该平台实现设计协同。&lt;/p&gt;</summary>
     
     
@@ -177,10 +218,12 @@
     <updated>2023-08-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文介绍如何彻底重装 windows 系统，按照本教程一步一步进行安装，重装系统非常简单。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;本文介绍如何彻底重装 windows
+系统，按照本教程一步一步进行安装，重装系统非常简单。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;重装相对于重置可以让系统更纯净。有时候电脑被病毒感染后，重置往往不能解决问题，此时就需要进行重装。&lt;/p&gt;
-&lt;p&gt;若只需要重置电脑，win10 及以上的版本在设置有重置功能，可以就此跳过本文。&lt;/p&gt;
+&lt;p&gt;若只需要重置电脑，win10
+及以上的版本在设置有重置功能，可以就此跳过本文。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -204,7 +247,9 @@
     <updated>2023-08-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;要实现 echarts 窗口自适应变化，可以使用 ResizeObserver API 监听容器元素的大小变化，并在容器大小变化时调用 echarts 实例的 &lt;code&gt;resize()&lt;/code&gt; 方法重新渲染图表。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;要实现 echarts 窗口自适应变化，可以使用 ResizeObserver API
+监听容器元素的大小变化，并在容器大小变化时调用 echarts 实例的
+&lt;code&gt;resize()&lt;/code&gt; 方法重新渲染图表。&lt;/p&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;</summary>
     
     
@@ -233,7 +278,8 @@
     
     
     <summary type="html">&lt;p&gt;本文介绍了如何实现：&lt;/p&gt;
-&lt;p&gt;父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。&lt;/p&gt;</summary>
+&lt;p&gt;父元素仅设置 max-height，子元素的高度为
+100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。&lt;/p&gt;</summary>
     
     
     
@@ -256,9 +302,14 @@
     <updated>2023-07-26T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230710866.png&quot; alt=&quot;image-20230727230710866&quot; /&gt;&lt;/p&gt;
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230710866.png&quot;
+alt=&quot;image-20230727230710866&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230710866&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;本文介绍了如何实现：&lt;/p&gt;
-&lt;p&gt;容器的高度随内容增加而增高，且某个元素使用 &lt;code&gt;flex:1&lt;/code&gt; 占满剩余空间，当达到最大值时，若该元素溢出后则显示滚动条。&lt;/p&gt;</summary>
+&lt;p&gt;容器的高度随内容增加而增高，且某个元素使用 &lt;code&gt;flex:1&lt;/code&gt;
+占满剩余空间，当达到最大值时，若该元素溢出后则显示滚动条。&lt;/p&gt;</summary>
     
     
     
@@ -284,16 +335,14 @@
     
     
     <summary type="html">&lt;p&gt;在 C# 中主要有两种方式来检测 Webview2 是否已经安装：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;通过 &lt;code&gt;CoreWebView2Environment.GetAvailableBrowserVersionString()&lt;/code&gt; 返回值来判断&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通过注册表值来判断&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;p&gt;通过
+&lt;code&gt;CoreWebView2Environment.GetAvailableBrowserVersionString()&lt;/code&gt;
+返回值来判断&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过注册表值来判断&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这种方式不是很稳定，有时候用户的注册会缺失&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
 &lt;/ol&gt;</summary>
     
     
@@ -319,8 +368,13 @@
     <updated>2023-07-24T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230001381.png&quot; alt=&quot;image-20230727230001381&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值， 了解孩子身心发展的现状是否在正常范围内，为孩子的茁壮健康成长保驾护航。&lt;/p&gt;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230001381.png&quot;
+alt=&quot;image-20230727230001381&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230001381&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值，
+了解孩子身心发展的现状是否在正常范围内，为孩子的茁壮健康成长保驾护航。&lt;/p&gt;</summary>
     
     
     
@@ -341,8 +395,8 @@
     <updated>2023-07-19T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/can-dou-bing.jpg&quot; alt=&quot;can-dou-bing&quot; style=&quot;zoom:33%;&quot; /&gt;
-&lt;h2 id=&quot;什么是蚕豆病&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#什么是蚕豆病&quot;&gt;&lt;/a&gt; 什么是蚕豆病&lt;/h2&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/can-dou-bing.jpg&quot; alt=&quot;can-dou-bing&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;什么是蚕豆病&quot;&gt;什么是蚕豆病&lt;/h2&gt;
 &lt;p&gt;蚕豆病是一种遗传性疾病，体内缺乏6-磷酸葡萄糖脱氢酶（G-6-PD），孩子食用蚕豆后引发红细胞破裂，血红蛋白经过尿液被排出体外，导致重度贫血，尿出酱油尿，精神不济，如果不及时治疗，可致昏迷、惊厥和急性肾衰竭，孩子甚至有生命危险，所以发病后应及时就医诊治。&lt;/p&gt;</summary>
     
     
@@ -364,8 +418,11 @@
     <updated>2023-07-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 33%;&quot; /&gt;
-&lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要 125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁 80 8080 443 8443 等这些常用的端口，导致我们不能使用http的默认端口，在使用域名进行访问时，必须要指定端口，这有点不够优雅。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要
+125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁
+80 8080 443 8443
+等这些常用的端口，导致我们不能使用http的默认端口，在使用域名进行访问时，必须要指定端口，这有点不够优雅。&lt;/p&gt;
 &lt;p&gt;本文将提供一个不加端口访问自建服务器资源的方法。&lt;/p&gt;</summary>
     
     
@@ -389,7 +446,13 @@
     <updated>2023-07-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在 vue 应用程序中，有时候需要使用 &lt;code&gt;iframe&lt;/code&gt; 嵌入其它网站的内容，并希望可以缓存 &lt;code&gt;iframe&lt;/code&gt; 的状态。但如果被链接的源(origin) 与当前的 origin 不同时，&lt;code&gt;iframe&lt;/code&gt; 就会发生跨域加载，这个时候，就不能在当前程序中获取 iframe 中的内容，包括 src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe 时对状态进行恢复。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;在 vue 应用程序中，有时候需要使用 &lt;code&gt;iframe&lt;/code&gt;
+嵌入其它网站的内容，并希望可以缓存 &lt;code&gt;iframe&lt;/code&gt;
+的状态。但如果被链接的源(origin) 与当前的 origin
+不同时，&lt;code&gt;iframe&lt;/code&gt;
+就会发生跨域加载，这个时候，就不能在当前程序中获取 iframe 中的内容，包括
+src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe
+时对状态进行恢复。&lt;/p&gt;
 &lt;p&gt;可以按以下方法来实现对 iframe 的缓存：&lt;/p&gt;</summary>
     
     
@@ -417,8 +480,14 @@
     <updated>2023-07-13T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png&quot; alt=&quot;async-await&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;到目前为止，vue3 中的 &lt;code&gt;setup&lt;/code&gt; 本身不能是异步函数，因此我们如果需要使用 &lt;code&gt;async&lt;/code&gt; 函数，要将异步操作包装起来。可以通过以下方式实现：&lt;/p&gt;</summary>
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png&quot;
+alt=&quot;async-await&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;async-await&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;到目前为止，vue3 中的 &lt;code&gt;setup&lt;/code&gt;
+本身不能是异步函数，因此我们如果需要使用 &lt;code&gt;async&lt;/code&gt;
+函数，要将异步操作包装起来。可以通过以下方式实现：&lt;/p&gt;</summary>
     
     
     
@@ -447,7 +516,11 @@
     <updated>2023-07-08T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717005034407.png&quot; alt=&quot;image-20230717005034407&quot; /&gt;&lt;/p&gt;
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717005034407.png&quot;
+alt=&quot;image-20230717005034407&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717005034407&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;一条小溪从茂密的山林里窜了出来，缓缓地流向远方，直到在那无尽的远处，消失不见，佛淌进了九幽的黑暗里。在小溪的尽头，一条上泛着灰白的硬水泥路蜿蜒曲折而至，时而与小溪相向而行，时而又隐匿在群山之中，它不断逆流而上，爬上了附近的最高峰，快到山顶时，戛然而止，好似用尽了全身的力气，再也不能向上分毫。&lt;/p&gt;</summary>
     
     
@@ -473,7 +546,11 @@
     <updated>2023-07-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717000711448.png&quot; alt=&quot;image-20230717000711448&quot; /&gt;&lt;/p&gt;
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717000711448.png&quot;
+alt=&quot;image-20230717000711448&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717000711448&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;今天是周五，如往常一样，是徒步回家的一天。出发的时候，几滴小雨已经开始孤零零地落着，我没理会它们，循着回家的路，就在小道上“噔噔噔”地小跑起来。&lt;/p&gt;
 &lt;p&gt;跑出几公里后，在一个路口处，刚好遇到了红灯，就停了下来，霎那间，我觉自己仿佛一台过载地的发动机，从内到外都是如火地滚烫，不断地吭哧吭哧地向外冒着热气，空气一吸进肺里，就变得焦灼起来。突然间，一阵花香飘来，香气中带有一丝齁甜，浓郁而沁人心脾。&lt;/p&gt;</summary>
     
@@ -500,8 +577,9 @@
     <updated>2023-07-04T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在 WPF 中使用 &lt;code&gt;webview2&lt;/code&gt; 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：&lt;/p&gt;
-&lt;ol&gt;
+    <summary type="html">&lt;p&gt;在 WPF 中使用 &lt;code&gt;webview2&lt;/code&gt;
+组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
 &lt;li&gt;webview2 环境缺失或版本不对&lt;/li&gt;
 &lt;li&gt;可能安装了某个软件，其注入 dll 到 webview2 失败&lt;/li&gt;
 &lt;/ol&gt;
@@ -521,30 +599,6 @@
     <category term="Webview2" scheme="https://galens.uamazing.cn/tags/Webview2/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mongodb 数据库备份与还原</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2ZVSC2C.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2ZVSC2C.html</id>
-    <published>2023-07-02T16:00:00.000Z</published>
-    <updated>2023-07-02T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;MongoDB 中使用 &lt;code&gt;mongodump&lt;/code&gt; 来对整个数据库进行备份，使用 &lt;code&gt;mongorestore&lt;/code&gt;  来将数据从备份中还原。&lt;/p&gt;
-&lt;p&gt;本文介绍一种常用的备份还原的参数设置，可以在实际工作中直接使用&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
-    
-    <category term="Mongodb" scheme="https://galens.uamazing.cn/categories/Develop/Database/Mongodb/"/>
-    
-    
-    <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
     
   </entry>
   

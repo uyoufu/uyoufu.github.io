@@ -42,24 +42,21 @@
   </entry>
   
   <entry>
-    <title>vue 前端实现非覆盖式更新</title>
-    <link href="https://galens.uamazing.cn/posts/2023/22MKVGG.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/22MKVGG.html</id>
+    <title>eggjs 单机热更新解决方案</title>
+    <link href="https://galens.uamazing.cn/posts/2023/QKCR7T.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/QKCR7T.html</id>
     <published>2023-09-11T16:00:00.000Z</published>
-    <updated>2023-09-11T16:00:00.000Z</updated>
+    <updated>2023-09-15T16:00:00.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前端&quot;&gt;前端&lt;/h2&gt;
-&lt;p&gt;采用非覆盖式更新即可&lt;/p&gt;
-&lt;h2 id=&quot;eggjs-后端&quot;&gt;Eggjs 后端&lt;/h2&gt;
-&lt;h3 id=&quot;相关-npm-包&quot;&gt;相关 npm 包&lt;/h3&gt;
-&lt;ol</summary>
-        
-      
+    <summary type="html">&lt;p&gt;后端采用 eggjs 作为框架，由于项目体量小，没有采用集群部署，而是将
+nginx 和
+eggjs、前端都部署到了一台机器上，由于更新频繁，导致用户经常断线、响应错误，用户体验非常不好，造成程序不稳定的印象。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用户内心
+OS：什么垃圾程序员，写的程序经常出问题，还强制退出，烦死了~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，不论如何，为了尊严，一定得实现热更新！&lt;/p&gt;</summary>
     
     
     

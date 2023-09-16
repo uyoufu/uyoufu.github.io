@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-08-31T16:00:00.000Z</updated>
+  <updated>2023-09-13T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,91 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JitsiMeet 配置多个 JVB 实例实现视屏的负载均衡</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3J3YEMD.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3J3YEMD.html</id>
+    <published>2023-09-13T16:00:00.000Z</published>
+    <updated>2023-09-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;JitsiMeet 中的 jvb
+负载均衡是按会议来进行分发的。无法实现同一个会议不同用户的负载均衡。&lt;/p&gt;
+&lt;p&gt;因此本文未继续研究，以待需要再行补充。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
+    
+    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 前端实现非覆盖式更新</title>
+    <link href="https://galens.uamazing.cn/posts/2023/22MKVGG.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/22MKVGG.html</id>
+    <published>2023-09-11T16:00:00.000Z</published>
+    <updated>2023-09-11T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前端&quot;&gt;前端&lt;/h2&gt;
+&lt;p&gt;采用非覆盖式更新即可&lt;/p&gt;
+&lt;h2 id=&quot;eggjs-后端&quot;&gt;Eggjs 后端&lt;/h2&gt;
+&lt;h3 id=&quot;相关-npm-包&quot;&gt;相关 npm 包&lt;/h3&gt;
+&lt;ol</summary>
+        
+      
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Deploy" scheme="https://galens.uamazing.cn/categories/Develop/Deploy/"/>
+    
+    
+    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
+    
+    <category term="Deploy" scheme="https://galens.uamazing.cn/tags/Deploy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Quasar 项目中的别名</title>
+    <link href="https://galens.uamazing.cn/posts/2023/4PA3A5.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/4PA3A5.html</id>
+    <published>2023-09-07T16:00:00.000Z</published>
+    <updated>2023-09-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.quasar.dev/logo-v2/svg/logotype.svg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;使用 Quasar CLI 与 Vite 搭建 vue 项目后，没有经典的 vite.config.js
+文件，相反，只有
+&lt;strong&gt;quasar.config.js&lt;/strong&gt;文件&lt;strong&gt;（&lt;/strong&gt;更多详细信息：https://quasar.dev/quasar-cli-vite/quasar-config-file）。&lt;/p&gt;
+&lt;p&gt;在这种情况下，如何为 src 目录设置别名呢？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
+    
+    <category term="Quasar" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Quasar/"/>
+    
+    
+    <category term="Quasar" scheme="https://galens.uamazing.cn/tags/Quasar/"/>
+    
+  </entry>
   
   <entry>
     <title>免费的静态托管网站推荐</title>
@@ -503,100 +588,6 @@ alt=&quot;async-await&quot; /&gt;
     <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
     
     <category term="Vue3.x" scheme="https://galens.uamazing.cn/tags/Vue3-x/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一腔热血夜雪山，奇灵怪异退堂鼓</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2BPZ3DJ.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2BPZ3DJ.html</id>
-    <published>2023-07-08T16:00:00.000Z</published>
-    <updated>2023-07-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717005034407.png&quot;
-alt=&quot;image-20230717005034407&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717005034407&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;一条小溪从茂密的山林里窜了出来，缓缓地流向远方，直到在那无尽的远处，消失不见，佛淌进了九幽的黑暗里。在小溪的尽头，一条上泛着灰白的硬水泥路蜿蜒曲折而至，时而与小溪相向而行，时而又隐匿在群山之中，它不断逆流而上，爬上了附近的最高峰，快到山顶时，戛然而止，好似用尽了全身的力气，再也不能向上分毫。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/Inspiration/"/>
-    
-    <category term="梦" scheme="https://galens.uamazing.cn/categories/Inspiration/%E6%A2%A6/"/>
-    
-    
-    <category term="生活感悟" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-    
-    <category term="梦" scheme="https://galens.uamazing.cn/tags/%E6%A2%A6/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为她守护一束桅子花开</title>
-    <link href="https://galens.uamazing.cn/posts/2023/21AX3JT.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/21AX3JT.html</id>
-    <published>2023-07-05T16:00:00.000Z</published>
-    <updated>2023-07-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230717000711448.png&quot;
-alt=&quot;image-20230717000711448&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230717000711448&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;今天是周五，如往常一样，是徒步回家的一天。出发的时候，几滴小雨已经开始孤零零地落着，我没理会它们，循着回家的路，就在小道上“噔噔噔”地小跑起来。&lt;/p&gt;
-&lt;p&gt;跑出几公里后，在一个路口处，刚好遇到了红灯，就停了下来，霎那间，我觉自己仿佛一台过载地的发动机，从内到外都是如火地滚烫，不断地吭哧吭哧地向外冒着热气，空气一吸进肺里，就变得焦灼起来。突然间，一阵花香飘来，香气中带有一丝齁甜，浓郁而沁人心脾。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Inspiration" scheme="https://galens.uamazing.cn/categories/Inspiration/"/>
-    
-    <category term="2023年" scheme="https://galens.uamazing.cn/categories/Inspiration/2023%E5%B9%B4/"/>
-    
-    
-    <category term="散文" scheme="https://galens.uamazing.cn/tags/%E6%95%A3%E6%96%87/"/>
-    
-    <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webview2 打开网页时一片空白</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1Q13G3F.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1Q13G3F.html</id>
-    <published>2023-07-03T16:00:00.000Z</published>
-    <updated>2023-07-04T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 WPF 中使用 &lt;code&gt;webview2&lt;/code&gt;
-组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;webview2 环境缺失或版本不对&lt;/li&gt;
-&lt;li&gt;可能安装了某个软件，其注入 dll 到 webview2 失败&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;可以通过以下步骤来详细排查：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="Webview2" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Webview2/"/>
-    
-    
-    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
-    
-    <category term="Webview2" scheme="https://galens.uamazing.cn/tags/Webview2/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     

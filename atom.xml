@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-09-13T16:00:00.000Z</updated>
+  <updated>2023-09-16T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-blog-encrypt目录消失</title>
+    <link href="https://galens.uamazing.cn/posts/2023/26YRMRD.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/26YRMRD.html</id>
+    <published>2023-09-16T16:00:00.000Z</published>
+    <updated>2023-09-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用 hexo-blog-encrypt
+对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT
+主题的源码来实现加密文章的目录显示。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本教程针对 hexo 下的 NexT 主题&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
+    
+    
+    <category term="Blog" scheme="https://galens.uamazing.cn/tags/Blog/"/>
+    
+    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
+    
+    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
+    
+  </entry>
   
   <entry>
     <title>JitsiMeet 配置多个 JVB 实例实现视屏的负载均衡</title>
@@ -543,42 +571,6 @@ src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe
     <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
     
     <category term="iframe" scheme="https://galens.uamazing.cn/tags/iframe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue3 如何在 setup 中调用异步方法</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2KBPKH9.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2KBPKH9.html</id>
-    <published>2023-07-13T16:00:00.000Z</published>
-    <updated>2023-07-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/async-await.png&quot;
-alt=&quot;async-await&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;async-await&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;到目前为止，vue3 中的 &lt;code&gt;setup&lt;/code&gt;
-本身不能是异步函数，因此我们如果需要使用 &lt;code&gt;async&lt;/code&gt;
-函数，要将异步操作包装起来。可以通过以下方式实现：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="Vue3.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue3-x/"/>
-    
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
-    
-    <category term="Vue3.x" scheme="https://galens.uamazing.cn/tags/Vue3-x/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

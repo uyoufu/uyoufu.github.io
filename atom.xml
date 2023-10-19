@@ -36,11 +36,11 @@
     <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
     
     
-    <category term="Blog" scheme="https://galens.uamazing.cn/tags/Blog/"/>
-    
     <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
     
     <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
+    
+    <category term="Blog" scheme="https://galens.uamazing.cn/tags/Blog/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-09-16T16:00:00.000Z</updated>
+  <updated>2023-11-01T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,144 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JitsiMeet Ubuntu 安装及负载均衡配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3K7WKHR.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3K7WKHR.html</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;本文介绍基于 Ubuntu 20.04 安装
+Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Jitsi-meet" scheme="https://galens.uamazing.cn/tags/Jitsi-meet/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 20.04 更换国内镜像源</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1Z18QQW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1Z18QQW.html</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Ubuntu采用&lt;code&gt;apt&lt;/code&gt;作为软件安装工具，其镜像源列表记录在&lt;code&gt;/etc/apt/source.list&lt;/code&gt;文件中。修改该文件内容即可更改镜像源。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 设置时区</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1RRG58Q.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1RRG58Q.html</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-05T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中修改时区。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 阻止笔记本关盖后挂起</title>
+    <link href="https://galens.uamazing.cn/posts/2023/30R3C6S.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/30R3C6S.html</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中阻止笔记本关盖后进程挂起。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP Ping on Ubuntu</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2P44BS3.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2P44BS3.html</id>
+    <published>2023-10-31T16:00:00.000Z</published>
+    <updated>2023-10-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Linux 中使用 TCP Ping 工具。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 配置静态IP</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1KVMRKY.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1KVMRKY.html</id>
+    <published>2023-10-31T16:00:00.000Z</published>
+    <updated>2023-10-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何为 Linux 中配置静态 IP。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo-blog-encrypt目录消失</title>
@@ -393,184 +531,6 @@ alt=&quot;img&quot; /&gt;
     
     
     <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>flex 布局中在 flex-grow 元素里显示滚动条</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3FEED8Y.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3FEED8Y.html</id>
-    <published>2023-07-26T16:00:00.000Z</published>
-    <updated>2023-07-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230710866.png&quot;
-alt=&quot;image-20230727230710866&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230710866&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;本文介绍了如何实现：&lt;/p&gt;
-&lt;p&gt;容器的高度随内容增加而增高，且某个元素使用 &lt;code&gt;flex:1&lt;/code&gt;
-占满剩余空间，当达到最大值时，若该元素溢出后则显示滚动条。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
-    
-    <category term="实例" scheme="https://galens.uamazing.cn/categories/Develop/CSS/%E5%AE%9E%E4%BE%8B/"/>
-    
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# 中检测 Webview2 是否安装</title>
-    <link href="https://galens.uamazing.cn/posts/2023/210TYTX.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/210TYTX.html</id>
-    <published>2023-07-26T16:00:00.000Z</published>
-    <updated>2023-07-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 C# 中主要有两种方式来检测 Webview2 是否已经安装：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;&lt;p&gt;通过
-&lt;code&gt;CoreWebView2Environment.GetAvailableBrowserVersionString()&lt;/code&gt;
-返回值来判断&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过注册表值来判断&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这种方式不是很稳定，有时候用户的注册会缺失&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="Webview2" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Webview2/"/>
-    
-    
-    <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
-    
-    <category term="webview2" scheme="https://galens.uamazing.cn/tags/webview2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>了解孩子生长规律，呵护宝宝健康成长</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3VB08HW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3VB08HW.html</id>
-    <published>2023-07-24T16:00:00.000Z</published>
-    <updated>2023-07-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230727230001381.png&quot;
-alt=&quot;image-20230727230001381&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20230727230001381&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;当孩子出生以后，我们就要开始时刻关注孩子的生长情况，了解孩子在成长过程中不同阶段的发育特点，我们通过观察、分析相关的参考值，
-了解孩子身心发展的现状是否在正常范围内，为孩子的茁壮健康成长保驾护航。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="ChildCare" scheme="https://galens.uamazing.cn/categories/ChildCare/"/>
-    
-    
-    <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文带你全面了解蚕豆病</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2BNMYWB.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2BNMYWB.html</id>
-    <published>2023-07-19T16:00:00.000Z</published>
-    <updated>2023-07-19T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/can-dou-bing.jpg&quot; alt=&quot;can-dou-bing&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;什么是蚕豆病&quot;&gt;什么是蚕豆病&lt;/h2&gt;
-&lt;p&gt;蚕豆病是一种遗传性疾病，体内缺乏6-磷酸葡萄糖脱氢酶（G-6-PD），孩子食用蚕豆后引发红细胞破裂，血红蛋白经过尿液被排出体外，导致重度贫血，尿出酱油尿，精神不济，如果不及时治疗，可致昏迷、惊厥和急性肾衰竭，孩子甚至有生命危险，所以发病后应及时就医诊治。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="ChildCare" scheme="https://galens.uamazing.cn/categories/ChildCare/"/>
-    
-    
-    <category term="育儿" scheme="https://galens.uamazing.cn/tags/%E8%82%B2%E5%84%BF/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用80和443端口访问其它任意端口</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3J27R22.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3J27R22.html</id>
-    <published>2023-07-17T16:00:00.000Z</published>
-    <updated>2023-07-17T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/80ToAny.png&quot; alt=&quot;80ToAny&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;现在的云服务器有些小贵，而且带宽很小，像阿里云 5M 的带宽就要
-125元/月。因此，有些同学可能会选择利用家庭宽带自建一个服务器。但是家庭宽带有个问题，运营商会封禁
-80 8080 443 8443
-等这些常用的端口，导致我们不能使用http的默认端口，在使用域名进行访问时，必须要指定端口，这有点不够优雅。&lt;/p&gt;
-&lt;p&gt;本文将提供一个不加端口访问自建服务器资源的方法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
-    
-    
-    <category term="个人博客" scheme="https://galens.uamazing.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 中对跨域的 iframe 进行缓存</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1EARQ0T.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1EARQ0T.html</id>
-    <published>2023-07-17T16:00:00.000Z</published>
-    <updated>2023-07-17T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 vue 应用程序中，有时候需要使用 &lt;code&gt;iframe&lt;/code&gt;
-嵌入其它网站的内容，并希望可以缓存 &lt;code&gt;iframe&lt;/code&gt;
-的状态。但如果被链接的源(origin) 与当前的 origin
-不同时，&lt;code&gt;iframe&lt;/code&gt;
-就会发生跨域加载，这个时候，就不能在当前程序中获取 iframe 中的内容，包括
-src，从而无法获取 iframe 中的状态，导致无法在初始化 iframe
-时对状态进行恢复。&lt;/p&gt;
-&lt;p&gt;可以按以下方法来实现对 iframe 的缓存：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="VueBasic" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/VueBasic/"/>
-    
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
-    
-    <category term="iframe" scheme="https://galens.uamazing.cn/tags/iframe/"/>
     
   </entry>
   

@@ -205,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/K6BTSD.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/25EQ87B.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -223,7 +223,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2020/K6BTSD.html" class="post-title-link" itemprop="url">RESTful API 规范</a>
+          <a href="/posts/2020/25EQ87B.html" class="post-title-link" itemprop="url">最全最详细 http 状态码介绍</a>
         </h2>
 
         <div class="post-meta-container">
@@ -264,14 +264,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>67</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -282,10 +282,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>HTTP状态码：</p>
-<p>摘抄至：</p>
-<p>http://www.ruanyifeng.com/blog/2014/05/restful_api.html</p>
-
+          <p>HTTP 响应状态代码指示特定 <a
+target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-cn/HTTP">HTTP</a>
+请求是否已成功完成。响应分为五类：信息响应(<code>100</code>–<code>199</code>)，成功响应(<code>200</code>–<code>299</code>)，重定向(<code>300</code>–<code>399</code>)，客户端错误(<code>400</code>–<code>499</code>)和服务器错误
+(<code>500</code>–<code>599</code>)。状态代码由 <a
+target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616#section-10">section 10 of RFC
+2616</a>定义</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2020/25EQ87B.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1253,7 +1263,7 @@ IoC。首先创建这个静态 IoC 类:</p>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/3R00ZSM.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2020/1HXBM8H.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -1271,7 +1281,7 @@ IoC。首先创建这个静态 IoC 类:</p>
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2020/3R00ZSM.html" class="post-title-link" itemprop="url">WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread</a>
+          <a href="/posts/2020/1HXBM8H.html" class="post-title-link" itemprop="url">WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1316,14 +1326,14 @@ IoC。首先创建这个静态 IoC 类:</p>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>9.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -1334,62 +1344,11 @@ IoC。首先创建这个静态 IoC 类:</p>
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="简介summary">简介（Summary）</h2>
-<p><code>Execute</code>
-是一个小的静态帮助类，它使得在UI线程上运行委托变得更容易。它包装了
-<code>Application.Current.Dispatcher</code>，并提供使其更容易和更简洁使用的方法。</p>
-<p>它还提供了一个属性的帮助类：<code>Execute.InDesignMode</code>。当且仅当
-Visual Studio 或 Expression Blend
-设计器处于活动状态，并且代码为了设计时显示提供虚拟数据时。</p>
-<p>下表给出了它提供的方法的总结，后面给出了更深入的解释：</p>
-<table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 27%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method</th>
-<th style="text-align: center;">Inline if possible</th>
-<th style="text-align: center;">Waits for Completion</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Execute.OnUIThread</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✘</td>
-</tr>
-<tr class="even">
-<td>Execute.OnUIThreadSync</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✔ (Blocks)</td>
-</tr>
-<tr class="odd">
-<td>Execute.OnUIThreadAsync</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✔ (Task)</td>
-</tr>
-<tr class="even">
-<td>Execute.PostToUIThread</td>
-<td style="text-align: center;">✘</td>
-<td style="text-align: center;">✘</td>
-</tr>
-<tr class="odd">
-<td>Execute.PostToUIThreadAsync</td>
-<td style="text-align: center;">✘</td>
-<td style="text-align: center;">✔ (Task)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Inline if possible</strong>:
-该方法将检查当前线程是否为UI线程。如果是，则委托将同步运行。如果不是，那么它将以某种形式被分派到UI线程。</p>
-<p><strong>Waits for completion:</strong>
-要么阻塞直到委托完成执行，要么返回一个任务，该任务在委托完成执行时完成。</p>
+          <h2 id="简介introduction">简介（Introduction）</h2>
+<p>想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/2020/3R00ZSM.html#more" rel="contents">
+              <a class="btn" href="/posts/2020/1HXBM8H.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1436,13 +1395,13 @@ Visual Studio 或 Expression Blend
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">765k</span>
+    <span title="站点总字数">766k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:35</span>
+    <span title="站点阅读时长">11:36</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

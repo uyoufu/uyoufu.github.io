@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2023-11-01T16:00:00.000Z</updated>
+  <updated>2024-01-07T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,27 +17,494 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JitsiMeet Ubuntu 安装及负载均衡配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3K7WKHR.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3K7WKHR.html</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2023-11-01T16:00:00.000Z</updated>
+    <title>Docker 开源 UI 管理工具比选及安装</title>
+    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;本文介绍基于 Ubuntu 20.04 安装
-Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux
+服务器的特点，最终选择安装 &lt;a
+href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
     
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
     
     
-    <category term="Jitsi-meet" scheme="https://galens.uamazing.cn/tags/Jitsi-meet/"/>
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 效率工具推荐与配置</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2H72YPG.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2H72YPG.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将总结在 Linux 中一些可提升使用效率的软件，并介绍安装方式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 免密码 ssh 登陆 Linux</title>
+    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Linq 后导致修改列表对象字段无效</title>
+    <link href="https://galens.uamazing.cn/posts/2024/395GBDB.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/395GBDB.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近使用 Linq 写了这样一段代码：&lt;/p&gt;
+&lt;p&gt;先用 &lt;code&gt;Select&lt;/code&gt; 生成
+&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;，然后通过 &lt;code&gt;First()&lt;/code&gt;将对象从
+&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;
+中查找出来，接着修改该对象的字段值，最后将
+&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt; 转换成 &lt;code&gt;List&lt;/code&gt; 返回。&lt;/p&gt;
+&lt;p&gt;我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug
+让人促不及防。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    <category term="Linq" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/Linq/"/>
+    
+    
+    <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
+    
+    <category term="Linq" scheme="https://galens.uamazing.cn/tags/Linq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中如何同时执行多条命令</title>
+    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
+    <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为了能够在 Docker 中使用 GPU 进行加速，Nvidia 开发了 &lt;a
+href=&quot;https://github.com/NVIDIA/nvidia-docker&quot;&gt;nvidia-docker&lt;/a&gt; 对
+Container 进行封装，使得 Docker 容器可以调用 GPU 进行加速。现在 &lt;a
+href=&quot;https://github.com/NVIDIA/nvidia-docker&quot;&gt;nvidia-docker&lt;/a&gt;
+已被归档，官方推荐使用 &lt;strong&gt;&lt;a
+href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-container-toolkit&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;本文将介绍如何在 Linux 中安装 nvidia-container-toolkit。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：本文所使用的显卡为 RTX4080&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 设置全局代理</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2Y5R2C0.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2Y5R2C0.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何为 Ubuntu 设置全局代理。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 解决开机网络等待问题</title>
+    <link href="https://galens.uamazing.cn/posts/2023/25M42MH.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/25M42MH.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Ubuntu 重启后，可能会在开机画面中看到「A start job is running for
+wait for Network to be
+configured」这样的消息，一直到两分钟后才可继续进行之后的开机流程。这个问题的原因是出在哪呢？要如何解决？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 中安装 Docker</title>
+    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
+Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 文件权限介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
+中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为 APT 配置代理</title>
+    <link href="https://galens.uamazing.cn/posts/2023/1MJYA7T.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/1MJYA7T.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 中，可以通过配置 APT 的代理设置来为 APT
+添加代理。以下是一个例子：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="APT" scheme="https://galens.uamazing.cn/tags/APT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 FHS 规范 Linux 目录使用</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3AYYNM8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3AYYNM8.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 或 Unix
+操作系统中，所有的文件和目录都被组织成以一个根节点（/）开始的倒置的树状结构&lt;/p&gt;
+&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg&quot;
+alt=&quot;linux2bfile2bsystem2bhierarchy&quot; /&gt;
+&lt;figcaption
+aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;文件系统的最顶层是由根目录开始的，系统使用 &lt;strong&gt;/&lt;/strong&gt;
+来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="FHS" scheme="https://galens.uamazing.cn/tags/FHS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu中安装Cuda环境</title>
+    <link href="https://galens.uamazing.cn/posts/2023/377XC7Q.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/377XC7Q.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-26T01:24:53.063Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+</summary>
+        
+      
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Python" scheme="https://galens.uamazing.cn/categories/Develop/Python/"/>
+    
+    <category term="MachineLearning" scheme="https://galens.uamazing.cn/categories/Develop/Python/MachineLearning/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DotNET 读写 XML 文件入门必读</title>
+    <link href="https://galens.uamazing.cn/posts/2023/345REE4.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/345REE4.html</id>
+    <published>2023-12-20T16:00:00.000Z</published>
+    <updated>2023-12-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;作为入门必读，本文将介绍 XML
+的读取方式选择，然后总结初学者可能会遇到的坑。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    <category term="XML" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/XML/"/>
+    
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
+    
+    <category term="XML" scheme="https://galens.uamazing.cn/tags/XML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文带你全面了解 Microstation 中的 Keyin 配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2VRVT60.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2VRVT60.html</id>
+    <published>2023-12-18T16:00:00.000Z</published>
+    <updated>2023-12-18T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin
+命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成
+command 表。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="Keyin" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Keyin/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+    <category term="Keyin" scheme="https://galens.uamazing.cn/tags/Keyin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Microstation EC 编程程序集介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2023/9PQA9Z.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/9PQA9Z.html</id>
+    <published>2023-12-12T16:00:00.000Z</published>
+    <updated>2023-12-12T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将对 Microstation 中 EC
+编程所需要的程序集作一个简要介绍，并推荐一个默认引用配置。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="EC" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/EC/"/>
+    
+    
+    <category term="Microstation" scheme="https://galens.uamazing.cn/tags/Microstation/"/>
+    
+    <category term="EC" scheme="https://galens.uamazing.cn/tags/EC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#编写控制台程序最佳实践</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2RY2W0D.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2RY2W0D.html</id>
+    <published>2023-11-30T16:00:00.000Z</published>
+    <updated>2023-11-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文以自己的经验总结了在 C# 中编写控制台程序的最佳实践方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
+    
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
+    
+    <category term="Console" scheme="https://galens.uamazing.cn/tags/Console/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何获取元素的范围</title>
+    <link href="https://galens.uamazing.cn/posts/2023/81FDDJ.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/81FDDJ.html</id>
+    <published>2023-11-29T16:00:00.000Z</published>
+    <updated>2023-11-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 C# 中可以将 Element 转换成 DisplayableElement，然后调用
+&lt;code&gt;CalcElementRange&lt;/code&gt; 计算其包围盒范围。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="Elements" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Elements/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+    <category term="Elements" scheme="https://galens.uamazing.cn/tags/Elements/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bentley 各个 DLL 库介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2023/358VFAC.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/358VFAC.html</id>
+    <published>2023-11-28T16:00:00.000Z</published>
+    <updated>2023-11-28T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Bentley 各个 DLL 作用介绍。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
     
   </entry>
   
@@ -58,479 +525,9 @@ Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装�
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 设置时区</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1RRG58Q.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1RRG58Q.html</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2023-11-05T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中修改时区。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 阻止笔记本关盖后挂起</title>
-    <link href="https://galens.uamazing.cn/posts/2023/30R3C6S.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/30R3C6S.html</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2023-11-01T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中阻止笔记本关盖后进程挂起。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP Ping on Ubuntu</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2P44BS3.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2P44BS3.html</id>
-    <published>2023-10-31T16:00:00.000Z</published>
-    <updated>2023-10-31T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何在 Linux 中使用 TCP Ping 工具。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 配置静态IP</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1KVMRKY.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1KVMRKY.html</id>
-    <published>2023-10-31T16:00:00.000Z</published>
-    <updated>2023-10-31T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何为 Linux 中配置静态 IP。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo-blog-encrypt目录消失</title>
-    <link href="https://galens.uamazing.cn/posts/2023/26YRMRD.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/26YRMRD.html</id>
-    <published>2023-09-16T16:00:00.000Z</published>
-    <updated>2023-09-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;使用 hexo-blog-encrypt
-对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT
-主题的源码来实现加密文章的目录显示。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本教程针对 hexo 下的 NexT 主题&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
-    
-    
-    <category term="Hexo" scheme="https://galens.uamazing.cn/tags/Hexo/"/>
-    
-    <category term="NexT" scheme="https://galens.uamazing.cn/tags/NexT/"/>
-    
-    <category term="Blog" scheme="https://galens.uamazing.cn/tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet 配置多个 JVB 实例实现视屏的负载均衡</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3J3YEMD.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3J3YEMD.html</id>
-    <published>2023-09-13T16:00:00.000Z</published>
-    <updated>2023-09-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;JitsiMeet 中的 jvb
-负载均衡是按会议来进行分发的。无法实现同一个会议不同用户的负载均衡。&lt;/p&gt;
-&lt;p&gt;因此本文未继续研究，以待需要再行补充。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="Jitsi" scheme="https://galens.uamazing.cn/tags/Jitsi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eggjs 单机热更新解决方案</title>
-    <link href="https://galens.uamazing.cn/posts/2023/QKCR7T.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/QKCR7T.html</id>
-    <published>2023-09-11T16:00:00.000Z</published>
-    <updated>2023-09-15T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;后端采用 eggjs 作为框架，由于项目体量小，没有采用集群部署，而是将
-nginx 和
-eggjs、前端都部署到了一台机器上，由于更新频繁，导致用户经常断线、响应错误，用户体验非常不好，造成程序不稳定的印象。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;用户内心
-OS：什么垃圾程序员，写的程序经常出问题，还强制退出，烦死了~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因此，不论如何，为了尊严，一定得实现热更新！&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Deploy" scheme="https://galens.uamazing.cn/categories/Develop/Deploy/"/>
-    
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
-    
-    <category term="Deploy" scheme="https://galens.uamazing.cn/tags/Deploy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Quasar 项目中的别名</title>
-    <link href="https://galens.uamazing.cn/posts/2023/4PA3A5.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/4PA3A5.html</id>
-    <published>2023-09-07T16:00:00.000Z</published>
-    <updated>2023-09-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://cdn.quasar.dev/logo-v2/svg/logotype.svg&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;使用 Quasar CLI 与 Vite 搭建 vue 项目后，没有经典的 vite.config.js
-文件，相反，只有
-&lt;strong&gt;quasar.config.js&lt;/strong&gt;文件&lt;strong&gt;（&lt;/strong&gt;更多详细信息：https://quasar.dev/quasar-cli-vite/quasar-config-file）。&lt;/p&gt;
-&lt;p&gt;在这种情况下，如何为 src 目录设置别名呢？&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Quasar" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Quasar/"/>
-    
-    
-    <category term="Quasar" scheme="https://galens.uamazing.cn/tags/Quasar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>免费的静态托管网站推荐</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3G50H3P.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3G50H3P.html</id>
-    <published>2023-08-31T16:00:00.000Z</published>
-    <updated>2023-08-31T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;搭建了个人博客之后，如何托管博客网站就成了必须要解决的问题，基于国内的网络环境，如果部署在国外的网站上，访问速度上不去；如果选择国内的托管，大部分收费；如果使用家庭服务器，则备案又是一个问题。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;补充说明下为什么要备案：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;备案后，可以通过 Http
-默认端口访问网站，否则就得在域名后缀一个&lt;code&gt;:端口&lt;/code&gt;，很难看&lt;/li&gt;
-&lt;li&gt;没备案，你将网站发给其他人，像微信、QQ会提示链接有风险，别人不敢打开&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;当然，此处不讨论自己付费租一个云服务器的方案，本文主打的一个就是“白嫖”！&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Blog" scheme="https://galens.uamazing.cn/categories/Blog/"/>
-    
-    
-    <category term="Blog" scheme="https://galens.uamazing.cn/tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最全家庭关系称呼汇总</title>
-    <link href="https://galens.uamazing.cn/posts/2023/28RRCMN.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/28RRCMN.html</id>
-    <published>2023-08-30T16:00:00.000Z</published>
-    <updated>2023-08-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;亲戚称呼是指以自己为中心所确定的亲属成员，是建立在血亲姻亲基础上的亲属之间相互称呼的名称、叫法。它是以本人为轴心的确定亲属与本人关系的标志。&lt;/p&gt;
-&lt;p&gt;汉族的亲戚关系条理例分明尊卑有序：比自己长一辈的称呼有姨父叔伯姑舅，同辈的有兄弟姐妹嫂等等，下一辈有侄甥等等。中国人由于姻亲而产生的亲戚关系相当庞杂，本文将逐一梳理，既是解惑，亦是传承。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tricks" scheme="https://galens.uamazing.cn/categories/Tricks/"/>
-    
-    
-    <category term="Tricks" scheme="https://galens.uamazing.cn/tags/Tricks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>免费制作 MG 动画</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2WHBPR.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2WHBPR.html</id>
-    <published>2023-08-27T16:00:00.000Z</published>
-    <updated>2023-08-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在进行视屏制作的过程中，有时候我们需要插入一些 MG(Motion Graphics)
-动画，一般使用 AE 制作，但是对于一些简单的文字、流程动画，使用 AE
-就杀鸡用牛刀了，因此我们一般使用一些速成的方式来制作。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Skill" scheme="https://galens.uamazing.cn/categories/Skill/"/>
-    
-    <category term="Video" scheme="https://galens.uamazing.cn/categories/Skill/Video/"/>
-    
-    
-    <category term="Skill" scheme="https://galens.uamazing.cn/tags/Skill/"/>
-    
-    <category term="Video" scheme="https://galens.uamazing.cn/tags/Video/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VisualAssistX破解安装教程(一手资料)</title>
-    <link href="https://galens.uamazing.cn/posts/2023/11S1RTW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/11S1RTW.html</id>
-    <published>2023-08-22T16:00:00.000Z</published>
-    <updated>2023-08-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Visual Assist X（以下简称 VAX）是一款功能强大的 Visual Studio
-插件，它可以具有强大的&lt;a
-href=&quot;https://www.wholetomato.com/features&quot;&gt;代码导航、代码重构、代码生成、代码校正等
-12 项主要功能&lt;/a&gt;，简而言之，用上它之后，编程更加高效了。&lt;/p&gt;
-&lt;p&gt;本文将介绍如何安装与破解&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="VisualStudio" scheme="https://galens.uamazing.cn/categories/Software/VisualStudio/"/>
-    
-    
-    <category term="VS" scheme="https://galens.uamazing.cn/tags/VS/"/>
-    
-    <category term="VAX" scheme="https://galens.uamazing.cn/tags/VAX/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>免费的视频剪辑素材资源</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1YG7ZB2.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1YG7ZB2.html</id>
-    <published>2023-08-19T16:00:00.000Z</published>
-    <updated>2023-08-19T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近在工作上要制作几个微课，平时感觉制作一个视频还挺简单的，当到实际上手的时候，才发现力不从心，特别是素材，无从找起，因此本文对如何收集素材进行一个简要总结，以便今后更加高效的使用。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文随着视频剪辑的熟练度增加，会不定期进行更新&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Skill" scheme="https://galens.uamazing.cn/categories/Skill/"/>
-    
-    <category term="Video" scheme="https://galens.uamazing.cn/categories/Skill/Video/"/>
-    
-    
-    <category term="Skill" scheme="https://galens.uamazing.cn/tags/Skill/"/>
-    
-    <category term="Video" scheme="https://galens.uamazing.cn/tags/Video/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github Copilot 的免费替代软件</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1T84381.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1T84381.html</id>
-    <published>2023-08-08T16:00:00.000Z</published>
-    <updated>2023-08-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/mmexport1691536191853.png&quot;
-alt=&quot;img&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;img&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Copilot
-对于提升开发效率有很大的帮助，可以大大减少开发中的复制粘贴、重复写低逻辑代码的时间，同时还可以在没有思路时，提供一个参考方向。就像一个不那么资深的助手，在辅助你编程。&lt;/p&gt;
-&lt;p&gt;截止目前为止，Github Copilot 已经开始收费，每月 10 美元，包年 100
-美元。因此本文收录一些免费的平替软件，以备不时之需，有时间再来做一个详细的测试。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/categories/Software/Copilot/"/>
-    
-    
-    <category term="Copilot" scheme="https://galens.uamazing.cn/tags/Copilot/"/>
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iEPC 设计协同使用教程</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2W88WG9.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2W88WG9.html</id>
-    <published>2023-08-08T16:00:00.000Z</published>
-    <updated>2023-08-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">有东西被加密了, 请输入密码查看</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="iEPC" scheme="https://galens.uamazing.cn/categories/Software/iEPC/"/>
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/tags/Software/"/>
-    
-    <category term="iEPC" scheme="https://galens.uamazing.cn/tags/iEPC/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重装 windows 系统</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2CR6PKS.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2CR6PKS.html</id>
-    <published>2023-08-06T16:00:00.000Z</published>
-    <updated>2023-08-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何彻底重装 windows
-系统，按照本教程一步一步进行安装，重装系统非常简单。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;重装相对于重置可以让系统更纯净。有时候电脑被病毒感染后，重置往往不能解决问题，此时就需要进行重装。&lt;/p&gt;
-&lt;p&gt;若只需要重置电脑，win10
-及以上的版本在设置有重置功能，可以就此跳过本文。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
-    
-    
-    <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何优雅地实现 echarts 的自适应</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1G6444M.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1G6444M.html</id>
-    <published>2023-08-06T16:00:00.000Z</published>
-    <updated>2023-08-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;要实现 echarts 窗口自适应变化，可以使用 ResizeObserver API
-监听容器元素的大小变化，并在容器大小变化时调用 echarts 实例的
-&lt;code&gt;resize()&lt;/code&gt; 方法重新渲染图表。&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Javascript" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/"/>
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/"/>
-    
-    <category term="Vue2.x" scheme="https://galens.uamazing.cn/categories/Develop/Javascript/Vue/Vue2-x/"/>
-    
-    
-    <category term="Vue" scheme="https://galens.uamazing.cn/tags/Vue/"/>
-    
-    <category term="Vue2.x" scheme="https://galens.uamazing.cn/tags/Vue2-x/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>父元素仅设置max-height，子元素高度百分之100，溢出后如何显示滚动条</title>
-    <link href="https://galens.uamazing.cn/posts/2023/27DHP6N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/27DHP6N.html</id>
-    <published>2023-07-27T16:00:00.000Z</published>
-    <updated>2023-07-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍了如何实现：&lt;/p&gt;
-&lt;p&gt;父元素仅设置 max-height，子元素的高度为
-100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
-    
-    <category term="实例" scheme="https://galens.uamazing.cn/categories/Develop/CSS/%E5%AE%9E%E4%BE%8B/"/>
-    
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
     
   </entry>
   

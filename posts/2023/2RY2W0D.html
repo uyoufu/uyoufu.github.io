@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="很久以前买了一个蓝牙键盘（Mozhi，摩智），当时闲充电麻烦，就一直用的有线，今天突然想改无线了，却忘记了怎么配置，通过回忆与尝试，使用总结如下：">
+    <meta name="description" content="本文以自己的经验总结了在 C# 中编写控制台程序的最佳实践方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="摩智键盘蓝牙连接">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2022/33B50C4.html">
+<meta property="og:title" content="C#编写控制台程序最佳实践">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2023/2RY2W0D.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="很久以前买了一个蓝牙键盘（Mozhi，摩智），当时闲充电麻烦，就一直用的有线，今天突然想改无线了，却忘记了怎么配置，通过回忆与尝试，使用总结如下：">
+<meta property="og:description" content="本文以自己的经验总结了在 C# 中编写控制台程序的最佳实践方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-10T16:00:00.000Z">
+<meta property="article:published_time" content="2023-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-30T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="蓝牙键盘">
+<meta property="article:tag" content="DotNET">
+<meta property="article:tag" content="Console">
+<meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2022/33B50C4.html">
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2023/2RY2W0D.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2022/33B50C4.html","path":"posts/2022/33B50C4.html","title":"摩智键盘蓝牙连接"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2023/2RY2W0D.html","path":"posts/2023/2RY2W0D.html","title":"C#编写控制台程序最佳实践"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>摩智键盘蓝牙连接 | 星辰大海</title>
+<title>C#编写控制台程序最佳实践 | 星辰大海</title>
   
 
 
@@ -90,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">219</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">413</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">227</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">434</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -128,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -141,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">程序集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -155,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">413</span>
+          <span class="site-state-item-count">434</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">119</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">219</span>
+        <span class="site-state-item-count">227</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/33B50C4.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/2RY2W0D.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -221,12 +224,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="摩智键盘蓝牙连接 | 星辰大海">
+      <meta itemprop="name" content="C#编写控制台程序最佳实践 | 星辰大海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          摩智键盘蓝牙连接
+          C#编写控制台程序最佳实践
         </h1>
 
         <div class="post-meta-container">
@@ -237,7 +240,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-03-11 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-11T00:00:00+08:00">2022-03-11</time>
+      <time title="创建时间：2023-12-01 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-01T00:00:00+08:00">2023-12-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +248,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tricks/" itemprop="url" rel="index"><span itemprop="name">Tricks</span></a>
+          <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
         </span>
     </span>
 
@@ -256,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>187</span>
+      <span>405</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -273,18 +280,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>很久以前买了一个蓝牙键盘（Mozhi，摩智），当时闲充电麻烦，就一直用的有线，今天突然想改无线了，却忘记了怎么配置，通过回忆与尝试，使用总结如下：</p>
+    <div class="post-body" itemprop="articleBody"><p>本文以自己的经验总结了在 C# 中编写控制台程序的最佳实践方法。</p>
 <span id="more"></span>
-<ol type="1">
-<li>先打开蓝牙，在后侧有个开关，拨向数字键盘方向</li>
-<li>长按 <code>Fn</code> + <code>Tab</code> 键，直到 <code>Esc</code>
-闪烁，同时 <code>scroll lock</code> 也会亮起来</li>
-<li>通过电脑的蓝牙连接就可以了</li>
-</ol>
-<blockquote>
-<p>该键盘有3个蓝牙信道，按 Fn+1~3
-可以切换，不同的信道，可以连接不同的设备，方便切换。</p>
-</blockquote>
+<p>在这之前，作者曾经使用过 <a
+target="_blank" rel="noopener" href="https://github.com/commandlineparser/commandline">CommandLineParser</a>，最终选择了以下方案。</p>
+<h2 id="程序集">程序集</h2>
+<ul>
+<li><p>命令行解析</p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/dotnet/command-line-api">dotnet/command-line-api:
+Command line parsing, invocation, and rendering of terminal output.
+(github.com)</a></p></li>
+<li><p>进度条</p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/spectreconsole/spectre.console">spectreconsole/spectre.console:
+A .NET library that makes it easier to create beautiful console
+applications. (github.com)</a></p></li>
+</ul>
+<h2 id="实例">实例</h2>
+<p>通过上述技术，作者实现了一个具有插件功能的控制台工具，请跳转到查看效果。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GalensGan/OneDo">GalensGan/OneDo
+(github.com)</a></p>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此致以诚挚谢意！</p>
+<p><a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/standard/commandline/">System.CommandLine
+概述 | Microsoft Learn</a></p>
 
     </div>
 
@@ -341,20 +362,22 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E8%93%9D%E7%89%99%E9%94%AE%E7%9B%98/" rel="tag"><i class="fa fa-tag"></i> 蓝牙键盘</a>
+              <a href="/tags/DotNET/" rel="tag"><i class="fa fa-tag"></i> DotNET</a>
+              <a href="/tags/Console/" rel="tag"><i class="fa fa-tag"></i> Console</a>
+              <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/2JXSX6J.html" rel="prev" title="egg-redis 常用操作">
-                  <i class="fa fa-chevron-left"></i> egg-redis 常用操作
+                <a href="/posts/2023/81FDDJ.html" rel="prev" title="如何获取元素的范围">
+                  <i class="fa fa-chevron-left"></i> 如何获取元素的范围
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/T3NMZE.html" rel="next" title="如何删除 ORD 中的工作空间">
-                  如何删除 ORD 中的工作空间 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2023/9PQA9Z.html" rel="next" title="Microstation EC 编程程序集介绍">
+                  Microstation EC 编程程序集介绍 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -377,7 +400,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -388,13 +411,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">766k</span>
+    <span title="站点总字数">791k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:36</span>
+    <span title="站点阅读时长">12:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -443,7 +466,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"91a21472b3e4ebcb4c57b677d629bed3"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6f5e48b54eecf9848637cee1ae333916"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

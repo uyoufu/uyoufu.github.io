@@ -27,7 +27,7 @@
 <meta property="og:description" content="在利用 MS 二开的时候，我们经常会等分线段，通常我们会用到 fraction 来操作，在此记录下 MS 中 fraction 小坑，以作提醒。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-06T00:45:48.935Z">
+<meta property="article:modified_time" content="2023-12-28T07:28:42.769Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Bentley二次开发">
 <meta name="twitter:card" content="summary">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">219</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">113</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">413</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">227</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">434</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -156,18 +156,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">413</span>
+          <span class="site-state-item-count">434</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">119</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">219</span>
+        <span class="site-state-item-count">227</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -245,7 +245,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-06 08:45:48" itemprop="dateModified" datetime="2023-07-06T08:45:48+08:00">2023-07-06</time>
+      <time title="修改时间：2023-12-28 15:28:42" itemprop="dateModified" datetime="2023-12-28T15:28:42+08:00">2023-12-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -307,8 +307,8 @@
 <li>对于有N个线段（即N+1个点）的线串 (Linestring)，各个顶点的 fraction
 分别为 0，1/N，2/N，…1。</li>
 <li>对于bspline 曲线，fraction 表示节点范围的分数。</li>
-<li>对于椭圆弧（elliptic arc），分数与角度变化成正比，公式为：X = center
-+ vector0 * cos(theta) + vector90 * sin (theta)</li>
+<li>对于椭圆弧（elliptic arc），fraction 与角度变化成正比，公式为：X =
+center + vector0 * cos(theta) + vector90 * sin (theta)</li>
 </ul>
 <h2 id="源代码">源代码</h2>
 <p>在此，分享一个等分线段的算法，若有不足之处，还请指教。</p>
@@ -379,13 +379,13 @@ target="_blank" rel="noopener" href="https://communities.bentley.com/communities
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/XDTNKH.html" rel="prev" title="图形变换">
-                  <i class="fa fa-chevron-left"></i> 图形变换
+                <a href="/posts/2020/3W94T82.html" rel="prev" title="LearnVue 介绍">
+                  <i class="fa fa-chevron-left"></i> LearnVue 介绍
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2020/31H546G.html" rel="next" title="将元素的颜色设置为 ByLevel">
-                  将元素的颜色设置为 ByLevel <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2020/XDTNKH.html" rel="next" title="图形变换">
+                  图形变换 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -408,7 +408,7 @@ target="_blank" rel="noopener" href="https://communities.bentley.com/communities
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -419,13 +419,13 @@ target="_blank" rel="noopener" href="https://communities.bentley.com/communities
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">766k</span>
+    <span title="站点总字数">791k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:36</span>
+    <span title="站点阅读时长">12:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0-rc1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近使用 Linq 写了这样一段代码： 先用 Select 生成 IEnumerable&lt;T&gt;，然后通过 First()将对象从 IEnumerable&lt;T&gt; 中查找出来，接着修改该对象的字段值，最后将 IEnumerable&lt;T&gt; 转换成 List 返回。 我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug 让人促不及防。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Linq 后导致修改列表对象字段无效">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/395GBDB.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="最近使用 Linq 写了这样一段代码： 先用 Select 生成 IEnumerable&lt;T&gt;，然后通过 First()将对象从 IEnumerable&lt;T&gt; 中查找出来，接着修改该对象的字段值，最后将 IEnumerable&lt;T&gt; 转换成 List 返回。 我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug 让人促不及防。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-07T16:00:00.000Z">
+<meta property="article:author" content="明不知昔">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="Linq">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/395GBDB.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/395GBDB.html","path":"posts/2024/395GBDB.html","title":"使用 Linq 后导致修改列表对象字段无效"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用 Linq 后导致修改列表对象字段无效 | 星辰大海</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">星辰大海</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">227</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">434</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">伪代码复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="明不知昔"
+      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+  <p class="site-author-name" itemprop="name">明不知昔</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">434</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">227</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener me" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/395GBDB.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
+      <meta itemprop="name" content="明不知昔">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用 Linq 后导致修改列表对象字段无效 | 星辰大海">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 Linq 后导致修改列表对象字段无效
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-01-08 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-08T00:00:00+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Develop/" itemprop="url" rel="index"><span itemprop="name">Develop</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Develop/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Develop/DotNET/Linq/" itemprop="url" rel="index"><span itemprop="name">Linq</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近使用 Linq 写了这样一段代码：</p>
+<p>先用 <code>Select</code> 生成
+<code>IEnumerable&lt;T&gt;</code>，然后通过 <code>First()</code>将对象从
+<code>IEnumerable&lt;T&gt;</code>
+中查找出来，接着修改该对象的字段值，最后将
+<code>IEnumerable&lt;T&gt;</code> 转换成 <code>List</code> 返回。</p>
+<p>我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug
+让人促不及防。</p>
+<span id="more"></span>
+<h2 id="伪代码复现">伪代码复现</h2>
+<p><strong>伪代码如下</strong>：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person 类</span></span><br><span class="line"><span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="string">&quot;defaultName&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> name</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Name = name;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;create a new person: &quot;</span>);           </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowSelf</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;My name is <span class="subst">&#123;Name&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用代码</strong>：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 Select 生成 IEnumerable&lt;Person&gt;</span></span><br><span class="line">IEnumerable&lt;Person&gt; list = <span class="keyword">new</span> List&lt;<span class="built_in">string</span>&gt;()&#123;</span><br><span class="line">    <span class="string">&quot;ZhangSan&quot;</span>,<span class="string">&quot;LiSi&quot;</span>,<span class="string">&quot;WangWu&quot;</span></span><br><span class="line">    &#125;.Select(x =&gt; <span class="keyword">new</span> Person(x));</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstPerson = list.First();</span><br><span class="line">Console.WriteLine();</span><br><span class="line">Console.WriteLine(<span class="string">$&quot;I am the first person, my name was changed from <span class="subst">&#123;firstPerson.Name&#125;</span> to ZhangSanPro&quot;</span>);</span><br><span class="line">firstPerson.Name = <span class="string">&quot;ZhangSanPro&quot;</span>;</span><br><span class="line">firstPerson.ShowSelf();</span><br><span class="line"></span><br><span class="line">Console.WriteLine();</span><br><span class="line">Console.WriteLine(<span class="string">&quot;persons in list:&quot;</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> person <span class="keyword">in</span> list)</span><br><span class="line">&#123;</span><br><span class="line">    person.ShowSelf();</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<p><strong>结果</strong>：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">create a new person:</span><br><span class="line"></span><br><span class="line">I am the first person, my name was changed from ZhangSan to ZhangSanPro</span><br><span class="line">My name is ZhangSanPro</span><br><span class="line"></span><br><span class="line">persons in list:</span><br><span class="line">create a new person:</span><br><span class="line">create a new person:</span><br><span class="line">create a new person:</span><br><span class="line">My name is ZhangSan</span><br><span class="line">My name is LiSi</span><br><span class="line">My name is WangWu</span><br></pre></td></tr></table></figure>
+<p>从输出可以看到，对第一个对象的 <code>Name</code>
+修改是生效，但是为什么后面转换成 <code>List</code>
+后，它的值却没改变呢，按道理修改引用对象的字段，也会影响到
+<code>List</code> 中的对象的。</p>
+<h2 id="原因分析">原因分析</h2>
+<p>在上述代码中，<code>Select</code> 方法返回的是一个
+<code>IEnumerable&lt;Person&gt;</code>，这是一个延迟执行的查询，意味着查询的结果（也就是
+<code>Person</code>
+对象的集合）直到第一次遍历它时才会被计算。因此，当修改
+<code>firstPerson</code> 的 <code>Name</code> 属性后，再次遍历
+<code>list</code> 时，<code>Select</code> 查询会再次执行，从而创建新的
+<code>Person</code> 对象，这就是为什么看到的 <code>Name</code>
+属性没有被修改。</p>
+<p>因为了为保证修改的对象与遍历的对象是一致的，可以将其转换成
+<code>List</code>，再执行后续操作</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IEnumerable&lt;Person&gt; list = <span class="keyword">new</span> List&lt;<span class="built_in">string</span>&gt;()&#123;</span><br><span class="line">    <span class="string">&quot;ZhangSan&quot;</span>,<span class="string">&quot;LiSi&quot;</span>,<span class="string">&quot;WangWu&quot;</span></span><br><span class="line">    &#125;.Select(x =&gt; <span class="keyword">new</span> Person(x)).ToList();</span><br></pre></td></tr></table></figure>
+<p><code>.ToList()</code> 会在调用时将所有的 Person
+马上实例化，这样在修改 <code>firstPerson</code> 的 <code>Name</code>
+属性后，list 中的第一个元素的 <code>Name</code> 才会相应的修改。</p>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此致以诚挚谢意！</p>
+<p><a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/standard/linq/deferred-execution-lazy-evaluation#deferred-execution">延迟执行和延迟计算
+- LINQ to XML - .NET | Microsoft Learn</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/standard/linq/chain-queries-example">链式查询示例
+(C#) - LINQ to XML - .NET | Microsoft Learn</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </span>
+
+          <img class="social-item-img" src="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+              <a href="/tags/Linq/" rel="tag"><i class="fa fa-tag"></i> Linq</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2023/19K9M5N.html" rel="prev" title="Linux 中如何同时执行多条命令">
+                  <i class="fa fa-chevron-left"></i> Linux 中如何同时执行多条命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2024/3942YAQ.html" rel="next" title="Windows 免密码 ssh 登陆 Linux">
+                  Windows 免密码 ssh 登陆 Linux <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明不知昔</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">791k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">12:01</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.3/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"0d0f68a39d21a58649011b64905050f7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

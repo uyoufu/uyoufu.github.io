@@ -180,29 +180,6 @@ href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-co
   </entry>
   
   <entry>
-    <title>Ubuntu 设置全局代理</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Y5R2C0.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Y5R2C0.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何为 Ubuntu 设置全局代理。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu 解决开机网络等待问题</title>
     <link href="https://galens.uamazing.cn/posts/2023/25M42MH.html"/>
     <id>https://galens.uamazing.cn/posts/2023/25M42MH.html</id>
@@ -226,15 +203,14 @@ configured」这样的消息，一直到两分钟后才可继续进行之后的�
   </entry>
   
   <entry>
-    <title>Ubuntu 中安装 Docker</title>
-    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
+    <title>Ubuntu 设置全局代理</title>
+    <link href="https://galens.uamazing.cn/posts/2023/2Y5R2C0.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/2Y5R2C0.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
-Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文将介绍如何为 Ubuntu 设置全局代理。&lt;/p&gt;</summary>
     
     
     
@@ -243,9 +219,9 @@ Docker，本文为安装指导，仅列出详细的安装步骤和一些必要�
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
     
   </entry>
   
@@ -270,6 +246,30 @@ Docker，本文为安装指导，仅列出详细的安装步骤和一些必要�
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 中安装 Docker</title>
+    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
+Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
   </entry>
   
@@ -326,34 +326,6 @@ aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
     <category term="FHS" scheme="https://galens.uamazing.cn/tags/FHS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu中安装Cuda环境</title>
-    <link href="https://galens.uamazing.cn/posts/2023/377XC7Q.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/377XC7Q.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-26T01:24:53.063Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">
-</summary>
-        
-      
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Python" scheme="https://galens.uamazing.cn/categories/Develop/Python/"/>
-    
-    <category term="MachineLearning" scheme="https://galens.uamazing.cn/categories/Develop/Python/MachineLearning/"/>
-    
     
   </entry>
   
@@ -505,6 +477,31 @@ command 表。&lt;/p&gt;</summary>
     
     
     <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JitsiMeet Ubuntu 安装及负载均衡配置</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3K7WKHR.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3K7WKHR.html</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;本文介绍基于 Ubuntu 20.04 安装
+Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
+    
+    
+    <category term="Jitsi-meet" scheme="https://galens.uamazing.cn/tags/Jitsi-meet/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

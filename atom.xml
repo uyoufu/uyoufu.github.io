@@ -118,6 +118,32 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
   </entry>
   
   <entry>
+    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
+    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda
+进行加速。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux 中如何同时执行多条命令</title>
     <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
     <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
@@ -502,29 +528,6 @@ Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装�
     <category term="Jitsi-meet" scheme="https://galens.uamazing.cn/tags/Jitsi-meet/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 20.04 更换国内镜像源</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1Z18QQW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1Z18QQW.html</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2023-11-01T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Ubuntu采用&lt;code&gt;apt&lt;/code&gt;作为软件安装工具，其镜像源列表记录在&lt;code&gt;/etc/apt/source.list&lt;/code&gt;文件中。修改该文件内容即可更改镜像源。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
   </entry>
   

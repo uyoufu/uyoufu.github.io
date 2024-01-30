@@ -19,30 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文列举 Powershell7 中比较好用的插件。">
+    <meta name="description" content="Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用 nvidia-smi 查看状态显示： 12Failed to initialize NVML: Driver&#x2F;library version mismatchNVML ibrary version: 535.154 出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver 的版本没">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Powershell7 实用插件集">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1N5WRFM.html">
+<meta property="og:title" content="Ubuntu Nvidia 显卡驱动突然不识别">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/NZP006.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文列举 Powershell7 中比较好用的插件。">
+<meta property="og:description" content="Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用 nvidia-smi 查看状态显示： 12Failed to initialize NVML: Driver&#x2F;library version mismatchNVML ibrary version: 535.154 出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver 的版本没">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-14T16:00:00.000Z">
+<meta property="article:published_time" content="2024-01-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-29T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Software">
-<meta property="article:tag" content="Powershell7">
-<meta property="article:tag" content="galens">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Nvidia">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html">
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/NZP006.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2023/1N5WRFM.html","path":"posts/2023/1N5WRFM.html","title":"Powershell7 实用插件集"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/NZP006.html","path":"posts/2024/NZP006.html","title":"Ubuntu Nvidia 显卡驱动突然不识别"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Powershell7 实用插件集 | 星辰大海</title>
+<title>Ubuntu Nvidia 显卡驱动突然不识别 | 星辰大海</title>
   
 
 
@@ -92,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">227</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">118</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">433</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">233</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">117</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">439</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text">busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text">oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z.lua"><span class="nav-number">4.</span> <span class="nav-text">z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">完整配置</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D"><span class="nav-number">1.</span> <span class="nav-text">如何恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2"><span class="nav-number">2.</span> <span class="nav-text">如何预防</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">433</span>
+          <span class="site-state-item-count">439</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-count">117</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">227</span>
+        <span class="site-state-item-count">233</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -211,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/1N5WRFM.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/NZP006.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -224,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Powershell7 实用插件集 | 星辰大海">
+      <meta itemprop="name" content="Ubuntu Nvidia 显卡驱动突然不识别 | 星辰大海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Powershell7 实用插件集
+          Ubuntu Nvidia 显卡驱动突然不识别
         </h1>
 
         <div class="post-meta-container">
@@ -240,7 +239,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-04-15 00:00:00" itemprop="dateCreated datePublished" datetime="2023-04-15T00:00:00+08:00">2023-04-15</time>
+      <time title="创建时间：2024-01-30 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-30T00:00:00+08:00">2024-01-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,11 +247,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+          <a href="/categories/System/" itemprop="url" rel="index"><span itemprop="name">System</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software/Powershell/" itemprop="url" rel="index"><span itemprop="name">Powershell</span></a>
+          <a href="/categories/System/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
         </span>
     </span>
 
@@ -263,7 +262,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>874</span>
+      <span>727</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -280,41 +279,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文列举 Powershell7 中比较好用的插件。</p>
+    <div class="post-body" itemprop="articleBody"><p>Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用
+<code>nvidia-smi</code> 查看状态显示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Failed to initialize NVML: Driver/library version mismatch</span><br><span class="line">NVML ibrary version: 535.154</span><br></pre></td></tr></table></figure>
+<p>出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver
+的版本没有更新。</p>
 <span id="more"></span>
-<h2 id="busybox">busybox</h2>
-<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux
-命令的精简实现，扩展了 powershell 命令。</p>
-<p>安装方式：scoop</p>
-<h2 id="sudo">sudo</h2>
-<p>powershell 提权</p>
-<p>安装方式：<code>scoop install sudo</code></p>
-<h2 id="oh-my-posh">oh-my-posh</h2>
-<p>powershell 样式美化</p>
-<p>安装方式：<a
-target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My
-Posh</a></p>
-<p>自己使用的主题为 <code>montys</code>：</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png"
-alt="image-20230613224321201" />
-<figcaption aria-hidden="true">image-20230613224321201</figcaption>
-</figure>
-<h2 id="z.lua">z.lua</h2>
-<p>实现路径快速跳转</p>
-<p>参考：<a
-target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
-<h2 id="自定义别名">自定义别名</h2>
-<p>可以自定义一些自己常用的别名，方便使用</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
-<h2 id="完整配置">完整配置</h2>
-<p>在 powershell 中输入<code>notepad $profile</code>
-来打开配置文件，如果没有的话，输入
-<code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
-<p><code>$profile</code>
-的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
-<p>配置后的文件内容如下：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># oh-my-posh初始化</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">&#x27;C:\Users\galens\.posh\montys.json&#x27;</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># z.lua 配置</span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> (&amp; &#123; (lua D:/Application/z.lua/z.lua <span class="literal">--init</span> powershell once enhanced) <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
+<h2 id="如何恢复">如何恢复</h2>
+<ol type="1">
+<li><p>通过重启 Ubuntu 来恢复</p></li>
+<li><p>如果因为某些原因不能够重启的话，使用 reload kernel mod
+方式重新让内核加载驱动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看驱动</span> </span><br><span class="line">lsmod | grep nvidia_</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将面列出的驱动移除</span></span><br><span class="line">sudo rmmod nvidia_drm</span><br><span class="line">sudo rmmod nvidia_modeset</span><br><span class="line">sudo rmmod nvidia_uvm</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">最后移除 nvidia</span></span><br><span class="line">sudo rmmod nvidia</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重新加载驱动</span></span><br><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="如何预防">如何预防</h2>
+<p>为了防止系统自动更新 Nvidia
+驱动导致问题再次出现，可以禁用显卡驱动自动更新</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看安装的驱动，标记 automatic 的包不用管</span></span><br><span class="line">apt list --installed | grep nvidia</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">阻止更新，package-name 为包名称，比如 nvidia-driver-535</span></span><br><span class="line">sudo apt-mark hold package-name</span><br></pre></td></tr></table></figure>
+<p>若要恢复，使用下列命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-mark unhold package-name</span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此致以诚挚谢意！</p>
+<p><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch#comment73133147_43022843">cuda
+- Nvidia NVML Driver/library version mismatch - Stack Overflow</a></p>
+<p><a target="_blank" rel="noopener" href="https://comzyh.com/blog/archives/967/">解决Driver/library
+version mismatch | Comzyh的博客</a></p>
 
     </div>
 
@@ -371,23 +361,19 @@ target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/m
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Software/" rel="tag"><i class="fa fa-tag"></i> Software</a>
-              <a href="/tags/Powershell7/" rel="tag"><i class="fa fa-tag"></i> Powershell7</a>
-              <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
+              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+              <a href="/tags/Nvidia/" rel="tag"><i class="fa fa-tag"></i> Nvidia</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2023/1JSFERW.html" rel="prev" title="z.lua 安装">
-                  <i class="fa fa-chevron-left"></i> z.lua 安装
+                <a href="/posts/2024/2625AHG.html" rel="prev" title="代理和镜像源配置方式汇总">
+                  <i class="fa fa-chevron-left"></i> 代理和镜像源配置方式汇总
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/1ZZM4MX.html" rel="next" title="Docker Compose 的简明使用">
-                  Docker Compose 的简明使用 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -420,13 +406,13 @@ target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/m
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">793k</span>
+    <span title="站点总字数">800k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:01</span>
+    <span title="站点阅读时长">12:07</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -475,7 +461,7 @@ target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/m
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"58e0a56e4147f58cf9c41be20d77e69b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"bf306ad5ed77d0e89e5e79d892bae0da"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

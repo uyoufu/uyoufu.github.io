@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">227</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">118</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">433</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">233</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">117</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">439</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,18 +159,18 @@ PaddlePaddle 环境</span></a></li><li class="nav-item nav-level-2"><a class="na
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">433</span>
+          <span class="site-state-item-count">439</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-count">117</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">227</span>
+        <span class="site-state-item-count">233</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -289,7 +289,7 @@ PaddlePaddle 环境</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入到用户目录，创建一个目录新目录</span></span><br><span class="line">cd ~ &amp;&amp; mkdir dockerMount/paddleOCR &amp;&amp; cd ./dockerMount/paddleOCR</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一个容器，使用CUDA12+CUDNN8.9</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置docker容器共享内存shm-size为32G，建议设置32G以上</span></span><br><span class="line">sudo docker run --gpus all --name ppocr -v $PWD:/paddle --shm-size=32G --network=host -it registry.baidubce.com/paddlepaddle/paddle:2.6.0-gpu-cuda12.0-cudnn8.9-trt8.6 /bin/bash</span><br></pre></td></tr></table></figure>
 <p>可使用 <code>exit</code> 退出容器。</p>
 <p>可以通过下列命令重新进入容器：</p>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker container exec -it ppocr /bin/bash</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">完整方式</span></span><br><span class="line">sudo docker container exec -it ppocr /bin/bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">简化方式</span></span><br><span class="line">sudo docker exec -it ppocr bash</span><br></pre></td></tr></table></figure></p>
 <p>至此，PaddlePaddle 环境就安装成功了</p>
 <p><strong>特别说明：</strong></p>
 <p>官方教程使用的是 nvidia-docker 来安装的，<a
@@ -396,8 +396,8 @@ target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/tutorials/p
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2023/19K9M5N.html" rel="prev" title="Linux 中如何同时执行多条命令">
-                  <i class="fa fa-chevron-left"></i> Linux 中如何同时执行多条命令
+                <a href="/posts/2023/HNT542.html" rel="prev" title="Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda">
+                  <i class="fa fa-chevron-left"></i> Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda
                 </a>
             </div>
             <div class="post-nav-item">
@@ -436,13 +436,13 @@ target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/tutorials/p
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">793k</span>
+    <span title="站点总字数">800k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:01</span>
+    <span title="站点阅读时长">12:07</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

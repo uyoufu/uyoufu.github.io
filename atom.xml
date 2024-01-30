@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-01-07T16:00:00.000Z</updated>
+  <updated>2024-01-29T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,159 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu Nvidia 显卡驱动突然不识别</title>
+    <link href="https://galens.uamazing.cn/posts/2024/NZP006.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/NZP006.html</id>
+    <published>2024-01-29T16:00:00.000Z</published>
+    <updated>2024-01-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用
+&lt;code&gt;nvidia-smi&lt;/code&gt; 查看状态显示：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Failed to initialize NVML: Driver/library version mismatch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NVML ibrary version: 535.154&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver
+的版本没有更新。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Nvidia" scheme="https://galens.uamazing.cn/tags/Nvidia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代理和镜像源配置方式汇总</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2625AHG.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2625AHG.html</id>
+    <published>2024-01-16T16:00:00.000Z</published>
+    <updated>2024-01-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录工作中用到的软件的代理或镜像配置方式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    
+    <category term="proxy" scheme="https://galens.uamazing.cn/tags/proxy/"/>
+    
+    <category term="registry" scheme="https://galens.uamazing.cn/tags/registry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux修改默认终端</title>
+    <link href="https://galens.uamazing.cn/posts/2024/TM7WNE.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/TM7WNE.html</id>
+    <published>2024-01-15T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>on-my-zsh 中显示绝对路径</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2KMYJ38.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2KMYJ38.html</id>
+    <published>2024-01-10T16:00:00.000Z</published>
+    <updated>2024-01-10T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇文章将介绍如何修改 on-my-zsh 主题，使其显示绝对路径。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="on-my-zsh" scheme="https://galens.uamazing.cn/tags/on-my-zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 安装 docker-compose</title>
+    <link href="https://galens.uamazing.cn/posts/2024/20F723F.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/20F723F.html</id>
+    <published>2024-01-09T16:00:00.000Z</published>
+    <updated>2024-01-09T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Linux 环境中安装 docker-compose。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="docker-compose" scheme="https://galens.uamazing.cn/tags/docker-compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode 远程 Linux 后, 使用 Docker 插件报错Permission denied</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2H0WTET.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2H0WTET.html</id>
+    <published>2024-01-08T16:00:00.000Z</published>
+    <updated>2024-01-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;VSCode SSH 连接 Linux 后，使用 Docker 插件时报错：&lt;/p&gt;
+&lt;p&gt;permission denied while trying to connect to the Docker daemon socket
+at unix:///var/run/docker.sock: Get
+&quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json&quot;: dial unix
+/var/run/docker.sock: connect: permission denied&lt;/p&gt;
+&lt;p&gt;这是由于用户的权限不够，按下列方法修改权限即可：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker 开源 UI 管理工具比选及安装</title>
@@ -42,14 +195,20 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
   </entry>
   
   <entry>
-    <title>Linux 效率工具推荐与配置</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2H72YPG.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2H72YPG.html</id>
+    <title>丝滑高效的zsh配置清单</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1P1XSQ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1P1XSQ7.html</id>
     <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
+    <updated>2024-01-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文将总结在 Linux 中一些可提升使用效率的软件，并介绍安装方式。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在 Linux 中绕不开的就是 shell，可选择的 shell 有很多，比如
+bash、zsh、fish、tcsh，ksh 等等。其中 bash 在 shell
+一直是老大哥的地位，zsh 在 bash
+基础上，做出了大量改进，同时加入了Bash、ksh及tcsh的某些功能。&lt;/p&gt;
+&lt;p&gt;因此作者选择在工作中使用 zsh 作为主力
+shell。本文将详细介绍如何通过配置
+zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不释手。&lt;/p&gt;</summary>
     
     
     
@@ -59,6 +218,8 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
     
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="zsh" scheme="https://galens.uamazing.cn/tags/zsh/"/>
     
   </entry>
   
@@ -144,34 +305,6 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
   </entry>
   
   <entry>
-    <title>Linux 中如何同时执行多条命令</title>
-    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
     <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
     <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
@@ -200,6 +333,34 @@ href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-co
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中如何同时执行多条命令</title>
+    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
@@ -248,54 +409,6 @@ configured」这样的消息，一直到两分钟后才可继续进行之后的�
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 文件权限介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
-中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 中安装 Docker</title>
-    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
-Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
   </entry>
   
@@ -356,6 +469,54 @@ aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt
   </entry>
   
   <entry>
+    <title>Linux 文件权限介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
+中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 中安装 Docker</title>
+    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
+Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>DotNET 读写 XML 文件入门必读</title>
     <link href="https://galens.uamazing.cn/posts/2023/345REE4.html"/>
     <id>https://galens.uamazing.cn/posts/2023/345REE4.html</id>
@@ -378,156 +539,6 @@ aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt
     <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
     
     <category term="XML" scheme="https://galens.uamazing.cn/tags/XML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文带你全面了解 Microstation 中的 Keyin 配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2VRVT60.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2VRVT60.html</id>
-    <published>2023-12-18T16:00:00.000Z</published>
-    <updated>2023-12-18T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin
-命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成
-command 表。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="Keyin" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Keyin/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-    <category term="Keyin" scheme="https://galens.uamazing.cn/tags/Keyin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Microstation EC 编程程序集介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2023/9PQA9Z.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/9PQA9Z.html</id>
-    <published>2023-12-12T16:00:00.000Z</published>
-    <updated>2023-12-12T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将对 Microstation 中 EC
-编程所需要的程序集作一个简要介绍，并推荐一个默认引用配置。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="EC" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/EC/"/>
-    
-    
-    <category term="Microstation" scheme="https://galens.uamazing.cn/tags/Microstation/"/>
-    
-    <category term="EC" scheme="https://galens.uamazing.cn/tags/EC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#编写控制台程序最佳实践</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2RY2W0D.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2RY2W0D.html</id>
-    <published>2023-11-30T16:00:00.000Z</published>
-    <updated>2023-11-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文以自己的经验总结了在 C# 中编写控制台程序的最佳实践方法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
-    
-    <category term="Console" scheme="https://galens.uamazing.cn/tags/Console/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何获取元素的范围</title>
-    <link href="https://galens.uamazing.cn/posts/2023/81FDDJ.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/81FDDJ.html</id>
-    <published>2023-11-29T16:00:00.000Z</published>
-    <updated>2023-11-29T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 C# 中可以将 Element 转换成 DisplayableElement，然后调用
-&lt;code&gt;CalcElementRange&lt;/code&gt; 计算其包围盒范围。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="Elements" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Elements/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-    <category term="Elements" scheme="https://galens.uamazing.cn/tags/Elements/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bentley 各个 DLL 库介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2023/358VFAC.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/358VFAC.html</id>
-    <published>2023-11-28T16:00:00.000Z</published>
-    <updated>2023-11-28T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Bentley 各个 DLL 作用介绍。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JitsiMeet Ubuntu 安装及负载均衡配置</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3K7WKHR.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3K7WKHR.html</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2023-11-01T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;本文介绍基于 Ubuntu 20.04 安装
-Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="JitsiMeet" scheme="https://galens.uamazing.cn/categories/Software/JitsiMeet/"/>
-    
-    
-    <category term="Jitsi-meet" scheme="https://galens.uamazing.cn/tags/Jitsi-meet/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

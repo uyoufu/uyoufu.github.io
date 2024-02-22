@@ -195,6 +195,29 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
   </entry>
   
   <entry>
+    <title>Windows 免密码 ssh 登陆 Linux</title>
+    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
     <title>丝滑高效的zsh配置清单</title>
     <link href="https://galens.uamazing.cn/posts/2024/1P1XSQ7.html"/>
     <id>https://galens.uamazing.cn/posts/2024/1P1XSQ7.html</id>
@@ -220,29 +243,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
     <category term="zsh" scheme="https://galens.uamazing.cn/tags/zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 免密码 ssh 登陆 Linux</title>
-    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
     
   </entry>
   
@@ -305,6 +305,34 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
+    <title>Linux 中如何同时执行多条命令</title>
+    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
     <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
     <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
@@ -333,34 +361,6 @@ href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-co
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 中如何同时执行多条命令</title>
-    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
@@ -409,6 +409,54 @@ configured」这样的消息，一直到两分钟后才可继续进行之后的�
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 文件权限介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
+中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 中安装 Docker</title>
+    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
+    <published>2023-12-25T16:00:00.000Z</published>
+    <updated>2023-12-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
+Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
   </entry>
   
@@ -465,54 +513,6 @@ aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
     <category term="FHS" scheme="https://galens.uamazing.cn/tags/FHS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 文件权限介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
-中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 中安装 Docker</title>
-    <link href="https://galens.uamazing.cn/posts/2023/316DJB8.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/316DJB8.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 上安装
-Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
   </entry>
   

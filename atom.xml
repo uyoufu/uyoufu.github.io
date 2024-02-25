@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-01-29T16:00:00.000Z</updated>
+  <updated>2024-02-23T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,93 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建和发布 NuGet 包</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2CAZW8Q.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2CAZW8Q.html</id>
+    <published>2024-02-23T16:00:00.000Z</published>
+    <updated>2024-02-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;NuGet 是适用于 .NET 的包管理器。
+它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet
+客户端工具可生成这些库并将其作为“包”。&lt;/p&gt;
+&lt;p&gt;本文简要记录了如何创建 NuGet 包并发布。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Nuget" scheme="https://galens.uamazing.cn/categories/Software/Nuget/"/>
+    
+    
+    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
+    
+    <category term="NuGet" scheme="https://galens.uamazing.cn/tags/NuGet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Microstation 中坐标变换</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1EMPAND.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1EMPAND.html</id>
+    <published>2024-02-23T16:00:00.000Z</published>
+    <updated>2024-02-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在进行矩阵转换时，谨记如下公式： &lt;span class=&quot;math display&quot;&gt;&#92;[
+&#92;begin{aligned}
+M_{world} &#92;cdot P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
+&#92;because M_{world} &amp;amp;= E &#92;&#92;
+&#92;therefore P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
+&#92;end{aligned}
+&#92;]&lt;/span&gt; &lt;span class=&quot;math inline&quot;&gt;&#92;(M&#92;)&lt;/span&gt;
+可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。&lt;/p&gt;
+&lt;p&gt;在理解 MS 中各个对象返回的 &lt;code&gt;DTransform&lt;/code&gt;
+含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="几何变换" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/"/>
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
+    
+    <category term="二次开发" scheme="https://galens.uamazing.cn/tags/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用草料二维码免费生成挪车码</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2Z6NVCZ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2Z6NVCZ.html</id>
+    <published>2024-02-21T16:00:00.000Z</published>
+    <updated>2024-02-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;figure&gt;
+&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20240222222605912.png&quot;
+alt=&quot;image-20240222222605912&quot; /&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20240222222605912&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;一些车主为了方便挪车，往往会在车上留下自己的电话，方便其他人及时与自己取得联系。直接展示电话号码的形式，会使号码非常容易泄露，从而遭受广告骚扰。&lt;/p&gt;
+&lt;p&gt;因此，可以将挪车信息转换成二维码的形式，避免电话号码直接曝光，从而保护隐私。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tricks" scheme="https://galens.uamazing.cn/categories/Tricks/"/>
+    
+    
+    <category term="二维码" scheme="https://galens.uamazing.cn/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+    
+    <category term="挪车码" scheme="https://galens.uamazing.cn/tags/%E6%8C%AA%E8%BD%A6%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu Nvidia 显卡驱动突然不识别</title>
@@ -161,11 +248,11 @@ at unix:///var/run/docker.sock: Get
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
     
   </entry>
   
@@ -305,34 +392,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
-    <title>Linux 中如何同时执行多条命令</title>
-    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
     <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
     <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
@@ -413,6 +472,34 @@ configured」这样的消息，一直到两分钟后才可继续进行之后的�
   </entry>
   
   <entry>
+    <title>Linux 中如何同时执行多条命令</title>
+    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux 文件权限介绍</title>
     <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
     <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
@@ -457,88 +544,6 @@ Docker，本文为安装指导，仅列出详细的安装步骤和一些必要�
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为 APT 配置代理</title>
-    <link href="https://galens.uamazing.cn/posts/2023/1MJYA7T.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/1MJYA7T.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，可以通过配置 APT 的代理设置来为 APT
-添加代理。以下是一个例子：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="APT" scheme="https://galens.uamazing.cn/tags/APT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 FHS 规范 Linux 目录使用</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3AYYNM8.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3AYYNM8.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 或 Unix
-操作系统中，所有的文件和目录都被组织成以一个根节点（/）开始的倒置的树状结构&lt;/p&gt;
-&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg&quot;
-alt=&quot;linux2bfile2bsystem2bhierarchy&quot; /&gt;
-&lt;figcaption
-aria-hidden=&quot;true&quot;&gt;linux2bfile2bsystem2bhierarchy&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;文件系统的最顶层是由根目录开始的，系统使用 &lt;strong&gt;/&lt;/strong&gt;
-来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="FHS" scheme="https://galens.uamazing.cn/tags/FHS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DotNET 读写 XML 文件入门必读</title>
-    <link href="https://galens.uamazing.cn/posts/2023/345REE4.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/345REE4.html</id>
-    <published>2023-12-20T16:00:00.000Z</published>
-    <updated>2023-12-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;作为入门必读，本文将介绍 XML
-的读取方式选择，然后总结初学者可能会遇到的坑。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/"/>
-    
-    <category term="XML" scheme="https://galens.uamazing.cn/categories/Develop/DotNET/XML/"/>
-    
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
-    
-    <category term="XML" scheme="https://galens.uamazing.cn/tags/XML/"/>
     
   </entry>
   

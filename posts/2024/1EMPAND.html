@@ -19,29 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在进行矩阵转换时，谨记如下公式： \[ \begin{aligned} M_{world} \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ E \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \therefore P_{world} &amp;&#x3D; M_{local} \cdot">
+    <meta name="description" content="在进行矩阵转换时，谨记如下公式： \[ \begin{aligned} M_{world} \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \because M_{world} &amp;&#x3D; E \\ \therefore P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \end{alig">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MS中各个对象获取的DTransform含义">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2022/1RDA3BV.html">
+<meta property="og:title" content="Microstation 中坐标变换">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/1EMPAND.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在进行矩阵转换时，谨记如下公式： \[ \begin{aligned} M_{world} \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ E \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \therefore P_{world} &amp;&#x3D; M_{local} \cdot">
+<meta property="og:description" content="在进行矩阵转换时，谨记如下公式： \[ \begin{aligned} M_{world} \cdot P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \because M_{world} &amp;&#x3D; E \\ \therefore P_{world} &amp;&#x3D; M_{local} \cdot P_{local} \\ \end{alig">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-05T16:00:00.000Z">
+<meta property="article:published_time" content="2024-02-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-02-23T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Bentley">
 <meta property="article:tag" content="二次开发">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2022/1RDA3BV.html">
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/1EMPAND.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2022/1RDA3BV.html","path":"posts/2022/1RDA3BV.html","title":"MS中各个对象获取的DTransform含义"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/1EMPAND.html","path":"posts/2024/1EMPAND.html","title":"Microstation 中坐标变换"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>MS中各个对象获取的DTransform含义 | 星辰大海</title>
+<title>Microstation 中坐标变换 | 星辰大海</title>
   
 
 
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">235</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">117</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">440</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">236</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">441</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dplane3d"><span class="nav-number">1.</span> <span class="nav-text">DPlane3d</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dtransform3d"><span class="nav-number">2.</span> <span class="nav-text">DTransform3d</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">度量矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%94%9F%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">矩阵生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%9E%84%E9%80%A0%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">直接构造法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-dtransform3d-%E7%94%9F%E6%88%90"><span class="nav-number">2.2.</span> <span class="nav-text">通过 DTransform3d 生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-dplane3d-%E7%94%9F%E6%88%90"><span class="nav-number">2.3.</span> <span class="nav-text">通过 DPlane3d 生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">常用转换示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%9D%90%E6%A0%87%E7%B3%BB%E8%BD%AC%E5%88%B0%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.1.</span> <span class="nav-text">局部坐标系转到世界坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB%E8%BD%AC%E5%88%B0%E5%B1%80%E9%83%A8%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.2.</span> <span class="nav-text">世界坐标系转到局部坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%94%B1%E5%9D%90%E6%A0%87%E7%B3%BB-a-%E5%8F%98%E6%8D%A2%E5%88%B0%E5%9D%90%E6%A0%87%E7%B3%BB-b"><span class="nav-number">3.3.</span> <span class="nav-text">世界坐标由坐标系 A
+变换到坐标系 B</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">测试用例</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">440</span>
+          <span class="site-state-item-count">441</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">117</span>
+        <span class="site-state-item-count">119</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">235</span>
+        <span class="site-state-item-count">236</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -210,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/1RDA3BV.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/1EMPAND.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
@@ -223,12 +224,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="MS中各个对象获取的DTransform含义 | 星辰大海">
+      <meta itemprop="name" content="Microstation 中坐标变换 | 星辰大海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          MS中各个对象获取的DTransform含义
+          Microstation 中坐标变换
         </h1>
 
         <div class="post-meta-container">
@@ -239,14 +240,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-13T00:00:00+08:00">2022-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-06 00:00:00" itemprop="dateModified" datetime="2022-06-06T00:00:00+08:00">2022-06-06</time>
+      <time title="创建时间：2024-02-24 00:00:00" itemprop="dateCreated datePublished" datetime="2024-02-24T00:00:00+08:00">2024-02-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,14 +267,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>699</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -293,23 +287,123 @@
     <div class="post-body" itemprop="articleBody"><p>在进行矩阵转换时，谨记如下公式： <span class="math display">\[
 \begin{aligned}
 M_{world} \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
-E \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
+\because M_{world} &amp;= E \\
 \therefore P_{world} &amp;= M_{local} \cdot P_{local} \\
 \end{aligned}
-\]</span> M
+\]</span> <span class="math inline">\(M\)</span>
 可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。</p>
-<p>在理解 MS 中各个对象返回的 DTransform
+<p>在理解 MS 中各个对象返回的 <code>DTransform</code>
 含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。</p>
 <span id="more"></span>
-<h2 id="dplane3d">DPlane3d</h2>
-<p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">GetTransforms</span>(<span class="params"><span class="keyword">out</span> DTransform3d planeToWorld, <span class="keyword">out</span> DTransform3d worldToPlane</span>)</span></span><br></pre></td></tr></table></figure></p>
-<p>planeToWorld 是 Plane 坐标系的度量矩阵，worldToPlane 是 planeToWorld
-的逆。</p>
-<h2 id="dtransform3d">DTransform3d</h2>
-<p>通过 DTransform3d 生成的矩阵在变换时，直接使用。</p>
+<h2 id="度量矩阵">度量矩阵</h2>
+<p><a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/度量矩阵/1052455">度量矩阵_百度百科
+(baidu.com)</a> 是指<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/欧氏空间/8282013?fromModule=lemma_inlink">欧氏空间</a>的一组基之间的<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/内积/422863?fromModule=lemma_inlink">内积</a>作为元素构成的矩阵。</p>
+<p>在三维空间中，假设 3 组基向量分别为 <span
+class="math inline">\(\vec{X}=(xx,xy,xz)\)</span>、<span
+class="math inline">\(\vec{Y}=(yx,yy,yz)\)</span>、<span
+class="math inline">\(\vec{Z} = (zx,zy,zz)\)</span>；原点为 <span
+class="math inline">\(O=(wx,wy,wz)\)</span>；</p>
+<p>则度量矩阵表示为： <span class="math display">\[
+M = \begin{bmatrix}
+xx &amp; yx &amp; zx &amp; wx \\
+xy &amp; yy &amp; zy &amp; wy \\
+xz &amp; yz &amp; zz &amp; wz \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span> <span class="math inline">\(M\)</span>
+为非奇异矩阵，添加最后一行是为了构成方阵，使得矩阵的秩为满秩。方便程序进行计算。</p>
+<h2 id="矩阵生成">矩阵生成</h2>
+<p>在 Microstation 中，主要有两种方式表示矩阵，分别为
+<code>DMatrix</code> 系列和 <code>DTransform</code>
+系列。<code>DMatrix</code> 系列有
+<code>DMatrix2d/DMatrix3d/DMtrix4d</code>，它是 Microstation
+提供的最基础的矩阵操作结构体，其提供的功能有限，在实际的开发中一般使用
+<code>DTransform</code> 系列。</p>
+<p><code>DTransform</code> 系列有
+<code>DTransform2d/DTransform3d</code>。 三维开发中使用
+<code>DTransform3d</code>。</p>
+<p>下面将介绍经常使用的矩阵创建方式。</p>
+<h3 id="直接构造法">直接构造法</h3>
+<p>通过
+<code>public DTransform3d(double axx, double axy, double axz, double axw, double ayx, double ayy, double ayz, double ayw, double azx, double azy, double azz, double azw)</code>
+这个构造函数直接生成 <code>DTransform3d</code></p>
+<p>例：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 向 xy 平面投影</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 默认 z=0</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;xPlane&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DTransform3d <span class="title">ProjectToXY</span>(<span class="params"><span class="built_in">double</span> zValue = <span class="number">0</span></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> DTransform3d(</span><br><span class="line">        <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line">        <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line">        <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, zValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造函数与上述度量矩阵参数的对应关系为：<span
+class="math inline">\((axx,axy,axz) = (xx,xy,xz)\)</span>、<span
+class="math inline">\((ayx,ayy,ayz)=(yx,yy,yz)\)</span>、<span
+class="math inline">\((azx,azy,azz)=(zx,zy,zz)\)</span>、<span
+class="math inline">\((axw,ayw,azw)=(wx,wy,wz)\)</span></p>
+<h3 id="通过-dtransform3d-生成">通过 DTransform3d 生成</h3>
+<p><code>DTransform3d</code> 提供了一些静态方法来快速创建实例</p>
 <p>比如下面这个方法：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// origin 代表的是平移值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DTransform3d <span class="title">FromOriginAndColumns</span>(<span class="params">DPoint3d origin, DVector3d xVector, DVector3d yVector, DVector3d zVector</span>)</span></span><br></pre></td></tr></table></figure>
-<p>上述静态通过局部坐标系（原点和三个方向）来生成一个矩阵，这个矩阵其实是该坐标系度量矩阵的逆，所以如果想要将模型变换到该坐标系下，直接左乘该矩阵即可。</p>
+<p>上述静态方法通过局部坐标系（原点和三个方向）来生成一个矩阵，这个矩阵是该坐标系度量矩阵的逆，所以如果想要将模型变换到该坐标系下，直接左乘该矩阵即可。</p>
+<h3 id="通过-dplane3d-生成">通过 DPlane3d 生成</h3>
+<p>通过 DPlane3d 提供的
+<code>public DPlane3d(DPoint3d origin, DVector3d normal)</code>
+构造函数生成。</p>
+<p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plane = <span class="keyword">new</span> DPlane3d(origin,normal);</span><br><span class="line">plane.GetTransforms(<span class="keyword">out</span> DTransform3d planeToWorld, <span class="keyword">out</span> DTransform3d worldToPlane)</span><br></pre></td></tr></table></figure></p>
+<p>基中，planeToWorld 是 plane 坐标系的度量矩阵，worldToPlane 是
+planeToWorld 的逆。</p>
+<blockquote>
+<p>这种方式无法很好地控制 <span class="math inline">\(\vec {X}\)</span>
+和 <span class="math inline">\(\vec {Y}\)</span> 基向量的方向</p>
+</blockquote>
+<h2 id="常用转换示例">常用转换示例</h2>
+<h3 id="局部坐标系转到世界坐标系">局部坐标系转到世界坐标系</h3>
+<p><span class="math display">\[
+\begin{aligned}
+P_{world} = M_{local}*P_{local}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P_{world}\)</span>
+为世界坐标系中的坐标</li>
+<li><span class="math inline">\(M_{local}\)</span>
+为局部坐标系的度量矩阵</li>
+<li><span class="math inline">\(P_{local}\)</span>
+为局部坐标系中的坐标</li>
+</ul>
+<blockquote>
+<p>相当于将局部坐标转换成世界坐标</p>
+</blockquote>
+<h3 id="世界坐标系转到局部坐标系">世界坐标系转到局部坐标系</h3>
+<p><span class="math display">\[
+\begin{aligned}
+P_{local} = M_{local}^{-1}*P_{world}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(M_{local}^{-1}\)</span>
+为局部坐标系的度量矩阵的逆</li>
+</ul>
+<blockquote>
+<p>相当于将世界坐标转换成局部坐标</p>
+<p>局部坐标可以看成是原点位于 (0,0,0) 的世界坐标</p>
+</blockquote>
+<h3 id="世界坐标由坐标系-a-变换到坐标系-b">世界坐标由坐标系 A
+变换到坐标系 B</h3>
+<p>若已知坐标系 A 和 B 的度量矩阵，求由 A 变化到 B 的变换矩阵？ <span
+class="math display">\[
+\begin{aligned}
+\because M_{A-&gt;B} \cdot M_{A} &amp;= M_{B} \\
+\therefore M_{A-&gt;B} &amp;= M_{A}^{-1}\cdot M_{B}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(M_{A-&gt;B}\)</span> 从坐标系 A 变换 B
+的变换矩阵</li>
+</ul>
+<p>所以最终公式为： <span class="math display">\[
+\begin{aligned}
+P&#39;= M_{A}^{-1}\cdot M_{B} \cdot P
+\end{aligned}
+\]</span></p>
+<h2 id="测试用例">测试用例</h2>
 
     </div>
 
@@ -374,13 +468,13 @@ E \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/1C9ATGS.html" rel="prev" title="几何继承关系层次图">
-                  <i class="fa fa-chevron-left"></i> 几何继承关系层次图
+                <a href="/posts/2024/2Z6NVCZ.html" rel="prev" title="使用草料二维码免费生成挪车码">
+                  <i class="fa fa-chevron-left"></i> 使用草料二维码免费生成挪车码
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/38K28WD.html" rel="next" title="C# 中如何向 Microstation 输出调试信息">
-                  C# 中如何向 Microstation 输出调试信息 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2024/2CAZW8Q.html" rel="next" title="创建和发布 NuGet 包">
+                  创建和发布 NuGet 包 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -414,13 +508,13 @@ E \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">800k</span>
+    <span title="站点总字数">814k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:07</span>
+    <span title="站点阅读时长">12:20</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -469,7 +563,7 @@ E \cdot P_{world} &amp;= M_{local} \cdot P_{local} \\
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"eb43a1ee396cb30d3ddc6b5d9a704096"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"dc5480d94edbd24129b7f456d0e0d5ca"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

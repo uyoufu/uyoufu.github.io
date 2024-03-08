@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-02-23T16:00:00.000Z</updated>
+  <updated>2024-03-07T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Microstation 中实现非阻塞进度条</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2MEYC7T.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2MEYC7T.html</id>
+    <published>2024-03-07T16:00:00.000Z</published>
+    <updated>2024-03-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在进行 Microstation
+二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。&lt;/p&gt;
+&lt;p&gt;由于 Microstation
+的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。&lt;/p&gt;
+&lt;p&gt;有两种方法来解决这个问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
+    
+    <category term="Progress" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Progress/"/>
+    
+    
+    <category term="Microstation" scheme="https://galens.uamazing.cn/tags/Microstation/"/>
+    
+    <category term="Progress" scheme="https://galens.uamazing.cn/tags/Progress/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
   
   <entry>
     <title>创建和发布 NuGet 包</title>
@@ -248,11 +279,11 @@ at unix:///var/run/docker.sock: Get
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
     
   </entry>
   
@@ -366,32 +397,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
-    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
-    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda
-进行加速。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
     <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
     <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
@@ -422,6 +427,32 @@ href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-co
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
+    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda
+进行加速。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
     
   </entry>
   
@@ -494,30 +525,6 @@ configured」这样的消息，一直到两分钟后才可继续进行之后的�
     
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 文件权限介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2023/3MZH2CP.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/3MZH2CP.html</id>
-    <published>2023-12-25T16:00:00.000Z</published>
-    <updated>2023-12-25T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将详细介绍 Linux
-中的文件权限概念和相关命令，帮助读者深入了解如何正确管理和使用文件权限。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     

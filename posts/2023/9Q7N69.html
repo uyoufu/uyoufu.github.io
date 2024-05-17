@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">237</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">442</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">240</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">446</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">442</span>
+          <span class="site-state-item-count">446</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">119</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">237</span>
+        <span class="site-state-item-count">240</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -263,14 +263,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.9k</span>
+      <span>5.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -299,9 +299,14 @@ release</a>
 下载安装文件，该文件为源码，下载后解压到自己希望安装的目录即可。</p>
 <h3 id="新建所需配置目录">新建所需配置目录</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从命令行进入到安装的目录，假设目录为：D:\Develop\TestTemp\docker-jitsi-meet-stable-8615</span></span><br><span class="line"><span class="built_in">cd</span> d:</span><br><span class="line"><span class="built_in">cd</span> D:\Develop\TestTemp\docker<span class="literal">-jitsi-meet-stable-8615</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在用户目录下新建.jitsi-meet-cfg，在里面新建以下目录：</span></span><br><span class="line"><span class="comment"># web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri</span></span><br><span class="line"><span class="comment"># 可以在 powershell 中使用下列命令批量新建</span></span><br><span class="line"><span class="built_in">echo</span> web,transcripts,prosody/config,prosody/prosody<span class="literal">-plugins-custom</span>,jicofo,jvb,jigasi,jibri | % &#123; mkdir <span class="string">&quot;~/.jitsi-meet-cfg/<span class="variable">$_</span>&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>在 bash 中，可以使用下列命令创建目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.jitsi-meet-cfg/&#123;web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="修改-.env-配置文件">修改 .env 配置文件</h3>
-<p>将目录中的 <code>.env.example</code>文件重命名为
+<p>将目录中的 <code>env.example</code>文件重命名为
 <code>.env</code>，使用记事本打开编辑，以下仅列出修改的部分：</p>
+<p><strong>增加 xmpp 密码</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux 中，在 .env 目录中执行</span></span><br><span class="line"><span class="comment"># 若执行报错，主检查 ./gen-passwords.sh 的结束符是否为 LF</span></span><br><span class="line"><span class="comment"># 可以通过 cat ./gen-passwords.sh -ne 查看结束符，若为 ^M$ 为则 CRLF，若为 $ 则是 LF </span></span><br><span class="line">bash ./gen-passwords.sh</span><br></pre></td></tr></table></figure>
+<p><strong>修改其它配置：</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改docker对外暴露的端口</span></span><br><span class="line"><span class="comment"># Exposed HTTP port</span></span><br><span class="line">HTTP_PORT=<span class="number">7080</span></span><br><span class="line"><span class="comment"># Exposed HTTPS port</span></span><br><span class="line">HTTPS_PORT=<span class="number">7043</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改访问的网址</span></span><br><span class="line"><span class="comment"># Public URL for the web service (required)</span></span><br><span class="line"><span class="comment"># 如果是本机测试，不要添加协议，但要添加端口，如下</span></span><br><span class="line"><span class="comment"># PUBLIC_URL=192.168.3.240:7043</span></span><br><span class="line">PUBLIC_URL=https://yourdomain</span><br><span class="line"><span class="comment"># 容器主机的 IP, 当服务器位于 NAT 环境时，需要配置</span></span><br><span class="line">JVB_ADVERTISE_IPS=<span class="number">192.168</span>.<span class="number">23.12</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 jwt 认证</span></span><br><span class="line"><span class="comment"># Enable authentication</span></span><br><span class="line">ENABLE_AUTH=<span class="number">1</span></span><br><span class="line"><span class="comment"># 创建房间后，其他人只需要输入房间名称即可进入</span></span><br><span class="line"><span class="comment"># Enable guest access</span></span><br><span class="line">ENABLE_GUESTS=<span class="number">1</span></span><br><span class="line"><span class="comment"># Select authentication type: internal, jwt, ldap or matrix</span></span><br><span class="line">AUTH_TYPE=jwt</span><br><span class="line"><span class="comment"># JWT authentication</span></span><br><span class="line"><span class="comment"># Application identifier</span></span><br><span class="line">JWT_APP_ID=my_jitsi_app_id</span><br><span class="line"><span class="comment"># Application secret known only to your token generator</span></span><br><span class="line">JWT_APP_SECRET=my_jitsi_app_secret</span><br></pre></td></tr></table></figure>
 <h3 id="启动-docker-compose.yml">启动 docker-compose.yml</h3>
 <p><code>docker-compose up -d</code></p>
@@ -316,7 +321,10 @@ release</a>
 使用的端口</p></li>
 </ul>
 <p>通过以下命令新建防火墙入站规则：</p>
+<p><strong>windows 中：</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开放 tcp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-tcp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="number">7043</span>,<span class="number">7080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开放 udp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-udp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=UDP localport=<span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p><strong>ubuntu 中：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 7043/tcp</span><br><span class="line">sudo ufw allow 7080/tcp</span><br><span class="line">sudo ufw allow 10000/udp</span><br></pre></td></tr></table></figure>
 <h3 id="配置端口转发">配置端口转发</h3>
 <p>若服务器位于 NAT 中，需要在 NAT 中配置端口转发，将外网的
 <code>80/tcp,443/tcp,10000/udp</code>
@@ -471,8 +479,8 @@ Web Token (JWT) authentication Prosody plugin</a></p>
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/3G78E45.html" rel="next" title="JitsiMeet 进行压力测试">
-                  JitsiMeet 进行压力测试 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2023/220EMHS.html" rel="next" title="JitsiMeet 获取所有的房间列表">
+                  JitsiMeet 获取所有的房间列表 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -506,13 +514,13 @@ Web Token (JWT) authentication Prosody plugin</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">817k</span>
+    <span title="站点总字数">823k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:23</span>
+    <span title="站点阅读时长">12:28</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

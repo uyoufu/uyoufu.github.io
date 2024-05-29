@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">240</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">119</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">446</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E7%9B%98"><span class="nav-number">2.</span> <span class="nav-text">硬盘</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E7%9B%98"><span class="nav-number">2.</span> <span class="nav-text">硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%AE%B9"><span class="nav-number">3.</span> <span class="nav-text">扩容</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,18 +156,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">446</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">120</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">240</span>
+        <span class="site-state-item-count">242</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -268,7 +268,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>194</span>
+      <span>481</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -302,9 +302,9 @@
 <li><p>修改现有挂载点</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消挂载</span></span><br><span class="line">sudo umount /path/to/old/mount/point</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载到新的位置</span></span><br><span class="line">sudo mount /dev/sdX /path/to/new/mount/point</span><br></pre></td></tr></table></figure></li>
 </ul>
-<blockquote>
-<p>未完，待续......</p>
-</blockquote>
+<h2 id="扩容">扩容</h2>
+<p>可以使用 LVM（逻辑卷管理）来扩展虚拟卷。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看可用磁盘</span></span><br><span class="line">sudo lsblk</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看既有卷组</span></span><br><span class="line">sudo vgdisplay</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看卷组中的卷</span></span><br><span class="line">sudo lvdisplay</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将新磁盘转换为物理卷(若有必要)</span></span><br><span class="line">sudo pvcreate /dev/sdb</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将新的物理卷添加到现有的卷组中</span></span><br><span class="line">sudo vgextend ubuntu-vg /dev/sda</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">扩展逻辑卷, 最后一个参数为卷名</span></span><br><span class="line">sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">调整文件系统大小</span></span><br><span class="line">sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -368,13 +368,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2023/1KVMRKY.html" rel="prev" title="Ubuntu 配置静态IP">
-                  <i class="fa fa-angle-left"></i> Ubuntu 配置静态IP
+                <a href="/posts/2023/3FNGNN9.html" rel="prev" title="TCP Ping in Ubuntu">
+                  <i class="fa fa-angle-left"></i> TCP Ping in Ubuntu
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/3FNGNN9.html" rel="next" title="TCP Ping in Ubuntu">
-                  TCP Ping in Ubuntu <i class="fa fa-angle-right"></i>
+                <a href="/posts/2023/30R3C6S.html" rel="next" title="Ubuntu 阻止笔记本关盖后挂起">
+                  Ubuntu 阻止笔记本关盖后挂起 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -407,13 +407,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">823k</span>
+    <span title="站点总字数">827k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:28</span>
+    <span title="站点阅读时长">12:31</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

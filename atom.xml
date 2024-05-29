@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-05-10T16:00:00.000Z</updated>
+  <updated>2024-05-26T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ComfyUI 节点介绍</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2TKH0W3.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2TKH0W3.html</id>
+    <published>2024-05-26T16:00:00.000Z</published>
+    <updated>2024-05-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文总结了对 SD ComfyUI 中的一些节点的理解，以便灵活运用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ComfyUI 入门资料整理</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>StableDiffusion 专有名词理解</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1HAPA4N.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1HAPA4N.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文对 SD 和 ComfyUI
+中的一些名词进行解释，按文末参考文章中出现的先后顺序进行排列。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文主要采用 GPT 进行解释。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
   
   <entry>
     <title>纯 css 实现 placehoder 效果</title>
@@ -64,11 +135,11 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <category term="Web" scheme="https://galens.uamazing.cn/categories/Develop/Web/"/>
     
     
-    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
-    
     <category term="SSL" scheme="https://galens.uamazing.cn/tags/SSL/"/>
     
     <category term="Let&#39;s Encrypt" scheme="https://galens.uamazing.cn/tags/Let-s-Encrypt/"/>
+    
+    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
@@ -455,60 +526,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
-    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
-    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda
-进行加速。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 中如何同时执行多条命令</title>
-    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
     <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
     <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
@@ -539,29 +556,6 @@ href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-co
     <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 设置全局代理</title>
-    <link href="https://galens.uamazing.cn/posts/2023/2Y5R2C0.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/2Y5R2C0.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何为 Ubuntu 设置全局代理。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Proxy" scheme="https://galens.uamazing.cn/tags/Proxy/"/>
     
   </entry>
   

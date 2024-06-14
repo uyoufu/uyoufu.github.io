@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-05-26T16:00:00.000Z</updated>
+  <updated>2024-05-30T07:04:00.520Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ComfyUI ControlNet</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2DZVA0D.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2DZVA0D.html</id>
+    <published>2024-05-29T16:00:00.000Z</published>
+    <updated>2024-05-30T07:04:00.520Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+</summary>
+        
+      
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ComfyUI 节点介绍</title>
@@ -33,32 +59,9 @@
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 入门资料整理</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -84,6 +87,29 @@
     
     
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ComfyUI 入门资料整理</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
     
   </entry>
   
@@ -417,31 +443,6 @@ at unix:///var/run/docker.sock: Get
   </entry>
   
   <entry>
-    <title>Docker 开源 UI 管理工具比选及安装</title>
-    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux
-服务器的特点，最终选择安装 &lt;a
-href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Windows 免密码 ssh 登陆 Linux</title>
     <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
     <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
@@ -494,6 +495,31 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
+    <title>Docker 开源 UI 管理工具比选及安装</title>
+    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux
+服务器的特点，最终选择安装 &lt;a
+href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用 Linq 后导致修改列表对象字段无效</title>
     <link href="https://galens.uamazing.cn/posts/2024/395GBDB.html"/>
     <id>https://galens.uamazing.cn/posts/2024/395GBDB.html</id>
@@ -522,40 +548,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
     <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
     
     <category term="Linq" scheme="https://galens.uamazing.cn/tags/Linq/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 服务器安装 Nvidia Container Toolkit 使 Docker 支持 Cuda</title>
-    <link href="https://galens.uamazing.cn/posts/2023/HNT542.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/HNT542.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;为了能够在 Docker 中使用 GPU 进行加速，Nvidia 开发了 &lt;a
-href=&quot;https://github.com/NVIDIA/nvidia-docker&quot;&gt;nvidia-docker&lt;/a&gt; 对
-Container 进行封装，使得 Docker 容器可以调用 GPU 进行加速。现在 &lt;a
-href=&quot;https://github.com/NVIDIA/nvidia-docker&quot;&gt;nvidia-docker&lt;/a&gt;
-已被归档，官方推荐使用 &lt;strong&gt;&lt;a
-href=&quot;https://github.com/NVIDIA/nvidia-container-toolkit&quot;&gt;nvidia-container-toolkit&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;本文将介绍如何在 Linux 中安装 nvidia-container-toolkit。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注：本文所使用的显卡为 RTX4080&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
   </entry>
   

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="你有一个按钮，你想点击它并在 ViewModel 上执行一个方法? Actiions 完全可以解决这种问题。">
+    <meta name="description" content="你有一个按钮，你想点击它并在 ViewModel 上执行一个方法?  Actiions 完全可以解决这种问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）05-Actions">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/3C0QABE.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="你有一个按钮，你想点击它并在 ViewModel 上执行一个方法? Actiions 完全可以解决这种问题。">
+<meta property="og:description" content="你有一个按钮，你想点击它并在 ViewModel 上执行一个方法?  Actiions 完全可以解决这种问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,12 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%92%8C%E6%96%B9%E6%B3%95actions-and-methods"><span class="nav-number">1.</span> <span class="nav-text">响应和方法（Actions and
-Methods）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8A%A4%E5%B1%9E%E6%80%A7guard-properties"><span class="nav-number">2.</span> <span class="nav-text">保护属性（Guard Properties）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6events"><span class="nav-number">3.</span> <span class="nav-text">事件（Events）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E7%9B%AE%E6%A0%87the-view.actiontarget"><span class="nav-number">4.</span> <span class="nav-text">响应目标（The
-View.ActionTarget）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%92%8C%E6%A0%B7%E5%BC%8Factions-and-styles"><span class="nav-number">5.</span> <span class="nav-text">响应和样式（Actions and
-Styles）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%8D%95%E5%92%8C%E5%BC%B9%E5%87%BA%E8%8F%9C%E5%8D%95gotchas---contextmenu-and-popup"><span class="nav-number">6.</span> <span class="nav-text">快捷方式——快捷菜单和弹出菜单（Gotchas
-- ContextMenu and Popup）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E8%A1%8C%E4%B8%BAadditional-behaviour"><span class="nav-number">7.</span> <span class="nav-text">其它行为（Additional
-Behaviour）</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%92%8C%E6%96%B9%E6%B3%95actions-and-methods"><span class="nav-number">1.</span> <span class="nav-text"> 响应和方法（Actions and Methods）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8A%A4%E5%B1%9E%E6%80%A7guard-properties"><span class="nav-number">2.</span> <span class="nav-text"> 保护属性（Guard Properties）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6events"><span class="nav-number">3.</span> <span class="nav-text"> 事件（Events）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E7%9B%AE%E6%A0%87the-viewactiontarget"><span class="nav-number">4.</span> <span class="nav-text"> 响应目标（The View.ActionTarget）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%92%8C%E6%A0%B7%E5%BC%8Factions-and-styles"><span class="nav-number">5.</span> <span class="nav-text"> 响应和样式（Actions and Styles）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%8D%95%E5%92%8C%E5%BC%B9%E5%87%BA%E8%8F%9C%E5%8D%95gotchas-contextmenu-and-popup"><span class="nav-number">6.</span> <span class="nav-text"> 快捷方式——快捷菜单和弹出菜单（Gotchas - ContextMenu and Popup）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E8%A1%8C%E4%B8%BAadditional-behaviour"><span class="nav-number">7.</span> <span class="nav-text"> 其它行为（Additional Behaviour）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,7 +157,7 @@ Behaviour）</span></a></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -278,14 +273,14 @@ Behaviour）</span></a></li></ol></div>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6k</span>
+      <span>6.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -295,53 +290,31 @@ Behaviour）</span></a></li></ol></div>
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>你有一个按钮，你想点击它并在 ViewModel 上执行一个方法? Actiions
-完全可以解决这种问题。</p>
+    <div class="post-body" itemprop="articleBody"><p>你有一个按钮，你想点击它并在 ViewModel 上执行一个方法?  Actiions 完全可以解决这种问题。</p>
 <span id="more"></span>
-<h2 id="响应和方法actions-and-methods">响应和方法（Actions and
-Methods）</h2>
-<p>在“传统的” WPF 中，你需要在 ViewModel 上创建一个属性来实现 ICommand
-接口，并将按钮的命令属性绑定到它。这工作得相当好 (ViewModel 对 View
-一无所知，也不需要代码隐藏)，但它有点混乱——您确实需要在ViewModel
-上调用一个方法，而不是在某个属性上执行一个方法。</p>
+<h2 id="响应和方法actions-and-methods"><a class="markdownIt-Anchor" href="#响应和方法actions-and-methods"></a> 响应和方法（Actions and Methods）</h2>
+<p>在“传统的” WPF 中，你需要在 ViewModel 上创建一个属性来实现 ICommand 接口，并将按钮的命令属性绑定到它。这工作得相当好 (ViewModel 对 View 一无所知，也不需要代码隐藏)，但它有点混乱——您确实需要在ViewModel 上调用一个方法，而不是在某个属性上执行一个方法。</p>
 <p>Stylet 通过引入响应（Action） 解决了这个问题。看看这个:</p>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>C#</th>
-<th>VB.NET</th>
+<th><a target="_blank" rel="noopener" href="http://VB.NET">VB.NET</a></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>class ViewModel <br />{ <br /> public void DoSomething() <br /> {
-<br /> Debug.WriteLine("DoSomething called"); <br /> } <br />}</td>
-<td>Class ViewModel<br /> Public Sub DoSomething()<br />
-Console.WriteLine("DoSomething called")<br />End Sub End Class</td>
+<tr>
+<td>class ViewModel <br />{    <br />       public void DoSomething()    <br />      {       <br />           Debug.WriteLine(“DoSomething called”);    <br />      } <br />}</td>
+<td>Class ViewModel<br />     Public Sub DoSomething()<br />     Console.WriteLine(“DoSomething called”)<br />End Sub End Class</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;MyNamespace.View&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">&quot;&#123;s:Action DoSomething&#125;&quot;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>您可能已经猜到了，单击按钮的时候，会调用 ViewModel 上的 DoSomething
-方法。</p>
+<p>您可能已经猜到了，单击按钮的时候，会调用 ViewModel 上的 DoSomething 方法。</p>
 <p>就这么简单。</p>
-<p>如果您的方法接受单个参数，可以传递按钮的 CommandParameter
-属性的值。例如:</p>
-<table>
-<tr>
-<td>
-C#
-</td>
-<td>
-VB.NET
-</td>
-<tr>
-<td valign="top">
-<pre lang="csharp">
+<p>如果您的方法接受单个参数，可以传递按钮的 CommandParameter 属性的值。例如:</p>
+<table><tr><td>C#</td><td>VB.NET</td>
+<tr><td valign="top"><pre lang="csharp">
 class ViewModel
 {
    public void DoSomething(string argument)
@@ -349,9 +322,7 @@ class ViewModel
       Debug.WriteLine(String.Format(&quot;Argument is {0}&quot;, argument));
    }
 }</pre>
-</td>
-<td valign="top">
-<pre lang="vb.net">
+</td><td valign="top"><pre lang="vb.net">
 Class ViewModel
 &nbsp;
   Public Sub DoSomething(argument As String)
@@ -359,35 +330,17 @@ Class ViewModel
   Debug.WriteLine(String.Format(&quot;Argument is {0}&quot;, argument)
 &nbsp;
   End Sub
-End Class</pre>
-</td>
-</tr>
-</table>
+End Class</pre></td></tr></table>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;MyNamespace.View&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">&quot;&#123;s:Action DoSomething&#125;&quot;</span> <span class="attr">CommandParameter</span>=<span class="string">&quot;Hello&quot;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意：Actions 对所有的 ICommand 属性都起作用 (比如 <a
-target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/system.windows.input.keybinding%28v=vs.110%29.aspx">KeyBinding</a>)</p>
+<p>注意：Actions 对所有的 ICommand 属性都起作用 (比如 <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/system.windows.input.keybinding%28v=vs.110%29.aspx">KeyBinding</a>)</p>
 </blockquote>
-<h2 id="保护属性guard-properties">保护属性（Guard Properties）</h2>
-<p>您还可以使用 <em>Guard Properties</em>
-来控制是否启用按钮。给定方法的保护属性是一个布尔属性，其名称为
-“Can&lt;方法名&gt;”，因此如果您的方法名为
-“DoSomething”，则相应的保护属性为 “CanDoSomething”。</p>
-<p>Stylet 将检查保护属性是否存在，如果存在，如果返回 false
-禁用按钮，如果返回 true 则启用按钮。它还将监视该属性的 PropertyChanged
-通知，因此您可以控制按钮是否启用。</p>
+<h2 id="保护属性guard-properties"><a class="markdownIt-Anchor" href="#保护属性guard-properties"></a> 保护属性（Guard Properties）</h2>
+<p>您还可以使用 <em>Guard Properties</em> 来控制是否启用按钮。给定方法的保护属性是一个布尔属性，其名称为 “Can&lt;方法名&gt;”，因此如果您的方法名为 “DoSomething”，则相应的保护属性为 “CanDoSomething”。</p>
+<p>Stylet 将检查保护属性是否存在，如果存在，如果返回 false 禁用按钮，如果返回 true 则启用按钮。它还将监视该属性的 PropertyChanged 通知，因此您可以控制按钮是否启用。</p>
 <p>例如:</p>
-<table>
-<tr>
-<td>
-C#
-</td>
-<td>
-VB.NET
-</td>
-<tr>
-<td valign="top">
-<pre lang="csharp">
+<table><tr><td>C#</td><td>VB.NET</td>
+<tr><td valign="top"><pre lang="csharp">
 class ViewModel
 {
    public bool CanDoSomething
@@ -398,9 +351,7 @@ class ViewModel
    {
       Debug.WriteLine(&quot;DoSomething called&quot;);
    }</pre>
-</td>
-<td valign="top">
-<pre lang="vb.net">
+</td><td valign="top"><pre lang="vb.net">
 Class ViewModel
 &nbsp;
   Public ReadOnly Property CanDoSomething As Boolean
@@ -412,26 +363,13 @@ Class ViewModel
     Public Sub DoSomething()
         Debug.WriteLine(&quot;DoSomething called&quot;)
     End Sub
-End Class</pre>
-</td>
-</tr>
-</table>
-<h2 id="事件events">事件（Events）</h2>
-<p>但是如果您想在事件发生时调用 ViewModel 方法呢? Actions
-也包括这些。语法是完全相同的，但是没有保护属性的概念。</p>
+End Class</pre></td></tr></table>
+<h2 id="事件events"><a class="markdownIt-Anchor" href="#事件events"></a> 事件（Events）</h2>
+<p>但是如果您想在事件发生时调用 ViewModel 方法呢? Actions 也包括这些。语法是完全相同的，但是没有保护属性的概念。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;MyNamespace.View&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Click</span>=<span class="string">&quot;&#123;s:Action DoSomething&#125;&quot;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>被调用的方法必须有 0个 或者 1个 或者 2个 参数。可能的情况如下：</p>
-<table>
-<tr>
-<td>
-C#
-</td>
-<td>
-VB.NET
-</td>
-<tr>
-<td valign="top">
-<pre lang="csharp">
+<table><tr><td>C#</td><td>VB.NET</td>
+<tr><td valign="top"><pre lang="csharp">
 public void HasNoArguments() { }
 &nbsp;
 // This can accept EventArgs, or a subclass of EventArgs
@@ -439,9 +377,7 @@ public void HasOneSingleArgument(EventArgs e) { }
 &nbsp;
 // Again, a subclass of EventArgs is OK
 public void HasTwoArguments(object sender, EventArgs e) { }</pre>
-</td>
-<td valign="top">
-<pre lang="vb.net">
+</td><td valign="top"><pre lang="vb.net">
 Public Sub HasNoArguments()
 End Sub
 &nbsp;
@@ -451,37 +387,15 @@ End Sub
 &nbsp;
 &#39;Again, a subclass of EventArgs is OK
 Public Sub HasTwoArguments(ByVal sender As Object, ByVal e As EventArgs)
-End Sub</pre>
-</td>
-</tr>
-</table>
-<h2 id="响应目标the-view.actiontarget">响应目标（The
-View.ActionTarget）</h2>
-<p>到目前为止，我一直在说一个善意的谎言。我一直在说 Actions 是在
-ViewModel 上调用的，但这并不完全正确。让我们更详细一点。</p>
-<p>Stylet 定义了一个可继承的附加属性
-View.ActionTarget。当一个视图被绑定到它的视图模型，View
-中根元素上的ActionTarget 绑定到
-ViewModel，然后由视图中的每个元素继承。当您调用一个 响应
-时，它将在View.ActionTarget中被调用。</p>
-<p>这意味着，在默认情况下，不管当前的 DataContext 是什么，都会在
-ViewModel 上调用操作，这可能就是您想要的。</p>
-<p>这是非常重要的一点，值得强调。DataContext
-可能会在整个可视树中的多个位置发生变化。但是, View.ActionTarget
-将保持不变(除非您手动更改它)。这意味着 Actions 总是由您的 ViewModel
-来处理，而不是由绑定到的对象来处理，这几乎总是您想要的。</p>
+End Sub</pre></td></tr></table>
+<h2 id="响应目标the-viewactiontarget"><a class="markdownIt-Anchor" href="#响应目标the-viewactiontarget"></a> 响应目标（The View.ActionTarget）</h2>
+<p>到目前为止，我一直在说一个善意的谎言。我一直在说 Actions 是在 ViewModel 上调用的，但这并不完全正确。让我们更详细一点。</p>
+<p>Stylet 定义了一个可继承的附加属性 View.ActionTarget。当一个视图被绑定到它的视图模型，View 中根元素上的ActionTarget 绑定到 ViewModel，然后由视图中的每个元素继承。当您调用一个 响应 时，它将在View.ActionTarget中被调用。</p>
+<p>这意味着，在默认情况下，不管当前的 DataContext 是什么，都会在 ViewModel 上调用操作，这可能就是您想要的。</p>
+<p>这是非常重要的一点，值得强调。DataContext 可能会在整个可视树中的多个位置发生变化。但是, View.ActionTarget 将保持不变(除非您手动更改它)。这意味着 Actions 总是由您的 ViewModel 来处理，而不是由绑定到的对象来处理，这几乎总是您想要的。</p>
 <p>当然，您可以更改单个元素的 View.ActionTarget，例如:</p>
-<table>
-<tr>
-<td>
-C#
-</td>
-<td>
-VB.NET
-</td>
-<tr>
-<td valign="top">
-<pre lang="csharp">
+<table><tr><td>C#</td><td>VB.NET</td>
+<tr><td valign="top"><pre lang="csharp">
 class InnerViewModel
 {
    public void DoSomething() { }
@@ -494,9 +408,7 @@ class ViewModel
       this.InnerViewModel = new InnerViewModel();
    }
 }</pre>
-</td>
-<td valign="top">
-<pre lang="vb.net">
+</td><td valign="top"><pre lang="vb.net">
 Class InnerViewModel
 &nbsp;
     Public Sub DoSomething()
@@ -512,40 +424,27 @@ Class ViewModel
         Me.InnerVM = New InnerViewModel()
     End Sub
 &nbsp;
-End Class</pre>
-</td>
-</tr>
-</table>
+End Class</pre></td></tr></table>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UserControl</span> <span class="attr">x:Class</span>=<span class="string">&quot;MyNamespace.View&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">Button</span> <span class="attr">s:View.ActionTarget</span>=<span class="string">&quot;&#123;Binding InnerViewModel&#125;&quot;</span> <span class="attr">Command</span>=<span class="string">&quot;&#123;s:Action DoSomething&#125;&quot;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">UserControl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在这里, 单击按钮时将调用 InnerViewModel.DoSomething。还有，因为
-View.ActionTarget 是继承的，按钮的任何子元素也会将它们的
-View.ActionTarget 设置为 InnewViewModel。</p>
-<h2 id="响应和样式actions-and-styles">响应和样式（Actions and
-Styles）</h2>
-<p>从样式设置器执行的 Actions 将不起作用。WPF
-中需要的类都是内部的，这意味着没有办法修复这个问题。不幸的是，在这种(罕见的)情况下，您需要使用老式的命令。</p>
-<h2
-id="快捷方式快捷菜单和弹出菜单gotchas---contextmenu-and-popup">快捷方式——快捷菜单和弹出菜单（Gotchas
-- ContextMenu and Popup）</h2>
-<p>当然，View.ActionTarget
-是一个附加属性，它被配置为由设置它的任何元素的子元素继承，就像任何附加的属性一样，甚至是
-DataContext，有一些边界是不能被继承的，比如:</p>
+<p>在这里, 单击按钮时将调用 InnerViewModel.DoSomething。还有，因为 View.ActionTarget 是继承的，按钮的任何子元素也会将它们的 View.ActionTarget 设置为 InnewViewModel。</p>
+<h2 id="响应和样式actions-and-styles"><a class="markdownIt-Anchor" href="#响应和样式actions-and-styles"></a> 响应和样式（Actions and Styles）</h2>
+<p>从样式设置器执行的 Actions 将不起作用。WPF 中需要的类都是内部的，这意味着没有办法修复这个问题。不幸的是，在这种(罕见的)情况下，您需要使用老式的命令。</p>
+<h2 id="快捷方式快捷菜单和弹出菜单gotchas-contextmenu-and-popup"><a class="markdownIt-Anchor" href="#快捷方式快捷菜单和弹出菜单gotchas-contextmenu-and-popup"></a> 快捷方式——快捷菜单和弹出菜单（Gotchas - ContextMenu and Popup）</h2>
+<p>当然，View.ActionTarget 是一个附加属性，它被配置为由设置它的任何元素的子元素继承，就像任何附加的属性一样，甚至是 DataContext，有一些边界是不能被继承的，比如:</p>
 <ul>
-<li><p>使用快捷菜单</p></li>
-<li><p>使用弹出窗口</p></li>
-<li><p>使用框架</p></li>
+<li>
+<p>使用快捷菜单</p>
+</li>
+<li>
+<p>使用弹出窗口</p>
+</li>
+<li>
+<p>使用框架</p>
+</li>
 </ul>
-<p>在这些情况下，Stylet 将尽其所能找到一个合适的 ActionTarget
-(例如，它可能会找到与当前 XAML 文件中的根元素相关联的 ActionTarget
-)，但这可能不是您所期望的(例如，它可能会忽略你的页面中间的
-<code>s:View.ActionTarget = "&#123;Binding…&#125;</code>
-行)，或者它可能(在罕见的情况下)根本找不到一个ActionTarget。</p>
-<p>在这种情况下，请设置<code>s:View.ActionTarget</code>
-一个合适的值。您可能很难从 ContextMenu 的内部获得对ContextMenu
-之外任何内容的引用: 我建议使用<a
-target="_blank" rel="noopener" href="http://www.thomaslevesque.com/2011/03/21/wp-%20how-%20binding%20-to-data-when-the-datacontext-is-not-inherited/">BindingProxy</a>技术。</p>
-<h2 id="其它行为additional-behaviour">其它行为（Additional
-Behaviour）</h2>
+<p>在这些情况下，Stylet 将尽其所能找到一个合适的 ActionTarget (例如，它可能会找到与当前 XAML 文件中的根元素相关联的 ActionTarget )，但这可能不是您所期望的(例如，它可能会忽略你的页面中间的 <code>s:View.ActionTarget = &quot;&#123;Binding…&#125;</code> 行)，或者它可能(在罕见的情况下)根本找不到一个ActionTarget。</p>
+<p>在这种情况下，请设置<code>s:View.ActionTarget</code> 一个合适的值。您可能很难从 ContextMenu 的内部获得对ContextMenu 之外任何内容的引用: 我建议使用[BindingProxy](<a target="_blank" rel="noopener" href="http://www.thomaslevesque.com/2011/03/21/wp-">http://www.thomaslevesque.com/2011/03/21/wp-</a> how- binding -to-data-when-the-datacontext-is-not-inherited/)技术。</p>
+<h2 id="其它行为additional-behaviour"><a class="markdownIt-Anchor" href="#其它行为additional-behaviour"></a> 其它行为（Additional Behaviour）</h2>
 <p>有两种情况会阻止操作正常工作:</p>
 <ul>
 <li>如果 View.ActionTarget 为空</li>
@@ -553,44 +452,32 @@ Behaviour）</h2>
 </ul>
 <p>这些情况下的默认行为如下:</p>
 <table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 31%" />
-<col style="width: 58%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>View.ActionTarget == null</th>
 <th>No method on View.ActionTarget</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Commands</td>
 <td>Disable the control</td>
 <td>Throw an exception when the control is clicked</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Events</td>
 <td>Enable the control</td>
 <td>Throw an exception when the event is raised</td>
 </tr>
 </tbody>
 </table>
-<p>这样做的理由是如果 View.ActionTarget
-为空，你必须自己设置它，所以你可能知道你在做什么。但是，如果指定的方法在
-View.ActionTarget 中不存在，这可能是个错误，你应该知道。</p>
+<p>这样做的理由是如果 View.ActionTarget 为空，你必须自己设置它，所以你可能知道你在做什么。但是，如果指定的方法在 View.ActionTarget 中不存在，这可能是个错误，你应该知道。</p>
 <p>当然，这种行为是可配置的。</p>
-<p>当在 View.ActionTarget 为null时，要控制它的行为，可以在
-<code>Action</code> 标记扩展上设置 <code>NullTarget</code>
-属性，使它的值为 <code>Enable</code>、<code>Disable</code> 或
-<code>Throw</code>都可以。(请注意，当Action
-在事件中使用时，“Disable”是无效的时候，因为我们没有权力禁用任何东西)。</p>
+<p>当在 View.ActionTarget 为null时，要控制它的行为，可以在 <code>Action</code> 标记扩展上设置 <code>NullTarget</code> 属性，使它的值为 <code>Enable</code>、<code> Disable</code> 或 <code>Throw</code>都可以。(请注意，当Action 在事件中使用时，“Disable”是无效的时候，因为我们没有权力禁用任何东西)。</p>
 <p>例如:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">&quot;&#123;s:Action MyMethod, NullTarget=Enable&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Click</span>=<span class="string">&quot;&#123;s:Action MyMethod, NullTarget=Throw&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<p>更熟悉的方式，你也可以设置 <code>ActionNotFound</code>
-的值为上面三个值之一</p>
+<p>更熟悉的方式，你也可以设置 <code>ActionNotFound</code> 的值为上面三个值之一</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">&quot;&#123;s:Action MyMethod, ActionNotFound=Disable&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Click</span>=<span class="string">&quot;&#123;s:Action MyMethod, ActionNotFound=Enable&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -656,8 +543,8 @@ View.ActionTarget 中不存在，这可能是个错误，你应该知道。</p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/1005Z29.html" rel="prev" title="WPF MVVM Stylet使用文档（中文） 07- MessageBox">
-                  <i class="fa fa-angle-left"></i> WPF MVVM Stylet使用文档（中文） 07- MessageBox
+                <a href="/posts/2020/2RDEGH9.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）06-The WindowManager">
+                  <i class="fa fa-angle-left"></i> WPF MVVM Stylet使用文档（中文）06-The WindowManager
                 </a>
             </div>
             <div class="post-nav-item">
@@ -695,13 +582,13 @@ View.ActionTarget 中不存在，这可能是个错误，你应该知道。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

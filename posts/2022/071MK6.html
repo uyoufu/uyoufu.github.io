@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="为什么选择 Lodash ？ Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：  遍历 array、object 和 string 对值进行操作和检测 创建符合功能的函数  下面是本人在阅读文档时，对遇到的一些让人觉得非常好用的函数的整理。  文档版">
+    <meta name="description" content="为什么选择 Lodash ？ Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：  遍历 array、object 和 string 对值进行操作和检测 创建符合功能的函数  下面是本人在阅读文档时，对遇到的一些让人觉得非常好用的函数的整理。  文档版本：4.17.15">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lodash 中一些让人喜出望外的函数">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/071MK6.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="为什么选择 Lodash ？ Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：  遍历 array、object 和 string 对值进行操作和检测 创建符合功能的函数  下面是本人在阅读文档时，对遇到的一些让人觉得非常好用的函数的整理。  文档版">
+<meta property="og:description" content="为什么选择 Lodash ？ Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：  遍历 array、object 和 string 对值进行操作和检测 创建符合功能的函数  下面是本人在阅读文档时，对遇到的一些让人觉得非常好用的函数的整理。  文档版本：4.17.15">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-11T16:00:00.000Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-lodash"><span class="nav-number">1.</span> <span class="nav-text">为什么选择 Lodash ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array"><span class="nav-number">2.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#difference%E7%B3%BB%E5%88%97"><span class="nav-number">2.1.</span> <span class="nav-text">_.difference系列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq-%E7%B3%BB%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text">_.uniq 系列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">3.</span> <span class="nav-text">Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#throttle"><span class="nav-number">3.1.</span> <span class="nav-text">_.throttle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number"><span class="nav-number">4.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#clamp"><span class="nav-number">4.1.</span> <span class="nav-text">_.clamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object"><span class="nav-number">5.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#at"><span class="nav-number">5.1.</span> <span class="nav-text">_.at</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#default"><span class="nav-number">5.2.</span> <span class="nav-text">_.default</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">5.3.</span> <span class="nav-text">_.get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#invoke"><span class="nav-number">5.4.</span> <span class="nav-text">_.invoke</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pick"><span class="nav-number">5.5.</span> <span class="nav-text">_.pick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-lodash"><span class="nav-number">1.</span> <span class="nav-text"> 为什么选择 Lodash ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array"><span class="nav-number">2.</span> <span class="nav-text"> Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_difference%E7%B3%BB%E5%88%97"><span class="nav-number">2.1.</span> <span class="nav-text"> _.difference系列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_uniq-%E7%B3%BB%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text"> _.uniq 系列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">3.</span> <span class="nav-text"> Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_throttle"><span class="nav-number">3.1.</span> <span class="nav-text"> _.throttle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number"><span class="nav-number">4.</span> <span class="nav-text"> Number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_clamp"><span class="nav-number">4.1.</span> <span class="nav-text"> _.clamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object"><span class="nav-number">5.</span> <span class="nav-text"> Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_at"><span class="nav-number">5.1.</span> <span class="nav-text"> _.at</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_default"><span class="nav-number">5.2.</span> <span class="nav-text"> _.default</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_get"><span class="nav-number">5.3.</span> <span class="nav-text"> _.get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_invoke"><span class="nav-number">5.4.</span> <span class="nav-text"> _.invoke</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_pick"><span class="nav-number">5.5.</span> <span class="nav-text"> _.pick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -283,9 +283,8 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="为什么选择-lodash">为什么选择 Lodash ？</h2>
-<p>Lodash 通过降低 array、number、objects、string 等等的使用难度从而让
-JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="为什么选择-lodash"><a class="markdownIt-Anchor" href="#为什么选择-lodash"></a> 为什么选择 Lodash ？</h2>
+<p>Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：</p>
 <ul>
 <li>遍历 array、object 和 string</li>
 <li>对值进行操作和检测</li>
@@ -296,34 +295,34 @@ JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：</p>
 <p>文档版本：4.17.15</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="array">Array</h2>
-<h3 id="difference系列">_.difference系列</h3>
+<h2 id="array"><a class="markdownIt-Anchor" href="#array"></a> Array</h2>
+<h3 id="_difference系列"><a class="markdownIt-Anchor" href="#_difference系列"></a> _.difference系列</h3>
 <p>返回第一个数组中与第二个数组不同的值。</p>
 <p>当在 vue 中 watch 的是一个数组时，找到变化的值非常有用。</p>
-<h3 id="uniq-系列">_.uniq 系列</h3>
+<h3 id="_uniq-系列"><a class="markdownIt-Anchor" href="#_uniq-系列"></a> _.uniq 系列</h3>
 <p>返回数组中所有第一次出现的值。</p>
 <p>用于去重很有用。</p>
-<h2 id="function">Function</h2>
-<h3 id="throttle">_.throttle</h3>
+<h2 id="function"><a class="markdownIt-Anchor" href="#function"></a> Function</h2>
+<h3 id="_throttle"><a class="markdownIt-Anchor" href="#_throttle"></a> _.throttle</h3>
 <p>节流函数，在一定时间内仅会执行一次。</p>
 <p>可以用于更新上传或下载的进度。</p>
-<h2 id="number">Number</h2>
-<h3 id="clamp">_.clamp</h3>
+<h2 id="number"><a class="markdownIt-Anchor" href="#number"></a> Number</h2>
+<h3 id="_clamp"><a class="markdownIt-Anchor" href="#_clamp"></a> _.clamp</h3>
 <p>传入一个值下界和上界，返回在这个界限内的值。</p>
-<h2 id="object">Object</h2>
-<h3 id="at">_.at</h3>
+<h2 id="object"><a class="markdownIt-Anchor" href="#object"></a> Object</h2>
+<h3 id="_at"><a class="markdownIt-Anchor" href="#_at"></a> _.at</h3>
 <p>通过传入属性路径来获取值，属性路径是字符串，同时路径支持函数</p>
-<h3 id="default">_.default</h3>
+<h3 id="_default"><a class="markdownIt-Anchor" href="#_default"></a> _.default</h3>
 <p>对于是undefined的属性赋予初值</p>
-<h3 id="get">_.get</h3>
+<h3 id="_get"><a class="markdownIt-Anchor" href="#_get"></a> _.get</h3>
 <p>同 <code>_.at</code>，但可以传入一个未找到时的默认值</p>
-<h3 id="invoke">_.invoke</h3>
+<h3 id="_invoke"><a class="markdownIt-Anchor" href="#_invoke"></a> _.invoke</h3>
 <p>通过<strong>字符串路径</strong>来调用对象中原生的方法</p>
-<h3 id="pick">_.pick</h3>
+<h3 id="_pick"><a class="markdownIt-Anchor" href="#_pick"></a> _.pick</h3>
 <p>通过给定的字符串路径来重新构建一个对象</p>
-<h2 id="参考">参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>本文参考以下文章，在此表示诚挚感谢！</p>
-<ol type="1">
+<ol>
 <li><a target="_blank" rel="noopener" href="https://www.lodashjs.com/">Lodash中文文档</a></li>
 <li><a target="_blank" rel="noopener" href="https://lodash.com/docs/4.17.15">Lodash英文文档</a></li>
 </ol>
@@ -430,13 +429,13 @@ JavaScript 变得更简单。 Lodash 的模块化方法 非常适用于：</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

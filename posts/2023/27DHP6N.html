@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
+    <meta name="description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="父元素仅设置max-height，子元素高度百分之100，溢出后如何显示滚动条">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/27DHP6N.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
+<meta property="og:description" content="本文介绍了如何实现： 父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-26T16:00:00.000Z">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">演示</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text"> 思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text"> 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text"> 演示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -286,25 +286,19 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>本文介绍了如何实现：</p>
-<p>父元素仅设置 max-height，子元素的高度为
-100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。</p>
+<p>父元素仅设置 max-height，子元素的高度为 100%，跟随父元素高度的变化而变化，且当达到最大高度后，子元素显示滚动条。</p>
 <span id="more"></span>
-<h2 id="思路">思路</h2>
-<ol type="1">
-<li>由于父元素没有设置 <code>height</code> 属性，因此子元素不能使用
-<code>height:100%</code> 来跟随父元素的变化</li>
-<li>通过 flex 布局，将子元素设置成 <code>flex:1</code>
-来让其与父元素同高</li>
-<li>再设置子元素 <code>overflow:auto;flext-wrap:nowrap;</code>
-来显示滚动条</li>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<ol>
+<li>由于父元素没有设置 <code>height</code> 属性，因此子元素不能使用 <code>height:100%</code> 来跟随父元素的变化</li>
+<li>通过 flex 布局，将子元素设置成 <code>flex:1</code> 来让其与父元素同高</li>
+<li>再设置子元素 <code>overflow:auto;flext-wrap:nowrap;</code> 来显示滚动条</li>
 </ol>
-<h2 id="实现">实现</h2>
+<h2 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h2>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>    </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#app</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;  </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="comment">/* height: 100%; 此处不能使用这个属性，因为父类没有设置 height,因此无法计算高度*/</span></span><br><span class="line">  <span class="attribute">flex</span>:<span class="number">1</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="演示">演示</h2>
-<p><a
-target="_blank" rel="noopener" href="https://runjs.work/projects/8ad36ef2669942a5">父元素设置max-height，子元素高度100%实现
-(runjs.work)</a></p>
+<h2 id="演示"><a class="markdownIt-Anchor" href="#演示"></a> 演示</h2>
+<p><a target="_blank" rel="noopener" href="https://runjs.work/projects/8ad36ef2669942a5">父元素设置max-height，子元素高度100%实现 (runjs.work)</a></p>
 
     </div>
 
@@ -407,13 +401,13 @@ target="_blank" rel="noopener" href="https://runjs.work/projects/8ad36ef2669942a
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

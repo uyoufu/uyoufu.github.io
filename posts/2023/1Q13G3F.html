@@ -19,13 +19,14 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在 WPF 中使用 webview2 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：  webview2 环境缺失或版本不对 可能安装了某个软件，其注入 dll 到 webview2 失败  可以通过以下步骤来详细排查：">
+    <meta name="description" content="在 WPF 中使用 webview2 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：  webview2 环境缺失或版本不对 可能安装了某个软件，其注入 dll 到 webview2 失败  可以通过以下步骤来详细排查：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webview2 打开网页时一片空白">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1Q13G3F.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在 WPF 中使用 webview2 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：  webview2 环境缺失或版本不对 可能安装了某个软件，其注入 dll 到 webview2 失败  可以通过以下步骤来详细排查：">
+<meta property="og:description" content="在 WPF 中使用 webview2 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：  webview2 环境缺失或版本不对 可能安装了某个软件，其注入 dll 到 webview2 失败  可以通过以下步骤来详细排查：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230728123007643.png">
 <meta property="article:published_time" content="2023-07-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-04T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -33,6 +34,7 @@
 <meta property="article:tag" content="Webview2">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230728123007643.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1Q13G3F.html">
@@ -92,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,10 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E6%9F%A5-webview2-%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">排查 webview2 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5"><span class="nav-number">2.</span> <span class="nav-text">通过代码进行异常排查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-webview2-%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">通过 webview2
-运行日志排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E6%8A%A5%E9%94%99%E5%8F%8A%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">已知报错及处理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AFwebview2_child-process-failed-exitcode-1073740760"><span class="nav-number">4.1.</span> <span class="nav-text">错误：WebView2_Child
-process failed ExitCode:-1073740760</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AFsystem.runtime.nteropservices.comexception-0x8007139f"><span class="nav-number">4.2.</span> <span class="nav-text">错误：System.Runtime.nteropServices.COMException
-(0x8007139F)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E6%9F%A5-webview2-%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 排查  webview2 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5"><span class="nav-number">2.</span> <span class="nav-text"> 通过代码进行异常排查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-webview2-%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> 通过 webview2 运行日志排查问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E6%8A%A5%E9%94%99%E5%8F%8A%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text"> 已知报错及处理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AFwebview2_child-process-failed-exitcode-1073740760"><span class="nav-number">4.1.</span> <span class="nav-text"> 错误：WebView2_Child process failed ExitCode:-1073740760</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AFsystemruntimenteropservicescomexception-0x8007139f"><span class="nav-number">4.2.</span> <span class="nav-text"> 错误：System.Runtime.nteropServices.COMException (0x8007139F)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +160,7 @@ process failed ExitCode:-1073740760</span></a></li><li class="nav-item nav-level
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -294,107 +293,73 @@ process failed ExitCode:-1073740760</span></a></li><li class="nav-item nav-level
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在 WPF 中使用 <code>webview2</code>
-组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：</p>
-<ol type="1">
+    <div class="post-body" itemprop="articleBody"><p>在 WPF 中使用 <code>webview2</code> 组件来展示网页，若打开之后，界面显示空白，目前读者遇到的可能的原因有：</p>
+<ol>
 <li>webview2 环境缺失或版本不对</li>
 <li>可能安装了某个软件，其注入 dll 到 webview2 失败</li>
 </ol>
 <p>可以通过以下步骤来详细排查：</p>
 <span id="more"></span>
-<h2 id="排查-webview2-问题">排查 webview2 问题</h2>
-<p>如果 webview2 版本太低或者与使用的 webview2 SDK
-不匹配时，也会出现页面空白问题，可以通过或修复 <a
-target="_blank" rel="noopener" href="https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/">webview2</a>
-来排除 webview2 环境影响。</p>
-<h2 id="通过代码进行异常排查">通过代码进行异常排查</h2>
+<h2 id="排查-webview2-问题"><a class="markdownIt-Anchor" href="#排查-webview2-问题"></a> 排查  webview2 问题</h2>
+<p>如果 webview2 版本太低或者与使用的 webview2 SDK 不匹配时，也会出现页面空白问题，可以通过或修复 <a target="_blank" rel="noopener" href="https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/">webview2</a> 来排除 webview2 环境影响。</p>
+<h2 id="通过代码进行异常排查"><a class="markdownIt-Anchor" href="#通过代码进行异常排查"></a> 通过代码进行异常排查</h2>
 <p>首先监听 webview2 事件（不用看逻辑，直接复制使用）：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webView.CoreWebView2.ProcessFailed += WebView_ProcessFailed;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// WebView_ProcessFailed</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">WebView_ProcessFailed</span>(<span class="params"><span class="built_in">object</span> sender, CoreWebView2ProcessFailedEventArgs e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">ReinitIfSelectedByUser</span>(<span class="params"><span class="built_in">string</span> caption, <span class="built_in">string</span> message</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Dispatcher.InvokeAsync(() =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> selection = MessageBox.Show(message, caption, MessageBoxButton.YesNo);</span><br><span class="line">            <span class="keyword">if</span> (selection == MessageBoxResult.Yes)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// The control cannot be re-initialized so we setup a new instance to replace it.</span></span><br><span class="line">                <span class="comment">// Note the previous instance of the control is disposed of and removed from the</span></span><br><span class="line">                <span class="comment">// visual tree before attaching the new one.</span></span><br><span class="line">                <span class="keyword">if</span> (_isControlInVisualTree)</span><br><span class="line">                &#123;</span><br><span class="line">                    RemoveControlFromVisualTree(webView);</span><br><span class="line">                &#125;</span><br><span class="line">                webView.Dispose();</span><br><span class="line">                webView = GetReplacementControl(<span class="literal">false</span>);</span><br><span class="line">                AttachControlToVisualTree(webView);</span><br><span class="line">                <span class="comment">// Set background transparent</span></span><br><span class="line">                webView.DefaultBackgroundColor = System.Drawing.Color.Transparent;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">ReloadIfSelectedByUser</span>(<span class="params"><span class="built_in">string</span> caption, <span class="built_in">string</span> message</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Dispatcher.InvokeAsync(() =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> selection = MessageBox.Show(message, caption, MessageBoxButton.YesNo);</span><br><span class="line">            <span class="keyword">if</span> (selection == MessageBoxResult.Yes)</span><br><span class="line">            &#123;</span><br><span class="line">                webView.Reload();</span><br><span class="line">                <span class="comment">// Set background transparent</span></span><br><span class="line">                webView.DefaultBackgroundColor = System.Drawing.Color.Transparent;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">bool</span> <span class="title">IsAppContentUri</span>(<span class="params">Uri source</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Sample virtual host name for the app&#x27;s content.</span></span><br><span class="line">        <span class="comment">// See CoreWebView2.SetVirtualHostNameToFolderMapping: https://learn.microsoft.com/dotnet/api/microsoft.web.webview2.core.corewebview2.setvirtualhostnametofoldermapping</span></span><br><span class="line">        <span class="keyword">return</span> source.Host == <span class="string">&quot;appassets.example&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (e.ProcessFailedKind == CoreWebView2ProcessFailedKind.FrameRenderProcessExited)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// A frame-only renderer has exited unexpectedly. Check if reload is needed.</span></span><br><span class="line">        <span class="comment">// In this sample we only reload if the app&#x27;s content has been impacted.</span></span><br><span class="line">        <span class="keyword">foreach</span> (CoreWebView2FrameInfo frameInfo <span class="keyword">in</span> e.FrameInfosForFailedProcess)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (IsAppContentUri(<span class="keyword">new</span> System.Uri(frameInfo.Source)))</span><br><span class="line">            &#123;</span><br><span class="line">                System.Threading.SynchronizationContext.Current.Post((_) =&gt;</span><br><span class="line">                &#123;</span><br><span class="line">                    ReloadIfSelectedByUser(<span class="string">&quot;App content frame unresponsive&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;Browser render process for app frame exited unexpectedly. Reload page?&quot;</span>);</span><br><span class="line">                &#125;, <span class="literal">null</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Show the process failure details. Apps can collect info for their logging purposes.</span></span><br><span class="line">    <span class="keyword">this</span>.Dispatcher.InvokeAsync(() =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        StringBuilder messageBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        messageBuilder.AppendLine(<span class="string">$&quot;Process kind: <span class="subst">&#123;e.ProcessFailedKind&#125;</span>&quot;</span>);</span><br><span class="line">        messageBuilder.AppendLine(<span class="string">$&quot;Reason: <span class="subst">&#123;e.Reason&#125;</span>&quot;</span>);</span><br><span class="line">        messageBuilder.AppendLine(<span class="string">$&quot;Exit code: <span class="subst">&#123;e.ExitCode&#125;</span>&quot;</span>);</span><br><span class="line">        messageBuilder.AppendLine(<span class="string">$&quot;Process description: <span class="subst">&#123;e.ProcessDescription&#125;</span>&quot;</span>);</span><br><span class="line">        MessageBox.Show(messageBuilder.ToString(), <span class="string">&quot;Child process failed&quot;</span>, MessageBoxButton.OK);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">if</span> (e.ProcessFailedKind == CoreWebView2ProcessFailedKind.BrowserProcessExited)</span><br><span class="line">    &#123;</span><br><span class="line">        ReinitIfSelectedByUser(<span class="string">&quot;Browser process exited&quot;</span>,</span><br><span class="line">            <span class="string">&quot;Browser process exited unexpectedly. Recreate webview?&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (e.ProcessFailedKind == CoreWebView2ProcessFailedKind.RenderProcessUnresponsive)</span><br><span class="line">    &#123;</span><br><span class="line">        ReinitIfSelectedByUser(<span class="string">&quot;Web page unresponsive&quot;</span>,</span><br><span class="line">            <span class="string">&quot;Browser render process has stopped responding. Recreate webview?&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (e.ProcessFailedKind == CoreWebView2ProcessFailedKind.RenderProcessExited)</span><br><span class="line">    &#123;</span><br><span class="line">        ReloadIfSelectedByUser(<span class="string">&quot;Web page unresponsive&quot;</span>,</span><br><span class="line">            <span class="string">&quot;Browser render process exited unexpectedly. Reload page?&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>获取到异常信息后，可以根据异常信息去排查问题。</p>
-<h2 id="通过-webview2-运行日志排查问题">通过 webview2
-运行日志排查问题</h2>
-<p>添加环境变量：<code>WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = --enable-logging --v=1 --log-file=c:\temp\webview2.log</code>
-来捕获 webview2 运行详细日志</p>
+<h2 id="通过-webview2-运行日志排查问题"><a class="markdownIt-Anchor" href="#通过-webview2-运行日志排查问题"></a> 通过 webview2 运行日志排查问题</h2>
+<p>添加环境变量：<code>WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = --enable-logging --v=1 --log-file=c:\temp\webview2.log</code> 来捕获 webview2 运行详细日志</p>
 <p>通过该详细日志来分析 webview2 报错。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS&#x27;</span>, <span class="string">&#x27;--enable-logging --v=1 --log-file=c:\temp\webview2.log&#x27;</span> , <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空环境变量</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS&#x27;</span>, <span class="string">&#x27;--enable-logging --v=1 --log-file=c:\temp\webview2.log&#x27;</span> , <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="已知报错及处理方案">已知报错及处理方案</h2>
-<h3
-id="错误webview2_child-process-failed-exitcode-1073740760">错误：WebView2_Child
-process failed ExitCode:-1073740760</h3>
+<h2 id="已知报错及处理方案"><a class="markdownIt-Anchor" href="#已知报错及处理方案"></a> 已知报错及处理方案</h2>
+<h3 id="错误webview2_child-process-failed-exitcode-1073740760"><a class="markdownIt-Anchor" href="#错误webview2_child-process-failed-exitcode-1073740760"></a> 错误：WebView2_Child process failed ExitCode:-1073740760</h3>
 <p>可以按以下 2 种方式来解决：</p>
-<ol type="1">
-<li><p>方法 1：卸载影响的软件</p>
-<p>通过事件查看器定位是哪个第三方 dll 注入失败，如果找到对应 dll
-属于哪个程序，可以对该程序进行修复或者卸载</p>
-<p>在 windows 搜索栏中搜索
-<code>eventvwr(又叫事件查看器)</code>，打开后找到
-【应用程序和服务日志】/【Microsoft】/【Windows】/【CodeIntegrity】/【Operational】，找到错误项进行查看。</p>
+<ol>
+<li>
+<p>方法 1：卸载影响的软件</p>
+<p>通过事件查看器定位是哪个第三方 dll 注入失败，如果找到对应 dll 属于哪个程序，可以对该程序进行修复或者卸载</p>
+<p>在 windows 搜索栏中搜索 <code>eventvwr(又叫事件查看器)</code>，打开后找到 【应用程序和服务日志】/【Microsoft】/【Windows】/【CodeIntegrity】/【Operational】，找到错误项进行查看。</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">#</span> 例如出现如下错误，说明是 Ldxghijt64.dll 注入失败导致的</span><br><span class="line"></span><br><span class="line">Code Integrity determined that a process (<span class="keyword">\Device</span><span class="keyword">\HarddiskVolume</span>5<span class="keyword">\Program</span> Files (x86)<span class="keyword">\Microsoft</span><span class="keyword">\EdgeWebView</span><span class="keyword">\Application</span><span class="keyword">\1</span>14.0.1823.67<span class="keyword">\msedgewebview</span>2.exe) attempted to load <span class="keyword">\Device</span><span class="keyword">\HarddiskVolume</span>5<span class="keyword">\Windows</span><span class="keyword">\System</span>32<span class="keyword">\Ldxghijt</span>64.dll that did not meet the Microsoft signing level requirements.</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>特别说明：</p>
 <p>Ldxghijt64.dll 是厦门天税绿盾软件的 dll。</p>
 <p>可以在任务管理器中通过搜索 Ld 开头的进程来定位目标位置。</p>
-</blockquote></li>
-<li><p>方法 2：禁用 dll 注入</p>
-<p>可以通过添加环境变量
-<code>WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS =--disable-features=RendererCodeIntegrity</code>
-来取消第三方 dll 注入</p>
+</blockquote>
+</li>
+<li>
+<p>方法 2：禁用 dll 注入</p>
+<p>可以通过添加环境变量 <code>WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS =--disable-features=RendererCodeIntegrity</code> 来取消第三方 dll 注入</p>
 <p>在 powershell(非管理员) 中运行以下命令行：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS&#x27;</span>, <span class="string">&#x27;--disable-features=RendererCodeIntegrity&#x27;</span> , <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>若上述操作不生效，可以通过修改注册表的方式来禁用第三方 dll 注入：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2&quot;</span> /v RendererCodeIntegrityEnabled /t REG_DWORD /d <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2&quot;</span> /v RendererCodeIntegrityEnabled /t REG_DWORD /d <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h3
-id="错误system.runtime.nteropservices.comexception-0x8007139f">错误：System.Runtime.nteropServices.COMException
-(0x8007139F)</h3>
+<h3 id="错误systemruntimenteropservicescomexception-0x8007139f"><a class="markdownIt-Anchor" href="#错误systemruntimenteropservicescomexception-0x8007139f"></a> 错误：System.Runtime.nteropServices.COMException (0x8007139F)</h3>
 <p>完整的错误如下：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">WebView2 creation failed with exception =</span><br><span class="line">System.Runtime.nteropServices.COMException (0x8007139F): 组或资源的状</span><br><span class="line">态不是执行请求操作的正确状态。(异常来自 HRESULT:Ox8007139F)</span><br><span class="line">在</span><br><span class="line">System.Runtime.lnteropServices.Marshal.ThrowExceptionForHRInternal(Int3</span><br><span class="line">2 errorCode, IntPtr errorlnfo)</span><br><span class="line">在</span><br><span class="line">Microsoft.Web.WebView2.Core.CoreWebView2Environment.&lt;CreateCoreW</span><br><span class="line">ebView2ControllerAsync&gt;d<span class="built_in">_</span>135.MoveNext0</span><br><span class="line">---引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">在 System.Runtime.ExceptionServices.ExceptionDispatchlnfo.Throw()</span><br><span class="line">在</span><br><span class="line">System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebu</span><br><span class="line">ggerNotification(Task task)</span><br><span class="line">在</span><br><span class="line">Microsoft.Web.WebView2.Wpf.WebView2.&lt;&gt;c<span class="built_in">_</span>DisplayClass34<span class="built_in">_</span>0.&lt;&lt;Ensur</span><br><span class="line">eCoreWebView2Async&gt;g<span class="built_in">_</span>Init|0&gt;d.MoveNext()</span><br></pre></td></tr></table></figure>
-<p>这种情况，一般是 webview2 COM 接口导致的错误，可以通过重装<a
-target="_blank" rel="noopener" href="https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/">WebView2
-- Microsoft Edge Developer</a> 来解决。</p>
-<p>如果重装不能完全解决这个问题的话，可以查看 webview2
-运行的日志来分析错误。</p>
+<p>这种情况，一般是 webview2 COM 接口导致的错误，可以通过重装<a target="_blank" rel="noopener" href="https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/">WebView2 - Microsoft Edge Developer</a> 来解决。</p>
+<p>如果重装不能完全解决这个问题的话，可以查看 webview2 运行的日志来分析错误。</p>
 <p>目前，作者遇到过的问题有：</p>
-<ol type="1">
-<li><p>DPI（分辨率）的问题</p>
-<p>可以在程序上右键【属性/兼容性/更改高 DPI 设置】，选中界面上的 DPI
-选项，如下图所示：</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230728123007643.png"
-alt="image-20230728123007643" />
-<figcaption aria-hidden="true">image-20230728123007643</figcaption>
-</figure></li>
+<ol>
+<li>
+<p>DPI（分辨率）的问题</p>
+<p>可以在程序上右键【属性/兼容性/更改高 DPI 设置】，选中界面上的 DPI 选项，如下图所示：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230728123007643.png" alt="image-20230728123007643" /></p>
+</li>
 </ol>
-<h2 id="参考">参考</h2>
-<ol type="1">
-<li><a
-target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/2761#issuecomment-1240969009">WebView2_Child
-process failed ExitCode:-1073740760</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3191">Why
-webview2 is displayed as a white screen, but other computers can use the
-same application</a></li>
-<li>https://github.com/MicrosoftEdge/WebView2Feedback/issues/349#issuecomment-1250870240</li>
-<li>https://support.templafy.com/hc/en-us/articles/10510746266525-How-to-repair-Webview2-Runtime</li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/569337543">ldxghijt64.dll
-是个什么东西？ - 知乎 (zhihu.com)</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008#issuecomment-1335747853">https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008#issuecomment-1335747853</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://www.digitalcitizen.life/remove-edit-clear-environment-variables/">How
-to edit, clear, and delete environment variables in Windows - Digital
-Citizen</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008">COMException
-0x8007139F in Microsoft.Web.WebView2.WinForms.WebView2.d__13.MoveNext
-·问题 #3008 ·MicrosoftEdge/WebView2Feedback (github.com)</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/2051#issuecomment-1461337741">did
-not meet the Microsoft signing level requirements</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36270361/article/details/111109622">解决Renderer
-Code Integrity造成Chrome浏览器崩溃</a></li>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/2761#issuecomment-1240969009">WebView2_Child process failed ExitCode:-1073740760</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3191">Why webview2 is displayed as a white screen, but other computers can use the same application</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/349#issuecomment-1250870240">https://github.com/MicrosoftEdge/WebView2Feedback/issues/349#issuecomment-1250870240</a></li>
+<li><a target="_blank" rel="noopener" href="https://support.templafy.com/hc/en-us/articles/10510746266525-How-to-repair-Webview2-Runtime">https://support.templafy.com/hc/en-us/articles/10510746266525-How-to-repair-Webview2-Runtime</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/569337543">ldxghijt64.dll 是个什么东西？ - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008#issuecomment-1335747853">https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008#issuecomment-1335747853</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.digitalcitizen.life/remove-edit-clear-environment-variables/">How to edit, clear, and delete environment variables in Windows - Digital Citizen</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/3008">COMException 0x8007139F in Microsoft.Web.WebView2.WinForms.WebView2.d__13.MoveNext ·问题 #3008 ·MicrosoftEdge/WebView2Feedback (github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MicrosoftEdge/WebView2Feedback/issues/2051#issuecomment-1461337741">did not meet the Microsoft signing level requirements</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36270361/article/details/111109622">解决Renderer Code Integrity造成Chrome浏览器崩溃</a></li>
 </ol>
 
     </div>
@@ -500,13 +465,13 @@ Code Integrity造成Chrome浏览器崩溃</a></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

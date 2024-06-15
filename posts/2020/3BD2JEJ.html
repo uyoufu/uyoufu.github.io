@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="用了一段时间的quasar了，它里面封装的 css 类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。">
+    <meta name="description" content="用了一段时间的quasar了，它里面封装的 css 类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quasar中css总结">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/3BD2JEJ.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="用了一段时间的quasar了，它里面封装的 css 类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。">
+<meta property="og:description" content="用了一段时间的quasar了，它里面封装的 css 类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.quasar.dev/img/flexbox-main-axis-align---2.svg">
 <meta property="og:image" content="https://cdn.quasar.dev/img/flexbox-cross-axis-align.svg">
@@ -96,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text">字体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.1.</span> <span class="nav-text">文字大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E7%B2%97%E7%BB%86"><span class="nav-number">1.2.</span> <span class="nav-text">字体粗细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%AF%B9%E9%BD%90"><span class="nav-number">1.3.</span> <span class="nav-text">字体对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2"><span class="nav-number">1.4.</span> <span class="nav-text">字体颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="nav-number">2.</span> <span class="nav-text">颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%89%B2"><span class="nav-number">2.1.</span> <span class="nav-text">基本色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E9%A2%9C%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text">其它颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-css-%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">在 css 中使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E8%B7%9D"><span class="nav-number">3.</span> <span class="nav-text">间距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B4%E5%BD%B1"><span class="nav-number">4.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">可见性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8A%9F%E8%83%BD"><span class="nav-number">5.1.</span> <span class="nav-text">常见功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">6.</span> <span class="nav-text">定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90"><span class="nav-number">6.1.</span> <span class="nav-text">对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E7%B1%BB"><span class="nav-number">7.</span> <span class="nav-text">辅助类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E7%9B%B8%E5%85%B3"><span class="nav-number">7.1.</span> <span class="nav-text">鼠标相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E7%9B%B8%E5%85%B3"><span class="nav-number">7.2.</span> <span class="nav-text">大小相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%90%91%E6%9C%89%E5%85%B3"><span class="nav-number">7.3.</span> <span class="nav-text">方向有关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E7%9B%B8%E5%85%B3"><span class="nav-number">7.4.</span> <span class="nav-text">边界相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex"><span class="nav-number">8.</span> <span class="nav-text">Flex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%B9%E5%90%91"><span class="nav-number">8.1.</span> <span class="nav-text">设置方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E8%A3%B9"><span class="nav-number">8.2.</span> <span class="nav-text">包裹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90-1"><span class="nav-number">8.3.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AF%B9%E9%BD%90"><span class="nav-number">8.4.</span> <span class="nav-text">自对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F"><span class="nav-number">8.5.</span> <span class="nav-text">大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F"><span class="nav-number">8.6.</span> <span class="nav-text">顺序</span></a></li></ol></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text"> 字体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.1.</span> <span class="nav-text"> 文字大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E7%B2%97%E7%BB%86"><span class="nav-number">1.2.</span> <span class="nav-text"> 字体粗细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%AF%B9%E9%BD%90"><span class="nav-number">1.3.</span> <span class="nav-text"> 字体对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2"><span class="nav-number">1.4.</span> <span class="nav-text"> 字体颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="nav-number">2.</span> <span class="nav-text"> 颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%89%B2"><span class="nav-number">2.1.</span> <span class="nav-text"> 基本色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E9%A2%9C%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text"> 其它颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-css-%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text"> 在 css 中使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E8%B7%9D"><span class="nav-number">3.</span> <span class="nav-text"> 间距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text"> 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text"> 例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B4%E5%BD%B1"><span class="nav-number">4.</span> <span class="nav-text"> 阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text"> 可见性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8A%9F%E8%83%BD"><span class="nav-number">5.1.</span> <span class="nav-text"> 常见功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">6.</span> <span class="nav-text"> 定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90"><span class="nav-number">6.1.</span> <span class="nav-text"> 对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E7%B1%BB"><span class="nav-number">7.</span> <span class="nav-text"> 辅助类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E7%9B%B8%E5%85%B3"><span class="nav-number">7.1.</span> <span class="nav-text"> 鼠标相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E7%9B%B8%E5%85%B3"><span class="nav-number">7.2.</span> <span class="nav-text"> 大小相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%90%91%E6%9C%89%E5%85%B3"><span class="nav-number">7.3.</span> <span class="nav-text"> 方向有关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E7%9B%B8%E5%85%B3"><span class="nav-number">7.4.</span> <span class="nav-text"> 边界相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex"><span class="nav-number">8.</span> <span class="nav-text"> Flex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%B9%E5%90%91"><span class="nav-number">8.1.</span> <span class="nav-text"> 设置方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E8%A3%B9"><span class="nav-number">8.2.</span> <span class="nav-text"> 包裹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90-2"><span class="nav-number">8.3.</span> <span class="nav-text"> 对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AF%B9%E9%BD%90"><span class="nav-number">8.4.</span> <span class="nav-text"> 自对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F"><span class="nav-number">8.5.</span> <span class="nav-text"> 大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F"><span class="nav-number">8.6.</span> <span class="nav-text"> 顺序</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -295,478 +295,408 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>用了一段时间的quasar了，它里面封装的 css
-类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。</p>
+    <div class="post-body" itemprop="articleBody"><p>用了一段时间的quasar了，它里面封装的 css 类确实很好用，但是在帮助文档中，描述得零零散散，不方便使用，遂总结一下。</p>
 <span id="more"></span>
-<h2 id="字体"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/typography#%E6%A0%87%E9%A2%98">字体</a></h2>
-<h3 id="文字大小">文字大小</h3>
+<h2 id="字体"><a class="markdownIt-Anchor" href="#字体"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/typography#%E6%A0%87%E9%A2%98">字体</a></h2>
+<h3 id="文字大小"><a class="markdownIt-Anchor" href="#文字大小"></a> 文字大小</h3>
 <p>text-[ h1~6, subtitle1, subtitle2, body1~2, caption, overline ]</p>
-<h3 id="字体粗细">字体粗细</h3>
+<h3 id="字体粗细"><a class="markdownIt-Anchor" href="#字体粗细"></a> 字体粗细</h3>
 <p>text-weight-[ thin, light, regular, medium, bold, bolder ]</p>
-<h3 id="字体对齐">字体对齐</h3>
-<p>text-[ right, left, center, justify, bold, italic, no-wrap, stike,
-uppercase, lowercase, captitalize ]</p>
-<h3 id="字体颜色">字体颜色</h3>
+<h3 id="字体对齐"><a class="markdownIt-Anchor" href="#字体对齐"></a> 字体对齐</h3>
+<p>text-[ right, left, center, justify, bold, italic, no-wrap, stike, uppercase, lowercase, captitalize ]</p>
+<h3 id="字体颜色"><a class="markdownIt-Anchor" href="#字体颜色"></a> 字体颜色</h3>
 <p>text-[颜色名称]：text-teal</p>
-<h2 id="颜色"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/color-palette">颜色</a></h2>
-<h3 id="基本色">基本色</h3>
+<h2 id="颜色"><a class="markdownIt-Anchor" href="#颜色"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/color-palette">颜色</a></h2>
+<h3 id="基本色"><a class="markdownIt-Anchor" href="#基本色"></a> 基本色</h3>
 <p>primary（淡蓝），secondary（淡绿），accent（淡紫），dark（黑色），positive（深绿），negative（红色），Info（亮蓝），warning（黄色）</p>
-<h3 id="其它颜色">其它颜色</h3>
+<h3 id="其它颜色"><a class="markdownIt-Anchor" href="#其它颜色"></a> 其它颜色</h3>
 <p>每种颜色由浅到深分为 1-14 级</p>
-<p>red, pink, purple, deep-purple, indigo（靛蓝）, blue, light-blue,
-cyan, teal（青色）, green, light-green, lime, yellow, amber, orange,
-deep-orange, brown, grey, blue-grey</p>
-<h3 id="在-css-中使用">在 css 中使用</h3>
+<p>red, pink, purple, deep-purple, indigo（靛蓝）, blue, light-blue, cyan, teal（青色）, green,  light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey</p>
+<h3 id="在-css-中使用"><a class="markdownIt-Anchor" href="#在-css-中使用"></a> 在 css 中使用</h3>
 <p>在应用程序的<code>*.vue</code>文件中，可以使用<code>$primary</code>，<code>$red-1</code>等颜色。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 注意lang=&quot;sass&quot; --&gt;</span><br><span class="line">&lt;style lang=&quot;sass&quot;&gt;</span><br><span class="line"><span class="selector-tag">div</span></span><br><span class="line">  <span class="attribute">color</span>: $red-<span class="number">1</span></span><br><span class="line">  background-color: $grey-<span class="number">5</span></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="间距"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/spacing">间距</a></h2>
-<h3 id="语法">语法</h3>
+<h2 id="间距"><a class="markdownIt-Anchor" href="#间距"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/spacing">间距</a></h2>
+<h3 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">q-[p|m][t|r|b|l|a|x|y]-[none|auto|xs|sm|md|lg|xl]</span><br><span class="line">    T       D                   S</span><br><span class="line"></span><br><span class="line">T - type</span><br><span class="line">  - values: p (padding), m (margin)</span><br><span class="line"></span><br><span class="line">D - direction</span><br><span class="line">  - values:</span><br><span class="line">      t (top), r (right), b (bottom), l (left),</span><br><span class="line">      a (all), x (both left &amp; right), y (both top &amp; bottom)</span><br><span class="line"></span><br><span class="line">S - size</span><br><span class="line">  - values:</span><br><span class="line">      none,</span><br><span class="line">      auto (ONLY for specific margins: q-ml-*, q-mr-*, q-mx-*),</span><br><span class="line">      xs (extra small),</span><br><span class="line">      sm (small),</span><br><span class="line">      md (medium),</span><br><span class="line">      lg (large),</span><br><span class="line">      xl (extra large)</span><br></pre></td></tr></table></figure>
-<h3 id="例子">例子</h3>
+<h3 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 所有方向小的padding --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;q-pa-sm&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 项部中margin, 右边小margin --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">q-card</span> <span class="attr">class</span>=<span class="string">&quot;q-mt-md q-mr-sm&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">q-card</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="阴影"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/shadows">阴影</a></h2>
+<h2 id="阴影"><a class="markdownIt-Anchor" href="#阴影"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/shadows">阴影</a></h2>
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 62%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>css 类名</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>no-shadow</code></td>
 <td>移除任何阴影</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>inset-shadow</code></td>
 <td>设置一个插入阴影</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>shadow-1</code></td>
 <td>设置1的深度</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>shadow-2</code></td>
 <td>设置2的深度</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>shadow-N</code></td>
 <td>其中<code>N</code>是1到24的整数</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>shadow-transition</code></td>
 <td>在阴影上应用CSS转换; 最好与<code>hoverable</code>类一起使用</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>shadow-up-1</td>
 <td>设置1的深度</td>
 </tr>
-<tr class="even">
+<tr>
 <td>shadow-up-2</td>
 <td>设置2的深度</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>shadow-up-N</td>
 <td>其中N是1到24的整数</td>
 </tr>
 </tbody>
 </table>
-<h2 id="可见性"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/visibility">可见性</a></h2>
-<h3 id="常见功能">常见功能</h3>
+<h2 id="可见性"><a class="markdownIt-Anchor" href="#可见性"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/visibility">可见性</a></h2>
+<h3 id="常见功能"><a class="markdownIt-Anchor" href="#常见功能"></a> 常见功能</h3>
 <table>
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 78%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>disabled</code></td>
-<td
-style="text-align: left;">游标更改为“disable”，不透明度设置为较低值。</td>
+<tr>
+<td style="text-align:left"><code>disabled</code></td>
+<td style="text-align:left">游标更改为“disable”，不透明度设置为较低值。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>hidden</code></td>
-<td
-style="text-align: left;">将<code>display</code>设置为<code>none</code>。与下面的类相比
-- <code>hidden</code>类意味着元素不会显示并且不会占用布局中的空间。</td>
+<tr>
+<td style="text-align:left"><code>hidden</code></td>
+<td style="text-align:left">将<code>display</code>设置为<code>none</code>。与下面的类相比 - <code>hidden</code>类意味着元素不会显示并且不会占用布局中的空间。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>invisible</code></td>
-<td
-style="text-align: left;">将<code>visibility</code>设置为<code>hidden</code>。与上面的类相比，<code>invisible</code>类意味着元素不会显示，但它仍然占用布局空间。</td>
+<tr>
+<td style="text-align:left"><code>invisible</code></td>
+<td style="text-align:left">将<code>visibility</code>设置为<code>hidden</code>。与上面的类相比，<code>invisible</code>类意味着元素不会显示，但它仍然占用布局空间。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>transparent</code></td>
-<td style="text-align: left;">背景颜色是透明的。</td>
+<tr>
+<td style="text-align:left"><code>transparent</code></td>
+<td style="text-align:left">背景颜色是透明的。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>dimmed</code></td>
-<td
-style="text-align: left;">在您的元素上应用深色透明覆盖层。不要在已经有<strong>:after</strong>伪元素的元素上使用。</td>
+<tr>
+<td style="text-align:left"><code>dimmed</code></td>
+<td style="text-align:left">在您的元素上应用深色透明覆盖层。不要在已经有**:after**伪元素的元素上使用。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>light-dimmed</code></td>
-<td
-style="text-align: left;">在您的元素上应用白色透明覆盖层。不要在已经有<strong>:after</strong>伪元素的元素上使用。</td>
+<tr>
+<td style="text-align:left"><code>light-dimmed</code></td>
+<td style="text-align:left">在您的元素上应用白色透明覆盖层。不要在已经有**:after**伪元素的元素上使用。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>ellipsis</code></td>
-<td
-style="text-align: left;">截取文本并在没有足够的可用空间时显示省略号。</td>
+<tr>
+<td style="text-align:left"><code>ellipsis</code></td>
+<td style="text-align:left">截取文本并在没有足够的可用空间时显示省略号。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>ellipsis-2-lines</code></td>
-<td
-style="text-align: left;">当两行中没有足够的可用空间时，截断文本并显示省略号（仅适用于Webkit浏览器）。</td>
+<tr>
+<td style="text-align:left"><code>ellipsis-2-lines</code></td>
+<td style="text-align:left">当两行中没有足够的可用空间时，截断文本并显示省略号（仅适用于Webkit浏览器）。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>ellipsis-3-lines</code></td>
-<td
-style="text-align: left;">当三行中没有足够的可用空间时，截断文本并显示省略号（仅适用于Webkit浏览器）。</td>
+<tr>
+<td style="text-align:left"><code>ellipsis-3-lines</code></td>
+<td style="text-align:left">当三行中没有足够的可用空间时，截断文本并显示省略号（仅适用于Webkit浏览器）。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>z-top</code></td>
-<td
-style="text-align: left;">将元素定位在任何其他组件的顶部，但位于Popovers、提示框、通知框之后。</td>
+<tr>
+<td style="text-align:left"><code>z-top</code></td>
+<td style="text-align:left">将元素定位在任何其他组件的顶部，但位于Popovers、提示框、通知框之后。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>z-max</code></td>
-<td
-style="text-align: left;">将元素定位在任何其他组件（包括Drawer，Modals，Notifications，Layout
-header/footer…）之上</td>
+<tr>
+<td style="text-align:left"><code>z-max</code></td>
+<td style="text-align:left">将元素定位在任何其他组件（包括Drawer，Modals，Notifications，Layout header/footer…）之上</td>
 </tr>
 </tbody>
 </table>
-<h2 id="定位"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/positioning">定位</a></h2>
-<h3 id="对齐">对齐</h3>
+<h2 id="定位"><a class="markdownIt-Anchor" href="#定位"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/positioning">定位</a></h2>
+<h3 id="对齐"><a class="markdownIt-Anchor" href="#对齐"></a> 对齐</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>float-left</code></td>
-<td style="text-align: left;">浮动到左侧</td>
+<tr>
+<td style="text-align:left"><code>float-left</code></td>
+<td style="text-align:left">浮动到左侧</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>float-right</code></td>
-<td style="text-align: left;">浮动到右侧</td>
+<tr>
+<td style="text-align:left"><code>float-right</code></td>
+<td style="text-align:left">浮动到右侧</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>on-left</code></td>
-<td
-style="text-align: left;">在右侧设置一个小边距;通常用于有兄弟元素的图标元素</td>
+<tr>
+<td style="text-align:left"><code>on-left</code></td>
+<td style="text-align:left">在右侧设置一个小边距;通常用于有兄弟元素的图标元素</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>on-right</code></td>
-<td
-style="text-align: left;">在左侧设置一个小边距;通常用于有兄弟元素的图标元素</td>
+<tr>
+<td style="text-align:left"><code>on-right</code></td>
+<td style="text-align:left">在左侧设置一个小边距;通常用于有兄弟元素的图标元素</td>
 </tr>
 </tbody>
 </table>
-<h2 id="辅助类"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/style/other-helper-classes">辅助类</a></h2>
-<h3 id="鼠标相关">鼠标相关</h3>
+<h2 id="辅助类"><a class="markdownIt-Anchor" href="#辅助类"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/style/other-helper-classes">辅助类</a></h2>
+<h3 id="鼠标相关"><a class="markdownIt-Anchor" href="#鼠标相关"></a> 鼠标相关</h3>
 <table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 58%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>non-selectable</code></td>
-<td style="text-align: left;">用户将无法选择DOM节点及其文本</td>
+<tr>
+<td style="text-align:left"><code>non-selectable</code></td>
+<td style="text-align:left">用户将无法选择DOM节点及其文本</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>scroll</code></td>
-<td
-style="text-align: left;">应用CSS调整使所有平台上的滚动工作达到最佳状态</td>
+<tr>
+<td style="text-align:left"><code>scroll</code></td>
+<td style="text-align:left">应用CSS调整使所有平台上的滚动工作达到最佳状态</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>no-scroll</code></td>
-<td style="text-align: left;">隐藏DOM节点上的滚动条</td>
+<tr>
+<td style="text-align:left"><code>no-scroll</code></td>
+<td style="text-align:left">隐藏DOM节点上的滚动条</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>no-pointer-events</code></td>
-<td style="text-align: left;">DOM元素不会成为鼠标事件的目标 -
-点击、悬停等</td>
+<tr>
+<td style="text-align:left"><code>no-pointer-events</code></td>
+<td style="text-align:left">DOM元素不会成为鼠标事件的目标 - 点击、悬停等</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>all-pointer-events</code></td>
-<td
-style="text-align: left;"><code>no-pointer-events</code>的反义词</td>
+<tr>
+<td style="text-align:left"><code>all-pointer-events</code></td>
+<td style="text-align:left"><code>no-pointer-events</code>的反义词</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>cursor-pointer</code></td>
-<td
-style="text-align: left;">改变DOM元素上的鼠标指针，看起来好像在可点击的链接上</td>
+<tr>
+<td style="text-align:left"><code>cursor-pointer</code></td>
+<td style="text-align:left">改变DOM元素上的鼠标指针，看起来好像在可点击的链接上</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>cursor-not-allowed</code></td>
-<td
-style="text-align: left;">更改DOM元素上的鼠标指针，使其看起来好像不会执行任何操作</td>
+<tr>
+<td style="text-align:left"><code>cursor-not-allowed</code></td>
+<td style="text-align:left">更改DOM元素上的鼠标指针，使其看起来好像不会执行任何操作</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>cursor-inherit</code></td>
-<td
-style="text-align: left;">将DOM元素上的鼠标指针更改为与父选项相同</td>
+<tr>
+<td style="text-align:left"><code>cursor-inherit</code></td>
+<td style="text-align:left">将DOM元素上的鼠标指针更改为与父选项相同</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>cursor-none</code></td>
-<td style="text-align: left;">没有鼠标光标被渲染</td>
+<tr>
+<td style="text-align:left"><code>cursor-none</code></td>
+<td style="text-align:left">没有鼠标光标被渲染</td>
 </tr>
 </tbody>
 </table>
-<h3 id="大小相关">大小相关</h3>
+<h3 id="大小相关"><a class="markdownIt-Anchor" href="#大小相关"></a> 大小相关</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>fit</code></td>
-<td style="text-align: left;">宽度和高度设置为100％</td>
+<tr>
+<td style="text-align:left"><code>fit</code></td>
+<td style="text-align:left">宽度和高度设置为100％</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>full-height</code></td>
-<td style="text-align: left;">高度设置为100％</td>
+<tr>
+<td style="text-align:left"><code>full-height</code></td>
+<td style="text-align:left">高度设置为100％</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>full-width</code></td>
-<td style="text-align: left;">宽度设置为100％</td>
+<tr>
+<td style="text-align:left"><code>full-width</code></td>
+<td style="text-align:left">宽度设置为100％</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>window-height</code></td>
-<td style="text-align: left;">高度设置为100vh，顶部和底部边距为0</td>
+<tr>
+<td style="text-align:left"><code>window-height</code></td>
+<td style="text-align:left">高度设置为100vh，顶部和底部边距为0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>window-width</code></td>
-<td style="text-align: left;">宽度设置为100vw，左边距和右边距0</td>
+<tr>
+<td style="text-align:left"><code>window-width</code></td>
+<td style="text-align:left">宽度设置为100vw，左边距和右边距0</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>block</code></td>
-<td
-style="text-align: left;">将<code>display</code>属性设置为<code>block</code></td>
+<tr>
+<td style="text-align:left"><code>block</code></td>
+<td style="text-align:left">将<code>display</code>属性设置为<code>block</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="方向有关">方向有关</h3>
+<h3 id="方向有关"><a class="markdownIt-Anchor" href="#方向有关"></a> 方向有关</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>rotate-45</code></td>
-<td style="text-align: left;">旋转45度</td>
+<tr>
+<td style="text-align:left"><code>rotate-45</code></td>
+<td style="text-align:left">旋转45度</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>rotate-90</code></td>
-<td style="text-align: left;">旋转90度</td>
+<tr>
+<td style="text-align:left"><code>rotate-90</code></td>
+<td style="text-align:left">旋转90度</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>rotate-135</code></td>
-<td style="text-align: left;">旋转135度</td>
+<tr>
+<td style="text-align:left"><code>rotate-135</code></td>
+<td style="text-align:left">旋转135度</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>rotate-180</code></td>
-<td style="text-align: left;">旋转180度</td>
+<tr>
+<td style="text-align:left"><code>rotate-180</code></td>
+<td style="text-align:left">旋转180度</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>rotate-205</code></td>
-<td style="text-align: left;">旋转205度</td>
+<tr>
+<td style="text-align:left"><code>rotate-205</code></td>
+<td style="text-align:left">旋转205度</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>rotate-270</code></td>
-<td style="text-align: left;">旋转270度</td>
+<tr>
+<td style="text-align:left"><code>rotate-270</code></td>
+<td style="text-align:left">旋转270度</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>rotate-315</code></td>
-<td style="text-align: left;">旋转315度</td>
+<tr>
+<td style="text-align:left"><code>rotate-315</code></td>
+<td style="text-align:left">旋转315度</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>flip-horizontal</code></td>
-<td style="text-align: left;">水平翻转DOM元素</td>
+<tr>
+<td style="text-align:left"><code>flip-horizontal</code></td>
+<td style="text-align:left">水平翻转DOM元素</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>flip-vertical</code></td>
-<td style="text-align: left;">垂直翻转DOM元素</td>
+<tr>
+<td style="text-align:left"><code>flip-vertical</code></td>
+<td style="text-align:left">垂直翻转DOM元素</td>
 </tr>
 </tbody>
 </table>
-<h3 id="边界相关">边界相关</h3>
+<h3 id="边界相关"><a class="markdownIt-Anchor" href="#边界相关"></a> 边界相关</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>no-border</code></td>
-<td style="text-align: left;">删除任何边框</td>
+<tr>
+<td style="text-align:left"><code>no-border</code></td>
+<td style="text-align:left">删除任何边框</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>no-border-radius</code></td>
-<td style="text-align: left;">删除边框可能具有的任何半径</td>
+<tr>
+<td style="text-align:left"><code>no-border-radius</code></td>
+<td style="text-align:left">删除边框可能具有的任何半径</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>rounded-borders</code></td>
-<td style="text-align: left;">应用通用边框半径</td>
+<tr>
+<td style="text-align:left"><code>rounded-borders</code></td>
+<td style="text-align:left">应用通用边框半径</td>
 </tr>
 </tbody>
 </table>
-<h2 id="flex"><a
-target="_blank" rel="noopener" href="http://www.quasarchs.com/layout/grid/introduction-to-flexbox">Flex</a></h2>
-<h3 id="设置方向">设置方向</h3>
+<h2 id="flex"><a class="markdownIt-Anchor" href="#flex"></a> <a target="_blank" rel="noopener" href="http://www.quasarchs.com/layout/grid/introduction-to-flexbox">Flex</a></h2>
+<h3 id="设置方向"><a class="markdownIt-Anchor" href="#设置方向"></a> 设置方向</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>row</code></td>
-<td style="text-align: left;">Flex行</td>
+<tr>
+<td style="text-align:left"><code>row</code></td>
+<td style="text-align:left">Flex行</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>row inline</code></td>
-<td style="text-align: left;">内联Flex行</td>
+<tr>
+<td style="text-align:left"><code>row inline</code></td>
+<td style="text-align:left">内联Flex行</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>column</code></td>
-<td style="text-align: left;">Flex列</td>
+<tr>
+<td style="text-align:left"><code>column</code></td>
+<td style="text-align:left">Flex列</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>column inline</code></td>
-<td style="text-align: left;">内联Flex列</td>
+<tr>
+<td style="text-align:left"><code>column inline</code></td>
+<td style="text-align:left">内联Flex列</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>row reverse</code></td>
-<td
-style="text-align: left;">将<code>flex-direction</code>设置为<code>row-reverse</code>的Flex行</td>
+<tr>
+<td style="text-align:left"><code>row reverse</code></td>
+<td style="text-align:left">将<code>flex-direction</code>设置为<code>row-reverse</code>的Flex行</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>column reverse</code></td>
-<td
-style="text-align: left;">将<code>flex-direction</code>设置为<code>column-reverse</code>的Flex列</td>
+<tr>
+<td style="text-align:left"><code>column reverse</code></td>
+<td style="text-align:left">将<code>flex-direction</code>设置为<code>column-reverse</code>的Flex列</td>
 </tr>
 </tbody>
 </table>
-<h3 id="包裹">包裹</h3>
+<h3 id="包裹"><a class="markdownIt-Anchor" href="#包裹"></a> 包裹</h3>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类名</th>
-<th style="text-align: left;">说明</th>
+<tr>
+<th style="text-align:left">类名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>wrap</code></td>
-<td
-style="text-align: left;">如有必要进行包裹（默认为“on”，不需要指定）</td>
+<tr>
+<td style="text-align:left"><code>wrap</code></td>
+<td style="text-align:left">如有必要进行包裹（默认为“on”，不需要指定）</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>no-wrap</code></td>
-<td style="text-align: left;">即使有必要，也不要包裹</td>
+<tr>
+<td style="text-align:left"><code>no-wrap</code></td>
+<td style="text-align:left">即使有必要，也不要包裹</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>reverse-wrap</code></td>
-<td style="text-align: left;">如有必要逆向包裹</td>
+<tr>
+<td style="text-align:left"><code>reverse-wrap</code></td>
+<td style="text-align:left">如有必要逆向包裹</td>
 </tr>
 </tbody>
 </table>
-<h3 id="对齐-1">对齐</h3>
+<h3 id="对齐-2"><a class="markdownIt-Anchor" href="#对齐-2"></a> 对齐</h3>
 <ul>
-<li><p>沿主轴</p>
-<figure>
-<img data-src="https://cdn.quasar.dev/img/flexbox-main-axis-align---2.svg"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-<li><p>垂直于主轴</p>
-<figure>
-<img data-src="https://cdn.quasar.dev/img/flexbox-cross-axis-align.svg"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-<li><p>多条主轴且有多余空间时</p>
-<figure>
-<img data-src="https://cdn.quasar.dev/img/flexbox-content-align.svg"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
+<li>
+<p>沿主轴</p>
+<p><img data-src="https://cdn.quasar.dev/img/flexbox-main-axis-align---2.svg" alt="img" /></p>
+</li>
+<li>
+<p>垂直于主轴</p>
+<p><img data-src="https://cdn.quasar.dev/img/flexbox-cross-axis-align.svg" alt="img" /></p>
+</li>
+<li>
+<p>多条主轴且有多余空间时</p>
+<p><img data-src="https://cdn.quasar.dev/img/flexbox-content-align.svg" alt="img" /></p>
+</li>
 </ul>
-<h3 id="自对齐">自对齐</h3>
-<p><strong>子元素可以覆盖父元素上指定的对齐方式</strong>。
-这允许对单个Flex项进行对齐。</p>
-<p>可用值有： <code>self-start</code>, <code>self-center</code>,
-<code>self-baseline</code>, <code>self-end</code>,
-<code>self-stretch</code></p>
-<figure>
-<img data-src="https://cdn.quasar.dev/img/flexbox-self.svg" alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="大小">大小</h3>
+<h3 id="自对齐"><a class="markdownIt-Anchor" href="#自对齐"></a> 自对齐</h3>
+<p><strong>子元素可以覆盖父元素上指定的对齐方式</strong>。 这允许对单个Flex项进行对齐。</p>
+<p>可用值有： <code>self-start</code>, <code>self-center</code>, <code>self-baseline</code>, <code>self-end</code>, <code>self-stretch</code></p>
+<p><img data-src="https://cdn.quasar.dev/img/flexbox-self.svg" alt="img" /></p>
+<h3 id="大小"><a class="markdownIt-Anchor" href="#大小"></a> 大小</h3>
 <p>与 flex 值使用类似</p>
-<p>Quasar使用一个12分的列系统来分配子行的大小。
-以下是可用的CSS辅助类的一些示例：</p>
+<p>Quasar使用一个12分的列系统来分配子行的大小。 以下是可用的CSS辅助类的一些示例：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-8&quot;</span>&gt;</span>two thirds<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-2&quot;</span>&gt;</span>one sixth<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-auto&quot;</span>&gt;</span>auto size based on content and available space<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col&quot;</span>&gt;</span>fills remaining available space<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在上面的例子中，由于8/12 = 2/3 =
-66％，col-8占据了行宽的三分之二（2/3），而col-2占据了六分之一（2/12 = 1
-/ 6〜16.67％）。</p>
-<p>CSS辅助类<code>col-auto</code>使单元格只填充需要渲染的空间。
-另一方面，<code>col</code>试图填充所有可用的空间，同时如果需要也可以缩小。</p>
+<p>在上面的例子中，由于8/12 = 2/3 = 66％，col-8占据了行宽的三分之二（2/3），而col-2占据了六分之一（2/12 = 1 / 6〜16.67％）。</p>
+<p>CSS辅助类<code>col-auto</code>使单元格只填充需要渲染的空间。 另一方面，<code>col</code>试图填充所有可用的空间，同时如果需要也可以缩小。</p>
 <p>CSS辅助类<code>col-grow</code>使单元格至少填充需要渲染的空间，并有可能在有更多空间可用时增长。</p>
 <p>CSS辅助类<code>col-shrink</code>使单元格最多填充需要呈现的空间，并且当没有足够的可用空间时有可能收缩。</p>
-<h3 id="顺序">顺序</h3>
-<p><strong>您可以使用<code>order-first</code>和<code>order-last</code>
-CSS辅助类来设置子元素的顺序</strong>。</p>
-<p>默认情况下，Flex项按源(source)顺序排列。
-但是，order属性控制它们在flex容器中的显示顺序。
-如果您需要更多粒度，请使用<code>order</code> CSS属性并分配所需的值。</p>
+<h3 id="顺序"><a class="markdownIt-Anchor" href="#顺序"></a> 顺序</h3>
+<p><strong>您可以使用<code>order-first</code>和<code>order-last</code> CSS辅助类来设置子元素的顺序</strong>。</p>
+<p>默认情况下，Flex项按源(source)顺序排列。 但是，order属性控制它们在flex容器中的显示顺序。 如果您需要更多粒度，请使用<code>order</code> CSS属性并分配所需的值。</p>
 <p>例子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;order: 2&quot;</span>&gt;</span>Second column<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;order-last&quot;</span>&gt;</span>Third column<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;order-first&quot;</span>&gt;</span>First column<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以下是CSS<code>order</code>属性的工作原理：</p>
-<figure>
-<img data-src="https://cdn.quasar.dev/img/flexbox-order.svg" alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img data-src="https://cdn.quasar.dev/img/flexbox-order.svg" alt="img" /></p>
 
     </div>
 
@@ -869,13 +799,13 @@ CSS辅助类来设置子元素的顺序</strong>。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

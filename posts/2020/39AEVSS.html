@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="ViewManager 是 Stylet 的核心组件之一，负责获取 ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到 ViewModel。 本文将告诉您这个过程是如何工作的，以及如何修改它。">
+    <meta name="description" content="ViewManager 是 Stylet 的核心组件之一，负责获取 ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到 ViewModel。 本文将告诉您这个过程是如何工作的，以及如何修改它。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）15-The ViewManager">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/39AEVSS.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="ViewManager 是 Stylet 的核心组件之一，负责获取 ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到 ViewModel。 本文将告诉您这个过程是如何工作的，以及如何修改它。">
+<meta property="og:description" content="ViewManager 是 Stylet 的核心组件之一，负责获取 ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到 ViewModel。 本文将告诉您这个过程是如何工作的，以及如何修改它。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,12 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E8%A7%86%E5%9B%BElocating-a-view"><span class="nav-number">1.</span> <span class="nav-text">定位视图（Locating a View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BEcreating-a-view"><span class="nav-number">2.</span> <span class="nav-text">创建视图（Creating a View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%A7%86%E5%9B%BE%E7%BB%91%E5%AE%9A%E5%88%B0%E5%AE%83%E7%9A%84%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Bbinding-the-view-to-its-viewmodel"><span class="nav-number">3.</span> <span class="nav-text">将视图绑定到它的视图模型（Binding
-the View to its ViewModel）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86-view.model-%E7%9A%84%E6%9B%B4%E6%94%B9dealing-with-view.model-changes"><span class="nav-number">4.</span> <span class="nav-text">处理
-View.Model 的更改（Dealing with View.Model
-Changes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86%E5%99%A8configuring-the-viewmanager"><span class="nav-number">5.</span> <span class="nav-text">配置视图管理器（Configuring
-the ViewManager）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84-viewmanagercreating-your-own-viewmanager"><span class="nav-number">6.</span> <span class="nav-text">创建自己的
-ViewManager（Creating your own ViewManager）</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E8%A7%86%E5%9B%BElocating-a-view"><span class="nav-number">1.</span> <span class="nav-text"> 定位视图（Locating a View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BEcreating-a-view"><span class="nav-number">2.</span> <span class="nav-text"> 创建视图（Creating a View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%A7%86%E5%9B%BE%E7%BB%91%E5%AE%9A%E5%88%B0%E5%AE%83%E7%9A%84%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8Bbinding-the-view-to-its-viewmodel"><span class="nav-number">3.</span> <span class="nav-text"> 将视图绑定到它的视图模型（Binding the View to its ViewModel）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86-viewmodel-%E7%9A%84%E6%9B%B4%E6%94%B9dealing-with-viewmodel-changes"><span class="nav-number">4.</span> <span class="nav-text"> 处理 View.Model 的更改（Dealing with View.Model Changes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%AE%A1%E7%90%86%E5%99%A8configuring-the-viewmanager"><span class="nav-number">5.</span> <span class="nav-text"> 配置视图管理器（Configuring the ViewManager）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84-viewmanagercreating-your-own-viewmanager"><span class="nav-number">6.</span> <span class="nav-text"> 创建自己的 ViewManager（Creating your own ViewManager）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,7 +157,7 @@ ViewManager（Creating your own ViewManager）</span></a></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -295,81 +290,57 @@ ViewManager（Creating your own ViewManager）</span></a></li></ol></div>
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>ViewManager 是 Stylet 的核心组件之一，负责获取
-ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到
-ViewModel。</p>
+    <div class="post-body" itemprop="articleBody"><p>ViewManager 是 Stylet 的核心组件之一，负责获取 ViewModel，并为其定位正确的视图。然后实例化该视图，并将其绑定到 ViewModel。</p>
 <p>本文将告诉您这个过程是如何工作的，以及如何修改它。</p>
 <span id="more"></span>
-<h2 id="定位视图locating-a-view">定位视图（Locating a View）</h2>
-<p>默认的视图定位策略非常简单: 将在 ViewModel的类型和名称空间中将字符串
-“ViewModel” 替换为字符串
-“View”，然后搜索所有已配置的程序集，寻找具有该名称的类型。</p>
+<h2 id="定位视图locating-a-view"><a class="markdownIt-Anchor" href="#定位视图locating-a-view"></a> 定位视图（Locating a View）</h2>
+<p>默认的视图定位策略非常简单: 将在 ViewModel的类型和名称空间中将字符串 “ViewModel” 替换为字符串 “View”，然后搜索所有已配置的程序集，寻找具有该名称的类型。</p>
 <p>就是这样。</p>
-<p>“已配置程序集” 是指 ViewManager 的 viewassembly
-属性中的所有程序集。如果您希望搜索更多的程序集，请将它们添加到此列表中(参见下面的示例)。</p>
-<p>这个过程由 <code>ViewManager.LocateViewForModel</code>
-控制。所以如果你想修改它，继续子类化
-<code>ViewManager</code>——参见本文底部的章节。</p>
-<h2 id="创建视图creating-a-view">创建视图（Creating a View）</h2>
-<p>一旦确定了视图类型，就通过调用提供给 ViewManager
-的工厂方法来实例化它。在默认情况下，引导程序将其设置为调用 IoC
-容器。然后调用
-<code>InitializeComponent</code>，这意味着如果需要，您可以删除您的后台代码。</p>
-<p>这是由<code>ViewManager.CreateViewForModel</code>
-处理的。你也可以覆盖它。</p>
-<h2
-id="将视图绑定到它的视图模型binding-the-view-to-its-viewmodel">将视图绑定到它的视图模型（Binding
-the View to its ViewModel）</h2>
+<p>“已配置程序集” 是指 ViewManager 的 viewassembly 属性中的所有程序集。如果您希望搜索更多的程序集，请将它们添加到此列表中(参见下面的示例)。</p>
+<p>这个过程由 <code>ViewManager.LocateViewForModel</code> 控制。所以如果你想修改它，继续子类化 <code>ViewManager</code>——参见本文底部的章节。</p>
+<h2 id="创建视图creating-a-view"><a class="markdownIt-Anchor" href="#创建视图creating-a-view"></a> 创建视图（Creating a View）</h2>
+<p>一旦确定了视图类型，就通过调用提供给 ViewManager 的工厂方法来实例化它。在默认情况下，引导程序将其设置为调用 IoC 容器。然后调用 <code>InitializeComponent</code>，这意味着如果需要，您可以删除您的后台代码。</p>
+<p>这是由<code>ViewManager.CreateViewForModel</code> 处理的。你也可以覆盖它。</p>
+<h2 id="将视图绑定到它的视图模型binding-the-view-to-its-viewmodel"><a class="markdownIt-Anchor" href="#将视图绑定到它的视图模型binding-the-view-to-its-viewmodel"></a> 将视图绑定到它的视图模型（Binding the View to its ViewModel）</h2>
 <p>绑定视图模型及其对应的视图非常简单:</p>
 <ul>
-<li><p>视图的 DataContext 被设置为 ViewModel。</p></li>
-<li><p>视图的 ActionTarget 被设置为 ViewModel(参见
-[[Actions]])。</p></li>
-<li><p>如果 ViewModel 实现了 <code>ViewAware</code>，则调用它的
-<code>AttachView</code> 方法，并传递视图(参见 [[Screens and
-conductor]])。</p></li>
+<li>
+<p>视图的 DataContext 被设置为 ViewModel。</p>
+</li>
+<li>
+<p>视图的 ActionTarget 被设置为 ViewModel(参见 [[Actions]])。</p>
+</li>
+<li>
+<p>如果 ViewModel 实现了 <code>ViewAware</code>，则调用它的 <code>AttachView</code> 方法，并传递视图(参见 [[Screens and conductor]])。</p>
+</li>
 </ul>
-<h2 id="处理-view.model-的更改dealing-with-view.model-changes">处理
-<code>View.Model</code> 的更改（Dealing with <code>View.Model</code>
-Changes）</h2>
-<p>ViewManager 还负责响应 <code>ContentControl</code> 中
-<code>View.Model</code> 附加属性的更改——参见 [[ViewModel First]]。</p>
-<p>它将获取附加属性的新值(应该绑定到 ViewModel 实例)，并使用
-<code>CreateViewForModel</code> 和 <code>BindViewToModel</code>
-创建一个新的配置视图实例，然后将其设置为 <code>ContentControl</code>
-的内容。</p>
-<h2
-id="配置视图管理器configuring-the-viewmanager">配置视图管理器（Configuring
-the ViewManager）</h2>
-<p>ViewManager 是可配置的。要配置它，在你的 <code>Configure</code>
-方法中获取它的一个实例:</p>
+<h2 id="处理-viewmodel-的更改dealing-with-viewmodel-changes"><a class="markdownIt-Anchor" href="#处理-viewmodel-的更改dealing-with-viewmodel-changes"></a> 处理 <code>View.Model</code> 的更改（Dealing with <code>View.Model</code> Changes）</h2>
+<p>ViewManager 还负责响应 <code>ContentControl</code> 中 <code>View.Model</code>  附加属性的更改——参见 [[ViewModel First]]。</p>
+<p>它将获取附加属性的新值(应该绑定到 ViewModel 实例)，并使用 <code>CreateViewForModel</code> 和 <code>BindViewToModel</code> 创建一个新的配置视图实例，然后将其设置为 <code>ContentControl</code> 的内容。</p>
+<h2 id="配置视图管理器configuring-the-viewmanager"><a class="markdownIt-Anchor" href="#配置视图管理器configuring-the-viewmanager"></a> 配置视图管理器（Configuring the ViewManager）</h2>
+<p>ViewManager 是可配置的。要配置它，在你的 <code>Configure</code> 方法中获取它的一个实例:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Configure</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> viewManager = <span class="keyword">this</span>.Container.Get&lt;ViewManager&gt;();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一旦你有了它，有几个事情你可以配置:</p>
 <ul>
-<li><p><code>ViewSuffix</code>: 视图类名的后缀。默认为 “View”。</p></li>
-<li><p><code>ViewModelSuffix</code>: 视图类名的后缀。默认为
-“ViewModel”。</p></li>
-<li><p><code>Viewassembly</code>:
-要扫描哪些程序集的视图。默认包含引导程序的程序集。</p></li>
-<li><p><code>namespacetransformation</code>: 这是一个
-<code>from -&gt; to</code>
-替换的字典，允许你的视图和视图模型存在于不同的名称空间中。如果你的视图位于<code>Foo.Frontend.Views</code>
-中。视图模型位于 <code>Foo.FrontendLogic.ViewModels</code>
-中。你可以添加一个条目（键值对）到这个关键字为 "Foo.Frontend“ 和值为
-“Foo.FrontendLogic”字典。注意，您必须包含所有的根名称空间:
-您不能在这里使用 从 “Frontend” 到 “FrontendLogic” 的转换。</p></li>
+<li>
+<p><code>ViewSuffix</code>: 视图类名的后缀。默认为 “View”。</p>
+</li>
+<li>
+<p><code>ViewModelSuffix</code>: 视图类名的后缀。默认为 “ViewModel”。</p>
+</li>
+<li>
+<p><code>Viewassembly</code>: 要扫描哪些程序集的视图。默认包含引导程序的程序集。</p>
+</li>
+<li>
+<p><code>namespacetransformation</code>: 这是一个 <code>from -&gt; to</code> 替换的字典，允许你的视图和视图模型存在于不同的名称空间中。如果你的视图位于<code>Foo.Frontend.Views</code> 中。视图模型位于 <code>Foo.FrontendLogic.ViewModels</code> 中。你可以添加一个条目（键值对）到这个关键字为 &quot;Foo.Frontend“ 和值为 “Foo.FrontendLogic”字典。注意，您必须包含所有的根名称空间: 您不能在这里使用 从 “Frontend” 到 “FrontendLogic” 的转换。</p>
+</li>
 </ul>
-<h2 id="创建自己的-viewmanagercreating-your-own-viewmanager">创建自己的
-ViewManager（Creating your own ViewManager）</h2>
-<p>当 Stylet 需要 ViewManager 时，它从 IoC 容器中检索一个
-<code>IViewManager</code> 实例。这意味着您可以创建一个您想要的
-IViewManager 实现，并将其注册到 IoC 容器中，Stylet 将获取并使用它。</p>
+<h2 id="创建自己的-viewmanagercreating-your-own-viewmanager"><a class="markdownIt-Anchor" href="#创建自己的-viewmanagercreating-your-own-viewmanager"></a> 创建自己的 ViewManager（Creating your own ViewManager）</h2>
+<p>当 Stylet 需要 ViewManager 时，它从 IoC 容器中检索一个 <code>IViewManager</code> 实例。这意味着您可以创建一个您想要的 IViewManager 实现，并将其注册到 IoC 容器中，Stylet 将获取并使用它。</p>
 <p>一个非常简单的例子:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CustomViewManager.cs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CustomViewManager</span> : <span class="title">ViewManager</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">CustomViewManager</span>(<span class="params">ViewManagerConfig config</span>)</span></span><br><span class="line"><span class="function">      : <span class="title">base</span>(<span class="params">config</span>)</span></span><br><span class="line">   &#123; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> UIElement <span class="title">CreateAndSetupViewForModel</span>(<span class="params"><span class="built_in">object</span> model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// This dummy application only has one view, and it&#x27;s this one :)</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> SingletonView();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Bootstrapper.cs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Bootstrapper</span> : <span class="title">Bootstrapper</span>&lt;<span class="title">MyRootViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">ConfigureIoC</span>(<span class="params">IStyletIoCBuilder builder</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      builder.Bind&lt;IViewManager&gt;().To&lt;CustomViewManager&gt;();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是它!</p>
-<p>更完整的示例可以在 <a
-target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Samples/Stylet.Samples.OverridingViewManager"><code>Stylet.Samples.OverridingViewManager</code>
-sample</a>。</p>
+<p>更完整的示例可以在 <a target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Samples/Stylet.Samples.OverridingViewManager"><code>Stylet.Samples.OverridingViewManager</code> sample</a>。</p>
 
     </div>
 
@@ -439,8 +410,8 @@ sample</a>。</p>
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2020/3R00ZSM.html" rel="next" title="WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread">
-                  WPF MVVM Stylet使用文档（中文）10-Execute：Dispatching to the UI thread <i class="fa fa-angle-right"></i>
+                <a href="/posts/2020/1HXBM8H.html" rel="next" title="WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase">
+                  WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -473,13 +444,13 @@ sample</a>。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

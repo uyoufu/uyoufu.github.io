@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="初学 JavalScrip 时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数, 而更不能理解的是，它的实例是通过 new 函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。">
+    <meta name="description" content="初学 JavalScrip 时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数,  而更不能理解的是，它的实例是通过 new 函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js中对象的创建及理解">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/ZWWE36.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="初学 JavalScrip 时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数, 而更不能理解的是，它的实例是通过 new 函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。">
+<meta property="og:description" content="初学 JavalScrip 时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数,  而更不能理解的是，它的实例是通过 new 函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-06T00:47:52.517Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-c-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">用 C# 创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-js-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">用 js 创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">js 创建对象原理分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BD%93%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">将构造函数当作函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">构造函数方式的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BC%98%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">最优的对象声明方式</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-c-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text"> 用 C# 创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-js-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text"> 用 js 创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text"> js 创建对象原理分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BD%93%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text"> 将构造函数当作函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text"> 构造函数方式的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BC%98%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text"> 最优的对象声明方式</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -290,45 +290,64 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>初学 JavalScrip
-时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数,
-而更不能理解的是，它的实例是通过 new
-函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。</p>
+    <div class="post-body" itemprop="articleBody"><p>初学 JavalScrip 时，它的自由让人很不适应，特别是对于对象的创建，很是疑惑：它没有类的概念（初学时了解的水平），也没有构造函数,  而更不能理解的是，它的实例是通过 new 函数得到的。直到看了《JavaScrip高级程序设计》之后，才恍然大悟，特此总结，希望能给那些初学者一点解惑之光，若有不足之处，还请斧正。</p>
 <span id="more"></span>
-<h2 id="用-c-创建对象">用 C# 创建对象</h2>
+<h2 id="用-c-创建对象"><a class="markdownIt-Anchor" href="#用-c-创建对象"></a> 用 C# 创建对象</h2>
 <p>首先，我们看一下，在 C# 中怎么创建一个对象</p>
 <ul>
-<li><p>定义类</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 定义属性</span></span><br><span class="line">    <span class="keyword">public</span> String Name &#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Age &#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> name,<span class="built_in">int</span> age</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Name = name;</span><br><span class="line">        <span class="keyword">this</span>.Age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>创建C#对象</p>
+<li>
+<p>定义类</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 定义属性</span></span><br><span class="line">    <span class="keyword">public</span> String Name &#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Age &#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> name,<span class="built_in">int</span> age</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Name = name;</span><br><span class="line">        <span class="keyword">this</span>.Age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>创建C#对象</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person person = <span class="keyword">new</span> Person(<span class="string">&#x27;zhangsan&#x27;</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-<p>上面就是 C# 创建对象的过程</p></li>
+<p>上面就是 C# 创建对象的过程</p>
+</li>
 </ul>
-<h2 id="用-js-创建对象">用 js 创建对象</h2>
+<h2 id="用-js-创建对象"><a class="markdownIt-Anchor" href="#用-js-创建对象"></a> 用 js 创建对象</h2>
 <p>现在我们再来看一下 js 中如何创建对象（ES5中构造函数方式）</p>
 <ul>
-<li><p>定义函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fuction <span class="title class_">Person</span>(name,age)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>创建 js 对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// const ES6 中的声明</span></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;lisi&#x27;</span>,<span class="number">19</span>);</span><br></pre></td></tr></table></figure></li>
+<li>
+<p>定义函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fuction <span class="title class_">Person</span>(name,age)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>创建 js 对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// const ES6 中的声明</span></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;lisi&#x27;</span>,<span class="number">19</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="js-创建对象原理分析">js 创建对象原理分析</h2>
-<p>要理解 js 中创建对象为什么可以 new
-函数得到，我们需要追本溯源，一步一步了解 js 中创建对象的演变</p>
+<h2 id="js-创建对象原理分析"><a class="markdownIt-Anchor" href="#js-创建对象原理分析"></a> js 创建对象原理分析</h2>
+<p>要理解 js 中创建对象为什么可以 new 函数得到，我们需要追本溯源，一步一步了解 js 中创建对象的演变</p>
 <ul>
-<li><p>最开始是 new Object 形式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;lisi&#x27;</span>;</span><br><span class="line">person.<span class="property">age</span> = <span class="number">19</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;lisi&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>然后是工厂模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createPerson</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">	o.<span class="property">name</span> = name;</span><br><span class="line">	o.<span class="property">age</span> = age;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>随着演变，出现了构造函数模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义构造函数时，首字母建议大写，用于区别一般函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>分析</p>
+<li>
+<p>最开始是 new Object 形式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;lisi&#x27;</span>;</span><br><span class="line">person.<span class="property">age</span> = <span class="number">19</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;lisi&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>然后是工厂模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createPerson</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">	o.<span class="property">name</span> = name;</span><br><span class="line">	o.<span class="property">age</span> = age;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>随着演变，出现了构造函数模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义构造函数时，首字母建议大写，用于区别一般函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>分析</p>
 <p>对比工厂模式和构造函数模式，我们可以看到有如下区别</p>
 <ul>
-<li><p>后者没有显式地创建对象</p></li>
-<li><p>直接将属性和方法赋给了 this 对象</p></li>
-<li><p>没有 return 语句</p></li>
-<li><p>创建新实例的时候，必须用 new</p></li>
+<li>
+<p>后者没有显式地创建对象</p>
+</li>
+<li>
+<p>直接将属性和方法赋给了 this 对象</p>
+</li>
+<li>
+<p>没有 return 语句</p>
+</li>
+<li>
+<p>创建新实例的时候，必须用 new</p>
+</li>
 </ul>
 <p>构造函数在创建对象的时候，其实经过了下面步骤：</p>
 <ul>
@@ -336,32 +355,23 @@
 <li>将构造函数的作用域赋给新对象（因此 this 指向了新的对象）</li>
 <li>执行构造函数的代码（为这个新对象添加属性）</li>
 <li>返回新对象</li>
-</ul></li>
 </ul>
-<p>通过上面分析，我们就很容易地理解了，为什么 new
-一个函数可以创建对象</p>
-<h2 id="将构造函数当作函数">将构造函数当作函数</h2>
-<p>构造函数与其他函数的唯一区别，就在于调用它们的方式不同。不过，构造函数毕竟也是函数，不存在定义构造函数的特殊语法。任何函数，只要通过
-new 操作符来调用，那它就可以作为构造函数；而任何函数，如果不通过 new
-操作符来调用，那它跟普通函数也不会有什么两样。不过直接调用的时候，它就是向上下文的
-this 添加字段。</p>
-<h2 id="构造函数方式的问题">构造函数方式的问题</h2>
+</li>
+</ul>
+<p>通过上面分析，我们就很容易地理解了，为什么 new 一个函数可以创建对象</p>
+<h2 id="将构造函数当作函数"><a class="markdownIt-Anchor" href="#将构造函数当作函数"></a> 将构造函数当作函数</h2>
+<p>构造函数与其他函数的唯一区别，就在于调用它们的方式不同。不过，构造函数毕竟也是函数，不存在定义构造函数的特殊语法。任何函数，只要通过 new 操作符来调用，那它就可以作为构造函数；而任何函数，如果不通过 new 操作符来调用，那它跟普通函数也不会有什么两样。不过直接调用的时候，它就是向上下文的 this 添加字段。</p>
+<h2 id="构造函数方式的问题"><a class="markdownIt-Anchor" href="#构造函数方式的问题"></a> 构造函数方式的问题</h2>
 <p>使用构造函数的主要问题，就是每个方法都要在每个实例上重新创建一遍。</p>
 <p>例如有如下构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当实例化多个 Person 后，每个实例中的 sayName
-不是同一个，上面的定义可以等价为：</p>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">new</span> <span class="title class_">Function</span>(<span class="string">&quot;alert(this.name)&quot;</span>); <span class="comment">// 与声明函数在逻辑上是等价的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然而，创建两个完成同样任务的 Function 实例的确没有必要；况且有 this
-对象在，根本不用在执行代码前就把函数绑定到特定对象上面。因此，大可像下面这样，通过把函数定义转移到构造函数外部来解决这个问题。</p>
+<p>当实例化多个 Person 后，每个实例中的 sayName 不是同一个，上面的定义可以等价为：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">new</span> <span class="title class_">Function</span>(<span class="string">&quot;alert(this.name)&quot;</span>); <span class="comment">// 与声明函数在逻辑上是等价的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而，创建两个完成同样任务的 Function 实例的确没有必要；况且有 this 对象在，根本不用在执行代码前就把函数绑定到特定对象上面。因此，大可像下面这样，通过把函数定义转移到构造函数外部来解决这个问题。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">sayName</span> = sayName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayName</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们把
-sayName()函数的定义转移到了构造函数外部。而在构造函数内部，我们将
-sayName 属性设置成等于全局的 sayName 函数。这样一来，由于 sayName
-包含的是一个指向函数的指针。</p>
-<h2 id="最优的对象声明方式">最优的对象声明方式</h2>
-<p>既然分析了 js
-创建对象的原理，那么现在就必须要分享一下，什么是最优的对象声明方式了。原理部分直接省略，此处只给出最终的答案——动态原型模式：</p>
+<p>我们把 sayName()函数的定义转移到了构造函数外部。而在构造函数内部，我们将 sayName 属性设置成等于全局的 sayName 函数。这样一来，由于 sayName 包含的是一个指向函数的指针。</p>
+<h2 id="最优的对象声明方式"><a class="markdownIt-Anchor" href="#最优的对象声明方式"></a> 最优的对象声明方式</h2>
+<p>既然分析了 js 创建对象的原理，那么现在就必须要分享一下，什么是最优的对象声明方式了。原理部分直接省略，此处只给出最终的答案——动态原型模式：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>)&#123;</span><br><span class="line">    <span class="comment">// 属性</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line">    <span class="comment">// 方法: 在原型上声明</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span>.<span class="property">sayName</span> != <span class="string">&quot;function&quot;</span>)&#123;</span><br><span class="line">        <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">            &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -466,13 +476,13 @@ sayName 属性设置成等于全局的 sayName 函数。这样一来，由于 sa
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

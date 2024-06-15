@@ -19,18 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言 最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export default。阿西吧，头都大了.... 头大完了，那我们坐下先理理他们的使用范围。 12345require:  node 支持的引入module.exports &#x2F; exports: 只有 node 支持的导出export &#x2F; import : 只有es6 支持的导出引入 这一刻起，我觉">
+    <meta name="description" content="前言 最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export default。阿西吧，头都大了… 头大完了，那我们坐下先理理他们的使用范围。 12345require:  node 支持的引入module.exports &#x2F; exports: 只有 node 支持的导出export &#x2F; import : 只有es6 支持的导出引入 这一刻起，我觉得是时候要把它">
 <meta property="og:type" content="article">
 <meta property="og:title" content="exports、module.exports 和 export、export default 到底是咋回事？">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1PNK91Q.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="前言 最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export default。阿西吧，头都大了.... 头大完了，那我们坐下先理理他们的使用范围。 12345require:  node 支持的引入module.exports &#x2F; exports: 只有 node 支持的导出export &#x2F; import : 只有es6 支持的导出引入 这一刻起，我觉">
+<meta property="og:description" content="前言 最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export default。阿西吧，头都大了… 头大完了，那我们坐下先理理他们的使用范围。 12345require:  node 支持的引入module.exports &#x2F; exports: 只有 node 支持的导出export &#x2F; import : 只有es6 支持的导出引入 这一刻起，我觉得是时候要把它">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/7/31/6227d4e0917f4af649d9f9e750eddb09?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="article:published_time" content="2020-07-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-06T00:47:52.516Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/7/31/6227d4e0917f4af649d9f9e750eddb09?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2020/1PNK91Q.html">
@@ -90,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node%E6%A8%A1%E5%9D%97"><span class="nav-number">2.</span> <span class="nav-text">node模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%87%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">node 模块的导出方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">导出函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%A4%9A%E4%B8%AA%E5%87%BD%E6%95%B0%E5%92%8C%E5%80%BC"><span class="nav-number">2.4.</span> <span class="nav-text">导出多个函数和值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E5%8F%98%E5%8C%96"><span class="nav-number">2.5.</span> <span class="nav-text">语法变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">2.6.</span> <span class="nav-text">导出默认值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text">ES6 中的模块导出导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#export-%E5%92%8C-export-default"><span class="nav-number">3.1.</span> <span class="nav-text">export 和 export default</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">5.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node%E6%A8%A1%E5%9D%97"><span class="nav-number">2.</span> <span class="nav-text"> node模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text"> 理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%87%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text"> node 模块的导出方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text"> 导出函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%A4%9A%E4%B8%AA%E5%87%BD%E6%95%B0%E5%92%8C%E5%80%BC"><span class="nav-number">2.4.</span> <span class="nav-text"> 导出多个函数和值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E5%8F%98%E5%8C%96"><span class="nav-number">2.5.</span> <span class="nav-text"> 语法变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">2.6.</span> <span class="nav-text"> 导出默认值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text"> ES6 中的模块导出导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#export-%E5%92%8C-export-default"><span class="nav-number">3.1.</span> <span class="nav-text"> export 和 export default</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">5.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -289,97 +291,90 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="前言">前言</h2>
-<p>最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export
-default。阿西吧，头都大了....</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>最近使用 node 和 vue 一起编程，想到 ES6 各种 export 、export default。阿西吧，头都大了…</p>
 <p>头大完了，那我们坐下先理理他们的使用范围。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">require:  node 支持的引入</span><br><span class="line"></span><br><span class="line">module.exports / exports: 只有 node 支持的导出</span><br><span class="line"></span><br><span class="line">export / import : 只有es6 支持的导出引入</span><br></pre></td></tr></table></figure>
 <p>这一刻起，我觉得是时候要把它们之间的关系都给捋清楚了，不然我得混乱死。话不多少，咱们开干！！</p>
 <span id="more"></span>
-<h2 id="node模块">node模块</h2>
-<h3 id="理解">理解</h3>
+<h2 id="node模块"><a class="markdownIt-Anchor" href="#node模块"></a> node模块</h2>
+<h3 id="理解"><a class="markdownIt-Anchor" href="#理解"></a> 理解</h3>
 <p>Node里面的模块系统遵循的是 CommonJS 规范。</p>
 <p>那问题又来了，什么是CommonJS规范呢？</p>
 <p>由于js以前比较混乱，各写各的代码，没有一个模块的概念，而这个规范出来其实就是对模块的一个定义。</p>
-<p><strong>CommonJS定义的模块分为: 模块标识(module)、模块定义(exports)
-、模块引用(require)</strong></p>
+<p><strong>CommonJS定义的模块分为: 模块标识(module)、模块定义(exports) 、模块引用(require)</strong></p>
 <p>先解释 exports 和 module.exports</p>
-<p>在一个 node 执行一个文件时，会给这个文件内生成一个 exports 和 module
-对象， 而 module 又有一个 exports
-属性。他们都指向一块{}内存区域，关系如下图。</p>
+<p>在一个 node 执行一个文件时，会给这个文件内生成一个 exports 和 module 对象，<br />
+而 module 又有一个 exports 属性。他们都指向一块{}内存区域，关系如下图。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span> = <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;&#125;;</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://user-gold-cdn.xitu.io/2017/7/31/6227d4e0917f4af649d9f9e750eddb09?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" /></p>
+<p><img data-src="https://user-gold-cdn.xitu.io/2017/7/31/6227d4e0917f4af649d9f9e750eddb09?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="" /></p>
 <p>那下面我们来看看代码的吧。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//utils.js</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">module</span>.<span class="property">exports</span>); <span class="comment">//能打印出结果为：&#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">exports</span>); <span class="comment">//能打印出结果为：&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">a</span> = <span class="number">200</span>; <span class="comment">//这里辛苦劳作帮 module.exports 的内容给改成 &#123;a : 200&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">a</span> = <span class="number">100</span>; <span class="comment">//修改内存里面的值为100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span> = <span class="string">&#x27;指向其他内存区&#x27;</span>; <span class="comment">//这里把exports的指向指走</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">&#x27;/utils&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 打印为 &#123;a : 100&#125; </span></span><br></pre></td></tr></table></figure>
-<p>从上面可以看出，其实 require 导出的内容是 module.exports
-的指向的内存块内容，并不是exports 的。</p>
-<p>简而言之，区分他们之间的区别就是 exports 只是 module.exports
-的引用，辅助后者添加内容用的。下面的摘抄<a
-target="_blank" rel="noopener" href="https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_module_exports">nodejs官方的代码</a>：</p>
+<p>从上面可以看出，其实 require 导出的内容是 module.exports 的指向的内存块内容，并不是exports 的。</p>
+<p>简而言之，区分他们之间的区别就是 exports 只是 module.exports 的引用，辅助后者添加内容用的。下面的摘抄<a target="_blank" rel="noopener" href="https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_module_exports">nodejs官方的代码</a>：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">require</span>(<span class="params"><span class="comment">/* ... */</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="variable language_">module</span> = &#123; <span class="attr">exports</span>: &#123;&#125; &#125;;</span><br><span class="line">  (<span class="function">(<span class="params"><span class="variable language_">module</span>, <span class="built_in">exports</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// Module code here. In this example, define a function.</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">someFunc</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">exports</span> = someFunc;</span><br><span class="line">    <span class="comment">// At this point, exports is no longer a shortcut to module.exports, and</span></span><br><span class="line">    <span class="comment">// this module will still export an empty default object.</span></span><br><span class="line">    <span class="variable language_">module</span>.<span class="property">exports</span> = someFunc;</span><br><span class="line">    <span class="comment">// At this point, the module will now export someFunc, instead of the</span></span><br><span class="line">    <span class="comment">// default object.</span></span><br><span class="line">  &#125;)(<span class="variable language_">module</span>, <span class="variable language_">module</span>.<span class="property">exports</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">module</span>.<span class="property">exports</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用白话讲就是，exports 只辅助 module.exports
-操作内存中的数据，辛辛苦苦各种操作数据完，累得要死，结果到最后真正被
-require 出去的内容还是 module.exports 的，真是好苦逼啊。</p>
+<p>用白话讲就是，exports 只辅助 module.exports 操作内存中的数据，辛辛苦苦各种操作数据完，累得要死，结果到最后真正被 require 出去的内容还是 module.exports 的，真是好苦逼啊。</p>
 <p>其实大家用内存块的概念去理解，就会很清楚了。</p>
-<p>然后呢，为了避免糊涂，尽量都用 module.exports 导出，然后用 require
-导入。</p>
-<h3 id="node-模块的导出方式">node 模块的导出方式</h3>
+<p>然后呢，为了避免糊涂，尽量都用 module.exports 导出，然后用 require 导入。</p>
+<h3 id="node-模块的导出方式"><a class="markdownIt-Anchor" href="#node-模块的导出方式"></a> node 模块的导出方式</h3>
 <p>上面讲了 exports, module.exports 的区别</p>
 <p>接下来总结一下使用 CommonJS 规范时，有哪些导出形式</p>
-<h3 id="导出函数">导出函数</h3>
+<h3 id="导出函数"><a class="markdownIt-Anchor" href="#导出函数"></a> 导出函数</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义模块</span></span><br><span class="line"><span class="comment">// user.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">getName</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Jim&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">getName</span> = getName;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用模块</span></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="built_in">require</span>(<span class="string">&#x27;./user&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`User: <span class="subst">$&#123;user.getName()&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结果</span></span><br><span class="line"><span class="title class_">User</span>: <span class="title class_">Jim</span></span><br></pre></td></tr></table></figure>
-<h3 id="导出多个函数和值">导出多个函数和值</h3>
+<h3 id="导出多个函数和值"><a class="markdownIt-Anchor" href="#导出多个函数和值"></a> 导出多个函数和值</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="comment">// user.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">getName</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Jim&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">getLocation</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Munich&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dateOfBirth = <span class="string">&#x27;12.01.1982&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">getName</span> = getName;</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">getLocation</span> = getLocation;</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">dob</span> = dateOfBirth;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="built_in">require</span>(<span class="string">&#x27;./user&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">  <span class="string">`<span class="subst">$&#123;user.getName()&#125;</span> lives in <span class="subst">$&#123;user.getLocation()&#125;</span> and was born on <span class="subst">$&#123;user.dob&#125;</span>.`</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结果</span></span><br><span class="line"><span class="title class_">Jim</span> lives <span class="keyword">in</span> <span class="title class_">Munich</span> and was born on <span class="number">12.01</span><span class="number">.1982</span>.</span><br></pre></td></tr></table></figure>
 <p>在导出的过程中，可以与原变量有不同的名字</p>
-<h3 id="语法变化">语法变化</h3>
+<h3 id="语法变化"><a class="markdownIt-Anchor" href="#语法变化"></a> 语法变化</h3>
 <p>我们可以在文件的任何地方导出方法或者值:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.<span class="property">getName</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Jim&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">getLocation</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Munich&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">dob</span> = <span class="string">&#x27;12.01.1982&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="导出默认值">导出默认值</h3>
-<p>上面的方式是对函数和值进行分别导出，这种方式适合于帮助类。但当你只想导出一个对象的时候，可以使用
-<code>module.exports</code>:</p>
+<h3 id="导出默认值"><a class="markdownIt-Anchor" href="#导出默认值"></a> 导出默认值</h3>
+<p>上面的方式是对函数和值进行分别导出，这种方式适合于帮助类。但当你只想导出一个对象的时候，可以使用 <code> module.exports</code>:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name, age, email</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">email</span> = email;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">getUserStats</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">      Name: <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span></span></span><br><span class="line"><span class="string">      Age: <span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span></span></span><br><span class="line"><span class="string">      Email: <span class="subst">$&#123;<span class="variable language_">this</span>.email&#125;</span></span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处直接将类赋值给 module.exports</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title class_">User</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="es6-中的模块导出导入">ES6 中的模块导出导入</h2>
-<p>说实话，在 es
-中的模块，就非常清晰了。不过也有一些细节的东西需要搞清楚。</p>
-<p>比如 export 和 export default，还有 导入的时候，import a from ..,
-import {a} from ..，总之也有点乱，那么下面我们就开始把它们捋清楚吧。</p>
-<h3 id="export-和-export-default">export 和 export default</h3>
+<h2 id="es6-中的模块导出导入"><a class="markdownIt-Anchor" href="#es6-中的模块导出导入"></a> ES6 中的模块导出导入</h2>
+<p>说实话，在 es 中的模块，就非常清晰了。不过也有一些细节的东西需要搞清楚。</p>
+<p>比如 export 和 export default，还有 导入的时候，import a from …, import {a} from …，总之也有点乱，那么下面我们就开始把它们捋清楚吧。</p>
+<h3 id="export-和-export-default"><a class="markdownIt-Anchor" href="#export-和-export-default"></a> export 和 export default</h3>
 <p>首先我们讲这两个导出，下面我们讲讲它们的区别：</p>
 <ul>
-<li><p>export 与 export default
-均可用于导出常量、函数、文件、模块等</p></li>
-<li><p>在一个文件或模块中，export、import 可以有多个，export default
-仅有一个</p></li>
-<li><p>通过 export 方式导出，在导入时要加{ name }，export default
-则不需要</p></li>
-<li><p>export 导入时，只能使用定义时的名称，而 export default
-导入时，可以是任意名称</p></li>
-<li><p>export 能直接导出变量表达式，export default 不行</p></li>
+<li>
+<p>export 与 export default 均可用于导出常量、函数、文件、模块等</p>
+</li>
+<li>
+<p>在一个文件或模块中，export、import 可以有多个，export default 仅有一个</p>
+</li>
+<li>
+<p>通过 export 方式导出，在导入时要加{ name }，export default 则不需要</p>
+</li>
+<li>
+<p>export 导入时，只能使用定义时的名称，而 export default 导入时，可以是任意名称</p>
+</li>
+<li>
+<p>export 能直接导出变量表达式，export default 不行</p>
+</li>
 </ul>
-<p>上面的两种方式，export 适合于一个模块中有 0 个或者多个 export
-的情况；export default 则只能有一个。</p>
+<p>上面的两种方式，export 适合于一个模块中有 0 个或者多个 export 的情况；export default 则只能有一个。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出独立的特征</span></span><br><span class="line"><span class="comment">// Exporting individual features</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> name1, name2, …, nameN; <span class="comment">// also var, const</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> name1 = …, name2 = …, …, nameN; <span class="comment">// also var, const</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">functionName</span>(<span class="params"></span>)&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">ClassName</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出列表</span></span><br><span class="line"><span class="comment">// Export list</span></span><br><span class="line"><span class="keyword">export</span> &#123; name1, name2, …, nameN &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出时重命名</span></span><br><span class="line"><span class="comment">// Renaming exports</span></span><br><span class="line"><span class="keyword">export</span> &#123; variable1 <span class="keyword">as</span> name1, variable2 <span class="keyword">as</span> name2, …, nameN &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出时解构并重命名</span></span><br><span class="line"><span class="comment">// Exporting destructured assignments with renaming</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; name1, <span class="attr">name2</span>: bar &#125; = o;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default exports</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> expression;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params">…</span>) &#123; … &#125; <span class="comment">// also class, function*</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">name1</span>(<span class="params">…</span>) &#123; … &#125; <span class="comment">// also class, function*</span></span><br><span class="line"><span class="keyword">export</span> &#123; name1 <span class="keyword">as</span> <span class="keyword">default</span>, … &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 聚合模块：用于聚合其它模块并在当前模块导出</span></span><br><span class="line"><span class="comment">// Aggregating modules</span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> …; <span class="comment">// does not set the default export </span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">as</span> name1 <span class="keyword">from</span> …; <span class="comment">// Draft ECMAScript® 2O21</span></span><br><span class="line"><span class="keyword">export</span> &#123; name1, name2, …, nameN &#125; <span class="keyword">from</span> …;</span><br><span class="line"><span class="keyword">export</span> &#123; import1 <span class="keyword">as</span> name1, import2 <span class="keyword">as</span> name2, …, nameN &#125; <span class="keyword">from</span> …;</span><br><span class="line"><span class="keyword">export</span> &#123; <span class="keyword">default</span> &#125; <span class="keyword">from</span> …;</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
 <ul>
 <li>在 node 中使用 module.exports exports 和 require</li>
 <li>在 ES6 中使用 export export default 和 import</li>
 </ul>
-<h2 id="致谢">致谢</h2>
-<ol type="1">
-<li><p><a
-target="_blank" rel="noopener" href="https://juejin.im/post/6844903489257095181">exports、module.exports
-和 export、export default 到底是咋回事</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/">Understanding
-module.exports and exports in Node.js</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">MDN
-export</a></p></li>
+<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903489257095181">exports、module.exports 和 export、export default 到底是咋回事</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/">Understanding module.exports and exports in Node.js</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">MDN export</a></p>
+</li>
 </ol>
 
     </div>
@@ -483,13 +478,13 @@ export</a></p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

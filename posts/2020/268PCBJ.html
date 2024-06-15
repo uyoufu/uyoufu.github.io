@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介 引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel 的新实例，并使用 WindowManager 显示它。">
+    <meta name="description" content="简介 引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel 的新实例，并使用 WindowManager 显示它。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）03-Bootstrapper">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/268PCBJ.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介 引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel 的新实例，并使用 WindowManager 显示它。">
+<meta property="og:description" content="简介 引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel 的新实例，并使用 WindowManager 显示它。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,8 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-ioc-%E5%AE%B9%E5%99%A8using-a-custom-ioc-container"><span class="nav-number">2.</span> <span class="nav-text">使用自定义的 IoC 容器(Using a Custom IoC Container)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91-app.xmal-%E6%B7%BB%E5%8A%A0%E8%B5%84%E6%BA%90%E5%AD%97%E5%85%B8adding-resource-dictionaries-to-appxmal"><span class="nav-number">3.</span> <span class="nav-text">向 App.xmal 添加资源字典(Adding Resource Dictionaries to
-App,xmal)</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-ioc-%E5%AE%B9%E5%99%A8using-a-custom-ioc-container"><span class="nav-number">2.</span> <span class="nav-text"> 使用自定义的 IoC 容器(Using a Custom IoC Container)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91-appxmal-%E6%B7%BB%E5%8A%A0%E8%B5%84%E6%BA%90%E5%AD%97%E5%85%B8adding-resource-dictionaries-to-appxmal"><span class="nav-number">3.</span> <span class="nav-text"> 向 App.xmal 添加资源字典(Adding Resource Dictionaries to App,xmal)</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +157,7 @@ App,xmal)</span></a></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -291,44 +290,26 @@ App,xmal)</span></a></li></ol></div>
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介">简介</h2>
-<p>引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel
-的新实例，并使用 WindowManager 显示它。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>引导程序负责启动应用程序。它配置 IoC 容器，创建根 ViewModel 的新实例，并使用 WindowManager 显示它。</p>
 <span id="more"></span>
 <p>它还提供了其他各种功能，如下所述。</p>
 <p>引导程序有两种形式:</p>
-<ol type="1">
-<li><code>BootstrapperBase&lt;TRootViewModel&gt;</code>，这种需要您自己配置
-IoC 容器;</li>
-<li><code>Bootstrapper &lt;TRootViewModel&gt;</code>，使用 Stylet 的内置
-IoC 容器 StyletIoC。</li>
+<ol>
+<li><code>BootstrapperBase&lt;TRootViewModel&gt;</code>，这种需要您自己配置 IoC 容器;</li>
+<li><code>Bootstrapper &lt;TRootViewModel&gt;</code>，使用 Stylet 的内置 IoC 容器 StyletIoC。</li>
 </ol>
 <p>示例 Bootstrapper，使用 StyletIoC:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Bootstrapper</span> : <span class="title">Bootstrapper</span>&lt;<span class="title">MyRootViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnStart</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// This is called just after the application is started, but before the IoC container is set up.</span></span><br><span class="line">      <span class="comment">// Set up things like logging, etc</span></span><br><span class="line">      <span class="comment">//程序启动之后，IoC窗口配置之前调用</span></span><br><span class="line">      <span class="comment">//进行一些设置，比如日志</span></span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">ConfigureIoC</span>(<span class="params">IStyletIoCBuilder builder</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Bind your own types. Concrete types are automatically self-bound.</span></span><br><span class="line">      builder.Bind&lt;IMyInterface&gt;().To&lt;MyType&gt;();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Configure</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// This is called after Stylet has created the IoC container, so this.Container exists, but before the Root ViewModel is launched.</span></span><br><span class="line">      <span class="comment">// Configure your services, etc, in here</span></span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnLaunch</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// This is called just after the root ViewModel has been launched</span></span><br><span class="line">      <span class="comment">// Something like a version check that displays a dialog might be launched from here</span></span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnExit</span>(<span class="params">ExitEventArgs e</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Called on Application.Exit</span></span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnUnhandledException</span>(<span class="params">DispatcherUnhandledExceptionEventArgs e</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Called on Application.DispatcherUnhandledException</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用自定义的-ioc-容器using-a-custom-ioc-container"><a
-href="">使用自定义的 IoC 容器(Using a Custom IoC Container)</a></h2>
-<p>使用带有 Stylet 的另一个 IoC 容器很容易。我在 <a
-target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Bootstrappers">Bootstrappers
-project</a> 中包含了许多流行的 IoC
-容器的bootstrappers。这些都是经过单元测试而非实战测试的:
-您可以随意定制它们。</p>
-<p>注意，Stylet nuget package/dll
-不包括这些，因为它会添加不必要的依赖。同样，我也不会发布特定的 IoC
-容器的包，因为这是一种浪费。</p>
-<p>将您想要的引导程序从上面的链接复制到您的项目中。然后子类化它，就像您通常子类化<code>Bootstrapper&lt;TRootViewModel&gt;</code>，上面有文档说明。然后将子类添加到
-App.xaml.cs 中。正如 <a href="">Quick Start</a> 中说明的那样。</p>
+<h2 id="使用自定义的-ioc-容器using-a-custom-ioc-container"><a class="markdownIt-Anchor" href="#使用自定义的-ioc-容器using-a-custom-ioc-container"></a> <a href="">使用自定义的 IoC 容器(Using a Custom IoC Container)</a></h2>
+<p>使用带有 Stylet 的另一个 IoC 容器很容易。我在 <a target="_blank" rel="noopener" href="https://github.com/canton7/Stylet/tree/master/Bootstrappers">Bootstrappers project</a> 中包含了许多流行的 IoC 容器的bootstrappers。这些都是经过单元测试而非实战测试的: 您可以随意定制它们。</p>
+<p>注意，Stylet nuget package/dll 不包括这些，因为它会添加不必要的依赖。同样，我也不会发布特定的 IoC 容器的包，因为这是一种浪费。</p>
+<p>将您想要的引导程序从上面的链接复制到您的项目中。然后子类化它，就像您通常子类化<code>Bootstrapper&lt;TRootViewModel&gt;</code>，上面有文档说明。然后将子类添加到 App.xaml.cs 中。正如 <a href="">Quick Start</a> 中说明的那样。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Bootstrapper</span> : <span class="title">AutofacBootstrapper</span>&lt;<span class="title">ShellViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Application</span> <span class="attr">x:Class</span>=<span class="string">&quot;Stylet.Samples.Hello.App&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:local</span>=<span class="string">&quot;clr-namespace:Stylet.Samples.Hello&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">s:ApplicationLoader</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">s:ApplicationLoader.Bootstrapper</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">local:Bootstrapper</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">s:ApplicationLoader.Bootstrapper</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">s:ApplicationLoader</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Application</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如果您想为另一个 IoC
-容器编写自己的引导程序，这也很容易。看看上面的描述，看看需要做什么。</p>
-<h2
-id="向-app.xmal-添加资源字典adding-resource-dictionaries-to-appxmal"><a
-href="">向 App.xmal 添加资源字典(Adding Resource Dictionaries to
-App,xmal)</a></h2>
-<p><code>s:ApplicationLoader</code> 本身就是一个
-ResourceDictionary。如果你需要将自己的资源字典添加到 App.xaml
-中，你需要将<code>s:ApplicationLoader</code> 嵌入到你的
-ResourceDictionary 中作为一个合并字典，就像这样:</p>
+<p>如果您想为另一个 IoC 容器编写自己的引导程序，这也很容易。看看上面的描述，看看需要做什么。</p>
+<h2 id="向-appxmal-添加资源字典adding-resource-dictionaries-to-appxmal"><a class="markdownIt-Anchor" href="#向-appxmal-添加资源字典adding-resource-dictionaries-to-appxmal"></a> <a href="">向 App.xmal 添加资源字典(Adding Resource Dictionaries to App,xmal)</a></h2>
+<p><code>s:ApplicationLoader</code> 本身就是一个 ResourceDictionary。如果你需要将自己的资源字典添加到 App.xaml 中，你需要将<code>s:ApplicationLoader</code> 嵌入到你的 ResourceDictionary 中作为一个合并字典，就像这样:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;Application.Resources&gt;</span><br><span class="line">    &lt;ResourceDictionary&gt;</span><br><span class="line">        &lt;ResourceDictionary.MergedDictionaries&gt;</span><br><span class="line">            &lt;s:ApplicationLoader&gt;</span><br><span class="line">                &lt;s:ApplicationLoader.Bootstrapper&gt;</span><br><span class="line">                    &lt;local:Bootstrapper/&gt;</span><br><span class="line">                &lt;/s:ApplicationLoader.Bootstrapper&gt;</span><br><span class="line">            &lt;/s:ApplicationLoader&gt;</span><br><span class="line"></span><br><span class="line">            &lt;ResourceDictionary Source=<span class="string">&quot;YourDictionary.xaml&quot;</span>/&gt;</span><br><span class="line">        &lt;/ResourceDictionary.MergedDictionaries&gt;</span><br><span class="line">    &lt;/ResourceDictionary&gt;</span><br><span class="line">&lt;/Application.Resources&gt;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -433,13 +414,13 @@ ResourceDictionary 中作为一个合并字典，就像这样:</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

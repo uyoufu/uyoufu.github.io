@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-number">1.</span> <span class="nav-text">生成密钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0-linux-%E8%B4%A6%E6%88%B7"><span class="nav-number">2.</span> <span class="nav-text">将公钥添加到 Linux 账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9F"><span class="nav-number">3.</span> <span class="nav-text">验证是否添加成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E7%84%B6%E6%97%A0%E6%B3%95%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">依然无法免密码登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-number">1.</span> <span class="nav-text"> 生成密钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0-linux-%E8%B4%A6%E6%88%B7"><span class="nav-number">2.</span> <span class="nav-text"> 将公钥添加到 Linux 账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9F"><span class="nav-number">3.</span> <span class="nav-text"> 验证是否添加成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E7%84%B6%E6%97%A0%E6%B3%95%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text"> 依然无法免密码登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -281,38 +281,34 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。</p>
 <span id="more"></span>
-<h2 id="生成密钥对">生成密钥对</h2>
-<p>打开 <code>cmd</code> 或者
-<code>Powershell</code>，按下列步骤操作：</p>
+<h2 id="生成密钥对"><a class="markdownIt-Anchor" href="#生成密钥对"></a> 生成密钥对</h2>
+<p>打开 <code>cmd</code> 或者 <code>Powershell</code>，按下列步骤操作：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这条命令用于生成密钥</span></span><br><span class="line"><span class="comment"># 随后一路回车，当看到一幅矩形图生成，那么密钥生成成功</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa</span><br></pre></td></tr></table></figure>
-<h2 id="将公钥添加到-linux-账户">将公钥添加到 Linux 账户</h2>
-<p>打开 <code>cmd</code> 或者
-<code>Powershell</code>，执行下列命令：</p>
+<h2 id="将公钥添加到-linux-账户"><a class="markdownIt-Anchor" href="#将公钥添加到-linux-账户"></a> 将公钥添加到 Linux 账户</h2>
+<p>打开 <code>cmd</code> 或者 <code>Powershell</code>，执行下列命令：</p>
 <p><strong>cmd</strong> :</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@host &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot; &lt; ~\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p><strong>Powershell</strong>：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Content</span> ~\.ssh\id_rsa.pub | ssh username@host <span class="string">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="验证是否添加成功">验证是否添加成功</h2>
-<p>cmd 下输入 <code>ssh username@host uname</code> 如果看到输出Linux
-表示添加成功。</p>
-<p>同样可以直接输入 <code>ssh username@host</code>
-这时可以看到不用输入密码即可登录 Linux 了。</p>
-<h2 id="依然无法免密码登录">依然无法免密码登录</h2>
-<p>添加key之后还是需要输入密码,主要排查方法是
-<code>ssh username@host -vvv</code> 输出debug信息，或者remote机器使用
-<code>cat /var/log/secure</code> 查看日志</p>
+<h2 id="验证是否添加成功"><a class="markdownIt-Anchor" href="#验证是否添加成功"></a> 验证是否添加成功</h2>
+<p>cmd 下输入 <code>ssh username@host uname</code> 如果看到输出Linux 表示添加成功。</p>
+<p>同样可以直接输入 <code>ssh username@host</code> 这时可以看到不用输入密码即可登录 Linux 了。</p>
+<h2 id="依然无法免密码登录"><a class="markdownIt-Anchor" href="#依然无法免密码登录"></a> 依然无法免密码登录</h2>
+<p>添加key之后还是需要输入密码,主要排查方法是 <code>ssh username@host -vvv</code> 输出debug信息，或者remote机器使用 <code>cat /var/log/secure</code> 查看日志</p>
 <p>可能的原因是:</p>
 <ul>
-<li><p>目录权限问题</p>
-<p>远程目录.ssh 和.ssh 目录下的文件的权限需要分别设置700和600</p></li>
-<li><p>找不到密钥</p>
-<p>ssh登录命令添加参数 <code>-i C:\User\name\.ssh\id_rsa</code>
-手动指定密钥文件</p></li>
+<li>
+<p>目录权限问题</p>
+<p>远程目录.ssh 和.ssh 目录下的文件的权限需要分别设置700和600</p>
+</li>
+<li>
+<p>找不到密钥</p>
+<p>ssh登录命令添加参数 <code>-i C:\User\name\.ssh\id_rsa</code> 手动指定密钥文件</p>
+</li>
 </ul>
-<h2 id="参考">参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a
-target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1960726">windows免密码ssh登录linux</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1960726">windows免密码ssh登录linux</a></p>
 
     </div>
 
@@ -382,8 +378,8 @@ target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2024/2H0WTET.html" rel="next" title="VSCode 远程 Linux 后, 使用 Docker 插件报错Permission denied">
-                  VSCode 远程 Linux 后, 使用 Docker 插件报错Permission denied <i class="fa fa-angle-right"></i>
+                <a href="/posts/2024/T4KD3R.html" rel="next" title="Docker 开源 UI 管理工具比选及安装">
+                  Docker 开源 UI 管理工具比选及安装 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -416,13 +412,13 @@ target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

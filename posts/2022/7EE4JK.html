@@ -19,18 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：  每次输入密码，很麻烦，也不极客 服务器开放账号密码登陆，容易补暴力破解  我们可以通过配置公钥登陆来解决上述问题。">
+    <meta name="description" content="通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：  每次输入密码，很麻烦，也不极客 服务器开放账号密码登陆，容易补暴力破解  我们可以通过配置公钥登陆来解决上述问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2022-01-04-通过公钥 ssh 远程连接 Windows Server">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/7EE4JK.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：  每次输入密码，很麻烦，也不极客 服务器开放账号密码登陆，容易补暴力破解  我们可以通过配置公钥登陆来解决上述问题。">
+<meta property="og:description" content="通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：  每次输入密码，很麻烦，也不极客 服务器开放账号密码登陆，容易补暴力破解  我们可以通过配置公钥登陆来解决上述问题。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/ssh-login.webp">
 <meta property="article:published_time" content="2022-01-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-03T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/ssh-login.webp">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/7EE4JK.html">
@@ -90,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,8 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E4%B8%AD%E5%90%84%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">SSH 中各个模块作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E7%99%BB%E9%99%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ssh 登陆流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85openssh"><span class="nav-number">3.</span> <span class="nav-text">安装OpenSSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%94%BE-22tcp-%E7%AB%AF%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text">开放 22&#x2F;tcp 端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%E5%AF%B9"><span class="nav-number">6.</span> <span class="nav-text">客户端生成公钥&#x2F;私钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%E5%AF%B9"><span class="nav-number">7.</span> <span class="nav-text">配置公钥&#x2F;私钥对</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">7.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">7.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%96%E6%B6%88%E7%AE%A1%E7%90%86%E5%91%98%E5%85%AC%E9%92%A5%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">8.</span> <span class="nav-text">windows
-服务器取消管理员公钥文件重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86"><span class="nav-number">9.</span> <span class="nav-text">关闭密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF-sshd-%E6%9C%8D%E5%8A%A1"><span class="nav-number">10.</span> <span class="nav-text">重启 sshd 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">11.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E4%B8%AD%E5%90%84%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text"> SSH 中各个模块作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E7%99%BB%E9%99%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> ssh 登陆流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85openssh"><span class="nav-number">3.</span> <span class="nav-text"> 安装OpenSSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%94%BE-22tcp-%E7%AB%AF%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text"> 开放 22&#x2F;tcp 端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text"> 启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%E5%AF%B9"><span class="nav-number">6.</span> <span class="nav-text"> 客户端生成公钥&#x2F;私钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%E5%AF%B9"><span class="nav-number">7.</span> <span class="nav-text"> 配置公钥&#x2F;私钥对</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">7.1.</span> <span class="nav-text"> 方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">7.2.</span> <span class="nav-text"> 方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%96%E6%B6%88%E7%AE%A1%E7%90%86%E5%91%98%E5%85%AC%E9%92%A5%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">8.</span> <span class="nav-text"> windows 服务器取消管理员公钥文件重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86"><span class="nav-number">9.</span> <span class="nav-text"> 关闭密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF-sshd-%E6%9C%8D%E5%8A%A1"><span class="nav-number">10.</span> <span class="nav-text"> 重启 sshd 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">11.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -279,55 +280,47 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>通过用户名和密码，利用 SSH
-登陆远程服务器进行服务器管理时，有如下缺点：</p>
+    <div class="post-body" itemprop="articleBody"><p>通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：</p>
 <ul>
 <li>每次输入密码，很麻烦，也不极客</li>
 <li>服务器开放账号密码登陆，容易补暴力破解</li>
 </ul>
 <p>我们可以通过配置公钥登陆来解决上述问题。</p>
 <span id="more"></span>
-<h2 id="ssh-中各个模块作用">SSH 中各个模块作用</h2>
-<p>OpenSSH
-包含一系列组件和工具，用于提供一种安全且简单的远程系统管理方法，其中包括：</p>
+<h2 id="ssh-中各个模块作用"><a class="markdownIt-Anchor" href="#ssh-中各个模块作用"></a> SSH 中各个模块作用</h2>
+<p>OpenSSH 包含一系列组件和工具，用于提供一种安全且简单的远程系统管理方法，其中包括：</p>
 <ul>
 <li>sshd.exe，它是远程所管理的系统上必须运行的 SSH 服务器组件</li>
 <li>ssh.exe，它是在用户的本地系统上运行的 SSH 客户端组件</li>
 <li>ssh-keygen.exe，为 SSH 生成、管理和转换身份验证密钥</li>
 <li>ssh-agent.exe，存储用于公钥身份验证的私钥</li>
-<li>ssh-add.exe，将私钥添加到服务器允许的列表中，即添加到 ssh-agent
-中</li>
+<li>ssh-add.exe，将私钥添加到服务器允许的列表中，即添加到 ssh-agent 中</li>
 <li>ssh-keyscan.exe，帮助从许多主机收集公用 SSH 主机密钥</li>
 <li>sftp.exe，这是提供安全文件传输协议的服务，通过 SSH 运行</li>
 <li>scp.exe 是在 SSH 上运行的文件复制实用工具</li>
 </ul>
-<h2 id="ssh-登陆流程">ssh 登陆流程</h2>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/ssh-login.webp"
-alt="ssh-login" />
-<figcaption aria-hidden="true">ssh-login</figcaption>
-</figure>
-<h2 id="安装openssh">安装OpenSSH</h2>
-<p>如果系统中没有 openssh，需要手动安装。现在 windows10 及以上都已经自带
-ssh 了。</p>
+<h2 id="ssh-登陆流程"><a class="markdownIt-Anchor" href="#ssh-登陆流程"></a> ssh 登陆流程</h2>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/ssh-login.webp" alt="ssh-login" /></p>
+<h2 id="安装openssh"><a class="markdownIt-Anchor" href="#安装openssh"></a> 安装OpenSSH</h2>
+<p>如果系统中没有 openssh，需要手动安装。现在 windows10 及以上都已经自带 ssh 了。</p>
 <p>如果需要，可以通过 Scoop 来安装 OpenSSH：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install openssh</span><br></pre></td></tr></table></figure>
-<h2 id="开放-22tcp-端口">开放 22/tcp 端口</h2>
+<h2 id="开放-22tcp-端口"><a class="markdownIt-Anchor" href="#开放-22tcp-端口"></a> 开放 22/tcp 端口</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name=<span class="string">&quot;ssh&quot;</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="number">21</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>在使用 scoop 安装时，会自动打开，此步骤可以省略</p>
 </blockquote>
-<h2 id="启动服务">启动服务</h2>
+<h2 id="启动服务"><a class="markdownIt-Anchor" href="#启动服务"></a> 启动服务</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net <span class="built_in">start</span> ssh<span class="literal">-agent</span> &amp;&amp; net <span class="built_in">start</span> sshd</span><br></pre></td></tr></table></figure>
-<h2 id="客户端生成公钥私钥对">客户端生成公钥/私钥对</h2>
+<h2 id="客户端生成公钥私钥对"><a class="markdownIt-Anchor" href="#客户端生成公钥私钥对"></a> 客户端生成公钥/私钥对</h2>
 <p>在客户端打开 powershell 终端进行操作：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成公/私钥对</span></span><br><span class="line">ssh<span class="literal">-keygen</span></span><br></pre></td></tr></table></figure>
 <p>一直 enter 即可。</p>
 <blockquote>
-<p>生成的公私钥对保存在 c:%username%.ssh 中</p>
+<p>生成的公私钥对保存在 c:\users%username%.ssh 中</p>
 </blockquote>
-<h2 id="配置公钥私钥对">配置公钥/私钥对</h2>
-<h3 id="方法一">方法一</h3>
+<h2 id="配置公钥私钥对"><a class="markdownIt-Anchor" href="#配置公钥私钥对"></a> 配置公钥/私钥对</h2>
+<h3 id="方法一"><a class="markdownIt-Anchor" href="#方法一"></a> 方法一</h3>
 <p>在客户端配置文件：</p>
 <ul>
 <li>Windows 上是 <code>~/.ssh/config</code></li>
@@ -337,8 +330,7 @@ ssh 了。</p>
 <p>若没有，新建一个 <code>config</code> 文件，没有后缀</p>
 </blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 别名（Host）：Host 和 HostName 的值可以相同</span></span><br><span class="line"><span class="comment"># 如 ssh aliyun，在这里等于 ssh -i C:\Users\Think\.ssh\id_rsa_aliyun root@144.90.100.144</span></span><br><span class="line"><span class="comment"># 用别名登录会使用别名下的配置，不用别名登录（如IP）不会使用别名下的配置</span></span><br><span class="line">Host aliyun</span><br><span class="line">    User root</span><br><span class="line">    HostName <span class="number">144.90</span>.<span class="number">100.144</span></span><br><span class="line">    <span class="comment"># 私钥文件位置</span></span><br><span class="line">    IdentityFile <span class="string">&quot;~/.ssh/id_rsa_aliyun&quot;</span></span><br><span class="line"></span><br><span class="line">Host tencent</span><br><span class="line">    User root</span><br><span class="line">    HostName <span class="number">100.28</span>.<span class="number">144.47</span></span><br><span class="line">    IdentityFile <span class="string">&quot;~/.ssh/id_rsa_tencent&quot;</span></span><br></pre></td></tr></table></figure>
-<p>将公钥文件 <code>id_rsa.pub</code> 的内容追加到服务器的
-<code>~/.ssh/authorized_keys</code> 文件末尾</p>
+<p>将公钥文件 <code>id_rsa.pub</code> 的内容追加到服务器的 <code>~/.ssh/authorized_keys</code> 文件末尾</p>
 <p>可以使用 <code>#</code> 号为每个公钥添加注释，方便管理。</p>
 <blockquote>
 <p>authorized_keys：该文件为 ssh 普通用户公钥</p>
@@ -346,55 +338,43 @@ ssh 了。</p>
 </blockquote>
 <p><strong>使用方式：</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh aliyun <span class="literal">-v</span> <span class="comment"># 使用别名进行登陆</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法二">方法二</h3>
-<ol type="1">
-<li><p><strong>将私钥添加到 ssh-agent</strong></p>
-<p>Windows SSH 以服务的形式管理，所以 <code>ssh-agent</code>
-是全局的，不需要每次设置。</p>
+<h3 id="方法二"><a class="markdownIt-Anchor" href="#方法二"></a> 方法二</h3>
+<ol>
+<li>
+<p><strong>将私钥添加到 ssh-agent</strong></p>
+<p>Windows SSH 以服务的形式管理，所以 <code>ssh-agent</code> 是全局的，不需要每次设置。</p>
 <p>以下命令需要用管理员身份运行终端。</p>
-<p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 ssh-agent 服务状态，这里输出：Stopped</span></span><br><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 ssh-agent 服务的启动类型，这里输出：Disabled</span></span><br><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span> | <span class="built_in">Select</span> StartType</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 ssh-agent 服务的启动类型修改为 Manual（手动启动）。</span></span><br><span class="line"><span class="built_in">Get-Service</span> <span class="literal">-Name</span> ssh<span class="literal">-agent</span> | <span class="built_in">Set-Service</span> <span class="literal">-StartupType</span> Manual</span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动启动 ssh-agent 服务</span></span><br><span class="line"><span class="built_in">Start-Service</span> ssh<span class="literal">-agent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将私钥加载进 ssh-agent</span></span><br><span class="line">ssh<span class="literal">-add</span> C:\Users\Think\.ssh\id_rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示 ssh-agent 中的公钥，验证私钥是否添加成功</span></span><br><span class="line">ssh<span class="literal">-add</span> <span class="literal">-L</span></span><br><span class="line"><span class="comment"># 服务重启后，添加的密钥仍在 agent 中</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>将公钥添加到服务器</p>
-<p>服务器中的公钥是储存在 <code>~/.ssh/authorized_keys</code>
-文件里面，如果该文件不存在，手动创建一个文本文件即可，然后将公钥追加到该文件末尾。</p>
+ <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 ssh-agent 服务状态，这里输出：Stopped</span></span><br><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 ssh-agent 服务的启动类型，这里输出：Disabled</span></span><br><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span> | <span class="built_in">Select</span> StartType</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 ssh-agent 服务的启动类型修改为 Manual（手动启动）。</span></span><br><span class="line"><span class="built_in">Get-Service</span> <span class="literal">-Name</span> ssh<span class="literal">-agent</span> | <span class="built_in">Set-Service</span> <span class="literal">-StartupType</span> Manual</span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动启动 ssh-agent 服务</span></span><br><span class="line"><span class="built_in">Start-Service</span> ssh<span class="literal">-agent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将私钥加载进 ssh-agent</span></span><br><span class="line">ssh<span class="literal">-add</span> C:\Users\Think\.ssh\id_rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示 ssh-agent 中的公钥，验证私钥是否添加成功</span></span><br><span class="line">ssh<span class="literal">-add</span> <span class="literal">-L</span></span><br><span class="line"><span class="comment"># 服务重启后，添加的密钥仍在 agent 中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>将公钥添加到服务器</p>
+<p>服务器中的公钥是储存在 <code>~/.ssh/authorized_keys</code> 文件里面，如果该文件不存在，手动创建一个文本文件即可，然后将公钥追加到该文件末尾。</p>
 <p><strong>普通用户</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Make sure that the .ssh directory exists in your server&#x27;s user account home folder</span></span><br><span class="line">ssh username@domain1@contoso.com mkdir C:\Users\username\.ssh\</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Use scp to copy the public key file generated previously on your client to the authorized_keys file on your server</span></span><br><span class="line">scp C:\Users\username\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\Users\username\.ssh\authorized_keys</span><br></pre></td></tr></table></figure>
 <p><strong>管理用户</strong></p>
-<p>公钥的内容需要放在服务器上的一个名为
-<code>administrators_authorized_keys</code> 的文本文件中，放在
-<code>C: ProgramData\ssh\</code>
-中。OpenSSH客户端包括scp，这是一个安全的文件传输工具，可以帮助解决这个问题。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Make sure that the .ssh directory exists in your server&#x27;s user account home folder</span></span><br><span class="line">ssh user1@domain1@contoso.com mkdir C:\ProgramData\ssh\</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Use scp to copy the public key file generated previously on your client to the authorized_keys file on your server</span></span><br><span class="line">scp C:\Users\username\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\ProgramData\ssh\administrators_authorized_keys</span><br></pre></td></tr></table></figure></li>
+<p>公钥的内容需要放在服务器上的一个名为 <code>administrators_authorized_keys</code> 的文本文件中，放在 <code>C: ProgramData\ssh\</code> 中。OpenSSH客户端包括scp，这是一个安全的文件传输工具，可以帮助解决这个问题。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Make sure that the .ssh directory exists in your server&#x27;s user account home folder</span></span><br><span class="line">ssh user1@domain1@contoso.com mkdir C:\ProgramData\ssh\</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Use scp to copy the public key file generated previously on your client to the authorized_keys file on your server</span></span><br><span class="line">scp C:\Users\username\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\ProgramData\ssh\administrators_authorized_keys</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="windows-服务器取消管理员公钥文件重定向">windows
-服务器取消管理员公钥文件重定向</h2>
-<p>编辑<code>C:\ProgramData\ssh\sshd_config</code>文件，删除或注释（使用
-<code>#</code>）底部的如下配置：</p>
+<h2 id="windows-服务器取消管理员公钥文件重定向"><a class="markdownIt-Anchor" href="#windows-服务器取消管理员公钥文件重定向"></a> windows 服务器取消管理员公钥文件重定向</h2>
+<p>编辑<code>C:\ProgramData\ssh\sshd_config</code>文件，删除或注释（使用 <code>#</code>）底部的如下配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Match Group administrators</span><br><span class="line">       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys</span><br></pre></td></tr></table></figure>
 <p>重启windows的ssh服务</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Restart-Service</span> sshd</span><br></pre></td></tr></table></figure>
-<h2 id="关闭密码登陆">关闭密码登陆</h2>
+<h2 id="关闭密码登陆"><a class="markdownIt-Anchor" href="#关闭密码登陆"></a> 关闭密码登陆</h2>
 <p>上述配置完成后，进行 ssh 测试连接，如果成功，则将密码登陆关闭。</p>
-<p>找到位于<code>C:\ProgramData\ssh\ssh_config</code> 文件，将
-<code>PasswordAuthentication</code> 设置成 <code>no</code></p>
+<p>找到位于<code>C:\ProgramData\ssh\ssh_config</code> 文件，将 <code>PasswordAuthentication</code> 设置成 <code>no</code></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To disable tunneled clear text passwords, change to no here!</span></span><br><span class="line">PasswordAuthentication no</span><br><span class="line"><span class="comment">#PermitEmptyPasswords no</span></span><br></pre></td></tr></table></figure>
-<h2 id="重启-sshd-服务">重启 <code>sshd</code> 服务</h2>
+<h2 id="重启-sshd-服务"><a class="markdownIt-Anchor" href="#重启-sshd-服务"></a> 重启 <code>sshd</code> 服务</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Restart-Service</span> sshd</span><br></pre></td></tr></table></figure>
-<p>通过上面的操作，ssh
-公钥登陆配置就完成了，同时还提高了系统的安全性。</p>
-<h2 id="致谢">致谢</h2>
+<p>通过上面的操作，ssh 公钥登陆配置就完成了，同时还提高了系统的安全性。</p>
+<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
 <p>本文参考以下文件，对此表示诚挚感谢！</p>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023054090">Windows SSH
-免密登录详解</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=vKJ0ePY1v9jJ1K7kBFP%2FJw%3D%3D.KzA63WGdDRhC2LhqUIoOStqk3ncPpWfVtLC%2BgzoJ5BfDe8mmAitla%2F%2F%2FpiAT7kAtrlNt1xY4cH0MEbJcMYghFhnbceTYZeewtKs1JxnkZrHKD3lblA%2Bf%2BQPe%2FyX8tdeB">Windows
-中的 OpenSSH</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement">OpenSSH
-key management</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://www.kyleblog.cn/posts/win10_ssh_login">SSH免密登录（公钥登录）到win10（解决authorized_keys无效的问题）
-- KyleBlog.cn</a></li>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023054090">Windows SSH 免密登录详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=vKJ0ePY1v9jJ1K7kBFP%2FJw%3D%3D.KzA63WGdDRhC2LhqUIoOStqk3ncPpWfVtLC%2BgzoJ5BfDe8mmAitla%2F%2F%2FpiAT7kAtrlNt1xY4cH0MEbJcMYghFhnbceTYZeewtKs1JxnkZrHKD3lblA%2Bf%2BQPe%2FyX8tdeB">Windows 中的 OpenSSH</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement">OpenSSH key management</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kyleblog.cn/posts/win10_ssh_login">SSH免密登录（公钥登录）到win10（解决authorized_keys无效的问题） - KyleBlog.cn</a></li>
 </ol>
 
     </div>
@@ -459,8 +439,8 @@ target="_blank" rel="noopener" href="https://www.kyleblog.cn/posts/win10_ssh_log
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2021/1QN39SQ.html" rel="prev" title="mongoose子文档">
-                  <i class="fa fa-angle-left"></i> mongoose子文档
+                <a href="/posts/2021/10XS5HK.html" rel="prev" title="monggose嵌套对象中添加ObjectId">
+                  <i class="fa fa-angle-left"></i> monggose嵌套对象中添加ObjectId
                 </a>
             </div>
             <div class="post-nav-item">
@@ -498,13 +478,13 @@ target="_blank" rel="noopener" href="https://www.kyleblog.cn/posts/win10_ssh_log
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

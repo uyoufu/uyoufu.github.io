@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在 Linux 中，可以通过配置 APT 的代理设置来为 APT 添加代理。以下是一个例子：">
+    <meta name="description" content="在 Linux 中，可以通过配置 APT 的代理设置来为 APT 添加代理。以下是一个例子：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为 APT 配置代理">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1MJYA7T.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在 Linux 中，可以通过配置 APT 的代理设置来为 APT 添加代理。以下是一个例子：">
+<meta property="og:description" content="在 Linux 中，可以通过配置 APT 的代理设置来为 APT 添加代理。以下是一个例子：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-12-25T16:00:00.000Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -278,21 +278,16 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在 Linux 中，可以通过配置 APT 的代理设置来为 APT
-添加代理。以下是一个例子：</p>
+    <div class="post-body" itemprop="articleBody"><p>在 Linux 中，可以通过配置 APT 的代理设置来为 APT 添加代理。以下是一个例子：</p>
 <span id="more"></span>
 <p>首先，打开 APT 的配置文件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/apt.conf.d/proxy.conf</span><br></pre></td></tr></table></figure>
 <p>然后，在打开的文件中添加以下内容：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy &quot;http://your-proxy-server:your-proxy-port&quot;;</span><br><span class="line"></span><br><span class="line">Acquire::https::Proxy &quot;http://your-proxy-server:your-proxy-port&quot;;</span><br></pre></td></tr></table></figure>
-<p><code>your-proxy-server</code>
-是代理服务器的地址，<code>your-proxy-port</code>
-是代理服务器的端口。</p>
+<p><code>your-proxy-server</code> 是代理服务器的地址，<code>your-proxy-port</code> 是代理服务器的端口。</p>
 <p>保存并关闭文件后，APT 就会使用你配置的代理服务器来下载软件包。</p>
 <blockquote>
-<p>请注意，你需要使用 <code>sudo</code> 来编辑
-<code>/etc/apt/apt.conf.d/proxy.conf</code>
-文件，因为这个文件通常需要超级用户权限才能编辑。</p>
+<p>请注意，你需要使用 <code>sudo</code> 来编辑 <code>/etc/apt/apt.conf.d/proxy.conf</code> 文件，因为这个文件通常需要超级用户权限才能编辑。</p>
 </blockquote>
 
     </div>
@@ -358,13 +353,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2023/316DJB8.html" rel="prev" title="Ubuntu 中安装 Docker">
-                  <i class="fa fa-angle-left"></i> Ubuntu 中安装 Docker
+                <a href="/posts/2023/3AYYNM8.html" rel="prev" title="使用 FHS 规范 Linux 目录使用">
+                  <i class="fa fa-angle-left"></i> 使用 FHS 规范 Linux 目录使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/3MZH2CP.html" rel="next" title="Linux 文件权限介绍">
-                  Linux 文件权限介绍 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2023/316DJB8.html" rel="next" title="Ubuntu 中安装 Docker">
+                  Ubuntu 中安装 Docker <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -397,13 +392,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

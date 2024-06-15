@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对 Adugard 过滤规则的简要解释。">
+    <meta name="description" content="为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对 Adugard 过滤规则的简要解释。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AdGuard 语法">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/K2C2JM.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对 Adugard 过滤规则的简要解释。">
+<meta property="og:description" content="为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对 Adugard 过滤规则的简要解释。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.428Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">242</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">120</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">449</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="nav-number">2.</span> <span class="nav-text">基本规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-number">2.1.</span> <span class="nav-text">基本语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%94%AF%E6%8C%81"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">4.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text"> 注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="nav-number">2.</span> <span class="nav-text"> 基本规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-number">2.1.</span> <span class="nav-text"> 基本语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text"> 特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%94%AF%E6%8C%81"><span class="nav-number">2.3.</span> <span class="nav-text"> 正则表达式支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text"> 修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">4.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">449</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -286,34 +286,30 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对
-Adugard 过滤规则的简要解释。</p>
+    <div class="post-body" itemprop="articleBody"><p>为了能够更加精准的去除广告，只能自食其力，自己编写去除规则。以下是对 Adugard 过滤规则的简要解释。</p>
 <span id="more"></span>
-<h2 id="注释">注释</h2>
+<h2 id="注释"><a class="markdownIt-Anchor" href="#注释"></a> 注释</h2>
 <p>注释用“!”</p>
-<h2 id="基本规则">基本规则</h2>
-<h3 id="基本语法规则">基本语法规则</h3>
+<h2 id="基本规则"><a class="markdownIt-Anchor" href="#基本规则"></a> 基本规则</h2>
+<h3 id="基本语法规则"><a class="markdownIt-Anchor" href="#基本语法规则"></a> 基本语法规则</h3>
 <p><code>@@</code> 表示排除规则</p>
-<h3 id="特殊字符">特殊字符</h3>
+<h3 id="特殊字符"><a class="markdownIt-Anchor" href="#特殊字符"></a> 特殊字符</h3>
 <ul>
 <li><code>*</code> 通配符。匹配任何空字符或者任一长度的字符串</li>
-<li><code>||</code> 匹配地址开头。表示：<code>http://*.</code>
-、<code>https://*.</code>、<code>ws://*.</code>、<code>wss://*.</code></li>
-<li><code>^</code>
-匹配分隔符。可以是字母、数字、<code>_</code>、<code>-</code>、<code>.</code>和<code>%</code>其中一个。</li>
-<li><code>|</code> 匹配开始或者结束符。如 <code>.com|</code> 匹配
-<code>baidu.com</code></li>
+<li><code>||</code> 匹配地址开头。表示：<code>http://*.</code> 、<code>https://*.</code>、<code>ws://*.</code>、<code>wss://*.</code></li>
+<li><code>^</code> 匹配分隔符。可以是字母、数字、<code>_</code>、<code>-</code>、<code>.</code>和<code>%</code>其中一个。</li>
+<li><code>|</code> 匹配开始或者结束符。如 <code>.com|</code> 匹配 <code>baidu.com</code></li>
 </ul>
-<h3 id="正则表达式支持">正则表达式支持</h3>
+<h3 id="正则表达式支持"><a class="markdownIt-Anchor" href="#正则表达式支持"></a> 正则表达式支持</h3>
 <blockquote>
 <p>正则表达式会使性能变慢</p>
 </blockquote>
 <p>格式如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">! regexp 代表正则表达式语法</span><br><span class="line">pattern = <span class="string">&quot;/&quot;</span> regexp <span class="string">&quot;/&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="修饰符">修饰符</h2>
+<h2 id="修饰符"><a class="markdownIt-Anchor" href="#修饰符"></a> 修饰符</h2>
 <p>修饰符位于规则末尾，修饰符间用逗号分隔。</p>
-<h2 id="致谢">致谢</h2>
-<p>本文来源于 LeeYD 的博客：https://www.leeyiding.com/archives/50/</p>
+<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<p>本文来源于 LeeYD 的博客：<a target="_blank" rel="noopener" href="https://www.leeyiding.com/archives/50/">https://www.leeyiding.com/archives/50/</a></p>
 
     </div>
 
@@ -417,13 +413,13 @@ Adugard 过滤规则的简要解释。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">829k</span>
+    <span title="站点总字数">833k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:33</span>
+    <span title="站点阅读时长">12:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

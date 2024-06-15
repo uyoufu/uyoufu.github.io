@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-05-30T07:04:00.520Z</updated>
+  <updated>2024-05-26T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>ComfyUI ControlNet</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2DZVA0D.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2DZVA0D.html</id>
-    <published>2024-05-29T16:00:00.000Z</published>
-    <updated>2024-05-30T07:04:00.520Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">
-</summary>
-        
-      
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>ComfyUI 节点介绍</title>
@@ -59,32 +33,7 @@
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StableDiffusion 专有名词理解</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1HAPA4N.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1HAPA4N.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文对 SD 和 ComfyUI
-中的一些名词进行解释，按文末参考文章中出现的先后顺序进行排列。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文主要采用 GPT 进行解释。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
     
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
@@ -107,9 +56,33 @@
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+  </entry>
+  
+  <entry>
+    <title>StableDiffusion 专有名词理解</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1HAPA4N.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1HAPA4N.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文对 SD 和 ComfyUI 中的一些名词进行解释，按文末参考文章中出现的先后顺序进行排列。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文主要采用 GPT 进行解释。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -151,8 +124,7 @@
     <updated>2024-04-08T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 系统中使用 &lt;code&gt;acme.sh&lt;/code&gt; 通过
-cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 系统中使用 &lt;code&gt;acme.sh&lt;/code&gt; 通过 cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     
     
     
@@ -179,10 +151,8 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <updated>2024-03-07T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在进行 Microstation
-二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。&lt;/p&gt;
-&lt;p&gt;由于 Microstation
-的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。&lt;/p&gt;
+&lt;p&gt;由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。&lt;/p&gt;
 &lt;p&gt;有两种方法来解决这个问题。&lt;/p&gt;</summary>
     
     
@@ -210,9 +180,7 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <updated>2024-02-23T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;NuGet 是适用于 .NET 的包管理器。
-它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet
-客户端工具可生成这些库并将其作为“包”。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。&lt;/p&gt;
 &lt;p&gt;本文简要记录了如何创建 NuGet 包并发布。&lt;/p&gt;</summary>
     
     
@@ -236,16 +204,15 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <updated>2024-02-23T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在进行矩阵转换时，谨记如下公式： &lt;span class=&quot;math display&quot;&gt;&#92;[
-&#92;begin{aligned}
+    <summary type="html">&lt;p&gt;在进行矩阵转换时，谨记如下公式：&lt;/p&gt;
+&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&quot;0.24999999999999992em&quot; columnalign=&quot;right left&quot; columnspacing=&quot;0em&quot;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;mo&gt;∵&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;mo&gt;∴&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;true&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;&#92;begin{aligned}
 M_{world} &#92;cdot P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
 &#92;because M_{world} &amp;amp;= E &#92;&#92;
 &#92;therefore P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
 &#92;end{aligned}
-&#92;]&lt;/span&gt; &lt;span class=&quot;math inline&quot;&gt;&#92;(M&#92;)&lt;/span&gt;
-可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。&lt;/p&gt;
-&lt;p&gt;在理解 MS 中各个对象返回的 &lt;code&gt;DTransform&lt;/code&gt;
-含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。&lt;/p&gt;</summary>
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:4.500000000000002em;vertical-align:-2.000000000000001em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mtable&quot;&gt;&lt;span class=&quot;col-align-r&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:2.5000000000000004em;&quot;&gt;&lt;span style=&quot;top:-4.66em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.10903em;&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02691em;&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;⋅&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02691em;&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-3.16em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mrel amsrm&quot;&gt;∵&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.10903em;&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02691em;&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-1.6599999999999993em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mrel amsrm&quot;&gt;∴&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02691em;&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:2.000000000000001em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;col-align-l&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:2.5000000000000004em;&quot;&gt;&lt;span style=&quot;top:-4.66em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.10903em;&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;⋅&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-3.16em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.05764em;&quot;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-1.6599999999999993em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.10903em;&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;⋅&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222222222222222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.33610799999999996em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:2.000000000000001em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;M&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.10903em;&quot;&gt;M&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。&lt;/p&gt;
+&lt;p&gt;在理解 MS 中各个对象返回的 &lt;code&gt;DTransform&lt;/code&gt; 含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。&lt;/p&gt;</summary>
     
     
     
@@ -270,11 +237,7 @@ M_{world} &#92;cdot P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92
     <updated>2024-02-21T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20240222222605912.png&quot;
-alt=&quot;image-20240222222605912&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20240222222605912&lt;/figcaption&gt;
-&lt;/figure&gt;
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20240222222605912.png&quot; alt=&quot;image-20240222222605912&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;一些车主为了方便挪车，往往会在车上留下自己的电话，方便其他人及时与自己取得联系。直接展示电话号码的形式，会使号码非常容易泄露，从而遭受广告骚扰。&lt;/p&gt;
 &lt;p&gt;因此，可以将挪车信息转换成二维码的形式，避免电话号码直接曝光，从而保护隐私。&lt;/p&gt;</summary>
     
@@ -297,11 +260,9 @@ alt=&quot;image-20240222222605912&quot; /&gt;
     <updated>2024-01-29T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用
-&lt;code&gt;nvidia-smi&lt;/code&gt; 查看状态显示：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用 &lt;code&gt;nvidia-smi&lt;/code&gt; 查看状态显示：&lt;/p&gt;
 &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Failed to initialize NVML: Driver/library version mismatch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NVML ibrary version: 535.154&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver
-的版本没有更新。&lt;/p&gt;</summary>
+&lt;p&gt;出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver 的版本没有更新。&lt;/p&gt;</summary>
     
     
     
@@ -421,10 +382,7 @@ alt=&quot;image-20240222222605912&quot; /&gt;
     
     
     <summary type="html">&lt;p&gt;VSCode SSH 连接 Linux 后，使用 Docker 插件时报错：&lt;/p&gt;
-&lt;p&gt;permission denied while trying to connect to the Docker daemon socket
-at unix:///var/run/docker.sock: Get
-&quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json&quot;: dial unix
-/var/run/docker.sock: connect: permission denied&lt;/p&gt;
+&lt;p&gt;permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get “http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json”: dial unix /var/run/docker.sock: connect: permission denied&lt;/p&gt;
 &lt;p&gt;这是由于用户的权限不够，按下列方法修改权限即可：&lt;/p&gt;</summary>
     
     
@@ -434,11 +392,34 @@ at unix:///var/run/docker.sock: Get
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 开源 UI 管理工具比选及安装</title>
+    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux 服务器的特点，最终选择安装 &lt;a href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
     
   </entry>
   
@@ -473,13 +454,8 @@ at unix:///var/run/docker.sock: Get
     <updated>2024-01-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在 Linux 中绕不开的就是 shell，可选择的 shell 有很多，比如
-bash、zsh、fish、tcsh，ksh 等等。其中 bash 在 shell
-一直是老大哥的地位，zsh 在 bash
-基础上，做出了大量改进，同时加入了Bash、ksh及tcsh的某些功能。&lt;/p&gt;
-&lt;p&gt;因此作者选择在工作中使用 zsh 作为主力
-shell。本文将详细介绍如何通过配置
-zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不释手。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在 Linux 中绕不开的就是 shell，可选择的 shell 有很多，比如 bash、zsh、fish、tcsh，ksh 等等。其中 bash 在 shell 一直是老大哥的地位，zsh 在 bash 基础上，做出了大量改进，同时加入了Bash、ksh及tcsh的某些功能。&lt;/p&gt;
+&lt;p&gt;因此作者选择在工作中使用 zsh 作为主力 shell。本文将详细介绍如何通过配置 zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不释手。&lt;/p&gt;</summary>
     
     
     
@@ -495,31 +471,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
-    <title>Docker 开源 UI 管理工具比选及安装</title>
-    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux
-服务器的特点，最终选择安装 &lt;a
-href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
     <title>使用 Linq 后导致修改列表对象字段无效</title>
     <link href="https://galens.uamazing.cn/posts/2024/395GBDB.html"/>
     <id>https://galens.uamazing.cn/posts/2024/395GBDB.html</id>
@@ -528,13 +479,8 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
     
     
     <summary type="html">&lt;p&gt;最近使用 Linq 写了这样一段代码：&lt;/p&gt;
-&lt;p&gt;先用 &lt;code&gt;Select&lt;/code&gt; 生成
-&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;，然后通过 &lt;code&gt;First()&lt;/code&gt;将对象从
-&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;
-中查找出来，接着修改该对象的字段值，最后将
-&lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt; 转换成 &lt;code&gt;List&lt;/code&gt; 返回。&lt;/p&gt;
-&lt;p&gt;我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug
-让人促不及防。&lt;/p&gt;</summary>
+&lt;p&gt;先用 &lt;code&gt;Select&lt;/code&gt; 生成 &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;，然后通过 &lt;code&gt;First()&lt;/code&gt;将对象从 &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt; 中查找出来，接着修改该对象的字段值，最后将 &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt; 转换成 &lt;code&gt;List&lt;/code&gt; 返回。&lt;/p&gt;
+&lt;p&gt;我惊奇地发现，刚刚对第一个对象的修改，居然没有生效，这个 bug 让人促不及防。&lt;/p&gt;</summary>
     
     
     
@@ -548,6 +494,31 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
     <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
     
     <category term="Linq" scheme="https://galens.uamazing.cn/tags/Linq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
+    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
+    <published>2023-12-26T16:00:00.000Z</published>
+    <updated>2023-12-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda 进行加速。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
     
   </entry>
   

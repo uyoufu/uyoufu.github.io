@@ -408,11 +408,11 @@ at unix:///var/run/docker.sock: Get
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
     
   </entry>
   
@@ -442,6 +442,29 @@ href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jes
   </entry>
   
   <entry>
+    <title>Windows 免密码 ssh 登陆 Linux</title>
+    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
+    <published>2024-01-07T16:00:00.000Z</published>
+    <updated>2024-01-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
     <title>丝滑高效的zsh配置清单</title>
     <link href="https://galens.uamazing.cn/posts/2024/1P1XSQ7.html"/>
     <id>https://galens.uamazing.cn/posts/2024/1P1XSQ7.html</id>
@@ -467,29 +490,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
     <category term="zsh" scheme="https://galens.uamazing.cn/tags/zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 免密码 ssh 登陆 Linux</title>
-    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
     
   </entry>
   

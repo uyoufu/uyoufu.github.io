@@ -135,11 +135,11 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <category term="Web" scheme="https://galens.uamazing.cn/categories/Develop/Web/"/>
     
     
+    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
+    
     <category term="SSL" scheme="https://galens.uamazing.cn/tags/SSL/"/>
     
     <category term="Let&#39;s Encrypt" scheme="https://galens.uamazing.cn/tags/Let-s-Encrypt/"/>
-    
-    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
@@ -526,15 +526,21 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
   </entry>
   
   <entry>
-    <title>Linux 中使用 Docker 安装 PaddleOCR</title>
-    <link href="https://galens.uamazing.cn/posts/2023/F9C0KW.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/F9C0KW.html</id>
+    <title>Linux 中如何同时执行多条命令</title>
+    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
+    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
     <published>2023-12-26T16:00:00.000Z</published>
     <updated>2023-12-26T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 的 Docker 中安装 PaddleOCR，并启用 Cuda
-进行加速。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
+&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
     
     
     
@@ -543,11 +549,7 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="PaddleOCR" scheme="https://galens.uamazing.cn/tags/PaddleOCR/"/>
+    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
   </entry>
   

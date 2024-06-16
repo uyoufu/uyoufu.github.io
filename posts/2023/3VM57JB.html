@@ -19,14 +19,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文将列举 Powershell7 中比较好用的插件或配置，并介绍大致安装步骤。  有的只适合于 windows，linux 若有类似功能，则可不安装">
+    <meta name="description" content="本文将列举 Powershell7 中比较好用的插件或配置，并介绍大致安装步骤。  有的只适合于 windows，linux 若有类似功能，则可不安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Powershell 实用插件推荐及安装">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/3VM57JB.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文将列举 Powershell7 中比较好用的插件或配置，并介绍大致安装步骤。  有的只适合于 windows，linux 若有类似功能，则可不安装">
+<meta property="og:description" content="本文将列举 Powershell7 中比较好用的插件或配置，并介绍大致安装步骤。  有的只适合于 windows，linux 若有类似功能，则可不安装">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png">
 <meta property="article:published_time" content="2023-04-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-01-15T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -34,7 +33,6 @@
 <meta property="article:tag" content="Powershell7">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/3VM57JB.html">
@@ -145,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text"> busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text"> sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text"> oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zlua"><span class="nav-number">4.</span> <span class="nav-text"> z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text"> 自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-psreadline-%E6%8F%92%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text"> 安装 PSReadLine 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84"><span class="nav-number">7.</span> <span class="nav-text"> 修改启动默认路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text"> 完整配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#busybox"><span class="nav-number">1.</span> <span class="nav-text">busybox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">2.</span> <span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-posh"><span class="nav-number">3.</span> <span class="nav-text">oh-my-posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z.lua"><span class="nav-number">4.</span> <span class="nav-text">z.lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">自定义别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-psreadline-%E6%8F%92%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">安装 PSReadLine 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84"><span class="nav-number">7.</span> <span class="nav-text">修改启动默认路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">完整配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -289,46 +287,69 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文将列举 Powershell7 中比较好用的插件或配置，并介绍大致安装步骤。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文将列举 Powershell7
+中比较好用的插件或配置，并介绍大致安装步骤。</p>
 <blockquote>
 <p>有的只适合于 windows，linux 若有类似功能，则可不安装</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="busybox"><a class="markdownIt-Anchor" href="#busybox"></a> busybox</h2>
-<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux 命令的精简实现，扩展了 powershell 命令。</p>
+<h2 id="busybox">busybox</h2>
+<p>BusyBox 是一个开源项目，它提供了大约 400 个常见 UNIX/Linux
+命令的精简实现，扩展了 powershell 命令。</p>
 <p>安装方式：scoop</p>
-<h2 id="sudo"><a class="markdownIt-Anchor" href="#sudo"></a> sudo</h2>
-<p>powershell 提权，直接使用 <code>sudo pwsh</code> 即可将当前 shell 升级成管理员权限</p>
+<h2 id="sudo">sudo</h2>
+<p>powershell 提权，直接使用 <code>sudo pwsh</code> 即可将当前 shell
+升级成管理员权限</p>
 <p>安装方式：<code>scoop install sudo</code></p>
-<h2 id="oh-my-posh"><a class="markdownIt-Anchor" href="#oh-my-posh"></a> oh-my-posh</h2>
+<h2 id="oh-my-posh">oh-my-posh</h2>
 <p>powershell 样式美化</p>
-<p>安装方式：<a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My Posh</a></p>
+<p>安装方式：<a
+target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows | Oh My
+Posh</a></p>
 <p>自己使用的主题为 <code>montys</code>：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png" alt="image-20230613224321201" /></p>
-<h2 id="zlua"><a class="markdownIt-Anchor" href="#zlua"></a> z.lua</h2>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230613224321201.png"
+alt="image-20230613224321201" />
+<figcaption aria-hidden="true">image-20230613224321201</figcaption>
+</figure>
+<h2 id="z.lua">z.lua</h2>
 <p>实现路径快速跳转</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
-<h2 id="自定义别名"><a class="markdownIt-Anchor" href="#自定义别名"></a> 自定义别名</h2>
+<p>参考：<a
+target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md">z.lua</a></p>
+<h2 id="自定义别名">自定义别名</h2>
 <p>可以自定义一些自己常用的别名，方便使用</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
-<h2 id="安装-psreadline-插件"><a class="markdownIt-Anchor" href="#安装-psreadline-插件"></a> 安装 PSReadLine 插件</h2>
-<p>PSReadLine 给命令行操作提供更加强大的线性编辑体验，比如显示输入历史，语法着色等等。</p>
+<h2 id="安装-psreadline-插件">安装 PSReadLine 插件</h2>
+<p>PSReadLine
+给命令行操作提供更加强大的线性编辑体验，比如显示输入历史，语法着色等等。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看PS仓库</span></span><br><span class="line"><span class="built_in">Get-PSRepository</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 若没有仓库，可以添加一个默认</span></span><br><span class="line"><span class="built_in">Register-PSRepository</span> <span class="literal">-Default</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新 PowerShellGet</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PowerShellGet <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 PSReadLine</span></span><br><span class="line"><span class="built_in">Install-Module</span> PSReadLine</span><br></pre></td></tr></table></figure>
 <p><strong>配置 PSReadLine</strong> :</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开 pwsh 配置</span></span><br><span class="line">notepad $profile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加如下配置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置 PSReadLine</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">PSOption = @&#123;</span></span><br><span class="line">    PredictionSource = &#x27;HistoryAndPlugin&#x27;</span><br><span class="line">    # 使用 vim 的模式，可以按 esc 后，执行 vim 快捷键</span><br><span class="line">    EditMode = &#x27;Vi&#x27;</span><br><span class="line">    PredictionViewStyle = &#x27;ListView&#x27;</span><br><span class="line">    ShowToolTips = $true</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">...</span></span><br><span class="line">&#125;</span><br><span class="line">Set-PSReadLineOption @PSOption</span><br></pre></td></tr></table></figure>
-<h2 id="修改启动默认路径"><a class="markdownIt-Anchor" href="#修改启动默认路径"></a> 修改启动默认路径</h2>
+<h2 id="修改启动默认路径">修改启动默认路径</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在配置中添加如下内容，启动时自动定位到用户目录</span></span><br><span class="line">Set-Location ~</span><br></pre></td></tr></table></figure>
-<h2 id="完整配置"><a class="markdownIt-Anchor" href="#完整配置"></a> 完整配置</h2>
-<p>在 powershell 中输入<code>notepad $profile</code> 来打开配置文件，如果没有的话，输入 <code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
-<p><code>$profile</code> 的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
+<h2 id="完整配置">完整配置</h2>
+<p>在 powershell 中输入<code>notepad $profile</code>
+来打开配置文件，如果没有的话，输入
+<code>New-Item -Path $PROFILE -Type File -Force</code> 来进行新建。</p>
+<p><code>$profile</code>
+的位置为：<code>C:\Users\%username%\Documents\PowerShell</code></p>
 <p>配置后的文件内容如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># oh-my-posh初始化</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">&#x27;C:\Users\galens\.posh\montys.json&#x27;</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># z.lua 配置</span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> (&amp; &#123; (lua D:/Application/z.lua/z.lua <span class="literal">--init</span> powershell once enhanced) <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置打开当前目录名称</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">openCurrentPathInExplore</span><span class="params">()</span></span>&#123; explorer.exe .&#125;</span><br><span class="line"><span class="built_in">Set-Alias</span> open openCurrentPathInExplore</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/PowerShell/PSReadLine">PowerShell/PSReadLine: A bash inspired readline implementation for PowerShell (github.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">PSReadLine/PSReadLine/SamplePSReadLineProfile.ps1 at master · PowerShell/PSReadLine (github.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/scripting/install/install-ubuntu?view=powershell-7.4">在 Ubuntu 上安装 PowerShell - PowerShell | Microsoft Learn</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4">Set-PSReadLineOption (PSReadLine) - PowerShell | Microsoft Learn</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/PowerShell/PSReadLine">PowerShell/PSReadLine: A
+bash inspired readline implementation for PowerShell
+(github.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1">PSReadLine/PSReadLine/SamplePSReadLineProfile.ps1
+at master · PowerShell/PSReadLine (github.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/scripting/install/install-ubuntu?view=powershell-7.4">在
+Ubuntu 上安装 PowerShell - PowerShell | Microsoft Learn</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4">Set-PSReadLineOption
+(PSReadLine) - PowerShell | Microsoft Learn</a></p>
 
     </div>
 
@@ -433,13 +454,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

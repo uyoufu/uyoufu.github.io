@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介 ViewModel-first 方式对于 Stylet 的体系结构非常重要，但是如果您以传统的 View-first 方式学习MVVM，就会发现它并不直观。">
+    <meta name="description" content="简介 ViewModel-first 方式对于 Stylet 的体系结构非常重要，但是如果您以传统的 View-first 方式学习MVVM，就会发现它并不直观。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）04-ViewModel First">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/CCGDMG.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介 ViewModel-first 方式对于 Stylet 的体系结构非常重要，但是如果您以传统的 View-first 方式学习MVVM，就会发现它并不直观。">
+<meta property="og:description" content="简介 ViewModel-first 方式对于 Stylet 的体系结构非常重要，但是如果您以传统的 View-first 方式学习MVVM，就会发现它并不直观。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -142,7 +142,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#view-first-%E6%96%B9%E5%BC%8F-the-view-first-appoach"><span class="nav-number">2.</span> <span class="nav-text"> View-first 方式 (The View-First Appoach)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewmodel-first-%E6%96%B9%E5%BC%8F-the-viewmodel-first-approach"><span class="nav-number">3.</span> <span class="nav-text"> ViewModel-First 方式( The ViewModel-First Approach)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%90%8E%E5%8F%B0%E4%BB%A3%E7%A0%81delete-the-code-behind"><span class="nav-number">4.</span> <span class="nav-text"> 删除后台代码！（Delete the Code-Behind! ）</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#view-first-%E6%96%B9%E5%BC%8F-the-view-first-appoach"><span class="nav-number">2.</span> <span class="nav-text">View-first 方式 (The
+View-First Appoach)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewmodel-first-%E6%96%B9%E5%BC%8F-the-viewmodel-first-approach"><span class="nav-number">3.</span> <span class="nav-text">ViewModel-First 方式( The ViewModel-First Approach)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%90%8E%E5%8F%B0%E4%BB%A3%E7%A0%81delete-the-code-behind"><span class="nav-number">4.</span> <span class="nav-text">删除后台代码！（Delete the
+Code-Behind! ）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,71 +292,122 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
-<p>ViewModel-first 方式对于 Stylet 的体系结构非常重要，但是如果您以传统的 View-first 方式学习MVVM，就会发现它并不直观。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介">简介</h2>
+<p>ViewModel-first 方式对于 Stylet
+的体系结构非常重要，但是如果您以传统的 View-first
+方式学习MVVM，就会发现它并不直观。</p>
 <span id="more"></span>
 <p>希望这篇文章能把一切都讲清楚。</p>
-<h2 id="view-first-方式-the-view-first-appoach"><a class="markdownIt-Anchor" href="#view-first-方式-the-view-first-appoach"></a> View-first 方式 (The View-First Appoach)</h2>
+<h2 id="view-first-方式-the-view-first-appoach">View-first 方式 (The
+View-First Appoach)</h2>
 <p>让我们从定义 View-First 的方式开始，我这么说是什么意思呢?</p>
-<p>MVVM 声明 ViewModel 应该不知道 View 的任何信息，但是该 View 应该知道 ViewModel。联 系 View 和 ViewModel 最简单的方法就是让 View 在它的代码背后构造它的 ViewModel——就像这样:</p>
+<p>MVVM 声明 ViewModel 应该不知道 View 的任何信息，但是该 View 应该知道
+ViewModel。联 系 View 和 ViewModel 最简单的方法就是让 View
+在它的代码背后构造它的 ViewModel——就像这样:</p>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>C#</th>
-<th><a target="_blank" rel="noopener" href="http://VB.NET">VB.NET</a></th>
+<th>VB.NET</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>public partial class MyView : Window <br>{<br>    public MyView()<br>    {<br>        InitializeComponent();<br>         this.DataContext = new MyViewModel();<br>    } <br>}</td>
-<td>Partial Public Class MyView : Inherits Window<br><br>     Public Sub New()<br>     InitializeComponent()<br>       Me.DataContext = new MyViewModel()<br><br>   End Class</td>
+<tr class="odd">
+<td>public partial class MyView : Window <br>{<br> public MyView()<br>
+{<br> InitializeComponent();<br> this.DataContext = new
+MyViewModel();<br> } <br>}</td>
+<td>Partial Public Class MyView : Inherits Window<br><br> Public Sub
+New()<br> InitializeComponent()<br> Me.DataContext = new
+MyViewModel()<br><br> End Class</td>
 </tr>
 </tbody>
 </table>
-<p>这是很好。View 可以创建和拥有其他 View，这意味着可以将 View 组合成层次结构。一切都很好。</p>
-<p>当你组合了几个视图，比如这样，一个 Shell 包含一个顶部栏和一个框架，里面的任何页面都可以显示:</p>
+<p>这是很好。View 可以创建和拥有其他 View，这意味着可以将 View
+组合成层次结构。一切都很好。</p>
+<p>当你组合了几个视图，比如这样，一个 Shell
+包含一个顶部栏和一个框架，里面的任何页面都可以显示:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- This is a window which contains a top bar and another page --&gt;</span><br><span class="line">&lt;Window x:Class=&quot;MyNamespace.ShellView&quot; ....&gt;</span><br><span class="line">   &lt;StackPanel&gt;</span><br><span class="line">      &lt;my:TopBarView/&gt;</span><br><span class="line">      &lt;Frame x:Name=&quot;navigationFrame&quot;/&gt;</span><br><span class="line">   &lt;/StackPanel&gt;</span><br><span class="line">&lt;/Window&gt;</span><br></pre></td></tr></table></figure>
 <p>TopBarView 有它自己的 ViewModel 。</p>
-<p>现在假设 TopBarView 有一个字段，其中包含您想要更新的一些数据，例如当前页面的标题。现在，ShellViewModel 知道这一点(毕竟它决定了当前页面是什么)，但是 TopBarViewModel 不知道(它怎么知道?它什么都不知道)。这样做是为了暴露 TopBarView 的依赖属性，并将其绑定到 ShellViewModel 中，就像这样:</p>
+<p>现在假设 TopBarView
+有一个字段，其中包含您想要更新的一些数据，例如当前页面的标题。现在，ShellViewModel
+知道这一点(毕竟它决定了当前页面是什么)，但是 TopBarViewModel
+不知道(它怎么知道?它什么都不知道)。这样做是为了暴露 TopBarView
+的依赖属性，并将其绑定到 ShellViewModel 中，就像这样:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Window x:Class=&quot;MyNamespace.ShellView&quot; .... x:Name=&quot;rootObject&quot;&gt;</span><br><span class="line">   &lt;StackPanel&gt;</span><br><span class="line">      &lt;my:TopBarView CurrentPageTitle=&quot;&#123;Binding CurrentPageTitle, ElementName=rootObject&#125;&quot;/&gt;</span><br><span class="line">      &lt;Frame x:Name=&quot;navigationFrame&quot;/&gt;</span><br><span class="line">   &lt;/StackPanel&gt;</span><br><span class="line">&lt;/Window&gt;</span><br></pre></td></tr></table></figure>
 <p>但那太恶心了。现在您已经得到了一个绑定到 ShellViewMode l 的视图。</p>
 <p>另一个主要的关注点是显示窗口和对话框。</p>
-<p>在传统的 MVVM 中，这是一个痛点。第一种选择是实例化并从 ViewModel 中显示视图(使用 Show() 或 ShowDialog() ) ，这使得 ViewModel，或者至少是它的一部分，变得不可测试。</p>
-<p>更好的选择是在你当前视图的后台代码中显示新视图的时候才实例化，并从那里显示它。这意味着您需要建立一种方式来通知当前视图，让其显示实例化的视图，同时，还需要建立一种方式来获取对话框的结果并返回到 ViewModel。</p>
+<p>在传统的 MVVM 中，这是一个痛点。第一种选择是实例化并从 ViewModel
+中显示视图(使用 Show() 或 ShowDialog() ) ，这使得
+ViewModel，或者至少是它的一部分，变得不可测试。</p>
+<p>更好的选择是在你当前视图的后台代码中显示新视图的时候才实例化，并从那里显示它。这意味着您需要建立一种方式来通知当前视图，让其显示实例化的视图，同时，还需要建立一种方式来获取对话框的结果并返回到
+ViewModel。</p>
 <p>实际上，为上面的框架设置内容需要实例化一个视图并放进视图中。这也面临同样的困境——要么视图模型实例化它(使其不可测试)，要么视图实例化它(导致通信困难)。</p>
 <p>不管怎样，这种方法都有一些缺点。</p>
-<h2 id="viewmodel-first-方式-the-viewmodel-first-approach"><a class="markdownIt-Anchor" href="#viewmodel-first-方式-the-viewmodel-first-approach"></a> <a href="">ViewModel-First 方式( The ViewModel-First Approach)</a></h2>
-<p>ViewModel-first 方式的思想是：ViewModel 不应该知道其 View 的任何信息，同时 View 也不负责构造 ViewModel。相反，第三个服务负责为给定的 ViewModel 定位正确的 View，并正确地设置它的DataContext。</p>
-<p>默认实现使用命名约定对给定的 ViewModel 定位正确的 View，将 “ViewModel” 替换为其名称中的 “View”。在 <a href="">ViewManager</a> 中有更详细的解释。</p>
-<p>这允许其他 viewmodel 创建 viewmodel。它允许 viewmodel 了解和拥有其他 viewmodel。这允许您正确地组合您的视图模型。</p>
+<h2 id="viewmodel-first-方式-the-viewmodel-first-approach"><a
+href="">ViewModel-First 方式( The ViewModel-First Approach)</a></h2>
+<p>ViewModel-first 方式的思想是：ViewModel 不应该知道其 View
+的任何信息，同时 View 也不负责构造
+ViewModel。相反，第三个服务负责为给定的 ViewModel 定位正确的
+View，并正确地设置它的DataContext。</p>
+<p>默认实现使用命名约定对给定的 ViewModel 定位正确的 View，将
+“ViewModel” 替换为其名称中的 “View”。在 <a href="">ViewManager</a>
+中有更详细的解释。</p>
+<p>这允许其他 viewmodel 创建 viewmodel。它允许 viewmodel 了解和拥有其他
+viewmodel。这允许您正确地组合您的视图模型。</p>
 <p>这个技巧还有另外一个部分，可以用例子来解释:</p>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>C#</th>
-<th><a target="_blank" rel="noopener" href="http://VB.NET">VB.NET</a></th>
+<th>VB.NET</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>public class ShellViewModel<br> {<br>    public TopBarViewModel TopBar { get; private set; }<br>    // Stuff to instantiate and assign TopBarViewModel }</td>
-<td>Public Class ShellViewModel<br><br>     Public Property TopBar as TopBarViewModel<br>   ’ Stuff to instantiate and assign TopBarViewModel<br><br> End Class</td>
+<tr class="odd">
+<td>public class ShellViewModel<br> {<br> public TopBarViewModel TopBar
+{ get; private set; }<br> // Stuff to instantiate and assign
+TopBarViewModel }</td>
+<td>Public Class ShellViewModel<br><br> Public Property TopBar as
+TopBarViewModel<br> ' Stuff to instantiate and assign
+TopBarViewModel<br><br> End Class</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Window</span> <span class="attr">x:Class</span>=<span class="string">&quot;MyNamespace.ShellView&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:s</span>=<span class="string">&quot;https://github.com/canton7/Stylet&quot;</span> <span class="attr">.....</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">StackPanel</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ContentControl</span> <span class="attr">s:View.Model</span>=<span class="string">&quot;&#123;Binding TopBar&#125;&quot;</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">StackPanel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Window</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>View.Model 关联的属性将获取它绑定到的 ViewModel(在本例中是 TopBarViewModel 的一个实例)，并定位正确的 View (TopBarView)。它将实例化一个实例，并将其设置为 ContentControl 的内容。</p>
-<p>这样的结果是 TopBarView 可以从它的 TopBarViewModel 中获得当前页面的名称，而 TopBarViewModel 可以通过 ShellViewModel 得知这一点。问题解决了!</p>
+<p>View.Model 关联的属性将获取它绑定到的 ViewModel(在本例中是
+TopBarViewModel 的一个实例)，并定位正确的 View
+(TopBarView)。它将实例化一个实例，并将其设置为 ContentControl
+的内容。</p>
+<p>这样的结果是 TopBarView 可以从它的 TopBarViewModel
+中获得当前页面的名称，而 TopBarViewModel 可以通过 ShellViewModel
+得知这一点。问题解决了!</p>
 <p>ContentControl 的技巧也适用于导航:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Window x:Class=&quot;MyNamespace.ShellView&quot;</span><br><span class="line">        xmlns:s=&quot;https://github.com/canton7/Stylet&quot; .....&gt;</span><br><span class="line">   &lt;StackPanel&gt;</span><br><span class="line">      &lt;ContentControl s:View.Model=&quot;&#123;Binding TopBar&#125;&quot;/&gt;</span><br><span class="line">      &lt;ContentControl s:View.Model=&quot;&#123;Binding CurrentPage&#125;&quot;/&gt;</span><br><span class="line">   &lt;/StackPanel&gt;</span><br><span class="line">&lt;/Window&gt;</span><br></pre></td></tr></table></figure>
-<p>通过实例化该页面的 ViewModel 的新实例，并将其分配给属性 CurrentPage, ShellViewModel 将导航到一个新的页面。请注意，ShellViewModel 不再需要知道关于视图的任何信息。它不必实例化一个视图。这是一个非常重要、有用和强大的点。</p>
-<p>对话框和窗口的处理方式与 <a href="">WindowManager</a> 非常相似。它接受一个给定的ViewModel实例，并将其视图显示为一个对话框或窗口。</p>
-<h2 id="删除后台代码delete-the-code-behind"><a class="markdownIt-Anchor" href="#删除后台代码delete-the-code-behind"></a> 删除后台代码！（Delete the Code-Behind! ）</h2>
-<p>有了这种方法，您实际上不需要在代码背后做任何事情。您当然可以这样做，但是很少有 <a href="">响应</a>(用于处理事件)、转换器、附加属性和(最重要的)附加行为 不能解决的问题。</p>
-<p>Stylet 允许您完全删除代码(它将为您调用 InitializeComponent)，强烈建议您这样做。删除后台代码!</p>
+<p>通过实例化该页面的 ViewModel 的新实例，并将其分配给属性 CurrentPage,
+ShellViewModel 将导航到一个新的页面。请注意，ShellViewModel
+不再需要知道关于视图的任何信息。它不必实例化一个视图。这是一个非常重要、有用和强大的点。</p>
+<p>对话框和窗口的处理方式与 <a href="">WindowManager</a>
+非常相似。它接受一个给定的ViewModel实例，并将其视图显示为一个对话框或窗口。</p>
+<h2 id="删除后台代码delete-the-code-behind">删除后台代码！（Delete the
+Code-Behind! ）</h2>
+<p>有了这种方法，您实际上不需要在代码背后做任何事情。您当然可以这样做，但是很少有
+<a href="">响应</a>(用于处理事件)、转换器、附加属性和(最重要的)附加行为
+不能解决的问题。</p>
+<p>Stylet 允许您完全删除代码(它将为您调用
+InitializeComponent)，强烈建议您这样做。删除后台代码!</p>
 <blockquote>
-<p>注意:如果您使用的是VB。有时，如果您删除了后面的代码，则 XAML 名称空间将停止工作。如果是这种情况，只需用匹配的文件名重新创建，给它正确的名称空间和类名，然后将其余部分留空。例如，MyView.xaml.vb:</p>
-<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Namespace</span> Views</span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Class</span> MyView</span><br><span class="line"></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Class</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Namespace</span></span><br></pre></td></tr></table></figure></blockquote>
+<p>注意:如果您使用的是VB。有时，如果您删除了后面的代码，则 XAML
+名称空间将停止工作。如果是这种情况，只需用匹配的文件名重新创建，给它正确的名称空间和类名，然后将其余部分留空。例如，MyView.xaml.vb:</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Namespace</span> Views</span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Class</span> MyView</span><br><span class="line"></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Class</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Namespace</span></span><br></pre></td></tr></table></figure>
+</blockquote>
 
     </div>
 
@@ -458,13 +511,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

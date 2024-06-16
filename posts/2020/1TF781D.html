@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="后端使用mongodb作为数据库，有时候会面对各种需求，google 太费时间，所以将自己使用过的一些技巧总结出来。">
+    <meta name="description" content="后端使用mongodb作为数据库，有时候会面对各种需求，google 太费时间，所以将自己使用过的一些技巧总结出来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb实用技巧总结">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1TF781D.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="后端使用mongodb作为数据库，有时候会面对各种需求，google 太费时间，所以将自己使用过的一些技巧总结出来。">
+<meta property="og:description" content="后端使用mongodb作为数据库，有时候会面对各种需求，google 太费时间，所以将自己使用过的一些技巧总结出来。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-06T00:36:31.204Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E"><span class="nav-number">1.</span> <span class="nav-text"> 增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0"><span class="nav-number">2.</span> <span class="nav-text"> 删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5"><span class="nav-number">3.</span> <span class="nav-text"> 查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E9%87%8C%E9%9D%A2%E7%9A%84%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5"><span class="nav-number">3.1.</span> <span class="nav-text"> 批量更新文档中数组对象里面的某个字段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text"> 改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%97%AE%E8%A7%A3%E7%AD%94"><span class="nav-number">5.</span> <span class="nav-text"> 疑问解答</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E"><span class="nav-number">1.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0"><span class="nav-number">2.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5"><span class="nav-number">3.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E9%87%8C%E9%9D%A2%E7%9A%84%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5"><span class="nav-number">3.1.</span> <span class="nav-text">批量更新文档中数组对象里面的某个字段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%97%AE%E8%A7%A3%E7%AD%94"><span class="nav-number">5.</span> <span class="nav-text">疑问解答</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -289,28 +289,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>后端使用mongodb作为数据库，有时候会面对各种需求，google 太费时间，所以将自己使用过的一些技巧总结出来。</p>
+    <div class="post-body" itemprop="articleBody"><p>后端使用mongodb作为数据库，有时候会面对各种需求，google
+太费时间，所以将自己使用过的一些技巧总结出来。</p>
 <span id="more"></span>
-<h2 id="增"><a class="markdownIt-Anchor" href="#增"></a> 增</h2>
-<h2 id="删"><a class="markdownIt-Anchor" href="#删"></a> 删</h2>
-<h2 id="查"><a class="markdownIt-Anchor" href="#查"></a> 查</h2>
-<h3 id="批量更新文档中数组对象里面的某个字段"><a class="markdownIt-Anchor" href="#批量更新文档中数组对象里面的某个字段"></a> 批量更新文档中数组对象里面的某个字段</h3>
+<h2 id="增">增</h2>
+<h2 id="删">删</h2>
+<h2 id="查">查</h2>
+<h3
+id="批量更新文档中数组对象里面的某个字段">批量更新文档中数组对象里面的某个字段</h3>
 <ul>
-<li>
-<p>文档示例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">_id</span>: <span class="title class_">ObjectId</span>(<span class="string">&#x27;5f68710c4da61820f461e0b8&#x27;</span>)</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;zhangsan&#x27;</span>,</span><br><span class="line">    <span class="attr">freinds</span>:[</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;lisi&#x27;</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;xiaowang&#x27;</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>目标</p>
-<p>文档如上，假如现在我们需要更新 <code>freinds</code> 中小王（xiaowang）的年龄，但是同时，我们也不知道小王这个元素位于数组的下标索引。</p>
-</li>
-<li>
-<p>查询</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = <span class="keyword">await</span> collection.<span class="title function_">findById</span>(<span class="string">&#x27;5f68710c4da61820f461e0b8&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> index = person.<span class="property">freinds</span>.<span class="title function_">findIndex</span>(<span class="function"><span class="params">f</span>=&gt;</span>f.<span class="property">name</span>===<span class="string">&#x27;xiaowang&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> freind = person.<span class="property">freinds</span>[index];</span><br><span class="line">freind.<span class="property">age</span> = <span class="number">22</span>; <span class="comment">// 修改年龄</span></span><br><span class="line"><span class="comment">// 如果是修改 freind 中原有的字段，这句可以不要</span></span><br><span class="line"><span class="comment">// 如果是新增字段，这句就必须加上，否则 save 会失效</span></span><br><span class="line">person.<span class="property">freinds</span>.<span class="title function_">splice</span>(index,<span class="number">1</span>,freind);</span><br><span class="line">person.<span class="title function_">save</span>();</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>文档示例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">_id</span>: <span class="title class_">ObjectId</span>(<span class="string">&#x27;5f68710c4da61820f461e0b8&#x27;</span>)</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;zhangsan&#x27;</span>,</span><br><span class="line">    <span class="attr">freinds</span>:[</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;lisi&#x27;</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;xiaowang&#x27;</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>目标</p>
+<p>文档如上，假如现在我们需要更新 <code>freinds</code>
+中小王（xiaowang）的年龄，但是同时，我们也不知道小王这个元素位于数组的下标索引。</p></li>
+<li><p>查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = <span class="keyword">await</span> collection.<span class="title function_">findById</span>(<span class="string">&#x27;5f68710c4da61820f461e0b8&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> index = person.<span class="property">freinds</span>.<span class="title function_">findIndex</span>(<span class="function"><span class="params">f</span>=&gt;</span>f.<span class="property">name</span>===<span class="string">&#x27;xiaowang&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> freind = person.<span class="property">freinds</span>[index];</span><br><span class="line">freind.<span class="property">age</span> = <span class="number">22</span>; <span class="comment">// 修改年龄</span></span><br><span class="line"><span class="comment">// 如果是修改 freind 中原有的字段，这句可以不要</span></span><br><span class="line"><span class="comment">// 如果是新增字段，这句就必须加上，否则 save 会失效</span></span><br><span class="line">person.<span class="property">freinds</span>.<span class="title function_">splice</span>(index,<span class="number">1</span>,freind);</span><br><span class="line">person.<span class="title function_">save</span>();</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="改"><a class="markdownIt-Anchor" href="#改"></a> 改</h2>
-<h2 id="疑问解答"><a class="markdownIt-Anchor" href="#疑问解答"></a> 疑问解答</h2>
+<h2 id="改">改</h2>
+<h2 id="疑问解答">疑问解答</h2>
 
     </div>
 
@@ -413,13 +410,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

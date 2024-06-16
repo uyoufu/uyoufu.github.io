@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介（Introduction） 想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。">
+    <meta name="description" content="简介（Introduction） 想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）13-Validation Use ValidatingModelBase">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1HXBM8H.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介（Introduction） 想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。">
+<meta property="og:description" content="简介（Introduction） 想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -142,7 +142,11 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bintroduction"><span class="nav-number">1.</span> <span class="nav-text"> 简介（Introduction）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#validatingmodelbase"><span class="nav-number">2.</span> <span class="nav-text"> ValidatingModelBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#imodelvalidator"><span class="nav-number">2.1.</span> <span class="nav-text"> IModelValidator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81running-validations"><span class="nav-number">2.2.</span> <span class="nav-text"> 运行验证（Running Validations）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%92%8C%E4%BD%BF%E7%94%A8-imodelvalidator"><span class="nav-number">3.</span> <span class="nav-text"> 理解和使用 IModelValidator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%88%B6%E7%9A%84-imodelvalidatorusing-a-pre-made-imodelvalidator"><span class="nav-number">4.</span> <span class="nav-text"> 使用预制的 IModelValidator（Using a pre-made IModelValidator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E9%80%82%E9%85%8D%E5%99%A8implementing-imodelvalidator-synchronously"><span class="nav-number">5.</span> <span class="nav-text"> 实现同步验证适配器（Implementing IModelValidator (Synchronously)）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E9%AA%8C%E8%AF%81%E9%80%82%E9%85%8D%E5%99%A8implementing-imodelvalidator-asynchronously"><span class="nav-number">6.</span> <span class="nav-text"> 实现异步验证适配器（Implementing IModelValidator (Asynchronously)）</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8Bintroduction"><span class="nav-number">1.</span> <span class="nav-text">简介（Introduction）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#validatingmodelbase"><span class="nav-number">2.</span> <span class="nav-text">ValidatingModelBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#imodelvalidator"><span class="nav-number">2.1.</span> <span class="nav-text">IModelValidator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81running-validations"><span class="nav-number">2.2.</span> <span class="nav-text">运行验证（Running
+Validations）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%92%8C%E4%BD%BF%E7%94%A8-imodelvalidator"><span class="nav-number">3.</span> <span class="nav-text">理解和使用 IModelValidator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%88%B6%E7%9A%84-imodelvalidatorusing-a-pre-made-imodelvalidator"><span class="nav-number">4.</span> <span class="nav-text">使用预制的
+IModelValidator（Using a pre-made IModelValidator）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E9%80%82%E9%85%8D%E5%99%A8implementing-imodelvalidator-synchronously"><span class="nav-number">5.</span> <span class="nav-text">实现同步验证适配器（Implementing
+IModelValidator (Synchronously)）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E9%AA%8C%E8%AF%81%E9%80%82%E9%85%8D%E5%99%A8implementing-imodelvalidator-asynchronously"><span class="nav-number">6.</span> <span class="nav-text">实现异步验证适配器（Implementing
+IModelValidator (Asynchronously)）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,111 +294,229 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介introduction"><a class="markdownIt-Anchor" href="#简介introduction"></a> 简介（Introduction）</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介introduction">简介（Introduction）</h2>
 <p>想象这个场景……用户正在填写您精心编写的表单，他们在应该输入电子邮件地址的地方输入了自己的名字。您需要检测这个问题，并以清晰的方式显示问题。</p>
 <span id="more"></span>
-<p>输入验证是一个很大的领域，有很多方法可以实现它。最简单和最吸引人的是在你的属性的 setter 中抛出一个异常，像这样:</p>
+<p>输入验证是一个很大的领域，有很多方法可以实现它。最简单和最吸引人的是在你的属性的
+setter 中抛出一个异常，像这样:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">string</span> _name;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> Name</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._name; &#125;</span><br><span class="line">   <span class="keyword">set</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">if</span> (someConditionIsFalse)</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> ValidationException(<span class="string">&quot;Message&quot;</span>);</span><br><span class="line">      <span class="keyword">this</span>._name = <span class="keyword">value</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>当绑定设置此属性时，它会通知是否抛出异常，并相应地更新控件的验证状态。</p>
-<p>然而，这最终会变成一个<strong>彻底的坏主意</strong>。这意味着您的属性只有在设置时才能被验证(例如，当用户单击 “Submit” 时，您不能遍历并验证整个表单)，这会导致大量重复逻辑的属性设置器。好可怕。</p>
-<p>c#还定义了两个接口，WPF知道这两个接口: <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-gb/library/system.componentmodel.idataerrorinfo.aspx">IDataErrorInfo </a>和 <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/vstudio/system.componentmodel.inotifydataerrorinfo">INotifyDataErrorInfo</a>。这两种方法都为ViewModel 提供了一种方法，通过事件和 PropertyChanged 通知来告诉视图，输入中一个或多个属性有一个或多个验证错误。其中，INotifyDataErrorInfo 更新、更容易使用，并且允许异步验证。</p>
-<p>但是，使用 INotifyDataErrorInfo 仍然有点不直观: 它允许您广播一个或多个属性有错误的问题，但是没有为您提供运行验证的简单方法，并且要求您记录哪些错误与哪些属性相关联。</p>
-<p>ValidatingModelBase 的目标是解决这些问题，并提供一种直观、简单的方法来运行和报告验证。</p>
-<h2 id="validatingmodelbase"><a class="markdownIt-Anchor" href="#validatingmodelbase"></a> ValidatingModelBase</h2>
-<p>ValidatingModelBase 派生自<code>PropertyChangedBase</code>，并由 Screen 继承。它建立在 PropertyChangeBase 的功能上，当属性发生变化时，它可以通知并报告验证。</p>
-<h3 id="imodelvalidator"><a class="markdownIt-Anchor" href="#imodelvalidator"></a> IModelValidator</h3>
-<p>有许多方法可以运行验证，有许多好的库可以帮助您。Stylet 并不打算提供另一个验证库，因此 Stylet 允许您提供自己的验证库，以便 ValidatingModelBase 使用。</p>
-<p>这体现在 ValidatingModelBase 的 <code>validator</code> 属性中，它是一个 <code>IModelValidator</code>。这样做的目的是编写自己的 <code>IModelValidator</code> 实现，它封装了首选的验证库(稍后我将介绍一些如何实现的示例)，以便ValidatingModelBase 可以使用它。</p>
+<p>然而，这最终会变成一个<strong>彻底的坏主意</strong>。这意味着您的属性只有在设置时才能被验证(例如，当用户单击
+“Submit”
+时，您不能遍历并验证整个表单)，这会导致大量重复逻辑的属性设置器。好可怕。</p>
+<p>c#还定义了两个接口，WPF知道这两个接口: <a
+target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-gb/library/system.componentmodel.idataerrorinfo.aspx">IDataErrorInfo</a>和
+<a
+target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/vstudio/system.componentmodel.inotifydataerrorinfo">INotifyDataErrorInfo</a>。这两种方法都为ViewModel
+提供了一种方法，通过事件和 PropertyChanged
+通知来告诉视图，输入中一个或多个属性有一个或多个验证错误。其中，INotifyDataErrorInfo
+更新、更容易使用，并且允许异步验证。</p>
+<p>但是，使用 INotifyDataErrorInfo 仍然有点不直观:
+它允许您广播一个或多个属性有错误的问题，但是没有为您提供运行验证的简单方法，并且要求您记录哪些错误与哪些属性相关联。</p>
+<p>ValidatingModelBase
+的目标是解决这些问题，并提供一种直观、简单的方法来运行和报告验证。</p>
+<h2 id="validatingmodelbase">ValidatingModelBase</h2>
+<p>ValidatingModelBase 派生自<code>PropertyChangedBase</code>，并由
+Screen 继承。它建立在 PropertyChangeBase
+的功能上，当属性发生变化时，它可以通知并报告验证。</p>
+<h3 id="imodelvalidator">IModelValidator</h3>
+<p>有许多方法可以运行验证，有许多好的库可以帮助您。Stylet
+并不打算提供另一个验证库，因此 Stylet 允许您提供自己的验证库，以便
+ValidatingModelBase 使用。</p>
+<p>这体现在 ValidatingModelBase 的 <code>validator</code>
+属性中，它是一个 <code>IModelValidator</code>。这样做的目的是编写自己的
+<code>IModelValidator</code>
+实现，它封装了首选的验证库(稍后我将介绍一些如何实现的示例)，以便ValidatingModelBase
+可以使用它。</p>
 <p>这个接口有两个重要的方法:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Task&lt;IEnumerable&lt;<span class="built_in">string</span>&gt;&gt; ValidatePropertyAsync(<span class="built_in">string</span> propertyName);</span><br><span class="line">Task&lt;Dictionary&lt;<span class="built_in">string</span>, IEnumerable&lt;<span class="built_in">string</span>&gt;&gt;&gt; ValidateAllPropertiesAsync();</span><br></pre></td></tr></table></figure>
-<p>当需要通过名称验证单个属性时，ValidatingModelBase 将调用第一个方法，并返回一个验证错误的数组。第二个是 ValidatingModelBase 在您要求它执行完整验证时调用的，并返回一个’<code>property name =&gt; array of validation errors</code>。</p>
-<p>这些方法是异步的，这允许您利用 INotifyDataErrorInfo 的异步验证功能，并可以在某些外部服务上运行验证。但是，这个接口的大多数实现都只返回一个完成的任务。</p>
+<p>当需要通过名称验证单个属性时，ValidatingModelBase
+将调用第一个方法，并返回一个验证错误的数组。第二个是 ValidatingModelBase
+在您要求它执行完整验证时调用的，并返回一个'<code>property name =&gt; array of validation errors</code>。</p>
+<p>这些方法是异步的，这允许您利用 INotifyDataErrorInfo
+的异步验证功能，并可以在某些外部服务上运行验证。但是，这个接口的大多数实现都只返回一个完成的任务。</p>
 <p>还有第三个方法:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params"><span class="built_in">object</span> subject</span>)</span>;</span><br></pre></td></tr></table></figure>
-<p>当 ValidatingModelBase 第一次设置它的验证时，它会调用这个函数，并传递它自己的一个实例。这使得 <code>IModelValidator</code> 的实现可以专门用于验证 ValidatingModelBase 的特定实例。当我们将东西绑定到 StyletIoC中时，这更有意义。</p>
-<p>还有这个接口的一个通用版本 <code>IModelValidator&lt;T&gt;</code>，它只是扩展了 <code>IModelValidator</code>，没有添加任何额外的内容。当 IoC 容器进入画面时，这也是很有用的—稍后会详细介绍。</p>
-<h3 id="运行验证running-validations"><a class="markdownIt-Anchor" href="#运行验证running-validations"></a> 运行验证（Running Validations）</h3>
-<p>首先，您必须记住将 <code>IModelValidator</code> 实现传递给 <code>ValidatingModelBase</code>。你可以通过设置 <code>validator</code> 属性，或者调用一个合适的构造函数来实现:</p>
+<p>当 ValidatingModelBase
+第一次设置它的验证时，它会调用这个函数，并传递它自己的一个实例。这使得
+<code>IModelValidator</code> 的实现可以专门用于验证 ValidatingModelBase
+的特定实例。当我们将东西绑定到 StyletIoC中时，这更有意义。</p>
+<p>还有这个接口的一个通用版本
+<code>IModelValidator&lt;T&gt;</code>，它只是扩展了
+<code>IModelValidator</code>，没有添加任何额外的内容。当 IoC
+容器进入画面时，这也是很有用的—稍后会详细介绍。</p>
+<h3 id="运行验证running-validations">运行验证（Running
+Validations）</h3>
+<p>首先，您必须记住将 <code>IModelValidator</code> 实现传递给
+<code>ValidatingModelBase</code>。你可以通过设置 <code>validator</code>
+属性，或者调用一个合适的构造函数来实现:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyViewModel</span> : <span class="title">ValidatingModelBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyViewModel</span>(<span class="params">IModelValidator validator</span>) : <span class="title">base</span>(<span class="params">validator</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>默认情况下，每当一个属性发生变化时，ValidatingModelBase 都会运行该属性的验证(前提是您调用 <code>SetAndNotify</code>。使用 <code>NotifyOfPropertyChange</code> 或使用 <code>PropertyChanged.Fody</code> 来触发  PropertyChangedBase 中定义的机制来引发PropertyChanged通知）。然后，它将使用 <code>INotifyDataErrorInfo</code> 接口中定义的机制报告该属性的验证状态的任何更改。它还将更改 <code>HasErrors</code>属性的值。</p>
-<p>如果您想要禁用这种自动验证行为，请将 <code>AutoValidate</code> 属性设置为 <code>false</code> 。</p>
-<p>如果需要，可以通过调用 <code>ValidateProperty(&quot;PropertyName&quot;)</code>, 或 <code>ValidateProperty(() =&gt; this.PropertyName)</code> 来手动运行单个属性的验证。如果您的验证是异步的，那么还有异步的版本—稍后将详细介绍。如果你想验证一个属性，无论何时设置，你可以这样做:</p>
+<p>默认情况下，每当一个属性发生变化时，ValidatingModelBase
+都会运行该属性的验证(前提是您调用 <code>SetAndNotify</code>。使用
+<code>NotifyOfPropertyChange</code> 或使用
+<code>PropertyChanged.Fody</code> 来触发 PropertyChangedBase
+中定义的机制来引发PropertyChanged通知）。然后，它将使用
+<code>INotifyDataErrorInfo</code>
+接口中定义的机制报告该属性的验证状态的任何更改。它还将更改
+<code>HasErrors</code>属性的值。</p>
+<p>如果您想要禁用这种自动验证行为，请将 <code>AutoValidate</code>
+属性设置为 <code>false</code> 。</p>
+<p>如果需要，可以通过调用 <code>ValidateProperty("PropertyName")</code>,
+或 <code>ValidateProperty(() =&gt; this.PropertyName)</code>
+来手动运行单个属性的验证。如果您的验证是异步的，那么还有异步的版本—稍后将详细介绍。如果你想验证一个属性，无论何时设置，你可以这样做:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">string</span> _name</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> Name</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._name; &#125;</span><br><span class="line">   <span class="keyword">set</span></span><br><span class="line">   &#123;</span><br><span class="line">      SetAndNotify(<span class="keyword">ref</span> <span class="keyword">this</span>._name, <span class="keyword">value</span>);</span><br><span class="line">      ValidateProperty();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另外，可以通过调用 <code>Validate()</code> 对所有属性运行验证。</p>
-<p>如果您希望在验证状态发生变化(任何属性的验证错误发生变化)时运行一些自定义代码，请覆盖 <code>OnValidationStateChanged() </code>。</p>
-<h2 id="理解和使用-imodelvalidator"><a class="markdownIt-Anchor" href="#理解和使用-imodelvalidator"></a> 理解和使用 IModelValidator</h2>
-<p>在接下来的几节中，我将带您通过使用一个非常有用的 <a target="_blank" rel="noopener" href="http://fluentvalid.codeplex.com/">FluentValidation</a> 库实现验证的示例。</p>
-<p>FluentValidation 是通过创建一个新类来工作的，它实现了 <code>IValidator&lt;T&gt;</code> (通常通过扩展 <code>AbstractValidator&lt;T&gt;</code> 来实现，它可以验证特定类型的模型 <code>T</code>)。您需要创建一个新的实例，并使用它来运行验证。例如，如果你有一个 <code>UserViewModel</code>，你将定义一个 <code>UserViewModelValidator</code>，它扩展了 <code>AbstractValidator&lt;UserViewModel&gt;</code>，因此实现了 <code>IValidator&lt;UserViewModel&gt;</code>，就像这样:</p>
+<p>如果您希望在验证状态发生变化(任何属性的验证错误发生变化)时运行一些自定义代码，请覆盖
+<code>OnValidationStateChanged()</code>。</p>
+<h2 id="理解和使用-imodelvalidator">理解和使用 IModelValidator</h2>
+<p>在接下来的几节中，我将带您通过使用一个非常有用的 <a
+target="_blank" rel="noopener" href="http://fluentvalid.codeplex.com/">FluentValidation</a>
+库实现验证的示例。</p>
+<p>FluentValidation 是通过创建一个新类来工作的，它实现了
+<code>IValidator&lt;T&gt;</code> (通常通过扩展
+<code>AbstractValidator&lt;T&gt;</code> 来实现，它可以验证特定类型的模型
+<code>T</code>)。您需要创建一个新的实例，并使用它来运行验证。例如，如果你有一个
+<code>UserViewModel</code>，你将定义一个
+<code>UserViewModelValidator</code>，它扩展了
+<code>AbstractValidator&lt;UserViewModel&gt;</code>，因此实现了
+<code>IValidator&lt;UserViewModel&gt;</code>，就像这样:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">UserViewModel</span> : <span class="title">Screen</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="built_in">string</span> _name;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> Name</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._name; &#125;</span><br><span class="line">      <span class="keyword">set</span> &#123; SetAndNotify(<span class="keyword">ref</span> <span class="keyword">this</span>._name, <span class="keyword">value</span>); &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">UserViewModelValidator</span> : <span class="title">AbstractValidator</span>&lt;<span class="title">UserViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">UserViewModelValidator</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      RuleFor(x =&gt; x.Name).NotEmpty();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果我们直接使用 <code>UserViewModelValidator</code> (没有 ValidatingModelBase 的帮助)，我们会做以下事情:</p>
+<p>如果我们直接使用 <code>UserViewModelValidator</code> (没有
+ValidatingModelBase 的帮助)，我们会做以下事情:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserViewModel</span>(<span class="params">UserViewModelValidator validator</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">this</span>.Validator = validator;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">this</span>.Validator.Validate(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
-<p>但是，使用 ValidatingModelBase 的意义在于它将自动运行和自动报告验证。如前所述，我们需要以ValidatingModelBase 知道如何与之交互的方式包装我们的 <code>UserViewModelValidator</code>。</p>
-<p>做到这一点的最简单的方法是编写一个适配器，它可以接受 <code>IValidator&lt;T&gt; </code> 的任何实现(即您编写的任何自定义验证器)，并以 ValidatingModelBase 能够理解的方式公开它。如果它消失了，我可以再次运行它:</p>
+<p>但是，使用 ValidatingModelBase
+的意义在于它将自动运行和自动报告验证。如前所述，我们需要以ValidatingModelBase
+知道如何与之交互的方式包装我们的
+<code>UserViewModelValidator</code>。</p>
+<p>做到这一点的最简单的方法是编写一个适配器，它可以接受
+<code>IValidator&lt;T&gt;</code>
+的任何实现(即您编写的任何自定义验证器)，并以 ValidatingModelBase
+能够理解的方式公开它。如果它消失了，我可以再次运行它:</p>
 <ul>
-<li>
-<p>ValidatingModelBase.Validator 是一个 IModelValidator</p>
-</li>
-<li>
-<p>UserViewModelValidator是一个 IValidator<UserViewModel></p>
-</li>
-<li>
-<p>我们将编写一个适配器，FluentValidationAdapter<T>，这是一个 IModelValidator</p>
-</li>
-<li>
-<p>FluentValidationAdapter<T> 将接受一个 IValidator<T>，并封装它，以便可以通过 IModelValidator 访问它</p>
-</li>
-<li>
-<p>因此，FluentValidationAdapter<UserViewModel> 将接受一个 UserViewModelValidator，并将其公开为IModelValidator;</p>
-</li>
+<li><p>ValidatingModelBase.Validator 是一个 IModelValidator</p></li>
+<li><p>UserViewModelValidator是一个 IValidator<UserViewModel></p></li>
+<li><p>我们将编写一个适配器，FluentValidationAdapter<T>，这是一个
+IModelValidator</p></li>
+<li><p>FluentValidationAdapter<T> 将接受一个
+IValidator<T>，并封装它，以便可以通过 IModelValidator 访问它</p></li>
+<li><p>因此，FluentValidationAdapter<UserViewModel> 将接受一个
+UserViewModelValidator，并将其公开为IModelValidator;</p></li>
 </ul>
-<p>明白了吗?这可能听起来工作量很大，但是我们可以让 IoC 容器完成大部分繁重的工作，我们很快就会看到这一点。</p>
-<p>现在，在实践中会是什么样子呢?首先，还记得我说过 <code>IModelValidator&lt;T&gt;</code> 被定义为一个只实现 <code>IModelValidator</code> 的接口吗?我现在还不会告诉你为什么，但是请记住它们基本上是同义词。</p>
+<p>明白了吗?这可能听起来工作量很大，但是我们可以让 IoC
+容器完成大部分繁重的工作，我们很快就会看到这一点。</p>
+<p>现在，在实践中会是什么样子呢?首先，还记得我说过
+<code>IModelValidator&lt;T&gt;</code> 被定义为一个只实现
+<code>IModelValidator</code>
+的接口吗?我现在还不会告诉你为什么，但是请记住它们基本上是同义词。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Define the adapter</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FluentValidationAdapter</span>&lt;<span class="title">T</span>&gt; : <span class="title">IModelValidator</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">FluentValidationAdapter</span>(<span class="params">IValidator&lt;T&gt; validator</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Store the validator</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Implement all IModelValidator methods, using the stored validator</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This implements IValidator&lt;UserViewModel&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">UserViewModelValidator</span> : <span class="title">AbtractValidator</span>&lt;<span class="title">UserViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">UserViewModelValidator</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Set up validation rules</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">UserViewModel</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">UserViewModel</span>(<span class="params">IModelValidator&lt;UserViewModel&gt; validator</span>) : <span class="title">base</span>(<span class="params">validator</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看这里！如果我们要手动实例化一个新的 <code>UserViewModel </code>，我们会这样做:</p>
+<p>看这里！如果我们要手动实例化一个新的
+<code>UserViewModel</code>，我们会这样做:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> validator = <span class="keyword">new</span> UserViewModelValidator();</span><br><span class="line"><span class="keyword">var</span> validatorAdapter = <span class="keyword">new</span> FluentValidationAdapter&lt;UserViewModel&gt;(validator);</span><br><span class="line"><span class="keyword">var</span> viewModel = <span class="keyword">new</span> UserViewModel(validatorAdapter);</span><br></pre></td></tr></table></figure>
-<p>但是，我们可以配置 IoC 容器来完成这一任务。这里假设您使用的是 StyletIoC，尽管其他容器也可以进行类似的配置。</p>
-<p>在你的 bootstrapper 中 重写 <code>ConfigureIoC</code>，首先，每当你要求一个 <code>IModelValidator&lt;T&gt; </code> 时，告诉 StyletIoC 返回一个 <code>FluentValidationAdapter&lt;T&gt;</code> ，这样做:</p>
+<p>但是，我们可以配置 IoC 容器来完成这一任务。这里假设您使用的是
+StyletIoC，尽管其他容器也可以进行类似的配置。</p>
+<p>在你的 bootstrapper 中 重写
+<code>ConfigureIoC</code>，首先，每当你要求一个
+<code>IModelValidator&lt;T&gt;</code> 时，告诉 StyletIoC 返回一个
+<code>FluentValidationAdapter&lt;T&gt;</code> ，这样做:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">builder.Bind(<span class="keyword">typeof</span>(IModelValidator&lt;&gt;)).To(<span class="keyword">typeof</span>(FluentValidationAdapter&lt;&gt;));</span><br></pre></td></tr></table></figure>
-<p>因此，无论何时 StyletIoC 都创建了一个新的 <code>UserViewModel</code>，它都会意识到它需要一个 <code>IModelValidator&lt;UserViewModel&gt;</code>。它知道已经被告知如何创建一个<code>IModelValidator&lt;T&gt;</code>——通过实例化一个新的 <code>FluentValidationAdapter&lt;T&gt;</code>。因此，它将尝试创建一个新的 <code>FluentValidationAdapter&lt;UserViewModel&gt; </code>，但是发现创建它需要一个新的 <code>IValidator&lt;UserViewModel&gt; </code>,这会因为找不到而失败。</p>
-<p>因此，我们需要告诉 StyletIoC 如何创建一个新的 <code>IValidator&lt;UserViewModel&gt;</code>。我们<em>可以</em> 用这种比较长的方式，像这样：</p>
+<p>因此，无论何时 StyletIoC 都创建了一个新的
+<code>UserViewModel</code>，它都会意识到它需要一个
+<code>IModelValidator&lt;UserViewModel&gt;</code>。它知道已经被告知如何创建一个<code>IModelValidator&lt;T&gt;</code>——通过实例化一个新的
+<code>FluentValidationAdapter&lt;T&gt;</code>。因此，它将尝试创建一个新的
+<code>FluentValidationAdapter&lt;UserViewModel&gt;</code>，但是发现创建它需要一个新的
+<code>IValidator&lt;UserViewModel&gt;</code>,这会因为找不到而失败。</p>
+<p>因此，我们需要告诉 StyletIoC 如何创建一个新的
+<code>IValidator&lt;UserViewModel&gt;</code>。我们<em>可以</em>
+用这种比较长的方式，像这样：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The long way</span></span><br><span class="line">builder.Bind&lt;IValidator&lt;UserViewModel&gt;&gt;().To&lt;UserViewModelValidator&gt;();</span><br></pre></td></tr></table></figure>
-<p>但是，如果有很多验证器，就需要很多行配置。最好告诉S tyletIoC 发现所有的 <code>IValidator&lt;T&gt; </code>实现，并绑定它们本身，通过这样做:</p>
+<p>但是，如果有很多验证器，就需要很多行配置。最好告诉S tyletIoC
+发现所有的
+<code>IValidator&lt;T&gt;</code>实现，并绑定它们本身，通过这样做:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The short way</span></span><br><span class="line">builder.Bind(<span class="keyword">typeof</span>(IValidator&lt;&gt;)).ToAllImplementations();</span><br></pre></td></tr></table></figure>
-<p>漂亮! 当 StyletIoC 试图创建一个新的 <code>FluentValidationAdapter&lt;UserViewModel&gt;</code> 时，它将看到它需要一个 <code>IValidator&lt;UserViewModel&gt;</code>，并将实例化一个新的<code>UserViewModelValidator</code>。</p>
-<p>现在您可以看到为什么我们在这里使用 <code>IModelValidator&lt;T&gt;</code> 而不是 <code>IModelValidator</code>。如果 <code>UserViewModel</code> 需要一个<code>IModelValidator</code>，StyletIoC 就不能计算出它应该创建一个 <code>FluentValidationAdapter&lt;UserViewModel&gt;</code>，而不是一个 <code>FluentValidationAdapter&lt;LogInViewModel&gt;</code>。通过向 <code>IModelValidator</code> 添加类型信息，我们为 IoC 容器提供了足够的信息。</p>
-<h2 id="使用预制的-imodelvalidatorusing-a-pre-made-imodelvalidator"><a class="markdownIt-Anchor" href="#使用预制的-imodelvalidatorusing-a-pre-made-imodelvalidator"></a> 使用预制的 IModelValidator（Using a pre-made IModelValidator）</h2>
+<p>漂亮! 当 StyletIoC 试图创建一个新的
+<code>FluentValidationAdapter&lt;UserViewModel&gt;</code>
+时，它将看到它需要一个
+<code>IValidator&lt;UserViewModel&gt;</code>，并将实例化一个新的<code>UserViewModelValidator</code>。</p>
+<p>现在您可以看到为什么我们在这里使用
+<code>IModelValidator&lt;T&gt;</code> 而不是
+<code>IModelValidator</code>。如果 <code>UserViewModel</code>
+需要一个<code>IModelValidator</code>，StyletIoC
+就不能计算出它应该创建一个
+<code>FluentValidationAdapter&lt;UserViewModel&gt;</code>，而不是一个
+<code>FluentValidationAdapter&lt;LogInViewModel&gt;</code>。通过向
+<code>IModelValidator</code> 添加类型信息，我们为 IoC
+容器提供了足够的信息。</p>
+<h2
+id="使用预制的-imodelvalidatorusing-a-pre-made-imodelvalidator">使用预制的
+IModelValidator（Using a pre-made IModelValidator）</h2>
 <p>我写了以下 IModelValidator 实现，欢迎大家使用:</p>
-<ol>
+<ol type="1">
 <li>FluentValidationAdapter</li>
 </ol>
 <p>如果你写了一个，你很乐意分享它，请让我知道，我会添加它。</p>
-<h2 id="实现同步验证适配器implementing-imodelvalidator-synchronously"><a class="markdownIt-Anchor" href="#实现同步验证适配器implementing-imodelvalidator-synchronously"></a> 实现同步验证适配器（Implementing IModelValidator (Synchronously)）</h2>
-<p>编写一个 <code>IModelValidator</code> 实现在概念上很简单，但是有一些问题。与前面一样，本节将假设我们正在为FluentValidation 库实现一个适配器，尽管您可以应用在这里学到的知识来为几乎所有的库编写一个适配器。</p>
-<p>现在，我们假设所有的验证都是同步的。对于返回 Task 的方法，我们只返回一个已完成的 Task。一件容易的事。</p>
-<p>首先，我们将实现 <code>IModelValidator&lt;T&gt;</code>，原因在前一节中讨论过。它还需要接受一个 <code>IValidator&lt;T&gt;</code> 作为构造函数参数，就像这样:</p>
+<h2
+id="实现同步验证适配器implementing-imodelvalidator-synchronously">实现同步验证适配器（Implementing
+IModelValidator (Synchronously)）</h2>
+<p>编写一个 <code>IModelValidator</code>
+实现在概念上很简单，但是有一些问题。与前面一样，本节将假设我们正在为FluentValidation
+库实现一个适配器，尽管您可以应用在这里学到的知识来为几乎所有的库编写一个适配器。</p>
+<p>现在，我们假设所有的验证都是同步的。对于返回 Task
+的方法，我们只返回一个已完成的 Task。一件容易的事。</p>
+<p>首先，我们将实现
+<code>IModelValidator&lt;T&gt;</code>，原因在前一节中讨论过。它还需要接受一个
+<code>IValidator&lt;T&gt;</code> 作为构造函数参数，就像这样:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FluentValidationAdapter</span> : <span class="title">IModelValidator</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">readonly</span> IValidator&lt;T&gt; validator;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">FluentValidationAdapter</span>(<span class="params">IValidator&lt;T&gt; validator</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">this</span>.validator = validator;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>记住 <code>ValidatingModelBase</code> 需要一个 <code>IModelValidator</code>，它专门用于验证特定的 ViewModel 实例，因为它增加了更多的灵活性。这意味着 <code>ValidationModelBase</code> 可以调用 <code>ValidateAllPropertiesAsync()</code>，正确的 ViewModel 实例将被验证。然而，这里我们有一个鸡生蛋还是蛋生鸡的情况—为了使适配器专门化，ViewModel 必须存在。但是，只有在适配器被验证之后才能实例化 ViewModel，因为 ViewModel需 要适配器作为构造函数参数。</p>
-<p>解决方案是 <code>Initialize(object subject) </code>方法。它被 <code>ValidatingModelBase</code> 调用，当它传递一个新的适配器时，它将把自己作为参数传递。然后适配器将存储这个实例，并在运行验证时使用它。是这样的:</p>
+<p>记住 <code>ValidatingModelBase</code> 需要一个
+<code>IModelValidator</code>，它专门用于验证特定的 ViewModel
+实例，因为它增加了更多的灵活性。这意味着
+<code>ValidationModelBase</code> 可以调用
+<code>ValidateAllPropertiesAsync()</code>，正确的 ViewModel
+实例将被验证。然而，这里我们有一个鸡生蛋还是蛋生鸡的情况—为了使适配器专门化，ViewModel
+必须存在。但是，只有在适配器被验证之后才能实例化 ViewModel，因为
+ViewModel需 要适配器作为构造函数参数。</p>
+<p>解决方案是 <code>Initialize(object subject)</code>方法。它被
+<code>ValidatingModelBase</code>
+调用，当它传递一个新的适配器时，它将把自己作为参数传递。然后适配器将存储这个实例，并在运行验证时使用它。是这样的:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FluentValidationAdapter</span> : <span class="title">IModelValidator</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">readonly</span> IValidator&lt;T&gt; validator;</span><br><span class="line">   <span class="keyword">private</span> T subject;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">FluentValidationAdapter</span>(<span class="params">IValidator&lt;T&gt; validator</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">this</span>.validator = validator;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params"><span class="built_in">object</span> subject</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">this</span>.subject = (T)subject;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在,实现 <code>ValidatePropertyAsync</code>。这应该验证单个属性，并返回验证错误列表，如果没有验证错误，则返回 null/emptyarray。使用 FluentValidation 执行同步验证，它可能是这样的:</p>
+<p>现在,实现
+<code>ValidatePropertyAsync</code>。这应该验证单个属性，并返回验证错误列表，如果没有验证错误，则返回
+null/emptyarray。使用 FluentValidation 执行同步验证，它可能是这样的:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Task&lt;IEnumerable&lt;<span class="built_in">string</span>&gt;&gt; ValidatePropertyAsync(<span class="built_in">string</span> propertyName)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">var</span> errors = <span class="keyword">this</span>.validator.Validate(<span class="keyword">this</span>.subject, propertyName).Errors.Select(x =&gt; x.ErrorMessage);</span><br><span class="line">   <span class="keyword">return</span> Task.FromResult(errors);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>类似地，<code>ValidateAllPropertiesAsync</code> 方法验证所有属性，并返回<code>&#123; propertyName =&gt; array of validation errors &#125;</code>的字典。如果属性没有任何验证错误，您可以从字典中完全删除它，或者将其值设置为 null/emptyarray。</p>
+<p>类似地，<code>ValidateAllPropertiesAsync</code>
+方法验证所有属性，并返回<code>&#123; propertyName =&gt; array of validation errors &#125;</code>的字典。如果属性没有任何验证错误，您可以从字典中完全删除它，或者将其值设置为
+null/emptyarray。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Task&lt;Dictionary&lt;<span class="built_in">string</span>, IEnumerable&lt;<span class="built_in">string</span>&gt;&gt;&gt; ValidateAllPropertiesAsync()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">var</span> errors = <span class="keyword">this</span>.validator.Validate(<span class="keyword">this</span>.subject).Errors.GroupBy(x =&gt; x.PropertyName).ToDictionary(x =&gt; x.Key, x =&gt; x.Select(failure =&gt; failure.ErrorMessage));</span><br><span class="line">   <span class="keyword">return</span> Task.FromResult(errors);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>把这些都放在一起，您就有了适配器!</p>
-<h2 id="实现异步验证适配器implementing-imodelvalidator-asynchronously"><a class="markdownIt-Anchor" href="#实现异步验证适配器implementing-imodelvalidator-asynchronously"></a> 实现异步验证适配器（Implementing IModelValidator (Asynchronously)）</h2>
+<h2
+id="实现异步验证适配器implementing-imodelvalidator-asynchronously">实现异步验证适配器（Implementing
+IModelValidator (Asynchronously)）</h2>
 <p>实现异步验证(对于支持异步验证的库来说比较复杂)。</p>
-<p>首先，请记住 <code>ValidatingModelBase</code> 有一组同步方法(<code>Validate</code>、<code>ValidateProperty</code>)和异步方法(<code>ValidateAsync</code>、<code>ValidatePropertyAsync</code>)。在底层，同步版本调用异步版本，但是阻塞线程，直到异步操作完成 (使用 <code>Task.Wait()</code>)。</p>
-<p>现在，如果你经常使用任务，这应该会敲响警钟。你看，当你 <code>await DoSomethingAsync(); DoSomethingElse();</code> 时，你会说 “捕获当前线程 [*] ”。当 <code>DoSomethingAsync()</code> 异步操作完成后，我想让你发布一条消息到那个捕获的线程，告诉它运行 <code>DoSomethingElse() </code>。但是，如果该线程正在等待异步操作完成，那么它将永远不会接收到该消息，操作将永远不会完成，并且会出现死锁。</p>
-<p>[*]不完全正确——它捕获当前的 <code>SynchronizationContext</code>。但是在UI线程上，这是相同的。</p>
+<p>首先，请记住 <code>ValidatingModelBase</code>
+有一组同步方法(<code>Validate</code>、<code>ValidateProperty</code>)和异步方法(<code>ValidateAsync</code>、<code>ValidatePropertyAsync</code>)。在底层，同步版本调用异步版本，但是阻塞线程，直到异步操作完成
+(使用 <code>Task.Wait()</code>)。</p>
+<p>现在，如果你经常使用任务，这应该会敲响警钟。你看，当你
+<code>await DoSomethingAsync(); DoSomethingElse();</code> 时，你会说
+“捕获当前线程 [*] ”。当 <code>DoSomethingAsync()</code>
+异步操作完成后，我想让你发布一条消息到那个捕获的线程，告诉它运行
+<code>DoSomethingElse()</code>。但是，如果该线程正在等待异步操作完成，那么它将永远不会接收到该消息，操作将永远不会完成，并且会出现死锁。</p>
+<p>[*]不完全正确——它捕获当前的
+<code>SynchronizationContext</code>。但是在UI线程上，这是相同的。</p>
 <p>换句话说，这意味着下面的代码，从 UI 线程运行，将死锁:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task <span class="title">DoSomethingAsync</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">await</span> Task.Delay(<span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ... </span></span><br><span class="line">DoSomethingAsync().Wait();</span><br><span class="line">DoSomethingElse();</span><br></pre></td></tr></table></figure>
-<p>当 <code>Task . Delay(100)</code> 任务完成时，它会向 UI 线程返回一条消息，说 “好的，运行 <code>DoSomethingElse()</code>”。但是，UI 线程被 <code>Wait()</code> 卡住了，永远不会处理消息，你就陷入了僵局。</p>
-<p>为什么和这相关? 好。如果你写一个 <code>IModelValidator&lt;T&gt; </code> 的方法，它看起来像这样:</p>
+<p>当 <code>Task . Delay(100)</code> 任务完成时，它会向 UI
+线程返回一条消息，说 “好的，运行
+<code>DoSomethingElse()</code>”。但是，UI 线程被 <code>Wait()</code>
+卡住了，永远不会处理消息，你就陷入了僵局。</p>
+<p>为什么和这相关? 好。如果你写一个
+<code>IModelValidator&lt;T&gt;</code> 的方法，它看起来像这样:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">async</span> Task&lt;IEnumerable&lt;<span class="built_in">string</span>&gt;&gt; ValidatePropertyAsync(<span class="built_in">string</span> propertyName)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">var</span> result = <span class="keyword">await</span> <span class="keyword">this</span>.Validator.ValidateAsync(<span class="keyword">this</span>.subject, propertyName);</span><br><span class="line">   <span class="keyword">return</span> result.Errors.Select(x =&gt; x.ErrorMessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后调用 <code>ValidateProperty </code>， <strong>你会死锁</strong>。</p>
-<p>窍门是告诉 <code>await </code>不要捕获当前线程，使用 <code>ConfigureAwait(false)</code>，即</p>
+<p>然后调用 <code>ValidateProperty</code>，
+<strong>你会死锁</strong>。</p>
+<p>窍门是告诉 <code>await</code>不要捕获当前线程，使用
+<code>ConfigureAwait(false)</code>，即</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">async</span> Task&lt;IEnumerable&lt;<span class="built_in">string</span>&gt;&gt; ValidatePropertyAsync(<span class="built_in">string</span> propertyName)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">var</span> result = <span class="keyword">await</span> <span class="keyword">this</span>.Validator.ValidateAsync(<span class="keyword">this</span>.subject, propertyName).ConfigureAwait(<span class="literal">false</span>);</span><br><span class="line">   <span class="keyword">return</span> result.Errors.Select(x =&gt; x.ErrorMessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在，返回 <code>result.Errors…</code> 行将运行在另一个线程(而不是发布到 UI 线程)，没有死锁发生。</p>
+<p>现在，返回 <code>result.Errors…</code>
+行将运行在另一个线程(而不是发布到 UI 线程)，没有死锁发生。</p>
 
     </div>
 
@@ -464,8 +586,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2020/1YXZ99D.html" rel="next" title="WPF MVVM Stylet使用文档（中文）12-BindableCollection">
-                  WPF MVVM Stylet使用文档（中文）12-BindableCollection <i class="fa fa-angle-right"></i>
+                <a href="/posts/2020/1H4GT7T.html" rel="next" title="WPF MVVM Stylet使用文档（中文）11-Screens and Conductors">
+                  WPF MVVM Stylet使用文档（中文）11-Screens and Conductors <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -498,13 +620,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

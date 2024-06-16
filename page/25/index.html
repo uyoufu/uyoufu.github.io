@@ -286,8 +286,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="打包工具的选择"><a class="markdownIt-Anchor" href="#打包工具的选择"></a> 打包工具的选择</h2>
-<p>如果我们需要构建一个简单的小型应用并让它快速运行起来，可以使用 <code>Parcel</code>；如果需要构建一个类库只需要导入很少第三方库，可以使用 <code>Rollup</code>；如果需要构建一个复杂的应用，需要集成很多第三方库，并且需要代码分拆、HMR等功能，推荐使用 <code>Webpack</code> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]</a>。</p>
+          <h2 id="打包工具的选择">打包工具的选择</h2>
+<p>如果我们需要构建一个简单的小型应用并让它快速运行起来，可以使用
+<code>Parcel</code>；如果需要构建一个类库只需要导入很少第三方库，可以使用
+<code>Rollup</code>；如果需要构建一个复杂的应用，需要集成很多第三方库，并且需要代码分拆、HMR等功能，推荐使用
+<code>Webpack</code> <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350601275">[3]</a>。</p>
 <p>所以，在开发工具库时，我们选择 <code>rollup</code> 作为打包工具。</p>
           <!--noindex-->
             <div class="post-button">
@@ -396,16 +400,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="添加用户"><a class="markdownIt-Anchor" href="#添加用户"></a> 添加用户</h2>
+          <h2 id="添加用户">添加用户</h2>
 <p>添加用户是通过终端电脑的npm来操作的，在输入下列命令后，根据要求输入用户名和密码即可。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm adduser --registry https://mydomain.com:port/</span><br></pre></td></tr></table></figure>
-<h2 id="授权验证"><a class="markdownIt-Anchor" href="#授权验证"></a> 授权验证</h2>
-<h2 id="i18n"><a class="markdownIt-Anchor" href="#i18n"></a> i18n</h2>
-<h2 id="发布包"><a class="markdownIt-Anchor" href="#发布包"></a> 发布包</h2>
+<h2 id="授权验证">授权验证</h2>
+<h2 id="i18n">i18n</h2>
+<h2 id="发布包">发布包</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish --registry https://mydomain.com:port/</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://verdaccio.org/docs/configuration/">verdaccio 官方配置文档</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://verdaccio.org/docs/configuration/">verdaccio
+官方配置文档</a></li>
 </ol>
 
       
@@ -507,7 +512,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>为了在js开发中更加便利的模块化，解决开发中频繁地更新npm包的问题，决定搭建一个轻量的npm包管理服务。比较了 verdaccio，cnpm 后，最后选择了 verdaccio。因为它够方便和快速，同时也够用。</p>
+          <p>为了在js开发中更加便利的模块化，解决开发中频繁地更新npm包的问题，决定搭建一个轻量的npm包管理服务。比较了
+verdaccio，cnpm 后，最后选择了
+verdaccio。因为它够方便和快速，同时也够用。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/7MJX55.html#more" rel="contents">
@@ -611,7 +618,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>通过用户名和密码，利用 SSH 登陆远程服务器进行服务器管理时，有如下缺点：</p>
+          <p>通过用户名和密码，利用 SSH
+登陆远程服务器进行服务器管理时，有如下缺点：</p>
 <ul>
 <li>每次输入密码，很麻烦，也不极客</li>
 <li>服务器开放账号密码登陆，容易补暴力破解</li>
@@ -832,17 +840,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>子文档是在一个 <code>Schema</code> 中嵌入另一个 <code>Schema</code>，它的形式主要有两种：</p>
+          <p>子文档是在一个 <code>Schema</code> 中嵌入另一个
+<code>Schema</code>，它的形式主要有两种：</p>
 <ul>
-<li>
-<p>子文档是数组</p>
-</li>
-<li>
-<p>子文档是对象</p>
+<li><p>子文档是数组</p></li>
+<li><p>子文档是对象</p>
 <blockquote>
 <p>注意，子文档是对象的情况只适用于 4.2.0 及以上的版本</p>
-</blockquote>
-</li>
+</blockquote></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -1054,7 +1059,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>如何在 Windows Server 2022 上安装 Docker 呢？经过实测，如果直接从 Docker 官网下载 Docker Desktop 进行安装，会出现启动失败的问题。特将正确的安装步骤记录如下：</p>
+          <p>如何在 Windows Server 2022 上安装 Docker 呢？经过实测，如果直接从
+Docker 官网下载 Docker Desktop
+进行安装，会出现启动失败的问题。特将正确的安装步骤记录如下：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2021/Q0YYS8.html#more" rel="contents">
@@ -1269,7 +1276,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在ORD安装完成后，一打开软件就弹出崩溃界面，在错误文件的 <code>Managed Call Stack:</code> 处有如下错误：</p>
+          <p>在ORD安装完成后，一打开软件就弹出崩溃界面，在错误文件的
+<code>Managed Call Stack:</code> 处有如下错误：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Managed Call Stack:</span><br><span class="line"> 0: Boolean get_EnablePerformanceChanges() from Bentley.ECObjects.ECObjects in Bentley.ECObjects3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4</span><br><span class="line"> 1: Bentley.DgnPlatformNET.BentleyStatus Initialize() from Bentley.DgnPlatformNET.DgnPlatformLib in Bentley.DgnPlatformNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bf6c96a266e58d4</span><br><span class="line"> 2: UInt32 wWinMainCRTStartup()</span><br><span class="line"> 3: UInt32 wWinMainCRTStartup()</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1319,13 +1327,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

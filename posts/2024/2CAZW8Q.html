@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。 本文简要记录了如何创建 NuGet 包并发布。">
+    <meta name="description" content="NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。 本文简要记录了如何创建 NuGet 包并发布。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建和发布 NuGet 包">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2024/2CAZW8Q.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。 本文简要记录了如何创建 NuGet 包并发布。">
+<meta property="og:description" content="NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。 本文简要记录了如何创建 NuGet 包并发布。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-02-23T16:00:00.000Z">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nuget"><span class="nav-number">1.</span> <span class="nav-text"> 安装 NuGet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-nuget-%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text"> 生成 NuGet 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83-nuget-%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text"> 发布 NuGet 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nuget"><span class="nav-number">1.</span> <span class="nav-text">安装 NuGet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-nuget-%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">生成 NuGet 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83-nuget-%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">发布 NuGet 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -279,41 +279,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。</p>
+    <div class="post-body" itemprop="articleBody"><p>NuGet 是适用于 .NET 的包管理器。
+它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet
+客户端工具可生成这些库并将其作为“包”。</p>
 <p>本文简要记录了如何创建 NuGet 包并发布。</p>
 <span id="more"></span>
-<h2 id="安装-nuget"><a class="markdownIt-Anchor" href="#安装-nuget"></a> 安装 NuGet</h2>
+<h2 id="安装-nuget">安装 NuGet</h2>
 <p>可以使用 scoop 安装</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install nuget</span><br></pre></td></tr></table></figure>
-<p>其它安装方式参考：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/nuget/install-nuget-client-tools?tabs=windows">安装 NuGet 客户端工具 | Microsoft Learn</a></p>
-<h2 id="生成-nuget-包"><a class="markdownIt-Anchor" href="#生成-nuget-包"></a> 生成 NuGet 包</h2>
-<ol>
-<li>
-<p>生成 <code>.nuspec</code> 配置文件</p>
+<p>其它安装方式参考：<a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/nuget/install-nuget-client-tools?tabs=windows">安装
+NuGet 客户端工具 | Microsoft Learn</a></p>
+<h2 id="生成-nuget-包">生成 NuGet 包</h2>
+<ol type="1">
+<li><p>生成 <code>.nuspec</code> 配置文件</p>
 <p>在含有<code>&lt;project-name&gt;.csproj</code>或者<code>&lt;project-name&gt;.vbproj</code>文件的文件夹中使用：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget spec</span><br></pre></td></tr></table></figure>
-<p>根据需要修改配置文件</p>
-</li>
-<li>
-<p>创建 <code>.nupkg</code> 包</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget pack &lt;project<span class="literal">-name</span>&gt;.csproj</span><br></pre></td></tr></table></figure>
-</li>
+<p>根据需要修改配置文件</p></li>
+<li><p>创建 <code>.nupkg</code> 包</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget pack &lt;project<span class="literal">-name</span>&gt;.csproj</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="发布-nuget-包"><a class="markdownIt-Anchor" href="#发布-nuget-包"></a> 发布 NuGet 包</h2>
-<ol>
-<li>
-<p>设置 NuGet 密钥</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget setApiKey &lt;your_API_key&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>推送包</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget push YourPackage.nupkg <span class="literal">-Source</span> https://api.nuget.org/v3/index.json</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="发布-nuget-包">发布 NuGet 包</h2>
+<ol type="1">
+<li><p>设置 NuGet 密钥</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget setApiKey &lt;your_API_key&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>推送包</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuget push YourPackage.nupkg <span class="literal">-Source</span> https://api.nuget.org/v3/index.json</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/nuget/">NuGet 文档 | Microsoft Learn</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/forever_008/article/details/104616529">.NET Framework生成NuGet包_.net framework 4.6.1 打包成nuget-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/nuget/">NuGet 文档 |
+Microsoft Learn</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/forever_008/article/details/104616529">.NET
+Framework生成NuGet包_.net framework 4.6.1 打包成nuget-CSDN博客</a></p>
 
     </div>
 
@@ -417,13 +416,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

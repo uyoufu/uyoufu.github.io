@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="使用 hexo-blog-encrypt 对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT 主题的源码来实现加密文章的目录显示。  本教程针对 hexo 下的 NexT 主题">
+    <meta name="description" content="使用 hexo-blog-encrypt 对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT 主题的源码来实现加密文章的目录显示。  本教程针对 hexo 下的 NexT 主题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-blog-encrypt目录消失">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/26YRMRD.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="使用 hexo-blog-encrypt 对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT 主题的源码来实现加密文章的目录显示。  本教程针对 hexo 下的 NexT 主题">
+<meta property="og:description" content="使用 hexo-blog-encrypt 对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT 主题的源码来实现加密文章的目录显示。  本教程针对 hexo 下的 NexT 主题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-09-16T16:00:00.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text"> 原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text"> 优化代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">优化代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -276,29 +276,43 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>使用 hexo-blog-encrypt 对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT 主题的源码来实现加密文章的目录显示。</p>
+    <div class="post-body" itemprop="articleBody"><p>使用 hexo-blog-encrypt
+对文章进行加密，解密后发现目录消失，本文将介绍如何通过修改 NexT
+主题的源码来实现加密文章的目录显示。</p>
 <blockquote>
 <p>本教程针对 hexo 下的 NexT 主题</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="原因"><a class="markdownIt-Anchor" href="#原因"></a> 原因</h2>
-<p>从插件的 <code>github issues</code> 中我找到了相关的讨论：<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/issues/16">解密后目录不会更新 · Issue #16 · D0n9X1n/hexo-blog-encrypt</a></p>
+<h2 id="原因">原因</h2>
+<p>从插件的 <code>github issues</code> 中我找到了相关的讨论：<a
+target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/issues/16">解密后目录不会更新
+· Issue #16 · D0n9X1n/hexo-blog-encrypt</a></p>
 <p>原因是：</p>
 <blockquote>
-<p>加密的时候，<code>post.content</code> 会变成加密后的串，所以原来的 <code>TOC</code> 生成逻辑就会针对加密后的内容。<br />
+<p>加密的时候，<code>post.content</code> 会变成加密后的串，所以原来的
+<code>TOC</code> 生成逻辑就会针对加密后的内容。
 所以这边我只能把原来的内容存进 <code>post.origin</code> 字段。</p>
 </blockquote>
-<h2 id="优化代码"><a class="markdownIt-Anchor" href="#优化代码"></a> 优化代码</h2>
-<p>打开 <code>/thems/next/layout/_micro/sidebar.njk </code>文件，进行如下修改</p>
-<p>找到包含 <code>set toc = toc(page.content...</code> 的代码段，将其中的内容替换为如下代码：</p>
+<h2 id="优化代码">优化代码</h2>
+<p>打开
+<code>/thems/next/layout/_micro/sidebar.njk</code>文件，进行如下修改</p>
+<p>找到包含 <code>set toc = toc(page.content...</code>
+的代码段，将其中的内容替换为如下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if display_toc %&#125;</span><br><span class="line">  &#123;%- if (page.encrypt) %&#125;</span><br><span class="line">    &#123;%- set toc = toc(page.origin, &#123; class: &#x27;nav&#x27;, list_number: page.toc.number, max_depth: page.toc.max_depth &#125;) %&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;%- set toc = toc(page.content, &#123; class: &#x27;nav&#x27;, list_number: page.toc.number, max_depth: page.toc.max_depth &#125;) %&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &#123;%- set display_toc = toc.length &gt; 1 and display_toc %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>上述代码的作用是当有加密时，从 page.origin 中读取目录信息。</p>
-<p>找到包含 <code>&lt;div class=&quot;post-toc-wrap sidebar-panel&quot;&gt;</code> 的代码段，将其修改为：</p>
+<p>找到包含 <code>&lt;div class="post-toc-wrap sidebar-panel"&gt;</code>
+的代码段，将其修改为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--noindex--&gt;</span><br><span class="line">&lt;div class=&quot;post-toc-wrap sidebar-panel&quot;&gt;</span><br><span class="line">  &#123;%- if display_toc %&#125;</span><br><span class="line">    &#123;%- if (page.encrypt) %&#125;</span><br><span class="line">      &lt;div id=&quot;toc-div&quot; class=&quot;post-toc animated&quot; style=&quot;display:none&quot;&gt;&#123;&#123; toc &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &#123;%- else %&#125;</span><br><span class="line">      &lt;div class=&quot;post-toc animated&quot;&gt;&#123;&#123; toc &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>上述代码的原理是：在文章加密的前提下，通过将目录部分加入到一个 <code>不可见的div</code> 中来实现 <code>隐藏目录</code> 的效果。在 <a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/479ccd4cf522adc8f667cfa06290f057a219cb88/lib/hbe.js#L207">hexo-blog-encrypt/lib/hbe.js</a> 源码中，我们可以看到解密后会修改 <code>id</code> 值为 <code>toc-div</code> 的元素为 <code>display:inline</code> 来显示内容。</p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p>上述代码的原理是：在文章加密的前提下，通过将目录部分加入到一个
+<code>不可见的div</code> 中来实现 <code>隐藏目录</code> 的效果。在 <a
+target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/479ccd4cf522adc8f667cfa06290f057a219cb88/lib/hbe.js#L207">hexo-blog-encrypt/lib/hbe.js</a>
+源码中，我们可以看到解密后会修改 <code>id</code> 值为
+<code>toc-div</code> 的元素为 <code>display:inline</code>
+来显示内容。</p>
+<h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a target="_blank" rel="noopener" href="https://pxxyyz.com/posts/hexo-problem/#%E5%8F%82%E8%80%83">Hexo博客文章加密</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://pxxyyz.com/posts/hexo-problem/#参考">Hexo博客文章加密</a></p>
 
     </div>
 
@@ -403,13 +417,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

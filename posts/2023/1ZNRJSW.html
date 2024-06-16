@@ -19,26 +19,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="win-acme 是一个可以在 Windows 系统上运行的免费、开源的证书申请工具，支持申请 Let’s Encrypt 签发的 SSL&#x2F;TLS 证书，包括泛域名证书。 本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare 申请泛域名证书。">
+    <meta name="description" content="win-acme 是一个可以在 Windows 系统上运行的免费、开源的证书申请工具，支持申请 Let&#39;s Encrypt 签发的 SSL&#x2F;TLS 证书，包括泛域名证书。 本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare 申请泛域名证书。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 win-acme 申请泛域名证书">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/1ZNRJSW.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="win-acme 是一个可以在 Windows 系统上运行的免费、开源的证书申请工具，支持申请 Let’s Encrypt 签发的 SSL&#x2F;TLS 证书，包括泛域名证书。 本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare 申请泛域名证书。">
+<meta property="og:description" content="win-acme 是一个可以在 Windows 系统上运行的免费、开源的证书申请工具，支持申请 Let&#39;s Encrypt 签发的 SSL&#x2F;TLS 证书，包括泛域名证书。 本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare 申请泛域名证书。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007093040579.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007093245979.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007112322249.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007111038989.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007111152620.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007111515006.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007111638681.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007111826853.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007112020384.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007112456225.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007112603424.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007112825338.png">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007123855656.png">
 <meta property="article:published_time" content="2023-02-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-10-06T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -46,7 +33,6 @@
 <meta property="article:tag" content="SSL">
 <meta property="article:tag" content="Let&#39;s Encrypt">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231007093040579.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1ZNRJSW.html">
@@ -157,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="nav-number">1.</span> <span class="nav-text"> 为什么使用泛域名证书？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-acme-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text"> win-acme 下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-cloudflare-dns"><span class="nav-number">3.</span> <span class="nav-text"> 创建 Cloudflare DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-cloudflare-api-token"><span class="nav-number">4.</span> <span class="nav-text"> 生成 Cloudflare API Token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="nav-number">5.</span> <span class="nav-text"> 开始生成证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="nav-number">1.</span> <span class="nav-text">为什么使用泛域名证书？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-acme-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">win-acme 下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-cloudflare-dns"><span class="nav-number">3.</span> <span class="nav-text">创建 Cloudflare DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-cloudflare-api-token"><span class="nav-number">4.</span> <span class="nav-text">生成 Cloudflare API Token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="nav-number">5.</span> <span class="nav-text">开始生成证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -284,7 +270,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -301,94 +287,141 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>win-acme 是一个可以在 Windows 系统上运行的免费、开源的证书申请工具，支持申请 Let’s Encrypt 签发的 SSL/TLS 证书，包括泛域名证书。</p>
-<p>本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare 申请泛域名证书。</p>
+    <div class="post-body" itemprop="articleBody"><p>win-acme 是一个可以在 Windows
+系统上运行的免费、开源的证书申请工具，支持申请 Let's Encrypt 签发的
+SSL/TLS 证书，包括泛域名证书。</p>
+<p>本文详细讲解如何在 Windows 系统中使用 win-acme，基于 Cloudflare
+申请泛域名证书。</p>
 <span id="more"></span>
-<h2 id="为什么使用泛域名证书"><a class="markdownIt-Anchor" href="#为什么使用泛域名证书"></a> 为什么使用泛域名证书？</h2>
+<h2 id="为什么使用泛域名证书">为什么使用泛域名证书？</h2>
 <p>泛域名证书和单域名证书的区别在于它们可以保护的域名范围不同。单域名证书只能保护一个具体的域名，而泛域名证书则可以保护一个域名下的所有子域名。</p>
-<p>举例来说，假设你有一个域名 <a target="_blank" rel="noopener" href="http://example.com">example.com</a>，单域名证书只能保护该域名，而泛域名证书可以保护 <a target="_blank" rel="noopener" href="http://example.com">example.com</a> 及其所有子域名，例如 <a target="_blank" rel="noopener" href="http://blog.example.com">blog.example.com</a>、<a target="_blank" rel="noopener" href="http://shop.example.com">shop.example.com</a> 等。</p>
+<p>举例来说，假设你有一个域名
+example.com，单域名证书只能保护该域名，而泛域名证书可以保护 example.com
+及其所有子域名，例如 blog.example.com、shop.example.com 等。</p>
 <p>使用泛域名证书可以大大简化证书管理工作，特别是当你有多个子域名需要保护时。使用单域名证书需要为每个子域名分别申请和维护证书，而泛域名证书可以一次申请并保护所有子域名。</p>
 <p>因此推荐使用泛域名证书。</p>
-<h2 id="win-acme-下载安装"><a class="markdownIt-Anchor" href="#win-acme-下载安装"></a> win-acme 下载安装</h2>
+<h2 id="win-acme-下载安装">win-acme 下载安装</h2>
 <blockquote>
 <p>本文使用的 win-acme 版本为：win-acme.v2.2.6.1571.x64.pluggable</p>
 </blockquote>
-<ol>
-<li>
-<p>下载 win-acme</p>
-<p>可以从 win-acme 官网（<a target="_blank" rel="noopener" href="https://www.win-acme.com/%EF%BC%89%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%88%90%E5%90%8E%E8%A7%A3%E5%8E%8B%E5%88%B0%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%8B%E3%80%82">https://www.win-acme.com/）下载最新版本的工具，下载完成后解压到某个目录下。</a></p>
-<p>特别注意，由于要使用 cloudflare 插件，因此一定要下载 <code>pluggable</code> 版本。</p>
-<p>github 上最新版本地址：<a target="_blank" rel="noopener" href="https://github.com/win-acme/win-acme/releases/latest">github release latest</a></p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007093040579.png" alt="image-20231007093040579" /></p>
-</li>
-<li>
-<p>下载 plugin.validation.dns.cloudflare</p>
+<ol type="1">
+<li><p>下载 win-acme</p>
+<p>可以从 win-acme
+官网（https://www.win-acme.com/）下载最新版本的工具，下载完成后解压到某个目录下。</p>
+<p>特别注意，由于要使用 cloudflare 插件，因此一定要下载
+<code>pluggable</code> 版本。</p>
+<p>github 上最新版本地址：<a
+target="_blank" rel="noopener" href="https://github.com/win-acme/win-acme/releases/latest">github
+release latest</a></p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007093040579.png"
+alt="image-20231007093040579" />
+<figcaption aria-hidden="true">image-20231007093040579</figcaption>
+</figure></li>
+<li><p>下载 plugin.validation.dns.cloudflare</p>
 <p>该插件用于在申请证书时，使用 cloudflare API 进行证书验证。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007093245979.png" alt="image-20231007093245979" /></p>
-</li>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007093245979.png"
+alt="image-20231007093245979" />
+<figcaption aria-hidden="true">image-20231007093245979</figcaption>
+</figure></li>
 </ol>
-<h2 id="创建-cloudflare-dns"><a class="markdownIt-Anchor" href="#创建-cloudflare-dns"></a> 创建 Cloudflare DNS</h2>
-<p>在 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/application-services/products/dns/">Cloudflare DNS</a> 中添加域名解析。</p>
-<p>如果域名解析服务是阿里、华为等服务商，需要将域名的解析切换到 Cloudflare，具体方法可以在网上搜索下，此处不赘述。</p>
-<h2 id="生成-cloudflare-api-token"><a class="markdownIt-Anchor" href="#生成-cloudflare-api-token"></a> 生成 Cloudflare API Token</h2>
-<p>从 <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/profile/api-tokens">我的个人资料</a> 里创建 API 令牌。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112322249.png" alt="image-20231007112322249" /></p>
-<h2 id="开始生成证书"><a class="markdownIt-Anchor" href="#开始生成证书"></a> 开始生成证书</h2>
-<ol>
-<li>
-<p>使用 <code>wacs --verbose</code> 启动 win-acme</p>
-<p>使用 <code>--verbose</code> 启动时，可以查看 cloudflare 插件是否加载成功。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111038989.png" alt="image-20231007111038989" /></p>
-</li>
-<li>
-<p>选择创建方式</p>
+<h2 id="创建-cloudflare-dns">创建 Cloudflare DNS</h2>
+<p>在 <a
+target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/application-services/products/dns/">Cloudflare
+DNS</a> 中添加域名解析。</p>
+<p>如果域名解析服务是阿里、华为等服务商，需要将域名的解析切换到
+Cloudflare，具体方法可以在网上搜索下，此处不赘述。</p>
+<h2 id="生成-cloudflare-api-token">生成 Cloudflare API Token</h2>
+<p>从 <a
+target="_blank" rel="noopener" href="https://dash.cloudflare.com/profile/api-tokens">我的个人资料</a>
+里创建 API 令牌。</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112322249.png"
+alt="image-20231007112322249" />
+<figcaption aria-hidden="true">image-20231007112322249</figcaption>
+</figure>
+<h2 id="开始生成证书">开始生成证书</h2>
+<ol type="1">
+<li><p>使用 <code>wacs --verbose</code> 启动 win-acme</p>
+<p>使用 <code>--verbose</code> 启动时，可以查看 cloudflare
+插件是否加载成功。</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111038989.png"
+alt="image-20231007111038989" />
+<figcaption aria-hidden="true">image-20231007111038989</figcaption>
+</figure></li>
+<li><p>选择创建方式</p>
 <p>输入 <code>m</code> 使用完整选项的方式来创建。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111152620.png" alt="image-20231007111152620" /></p>
-</li>
-<li>
-<p>选择指定域名的方式</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111152620.png"
+alt="image-20231007111152620" />
+<figcaption aria-hidden="true">image-20231007111152620</figcaption>
+</figure></li>
+<li><p>选择指定域名的方式</p>
 <p>输入 <code>2</code> 来手动输入</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111515006.png" alt="image-20231007111515006" /></p>
-</li>
-<li>
-<p>手动输入泛域名</p>
-<p>泛域名的格式为 <code>*.domain</code>，例如：<code>*.uamazing.cn</code></p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111638681.png" alt="image-20231007111638681" /></p>
-</li>
-<li>
-<p>选择证书保存的方式</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111515006.png"
+alt="image-20231007111515006" />
+<figcaption aria-hidden="true">image-20231007111515006</figcaption>
+</figure></li>
+<li><p>手动输入泛域名</p>
+<p>泛域名的格式为
+<code>*.domain</code>，例如：<code>*.uamazing.cn</code></p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111638681.png"
+alt="image-20231007111638681" />
+<figcaption aria-hidden="true">image-20231007111638681</figcaption>
+</figure></li>
+<li><p>选择证书保存的方式</p>
 <p>输入 <code>1</code> 来将同一个域名保存到同一个文件中</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111826853.png" alt="image-20231007111826853" /></p>
-</li>
-<li>
-<p>选择 DNS 验证方式</p>
-<p>输入 <code>6</code> 使用 Cloudflare DNS 验证，然后会让你输入 Cloudflare DNS API Token。将上方中生成的 Token 复制到命令行中即可。</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112020384.png" alt="image-20231007112020384" /></p>
-</li>
-<li>
-<p>选择加密方式和保存位置</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112456225.png" alt="image-20231007112456225" /></p>
-</li>
-<li>
-<p>设置密码和其它保存位置</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007111826853.png"
+alt="image-20231007111826853" />
+<figcaption aria-hidden="true">image-20231007111826853</figcaption>
+</figure></li>
+<li><p>选择 DNS 验证方式</p>
+<p>输入 <code>6</code> 使用 Cloudflare DNS 验证，然后会让你输入
+Cloudflare DNS API Token。将上方中生成的 Token 复制到命令行中即可。</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112020384.png"
+alt="image-20231007112020384" />
+<figcaption aria-hidden="true">image-20231007112020384</figcaption>
+</figure></li>
+<li><p>选择加密方式和保存位置</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112456225.png"
+alt="image-20231007112456225" />
+<figcaption aria-hidden="true">image-20231007112456225</figcaption>
+</figure></li>
+<li><p>设置密码和其它保存位置</p>
 <p>都选择无</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112603424.png" alt="image-20231007112603424" /></p>
-</li>
-<li>
-<p>选择是否执行其它操作</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112603424.png"
+alt="image-20231007112603424" />
+<figcaption aria-hidden="true">image-20231007112603424</figcaption>
+</figure></li>
+<li><p>选择是否执行其它操作</p>
 <p>输入 <code>3</code>，表示不进行操作</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112825338.png" alt="image-20231007112825338" /></p>
-<p>这一步输入完成后，就会在指定的目录里自动生成相应的证书。</p>
-</li>
-<li>
-<p>添加任务计划定时自动更新证书</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007112825338.png"
+alt="image-20231007112825338" />
+<figcaption aria-hidden="true">image-20231007112825338</figcaption>
+</figure>
+<p>这一步输入完成后，就会在指定的目录里自动生成相应的证书。</p></li>
+<li><p>添加任务计划定时自动更新证书</p>
 <p>若要添加任务计划自动更新证书，需要使用管理员身份启动命令行，否则会报如下错误：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007123855656.png" alt="image-20231007123855656" /></p>
-</li>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231007123855656.png"
+alt="image-20231007123855656" />
+<figcaption aria-hidden="true">image-20231007123855656</figcaption>
+</figure></li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.win-acme.com/reference/plugins/validation/dns/cloudflare">cloudflare validation</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.win-acme.com/reference/plugins/validation/dns/cloudflare">cloudflare
+validation</a></li>
 </ol>
 
     </div>
@@ -494,13 +527,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

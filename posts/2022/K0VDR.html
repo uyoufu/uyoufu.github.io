@@ -19,22 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文主要总结 DgnTool 的触发逻辑，同时介绍其中的参数设置。 它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从 DgnViewTool 和 DgnPrimitiveTool 派生。">
+    <meta name="description" content="本文主要总结 DgnTool 的触发逻辑，同时介绍其中的参数设置。 它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从 DgnViewTool 和 DgnPrimitiveTool 派生。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DgnPrimitiveTool 详细说明文档">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/K0VDR.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文主要总结 DgnTool 的触发逻辑，同时介绍其中的参数设置。 它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从 DgnViewTool 和 DgnPrimitiveTool 派生。">
+<meta property="og:description" content="本文主要总结 DgnTool 的触发逻辑，同时介绍其中的参数设置。 它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从 DgnViewTool 和 DgnPrimitiveTool 派生。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220522072349830.png">
 <meta property="article:published_time" content="2022-05-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-19T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Bentley">
 <meta property="article:tag" content="Bentley二次开发">
+<meta property="article:tag" content="Bentley">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220522072349830.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/K0VDR.html">
@@ -145,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text"> 方法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> 全局设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text"> 修饰器*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text"> 工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text"> 实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text"> 静态方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text"> 鼠标事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E6%BB%9A%E5%8A%A8%E5%92%8C%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text"> 鼠标滚动和键盘事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B9%E5%87%BA%E8%8F%9C%E5%8D%95"><span class="nav-number">7.</span> <span class="nav-text"> 弹出菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%BF%E7%9B%B8%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text"> 手势相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E4%B8%8E%E8%B5%84%E6%BA%90%E9%87%8A%E6%94%BE"><span class="nav-number">9.</span> <span class="nav-text"> 加载与资源释放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">10.</span> <span class="nav-text"> 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">11.</span> <span class="nav-text"> 说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">12.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">方法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">全局设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">修饰器*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">静态方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E6%BB%9A%E5%8A%A8%E5%92%8C%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">鼠标滚动和键盘事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B9%E5%87%BA%E8%8F%9C%E5%8D%95"><span class="nav-number">7.</span> <span class="nav-text">弹出菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%BF%E7%9B%B8%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text">手势相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E4%B8%8E%E8%B5%84%E6%BA%90%E9%87%8A%E6%94%BE"><span class="nav-number">9.</span> <span class="nav-text">加载与资源释放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">10.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">11.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">12.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -269,7 +267,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.1k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -287,24 +285,19 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>本文主要总结 DgnTool 的触发逻辑，同时介绍其中的参数设置。</p>
-<p>它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从 <code>DgnViewTool</code> 和 <code>DgnPrimitiveTool</code> 派生。</p>
+<p>它是所有 Tool 的基类，在使用过程中，不能直接派生于它，而是要从
+<code>DgnViewTool</code> 和 <code>DgnPrimitiveTool</code> 派生。</p>
 <span id="more"></span>
-<h2 id="方法分类"><a class="markdownIt-Anchor" href="#方法分类"></a> 方法分类</h2>
+<h2 id="方法分类">方法分类</h2>
 <p>dgnTool 中的方法按作用分类，分为：</p>
-<ol>
-<li>
-<p>事件回调</p>
-</li>
-<li>
-<p>参数设置</p>
+<ol type="1">
+<li><p>事件回调</p></li>
+<li><p>参数设置</p>
 <p>参数设置分为两种，一种是调用型，一种是重写型。</p>
 <p>调用型的方法无法重写，使用时需要主动调用；</p>
-<p>重写型的方法可以通过重写，来进行设置，工具会自动调用。</p>
-</li>
-<li>
-<p>工具方法</p>
-<p>工具方法分为一般方法、虚方法、静态方法。这些都需要主动调用才产生效果。</p>
-</li>
+<p>重写型的方法可以通过重写，来进行设置，工具会自动调用。</p></li>
+<li><p>工具方法</p>
+<p>工具方法分为一般方法、虚方法、静态方法。这些都需要主动调用才产生效果。</p></li>
 </ol>
 <p>DgnTool 中的方法按功能分类大致可以分为以下几类：</p>
 <ul>
@@ -316,249 +309,296 @@
 <li>初始化化及资源释放</li>
 <li>工具类</li>
 </ul>
-<h2 id="全局设置"><a class="markdownIt-Anchor" href="#全局设置"></a> 全局设置</h2>
+<h2 id="全局设置">全局设置</h2>
 <p>在 Tool 中可以打开全局设置，比如启用精确绘图，捕捉等等。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>AccuSnap.SnapEnabled = true</td>
 <td>激活动态捕捉</td>
 </tr>
-<tr>
+<tr class="even">
 <td>AccuDraw.Active = true;</td>
 <td>激活精确绘图</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p>全局设置必须在 Tool 初始化完成后调用，一般在 OnPostInstall 中调用。</p>
+<p>全局设置必须在 Tool 初始化完成后调用，一般在 OnPostInstall
+中调用。</p>
 </blockquote>
-<h2 id="修饰器"><a class="markdownIt-Anchor" href="#修饰器"></a> 修饰器*</h2>
-<p>这个功能只有一个函数：<code>DecorateScreen(Viewport vp)</code>，它用于在  overlay 模式下显示非图形元素。</p>
+<h2 id="修饰器">修饰器*</h2>
+<p>这个功能只有一个函数：<code>DecorateScreen(Viewport vp)</code>，它用于在
+overlay 模式下显示非图形元素。</p>
 <p>该函数只要鼠标有变动就会触发。</p>
-<h2 id="工具类"><a class="markdownIt-Anchor" href="#工具类"></a> 工具类</h2>
-<h3 id="实例方法"><a class="markdownIt-Anchor" href="#实例方法"></a> 实例方法</h3>
+<h2 id="工具类">工具类</h2>
+<h3 id="实例方法">实例方法</h3>
 <table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 58%" />
+<col style="width: 8%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>类型</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>GetCurrentDgnButtonEvent</td>
 <td>获取代表当前鼠标位置的事件</td>
 <td>工具方法</td>
 </tr>
-<tr>
+<tr class="even">
 <td>*SetAdjustedDataPoint</td>
 <td>将调整后的点设置为最后一个数据点位置</td>
 <td>工具方法</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>GetModifierKeyTransitionState</td>
 <td>获取键盘按键，按键值通过currentQualifierMask参数返回</td>
 <td>工具方法</td>
 </tr>
-<tr>
+<tr class="even">
 <td>SetModifierKeyTransitionState</td>
 <td>设置键盘按键</td>
 <td>工具方法</td>
 </tr>
 </tbody>
 </table>
-<h3 id="静态方法"><a class="markdownIt-Anchor" href="#静态方法"></a> 静态方法</h3>
+<h3 id="静态方法">静态方法</h3>
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 66%" />
+<col style="width: 8%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>类型</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>GetActiveViewTool</td>
 <td>获取当前的 DgnViewTool 实例</td>
 <td>工具方法</td>
 </tr>
-<tr>
+<tr class="even">
 <td>GetActivePrimitiveTool</td>
-<td>获取当前的 DgnPrimitiveTool 实例。有些遗留的工具没有使用 DgnTool，所以返回的会是空</td>
+<td>获取当前的 DgnPrimitiveTool 实例。有些遗留的工具没有使用
+DgnTool，所以返回的会是空</td>
 <td>工具方法</td>
 </tr>
 </tbody>
 </table>
-<h2 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h2>
+<h2 id="鼠标事件">鼠标事件</h2>
 <blockquote>
-<p>在 Bentley 中，事件是按数据键和重置键来区分的，对应到鼠标的设备上就是左键和右键，当然这个对应关系可以设置。下方中就用左/右键来分别代表数据/重置键，方便理解。</p>
+<p>在 Bentley
+中，事件是按数据键和重置键来区分的，对应到鼠标的设备上就是左键和右键，当然这个对应关系可以设置。下方中就用左/右键来分别代表数据/重置键，方便理解。</p>
 </blockquote>
 <table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 68%" />
+<col style="width: 9%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>OnResetButton</td>
 <td>右键单击时触发，默认返回 false</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnResetButtonUp</td>
 <td>右键弹起后触发</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>OnDataButton</td>
 <td>左键单击时触发，默认返回 false</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnModelMotion</td>
 <td>当鼠标在视图中移动时触发，默认返回 false，移动时，会不断触发</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>OnModelNoMotion</td>
 <td>当鼠标在视图中静止时触发，默认返回 false，静止后，会不断触发</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnModelMotionStopped</td>
-<td>当鼠标在视图中停止移动后触发，默认返回 false，只在停止后触发一次，然后再触发<code>OnModelNoMotion</code></td>
+<td>当鼠标在视图中停止移动后触发，默认返回
+false，只在停止后触发一次，然后再触发<code>OnModelNoMotion</code></td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>OnModelStartDrag</td>
 <td>鼠鼠标开始拖拽，默认返回 false</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnModelEndDrag</td>
 <td>鼠标结束拖拽，默认返回 false</td>
 <td>事件回调</td>
 </tr>
 </tbody>
 </table>
-<h2 id="鼠标滚动和键盘事件"><a class="markdownIt-Anchor" href="#鼠标滚动和键盘事件"></a> 鼠标滚动和键盘事件</h2>
+<h2 id="鼠标滚动和键盘事件">鼠标滚动和键盘事件</h2>
 <table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 8%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>OnMouseWheel</td>
 <td>鼠标滚动时触发，默认返回 false</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnModifierKeyTransition</td>
-<td>当 Shift、Control  或 Alt 键被按下和释放时都会触发，它们的值分别是 4、8 和 16。返回 true 时会更新视图</td>
+<td>当 Shift、Control 或 Alt 键被按下和释放时都会触发，它们的值分别是
+4、8 和 16。返回 true 时会更新视图</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>*On3DInputEvent</td>
 <td>未知</td>
 <td>事件回调</td>
 </tr>
 </tbody>
 </table>
-<h2 id="弹出菜单"><a class="markdownIt-Anchor" href="#弹出菜单"></a> 弹出菜单</h2>
+<h2 id="弹出菜单">弹出菜单</h2>
 <table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 56%" />
+<col style="width: 7%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>类型</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>DisableEditAction</td>
-<td>在按下右键后，OnResetButton前执行。 用于阻止按下右键时弹出菜单，默认为 false，禁止弹出。</td>
+<td>在按下右键后，OnResetButton前执行。
+用于阻止按下右键时弹出菜单，默认为 false，禁止弹出。</td>
 <td>参数设置</td>
 </tr>
-<tr>
+<tr class="even">
 <td>StatusInt PerformEditAction(int index)</td>
-<td>重写右键弹出菜单，index 代表菜单编号，-1代表不显示。当成功设置后，应返回 <code>StatusInt.Success</code></td>
+<td>重写右键弹出菜单，index
+代表菜单编号，-1代表不显示。当成功设置后，应返回
+<code>StatusInt.Success</code></td>
 <td>参数设置</td>
 </tr>
 </tbody>
 </table>
-<h2 id="手势相关"><a class="markdownIt-Anchor" href="#手势相关"></a> 手势相关</h2>
+<h2 id="手势相关">手势相关</h2>
 <p>手势相关 API 名称中一般包含 <code>Gesture</code> 字符。</p>
 <p>手势相关的 API 在日常开发中几乎不使用，此处不进行介绍。</p>
-<h2 id="加载与资源释放"><a class="markdownIt-Anchor" href="#加载与资源释放"></a> 加载与资源释放</h2>
+<h2 id="加载与资源释放">加载与资源释放</h2>
 <table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 68%" />
+<col style="width: 9%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>作用</th>
 <th>类型</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>OnInstall</td>
-<td>被 InstallTool 调用，返回 false 时，取消工具初始化。可以用于限制仅在 3d 模型中生效</td>
+<td>被 InstallTool 调用，返回 false 时，取消工具初始化。可以用于限制仅在
+3d 模型中生效</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="even">
 <td>GetToolName</td>
 <td>设置工具名称</td>
 <td>参数设置</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>PopulateToolSettings</td>
-<td>生成工具设置窗体。如果为 true，由当前工具决定显示内容，表现为不显示。</td>
+<td>生成工具设置窗体。如果为
+true，由当前工具决定显示内容，表现为不显示。</td>
 <td>参数设置</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnPostInstall</td>
 <td>当工具加载完成后调用</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ExitTool</td>
 <td>调用后，退出当前工具</td>
 <td>工具方法</td>
 </tr>
-<tr>
+<tr class="even">
 <td>OnCleanup</td>
 <td>当前工具结束时调用，不论什么原因结束，最后都会调用</td>
 <td>事件回调</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>OnReinitialize</td>
-<td>重置工具到初始化状态，是为了方便操作，仅在 DgnElementSetTool 中可以使用。</td>
+<td>重置工具到初始化状态，是为了方便操作，仅在 DgnElementSetTool
+中可以使用。</td>
 <td>/</td>
 </tr>
 </tbody>
 </table>
 <p><strong>什么是工具设置窗体？</strong></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220522072349830.png" alt="image-20220522072349830" /></p>
-<p>每次启动一个工具时，都有这么一个窗体弹出，这就是工具的设置窗体。可以通过 <code>PopulateToolSettings</code> 返回 true 来关闭。</p>
-<h2 id="流程"><a class="markdownIt-Anchor" href="#流程"></a> 流程</h2>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220522072349830.png"
+alt="image-20220522072349830" />
+<figcaption aria-hidden="true">image-20220522072349830</figcaption>
+</figure>
+<p>每次启动一个工具时，都有这么一个窗体弹出，这就是工具的设置窗体。可以通过
+<code>PopulateToolSettings</code> 返回 true 来关闭。</p>
+<h2 id="流程">流程</h2>
 <p>由于DgnTool无法单独使用，所以此处不介绍其流程。每一个工具的流程详见子类相关文章。</p>
-<h2 id="说明"><a class="markdownIt-Anchor" href="#说明"></a> 说明</h2>
+<h2 id="说明">说明</h2>
 <p>标记为 * 号的表示未弄明白其用途。</p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<h2 id="参考">参考</h2>
 <p>《Microstation API Document》</p>
 
     </div>
@@ -616,8 +656,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Bentley/" rel="tag"><i class="fa fa-tag"></i> Bentley</a>
               <a href="/tags/Bentley%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> Bentley二次开发</a>
+              <a href="/tags/Bentley/" rel="tag"><i class="fa fa-tag"></i> Bentley</a>
               <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
           </div>
 
@@ -630,8 +670,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/9YRV0H.html" rel="next" title="DgnElementSetTool 使用文档">
-                  DgnElementSetTool 使用文档 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2022/1YQEJF9.html" rel="next" title="MS Addin 开发常用 DLL 引用配置推荐">
+                  MS Addin 开发常用 DLL 引用配置推荐 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -664,13 +704,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

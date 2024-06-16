@@ -257,7 +257,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>478</span>
+      <span>570</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -275,7 +275,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文汇总了 ORD 在启动过程中可能遇到的问题，方便再次遇到问题时能够快速定位并处理。</p>
+          <p>本文汇总了 ORD
+在启动过程中可能遇到的问题，方便再次遇到问题时能够快速定位并处理。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/1XTXTE4.html#more" rel="contents">
@@ -361,7 +362,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>223</span>
+      <span>246</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -379,7 +380,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220509162253268.png" alt="image-20220509162253268" /></p>
+          <figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220509162253268.png"
+alt="image-20220509162253268" />
+<figcaption aria-hidden="true">image-20220509162253268</figcaption>
+</figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/2BJZWZD.html#more" rel="contents">
@@ -494,7 +499,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>DgnButtonEvent 有三个成员，分别是 RawPoint、Point和ViewPoin，它们的区别如下：</p>
+          <p>DgnButtonEvent 有三个成员，分别是
+RawPoint、Point和ViewPoin，它们的区别如下：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/192YQY2.html#more" rel="contents">
@@ -609,7 +615,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在利用反射编程的时候，我们有时候往往需要通过对象的属性来获取属性名和其对象，例 <code>()=&gt;obj.Property</code>。这样做的好处是：属性名称不再是字符串，而是直接从属性名获取，方便后期维护。</p>
+          <p>在利用反射编程的时候，我们有时候往往需要通过对象的属性来获取属性名和其对象，例
+<code>()=&gt;obj.Property</code>。这样做的好处是：属性名称不再是字符串，而是直接从属性名获取，方便后期维护。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/1A0Q13P.html#more" rel="contents">
@@ -695,7 +702,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>921</span>
+      <span>925</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -715,46 +722,54 @@
     <div class="post-body" itemprop="articleBody">
           <p>类关系记忆技巧总结如下表所示：</p>
 <table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 27%" />
+<col style="width: 36%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>分类</th>
 <th>箭头特征</th>
 <th>记忆技巧</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>箭头方向</td>
 <td>从子类指向父类</td>
-<td>定义子类需要通过 extends 关键字指定父类子类一定是知道父类定义的，但父类并不知道子类的定义只有知道对方信息时才能指向对方箭头的方向是从子类指向父类</td>
+<td>定义子类需要通过 extends
+关键字指定父类子类一定是知道父类定义的，但父类并不知道子类的定义只有知道对方信息时才能指向对方箭头的方向是从子类指向父类</td>
 </tr>
-<tr>
+<tr class="even">
 <td>继承/实现</td>
 <td>用线条连接两个类； 空心三角箭头表示继承或实现</td>
 <td>实线表示继承，是is-a的关系，表示扩展，不虚，很结实</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>虚线表示实现，虚线代表“虚”无实体</td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>关联/依赖</td>
 <td>用线条连接两个类； 普通箭头表示关联或依赖</td>
 <td>虚线表示依赖关系：临时用一下，若即若离，虚无缥缈，若有若无表示一种使用关系，一个类需要借助另一个类来实现功能一般一个类将另一个类作为参数使用，或作为返回值</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>实线表示关联关系：关系稳定，实打实的关系，“铁哥们”表示一个类对象和另一个类对象有关联通常一个类中有另一个类对象作为属性</td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>组合/聚合</td>
 <td>用菱形表示：像一个盛东西的器皿（如盘子）</td>
-<td>聚合：空心菱形，代表空器皿里可以放很多相同的东西，聚集在一起（箭头方向所指的类）整体和局部的关系，两者有独立的生命周期，是 has-a 的关系弱关系，消极的词：弱-空</td>
+<td>聚合：空心菱形，代表空器皿里可以放很多相同的东西，聚集在一起（箭头方向所指的类）整体和局部的关系，两者有独立的生命周期，是
+has-a 的关系弱关系，消极的词：弱-空</td>
 </tr>
-<tr>
-<td>组合：实心菱形，代表器皿里已经有实体结构的存在，生死与共整体与局部的关系，和聚合关系对比，关系更加强烈，两者具有相同的生命周期，contains-a 的关系强关系，积极的词；强-满</td>
+<tr class="odd">
+<td>组合：实心菱形，代表器皿里已经有实体结构的存在，生死与共整体与局部的关系，和聚合关系对比，关系更加强烈，两者具有相同的生命周期，contains-a
+的关系强关系，积极的词；强-满</td>
 <td></td>
 <td></td>
 </tr>
@@ -870,7 +885,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文指在对 GoF 提出的 23 条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。</p>
+          <p>本文指在对 GoF 提出的 23
+条设计模式的知识点进行概括性总结，适合在日常使用中当备忘录查看，具体的知识点请查看后文的参考。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/3HRNXN7.html#more" rel="contents">
@@ -978,7 +994,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn 保存自己的数据。</p>
+          <p>本文主要介绍在 Bentley 平台上进行二次开发时，如何向 dgn
+保存自己的数据。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/33P3D91.html#more" rel="contents">
@@ -1064,7 +1081,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>70</span>
+      <span>101</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1164,14 +1181,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
+      <span>3.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -1290,7 +1307,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220426140319090.png" alt="image-20220426140319090" /></p>
+          <figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220426140319090.png"
+alt="image-20220426140319090" />
+<figcaption aria-hidden="true">image-20220426140319090</figcaption>
+</figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2022/35RJHX8.html#more" rel="contents">
@@ -1339,13 +1360,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">833k</span>
+    <span title="站点总字数">830k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:38</span>
+    <span title="站点阅读时长">12:35</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

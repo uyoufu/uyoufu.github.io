@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-05-26T16:00:00.000Z</updated>
+  <updated>2024-09-22T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>esxi 配置 RDM 直通</title>
+    <link href="https://galens.uamazing.cn/posts/2024/C906NX.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/C906NX.html</id>
+    <published>2024-09-22T16:00:00.000Z</published>
+    <updated>2024-09-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和
+PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="ESXI" scheme="https://galens.uamazing.cn/categories/System/ESXI/"/>
+    
+    
+    <category term="esxi" scheme="https://galens.uamazing.cn/tags/esxi/"/>
+    
+  </entry>
   
   <entry>
     <title>ComfyUI 节点介绍</title>
@@ -33,32 +55,9 @@
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 入门资料整理</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -84,6 +83,29 @@
     
     
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ComfyUI 入门资料整理</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
     
   </entry>
   
@@ -135,11 +157,11 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <category term="Web" scheme="https://galens.uamazing.cn/categories/Develop/Web/"/>
     
     
-    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
-    
     <category term="SSL" scheme="https://galens.uamazing.cn/tags/SSL/"/>
     
     <category term="Let&#39;s Encrypt" scheme="https://galens.uamazing.cn/tags/Let-s-Encrypt/"/>
+    
+    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
@@ -181,7 +203,7 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <link href="https://galens.uamazing.cn/posts/2024/2CAZW8Q.html"/>
     <id>https://galens.uamazing.cn/posts/2024/2CAZW8Q.html</id>
     <published>2024-02-23T16:00:00.000Z</published>
-    <updated>2024-02-23T16:00:00.000Z</updated>
+    <updated>2024-08-21T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;NuGet 是适用于 .NET 的包管理器。
@@ -408,11 +430,11 @@ at unix:///var/run/docker.sock: Get
     <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
     
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
     
   </entry>
   
@@ -522,34 +544,6 @@ zsh，提升操作丝滑度，增强使用效率，让你从此对 shell 爱不�
     <category term="C#" scheme="https://galens.uamazing.cn/tags/C/"/>
     
     <category term="Linq" scheme="https://galens.uamazing.cn/tags/Linq/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 中如何同时执行多条命令</title>
-    <link href="https://galens.uamazing.cn/posts/2023/19K9M5N.html"/>
-    <id>https://galens.uamazing.cn/posts/2023/19K9M5N.html</id>
-    <published>2023-12-26T16:00:00.000Z</published>
-    <updated>2023-12-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在 Linux 中，你可以使用以下几种方法来同时执行多个命令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用分号 (&lt;code&gt;;&lt;/code&gt;) 分隔命令&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 运算符&lt;/li&gt;
-&lt;li&gt;使用管道 (&lt;code&gt;|&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面进行详细的介绍&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
   </entry>
   

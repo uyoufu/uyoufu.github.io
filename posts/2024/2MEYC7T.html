@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。 由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。 有两种方法来解决这个问题。">
+    <meta name="description" content="在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。 由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。 有两种方法来解决这个问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Microstation 中实现非阻塞进度条">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2024/2MEYC7T.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。 由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。 有两种方法来解决这个问题。">
+<meta property="og:description" content="在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。 由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。 有两种方法来解决这个问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-03-07T16:00:00.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%81%87%E6%AD%BB"><span class="nav-number">1.</span> <span class="nav-text"> 为什么假死</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text"> 原生进度条方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text"> 多线程方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text"> 源代码</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%81%87%E6%AD%BB"><span class="nav-number">1.</span> <span class="nav-text">为什么假死</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">原生进度条方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">多线程方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">源代码</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -284,25 +284,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在进行 Microstation 二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。</p>
-<p>由于 Microstation 的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。</p>
+    <div class="post-body" itemprop="articleBody"><p>在进行 Microstation
+二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。</p>
+<p>由于 Microstation
+的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。</p>
 <p>有两种方法来解决这个问题。</p>
 <span id="more"></span>
-<h2 id="为什么假死"><a class="markdownIt-Anchor" href="#为什么假死"></a> 为什么假死</h2>
+<h2 id="为什么假死">为什么假死</h2>
 <p>首先简要解释下，为什么为假死。</p>
-<p>Windows 的窗体靠消息循环来更新 UI，UI 位于主线程上。而 Microstation 的 SDK 是非线程安全的，因此所有的任务都是在主线程上执行。</p>
+<p>Windows 的窗体靠消息循环来更新 UI，UI 位于主线程上。而 Microstation
+的 SDK 是非线程安全的，因此所有的任务都是在主线程上执行。</p>
 <p>当在主线程执行耗时计算时，主线程将被这个任务给占用，从而导致消息无法被处理，因此造成界面假死的情况。</p>
-<h2 id="原生进度条方案"><a class="markdownIt-Anchor" href="#原生进度条方案"></a> 原生进度条方案</h2>
+<h2 id="原生进度条方案">原生进度条方案</h2>
 <p>上面提到，卡死是由于窗体无法处理消息循环导致的，因此我们可以在进度变动时，让系统先处理一下消息，然后再继续执行代码。</p>
-<p>通过调用 <code>System.Windows.Forms.Application.DoEvents();</code> 来让线程处理窗体消息。</p>
+<p>通过调用 <code>System.Windows.Forms.Application.DoEvents();</code>
+来让线程处理窗体消息。</p>
 <blockquote>
-<p>详细参见：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.application.doevents?view=windowsdesktop-8.0">Application.DoEvents 方法 (System.Windows.Forms) | Microsoft Learn</a></p>
+<p>详细参见：<a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.application.doevents?view=windowsdesktop-8.0">Application.DoEvents
+方法 (System.Windows.Forms) | Microsoft Learn</a></p>
 </blockquote>
 <p>部分代码如下：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">#<span class="keyword">region</span> P/Invoke</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 打开窗体</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;messageText&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"> [<span class="meta">DllImport(<span class="string">&quot;ustation.dll&quot;</span>, CharSet = CharSet.Unicode)</span>]</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">extern</span> <span class="keyword">static</span> IntPtr <span class="title">mdlDialog_completionBarOpen</span>(<span class="params"><span class="built_in">string</span> messageText</span>)</span>;</span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 更新窗体内容</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;dialog&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;messageText&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;percent&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> [<span class="meta">DllImport(<span class="string">&quot;ustation.dll&quot;</span>, CharSet = CharSet.Unicode)</span>]</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">extern</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mdlDialog_completionBarUpdate</span>(<span class="params">IntPtr dialog, <span class="built_in">string</span> messageText, <span class="built_in">int</span> percent</span>)</span>;</span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 显示消息</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;dialog&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;messageText&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> [<span class="meta">DllImport(<span class="string">&quot;ustation.dll&quot;</span>, CharSet = CharSet.Unicode)</span>]</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">extern</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mdlDialog_completionBarDisplayMessage</span>(<span class="params">IntPtr dialog, <span class="built_in">string</span> messageText</span>)</span>;</span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 关闭进度条</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;dialog&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> [<span class="meta">DllImport(<span class="string">&quot;ustation.dll&quot;</span>, CharSet = CharSet.Unicode)</span>]</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">extern</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mdlDialog_completionBarClose</span>(<span class="params">IntPtr dialog</span>)</span>;</span><br><span class="line"> <span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line">   </span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 更新进度条</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 总进度为 100</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;message&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;progress&quot;&gt;</span>进度值，默认 0-100<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Update</span>(<span class="params"><span class="built_in">string</span> message, <span class="built_in">int</span> progress</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    mdlDialog_completionBarUpdate(_dialogPtr, message, progress);</span><br><span class="line">    <span class="comment">// 让窗体处理消息事件</span></span><br><span class="line">    Application.DoEvents();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>具体效果如下：</p>
-<video id="video" controls="" preload="none" poster="https://obs.uamazing.cn:52443/public/files/images/image-20240308235919675.png">
-      <source id="mp4" src="https://obs.uamazing.cn:52443/public/files/video/thread-progress.mp4" type="video/mp4" />
+<video id="video" controls preload="none" poster="https://obs.uamazing.cn:52443/public/files/images/image-20240308235919675.png">
+<source id="mp4" src="https://obs.uamazing.cn:52443/public/files/video/thread-progress.mp4" type="video/mp4" />
 </video>
 <p>虽然很方便，但是也有一些缺点：</p>
 <ul>
@@ -311,22 +317,30 @@
 </ul>
 <p>参考：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1115397/application-doevents-when-its-necessary-and-when-its-not">Application.DoEvents, when it’s necessary and when it’s not? - Stack Overflow</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.skcircle.com/?id=1927">Application.DoEvents()造成的问题</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1115397/application-doevents-when-its-necessary-and-when-its-not">Application.DoEvents,
+when it's necessary and when it's not? - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://www.skcircle.com/?id=1927">Application.DoEvents()造成的问题</a></li>
 </ul>
-<h2 id="多线程方案"><a class="markdownIt-Anchor" href="#多线程方案"></a> 多线程方案</h2>
+<h2 id="多线程方案">多线程方案</h2>
 <p>前面提到，由于进度条位于主线程，才导致它被阻塞，那么若能将其放到另一个线程里，与主线程分离，也就不会出现阻塞的情况了。</p>
-<p>要实现将 UI 放到另外的线程，只需要注意一个关键点，就是需要将线程设置成 <code>STA</code> 模式，代码如下：</p>
+<p>要实现将 UI
+放到另外的线程，只需要注意一个关键点，就是需要将线程设置成
+<code>STA</code> 模式，代码如下：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">StartProgress</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 新建一个线程并运行</span></span><br><span class="line">    <span class="keyword">var</span> thread = <span class="keyword">new</span> Thread(() =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        _window = <span class="keyword">new</span> ProgressWindow(<span class="keyword">this</span>);</span><br><span class="line">        _window.ShowDialog();</span><br><span class="line">    &#125;);</span><br><span class="line">	 <span class="comment">// 下列设置是关键</span></span><br><span class="line">    thread.SetApartmentState(ApartmentState.STA);</span><br><span class="line">    thread.Start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<video id="video" controls="" preload="none" poster="https://obs.uamazing.cn:52443/public/files/images/image-20240309001008033.png">
+<video id="video" controls preload="none" poster="https://obs.uamazing.cn:52443/public/files/images/image-20240309001008033.png">
 <source id="mp4" src="https://obs.uamazing.cn:52443/public/files/video/ms-progress.mp4" type="video/mp4" />
 </video>
 <blockquote>
-<p>STA 模式可自行百度了解：<a target="_blank" rel="noopener" href="https://blog.csdn.net/fuhanghang/article/details/122043360">什么是单线程单元（STA）什么是多线程单元（MTA）</a></p>
+<p>STA 模式可自行百度了解：<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/fuhanghang/article/details/122043360">什么是单线程单元（STA）什么是多线程单元（MTA）</a></p>
 </blockquote>
-<h2 id="源代码"><a class="markdownIt-Anchor" href="#源代码"></a> 源代码</h2>
-<p>本文示例代码已开源，地址：<a target="_blank" rel="noopener" href="https://github.com/GalensGan/AwsomeBentley/tree/master/Examples/CSharpBentley/CSharpMicrostation/ProgressExamples">AwsomeBentley/Examples/CSharpBentley/CSharpMicrostation/ProgressExamples at master · GalensGan/AwsomeBentley (github.com)</a></p>
+<h2 id="源代码">源代码</h2>
+<p>本文示例代码已开源，地址：<a
+target="_blank" rel="noopener" href="https://github.com/GalensGan/AwsomeBentley/tree/master/Examples/CSharpBentley/CSharpMicrostation/ProgressExamples">AwsomeBentley/Examples/CSharpBentley/CSharpMicrostation/ProgressExamples
+at master · GalensGan/AwsomeBentley (github.com)</a></p>
 
     </div>
 
@@ -431,13 +445,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

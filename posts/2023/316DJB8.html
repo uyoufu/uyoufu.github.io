@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文将介绍如何在 Ubuntu 上安装 Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。">
+    <meta name="description" content="本文将介绍如何在 Ubuntu 上安装 Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 中安装 Docker">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/316DJB8.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文将介绍如何在 Ubuntu 上安装 Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。">
+<meta property="og:description" content="本文将介绍如何在 Ubuntu 上安装 Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-12-25T16:00:00.000Z">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text"> 安装要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text"> 卸载旧版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="nav-number">3.</span> <span class="nav-text"> 安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">安装要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">卸载旧版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="nav-number">3.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -279,9 +279,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文将介绍如何在 Ubuntu 上安装 Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文将介绍如何在 Ubuntu 上安装
+Docker，本文为安装指导，仅列出详细的安装步骤和一些必要的说明。</p>
 <span id="more"></span>
-<h2 id="安装要求"><a class="markdownIt-Anchor" href="#安装要求"></a> 安装要求</h2>
+<h2 id="安装要求">安装要求</h2>
 <p>截至 2023-12-26，Docker 支持的 Ubuntu 版本有：</p>
 <ul>
 <li>Ubuntu Mantic 23.10</li>
@@ -289,32 +290,29 @@
 <li>Ubuntu Jammy 22.04 (LTS)</li>
 <li>Ubuntu Focal 20.04 (LTS)</li>
 </ul>
-<p>可以通过 <code>lsb_release -a</code> 或 <code>cat /etc/os-release</code> 查看 Ubuntu 版本。</p>
-<h2 id="卸载旧版本"><a class="markdownIt-Anchor" href="#卸载旧版本"></a> 卸载旧版本</h2>
+<p>可以通过 <code>lsb_release -a</code> 或
+<code>cat /etc/os-release</code> 查看 Ubuntu 版本。</p>
+<h2 id="卸载旧版本">卸载旧版本</h2>
 <p>通过以下命令卸载旧版本：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done</span><br></pre></td></tr></table></figure>
-<h2 id="安装-docker"><a class="markdownIt-Anchor" href="#安装-docker"></a> 安装 Docker</h2>
+<h2 id="安装-docker">安装 Docker</h2>
 <p>有多种安装方式，本文采用 apt 方式。</p>
-<ol>
-<li>
-<p>配置 Dockert <code>apt</code> 仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Add Docker<span class="string">&#x27;s official GPG key:</span></span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ca-certificates curl gnupg</span><br><span class="line">sudo install -m 0755 -d /etc/apt/keyrings</span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line">sudo chmod a+r /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Add the repository to Apt sources:</span></span></span><br><span class="line">echo \</span><br><span class="line">  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="line"><span class="meta prompt_">  $</span><span class="language-bash"><span class="string">(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;) stable&quot; | \</span></span></span><br><span class="line"><span class="string"><span class="language-bash">  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span></span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>安装最新版本的 Docker</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>测试 Docker 是否安装成功</p>
+<ol type="1">
+<li><p>配置 Dockert <code>apt</code> 仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Add Docker<span class="string">&#x27;s official GPG key:</span></span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ca-certificates curl gnupg</span><br><span class="line">sudo install -m 0755 -d /etc/apt/keyrings</span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line">sudo chmod a+r /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">Add the repository to Apt sources:</span></span></span><br><span class="line">echo \</span><br><span class="line">  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="line"><span class="meta prompt_">  $</span><span class="language-bash"><span class="string">(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;) stable&quot; | \</span></span></span><br><span class="line"><span class="string"><span class="language-bash">  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span></span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li><p>安装最新版本的 Docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></table></figure></li>
+<li><p>测试 Docker 是否安装成功</p>
 <p>通过运行 hello-world 来测试</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
 <p>当显示如下内容时，说明安装成功了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Docs</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/143156163">如何在 Ubuntu 20.04 上安装和使用 Docker - 知乎 (zhihu.com)</a></p>
+<h2 id="参考">参考</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Install
+Docker Engine on Ubuntu | Docker Docs</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/143156163">如何在 Ubuntu 20.04
+上安装和使用 Docker - 知乎 (zhihu.com)</a></p>
 
     </div>
 
@@ -418,13 +416,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

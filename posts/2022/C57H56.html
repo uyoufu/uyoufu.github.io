@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="echarts 是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍 echarts 配置的相关概念，在使用时，可以按需去查找相关 api。">
+    <meta name="description" content="echarts 是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍 echarts 配置的相关概念，在使用时，可以按需去查找相关 api。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="echarts各个配置项概念">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/C57H56.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="echarts 是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍 echarts 配置的相关概念，在使用时，可以按需去查找相关 api。">
+<meta property="og:description" content="echarts 是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍 echarts 配置的相关概念，在使用时，可以按需去查找相关 api。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-14T16:00:00.000Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text"> 使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E5%AE%B9%E5%99%A8%E5%A4%A7%E5%B0%8F"><span class="nav-number">3.</span> <span class="nav-text"> 图表容器大小</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%AE%B9%E5%99%A8%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text"> 响应容器大小的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text"> 样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text"> 颜色主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%86%8C%E5%92%8C%E5%8A%A0%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text"> 自动注册和加载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%89%B2%E7%9B%98"><span class="nav-number">4.3.</span> <span class="nav-text"> 调色盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.4.</span> <span class="nav-text"> 直接样式设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">5.</span> <span class="nav-text"> 数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E5%AE%B9%E5%99%A8%E5%A4%A7%E5%B0%8F"><span class="nav-number">3.</span> <span class="nav-text">图表容器大小</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%AE%B9%E5%99%A8%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">响应容器大小的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">颜色主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%86%8C%E5%92%8C%E5%8A%A0%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">自动注册和加载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%89%B2%E7%9B%98"><span class="nav-number">4.3.</span> <span class="nav-text">调色盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.4.</span> <span class="nav-text">直接样式设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">5.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,41 +282,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>echarts 是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍 echarts 配置的相关概念，在使用时，可以按需去查找相关 api。</p>
+    <div class="post-body" itemprop="articleBody"><p>echarts
+是百度开源的一个绘制图表库，号称是百度最良心的作品。本文将主要介绍
+echarts 配置的相关概念，在使用时，可以按需去查找相关 api。</p>
 <span id="more"></span>
-<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<h2 id="安装">安装</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install echarts --save</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h2>
+<h2 id="使用">使用</h2>
 <p>在 vue 中使用时示例如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;main&quot; :style=&quot;height: 200px; width: 200px&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import * as echarts from &#x27;echarts&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.initChart()</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy() &#123;</span><br><span class="line">    if (!this.chart) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    this.chart.dispose()</span><br><span class="line">    this.chart = null</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    initChart() &#123;</span><br><span class="line">      // 参数</span><br><span class="line">      const option = &#123;</span><br><span class="line">        legend: &#123;</span><br><span class="line">          right: &#x27;0&#x27;,</span><br><span class="line">          orient: &#x27;vertical&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        series: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: &#x27;Nightingale Chart&#x27;,</span><br><span class="line">            type: &#x27;pie&#x27;,</span><br><span class="line">            radius: [50, 94],</span><br><span class="line">            center: [&#x27;50%&#x27;, &#x27;50%&#x27;],</span><br><span class="line">            roseType: &#x27;area&#x27;,</span><br><span class="line">            itemStyle: &#123;</span><br><span class="line">              borderRadius: 8</span><br><span class="line">            &#125;,</span><br><span class="line">            data: [</span><br><span class="line">              &#123; value: 40, name: &#x27;rose 1&#x27; &#125;,</span><br><span class="line">              &#123; value: 38, name: &#x27;rose 2&#x27; &#125;,</span><br><span class="line">              &#123; value: 32, name: &#x27;rose 3&#x27; &#125;,</span><br><span class="line">              &#123; value: 30, name: &#x27;rose 4&#x27; &#125;,</span><br><span class="line">              &#123; value: 28, name: &#x27;rose 5&#x27; &#125;,</span><br><span class="line">              &#123; value: 26, name: &#x27;rose 6&#x27; &#125;,</span><br><span class="line">              &#123; value: 22, name: &#x27;rose 7&#x27; &#125;,</span><br><span class="line">              &#123; value: 18, name: &#x27;rose 8&#x27; &#125;</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 基于准备好的dom，初始化echarts实例</span><br><span class="line">      var myChart = echarts.init(document.getElementById(&#x27;main&#x27;))</span><br><span class="line">      // 绘制图表</span><br><span class="line">      myChart.setOption(option)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>参考：<a target="_blank" rel="noopener" href="https://echarts.apache.org/handbook/zh/basics/download">获取 Apache ECharts</a></p>
+<p>参考：<a
+target="_blank" rel="noopener" href="https://echarts.apache.org/handbook/zh/basics/download">获取
+Apache ECharts</a></p>
 </blockquote>
-<h2 id="图表容器大小"><a class="markdownIt-Anchor" href="#图表容器大小"></a> 图表容器大小</h2>
-<p>如上例所示，在定义 <code>&lt;div&gt;</code> 节点的时候，通过 CSS 使得该节点具有宽度和高度。初始化的时候，传入该节点，图表的大小默认即为该节点的大小（推荐）。也可以通过配置 <code>option.width</code> 或 <code>option.height</code> 将其覆盖。</p>
-<h3 id="响应容器大小的变化"><a class="markdownIt-Anchor" href="#响应容器大小的变化"></a> 响应容器大小的变化</h3>
-<p>可以监听页面的 <code>window.onresize</code> 事件获取浏览器大小改变的事件，然后调用 <a target="_blank" rel="noopener" href="https://echarts.apache.org/api.html#echartsInstance.resize"><code>echartsInstance.resize</code></a> 改变图表的大小。</p>
-<p>该方法仅在窗口大小改变时，才会触发 <code>resize</code>，具有一定的局限性。</p>
-<h2 id="样式"><a class="markdownIt-Anchor" href="#样式"></a> 样式</h2>
-<h3 id="颜色主题"><a class="markdownIt-Anchor" href="#颜色主题"></a> 颜色主题</h3>
-<p>系统除了默认外，内置了 <code>dark</code> 主题，在初始化时，传入的第二个参数即为主题的名称。</p>
+<h2 id="图表容器大小">图表容器大小</h2>
+<p>如上例所示，在定义 <code>&lt;div&gt;</code> 节点的时候，通过 CSS
+使得该节点具有宽度和高度。初始化的时候，传入该节点，图表的大小默认即为该节点的大小（推荐）。也可以通过配置
+<code>option.width</code> 或 <code>option.height</code> 将其覆盖。</p>
+<h3 id="响应容器大小的变化">响应容器大小的变化</h3>
+<p>可以监听页面的 <code>window.onresize</code>
+事件获取浏览器大小改变的事件，然后调用 <a
+target="_blank" rel="noopener" href="https://echarts.apache.org/api.html#echartsInstance.resize"><code>echartsInstance.resize</code></a>
+改变图表的大小。</p>
+<p>该方法仅在窗口大小改变时，才会触发
+<code>resize</code>，具有一定的局限性。</p>
+<h2 id="样式">样式</h2>
+<h3 id="颜色主题">颜色主题</h3>
+<p>系统除了默认外，内置了 <code>dark</code>
+主题，在初始化时，传入的第二个参数即为主题的名称。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chart = echarts.<span class="title function_">init</span>(dom, <span class="string">&#x27;dark&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="自动注册和加载主题"><a class="markdownIt-Anchor" href="#自动注册和加载主题"></a> 自动注册和加载主题</h3>
+<h3 id="自动注册和加载主题">自动注册和加载主题</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设主题名称是 &quot;vintage&quot;</span></span><br><span class="line">$.<span class="title function_">getJSON</span>(<span class="string">&#x27;xxx/xxx/vintage.json&#x27;</span>, <span class="keyword">function</span>(<span class="params">themeJSON</span>) &#123;</span><br><span class="line">  echarts.<span class="title function_">registerTheme</span>(<span class="string">&#x27;vintage&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">parse</span>(themeJSON));</span><br><span class="line">  <span class="keyword">var</span> chart = echarts.<span class="title function_">init</span>(dom, <span class="string">&#x27;vintage&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="调色盘"><a class="markdownIt-Anchor" href="#调色盘"></a> 调色盘</h3>
-<p>可以在 <code>option.color</code> 中设置全局调色盘，<code>color</code> 是一个颜色数组，也可以在 <code>series</code> 中单独设置调色盘颜色。</p>
-<h3 id="直接样式设置"><a class="markdownIt-Anchor" href="#直接样式设置"></a> 直接样式设置</h3>
-<p>直接的样式设置是比较常用设置方式。纵观 ECharts 的 <a target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#">option</a> 中，很多地方可以设置 <a target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-bar.itemStyle">itemStyle</a>、<a target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-line.lineStyle">lineStyle</a>、<a target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-line.areaStyle">areaStyle</a>、<a target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-bar.label">label</a> 等等。这些的地方可以直接设置图形元素的颜色、线宽、点的大小、标签的文字、标签的样式等等。</p>
-<h2 id="数据集"><a class="markdownIt-Anchor" href="#数据集"></a> 数据集</h2>
-<p><code>数据集</code>（<code>dataset</code>）是专门用来管理数据的组件。虽然每个系列都可以在 <code>series.data</code> 中设置数据，但是从 ECharts4 支持 <code>数据集</code> 开始，更推荐使用 <code>数据集</code> 来管理数据。因为这样，数据可以被多个组件复用，也方便进行 “数据和其他配置” 分离的配置风格。毕竟，在运行时，数据是最常改变的，而其他配置大多并不会改变。</p>
+<h3 id="调色盘">调色盘</h3>
+<p>可以在 <code>option.color</code> 中设置全局调色盘，<code>color</code>
+是一个颜色数组，也可以在 <code>series</code> 中单独设置调色盘颜色。</p>
+<h3 id="直接样式设置">直接样式设置</h3>
+<p>直接的样式设置是比较常用设置方式。纵观 ECharts 的 <a
+target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#">option</a>
+中，很多地方可以设置 <a
+target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-bar.itemStyle">itemStyle</a>、<a
+target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-line.lineStyle">lineStyle</a>、<a
+target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-line.areaStyle">areaStyle</a>、<a
+target="_blank" rel="noopener" href="https://echarts.apache.org/option.html#series-bar.label">label</a>
+等等。这些的地方可以直接设置图形元素的颜色、线宽、点的大小、标签的文字、标签的样式等等。</p>
+<h2 id="数据集">数据集</h2>
+<p><code>数据集</code>（<code>dataset</code>）是专门用来管理数据的组件。虽然每个系列都可以在
+<code>series.data</code> 中设置数据，但是从 ECharts4 支持
+<code>数据集</code> 开始，更推荐使用 <code>数据集</code>
+来管理数据。因为这样，数据可以被多个组件复用，也方便进行
+“数据和其他配置”
+分离的配置风格。毕竟，在运行时，数据是最常改变的，而其他配置大多并不会改变。</p>
 <blockquote>
-<p>本文未完待续…</p>
+<p>本文未完待续...</p>
 </blockquote>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://echarts.apache.org/handbook/zh/get-started">echarts文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/api.html#echarts">echarts 各个类的定义</a></li>
-<li><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/option.html#title">echarts 实例setupOption配置</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://echarts.apache.org/handbook/zh/get-started">echarts文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/api.html#echarts">echarts
+各个类的定义</a></li>
+<li><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/option.html#title">echarts
+实例setupOption配置</a></li>
 </ol>
 
     </div>
@@ -381,8 +408,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/AKDK4Z.html" rel="prev" title="yarn 常用命令">
-                  <i class="fa fa-angle-left"></i> yarn 常用命令
+                <a href="/posts/2022/W1573T.html" rel="prev" title="npm镜像源管理工具nrm使用">
+                  <i class="fa fa-angle-left"></i> npm镜像源管理工具nrm使用
                 </a>
             </div>
             <div class="post-nav-item">
@@ -420,13 +447,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

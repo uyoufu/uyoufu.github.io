@@ -19,18 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="当 &lt;style&gt; 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。这类似于 Shadow DOM 中的样式封装。它有一些注意事项，但不需要任何 polyfill。">
+    <meta name="description" content="当 &lt;style&gt; 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。这类似于 Shadow DOM 中的样式封装。它有一些注意事项，但不需要任何 polyfill。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 中的 CSS 样式编写要点">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/12DMY8D.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="当 &lt;style&gt; 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。这类似于 Shadow DOM 中的样式封装。它有一些注意事项，但不需要任何 polyfill。">
+<meta property="og:description" content="当 &lt;style&gt; 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。这类似于 Shadow DOM 中的样式封装。它有一些注意事项，但不需要任何 polyfill。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-29T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Vue">
 <meta property="article:tag" content="CSS">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 
 
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%92%8C%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 混用本地和全局样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0"><span class="nav-number">2.</span> <span class="nav-text"> 子组件的根元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text"> 深度作用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">4.</span> <span class="nav-text"> 动态生成的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E4%B8%80%E4%BA%9B%E8%A6%81%E7%95%99%E6%84%8F"><span class="nav-number">5.</span> <span class="nav-text"> 还有一些要留意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%92%8C%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">混用本地和全局样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0"><span class="nav-number">2.</span> <span class="nav-text">子组件的根元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">深度作用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">4.</span> <span class="nav-text">动态生成的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E4%B8%80%E4%BA%9B%E8%A6%81%E7%95%99%E6%84%8F"><span class="nav-number">5.</span> <span class="nav-text">还有一些要留意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -279,33 +279,53 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>当 <code>&lt;style&gt;</code> 标签有 <code>scoped</code> 属性时，它的 CSS 只作用于当前组件中的元素。这类似于 Shadow DOM 中的样式封装。它有一些注意事项，但不需要任何 polyfill。</p>
+    <div class="post-body" itemprop="articleBody"><p>当 <code>&lt;style&gt;</code> 标签有 <code>scoped</code> 属性时，它的
+CSS 只作用于当前组件中的元素。这类似于 Shadow DOM
+中的样式封装。它有一些注意事项，但不需要任何 polyfill。</p>
 <span id="more"></span>
 <p>它通过使用 PostCSS 来实现以下转换：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.example</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;example&quot;</span>&gt;</span>hi<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>转换结果：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.example</span><span class="selector-attr">[data-v-f3f3eg9]</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;example&quot;</span> <span class="attr">data-v-f3f3eg9</span>&gt;</span>hi<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="混用本地和全局样式"><a class="markdownIt-Anchor" href="#混用本地和全局样式"></a> 混用本地和全局样式</h2>
+<h2 id="混用本地和全局样式">混用本地和全局样式</h2>
 <p>你可以在一个组件中同时使用有 scoped 和非 scoped 样式：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="comment">/* 全局样式 */</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="comment">/* 本地样式 */</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="子组件的根元素"><a class="markdownIt-Anchor" href="#子组件的根元素"></a> 子组件的根元素</h2>
-<p>使用 <code>scoped</code> 后，父组件的样式将不会渗透到子组件中。不过一个子组件的根节点会同时受其父组件的 scoped CSS 和子组件的 scoped CSS 的影响。这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式。</p>
-<h2 id="深度作用选择器"><a class="markdownIt-Anchor" href="#深度作用选择器"></a> 深度作用选择器</h2>
-<p>如果你希望 <code>scoped</code> 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 <code>&gt;&gt;&gt;</code> 操作符：</p>
+<h2 id="子组件的根元素">子组件的根元素</h2>
+<p>使用 <code>scoped</code>
+后，父组件的样式将不会渗透到子组件中。不过一个子组件的根节点会同时受其父组件的
+scoped CSS 和子组件的 scoped CSS
+的影响。这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式。</p>
+<h2 id="深度作用选择器">深度作用选择器</h2>
+<p>如果你希望 <code>scoped</code>
+样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用
+<code>&gt;&gt;&gt;</code> 操作符：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.a</span> &gt;&gt;&gt; <span class="selector-class">.b</span> &#123; <span class="comment">/* ... */</span> &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上述代码将会编译成：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span><span class="selector-attr">[data-v-f3f3eg9]</span> <span class="selector-class">.b</span> &#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>有些像 Sass 之类的预处理器无法正确解析 <code>&gt;&gt;&gt;</code>。这种情况下你可以使用 <code>/deep/</code> 或 <code>::v-deep</code> 操作符取而代之——两者都是 <code>&gt;&gt;&gt;</code> 的别名，同样可以正常工作。</p>
-<h2 id="动态生成的内容"><a class="markdownIt-Anchor" href="#动态生成的内容"></a> 动态生成的内容</h2>
-<p>通过 <code>v-html</code> 创建的 DOM 内容不受 scoped 样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式。</p>
-<h2 id="还有一些要留意"><a class="markdownIt-Anchor" href="#还有一些要留意"></a> 还有一些要留意</h2>
+<p>有些像 Sass 之类的预处理器无法正确解析
+<code>&gt;&gt;&gt;</code>。这种情况下你可以使用 <code>/deep/</code> 或
+<code>::v-deep</code> 操作符取而代之——两者都是 <code>&gt;&gt;&gt;</code>
+的别名，同样可以正常工作。</p>
+<h2 id="动态生成的内容">动态生成的内容</h2>
+<p>通过 <code>v-html</code> 创建的 DOM 内容不受 scoped
+样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式。</p>
+<h2 id="还有一些要留意">还有一些要留意</h2>
 <ul>
-<li><strong>Scoped 样式中最好使用 class 选择器</strong>。考虑到浏览器渲染各种 CSS 选择器的方式，当 <code>p &#123; color: red &#125;</code> 是 scoped 时 (即与特性选择器组合使用时) 会慢很多倍。如果你使用 class 或者 id 取而代之，比如 <code>.example &#123; color: red &#125;</code>，性能影响就会消除。</li>
-<li><strong>在递归组件中小心使用后代选择器!</strong> 对选择器 <code>.a .b</code> 中的 CSS 规则来说，如果匹配 <code>.a</code> 的元素包含递归子组件，则所有的子组件中的 <code>.b</code> 都将被这个规则匹配。</li>
+<li><strong>Scoped 样式中最好使用 class
+选择器</strong>。考虑到浏览器渲染各种 CSS 选择器的方式，当
+<code>p &#123; color: red &#125;</code> 是 scoped 时 (即与特性选择器组合使用时)
+会慢很多倍。如果你使用 class 或者 id 取而代之，比如
+<code>.example &#123; color: red &#125;</code>，性能影响就会消除。</li>
+<li><strong>在递归组件中小心使用后代选择器!</strong> 对选择器
+<code>.a .b</code> 中的 CSS 规则来说，如果匹配 <code>.a</code>
+的元素包含递归子组件，则所有的子组件中的 <code>.b</code>
+都将被这个规则匹配。</li>
 </ul>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E6%B7%B7%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%92%8C%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F">Scoped CSS | Vue Loader (vuejs.org)</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/guide/scoped-css.html#混用本地和全局样式">Scoped
+CSS | Vue Loader (vuejs.org)</a></li>
 </ol>
 
     </div>
@@ -363,21 +383,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
               <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022/3JC8V28.html" rel="prev" title="CSS 的值与单位">
-                  <i class="fa fa-angle-left"></i> CSS 的值与单位
+                <a href="/posts/2022/EBMGE2.html" rel="prev" title="桁架中零杆的判断">
+                  <i class="fa fa-angle-left"></i> 桁架中零杆的判断
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/2R0P0YJ.html" rel="next" title="CSS中图片超过宽度自动缩放">
-                  CSS中图片超过宽度自动缩放 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2022/3JC8V28.html" rel="next" title="CSS 的值与单位">
+                  CSS 的值与单位 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -410,13 +430,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

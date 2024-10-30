@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp 服务器。">
+    <meta name="description" content="本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp 服务器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Filezilla 安装及配置教程">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/3KHWK77.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp 服务器。">
+<meta property="og:description" content="本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp 服务器。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/08/10/pwIu6XDF7aMjNYW.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/10/bq1ZXiMzGhBTWDN.png">
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text"> 下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filezilla-%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> FileZilla 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E5%AF%86%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text"> 设置管理界面密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%80%9A%E4%BF%A1%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.2.</span> <span class="nav-text"> 修改通信端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.3.</span> <span class="nav-text"> 设置主动模式端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-tls"><span class="nav-number">2.4.</span> <span class="nav-text"> 配置 TLS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 防火墙配置</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filezilla-%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">FileZilla 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E5%AF%86%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">设置管理界面密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%80%9A%E4%BF%A1%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.2.</span> <span class="nav-text">修改通信端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.3.</span> <span class="nav-text">设置主动模式端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-tls"><span class="nav-number">2.4.</span> <span class="nav-text">配置 TLS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">防火墙配置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -270,7 +270,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>485</span>
+      <span>554</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -287,34 +287,45 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp 服务器。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文为 FileZilla的安装教程及其配置，主要是方便今后快速搭建一个 Ftp
+服务器。</p>
 <span id="more"></span>
-<h2 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h2>
+<h2 id="下载">下载</h2>
 <ul>
-<li>
-<p>通过 scoop 安装</p>
-<p><code>scoop install extras/scoop install filezilla-server</code></p>
-</li>
-<li>
-<p>从官网下载</p>
-<p>也可以直接从官网下载安装</p>
-</li>
+<li><p>通过 scoop 安装</p>
+<p><code>scoop install extras/scoop install filezilla-server</code></p></li>
+<li><p>从官网下载</p>
+<p>也可以直接从官网下载安装</p></li>
 </ul>
-<h2 id="filezilla-配置"><a class="markdownIt-Anchor" href="#filezilla-配置"></a> FileZilla 配置</h2>
-<h3 id="设置管理界面密码"><a class="markdownIt-Anchor" href="#设置管理界面密码"></a> 设置管理界面密码</h3>
-<p><img data-src="https://i.loli.net/2021/08/10/pwIu6XDF7aMjNYW.png" alt="" /></p>
-<p>修改 FTP 管理端口，增强安全性，比如：20001，同时设置管理密码。设置管理界面密码是为了提高 FTP 的安全性，防止其他人修改 FTP 配置。</p>
-<h3 id="修改通信端口"><a class="markdownIt-Anchor" href="#修改通信端口"></a> 修改通信端口</h3>
-<p><img data-src="https://i.loli.net/2021/08/10/bq1ZXiMzGhBTWDN.png" alt="image-20210810142154949" /></p>
+<h2 id="filezilla-配置">FileZilla 配置</h2>
+<h3 id="设置管理界面密码">设置管理界面密码</h3>
+<p><img data-src="https://i.loli.net/2021/08/10/pwIu6XDF7aMjNYW.png" /></p>
+<p>修改 FTP
+管理端口，增强安全性，比如：20001，同时设置管理密码。设置管理界面密码是为了提高
+FTP 的安全性，防止其他人修改 FTP 配置。</p>
+<h3 id="修改通信端口">修改通信端口</h3>
+<figure>
+<img data-src="https://i.loli.net/2021/08/10/bq1ZXiMzGhBTWDN.png"
+alt="image-20210810142154949" />
+<figcaption aria-hidden="true">image-20210810142154949</figcaption>
+</figure>
 <p>FileZilla 的默认通信端口是 21，需要将其改成其它端口，提高安全性。</p>
-<h3 id="设置主动模式端口"><a class="markdownIt-Anchor" href="#设置主动模式端口"></a> 设置主动模式端口</h3>
-<p><img data-src="https://i.loli.net/2021/08/10/a14EVkeP5dGbNhY.png" alt="image-20210810114551377" /></p>
+<h3 id="设置主动模式端口">设置主动模式端口</h3>
+<figure>
+<img data-src="https://i.loli.net/2021/08/10/a14EVkeP5dGbNhY.png"
+alt="image-20210810114551377" />
+<figcaption aria-hidden="true">image-20210810114551377</figcaption>
+</figure>
 <p>设置端口范围，至少需要两个端口。该端口用于文件上传下载的数据传输。</p>
-<h3 id="配置-tls"><a class="markdownIt-Anchor" href="#配置-tls"></a> 配置 TLS</h3>
-<p><img data-src="https://i.loli.net/2021/08/10/JHx6iTcPWuUDs52.png" alt="image-20210810142603777" /></p>
+<h3 id="配置-tls">配置 TLS</h3>
+<figure>
+<img data-src="https://i.loli.net/2021/08/10/JHx6iTcPWuUDs52.png"
+alt="image-20210810142603777" />
+<figcaption aria-hidden="true">image-20210810142603777</figcaption>
+</figure>
 <p>按步骤生成证书即可。</p>
 <p>生成完成后，还需要修改TLS端口为自定义的端口，提高安全性。</p>
-<h2 id="防火墙配置"><a class="markdownIt-Anchor" href="#防火墙配置"></a> 防火墙配置</h2>
+<h2 id="防火墙配置">防火墙配置</h2>
 <p>上述配置完成后，即可在本机进行连接使用，但是如果想在其它机器连接，则需要在安装电脑上的防火墙中添加入站规则，允许FTP相关的端口通过。上面的端口包括：</p>
 <ul>
 <li>通信端口（默认21）</li>
@@ -425,13 +436,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

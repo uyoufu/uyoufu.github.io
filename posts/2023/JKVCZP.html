@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="函数的参数有 4 种，本文对这 4 种进行简要列举，方便回忆，详细请阅读后文中的参考链接。">
+    <meta name="description" content="函数的参数有 4 种，本文对这 4 种进行简要列举，方便回忆，详细请阅读后文中的参考链接。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 中函数的参数">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/JKVCZP.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="函数的参数有 4 种，本文对这 4 种进行简要列举，方便回忆，详细请阅读后文中的参考链接。">
+<meta property="og:description" content="函数的参数有 4 种，本文对这 4 种进行简要列举，方便回忆，详细请阅读后文中的参考链接。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-06-13T16:00:00.000Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> 位置参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text"> 默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text"> 可变参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text"> 关键字参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text"> 非命名关键字参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text"> 命名关键字参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%BB%84%E5%90%88"><span class="nav-number">5.</span> <span class="nav-text"> 参数组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">6.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">位置参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">关键字参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">非命名关键字参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">命名关键字参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%BB%84%E5%90%88"><span class="nav-number">5.</span> <span class="nav-text">参数组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">6.</span> <span class="nav-text">致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,20 +282,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>函数的参数有 4 种，本文对这 4 种进行简要列举，方便回忆，详细请阅读后文中的参考链接。</p>
+    <div class="post-body" itemprop="articleBody"><p>函数的参数有 4 种，本文对这 4
+种进行简要列举，方便回忆，详细请阅读后文中的参考链接。</p>
 <span id="more"></span>
-<h2 id="位置参数"><a class="markdownIt-Anchor" href="#位置参数"></a> 位置参数</h2>
+<h2 id="位置参数">位置参数</h2>
 <p>用法如下 ：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">power</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> x * x</span><br></pre></td></tr></table></figure>
 <p><strong>使用要点：</strong></p>
-<ol>
+<ol type="1">
 <li>在调用时，必须按顺序给位置参数传递值</li>
 </ol>
-<h2 id="默认参数"><a class="markdownIt-Anchor" href="#默认参数"></a> 默认参数</h2>
+<h2 id="默认参数">默认参数</h2>
 <p>用法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">power</span>(<span class="params">x, n=<span class="number">2</span></span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        n = n - <span class="number">1</span></span><br><span class="line">        s = s * x</span><br><span class="line">    <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
 <p><strong>使用要点：</strong></p>
-<ol>
+<ol type="1">
 <li>默认参数应在位置参数后面</li>
 <li>在调用时，默认参数可以不传递值。没有值时取默认值</li>
 <li>默认参数必须指向不变对象</li>
@@ -303,32 +304,34 @@
 <blockquote>
 <p>在类的定义中，可以使用默认参数来实现函数的重载</p>
 </blockquote>
-<h2 id="可变参数"><a class="markdownIt-Anchor" href="#可变参数"></a> 可变参数</h2>
+<h2 id="可变参数">可变参数</h2>
 <p>可变参数定义如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">*numbers</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> numbers:</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + n * n</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br></pre></td></tr></table></figure>
 <p>调用：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用方式1</span></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">calc(nums[<span class="number">0</span>], nums[<span class="number">1</span>], nums[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方式2</span></span><br><span class="line">nums2 = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment"># 定义一个 tuple</span></span><br><span class="line">cal(*nums2)</span><br></pre></td></tr></table></figure>
 <p><strong>使用要点：</strong></p>
-<ol>
+<ol type="1">
 <li>可变参数接收者是 tuple 类型</li>
 </ol>
-<h2 id="关键字参数"><a class="markdownIt-Anchor" href="#关键字参数"></a> 关键字参数</h2>
-<p>关键字参数允许传入任意个(包含 0 个)含参数名的参数，这些关键字参数在函数内部自动组装为一个 dict 类型。</p>
-<h3 id="非命名关键字参数"><a class="markdownIt-Anchor" href="#非命名关键字参数"></a> 非命名关键字参数</h3>
+<h2 id="关键字参数">关键字参数</h2>
+<p>关键字参数允许传入任意个(包含 0
+个)含参数名的参数，这些关键字参数在函数内部自动组装为一个 dict
+类型。</p>
+<h3 id="非命名关键字参数">非命名关键字参数</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">person</span>(<span class="params">name, age, **kw</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;name:&#x27;</span>, name, <span class="string">&#x27;age:&#x27;</span>, age, <span class="string">&#x27;other:&#x27;</span>, kw)</span><br></pre></td></tr></table></figure>
-<h3 id="命名关键字参数"><a class="markdownIt-Anchor" href="#命名关键字参数"></a> 命名关键字参数</h3>
+<h3 id="命名关键字参数">命名关键字参数</h3>
 <p>如果要限制关键字参数的名字，就可以用命名关键字参数。</p>
 <p>使用时，只能传入指定的关键字名，命名关键字参数需要一个特殊分隔符<code>*</code>，<code>*</code>后面的参数被视为命名关键字参数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">person</span>(<span class="params">name, age, *, city, job=“dev”</span>):</span><br><span class="line">    <span class="built_in">print</span>(name, age, city, job)</span><br></pre></td></tr></table></figure>
 <p><strong>使用要点：</strong></p>
-<ol>
+<ol type="1">
 <li>使用时，只能传入指定的关键字名。</li>
 <li>命名关键字参数需要一个特殊分隔符<code>*</code>，<code>*</code>后面的参数被视为命名关键字参数。</li>
 <li>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符<code>*</code>：</li>
 <li>命名参数可以设置默认值</li>
 <li>没有默认值的命名参数，必须要传入值</li>
 </ol>
-<h2 id="参数组合"><a class="markdownIt-Anchor" href="#参数组合"></a> 参数组合</h2>
+<h2 id="参数组合">参数组合</h2>
 <p>当必选参数、默认参数、可变参数、关键字参数和命名关键字参数组合使用时，其定义顺序为：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f1</span>(<span class="params">a, b, c=<span class="number">0</span>, *args, **kw</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;a =&#x27;</span>, a, <span class="string">&#x27;b =&#x27;</span>, b, <span class="string">&#x27;c =&#x27;</span>, c, <span class="string">&#x27;args =&#x27;</span>, args, <span class="string">&#x27;kw =&#x27;</span>, kw)</span><br></pre></td></tr></table></figure>
 <p>可以通过 tuple 和 dic 调用上述函数：</p>
@@ -337,10 +340,11 @@
 <p>注意前面的 <code>*</code> 号</p>
 </blockquote>
 <p>所以：对于任意函数，都可以通过类似<code>func(*args, **kw)</code>的形式调用它，无论它的参数是如何定义的。</p>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<h2 id="致谢">致谢</h2>
 <p>本文参考以下文章，在此报以诚挚谢意！</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017261630425888">函数的参数-廖雪峰的官方网站</a></li>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017261630425888">函数的参数-廖雪峰的官方网站</a></li>
 </ol>
 
     </div>
@@ -444,13 +448,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,21 +19,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在使用 npm install 或 yarn insatll 时，报错： 12345678910error Command failed.Exit code: 128Command: gitArguments: ls-remote --tags --heads git:&#x2F;&#x2F;github.com&#x2F;adobe-webplatform&#x2F;eve.gitDirectory: E:\galensShare\D">
+    <meta name="description" content="在使用 npm install 或 yarn insatll 时，报错： 12345678910error Command failed.Exit code: 128Command: gitArguments: ls-remote --tags --heads git:&#x2F;&#x2F;github.com&#x2F;adobe-webplatform&#x2F;eve.gitDirectory: E:\galensShare">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The unauthenticated git protocol on port 9418 is no longer supported">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/Q9EGFQ.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在使用 npm install 或 yarn insatll 时，报错： 12345678910error Command failed.Exit code: 128Command: gitArguments: ls-remote --tags --heads git:&#x2F;&#x2F;github.com&#x2F;adobe-webplatform&#x2F;eve.gitDirectory: E:\galensShare\D">
+<meta property="og:description" content="在使用 npm install 或 yarn insatll 时，报错： 12345678910error Command failed.Exit code: 128Command: gitArguments: ls-remote --tags --heads git:&#x2F;&#x2F;github.com&#x2F;adobe-webplatform&#x2F;eve.gitDirectory: E:\galensShare">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220408162030125.png">
 <meta property="article:published_time" content="2022-04-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-07T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="npm">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220408162030125.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/Q9EGFQ.html">
@@ -267,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>671</span>
+      <span>694</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -284,14 +282,20 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在使用 <code>npm install</code> 或 <code>yarn insatll</code> 时，报错：</p>
+    <div class="post-body" itemprop="articleBody"><p>在使用 <code>npm install</code> 或 <code>yarn insatll</code>
+时，报错：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">error Command failed.</span><br><span class="line"><span class="keyword">Exit</span> code: <span class="number">128</span></span><br><span class="line">Command: git</span><br><span class="line">Arguments: <span class="built_in">ls</span><span class="literal">-remote</span> <span class="literal">--tags</span> <span class="literal">--heads</span> git://github.com/adobe<span class="literal">-webplatform</span>/eve.git</span><br><span class="line">Directory: E:\galensShare\Develop\swToolsFrontEnd</span><br><span class="line">Output:</span><br><span class="line">fatal: remote error:</span><br><span class="line">  The unauthenticated git protocol on port <span class="number">9418</span> is no longer supported.</span><br><span class="line">Please see https://github.blog/<span class="number">2021</span><span class="literal">-09-01-improving-git-protocol-security-github</span>/ <span class="keyword">for</span> more information.</span><br><span class="line">info Visit https://yarnpkg.com/en/docs/<span class="built_in">cli</span>/install <span class="keyword">for</span> documentation about this command.</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <p><strong>原因分析</strong>：</p>
-<p>这是由于某些依赖包是通过 Git 来进行安装的，并且其安装链接为 SSH，而 Github 现已不支持 SSH 安装，所以会报错。</p>
+<p>这是由于某些依赖包是通过 Git 来进行安装的，并且其安装链接为 SSH，而
+Github 现已不支持 SSH 安装，所以会报错。</p>
 <p><strong>解决办法</strong>：</p>
 <p>搜索 <code>.gitconfig</code> 文件</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220408162030125.png" alt="image-20220408162030125" /></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220408162030125.png"
+alt="image-20220408162030125" />
+<figcaption aria-hidden="true">image-20220408162030125</figcaption>
+</figure>
 <p>在里面添加如下内容，来告诉 git 在遇到它时使用 https 而不是 SSH。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[url &quot;https://&quot;]</span><br><span class="line">    insteadOf = ssh://</span><br><span class="line">[url &quot;https://&quot;]</span><br><span class="line">    insteadOf = git://</span><br></pre></td></tr></table></figure>
 
@@ -397,13 +401,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

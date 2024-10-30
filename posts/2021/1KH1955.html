@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E8%BD%AC-solidkernelentity"><span class="nav-number">1.</span> <span class="nav-text"> Element 转 SolidKernelEntity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E8%BD%AC-curvevector"><span class="nav-number">2.</span> <span class="nav-text"> Element 转 CurveVector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-%E8%BD%AC-element"><span class="nav-number">3.</span> <span class="nav-text"> T 转 Element</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E8%BD%AC-solidkernelentity"><span class="nav-number">1.</span> <span class="nav-text">Element 转 SolidKernelEntity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#element-%E8%BD%AC-curvevector"><span class="nav-number">2.</span> <span class="nav-text">Element 转 CurveVector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-%E8%BD%AC-element"><span class="nav-number">3.</span> <span class="nav-text">T 转 Element</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -291,49 +291,50 @@
     
     <div class="post-body" itemprop="articleBody"><p>本节主要对不同元素间的转换进行总结，以便今后使用。</p>
 <span id="more"></span>
-<h2 id="element-转-solidkernelentity"><a class="markdownIt-Anchor" href="#element-转-solidkernelentity"></a> Element 转 SolidKernelEntity</h2>
+<h2 id="element-转-solidkernelentity">Element 转 SolidKernelEntity</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>程序集</th>
 <th>命名空间</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Bentley.DgnDisplayNet.dll</td>
 <td>Bentley.DgnPlatformNET</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Convert1.ElementToBody(<span class="keyword">out</span> SolidKernelEntity entityOut, Element ehIn, <span class="built_in">bool</span> getSolidIn, <span class="built_in">bool</span> getSheetIn, <span class="built_in">bool</span> getWireIn);</span><br></pre></td></tr></table></figure>
-<h2 id="element-转-curvevector"><a class="markdownIt-Anchor" href="#element-转-curvevector"></a> Element 转 CurveVector</h2>
+<h2 id="element-转-curvevector">Element 转 CurveVector</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>程序集</th>
 <th>命名空间</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Bentley.DgnPlatformNET.dll</td>
 <td>Bentley.DgnPlatformNET.Elements</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CurvePathQuery.ElementToCurveVector(ele);</span><br></pre></td></tr></table></figure>
-<h2 id="t-转-element"><a class="markdownIt-Anchor" href="#t-转-element"></a> T 转 Element</h2>
-<p>T 代表的类型有：<strong>SolidKernelEntity，SolidPrimitive，CurvePrimitive，CurveVector</strong></p>
+<h2 id="t-转-element">T 转 Element</h2>
+<p>T
+代表的类型有：<strong>SolidKernelEntity，SolidPrimitive，CurvePrimitive，CurveVector</strong></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>程序集</th>
 <th>命名空间</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Bentley.DgnPlatformNET.dll</td>
 <td>Bentley.DgnPlatformNET.Elements</td>
 </tr>
@@ -442,13 +443,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -26,14 +26,12 @@
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文介绍如何为 Linux 中配置静态 IP。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231226155813822.png">
 <meta property="article:published_time" content="2023-10-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-10-31T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231226155813822.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/1KVMRKY.html">
@@ -144,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text"> 安装工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%BD%BF%E7%94%A8%E7%9A%84%E7%BD%91%E5%8D%A1%E5%90%8D%E7%A7%B0"><span class="nav-number">2.</span> <span class="nav-text"> 查看使用的网卡名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text"> 测试网络配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%94%9F%E6%95%88"><span class="nav-number">5.</span> <span class="nav-text"> 使网络配置生效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text">安装工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%BD%BF%E7%94%A8%E7%9A%84%E7%BD%91%E5%8D%A1%E5%90%8D%E7%A7%B0"><span class="nav-number">2.</span> <span class="nav-text">查看使用的网卡名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">测试网络配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%94%9F%E6%95%88"><span class="nav-number">5.</span> <span class="nav-text">使网络配置生效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -264,7 +262,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>814</span>
+      <span>837</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -283,29 +281,35 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文介绍如何为 Linux 中配置静态 IP。</p>
 <span id="more"></span>
-<h2 id="安装工具"><a class="markdownIt-Anchor" href="#安装工具"></a> 安装工具</h2>
+<h2 id="安装工具">安装工具</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install iproute2</span><br></pre></td></tr></table></figure>
-<h2 id="查看使用的网卡名称"><a class="markdownIt-Anchor" href="#查看使用的网卡名称"></a> 查看使用的网卡名称</h2>
+<h2 id="查看使用的网卡名称">查看使用的网卡名称</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231226155813822.png" alt="image-20231226155813822" /></p>
-<h2 id="修改配置文件"><a class="markdownIt-Anchor" href="#修改配置文件"></a> 修改配置文件</h2>
-<p>Ubuntu 20.04 采用 netplan 来管理网络配置计划，在/etc/netplan/目录下有一个以yaml结尾的文件，例如00-installer-config.yaml，不同版本的系统这个文件名可能会有些差异，但是不影响，以实际为准。</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231226155813822.png"
+alt="image-20231226155813822" />
+<figcaption aria-hidden="true">image-20231226155813822</figcaption>
+</figure>
+<h2 id="修改配置文件">修改配置文件</h2>
+<p>Ubuntu 20.04 采用 netplan
+来管理网络配置计划，在/etc/netplan/目录下有一个以yaml结尾的文件，例如00-installer-config.yaml，不同版本的系统这个文件名可能会有些差异，但是不影响，以实际为准。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/netplan/<span class="number">00</span><span class="literal">-installer-config</span>.yaml</span><br><span class="line"><span class="comment"># 若是 wifi 则是 00-installer-config-wifi.yaml</span></span><br></pre></td></tr></table></figure>
 <p>默认配置为：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is the network config written by &#x27;subiquity&#x27;</span></span><br><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">ethernets:</span></span><br><span class="line">    <span class="attr">enp2s0:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>修改后的配置为：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is the network config written by &#x27;subiquity&#x27;</span></span><br><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">ethernets:</span></span><br><span class="line">    <span class="attr">enp2s0:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">addresses:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="number">192.168</span><span class="number">.23</span><span class="number">.20</span><span class="string">/24</span>  <span class="comment"># 设置静态 IP 地址和掩码</span></span><br><span class="line">      <span class="attr">routes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">to:</span> <span class="string">default</span></span><br><span class="line">          <span class="attr">via:</span> <span class="number">192.168</span><span class="number">.23</span><span class="number">.254</span>  <span class="comment"># 设置网关地址</span></span><br><span class="line">      <span class="attr">nameservers:</span></span><br><span class="line">        <span class="attr">addresses:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="number">192.168</span><span class="number">.23</span><span class="number">.11</span>  <span class="comment"># 设置主、备 DNS</span></span><br><span class="line">          <span class="bullet">-</span> <span class="number">119.29</span><span class="number">.29</span><span class="number">.29</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<h2 id="测试网络配置"><a class="markdownIt-Anchor" href="#测试网络配置"></a> 测试网络配置</h2>
+<h2 id="测试网络配置">测试网络配置</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan <span class="keyword">try</span></span><br></pre></td></tr></table></figure>
-<h2 id="使网络配置生效"><a class="markdownIt-Anchor" href="#使网络配置生效"></a> 使网络配置生效</h2>
+<h2 id="使网络配置生效">使网络配置生效</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure>
 <p>运行以下 IP 命令查看接口上的 IP 地址：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show ens33</span><br></pre></td></tr></table></figure>
 <p>要查看默认路由，请运行：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route show</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a target="_blank" rel="noopener" href="https://linux.cn/article-15181-1.html">系统运维|如何在 Ubuntu 服务器 22.04 上设置静态 IP 地址 (linux.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://linux.cn/article-15181-1.html">系统运维|如何在
+Ubuntu 服务器 22.04 上设置静态 IP 地址 (linux.cn)</a></p>
 
     </div>
 
@@ -409,13 +413,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="什么是 makefile ? makefile关系到了整个工程的编译规则。一个工程中的源文件不计其数，并且按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。  因为 windows 集成的开发环境为">
+    <meta name="description" content="什么是 makefile ? makefile关系到了整个工程的编译规则。一个工程中的源文件不计其数，并且按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。  因为 windows 集成的开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MDL开发中如何创建makefile文件">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/353AZ4N.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="什么是 makefile ? makefile关系到了整个工程的编译规则。一个工程中的源文件不计其数，并且按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。  因为 windows 集成的开发环境为">
+<meta property="og:description" content="什么是 makefile ? makefile关系到了整个工程的编译规则。一个工程中的源文件不计其数，并且按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。  因为 windows 集成的开发">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-06T00:45:48.934Z">
@@ -142,7 +142,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-makefile"><span class="nav-number">1.</span> <span class="nav-text"> 什么是 makefile ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mdl-%E7%9A%84%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%86%9F%E6%82%89%E7%9A%84%E5%87%A0%E7%A7%8D-mke-%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> MDL 的开发需要熟悉的几种 mke 语法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-number">3.</span> <span class="nav-text"> 宏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-makefile-%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%AE%8F"><span class="nav-number">3.1.</span> <span class="nav-text"> 在 makefile 中定义宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text"> 宏的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E7%9A%84%E5%AE%8F%E5%92%8C%E5%85%B6%E5%B1%95%E5%BC%80%E5%80%BC"><span class="nav-number">3.3.</span> <span class="nav-text"> 保留的宏和其展开值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.4.</span> <span class="nav-text"> 实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E7%AC%A6%E5%8F%B7%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text"> 依赖定义规则符号解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E5%AE%9E%E4%BE%8B%E6%9D%A5%E8%87%AA-mdlmki"><span class="nav-number">5.</span> <span class="nav-text"> 依赖定义规则实例（来自 mdl.mki）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-makefile"><span class="nav-number">1.</span> <span class="nav-text">什么是 makefile ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mdl-%E7%9A%84%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%86%9F%E6%82%89%E7%9A%84%E5%87%A0%E7%A7%8D-mke-%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">MDL 的开发需要熟悉的几种 mke
+语法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-number">3.</span> <span class="nav-text">宏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-makefile-%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%AE%8F"><span class="nav-number">3.1.</span> <span class="nav-text">在 makefile 中定义宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">宏的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E7%9A%84%E5%AE%8F%E5%92%8C%E5%85%B6%E5%B1%95%E5%BC%80%E5%80%BC"><span class="nav-number">3.3.</span> <span class="nav-text">保留的宏和其展开值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.4.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E7%AC%A6%E5%8F%B7%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">依赖定义规则符号解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E5%AE%9E%E4%BE%8B%E6%9D%A5%E8%87%AA-mdl.mki"><span class="nav-number">5.</span> <span class="nav-text">依赖定义规则实例（来自
+mdl.mki）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,149 +292,135 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="什么是-makefile"><a class="markdownIt-Anchor" href="#什么是-makefile"></a> 什么是 makefile ?</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="什么是-makefile">什么是 makefile ?</h2>
 <p>makefile关系到了整个工程的编译规则。一个工程中的源文件不计其数，并且按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。</p>
 <blockquote>
-<p>因为 windows 集成的开发环境为我们做了上述工作，所以在平时开发的时候，没有太多的感觉。</p>
+<p>因为 windows
+集成的开发环境为我们做了上述工作，所以在平时开发的时候，没有太多的感觉。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="mdl-的开发需要熟悉的几种-mke-语法"><a class="markdownIt-Anchor" href="#mdl-的开发需要熟悉的几种-mke-语法"></a> MDL 的开发需要熟悉的几种 mke 语法:</h2>
-<ol>
-<li>
-<p>注释：以#号开头的行为注释行</p>
-</li>
-<li>
-<p>变量定义（Bentley 的说明中称它为宏，仅此处使用变量一词）<br />
-如 <code>appName = HelloWorld</code> 这样的形式。appName 被称为变量，HelloWorld 被当成值赋予给 appName。<br />
-也可以对变量赋予多个值,值之间用空格分开，也可以使用 <code>\</code> 换行，比如：</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">objects = main.o kbd.o command.o display.o \</span><br><span class="line">   insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>变量使用：以 <code>$(变量名)</code> 形式，比如 <code>$(appName)</code> 为 HelloWorld</p>
-</li>
-<li>
-<p>依赖定义<br />
-定义格式如下：</p>
+<h2 id="mdl-的开发需要熟悉的几种-mke-语法">MDL 的开发需要熟悉的几种 mke
+语法:</h2>
+<ol type="1">
+<li><p>注释：以#号开头的行为注释行</p></li>
+<li><p>变量定义（Bentley 的说明中称它为宏，仅此处使用变量一词） 如
+<code>appName = HelloWorld</code> 这样的形式。appName
+被称为变量，HelloWorld 被当成值赋予给 appName。
+也可以对变量赋予多个值,值之间用空格分开，也可以使用 <code>\</code>
+换行，比如：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">objects = main.o kbd.o command.o display.o \</span><br><span class="line">   insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure></li>
+<li><p>变量使用：以 <code>$(变量名)</code> 形式，比如
+<code>$(appName)</code> 为 HelloWorld</p></li>
+<li><p>依赖定义 定义格式如下：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target... : prerequisites...</span><br><span class="line"> command1</span><br><span class="line"> ...</span><br><span class="line"> commandN</span><br></pre></td></tr></table></figure>
 <p><strong>特别注意的是：command 前面必须是 Tab</strong></p>
 <p>上面的参数说明如下：</p>
 <ul>
-<li>
-<p>target<br />
-可以是一个 object file（目标文件），也可以是一个执行文件，还可以是一个标签（label）。对于标签这种特性，在后续的“伪目标”章节中会有叙述。</p>
-</li>
-<li>
-<p>prerequisites<br />
-生成该 target 所依赖的文件</p>
-</li>
-<li>
-<p>command<br />
-该target要执行的命令（任意的shell命令）<br />
+<li><p>target 可以是一个 object
+file（目标文件），也可以是一个执行文件，还可以是一个标签（label）。对于标签这种特性，在后续的“伪目标”章节中会有叙述。</p></li>
+<li><p>prerequisites 生成该 target 所依赖的文件</p></li>
+<li><p>command 该target要执行的命令（任意的shell命令）
 坦白说，可以这样理解：</p>
 <blockquote>
-<p><strong>prerequisites中如果有一个以上的文件比 target 文件要新的话，command 命令就会被执行。</strong></p>
-</blockquote>
-</li>
-</ul>
-</li>
+<p><strong>prerequisites中如果有一个以上的文件比 target
+文件要新的话，command 命令就会被执行。</strong></p>
+</blockquote></li>
+</ul></li>
 </ol>
-<h2 id="宏"><a class="markdownIt-Anchor" href="#宏"></a> 宏</h2>
-<h3 id="在-makefile-中定义宏"><a class="markdownIt-Anchor" href="#在-makefile-中定义宏"></a> 在 makefile 中定义宏</h3>
+<h2 id="宏">宏</h2>
+<h3 id="在-makefile-中定义宏">在 makefile 中定义宏</h3>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>形式</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>macro = definition</td>
 <td>将 definition 的值赋给 macro。标准赋值方法，用得比较多</td>
 </tr>
-<tr>
+<tr class="even">
 <td>macro =% definition</td>
 <td>先计算 definition 的值，再赋值给 macro</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>macro + definition</td>
 <td>将 definition 添加到 marco 值后面，和编程中 += 用法颇似</td>
 </tr>
-<tr>
+<tr class="even">
 <td>macro +% definition</td>
 <td>先计算 definition 的值，然后再追加到 macro 上面</td>
 </tr>
 </tbody>
 </table>
-<h3 id="宏的使用"><a class="markdownIt-Anchor" href="#宏的使用"></a> 宏的使用</h3>
+<h3 id="宏的使用">宏的使用</h3>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>形式</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$(name)</td>
-<td>通过迭代替换展开</td>
-</tr>
-<tr>
-<td>${name}</td>
+<tr class="odd">
+<td><span class="math inline">\((name)|通过迭代替换展开|
+|\)</span>{name}</td>
 <td>通过迭代替换展开，如果最后一个字符是路径分隔符，则删除它</td>
 </tr>
-<tr>
+<tr class="even">
 <td>$[name]</td>
 <td>展开值;将宏展开成迭代字符串值，且不做任何进一步的替换</td>
 </tr>
 </tbody>
 </table>
-<h3 id="保留的宏和其展开值"><a class="markdownIt-Anchor" href="#保留的宏和其展开值"></a> 保留的宏和其展开值</h3>
+<h3 id="保留的宏和其展开值">保留的宏和其展开值</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>宏</th>
 <th>展开值</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$@</td>
-<td>当前目标文件</td>
-</tr>
-<tr>
-<td>$?</td>
+<tr class="odd">
+<td><span class="math inline">\(@|当前目标文件| |\)</span>?</td>
 <td>所有比目标文件更新的依赖文件</td>
 </tr>
-<tr>
-<td>$=</td>
-<td>最新的依赖文件</td>
-</tr>
-<tr>
-<td>$&lt;</td>
+<tr class="even">
+<td><span class="math inline">\(=|最新的依赖文件| |\)</span>&lt;</td>
 <td>当前的依赖文件</td>
 </tr>
-<tr>
-<td>$*</td>
-<td>目标文件的基础文件</td>
-</tr>
-<tr>
-<td>$%</td>
+<tr class="odd">
+<td><span class="math inline">\(*|目标文件的基础文件| |\)</span>%</td>
 <td>第一个目标文件的目录</td>
 </tr>
 </tbody>
 </table>
 <p>每个操作平台都预定了宏，可以通过 <code>bmake -p</code> 来查看</p>
-<h3 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h3>
+<h3 id="实例">实例</h3>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%if defined (_MakeFilePath) </span><br><span class="line">baseDir = <span class="variable">$(_MakeFilePath)</span> </span><br><span class="line">%<span class="keyword">else</span></span><br><span class="line">baseDir = <span class="variable">$(MS)</span>/mdl/examples/basic/</span><br><span class="line">%<span class="keyword">endif</span></span><br></pre></td></tr></table></figure>
-<h2 id="依赖定义规则符号解释"><a class="markdownIt-Anchor" href="#依赖定义规则符号解释"></a> 依赖定义规则符号解释</h2>
-<h2 id="依赖定义规则实例来自-mdlmki"><a class="markdownIt-Anchor" href="#依赖定义规则实例来自-mdlmki"></a> 依赖定义规则实例（来自 mdl.mki）</h2>
+<h2 id="依赖定义规则符号解释">依赖定义规则符号解释</h2>
+<h2 id="依赖定义规则实例来自-mdl.mki">依赖定义规则实例（来自
+mdl.mki）</h2>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">.mt.r: </span></span><br><span class="line"><span class="variable">$(msg)</span></span><br><span class="line">&gt; <span class="variable">$(o)</span>temp.cmd</span><br><span class="line">-o<span class="variable">$@</span></span><br><span class="line">%if privateInc</span><br><span class="line">-i<span class="variable">$(privateInc)</span></span><br><span class="line">%<span class="keyword">endif</span>&lt;BR&gt; </span><br><span class="line"><span class="variable">$(rscCompIncs)</span></span><br><span class="line"><span class="variable">$(altIncs)</span></span><br><span class="line">-i<span class="variable">$(publishInc)</span></span><br><span class="line">-i<span class="variable">$(publishIdsInc)</span></span><br><span class="line">-i<span class="variable">$(stdlibInc)</span></span><br><span class="line"><span class="variable">$%</span><span class="variable">$*</span>.mt<span class="variable">$(RTypeCmd)</span> @<span class="variable">$(o)</span>temp.cmd</span><br><span class="line">&lt;</span><br><span class="line"><span class="variable">$(RTypeCmd)</span> @<span class="variable">$(o)</span>temp.cmd </span><br><span class="line">~time</span><br></pre></td></tr></table></figure>
-<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<h2 id="后记">后记</h2>
 <p>如果想了解更多 makefile 语法，可以参考：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/overview.html">概述 — 跟我一起写Makefile 1.0 文档</a></li>
-<li>SDK帮助文档MicroStationApi.chm的Creating a Makefile and Using the bmake Utility</li>
+<li><a
+target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/overview.html">概述
+— 跟我一起写Makefile 1.0 文档</a></li>
+<li>SDK帮助文档MicroStationApi.chm的Creating a Makefile and Using the
+bmake Utility</li>
 <li>要想更深入地理解mke文件，还需要您读系统的mki文件，这些文件定义了许多系统内置的宏定义和规则</li>
 </ul>
 
@@ -538,13 +526,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

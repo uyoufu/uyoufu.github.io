@@ -19,18 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：   一处搭建，多处使用 只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利   开发环境隔离，可以在不同的开发环境之间快速切换   对本机性能要求低">
+    <meta name="description" content="首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：  一处搭建，多处使用 只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利 开发环境隔离，可以在不同的开发环境之间快速切换 对本机性能要求低">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 VSCode 远程开发最佳实践">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2024/1XYHCAM.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：   一处搭建，多处使用 只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利   开发环境隔离，可以在不同的开发环境之间快速切换   对本机性能要求低">
+<meta property="og:description" content="首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：  一处搭建，多处使用 只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利 开发环境隔离，可以在不同的开发环境之间快速切换 对本机性能要求低">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-10-15T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
-<meta property="article:tag" content="Docker">
 <meta property="article:tag" content="VSCode">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 
 
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E9%80%89%E6%8B%A9"><span class="nav-number">1.</span> <span class="nav-text"> 远程开发方式选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E5%AE%9E%E6%96%BD"><span class="nav-number">2.</span> <span class="nav-text"> 方案实施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text"> 举例说明</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E9%80%89%E6%8B%A9"><span class="nav-number">1.</span> <span class="nav-text">远程开发方式选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E5%AE%9E%E6%96%BD"><span class="nav-number">2.</span> <span class="nav-text">方案实施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">举例说明</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -280,54 +280,51 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：</p>
-<ol>
-<li>
-<p>一处搭建，多处使用</p>
-<p>只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利</p>
-</li>
-<li>
-<p>开发环境隔离，可以在不同的开发环境之间快速切换</p>
-</li>
-<li>
-<p>对本机性能要求低</p>
-</li>
+<ol type="1">
+<li><p>一处搭建，多处使用</p>
+<p>只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利</p></li>
+<li><p>开发环境隔离，可以在不同的开发环境之间快速切换</p></li>
+<li><p>对本机性能要求低</p></li>
 </ol>
 <span id="more"></span>
-<h2 id="远程开发方式选择"><a class="markdownIt-Anchor" href="#远程开发方式选择"></a> 远程开发方式选择</h2>
+<h2 id="远程开发方式选择">远程开发方式选择</h2>
 <p><strong>远程开发方式</strong>：</p>
-<ol>
-<li>
-<p>Remote - SSH</p>
-<p>通过使用 SSH 远程连接计算机或者虚拟机中</p>
-</li>
-<li>
-<p>Remote - Containers</p>
-<p>通过 SSH 远程连接到 Docker 容器，在 Docker 中进行开发</p>
-</li>
-<li>
-<p>Remote - WSL</p>
-<p>在 Windows 中远程 WSL 进行开发。这种方式无法实现环境隔离，但是可以在 Windows 中获取 Linux 开发的体验</p>
-</li>
+<ol type="1">
+<li><p>Remote - SSH</p>
+<p>通过使用 SSH 远程连接计算机或者虚拟机中</p></li>
+<li><p>Remote - Containers</p>
+<p>通过 SSH 远程连接到 Docker 容器，在 Docker 中进行开发</p></li>
+<li><p>Remote - WSL</p>
+<p>在 Windows 中远程 WSL 进行开发。这种方式无法实现环境隔离，但是可以在
+Windows 中获取 Linux 开发的体验</p></li>
 </ol>
 <p><strong>选择比较：</strong></p>
-<p>由于业务原因，有的软件必须基于 Windows 进行开发，只能选择 Windows+WSL 组合，但是 WSL 无法实现开发隔离，因此还需要加上 Docker。</p>
-<p>虽然可以仅使用 Docker 实现远程开发，但这会带来一个问题，需要在每个开发容器中安装 ssh、git、zsh 等一系列工具，增加部署负担；若需要增加映射端口或者新增挂载，则必须要重建容器，这个时候，容器里的配置将会清空，又得从头配置一次。</p>
-<p>综合考虑，最终选择了 Windows + Docker Desktop + WSL 组合使用的方式。</p>
-<h2 id="方案实施"><a class="markdownIt-Anchor" href="#方案实施"></a> 方案实施</h2>
+<p>由于业务原因，有的软件必须基于 Windows 进行开发，只能选择 Windows+WSL
+组合，但是 WSL 无法实现开发隔离，因此还需要加上 Docker。</p>
+<p>虽然可以仅使用 Docker
+实现远程开发，但这会带来一个问题，需要在每个开发容器中安装 ssh、git、zsh
+等一系列工具，增加部署负担；若需要增加映射端口或者新增挂载，则必须要重建容器，这个时候，容器里的配置将会清空，又得从头配置一次。</p>
+<p>综合考虑，最终选择了 Windows + Docker Desktop + WSL
+组合使用的方式。</p>
+<h2 id="方案实施">方案实施</h2>
 <p>具体的实施方案为：</p>
-<ol>
+<ol type="1">
 <li>在 Docker 中跑应用</li>
 <li>将代码文件挂载到 WSL 的某个工作目录</li>
 <li>使用 VSCode 远程 WSL，打开工作目录进行编程</li>
 </ol>
-<h2 id="举例说明"><a class="markdownIt-Anchor" href="#举例说明"></a> 举例说明</h2>
+<h2 id="举例说明">举例说明</h2>
 <p>下面以 vue 项目为例举例说明</p>
-<p>首先，在 WSL 中，创建一个远程工作目录，例如 <code>~/docker-envs</code>，将下面的 <code>docker-compose.yml</code> 复制过去，运行 <code>docker compose up -d</code> 启动开发环境</p>
+<p>首先，在 WSL 中，创建一个远程工作目录，例如
+<code>~/docker-envs</code>，将下面的 <code>docker-compose.yml</code>
+复制过去，运行 <code>docker compose up -d</code> 启动开发环境</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">vue-env:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">vue-env</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">node:lts</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./vue:/app</span></span><br><span class="line">    <span class="attr">working_dir:</span> <span class="string">/app</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9527</span><span class="string">:9527</span></span><br><span class="line">    <span class="comment"># 为容器启动一个轻量级的 init 系统，可以处理孤儿进程并转发信号，解决 stop 速度慢的问题</span></span><br><span class="line">    <span class="attr">init:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">command:</span> [ <span class="string">&quot;sh&quot;</span>, <span class="string">&quot;-c&quot;</span>, <span class="string">&quot;exec sleep infinity&quot;</span> ]</span><br></pre></td></tr></table></figure>
 <p>然后，使用下面的命令进入到容器内开始初始化项目</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it vue-env bash</span><br><span class="line"><span class="comment"># 项目初始化及依赖安装此处省略</span></span><br><span class="line">...</span><br><span class="line"><span class="comment"># 退出容器</span></span><br></pre></td></tr></table></figure>
-<p>接着，执行 <code>docker exec -it vue-env npm run dev</code> 启动开发环境，这个终端不能退出，在开发中需要一直保持。</p>
-<p>最后，使用 VSCode 远程 WSL，打开 <code>~/docker-envs/vue</code> 进行开发。</p>
+<p>接着，执行 <code>docker exec -it vue-env npm run dev</code>
+启动开发环境，这个终端不能退出，在开发中需要一直保持。</p>
+<p>最后，使用 VSCode 远程 WSL，打开 <code>~/docker-envs/vue</code>
+进行开发。</p>
 
     </div>
 
@@ -384,8 +381,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
               <a href="/tags/VSCode/" rel="tag"><i class="fa fa-tag"></i> VSCode</a>
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
           </div>
 
         
@@ -431,13 +428,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文将介绍如何管理 Ubuntu 的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。">
+    <meta name="description" content="本文将介绍如何管理 Ubuntu 的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 存储管理及挂载扩容">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/J7H344.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文将介绍如何管理 Ubuntu 的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。">
+<meta property="og:description" content="本文将介绍如何管理 Ubuntu 的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-05-08T16:00:00.000Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text"> 内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E7%9B%98"><span class="nav-number">2.</span> <span class="nav-text"> 硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%AE%B9"><span class="nav-number">3.</span> <span class="nav-text"> 扩容</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E7%9B%98"><span class="nav-number">2.</span> <span class="nav-text">硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%AE%B9"><span class="nav-number">3.</span> <span class="nav-text">扩容</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -285,33 +285,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文将介绍如何管理 Ubuntu 的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文将介绍如何管理 Ubuntu
+的磁盘挂载，包括查看磁盘使用情况、逻辑盘扩容等。</p>
 <span id="more"></span>
-<h2 id="内存"><a class="markdownIt-Anchor" href="#内存"></a> 内存</h2>
+<h2 id="内存">内存</h2>
 <ul>
-<li>
-<p>查看内存使用情况</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>查看内存使用情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="硬盘"><a class="markdownIt-Anchor" href="#硬盘"></a> 硬盘</h2>
+<h2 id="硬盘">硬盘</h2>
 <ul>
-<li>
-<p>查看磁盘使用情况</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>查看挂载情况</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>修改现有挂载点</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消挂载</span></span><br><span class="line">sudo umount /path/to/old/mount/point</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载到新的位置</span></span><br><span class="line">sudo mount /dev/sdX /path/to/new/mount/point</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>查看磁盘使用情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure></li>
+<li><p>查看挂载情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount</span><br></pre></td></tr></table></figure></li>
+<li><p>修改现有挂载点</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消挂载</span></span><br><span class="line">sudo umount /path/to/old/mount/point</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载到新的位置</span></span><br><span class="line">sudo mount /dev/sdX /path/to/new/mount/point</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="扩容"><a class="markdownIt-Anchor" href="#扩容"></a> 扩容</h2>
+<h2 id="扩容">扩容</h2>
 <p>可以使用 LVM（逻辑卷管理）来扩展虚拟卷。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看可用磁盘</span></span><br><span class="line">sudo lsblk</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看既有卷组</span></span><br><span class="line">sudo vgdisplay</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看卷组中的卷</span></span><br><span class="line">sudo lvdisplay</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将新磁盘转换为物理卷(若有必要)</span></span><br><span class="line">sudo pvcreate /dev/sdb</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将新的物理卷添加到现有的卷组中</span></span><br><span class="line">sudo vgextend ubuntu-vg /dev/sda</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">扩展逻辑卷, 最后一个参数为卷名</span></span><br><span class="line">sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">调整文件系统大小</span></span><br><span class="line">sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -413,13 +407,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

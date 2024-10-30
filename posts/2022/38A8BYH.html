@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dvector3d-%E5%8F%98%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text"> DVector3d 变换</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dvector3d-%E5%8F%98%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">DVector3d 变换</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -285,7 +285,7 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文总结了一些常用的几何变换实例，以便后续开发。</p>
 <span id="more"></span>
-<h2 id="dvector3d-变换"><a class="markdownIt-Anchor" href="#dvector3d-变换"></a> DVector3d 变换</h2>
+<h2 id="dvector3d-变换">DVector3d 变换</h2>
 <p>使用 <code>DTranform*DVector3d</code> 即可进行变换。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DVector3d screenZ = <span class="keyword">new</span> DVector3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 将屏幕 z 转到世界坐标系中</span></span><br><span class="line"><span class="comment">// cursorLocation 是自定义的类，此处传入当前视图的旋转矩阵即可</span></span><br><span class="line">DTransform3d trans = <span class="keyword">new</span> DTransform3d(cursorLocation.ViewRotation);</span><br><span class="line">trans.TryInvert(<span class="keyword">out</span> DTransform3d invertTrans);</span><br><span class="line"><span class="keyword">var</span> screenZInWorld = invertTrans * screenZ;</span><br></pre></td></tr></table></figure>
 
@@ -391,13 +391,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

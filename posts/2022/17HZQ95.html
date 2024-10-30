@@ -19,21 +19,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="查询与排序是数据库常用的两个操作，如果能理解 Mongodb 中比较的机制，那么在使用中将会变得更加得心应手。 因此，本文对这些机制进行总结。">
+    <meta name="description" content="查询与排序是数据库常用的两个操作，如果能理解 Mongodb 中比较的机制，那么在使用中将会变得更加得心应手。 因此，本文对这些机制进行总结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb 中数据比较或排序机制">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/17HZQ95.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="查询与排序是数据库常用的两个操作，如果能理解 Mongodb 中比较的机制，那么在使用中将会变得更加得心应手。 因此，本文对这些机制进行总结。">
+<meta property="og:description" content="查询与排序是数据库常用的两个操作，如果能理解 Mongodb 中比较的机制，那么在使用中将会变得更加得心应手。 因此，本文对这些机制进行总结。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220829220828067.png">
 <meta property="article:published_time" content="2022-08-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-08-28T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="MongoDB">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220829220828067.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/17HZQ95.html">
@@ -144,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C-bsontype-%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text"> 不同 BsonType 之间的比较顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="nav-number">2.</span> <span class="nav-text"> 数字类型比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="nav-number">3.</span> <span class="nav-text"> 字符串类型比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="nav-number">3.1.</span> <span class="nav-text"> 二进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99collation"><span class="nav-number">3.2.</span> <span class="nav-text"> 规则（collation）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%AF%94%E8%BE%83"><span class="nav-number">4.</span> <span class="nav-text"> 数组比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83"><span class="nav-number">5.</span> <span class="nav-text"> 对象比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4date%E4%B8%8E%E6%97%B6%E9%97%B4%E6%88%B3timestamp%E6%AF%94%E8%BE%83"><span class="nav-number">6.</span> <span class="nav-text"> 时间（Date）与时间戳（Timestamp）比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%AD%97%E6%AE%B5%E6%AF%94%E8%BE%83"><span class="nav-number">7.</span> <span class="nav-text"> 不存在的字段比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%AF%94%E8%BE%83"><span class="nav-number">8.</span> <span class="nav-text"> 二进制比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C-bsontype-%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">不同 BsonType 之间的比较顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="nav-number">2.</span> <span class="nav-text">数字类型比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="nav-number">3.</span> <span class="nav-text">字符串类型比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="nav-number">3.1.</span> <span class="nav-text">二进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99collation"><span class="nav-number">3.2.</span> <span class="nav-text">规则（collation）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%AF%94%E8%BE%83"><span class="nav-number">4.</span> <span class="nav-text">数组比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83"><span class="nav-number">5.</span> <span class="nav-text">对象比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4date%E4%B8%8E%E6%97%B6%E9%97%B4%E6%88%B3timestamp%E6%AF%94%E8%BE%83"><span class="nav-number">6.</span> <span class="nav-text">时间（Date）与时间戳（Timestamp）比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%AD%97%E6%AE%B5%E6%AF%94%E8%BE%83"><span class="nav-number">7.</span> <span class="nav-text">不存在的字段比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%AF%94%E8%BE%83"><span class="nav-number">8.</span> <span class="nav-text">二进制比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -268,7 +266,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>960</span>
+      <span>983</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -285,12 +283,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>查询与排序是数据库常用的两个操作，如果能理解 Mongodb 中比较的机制，那么在使用中将会变得更加得心应手。</p>
+    <div class="post-body" itemprop="articleBody"><p>查询与排序是数据库常用的两个操作，如果能理解 Mongodb
+中比较的机制，那么在使用中将会变得更加得心应手。</p>
 <p>因此，本文对这些机制进行总结。</p>
 <span id="more"></span>
-<h2 id="不同-bsontype-之间的比较顺序"><a class="markdownIt-Anchor" href="#不同-bsontype-之间的比较顺序"></a> 不同 BsonType 之间的比较顺序</h2>
-<p>每一个 bsonType 都有一个 order，当使用不同的 bsonType 进行排序比较时，它们的顺序由低到高为：</p>
-<ol>
+<h2 id="不同-bsontype-之间的比较顺序">不同 BsonType 之间的比较顺序</h2>
+<p>每一个 bsonType 都有一个 order，当使用不同的 bsonType
+进行排序比较时，它们的顺序由低到高为：</p>
+<ol type="1">
 <li>MinKey (internal type)</li>
 <li>Null</li>
 <li>Numbers (ints, longs, doubles, decimals)</li>
@@ -305,56 +305,62 @@
 <li>Regular Expression</li>
 <li>MaxKey (internal type)</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220829220828067.png" alt="image-20220829220828067" /></p>
-<h2 id="数字类型比较"><a class="markdownIt-Anchor" href="#数字类型比较"></a> 数字类型比较</h2>
-<p>Mongodb 将 <code>int</code>、<code> long</code>、 <code>double</code>、<code>decimal</code> 都视作一个类型，在进行比较时，会对它们进行转换。</p>
-<h2 id="字符串类型比较"><a class="markdownIt-Anchor" href="#字符串类型比较"></a> 字符串类型比较</h2>
-<h3 id="二进制"><a class="markdownIt-Anchor" href="#二进制"></a> 二进制</h3>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20220829220828067.png"
+alt="image-20220829220828067" />
+<figcaption aria-hidden="true">image-20220829220828067</figcaption>
+</figure>
+<h2 id="数字类型比较">数字类型比较</h2>
+<p>Mongodb 将 <code>int</code>、<code>long</code>、
+<code>double</code>、<code>decimal</code>
+都视作一个类型，在进行比较时，会对它们进行转换。</p>
+<h2 id="字符串类型比较">字符串类型比较</h2>
+<h3 id="二进制">二进制</h3>
 <p>默认使用二进制来比较字符串</p>
-<h3 id="规则collation"><a class="markdownIt-Anchor" href="#规则collation"></a> 规则（collation）</h3>
-<p>也可以使用特定语言规则来进行比较。参考 <a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/collation/">Collaction</a></p>
-<h2 id="数组比较"><a class="markdownIt-Anchor" href="#数组比较"></a> 数组比较</h2>
+<h3 id="规则collation">规则（collation）</h3>
+<p>也可以使用特定语言规则来进行比较。参考 <a
+target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/collation/">Collaction</a></p>
+<h2 id="数组比较">数组比较</h2>
 <ul>
 <li>小于比较或升序排序，先对数组中的元素进行排序(<code>不同的 bsonType 按上述顺序进行排序</code>)，然后比较数组中的最小元素</li>
 <li>大于大于或降序排序，比较数组的最大元素。</li>
-<li>将其值为单元素数组(例如<code>[ 1 ]</code>)的字段与非数组字段(例如<code>2</code>)进行比较时，实际比较的是 <code>1</code> 和<code>2</code>。</li>
+<li>将其值为单元素数组(例如<code>[ 1 ]</code>)的字段与非数组字段(例如<code>2</code>)进行比较时，实际比较的是
+<code>1</code> 和<code>2</code>。</li>
 <li>比较空数组(例如<code>[ ]</code>)会将空数组视为小于<code>null</code>或缺少字段。</li>
 </ul>
-<h2 id="对象比较"><a class="markdownIt-Anchor" href="#对象比较"></a> 对象比较</h2>
+<h2 id="对象比较">对象比较</h2>
 <p>对象比较按以下步骤进行：</p>
-<ol>
-<li>
-<p>按键值对在 BsonObject 中出现的顺序进行比较</p>
-</li>
-<li>
-<p>先比较键值（字段值）的类型，如果是不同的 bsonType 的键值按开篇中的顺序进行比较</p>
-</li>
-<li>
-<p>如果类型相等，则比较键值</p>
-</li>
-<li>
-<p>如果键值相等，则比较键名（字段名）</p>
-</li>
-<li>
-<p>如果上述都相等，则继续比较下一个键值对。</p>
-<p>如果键值对存在于对象 A，而不存在于对象 B 中，则 A 大于 B</p>
-</li>
+<ol type="1">
+<li><p>按键值对在 BsonObject 中出现的顺序进行比较</p></li>
+<li><p>先比较键值（字段值）的类型，如果是不同的 bsonType
+的键值按开篇中的顺序进行比较</p></li>
+<li><p>如果类型相等，则比较键值</p></li>
+<li><p>如果键值相等，则比较键名（字段名）</p></li>
+<li><p>如果上述都相等，则继续比较下一个键值对。</p>
+<p>如果键值对存在于对象 A，而不存在于对象 B 中，则 A 大于 B</p></li>
 </ol>
-<h2 id="时间date与时间戳timestamp比较"><a class="markdownIt-Anchor" href="#时间date与时间戳timestamp比较"></a> 时间（Date）与时间戳（Timestamp）比较</h2>
+<h2
+id="时间date与时间戳timestamp比较">时间（Date）与时间戳（Timestamp）比较</h2>
 <p>Date 在 Timestamp 之前排序。</p>
-<h2 id="不存在的字段比较"><a class="markdownIt-Anchor" href="#不存在的字段比较"></a> 不存在的字段比较</h2>
-<p>字段为 <code>null</code> 的对象视作对象不存在该字段，例如 <code>&#123;&#125;</code> 与 <code>&#123;a: null&#125;</code> 是相等的。</p>
-<h2 id="二进制比较"><a class="markdownIt-Anchor" href="#二进制比较"></a> 二进制比较</h2>
+<h2 id="不存在的字段比较">不存在的字段比较</h2>
+<p>字段为 <code>null</code> 的对象视作对象不存在该字段，例如
+<code>&#123;&#125;</code> 与 <code>&#123;a: null&#125;</code> 是相等的。</p>
+<h2 id="二进制比较">二进制比较</h2>
 <p>二进制按如下顺序进行比较：</p>
-<ol>
+<ol type="1">
 <li>先比较数据长度</li>
 <li>然后比较一个字节的 bsonType 类型</li>
 <li>最后再一个字节一个字节的比较</li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/#comparison-sort-order">Comparison/Sort Order</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/mongodb/v3.6/reference/reference-bson-type-comparison-order.html">Comparison/Sort Order 中文</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/collation/">Collaction</a></p>
+<h2 id="参考">参考</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/#comparison-sort-order">Comparison/Sort
+Order</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/mongodb/v3.6/reference/reference-bson-type-comparison-order.html">Comparison/Sort
+Order 中文</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/reference/collation/">Collaction</a></p>
 
     </div>
 
@@ -458,13 +464,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

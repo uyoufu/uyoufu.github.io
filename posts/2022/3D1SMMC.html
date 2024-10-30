@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试   框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、NUnit、MSTes">
+    <meta name="description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试  框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、N">
 <meta property="og:type" content="article">
 <meta property="og:title" content=".NET Core 单元测试从零基础到项目应用">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3D1SMMC.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试   框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、NUnit、MSTes">
+<meta property="og:description" content="本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：  .NET 中现有单元测试框架有哪些 为什么选择 MSTest 框架 如何创建一个单元测试 怎么运行单元测试  框架选型 我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、N">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-14T16:00:00.000Z">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text"> 框架选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text"> 添加单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text"> 编写测试案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%80%8E%E4%B9%88%E6%B5%8B%E8%AF%95"><span class="nav-number">3.1.</span> <span class="nav-text"> 依赖注入怎么测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mock-%E6%A1%86%E6%9E%B6%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.</span> <span class="nav-text"> Mock 框架选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moq-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text"> Moq 基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moqautomock-%E4%BD%BF%E7%94%A8"><span class="nav-number">3.4.</span> <span class="nav-text"> Moq.AutoMock 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.1.</span> <span class="nav-text"> 基本使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E5%85%A5%E7%8E%B0%E6%9C%89%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.4.2.</span> <span class="nav-text"> 注入现有实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text"> 结语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cicd-%E6%B5%81%E7%A8%8B%E4%B8%AD%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.1.</span> <span class="nav-text"> CI&#x2F;CD  流程中应该包含单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">4.2.</span> <span class="nav-text"> 单元测试覆盖率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E4%BA%BA%E9%97%AE%E9%A2%98%E4%B8%BA%E4%BD%95%E8%A6%81%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.3.</span> <span class="nav-text"> 新人问题：为何要写单元测试？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">框架选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">添加单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">编写测试案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%80%8E%E4%B9%88%E6%B5%8B%E8%AF%95"><span class="nav-number">3.1.</span> <span class="nav-text">依赖注入怎么测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mock-%E6%A1%86%E6%9E%B6%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.</span> <span class="nav-text">Mock 框架选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moq-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">Moq 基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moq.automock-%E4%BD%BF%E7%94%A8"><span class="nav-number">3.4.</span> <span class="nav-text">Moq.AutoMock 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.1.</span> <span class="nav-text">基本使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E5%85%A5%E7%8E%B0%E6%9C%89%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.4.2.</span> <span class="nav-text">注入现有实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cicd-%E6%B5%81%E7%A8%8B%E4%B8%AD%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.1.</span> <span class="nav-text">CI&#x2F;CD 流程中应该包含单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">4.2.</span> <span class="nav-text">单元测试覆盖率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E4%BA%BA%E9%97%AE%E9%A2%98%E4%B8%BA%E4%BD%95%E8%A6%81%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">4.3.</span> <span class="nav-text">新人问题：为何要写单元测试？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -283,80 +283,120 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文讲述了如何在 .NET Core 的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以 get 以下知识：</p>
+    <div class="post-body" itemprop="articleBody"><p>本文讲述了如何在 .NET Core
+的项目中从零开始搭建单元测试，然后达到项目应用的程度。通过本文，你可以
+get 以下知识：</p>
 <ul>
 <li>.NET 中现有单元测试框架有哪些</li>
 <li>为什么选择 MSTest 框架</li>
 <li>如何创建一个单元测试</li>
 <li>怎么运行单元测试</li>
 </ul>
-<h2 id="框架选型"><a class="markdownIt-Anchor" href="#框架选型"></a> 框架选型</h2>
-<p>我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET 官方推荐的单元测试有 3 种：xUnit、NUnit、MSTest。</p>
-<p>除了标注测试类和方法的特性用的不一样之外，它们是非常相似的。而 MSTest 与 VisualStudio 集成度更高，所以本人建议使用 MSTest。</p>
+<h2 id="框架选型">框架选型</h2>
+<p>我们在使用一种技术时，往往需要对现有技术调研，通过比较最终确定使用哪个。.NET
+官方推荐的单元测试有 3 种：xUnit、NUnit、MSTest。</p>
+<p>除了标注测试类和方法的特性用的不一样之外，它们是非常相似的。而 MSTest
+与 VisualStudio 集成度更高，所以本人建议使用 MSTest。</p>
 <p>StackOverflow 看到一条我很赞同的看法：</p>
 <blockquote>
-<p>其实不用顾虑那么多，随便选择吧，MSTest 对 VS 的集成是最好的，而且也很容易上手，如果哪一天碰到它所无法解决的事情，切换到其他框架也非常简单，仅仅只是Nuget下个包，换下特性而已。</p>
+<p>其实不用顾虑那么多，随便选择吧，MSTest 对 VS
+的集成是最好的，而且也很容易上手，如果哪一天碰到它所无法解决的事情，切换到其他框架也非常简单，仅仅只是Nuget下个包，换下特性而已。</p>
 </blockquote>
-<h2 id="添加单元测试"><a class="markdownIt-Anchor" href="#添加单元测试"></a> 添加单元测试</h2>
+<h2 id="添加单元测试">添加单元测试</h2>
 <p>在 VS 中，选中方法名，右键 -&gt; 创建单元测试，点击确定。</p>
-<p>通过上述步骤，VS 会自动创建一个单元测试项目，在该项目里面自动生成单元测试内容。</p>
+<p>通过上述步骤，VS
+会自动创建一个单元测试项目，在该项目里面自动生成单元测试内容。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 标记测试类</span></span><br><span class="line">[<span class="meta">TestClass()</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MinioAdapterTests</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 标记测试方法</span></span><br><span class="line">    [<span class="meta">TestMethod()</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BucketExistsAsyncTest</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 在此处编写单元测试代码</span></span><br><span class="line">        Assert.Fail();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="编写测试案例"><a class="markdownIt-Anchor" href="#编写测试案例"></a> 编写测试案例</h2>
-<h3 id="依赖注入怎么测试"><a class="markdownIt-Anchor" href="#依赖注入怎么测试"></a> 依赖注入怎么测试</h3>
-<p><a target="_blank" rel="noopener" href="http://ASP.NET">ASP.NET</a> Core 支持依赖关系注入 (DI) 软件设计模式，并且默认注入了很多服务，具体可以参考 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0#framework-provided-services">官方文档</a>, 相信只要使用过依赖注入框架的同学，都会对此有不同深入的理解，在此无需赘言。</p>
-<p>然而，在引入 IOC 框架之后，对于之前常规的对于类的依赖（new Class）变成通过构造函数对于接口的依赖（<a target="_blank" rel="noopener" href="http://ASP.NET">ASP.NET</a> CORE 默认注入方式），这本身更加符合依赖倒置原则，但是对于单元测试来说确会带来另一个问题：</p>
+<h2 id="编写测试案例">编写测试案例</h2>
+<h3 id="依赖注入怎么测试">依赖注入怎么测试</h3>
+<p>ASP.NET Core 支持依赖关系注入 (DI)
+软件设计模式，并且默认注入了很多服务，具体可以参考 <a
+target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0#framework-provided-services">官方文档</a>,
+相信只要使用过依赖注入框架的同学，都会对此有不同深入的理解，在此无需赘言。</p>
+<p>然而，在引入 IOC 框架之后，对于之前常规的对于类的依赖（new
+Class）变成通过构造函数对于接口的依赖（ASP.NET CORE
+默认注入方式），这本身更加符合依赖倒置原则，但是对于单元测试来说确会带来另一个问题：</p>
 <p>由于层层依赖，导致在某个类的方法进行测试的时候，需要构造一大堆该类依赖的接口的实现，非常麻烦。</p>
-<p>这个时候，我们脑子里会下意识想一个问题：<strong>为什么常用的 .Net 单元测试框架不支持依赖注入？</strong></p>
-<p>于是笔者带着这个问题在查阅了一些关于在单元测试中支持依赖注入的讨论<a target="_blank" rel="noopener" href="https://github.com/xunit/xunit/issues/687">Github Issue</a>,以及其他的相关文档，突然明白一个之前一直忽视但实际却非常重要的问题：</p>
+<p>这个时候，我们脑子里会下意识想一个问题：<strong>为什么常用的 .Net
+单元测试框架不支持依赖注入？</strong></p>
+<p>于是笔者带着这个问题在查阅了一些关于在单元测试中支持依赖注入的讨论<a
+target="_blank" rel="noopener" href="https://github.com/xunit/xunit/issues/687">Github
+Issue</a>,以及其他的相关文档，突然明白一个之前一直忽视但实际却非常重要的问题：</p>
 <blockquote>
 <p>在对于一个方法的单元测试中，我们应该关注的是这个方法内部的逻辑测试，而这个方法内部对于外部的依赖，则不在这个单元测试关注的范围内</p>
 </blockquote>
 <p>换言之，单元测试永远都只关注需要测试的方法内部的逻辑实现，至于外部依赖方法的测试，则应该放在另一个专门针对这个方法的单元测试用例中。</p>
-<p>弄清楚这个问题，我们才能更加理解另一个单元测试不可缺少的框架——<strong>Mock框架</strong>。在我们写的测试中，应该忽略外部依赖具体的实现，而是通过模拟该接口方法来显示的指定返回值，从而降低该返回值对于当前单元测试结果的影响，而 Mock 框架（例如最常用的Moq），刚好可以满足我们对于接口的模拟需求。</p>
+<p>弄清楚这个问题，我们才能更加理解另一个单元测试不可缺少的框架——<strong>Mock框架</strong>。在我们写的测试中，应该忽略外部依赖具体的实现，而是通过模拟该接口方法来显示的指定返回值，从而降低该返回值对于当前单元测试结果的影响，而
+Mock 框架（例如最常用的Moq），刚好可以满足我们对于接口的模拟需求。</p>
 <blockquote>
-<p>相信有同学跟我有同样的疑惑，并且当我尝试在 <a target="_blank" rel="noopener" href="http://ASP.NET">ASP.NET</a> Core 单元测试中的一切外部依赖通过 Mock 的方式进行编写的时候，遇到了一些问题，下文会将这些问题一一道来，希望对有同样疑惑的同学有所帮助。</p>
+<p>相信有同学跟我有同样的疑惑，并且当我尝试在 ASP.NET Core
+单元测试中的一切外部依赖通过 Mock
+的方式进行编写的时候，遇到了一些问题，下文会将这些问题一一道来，希望对有同样疑惑的同学有所帮助。</p>
 </blockquote>
-<h3 id="mock-框架选择"><a class="markdownIt-Anchor" href="#mock-框架选择"></a> Mock 框架选择</h3>
-<p>在 .NET 中有几种 mock 框架可供选择，比如 NMock、PhinoMocks、FakeItEasy和Moq。尽管Moq相对较新，但是它非常易用。不需要像传统的 Record/Replay。并且使用 Moq 在 VS 中可以得到智能提示。学习成本也不高。</p>
-<p>所以选择 <a target="_blank" rel="noopener" href="https://github.com/moq/moq4">Moq</a> 作为 Mock 数据框架。Moq 有一个自动 Mock 库  <a target="_blank" rel="noopener" href="https://github.com/moq/Moq.AutoMocker">Moq.AutoMock</a>，建议安装该库。</p>
-<h3 id="moq-基本使用"><a class="markdownIt-Anchor" href="#moq-基本使用"></a> Moq 基本使用</h3>
+<h3 id="mock-框架选择">Mock 框架选择</h3>
+<p>在 .NET 中有几种 mock 框架可供选择，比如
+NMock、PhinoMocks、FakeItEasy和Moq。尽管Moq相对较新，但是它非常易用。不需要像传统的
+Record/Replay。并且使用 Moq 在 VS
+中可以得到智能提示。学习成本也不高。</p>
+<p>所以选择 <a target="_blank" rel="noopener" href="https://github.com/moq/moq4">Moq</a> 作为 Mock
+数据框架。Moq 有一个自动 Mock 库 <a
+target="_blank" rel="noopener" href="https://github.com/moq/Moq.AutoMocker">Moq.AutoMock</a>，建议安装该库。</p>
+<h3 id="moq-基本使用">Moq 基本使用</h3>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mock = <span class="keyword">new</span> Mock&lt;ILoveThisLibrary&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// WOW! No record/replay weirdness?! :)</span></span><br><span class="line"><span class="comment">// 给 DownloadExists 传递一个参数，并使其返回 true</span></span><br><span class="line">mock.Setup(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>))</span><br><span class="line">      .Returns(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use the Object property on the mock to get a reference to the object</span></span><br><span class="line"><span class="comment">// implementing ILoveThisLibrary, and then exercise it by calling</span></span><br><span class="line"><span class="comment">// methods on it</span></span><br><span class="line">ILoveThisLibrary lovable = mock.Object;</span><br><span class="line"><span class="built_in">bool</span> download = lovable.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Verify that the given method was indeed called with the expected value at most once</span></span><br><span class="line">mock.Verify(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>), Times.AtMostOnce());</span><br></pre></td></tr></table></figure>
 <p>上面的方式可以简化成：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ILoveThisLibrary lovable = Mock.Of&lt;ILoveThisLibrary&gt;(l =&gt;</span><br><span class="line">    l.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>) == <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Exercise the instance returned by Mock.Of by calling methods on it...</span></span><br><span class="line"><span class="built_in">bool</span> download = lovable.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Simply assert the returned state:</span></span><br><span class="line">Assert.True(download);</span><br><span class="line">  </span><br><span class="line"><span class="comment">// If you really want to go beyond state testing and want to </span></span><br><span class="line"><span class="comment">// verify the mock interaction instead...</span></span><br><span class="line">Mock.Get(lovable).Verify(library =&gt; library.DownloadExists(<span class="string">&quot;2.0.0.0&quot;</span>));</span><br></pre></td></tr></table></figure>
 <p>简而言之，Mock 数据的使用步骤可总结如下：</p>
-<ol>
+<ol type="1">
 <li>新建一个 Mock 实例 <code>mock</code></li>
 <li>通过 <code>mock</code> 设置方法的返回值</li>
-<li>通过 <code>mock.Object</code> 获取 Mock 的对象来传递给目标方法使用</li>
+<li>通过 <code>mock.Object</code> 获取 Mock
+的对象来传递给目标方法使用</li>
 </ol>
-<h3 id="moqautomock-使用"><a class="markdownIt-Anchor" href="#moqautomock-使用"></a> Moq.AutoMock 使用</h3>
-<h4 id="基本使用方法"><a class="markdownIt-Anchor" href="#基本使用方法"></a> 基本使用方法</h4>
+<h3 id="moq.automock-使用">Moq.AutoMock 使用</h3>
+<h4 id="基本使用方法">基本使用方法</h4>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mocker = <span class="keyword">new</span> AutoMocker();</span><br><span class="line"><span class="keyword">var</span> car = mocker.CreateInstance&lt;Car&gt;();</span><br><span class="line"></span><br><span class="line">car.DriveTrain.ShouldNotBeNull();</span><br><span class="line">car.DriveTrain.ShouldImplement&lt;IDriveTrain&gt;();</span><br><span class="line">Mock&lt;IDriveTrain&gt; mock = Mock.Get(car.DriveTrain);</span><br></pre></td></tr></table></figure>
-<h4 id="注入现有实例"><a class="markdownIt-Anchor" href="#注入现有实例"></a> 注入现有实例</h4>
+<h4 id="注入现有实例">注入现有实例</h4>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mocker = <span class="keyword">new</span> AutoMocker();</span><br><span class="line"></span><br><span class="line">mocker.Use&lt;IDriveTrain&gt;(<span class="keyword">new</span> DriveTrain());</span><br><span class="line"><span class="comment">// OR, setup a Mock</span></span><br><span class="line">mocker.Use&lt;IDriveTrain&gt;(x =&gt; x.Shaft.Length == <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = mocker.CreateInstance&lt;Car&gt;();</span><br></pre></td></tr></table></figure>
-<h2 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h2>
-<h3 id="cicd-流程中应该包含单元测试"><a class="markdownIt-Anchor" href="#cicd-流程中应该包含单元测试"></a> CI/CD  流程中应该包含单元测试</h3>
-<p>例如在编写 Repository 层进行单元测试时，经常有同学会编写依赖于数据库数据的单元测试，这样并不利于随时随地的进行单元测试检查。</p>
-<p>如果将该流程放在 CI/CD 中，在代码的发布过程中通过单元测试可以检查代码逻辑的正确性，同时依赖于数据库的单元测试将不会通过（通常情况下，生产环境和开发环境隔离），变相迫使开发小伙伴通过 mock 方式模拟数据库返回结果。</p>
+<h2 id="结语">结语</h2>
+<h3 id="cicd-流程中应该包含单元测试">CI/CD 流程中应该包含单元测试</h3>
+<p>例如在编写 Repository
+层进行单元测试时，经常有同学会编写依赖于数据库数据的单元测试，这样并不利于随时随地的进行单元测试检查。</p>
+<p>如果将该流程放在 CI/CD
+中，在代码的发布过程中通过单元测试可以检查代码逻辑的正确性，同时依赖于数据库的单元测试将不会通过（通常情况下，生产环境和开发环境隔离），变相迫使开发小伙伴通过
+mock 方式模拟数据库返回结果。</p>
 <p>这个原则同样适用于不能依赖三方API编写单元测试。</p>
 <blockquote>
-<p>CI/CD 是一种通过在应用开发阶段引入<a target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/automation/whats-it-automation">自动化</a>来频繁向客户交付应用的方法。CI/CD 的核心概念是持续集成、<a target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-continuous-delivery">持续交付</a>和持续部署。作为一个面向开发和运营团队的解决方案，CI/CD 主要针对在集成新代码时所引发的问题（亦称：“<a target="_blank" rel="noopener" href="https://www.solutionsiq.com/agile-glossary/integration-hell/">集成地狱</a>”）。</p>
-<p><a target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-ci-cd">点击查看更多内容</a></p>
+<p>CI/CD 是一种通过在应用开发阶段引入<a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/automation/whats-it-automation">自动化</a>来频繁向客户交付应用的方法。CI/CD
+的核心概念是持续集成、<a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-continuous-delivery">持续交付</a>和持续部署。作为一个面向开发和运营团队的解决方案，CI/CD
+主要针对在集成新代码时所引发的问题（亦称："<a
+target="_blank" rel="noopener" href="https://www.solutionsiq.com/agile-glossary/integration-hell/">集成地狱</a>"）。</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.redhat.com/zh/topics/devops/what-is-ci-cd">点击查看更多内容</a></p>
 </blockquote>
-<h3 id="单元测试覆盖率"><a class="markdownIt-Anchor" href="#单元测试覆盖率"></a> 单元测试覆盖率</h3>
-<p>通常很多开发 Leader 都会要求开发团队编写单元测试，但是很少检查单元测试的质量，即单元测试最重要的指标——单元测试代码覆盖率，如果不注重覆盖率的提升，那么很有可能会导致开发成员为了单元测试而写单元测试，预期就会与实际情况相差甚远。</p>
-<p>保证单元测试代码覆盖率，将会大大降低代码变更带来的 Bug 率，从而节省整体开发成本。</p>
-<h3 id="新人问题为何要写单元测试"><a class="markdownIt-Anchor" href="#新人问题为何要写单元测试"></a> 新人问题：为何要写单元测试？</h3>
+<h3 id="单元测试覆盖率">单元测试覆盖率</h3>
+<p>通常很多开发 Leader
+都会要求开发团队编写单元测试，但是很少检查单元测试的质量，即单元测试最重要的指标——单元测试代码覆盖率，如果不注重覆盖率的提升，那么很有可能会导致开发成员为了单元测试而写单元测试，预期就会与实际情况相差甚远。</p>
+<p>保证单元测试代码覆盖率，将会大大降低代码变更带来的 Bug
+率，从而节省整体开发成本。</p>
+<h3 id="新人问题为何要写单元测试">新人问题：为何要写单元测试？</h3>
 <p>对于初次开始编写单元测试的开发人员，脑中经常会对此表示怀疑：我为什么要去验证一堆我自己写的正确的逻辑？</p>
 <p>实际这个问题包含了区分一个一般开发人员和优秀开发人员很重要的一个条件：他是否会反向思考当前逻辑的正确性。有了这种思维，看待问题才会从多个角度入手分析，对问题的本质掌握更加全面。</p>
 <p>不要怀疑，坚持写单元测试，因为这本身也是对反向思维的一种锻炼，以笔者的经验，只有当编写过一段时间之后，才会真正认识单元测试的魅力，并且开始非常习惯的在写一段逻辑之后，顺手写了对于它的单元测试。</p>
 <p>即使笔者也算很早就开始写单元测试了，但直到写这篇文章，仍然不断在加深对单元测试的认识。</p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/RobotZero/p/6732728.html">C#常用单元测试框架比较：XUnit, NUnit, 和 Visual Studio(MSTest)</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/core/testing/">Testing in .NET</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xboo/p/11811838.html">Asp.Net Core 单元测试正确姿势 </a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jara/p/7152843.html">C#单元测试：使用Moq框架Mock对象</a></li>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/RobotZero/p/6732728.html">C#常用单元测试框架比较：XUnit,
+NUnit, 和 Visual Studio(MSTest)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/core/testing/">Testing in
+.NET</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xboo/p/11811838.html">Asp.Net Core
+单元测试正确姿势</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/jara/p/7152843.html">C#单元测试：使用Moq框架Mock对象</a></li>
 </ol>
 
     </div>
@@ -427,8 +467,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022/2QWMRNH.html" rel="next" title="Kodbox中用Minio当存储时上传大文件提示上传失败">
-                  Kodbox中用Minio当存储时上传大文件提示上传失败 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2022/2N5VCDY.html" rel="next" title="Minio-js的正确安装与使用">
+                  Minio-js的正确安装与使用 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -461,13 +501,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

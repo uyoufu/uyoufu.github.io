@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介 PropertyChangedBase 是实现 INotifyPropertyChanged 类型的基类，它提供了触发 PropertyChanged 通知的方法。">
+    <meta name="description" content="简介 PropertyChangedBase 是实现 INotifyPropertyChanged 类型的基类，它提供了触发 PropertyChanged 通知的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）09-PropertyChangedBase">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/DGFHG1.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="简介 PropertyChangedBase 是实现 INotifyPropertyChanged 类型的基类，它提供了触发 PropertyChanged 通知的方法。">
+<meta property="og:description" content="简介 PropertyChangedBase 是实现 INotifyPropertyChanged 类型的基类，它提供了触发 PropertyChanged 通知的方法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -142,7 +142,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E9%80%9A%E7%9F%A5raising-notifications"><span class="nav-number">2.</span> <span class="nav-text"> 触发通知（Raising Notifications）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E4%BA%8B%E4%BB%B6dispatching-events"><span class="nav-number">3.</span> <span class="nav-text"> 调试事件（Dispatching Events）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-propertychangedfody-use-with-propertychangedfody"><span class="nav-number">4.</span> <span class="nav-text"> 使用 PropertyChanged.Fody (Use with PropertyChanged.Fody)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text"> 名词解释</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E9%80%9A%E7%9F%A5raising-notifications"><span class="nav-number">2.</span> <span class="nav-text">触发通知（Raising
+Notifications）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E4%BA%8B%E4%BB%B6dispatching-events"><span class="nav-number">3.</span> <span class="nav-text">调试事件（Dispatching Events）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-propertychanged.fody-use-with-propertychanged.fody"><span class="nav-number">4.</span> <span class="nav-text">使用
+PropertyChanged.Fody (Use with PropertyChanged.Fody)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">名词解释</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,33 +292,55 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
-<p>PropertyChangedBase 是实现 INotifyPropertyChanged 类型的基类，它提供了触发 PropertyChanged 通知的方法。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介">简介</h2>
+<p>PropertyChangedBase 是实现 INotifyPropertyChanged
+类型的基类，它提供了触发 PropertyChanged 通知的方法。</p>
 <span id="more"></span>
-<h2 id="触发通知raising-notifications"><a class="markdownIt-Anchor" href="#触发通知raising-notifications"></a> 触发通知（Raising Notifications）</h2>
+<h2 id="触发通知raising-notifications">触发通知（Raising
+Notifications）</h2>
 <p>有许多方法可以触发 PropertyChanged 通知，具体取决于您想要做什么。</p>
-<p>最常见的情况是，每次将值分配给一个属性时，它都会引发一个通知。PropertyChangedBase 提供了一个很好的实用程序方法来帮助: SetAndNotify，它的参数需为要分配值的字段的引用和分配给该字段的值。如果字段的值不等于原来的值，则会赋值，并引发 PropertyChanged 通知。如下：</p>
+<p>最常见的情况是，每次将值分配给一个属性时，它都会引发一个通知。PropertyChangedBase
+提供了一个很好的实用程序方法来帮助:
+SetAndNotify，它的参数需为要分配值的字段的引用和分配给该字段的值。如果字段的值不等于原来的值，则会赋值，并引发
+PropertyChanged 通知。如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">PropertyChangedBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="built_in">string</span> _name;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> Name</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._name; &#125;</span><br><span class="line">      <span class="keyword">set</span> &#123; SetAndNotify(<span class="keyword">ref</span> <span class="keyword">this</span>._name, <span class="keyword">value</span>); &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>如果您想为当前属性以外的属性发出 PropertyChanged 通知，也有几种方法可以实现(取决于您是使用c# 6还是更低)。</p>
-<p>首选的 C# 6方法是使用 <code>nameof() </code>，因为它开销特别小，并且提供了编译时安全性。</p>
-<p>如果您使用的是 C# 5或更低的版本，您可以使用表达式: 这比较慢，但是也提供了编译时的安全性。</p>
+<p>如果您想为当前属性以外的属性发出 PropertyChanged
+通知，也有几种方法可以实现(取决于您是使用c# 6还是更低)。</p>
+<p>首选的 C# 6方法是使用
+<code>nameof()</code>，因为它开销特别小，并且提供了编译时安全性。</p>
+<p>如果您使用的是 C# 5或更低的版本，您可以使用表达式:
+这比较慢，但是也提供了编译时的安全性。</p>
 <p>如果你真的想要，你也可以使用原始字符串。</p>
 <p>见下文:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">PropertyChangedBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">RaiseNameChangedExpression</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// Preferred if you&#x27;re using C# 6, as it provides compile-time safety</span></span><br><span class="line">      <span class="keyword">this</span>.NotifyOfPropertyChange(<span class="keyword">nameof</span>(<span class="keyword">this</span>.Name));</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Preferred for C# 5 and below, as it provides compile-time safety</span></span><br><span class="line">      <span class="keyword">this</span>.NotifyOfPropertyChange(() =&gt; <span class="keyword">this</span>.Name);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Not preferred, but is very occasionally necessary</span></span><br><span class="line">      <span class="keyword">this</span>.NotifyOfPropertyChange(<span class="string">&quot;Name&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="调试事件dispatching-events"><a class="markdownIt-Anchor" href="#调试事件dispatching-events"></a> 调试事件（Dispatching Events）</h2>
-<p>默认情况下，PropertyChanged 事件在当前线程上引发 (WPF负责将它们分派到UI线程)。但是，如果您确实想改变这一点，您可以! PropertyChangedBase 有一个名为 PropertyChangedDispatcher 的属性，它有一个 <code>Action&lt;Action&gt;</code> 并且默认执行。DefaultPropertyChangedDispatcher(您可以分配它)(它的值为 <code>a =&gt; a()</code>)。</p>
+<h2 id="调试事件dispatching-events">调试事件（Dispatching Events）</h2>
+<p>默认情况下，PropertyChanged 事件在当前线程上引发
+(WPF负责将它们分派到UI线程)。但是，如果您确实想改变这一点，您可以!
+PropertyChangedBase 有一个名为 PropertyChangedDispatcher
+的属性，它有一个 <code>Action&lt;Action&gt;</code>
+并且默认执行。DefaultPropertyChangedDispatcher(您可以分配它)(它的值为
+<code>a =&gt; a()</code>)。</p>
 <p>如果希望将其更改为在UI线程上执行，可以执行以下操作。</p>
 <p>改变 PropertyChangedBase 的所有实例:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Bootstrapper</span> : <span class="title">Bootstrapper</span>&lt;<span class="title">MyRootViewModel</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Configure</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">base</span>.Configure();</span><br><span class="line">      Execute.DefaultPropertyChangedDispatcher = Execute.OnUIThread;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>改变 PropertyChangedBase 的一个实例:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">PropertyChangedBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">this</span>.PropertyChangedDispatcher = Execute.OnUIThread;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用-propertychangedfody-use-with-propertychangedfody"><a class="markdownIt-Anchor" href="#使用-propertychangedfody-use-with-propertychangedfody"></a> 使用 PropertyChanged.Fody (Use with PropertyChanged.Fody)</h2>
-<p><a target="_blank" rel="noopener" href="https://github.com/Fody/PropertyChanged">PropertyChanged.Fody</a> 是一个非常棒的包，它在编译时注入代码，为您的属性自动触发 PropertyChanged 通知，允许您编写非常简洁的代码。它还会找出你的属性之间的依赖关系，并提出适当的通知，例如:</p>
+<h2 id="使用-propertychanged.fody-use-with-propertychanged.fody">使用
+PropertyChanged.Fody (Use with PropertyChanged.Fody)</h2>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/Fody/PropertyChanged">PropertyChanged.Fody</a>
+是一个非常棒的包，它在编译时注入代码，为您的属性自动触发 PropertyChanged
+通知，允许您编写非常简洁的代码。它还会找出你的属性之间的依赖关系，并提出适当的通知，例如:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">PropertyChangedBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> FirstName &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> LastName &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> FullName &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> String.Format(<span class="string">&quot;&#123;0&#125; &#123;1&#125;&quot;</span>, <span class="keyword">this</span>.FirstName, <span class="keyword">this</span>.LastName); &#125; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SomeMethod</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// PropertyChanged notifications are automatically raised for both FirstName and FullName</span></span><br><span class="line">      <span class="keyword">this</span>.FirstName = <span class="string">&quot;Fred&quot;</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>PropertyChangedBase 还负责与 <code>Fody.PropertyChanged</code> 集成。<code>Fody.PropertyChanged</code> 发出的通知使用 <code>PropertyChangedDispatcher</code> 触发。</p>
-<p>因此，在任何<code>Screen</code>、<code>ValidatingModelBase </code>或者 <code>PropertyChangedBase</code> 的子类中，你不需要做任何特殊的事情来使用 <code>Fody.PropertyChanged</code> 。</p>
-<h2 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h2>
-<ol>
+<p>PropertyChangedBase 还负责与 <code>Fody.PropertyChanged</code>
+集成。<code>Fody.PropertyChanged</code> 发出的通知使用
+<code>PropertyChangedDispatcher</code> 触发。</p>
+<p>因此，在任何<code>Screen</code>、<code>ValidatingModelBase</code>或者
+<code>PropertyChangedBase</code>
+的子类中，你不需要做任何特殊的事情来使用
+<code>Fody.PropertyChanged</code> 。</p>
+<h2 id="名词解释">名词解释</h2>
+<ol type="1">
 <li>属性依赖：一个属性需要依靠其它属性的值才能得出结果。</li>
 </ol>
 
@@ -383,8 +407,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/155MT1J.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）08-The EventAggregator">
-                  <i class="fa fa-angle-left"></i> WPF MVVM Stylet使用文档（中文）08-The EventAggregator
+                <a href="/posts/2020/2RDEGH9.html" rel="prev" title="WPF MVVM Stylet使用文档（中文）06-The WindowManager">
+                  <i class="fa fa-angle-left"></i> WPF MVVM Stylet使用文档（中文）06-The WindowManager
                 </a>
             </div>
             <div class="post-nav-item">
@@ -422,13 +446,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

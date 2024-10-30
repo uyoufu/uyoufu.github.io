@@ -19,15 +19,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在私有化部署 jitsi-meet 后，通过配置其中的 prosody 服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。 本文将简要介绍 prosody 插件系统，方便读者快速上手。  本文基于 docker 的安装方式来进行介绍">
+    <meta name="description" content="在私有化部署 jitsi-meet 后，通过配置其中的 prosody 服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。 本文将简要介绍 prosody 插件系统，方便读者快速上手。  本文基于 docker 的安装方式来进行介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JitsiMeet 中 Prosody 插件配置">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在私有化部署 jitsi-meet 后，通过配置其中的 prosody 服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。 本文将简要介绍 prosody 插件系统，方便读者快速上手。  本文基于 docker 的安装方式来进行介绍">
+<meta property="og:description" content="在私有化部署 jitsi-meet 后，通过配置其中的 prosody 服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。 本文将简要介绍 prosody 插件系统，方便读者快速上手。  本文基于 docker 的安装方式来进行介绍">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230120904.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230335324.png">
 <meta property="article:published_time" content="2023-06-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-06-27T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
@@ -35,7 +33,6 @@
 <meta property="article:tag" content="jitsi">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230120904.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/3G2MHZ7.html">
@@ -146,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text"> 加载插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text"> 插件注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text"> 插件变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> 在 docker 中使用自定义的插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-docker-%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text"> 在 docker 中修改插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">加载插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text">插件注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text">插件变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">在 docker 中使用自定义的插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-docker-%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">在 docker 中修改插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -283,59 +280,98 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在私有化部署 jitsi-meet 后，通过配置其中的 prosody 服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。</p>
+    <div class="post-body" itemprop="articleBody"><p>在私有化部署 jitsi-meet 后，通过配置其中的 prosody
+服务，可以实现更加多样化的功能，比如获取房间信息、获取房间用户信息、配置回调等等。</p>
 <p>本文将简要介绍 prosody 插件系统，方便读者快速上手。</p>
 <blockquote>
 <p>本文基于 docker 的安装方式来进行介绍</p>
 </blockquote>
 <span id="more"></span>
-<p>阅读本文时请保证有 <a href="/posts/2023/9Q7N69.html">JitsiMeet docker 部署及设置 jw 授权</a> 相关知识作为前提。</p>
-<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
-<p>prosody 使用的插件为 lua 脚本，可用 lua 插件位于 <a target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins</a>，可以查看源代码理解其功能。</p>
-<h2 id="加载插件"><a class="markdownIt-Anchor" href="#加载插件"></a> 加载插件</h2>
-<p>prosody 的配置文件位于 <code>prosody\rootfs\defaults\conf.d\jitsi-meet.cfg.lua</code> 中。</p>
-<h3 id="插件注册"><a class="markdownIt-Anchor" href="#插件注册"></a> 插件注册</h3>
-<p>注册插件的格式如下，以 <a target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md">event_sync_component</a> 为例：</p>
+<p>阅读本文时请保证有 <a href="/posts/2023/9Q7N69.html">JitsiMeet docker
+部署及设置 jw 授权</a> 相关知识作为前提。</p>
+<h2 id="简介">简介</h2>
+<p>prosody 使用的插件为 lua 脚本，可用 lua 插件位于 <a
+target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins</a>，可以查看源代码理解其功能。</p>
+<h2 id="加载插件">加载插件</h2>
+<p>prosody 的配置文件位于
+<code>prosody\rootfs\defaults\conf.d\jitsi-meet.cfg.lua</code> 中。</p>
+<h3 id="插件注册">插件注册</h3>
+<p>注册插件的格式如下，以 <a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md">event_sync_component</a>
+为例：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Component <span class="string">&quot;event_sync.&#123;&#123; $XMPP_DOMAIN &#125;&#125;&quot;</span> <span class="string">&quot;event_sync_component&quot;</span></span><br><span class="line">    muc_component = <span class="string">&quot;conference.&#123;&#123; $XMPP_DOMAIN &#125;&#125;&quot;</span></span><br><span class="line">    api_prefix = <span class="string">&quot;http://127.0.0.1:7001/call-back/prosody&quot;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意：这个方式需要重新编译 prosody 镜像文件，如果觉得麻烦，可以使用第 3 节中的在 docker 中使用自定义插件</p>
+<p>注意：这个方式需要重新编译 prosody 镜像文件，如果觉得麻烦，可以使用第
+3 节中的在 docker 中使用自定义插件</p>
 </blockquote>
 <p><strong>Component 介绍：</strong></p>
-<p>在 Lua 中，<code>Component</code> 是 Prosody XMPP 服务器中的一个模块，用于定义一个组件（component）。组件是一种特殊类型的 XMPP 实体，可以与其他 XMPP 实体进行通信，但是它们通常不具有完整的 XMPP 功能。组件通常用于扩展 XMPP 服务器的功能，例如添加聊天室、文件传输等功能。</p>
-<p><code>Component</code> 模块用于定义一个组件，并将其添加到 Prosody XMPP 服务器中。它接受一个 Lua 表作为参数，该表包含组件的配置信息。</p>
-<p>在上例中，<code>&quot;event_sync.&#123;&#123; $XMPP_DOMAIN &#125;&#125;&quot;</code> 表示注册的模块的名称，<code>&quot;event_sync_component&quot;</code> 表示组件的名称，组件名称为组件定义的文件名 <code>mod_event_sync_component.lua</code> 的中间部分。</p>
-<h3 id="插件变量"><a class="markdownIt-Anchor" href="#插件变量"></a> 插件变量</h3>
-<p>插件中通过 <code>module:get_option(&quot;api_headers&quot;)</code> 来获取 jitsi-meet.cfg.lua 中定义的变量。例：</p>
+<p>在 Lua 中，<code>Component</code> 是 Prosody XMPP
+服务器中的一个模块，用于定义一个组件（component）。组件是一种特殊类型的
+XMPP 实体，可以与其他 XMPP 实体进行通信，但是它们通常不具有完整的 XMPP
+功能。组件通常用于扩展 XMPP
+服务器的功能，例如添加聊天室、文件传输等功能。</p>
+<p><code>Component</code> 模块用于定义一个组件，并将其添加到 Prosody
+XMPP 服务器中。它接受一个 Lua 表作为参数，该表包含组件的配置信息。</p>
+<p>在上例中，<code>"event_sync.&#123;&#123; $XMPP_DOMAIN &#125;&#125;"</code>
+表示注册的模块的名称，<code>"event_sync_component"</code>
+表示组件的名称，组件名称为组件定义的文件名
+<code>mod_event_sync_component.lua</code> 的中间部分。</p>
+<h3 id="插件变量">插件变量</h3>
+<p>插件中通过 <code>module:get_option("api_headers")</code> 来获取
+jitsi-meet.cfg.lua 中定义的变量。例：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> api_timeout = <span class="built_in">module</span>:get_option(<span class="string">&quot;api_timeout&quot;</span>, <span class="number">20</span>);</span><br><span class="line"><span class="keyword">local</span> api_headers = <span class="built_in">module</span>:get_option(<span class="string">&quot;api_headers&quot;</span>);</span><br><span class="line"><span class="keyword">local</span> api_retry_count = <span class="built_in">tonumber</span>(<span class="built_in">module</span>:get_option(<span class="string">&quot;api_retry_count&quot;</span>, <span class="number">3</span>));</span><br><span class="line"><span class="keyword">local</span> api_retry_delay = <span class="built_in">tonumber</span>(<span class="built_in">module</span>:get_option(<span class="string">&quot;api_retry_delay&quot;</span>, <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<p>在 jitsi-meet.cfg.lua 中通过 <code>“&#123;&#123;.Env.fieldName&#125;&#125;”</code> 的方式来获取 .env 文件中定义的变量，注意引号不要丢。例：</p>
+<p>在 jitsi-meet.cfg.lua 中通过 <code>“&#123;&#123;.Env.fieldName&#125;&#125;”</code>
+的方式来获取 .env 文件中定义的变量，注意引号不要丢。例：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">external_service_secret = <span class="string">&quot;&#123;&#123;.Env.TURN_CREDENTIALS&#125;&#125;&quot;</span>;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>特别注意：修改 <code> jitsi-meet.cfg.lua</code> 内容并不会生效，因为重启 docker 后会重置这个配置文件，该文件仅作为一个参考，仅在 <code>.env</code> 文件中的修改才会生效。</p>
+<p>特别注意：修改 <code>jitsi-meet.cfg.lua</code>
+内容并不会生效，因为重启 docker
+后会重置这个配置文件，该文件仅作为一个参考，仅在 <code>.env</code>
+文件中的修改才会生效。</p>
 </blockquote>
-<h2 id="在-docker-中使用自定义的插件"><a class="markdownIt-Anchor" href="#在-docker-中使用自定义的插件"></a> 在 docker 中使用自定义的插件</h2>
-<p>若使用 docker 安装 jitsi-meet，每当 prosody 服务重启后都会重置 <code>conf.d\jitsi-meet.cfg.lua</code> 文件，因此无法在 <code>jitsi-meet.cfg.lua</code> 文件中通过 <code>Component</code> 的方式来注册插件。</p>
+<h2 id="在-docker-中使用自定义的插件">在 docker 中使用自定义的插件</h2>
+<p>若使用 docker 安装 jitsi-meet，每当 prosody 服务重启后都会重置
+<code>conf.d\jitsi-meet.cfg.lua</code> 文件，因此无法在
+<code>jitsi-meet.cfg.lua</code> 文件中通过 <code>Component</code>
+的方式来注册插件。</p>
 <p>可以使用以下的方法来解决：</p>
-<ol>
-<li>将自定义插件保存到 <code>.jitsi-meet-cfg\prosody\prosody-plugins-custom</code> 目录中，这个目录被 prosody 所挂载</li>
+<ol type="1">
+<li>将自定义插件保存到
+<code>.jitsi-meet-cfg\prosody\prosody-plugins-custom</code>
+目录中，这个目录被 prosody 所挂载</li>
 <li>修改插件的源文件，使其中的参数符合自己的使用环境</li>
-<li>在 <code>.env</code> 文件中使用 <code>XMPP_MUC_MODULES=event_sync_component</code> 来启用 <code>event_sync_component</code> 插件</li>
+<li>在 <code>.env</code> 文件中使用
+<code>XMPP_MUC_MODULES=event_sync_component</code> 来启用
+<code>event_sync_component</code> 插件</li>
 </ol>
-<h2 id="在-docker-中修改插件"><a class="markdownIt-Anchor" href="#在-docker-中修改插件"></a> 在 docker 中修改插件</h2>
-<p>使用 docker 安装后，如果需要修改 docker 中的 prosody 插件，可以通过以下步骤修改：</p>
-<ol>
-<li>
-<p>打开 docker，切换到【Container】，进入到 <code>prosody</code> 容器中</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230120904.png" alt="image-20230627230120904" /></p>
-</li>
-<li>
-<p>找到【Files/prosody-plugins】，找到想要修改的插件，双击修改并保存，然后重启容器即可应用修改</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230335324.png" alt="image-20230627230335324" /></p>
-</li>
+<h2 id="在-docker-中修改插件">在 docker 中修改插件</h2>
+<p>使用 docker 安装后，如果需要修改 docker 中的 prosody
+插件，可以通过以下步骤修改：</p>
+<ol type="1">
+<li><p>打开 docker，切换到【Container】，进入到 <code>prosody</code>
+容器中</p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230120904.png"
+alt="image-20230627230120904" />
+<figcaption aria-hidden="true">image-20230627230120904</figcaption>
+</figure></li>
+<li><p>找到【Files/prosody-plugins】，找到想要修改的插件，双击修改并保存，然后重启容器即可应用修改</p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230627230335324.png"
+alt="image-20230627230335324" />
+<figcaption aria-hidden="true">image-20230627230335324</figcaption>
+</figure></li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins at master · jitsi/jitsi-meet · GitHub</a></p>
-<p><a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/community/third-party-software/#prosody-plugins">Third-Party Software | Jitsi Meet</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins">jitsi-contrib/prosody-plugins: Prosody plugins for Jitsi (github.com)</a></p>
+<h2 id="参考">参考</h2>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins
+at master · jitsi/jitsi-meet · GitHub</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/community/third-party-software/#prosody-plugins">Third-Party
+Software | Jitsi Meet</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins">jitsi-contrib/prosody-plugins:
+Prosody plugins for Jitsi (github.com)</a></p>
 
     </div>
 
@@ -440,13 +476,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

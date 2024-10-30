@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在进行表查询的时候，有时需要在列表（集合）中进行匹配查询，这个时候一般可以用三种方法实现，分别是： LIKE,  IN，FIND_IN_SET()。">
+    <meta name="description" content="在进行表查询的时候，有时需要在列表（集合）中进行匹配查询，这个时候一般可以用三种方法实现，分别是： LIKE, IN，FIND_IN_SET()。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql 匹配集合中的数据">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2019/1BADZMH.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在进行表查询的时候，有时需要在列表（集合）中进行匹配查询，这个时候一般可以用三种方法实现，分别是： LIKE,  IN，FIND_IN_SET()。">
+<meta property="og:description" content="在进行表查询的时候，有时需要在列表（集合）中进行匹配查询，这个时候一般可以用三种方法实现，分别是： LIKE, IN，FIND_IN_SET()。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#like-%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> LIKE 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> IN 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find_in_set-%E7%94%A8%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text"> FIND_IN_SET() 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">4.</span> <span class="nav-text"> 最佳实践</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#like-%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">LIKE 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">IN 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find_in_set-%E7%94%A8%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">FIND_IN_SET() 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">4.</span> <span class="nav-text">最佳实践</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,49 +290,46 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>在进行表查询的时候，有时需要在列表（集合）中进行匹配查询，这个时候一般可以用三种方法实现，分别是：</p>
-<p>LIKE,  IN，FIND_IN_SET()。</p>
+<p>LIKE, IN，FIND_IN_SET()。</p>
 <span id="more"></span>
-<h2 id="like-用法"><a class="markdownIt-Anchor" href="#like-用法"></a> LIKE 用法</h2>
-<p>LIKE 运算符用于 WHERE 表达式中，以搜索匹配字段中的指定内容，语法如下：</p>
+<h2 id="like-用法">LIKE 用法</h2>
+<p>LIKE 运算符用于 WHERE
+表达式中，以搜索匹配字段中的指定内容，语法如下：</p>
 <ul>
-<li>
-<p>WHERE field LIKE pattern</p>
-</li>
-<li>
-<p>WHERE field NOT LIKE pattern</p>
-</li>
+<li><p>WHERE field LIKE pattern</p></li>
+<li><p>WHERE field NOT LIKE pattern</p></li>
 </ul>
-<p>在LIKE全面加上 NOT 运算符时，表示与 LIKE 相反的意思，即选择 column 不包含 pattern 的数据记录</p>
-<p>LIKE 通常与通配符%一起使用，% 表示通配 pattern 中出现的内容，而不加通配符 % 的 LIKE 语法，表示精确匹配，其实际效果等同于 = 等于运算符</p>
+<p>在LIKE全面加上 NOT 运算符时，表示与 LIKE 相反的意思，即选择 column
+不包含 pattern 的数据记录</p>
+<p>LIKE 通常与通配符%一起使用，% 表示通配 pattern
+中出现的内容，而不加通配符 % 的 LIKE
+语法，表示精确匹配，其实际效果等同于 = 等于运算符</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `test` (  </span><br><span class="line">  `id` int(8) NOT NULL auto_increment,  </span><br><span class="line">  `name` varchar(255) NOT NULL,  </span><br><span class="line">  `list` varchar(255) NOT NULL,  </span><br><span class="line">  PRIMARY KEY  (`id`)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">INSERT INTO `test` VALUES (1, &#x27;names1&#x27;, &#x27;daodao,xiaohu,xiaoqin&#x27;);  </span><br><span class="line">INSERT INTO `test` VALUES (2, &#x27;names2&#x27;, &#x27;xiaohu,daodao,xiaoqin&#x27;);  </span><br><span class="line">INSERT INTO `test` VALUES (3, &#x27;names3&#x27;, &#x27;xiaoqin,daodao,xiaohu&#x27;); </span><br><span class="line"></span><br><span class="line">-- LIKE 用法</span><br><span class="line">SELECT * FROM test WHERE list LIKE &#x27;%daodao%&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="in-用法"><a class="markdownIt-Anchor" href="#in-用法"></a> IN 用法</h2>
-<p>IN 常用于 WHERE 表达式中，其作用是查询某个常量范围内的数据。用法如下：</p>
+<h2 id="in-用法">IN 用法</h2>
+<p>IN 常用于 WHERE
+表达式中，其作用是查询某个常量范围内的数据。用法如下：</p>
 <ul>
-<li>
-<p>WHERE field IN (value1,value2,value3,…)</p>
-</li>
-<li>
-<p>WHERE field NOT IN (value1,value2,value3,…)</p>
-</li>
+<li><p>WHERE field IN (value1,value2,value3,…)</p></li>
+<li><p>WHERE field NOT IN (value1,value2,value3,…)</p></li>
 </ul>
 <p>IN 后面的括号内为常量集合，且各个关键词之间用英文的逗号隔开。</p>
-<h2 id="find_in_set-用法"><a class="markdownIt-Anchor" href="#find_in_set-用法"></a> FIND_IN_SET() 用法</h2>
-<p>FIND_IN_SET 常用于 WHERE 表达式中，其作用是查询某个范围（常量或者字段）内的数据。用法如下：</p>
+<h2 id="find_in_set-用法">FIND_IN_SET() 用法</h2>
+<p>FIND_IN_SET 常用于 WHERE
+表达式中，其作用是查询某个范围（常量或者字段）内的数据。用法如下：</p>
 <ul>
 <li>WHERE FIND_IN_SET(str,strlist)</li>
 <li>WHERE NOT FIND_IN_SET(str,strlist)</li>
 </ul>
 <p>str 既可以是字段，也可以是常量</p>
-<p>strlist 既可以是常量集合，也可以是字段，每个关键字之间用英文逗号隔开</p>
+<p>strlist
+既可以是常量集合，也可以是字段，每个关键字之间用英文逗号隔开</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 在字段集合中查找</span><br><span class="line">SELECT * FROM test WHERE FIND_IN_SET(&#x27;daodao&#x27;,list)</span><br><span class="line"></span><br><span class="line">-- 在常量集合中查找</span><br><span class="line">SELECT * FROM test WHERE FIND_IN_SET(&#x27;daodao&#x27;,&#x27;daodao,xiaohu,qiaoqin&#x27;)</span><br><span class="line"></span><br><span class="line">-- 查找值是字段</span><br><span class="line">SELECT * FROM test WHERE FIND_IN_SET(name,&#x27;names1,mameother&#x27;)</span><br></pre></td></tr></table></figure>
-<h2 id="最佳实践"><a class="markdownIt-Anchor" href="#最佳实践"></a> 最佳实践</h2>
-<ol>
-<li>
-<p>如果待查询的条件是常量那就使用 IN，是变量则使用 FIND_IN_SET。IN 可以使用索引。</p>
-</li>
-<li>
-<p>如果使用 IN 和 FIND_IN_SET 都能满足条件，则最好使用 IN，理由同上，特别是查询字段为主键时或有索引时。</p>
-</li>
+<h2 id="最佳实践">最佳实践</h2>
+<ol type="1">
+<li><p>如果待查询的条件是常量那就使用 IN，是变量则使用 FIND_IN_SET。IN
+可以使用索引。</p></li>
+<li><p>如果使用 IN 和 FIND_IN_SET 都能满足条件，则最好使用
+IN，理由同上，特别是查询字段为主键时或有索引时。</p></li>
 </ol>
 
     </div>
@@ -436,13 +433,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

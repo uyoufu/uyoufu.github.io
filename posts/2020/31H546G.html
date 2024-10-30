@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在给元素添加颜色的过程中，发现不能直接将颜色号设置成 -1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。">
+    <meta name="description" content="在给元素添加颜色的过程中，发现不能直接将颜色号设置成 -1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将元素的颜色设置为 ByLevel">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/31H546G.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在给元素添加颜色的过程中，发现不能直接将颜色号设置成 -1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。">
+<meta property="og:description" content="在给元素添加颜色的过程中，发现不能直接将颜色号设置成 -1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-06T00:45:48.933Z">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">3.</span> <span class="nav-text"> 致谢</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">3.</span> <span class="nav-text">致谢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -285,19 +285,24 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在给元素添加颜色的过程中，发现不能直接将颜色号设置成 -1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。</p>
+    <div class="post-body" itemprop="articleBody"><p>在给元素添加颜色的过程中，发现不能直接将颜色号设置成
+-1（ByLevel），经过在优先社区的查找，终于解决了，特此记录。</p>
 <span id="more"></span>
-<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
-<p>设置元素的属性一般是创建一个 ElementPropertiesSetter，具体代码如下：</p>
+<h2 id="简介">简介</h2>
+<p>设置元素的属性一般是创建一个
+ElementPropertiesSetter，具体代码如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ElementPropertiesSetter setter = <span class="keyword">new</span> ElementPropertiesSetter();</span><br><span class="line">setter.SetColor(ElementPropertyUint.COLOR_BYLEVEL);</span><br><span class="line">setter.SetWeight(<span class="number">1</span>);</span><br><span class="line">setter.SetLevel(GetLevel(SwLevel.sw_2D_点划线));</span><br><span class="line">setter.SetLinestyle((<span class="built_in">int</span>)ElementPropertyUint.STYLE_BYLEVEL,<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">setter.Apply(ele);</span><br></pre></td></tr></table></figure>
 <p>转到 SetColor 的定义我们可以看到，它是这样的：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetColor</span>(<span class="params"><span class="built_in">uint</span> color</span>)</span>;</span><br></pre></td></tr></table></figure>
-<p>而在 ORD 中，我们可以得知，ColorByLevel 的值是 -1，这就让我们很为难了。</p>
-<h2 id="解决办法"><a class="markdownIt-Anchor" href="#解决办法"></a> 解决办法</h2>
-<p>实际上，在 .NET 下的颜色，-1 并不代表 ColorByLevel, ColorByLevel 真正的值是一个 uint, 不过它是16进制的，具体的定义如下：</p>
+<p>而在 ORD 中，我们可以得知，ColorByLevel 的值是
+-1，这就让我们很为难了。</p>
+<h2 id="解决办法">解决办法</h2>
+<p>实际上，在 .NET 下的颜色，-1 并不代表 ColorByLevel, ColorByLevel
+真正的值是一个 uint, 不过它是16进制的，具体的定义如下：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ElementPropertyUint</span></span><br><span class="line">&#123;    </span><br><span class="line">    <span class="comment">// DgnPlatform.h 里面</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> COLOR_BYLEVEL = <span class="number">0xffffffff</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> COLOR_BYCELL = <span class="number">0xfffffffe</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> STYLE_BYLEVEL = <span class="number">0x7fffffff</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> STYLE_BYCELL = <span class="number">0x7ffffffe</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> WEIGHT_BYLEVEL = <span class="number">0xffffffff</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> WEIGHT_BYCELL = <span class="number">0xfffffffe</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">uint</span> LEVEL_BYCELL = <span class="number">64</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
-<p>解决思路来自优先社区： <a target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise/175980/msce-c-element-bylevel?ReplySortBy=CreatedDate&amp;ReplySortOrder=Ascending">https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise/175980/msce-c-element-bylevel?ReplySortBy=CreatedDate&amp;ReplySortOrder=Ascending</a></p>
+<h2 id="致谢">致谢</h2>
+<p>解决思路来自优先社区：
+https://communities.bentley.com/communities/other_communities/chinafirst/f/microstation-projectwise/175980/msce-c-element-bylevel?ReplySortBy=CreatedDate&amp;ReplySortOrder=Ascending</p>
 
     </div>
 
@@ -400,13 +405,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

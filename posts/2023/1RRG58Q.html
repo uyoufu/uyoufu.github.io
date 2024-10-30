@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 简易方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 基本方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">简易方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -288,35 +288,32 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文介绍如何在 Ubuntu 中修改时区。</p>
 <span id="more"></span>
-<h2 id="简易方法"><a class="markdownIt-Anchor" href="#简易方法"></a> 简易方法</h2>
+<h2 id="简易方法">简易方法</h2>
 <p>使用下列命令选择城市进行设置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tzselect</span><br></pre></td></tr></table></figure>
 <p>执行完成后，需要重启机器。</p>
-<h2 id="基本方法"><a class="markdownIt-Anchor" href="#基本方法"></a> 基本方法</h2>
-<ol>
-<li>
-<p>运行以下命令来查看当前的时区：</p>
+<h2 id="基本方法">基本方法</h2>
+<ol type="1">
+<li><p>运行以下命令来查看当前的时区：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl</span><br></pre></td></tr></table></figure>
-<p>这将显示当前的日期、时间和时区。</p>
-</li>
-<li>
-<p>运行以下命令来列出所有可用的时区：</p>
- <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl list<span class="literal">-timezones</span></span><br></pre></td></tr></table></figure>
-<p>这将显示一个时区列表，你可以从中选择一个时区。</p>
-</li>
-<li>
-<p>运行以下命令来设置新的时区：</p>
+<p>这将显示当前的日期、时间和时区。</p></li>
+<li><p>运行以下命令来列出所有可用的时区：</p>
+<p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl list<span class="literal">-timezones</span></span><br></pre></td></tr></table></figure></p>
+<p>这将显示一个时区列表，你可以从中选择一个时区。</p></li>
+<li><p>运行以下命令来设置新的时区：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl <span class="built_in">set-timezone</span> Your_Timezone</span><br></pre></td></tr></table></figure>
-<p>请将 <code>Your_Timezone</code> 替换为你选择的时区。例如，如果你想要设置时区为北京时间，你可以运行：</p>
+<p>请将 <code>Your_Timezone</code>
+替换为你选择的时区。例如，如果你想要设置时区为北京时间，你可以运行：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl <span class="built_in">set-timezone</span> Asia/Shanghai</span><br></pre></td></tr></table></figure>
-<p>再次运行 <code>timedatectl</code> 命令来确认新的时区已经被正确设置。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl</span><br></pre></td></tr></table></figure>
-</li>
+<p>再次运行 <code>timedatectl</code>
+命令来确认新的时区已经被正确设置。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37886429/article/details/78477638">Linux设置和修改时间与时区</a></li>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37886429/article/details/78477638">Linux设置和修改时间与时区</a></li>
 </ol>
 
     </div>
@@ -382,13 +379,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2023/1Z18QQW.html" rel="prev" title="Ubuntu 20.04 更换国内镜像源">
-                  <i class="fa fa-angle-left"></i> Ubuntu 20.04 更换国内镜像源
+                <a href="/posts/2023/30R3C6S.html" rel="prev" title="Ubuntu 阻止笔记本关盖后挂起">
+                  <i class="fa fa-angle-left"></i> Ubuntu 阻止笔记本关盖后挂起
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/358VFAC.html" rel="next" title="Bentley 各个 DLL 库介绍">
-                  Bentley 各个 DLL 库介绍 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2023/1Z18QQW.html" rel="next" title="Ubuntu 20.04 更换国内镜像源">
+                  Ubuntu 20.04 更换国内镜像源 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -421,13 +418,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

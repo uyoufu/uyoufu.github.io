@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="可能容易实现 INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要propertychange 通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。 这是一个很常见的问题，Stylet提供了一些方法来简化工作。">
+    <meta name="description" content="可能容易实现 INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要propertychange 通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。 这是一个很常见的问题，Stylet提供了一些方法来简化工作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WPF MVVM Stylet使用文档（中文）16-Listening to INotifyPropertyChanged">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/1SHECQH.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="可能容易实现 INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要propertychange 通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。 这是一个很常见的问题，Stylet提供了一些方法来简化工作。">
+<meta property="og:description" content="可能容易实现 INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要propertychange 通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。 这是一个很常见的问题，Stylet提供了一些方法来简化工作。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.413Z">
@@ -142,7 +142,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#inotifypropertychangedbind"><span class="nav-number">1.</span> <span class="nav-text"> INotifyPropertyChanged.Bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inotifypropertychangedbindweak"><span class="nav-number">2.</span> <span class="nav-text"> INotifyPropertyChanged.BindWeak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%BC%B1%E4%BA%8B%E4%BB%B6%E8%AE%A2%E9%98%85technical-weak-event-subscriptions"><span class="nav-number">3.</span> <span class="nav-text"> 技术:弱事件订阅（Technical: Weak Event Subscriptions）</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#inotifypropertychanged.bind"><span class="nav-number">1.</span> <span class="nav-text">INotifyPropertyChanged.Bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inotifypropertychanged.bindweak"><span class="nav-number">2.</span> <span class="nav-text">INotifyPropertyChanged.BindWeak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%BC%B1%E4%BA%8B%E4%BB%B6%E8%AE%A2%E9%98%85technical-weak-event-subscriptions"><span class="nav-number">3.</span> <span class="nav-text">技术:弱事件订阅（Technical:
+Weak Event Subscriptions）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -290,46 +291,84 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>可能容易实现 INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要<code>propertychange</code> 通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。</p>
+    <div class="post-body" itemprop="articleBody"><p>可能容易实现
+INotifyPropertyChanged，但通常是有点痛苦，想象一个对象需要<code>propertychange</code>
+通知：你需要注册一个事件处理程序,检查属性名是否是你所期望的,完成后又需要注销事件处理程序。</p>
 <p>这是一个很常见的问题，Stylet提供了一些方法来简化工作。</p>
 <span id="more"></span>
-<h2 id="inotifypropertychangedbind"><a class="markdownIt-Anchor" href="#inotifypropertychangedbind"></a> INotifyPropertyChanged.Bind</h2>
-<p>这是订阅 PropertyChanged 事件的最简单方法，它使用对订阅服务器的强引用(与普通事件一样)来实现这一点。这意味着如果你打算在订阅的东西还存在的时候发布，你必须记得取消订阅。</p>
+<h2 id="inotifypropertychanged.bind">INotifyPropertyChanged.Bind</h2>
+<p>这是订阅 PropertyChanged
+事件的最简单方法，它使用对订阅服务器的强引用(与普通事件一样)来实现这一点。这意味着如果你打算在订阅的东西还存在的时候发布，你必须记得取消订阅。</p>
 <p>用法很简单。假设有一个对象的形式:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Can be any implementation of INotifyPropertyChanged - I&#x27;m using PropertyChangedBase as it makes the example shorter</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Model</span> : <span class="title">PropertyChangedBase</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="built_in">string</span> _stringProperty;</span><br><span class="line">   <span class="keyword">public</span> <span class="built_in">string</span> StringProperty</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._stringProperty; &#125;</span><br><span class="line">      <span class="keyword">set</span> &#123; SetAndNotify(<span class="keyword">ref</span> <span class="keyword">this</span>._stringProperty, <span class="keyword">value</span>); &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>您希望每次 <code>StringProperty</code> 属性更改时都得到通知。你这样做:</p>
+<p>您希望每次 <code>StringProperty</code>
+属性更改时都得到通知。你这样做:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span><br><span class="line"><span class="comment">// ... </span></span><br><span class="line">model.Bind(x =&gt; x.StringProperty, (sender, eventArgs) =&gt; Debug.WriteLine(String.Format(<span class="string">&quot;New value for property &#123;0&#125; on &#123;1&#125; is &#123;2&#125;&quot;</span>, eventArgs.PropertyName, sender, eventArgs.NewValue)));</span><br></pre></td></tr></table></figure>
-<p><code>x =&gt; x.StringProperty</code> 是指定你想观察那个属性，这种方式是类型安全的。<code>x</code> 可以任意命名，当你打出 <code>x=&gt;x.</code> 时，智能感知会提示你一个属性列表。</p>
-<p><code>(propertyName, newValue) =&gt; Debug.WriteLine(String.Format(&quot;New value is &#123;0&#125;&quot;, newValue))</code>在每次属性改变时被调用。</p>
-<p><code>Bind</code> 方法实际上返回一个 <code>IEventBinding</code> 的实现，它只有一个 <code>Unbind</code>方法。要删除绑定，请调用该方法。例如:</p>
+<p><code>x =&gt; x.StringProperty</code>
+是指定你想观察那个属性，这种方式是类型安全的。<code>x</code>
+可以任意命名，当你打出 <code>x=&gt;x.</code>
+时，智能感知会提示你一个属性列表。</p>
+<p><code>(propertyName, newValue) =&gt; Debug.WriteLine(String.Format("New value is &#123;0&#125;", newValue))</code>在每次属性改变时被调用。</p>
+<p><code>Bind</code> 方法实际上返回一个 <code>IEventBinding</code>
+的实现，它只有一个
+<code>Unbind</code>方法。要删除绑定，请调用该方法。例如:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span><br><span class="line"><span class="comment">// ... </span></span><br><span class="line"><span class="keyword">var</span> binding = model.Bind(x =&gt; x.StringProperty, (sender, eventArgs) =&gt; Debug.WriteLine(String.Format(<span class="string">&quot;New value for property &#123;0&#125; on &#123;1&#125; is &#123;2&#125;&quot;</span>, eventArgs.PropertyName, sender, eventArgs.NewValue)));</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">binding.Unbind();</span><br></pre></td></tr></table></figure>
-<h2 id="inotifypropertychangedbindweak"><a class="markdownIt-Anchor" href="#inotifypropertychangedbindweak"></a> INotifyPropertyChanged.BindWeak</h2>
+<h2
+id="inotifypropertychanged.bindweak">INotifyPropertyChanged.BindWeak</h2>
 <p>通常，当您订阅一个事件时，接收事件通知的对象至少与发布事件的对象存活的时间一样长，因为发布事件的对象最终会引用接收事件通知的对象。</p>
-<p>这通常是不受欢迎的。例如，如果您有一个 ViewModel，它想要监视它所依赖的某些服务上的 PropertyChanged事件。</p>
-<p>Stylet 在 INotifyPropertyChanged 上提供了一个名为 <code>BindWeak</code> 的扩展方法，它与 <code>Bind</code> 非常相似，只是它创建了一个弱绑定。语法与 <code>Bind</code> 相同，所以这里我就不重复了。</p>
+<p>这通常是不受欢迎的。例如，如果您有一个
+ViewModel，它想要监视它所依赖的某些服务上的 PropertyChanged事件。</p>
+<p>Stylet 在 INotifyPropertyChanged 上提供了一个名为
+<code>BindWeak</code> 的扩展方法，它与 <code>Bind</code>
+非常相似，只是它创建了一个弱绑定。语法与 <code>Bind</code>
+相同，所以这里我就不重复了。</p>
 <blockquote>
 <p>请注意，以弱方式绑定每个委托是不可能的。捕获局部变量的委托通常会失败。下面将对此进行更详细的讨论。</p>
 </blockquote>
-<h2 id="技术弱事件订阅technical-weak-event-subscriptions"><a class="markdownIt-Anchor" href="#技术弱事件订阅technical-weak-event-subscriptions"></a> 技术:弱事件订阅（Technical: Weak Event Subscriptions）</h2>
-<p>我将忽略委托的一些细节，但在基本术语中，当您订阅一个事件时，您创建一个新的委托实例，并将其传递给拥有该事件的对象。委托(基本上)由两部分组成: 要调用的方法(<code>method</code>)属性和要调用该方法的实例(<code>Target</code>属性)。</p>
+<h2
+id="技术弱事件订阅technical-weak-event-subscriptions">技术:弱事件订阅（Technical:
+Weak Event Subscriptions）</h2>
+<p>我将忽略委托的一些细节，但在基本术语中，当您订阅一个事件时，您创建一个新的委托实例，并将其传递给拥有该事件的对象。委托(基本上)由两部分组成:
+要调用的方法(<code>method</code>)属性和要调用该方法的实例(<code>Target</code>属性)。</p>
 <p>如果你创建一个委托，它指向你的类的一个实例方法，一切都很好，很简单:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params">Model model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      model.PropertyChanged += <span class="keyword">new</span> PropertyChangedEventHandler(<span class="keyword">this</span>.PropertyChangedHandler);</span><br><span class="line">      <span class="comment">// or, more concisely</span></span><br><span class="line">      model.PropertyChanged += <span class="keyword">this</span>.PropertyChangedHandler;</span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PropertyChangedHandler</span>(<span class="params"><span class="built_in">object</span> sender, PropertyChangedEventArgs e</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这种情况下，一个新的委托被创建，它的 <code>Target</code> 被设置为 <code>MyClass</code> 实例，它的 <code>method</code> 被设置为 <code>MethodInfo</code>，代表你的 <code>PropertyChangedHandler</code> 方法。</p>
-<p><code>model</code> 实例然后成为该委托的所有者。这意味着 <code>model</code> 实例拥有一个拥有 <code>MyClass</code> 实例的委托，这意味着 <code>MyClass</code> 实例不能被释放，直到 <code>model</code> 实例被释放。</p>
+<p>在这种情况下，一个新的委托被创建，它的 <code>Target</code> 被设置为
+<code>MyClass</code> 实例，它的 <code>method</code> 被设置为
+<code>MethodInfo</code>，代表你的 <code>PropertyChangedHandler</code>
+方法。</p>
+<p><code>model</code> 实例然后成为该委托的所有者。这意味着
+<code>model</code> 实例拥有一个拥有 <code>MyClass</code>
+实例的委托，这意味着 <code>MyClass</code> 实例不能被释放，直到
+<code>model</code> 实例被释放。</p>
 <p>当匿名委托/ lambdas开始发挥作用时，事情开始变得有点复杂，例如:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params">Model model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      model.PropertyChanged += <span class="built_in">delegate</span> &#123; Debug.WriteLine(<span class="string">&quot;Hi&quot;</span>); &#125;;</span><br><span class="line">      <span class="comment">// Or, using lambas (preferred)</span></span><br><span class="line">      model.PropertyChanged += (o, e) =&gt; Debug.WriteLine(<span class="string">&quot;Hi&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，c# 编译器必须在你的类上创建一个新的，特殊的方法，它看起来像这样:</p>
+<p>在这里，c#
+编译器必须在你的类上创建一个新的，特殊的方法，它看起来像这样:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params">Model model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      model.PropertyChanged += <span class="keyword">new</span> PropertyChangedEventHandler(<span class="keyword">this</span>.&lt;.ctor&gt;b__0);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   [<span class="meta">CompilerGenerated</span>]</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">void</span> &lt;.ctor&gt;b__0(<span class="built_in">object</span> sender, PropertyChangedEventArgs e)</span><br><span class="line">   &#123;</span><br><span class="line">      Debug.WriteLine(<span class="string">&quot;Hi&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意上面那个特殊方法名的使用——其中包含字符( “&lt;” 和 “&gt;”)，这些字符在 c# 中无效，但在 CLR 中有效)。</p>
-<p>如果我们有一个捕获局部变量的匿名委托/lambda，这将变得更加复杂。在这里，c# 编译器需要生成一个全新的嵌入式类，它保留了对该变量的引用。例如:</p>
+<p>注意上面那个特殊方法名的使用——其中包含字符( “&lt;” 和
+“&gt;”)，这些字符在 c# 中无效，但在 CLR 中有效)。</p>
+<p>如果我们有一个捕获局部变量的匿名委托/lambda，这将变得更加复杂。在这里，c#
+编译器需要生成一个全新的嵌入式类，它保留了对该变量的引用。例如:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params">Model model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">string</span> test = <span class="string">&quot;test&quot;</span>;</span><br><span class="line">      model.PropertyChanged += (o, e) =&gt; Debug.WriteLine(test);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译成看起来有点像:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params">Model model</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">      MyClass.&lt;&gt;c__DisplayClass1 c__DisplayClass1 = <span class="keyword">new</span> MyClass.&lt;&gt;c__DisplayClass1();</span><br><span class="line">      c__DisplayClass1.test = <span class="string">&quot;test&quot;</span>;</span><br><span class="line">      model.PropertyChanged += <span class="keyword">new</span> PropertyChangedEventHandler(c__DisplayClass1.&lt;.ctor&gt;b__0);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   [<span class="meta">CompilerGenerated</span>]</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">sealed</span> <span class="keyword">class</span> &lt;&gt;<span class="title">c__DisplayClass1</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">public</span> <span class="built_in">string</span> test;</span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">void</span> &lt;.ctor&gt;b__0(<span class="built_in">object</span> sender, PropertyChangedEventArgs e)</span><br><span class="line">      &#123;</span><br><span class="line">         Debug.WriteLine(<span class="keyword">this</span>.test);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>这里，创建的 PropertyChangedEventHandler 委托将 <code>&lt;&gt;c__DisplayClass</code> 的实例作为它的 <code>Target</code> 属性的值。</p>
-<p>这意味着，当<code>MyClass</code> 的构造函数返回时，<code>&lt;&gt;c__DisplayClass</code> 实例引用的<em>唯一</em>东西就是委托。<code>&lt;&gt;c__DisplayClass</code> 实例的生命周期现在完全独立于 <code>MyClass</code> 实例。</p>
-<p>实现弱事件的方法是让委托的 “target” 属性以某种方式成为 “WeakReference” ——通常是让它指向一个中间类，而这个中间类又有一个指向“真正”目标的 “WeakReference”。这意味着委托不会保留目标。</p>
-<p>如果这个目标是一个编译器生成的内部类，那么除了我们创建的 <code>WeakReference</code> 之外，没有其他任何东西会保存对它的引用。这意味着这个内部类将被直接收集，因此委托将永远不会被调用。</p>
-<p>因此，如果委托给它有一个<code>target</code>，且有 <code>CompilerGenerated </code> 属性，<code>BindWeak</code> 将抛出一个异常。</p>
+<p>这里，创建的 PropertyChangedEventHandler 委托将
+<code>&lt;&gt;c__DisplayClass</code> 的实例作为它的 <code>Target</code>
+属性的值。</p>
+<p>这意味着，当<code>MyClass</code>
+的构造函数返回时，<code>&lt;&gt;c__DisplayClass</code>
+实例引用的<em>唯一</em>东西就是委托。<code>&lt;&gt;c__DisplayClass</code>
+实例的生命周期现在完全独立于 <code>MyClass</code> 实例。</p>
+<p>实现弱事件的方法是让委托的 “target” 属性以某种方式成为
+“WeakReference”
+——通常是让它指向一个中间类，而这个中间类又有一个指向“真正”目标的
+“WeakReference”。这意味着委托不会保留目标。</p>
+<p>如果这个目标是一个编译器生成的内部类，那么除了我们创建的
+<code>WeakReference</code>
+之外，没有其他任何东西会保存对它的引用。这意味着这个内部类将被直接收集，因此委托将永远不会被调用。</p>
+<p>因此，如果委托给它有一个<code>target</code>，且有
+<code>CompilerGenerated</code> 属性，<code>BindWeak</code>
+将抛出一个异常。</p>
 
     </div>
 
@@ -433,13 +472,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">842k</span>
+    <span title="站点总字数">838k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:46</span>
+    <span title="站点阅读时长">12:41</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

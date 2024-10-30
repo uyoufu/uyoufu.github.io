@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0"><span class="nav-number">1.</span> <span class="nav-text">域名购买</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-frp-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text">安装 Frp 客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="nav-number">3.</span> <span class="nav-text">安装宝塔面板</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0"><span class="nav-number">1.</span> <span class="nav-text"> 域名购买</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-frp-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text"> 安装 Frp 客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="nav-number">3.</span> <span class="nav-text"> 安装宝塔面板</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -167,7 +167,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -287,27 +287,18 @@
     
     <div class="post-body" itemprop="articleBody"><p>当我们使用公益的Frp服务端时，我们对Frp服务器没有管理权限，此时，我们可用的端口可能就只有一个，为了能够在内网机器部署多个应用，我们就需要在内网机实现反向代理和Https。那么要如何实现呢？请听我娓娓道来。</p>
 <span id="more"></span>
-<h2 id="域名购买">域名购买</h2>
-<p>要实现反向代理，必须要有一个域名，建议在阿里云购买域名，因为阿里云域名可以很方便的实现
-Let's Encrypt 证书 DNS 认证及自动更新。</p>
-<h2 id="安装-frp-客户端">安装 Frp 客户端</h2>
-<p>软件安装教程，请自行在网上获取，本人采用 scoop 安装，可以使用
-<code>scoop install frp</code> 进行安装。</p>
+<h2 id="域名购买"><a class="markdownIt-Anchor" href="#域名购买"></a> 域名购买</h2>
+<p>要实现反向代理，必须要有一个域名，建议在阿里云购买域名，因为阿里云域名可以很方便的实现 Let’s Encrypt 证书 DNS 认证及自动更新。</p>
+<h2 id="安装-frp-客户端"><a class="markdownIt-Anchor" href="#安装-frp-客户端"></a> 安装 Frp 客户端</h2>
+<p>软件安装教程，请自行在网上获取，本人采用 scoop 安装，可以使用 <code>scoop install frp</code> 进行安装。</p>
 <p><strong>配置：</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连接frp服务器</span></span><br><span class="line">[<span class="string">common</span>]</span><br><span class="line"><span class="string">server_addr</span> <span class="string">=</span> <span class="string">xxx.xxx.xxx.xxx</span></span><br><span class="line"><span class="comment"># frp 服务连接的端口</span></span><br><span class="line"><span class="string">server_port</span> <span class="string">=</span> <span class="number">4431</span></span><br><span class="line"><span class="string">token=</span> <span class="string">asfsdf32894sdf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站1</span></span><br><span class="line">[<span class="string">http1</span>]</span><br><span class="line"><span class="string">type</span> <span class="string">=</span> <span class="string">https</span></span><br><span class="line"><span class="string">custom_domains</span> <span class="string">=</span> <span class="string">web1.example.com</span></span><br><span class="line"><span class="string">local_port</span> <span class="string">=</span> <span class="number">443</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站2</span></span><br><span class="line">[<span class="string">http2</span>]</span><br><span class="line"><span class="string">type</span> <span class="string">=</span> <span class="string">https</span></span><br><span class="line"><span class="string">custom_domains</span> <span class="string">=</span> <span class="string">web2.example.com</span></span><br><span class="line"><span class="string">local_port</span> <span class="string">=</span> <span class="number">443</span></span><br></pre></td></tr></table></figure>
-<p>客户端这样设置，是为了将所有流量原封不动的转发到本机的443端口，然后再由本机的宝塔面板安装反向代理软件（推荐
-nginx）来反向代理请求。</p>
-<h2 id="安装宝塔面板">安装宝塔面板</h2>
-<p>不论是 Linux 或者 Windows
-Server，都可以安装宝塔面板。宝塔面板可以很方便搭建网络环境，也可以很方便实现
-SSL 证书的自动更新。对于新手来说，非常友好。</p>
-<p>下载地址：https://www.bt.cn</p>
-<p>宝塔面板安装完成后，就可以在上面建立网站了，由于所有流量都聚集在本机的
-443
-端口，所以，宝塔面板首先要安装反向代理软件，然后再将请求代理到不同的网站。</p>
-<p>由于 frp 原封不动地转发了 https 流量，所以 https
-的证书就可以在反向代理软件中配置了。宝塔面板网站安装及申请 SSL
-教程请在网上自行查找。</p>
+<p>客户端这样设置，是为了将所有流量原封不动的转发到本机的443端口，然后再由本机的宝塔面板安装反向代理软件（推荐 nginx）来反向代理请求。</p>
+<h2 id="安装宝塔面板"><a class="markdownIt-Anchor" href="#安装宝塔面板"></a> 安装宝塔面板</h2>
+<p>不论是 Linux 或者 Windows Server，都可以安装宝塔面板。宝塔面板可以很方便搭建网络环境，也可以很方便实现 SSL 证书的自动更新。对于新手来说，非常友好。</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.bt.cn">https://www.bt.cn</a></p>
+<p>宝塔面板安装完成后，就可以在上面建立网站了，由于所有流量都聚集在本机的 443 端口，所以，宝塔面板首先要安装反向代理软件，然后再将请求代理到不同的网站。</p>
+<p>由于 frp 原封不动地转发了 https 流量，所以 https 的证书就可以在反向代理软件中配置了。宝塔面板网站安装及申请 SSL 教程请在网上自行查找。</p>
 
     </div>
 
@@ -410,13 +401,13 @@ SSL 证书的自动更新。对于新手来说，非常友好。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

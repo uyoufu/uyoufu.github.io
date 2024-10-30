@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">详细介绍</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"> 详细介绍</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -167,7 +167,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -287,15 +287,15 @@
     
     <div class="post-body" itemprop="articleBody"><p>在开发中，遇到这样一个问题，需要用某一文字样式创建文字，同时，还需要修改生成文字的大小，又不影响原来的文字样式。下面记录已知的两种方法。</p>
 <span id="more"></span>
-<h2 id="详细介绍">详细介绍</h2>
+<h2 id="详细介绍"><a class="markdownIt-Anchor" href="#详细介绍"></a> 详细介绍</h2>
 <ul>
-<li>采用 COM
-里面的API，用代码在原来样式的基础上生成新的样式，具体代码如下</li>
+<li>采用 COM 里面的API，用代码在原来样式的基础上生成新的样式，具体代码如下</li>
 </ul>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Bentley.Internal.MstnPlatformNET.TextStyleLibCollection textStyles = <span class="keyword">new</span> Bentley.Internal.MstnPlatformNET.TextStyleLibCollection(StyleIteratorMode.ActiveFileAndLibraries);</span><br><span class="line">DgnTextStyle targetStyle = textStyles.Where(item =&gt; item.Name == <span class="string">&quot;textStyleName&quot;</span>).FirstOrDefault();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (targetStyle == <span class="literal">null</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 创建新的钢筋标注样式</span></span><br><span class="line">    <span class="built_in">string</span> newTextStyleName = SwTextStyle.SW_25_SectionName.ToStringValue();<span class="comment">//注意名字要确保是唯一的</span></span><br><span class="line">    <span class="built_in">string</span> templateStyleName = SwTextStyle.SW_50_SectionName.ToStringValue();</span><br><span class="line">    Application msApp = Utilities.ComApp;</span><br><span class="line">    TextStyle templateStyle = msApp.ActiveDesignFile.TextStyles[templateStyleName];</span><br><span class="line">    msApp.ActiveDesignFile.TextStyles.Add(templateStyle, newTextStyleName);</span><br><span class="line">    TextStyle newTextStyle = msApp.ActiveDesignFile.TextStyles[newTextStyleName];</span><br><span class="line">    newTextStyle.Width = <span class="number">0.0020</span>;</span><br><span class="line">    <span class="comment">//修改文本样式的属性</span></span><br><span class="line">    newTextStyle.Height = <span class="number">0.0025</span>;</span><br><span class="line">    targetStyle = textStyles.Where(item =&gt; item.Name ==   <span class="string">&quot;textStyleName&quot;</span>).FirstOrDefault();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">TextBlock textBlock = <span class="keyword">new</span> TextBlock(dgnTextStyle, DgnModel);</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <ul>
-<li>直接修改文字样式，具体代码如下 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Bentley.Internal.MstnPlatformNET.TextStyleLibCollection textStyles = <span class="keyword">new</span> Bentley.Internal.MstnPlatformNET.TextStyleLibCollection(StyleIteratorMode.ActiveFileAndLibraries);</span><br><span class="line">DgnTextStyle targetStyle = textStyles.Where(item =&gt; item.Name == <span class="string">&quot;textStyleName&quot;</span>).FirstOrDefault();</span><br><span class="line"></span><br><span class="line">targetStyle.SetProperty(TextStyleProperty.Width, <span class="number">0.0020</span> * uor);</span><br><span class="line">targetStyle.SetProperty(TextStyleProperty.Height, <span class="number">0.0025</span> * uor);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">TextBlock textBlock = <span class="keyword">new</span> TextBlock(dgnTextStyle, DgnModel);</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure></li>
+<li>直接修改文字样式，具体代码如下</li>
 </ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Bentley.Internal.MstnPlatformNET.TextStyleLibCollection textStyles = <span class="keyword">new</span> Bentley.Internal.MstnPlatformNET.TextStyleLibCollection(StyleIteratorMode.ActiveFileAndLibraries);</span><br><span class="line">DgnTextStyle targetStyle = textStyles.Where(item =&gt; item.Name == <span class="string">&quot;textStyleName&quot;</span>).FirstOrDefault();</span><br><span class="line"></span><br><span class="line">targetStyle.SetProperty(TextStyleProperty.Width, <span class="number">0.0020</span> * uor);</span><br><span class="line">targetStyle.SetProperty(TextStyleProperty.Height, <span class="number">0.0025</span> * uor);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">TextBlock textBlock = <span class="keyword">new</span> TextBlock(dgnTextStyle, DgnModel);</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <p>上面这种用法也是不会修改原来文字样式。</p>
 
     </div>
@@ -360,8 +360,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2020/1P955T2.html" rel="prev" title="引线标注">
-                  <i class="fa fa-angle-left"></i> 引线标注
+                <a href="/posts/2020/31H546G.html" rel="prev" title="将元素的颜色设置为 ByLevel">
+                  <i class="fa fa-angle-left"></i> 将元素的颜色设置为 ByLevel
                 </a>
             </div>
             <div class="post-nav-item">
@@ -399,13 +399,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

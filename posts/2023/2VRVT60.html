@@ -19,19 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin 命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成 command 表。">
+    <meta name="description" content="本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin 命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成 command 表。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一文带你全面了解 Microstation 中的 Keyin 配置">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/2VRVT60.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin 命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成 command 表。">
+<meta property="og:description" content="本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin 命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成 command 表。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/keyinCommandStructure.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/keyinCommand%E7%BB%93%E6%9E%84-%E4%BB%A3%E7%A0%81%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B.png">
 <meta property="article:published_time" content="2023-12-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-12-18T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Bentley">
 <meta property="article:tag" content="Keyin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/keyinCommandStructure.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/2VRVT60.html">
@@ -91,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">命令表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">节点标签介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rootkeyintable"><span class="nav-number">2.1.</span> <span class="nav-text">RootKeyinTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyword"><span class="nav-number">2.2.</span> <span class="nav-text">Keyword</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subkeyintables"><span class="nav-number">2.3.</span> <span class="nav-text">SubKeyinTables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyinhandlers"><span class="nav-number">2.4.</span> <span class="nav-text">KeyinHandlers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%91%BD%E4%BB%A4%E8%A1%A8%E5%B5%8C%E5%85%A5-addin"><span class="nav-number">3.</span> <span class="nav-text">将命令表嵌入 Addin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%91%BD%E4%BB%A4%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">快速生成命令表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text"> 命令表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text"> 节点标签介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rootkeyintable"><span class="nav-number">2.1.</span> <span class="nav-text"> RootKeyinTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyword"><span class="nav-number">2.2.</span> <span class="nav-text"> Keyword</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subkeyintables"><span class="nav-number">2.3.</span> <span class="nav-text"> SubKeyinTables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyinhandlers"><span class="nav-number">2.4.</span> <span class="nav-text"> KeyinHandlers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%91%BD%E4%BB%A4%E8%A1%A8%E5%B5%8C%E5%85%A5-addin"><span class="nav-number">3.</span> <span class="nav-text"> 将命令表嵌入 Addin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%91%BD%E4%BB%A4%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text"> 快速生成命令表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +171,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -283,66 +286,34 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin
-命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成
-command 表。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文将详细介绍 Microstation 中 Keyin 的配置，包括 Keyin 命令表的结构、各项参数等等，最后将分享如何通过代码的方式来自动生成 command 表。</p>
 <span id="more"></span>
 <p>Addin 中使用 XML 来定义命令表。</p>
-<h2 id="命令表结构">命令表结构</h2>
+<h2 id="命令表结构"><a class="markdownIt-Anchor" href="#命令表结构"></a> 命令表结构</h2>
 <p>Keyin 命令表结构如下图所示：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/keyinCommandStructure.png"
-alt="keyinCommandStructure" />
-<figcaption aria-hidden="true">keyinCommandStructure</figcaption>
-</figure>
-<p>命令表是一个 xml 文件，每个命令表中有且仅有一个
-<code>KeyinTree</code> 根节点，其下由三部分组成，分别为
-<code>RootKeyinTable</code>、<code>SubKeyinTables</code> 和
-<code>KeyinHandlers</code>，它们分别表示根命令表、子命令表以及命令对应的处理函数映射。</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/keyinCommandStructure.png" alt="keyinCommandStructure" /></p>
+<p>命令表是一个 xml 文件，每个命令表中有且仅有一个 <code>KeyinTree</code> 根节点，其下由三部分组成，分别为 <code>RootKeyinTable</code>、<code>SubKeyinTables</code> 和 <code>KeyinHandlers</code>，它们分别表示根命令表、子命令表以及命令对应的处理函数映射。</p>
 <p>command.xml 命令表代码示例如下：</p>
 <blockquote>
 <p>使用 <code>&lt;!--xxx--&gt;</code> 包含的内容为注释</p>
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">KeyinTree</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--根命令表,其 ID 为 root--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">RootKeyinTable</span> <span class="attr">ID</span>=<span class="string">&quot;rootId&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--使用 keyword 定义根命令,通过 SubtableRef 来指向 KeyinTable 的 ID，指定下一级命令。CommandWord 表示命令的单词(不区分大小写)--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">SubtableRef</span>=<span class="string">&quot;CommandsId&quot;</span> <span class="attr">CommandWord</span>=<span class="string">&quot;fenceExample&quot;</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--定义 Keyword 的选项--&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Options</span> <span class="attr">Required</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">Keyword</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">RootKeyinTable</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">SubKeyinTables</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinTable</span> <span class="attr">ID</span>=<span class="string">&quot;CommandsId&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">SubtableRef</span>=<span class="string">&quot;FromCmdId&quot;</span> <span class="attr">CommandWord</span>=<span class="string">&quot;from&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">Options</span> <span class="attr">Required</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Keyword</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">SubtableRef</span>=<span class="string">&quot;ModifyCmdId&quot;</span> <span class="attr">CommandWord</span>=<span class="string">&quot;modify&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">Options</span> <span class="attr">Required</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Keyword</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;clear&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">Options</span> <span class="attr">Required</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Keyword</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">KeyinTable</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinTable</span> <span class="attr">ID</span>=<span class="string">&quot;FromCmdId&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;element&quot;</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;points&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">KeyinTable</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinTable</span> <span class="attr">ID</span>=<span class="string">&quot;ModifyCmdId&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;move&quot;</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;clip&quot;</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Keyword</span> <span class="attr">CommandWord</span>=<span class="string">&quot;stretch&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">KeyinTable</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">SubKeyinTables</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">KeyinHandlers</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample from element&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdPlaceFenceFromElement&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample from points&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdPlaceFenceFromPoints&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample clear&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdClearFence&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample modify move&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdMoveFenceContents&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample modify clip&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdClipFenceContents&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KeyinHandler</span> <span class="attr">Keyin</span>=<span class="string">&quot;fenceExample modify stretch&quot;</span> <span class="attr">Function</span>=<span class="string">&quot;ManagedFenceExample.Keyin.CmdStretchFenceContents&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">KeyinHandlers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">KeyinTree</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上例中的代码命令可以表示为：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/keyinCommand结构-代码命令示例.png"
-alt="keyinCommand结构-代码命令示例" />
-<figcaption
-aria-hidden="true">keyinCommand结构-代码命令示例</figcaption>
-</figure>
-<h2 id="节点标签介绍">节点标签介绍</h2>
-<p><code>KeyinTree</code> 节点包含
-<code>RootKeyinTable</code>、<code>SubKeyinTables</code> 和
-<code>KeyinHandlers</code> 三个部分。</p>
-<p><code>KeyinTable</code> 中有属性
-<code>ID</code>，表示该表的名称。命令表的内容由一个或多个<code>Keyword</code>
-元素组成，<code>Keyword</code>属性 <code>SubtableRef</code>
-指向其下级命令表的
-<code>ID</code>。这样，通过当前表中<code>Keyword</code> 的
-<code>SubtableRef</code> 和下级表中 <code>KeyinTable&gt;</code> 的
-<code>ID</code> 就能构成一个命令树。</p>
-<p>Mstn 中的命令由一到五个单词组成，因而，我们在定义自己的 commands.xml
-时在 <code>SubKeyinTables</code> 段中最多可以定义四级命令。</p>
-<p><code>Keyword</code> 还必须有属性
-<code>CommandWord</code>，这是用户在 Mstn
-键入域中可输入的单词。<code>Keyword</code> 中还可以包含
-<code>Options</code>
-项，该项是对<code>Keyword</code>的进一步说明，其属性有
-<code>Required</code>、<code>Default</code>、<code>TryParse</code>、<code>Hidden</code>
-等。</p>
-<h3 id="rootkeyintable">RootKeyinTable</h3>
-<p><code>KeyinTree</code> 中必须包含 <code>RootKeyinTable</code>
-标签，且只能有一个标签。</p>
-<p><code>RootKeyinTable</code> 中应至少包含一个 <code>Keyword</code>
-标签，用于定义根命令单词。</p>
-<h3 id="keyword">Keyword</h3>
-<p><code>Keyword</code> 标签用于定义命令的单词，它可以在
-<code>RootKeyinTable</code> 和 <code>KeyinTable</code> 中使用。</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/keyinCommand%E7%BB%93%E6%9E%84-%E4%BB%A3%E7%A0%81%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B.png" alt="keyinCommand结构-代码命令示例" /></p>
+<h2 id="节点标签介绍"><a class="markdownIt-Anchor" href="#节点标签介绍"></a> 节点标签介绍</h2>
+<p><code>KeyinTree</code> 节点包含 <code>RootKeyinTable</code>、<code>SubKeyinTables</code> 和 <code>KeyinHandlers</code> 三个部分。</p>
+<p><code>KeyinTable</code> 中有属性 <code>ID</code>，表示该表的名称。命令表的内容由一个或多个<code>Keyword</code> 元素组成，<code>Keyword</code>属性 <code>SubtableRef</code> 指向其下级命令表的 <code>ID</code>。这样，通过当前表中<code>Keyword</code> 的 <code>SubtableRef</code> 和下级表中 <code>KeyinTable&gt;</code> 的 <code>ID</code> 就能构成一个命令树。</p>
+<p>Mstn 中的命令由一到五个单词组成，因而，我们在定义自己的 commands.xml 时在 <code>SubKeyinTables</code> 段中最多可以定义四级命令。</p>
+<p><code>Keyword</code> 还必须有属性 <code>CommandWord</code>，这是用户在 Mstn 键入域中可输入的单词。<code>Keyword</code> 中还可以包含 <code>Options</code> 项，该项是对<code>Keyword</code>的进一步说明，其属性有 <code>Required</code>、<code>Default</code>、<code>TryParse</code>、<code>Hidden</code> 等。</p>
+<h3 id="rootkeyintable"><a class="markdownIt-Anchor" href="#rootkeyintable"></a> RootKeyinTable</h3>
+<p><code>KeyinTree</code> 中必须包含 <code>RootKeyinTable</code> 标签，且只能有一个标签。</p>
+<p><code>RootKeyinTable</code> 中应至少包含一个 <code>Keyword</code> 标签，用于定义根命令单词。</p>
+<h3 id="keyword"><a class="markdownIt-Anchor" href="#keyword"></a> Keyword</h3>
+<p><code>Keyword</code> 标签用于定义命令的单词，它可以在 <code>RootKeyinTable</code> 和 <code>KeyinTable</code> 中使用。</p>
 <p><code>Keyword</code> 有如下属性：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>属性名称</th>
 <th>默认值</th>
 <th>可选</th>
@@ -350,19 +321,19 @@ aria-hidden="true">keyinCommand结构-代码命令示例</figcaption>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>SubtableRef</td>
 <td>-</td>
 <td>-</td>
 <td>指定下一级命令</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CommandClass</td>
 <td>Inherit</td>
 <td>是</td>
 <td>指定命令类别</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CommandWord</td>
 <td>-</td>
 <td>必须</td>
@@ -370,94 +341,62 @@ aria-hidden="true">keyinCommand结构-代码命令示例</figcaption>
 </tr>
 </tbody>
 </table>
-<p>其中 <code>CommandClass</code> 属性表示命令的类别，当为
-<code>Inherit</code> 时，表示继承上一个命令的类型。除了
-<code>Inherit</code> 外，还有以下类别：</p>
+<p>其中 <code>CommandClass</code> 属性表示命令的类别，当为 <code>Inherit</code> 时，表示继承上一个命令的类型。除了 <code>Inherit</code> 外，还有以下类别：</p>
 <p>Placement、Viewing、Fence、Parameters、Locks、MacroCommand、Manipulation、Show、Plot、Newfile、Measure、Input、Celllib、Filedesign、Compress、Reference、Database、Dimension、Locate、Tutorial、WorkingSet、List、Undo、SubProcess、ViewParam、ViewImmediate、WindowManager、DialogManager</p>
-<p>在 <code>Keyword</code> 中，可以添加 <code>Option</code> 标签来对
-<code>Keyword</code> 进行设置。<code>Option</code>
-标签是可选的，它拥有如下属性：</p>
+<p>在 <code>Keyword</code> 中，可以添加 <code>Option</code> 标签来对 <code>Keyword</code> 进行设置。<code>Option</code>  标签是可选的，它拥有如下属性：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>属性名称</th>
 <th>默认值</th>
 <th>是否可选</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Required</td>
 <td>false</td>
 <td>是</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Default</td>
 <td>false</td>
 <td>是</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>TryParse</td>
 <td>false</td>
 <td>是</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Hidden</td>
 <td>false</td>
 <td>是</td>
 </tr>
 </tbody>
 </table>
-<p><code>Required="true"</code>
-表示该命令字不是最后一个单词，必须有下级子节点；</p>
-<p><code>Default="true"</code>
-表示该命令字为默认，当省略这一级命令字时取该命令字，在同一级别中只能有一个命令字为
-<code>Default</code> 。</p>
-<p><code>TryParse="true"</code>表示该命令字后可跟用户输入的任意字符，这些不在命令表中的字符串将被传递到命令处理函数的
-unparsed 参数中。比如 Active Color 命令后可跟 Red、Green、Blue
-等，也可以跟一个数字，如 Active Color
-245。我们不可能在命令表中列出每个这样的键入，此时可用
-<code>TryParse</code> 属性。</p>
-<p><code>Hidden="true"</code> 表示该命令隐藏，用户在 Mstn
-的命令浏览器中看不到该命令，但该命令仍然有效。这些隐藏的命令往往为程序所用或暂时不想对用户公开。</p>
-<h3 id="subkeyintables">SubKeyinTables</h3>
-<p><code>SubKeyinTables</code> 是可选标签。若命令大于 1 个单词时，需要用
-<code>SubKeyinTables</code> 来定义剩余的单词。</p>
-<p><code>SubKeyinTables</code> 最多只能在配置文件中出现 1
-次。它下面必须至少有一个 <code>KeyinTable</code> 子节点，每个
-<code>KeyinTable</code> 都必须有一个唯一的 <code>ID</code> 属性值。</p>
-<p>每个 <code>KeyinTable</code> 中应至少有 1 个 <code>Keyword</code>
-子节点。</p>
-<p>每个 <code>KeyinTable</code> 中的 <code>Keyword</code> 可以通过
-<code>SubtableRef = "ID"</code> 的方式来指定到其它的
-<code>KeyinTable</code>，从而形成命令链。</p>
-<h3 id="keyinhandlers">KeyinHandlers</h3>
-<p><code>KeyinHandlers</code> 标签中只有 <code>KeyinHandler</code>
-一种元素。<code>KeyinHandler</code> 中必须拥有 <code>Keyin</code> 和
-<code>Function</code> 两个属性。</p>
-<p><code>KeyinHandler</code> 中的 <code>Keyin</code>
-属性表示完整的键入命令字符串， 它的 <code>Function</code>
-属性为该键入命令对应的处理函数名，该函数名格式为：命名空间名.类名.函数名(或称方法名)
-。换句话说，当用户在 Mstn 中输入 <code>Keyin</code>
-中的字符串时，就会调用到 <code>Function</code> 指定的函数。</p>
-<h2 id="将命令表嵌入-addin">将命令表嵌入 Addin</h2>
-<p>若要使命令表能够正确被 Microstsation 识别，需要在项目的工程配置文件
-(*.csproj) 中的 <code>Project</code> 节点中增加如下配置：</p>
+<p><code>Required=&quot;true&quot;</code> 表示该命令字不是最后一个单词，必须有下级子节点；</p>
+<p><code>Default=&quot;true&quot;</code> 表示该命令字为默认，当省略这一级命令字时取该命令字，在同一级别中只能有一个命令字为 <code>Default</code> 。</p>
+<p><code>TryParse=&quot;true&quot;</code>表示该命令字后可跟用户输入的任意字符，这些不在命令表中的字符串将被传递到命令处理函数的 unparsed 参数中。比如 Active Color 命令后可跟 Red、Green、Blue 等，也可以跟一个数字，如 Active Color 245。我们不可能在命令表中列出每个这样的键入，此时可用 <code>TryParse</code> 属性。</p>
+<p><code>Hidden=&quot;true&quot;</code> 表示该命令隐藏，用户在 Mstn 的命令浏览器中看不到该命令，但该命令仍然有效。这些隐藏的命令往往为程序所用或暂时不想对用户公开。</p>
+<h3 id="subkeyintables"><a class="markdownIt-Anchor" href="#subkeyintables"></a> SubKeyinTables</h3>
+<p><code>SubKeyinTables </code> 是可选标签。若命令大于 1 个单词时，需要用 <code>SubKeyinTables </code>  来定义剩余的单词。</p>
+<p><code>SubKeyinTables</code> 最多只能在配置文件中出现 1 次。它下面必须至少有一个 <code>KeyinTable</code> 子节点，每个 <code>KeyinTable</code> 都必须有一个唯一的 <code>ID</code> 属性值。</p>
+<p>每个 <code>KeyinTable</code> 中应至少有 1 个 <code>Keyword</code> 子节点。</p>
+<p>每个  <code>KeyinTable</code> 中的 <code>Keyword</code> 可以通过 <code>SubtableRef = &quot;ID&quot;</code> 的方式来指定到其它的 <code>KeyinTable</code>，从而形成命令链。</p>
+<h3 id="keyinhandlers"><a class="markdownIt-Anchor" href="#keyinhandlers"></a> KeyinHandlers</h3>
+<p><code>KeyinHandlers</code> 标签中只有 <code>KeyinHandler</code> 一种元素。<code>KeyinHandler</code> 中必须拥有 <code>Keyin</code> 和 <code>Function</code> 两个属性。</p>
+<p><code>KeyinHandler</code> 中的 <code>Keyin</code> 属性表示完整的键入命令字符串， 它的 <code>Function</code> 属性为该键入命令对应的处理函数名，该函数名格式为：命名空间名.类名.函数名(或称方法名) 。换句话说，当用户在 Mstn 中输入 <code>Keyin</code> 中的字符串时，就会调用到 <code>Function</code> 指定的函数。</p>
+<h2 id="将命令表嵌入-addin"><a class="markdownIt-Anchor" href="#将命令表嵌入-addin"></a> 将命令表嵌入 Addin</h2>
+<p>若要使命令表能够正确被 Microstsation 识别，需要在项目的工程配置文件 (*.csproj) 中的 <code>Project</code> 节点中增加如下配置：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">EmbeddedResource</span> <span class="attr">Include</span>=<span class="string">&quot;填写commands.xml相对于.csproj文件的相对路径&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LogicalName</span>&gt;</span>CommandTable.xml<span class="tag">&lt;/<span class="name">LogicalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">SubType</span>&gt;</span>Designer<span class="tag">&lt;/<span class="name">SubType</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">EmbeddedResource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="快速生成命令表">快速生成命令表</h2>
-<h2 id="参考">参考</h2>
+<h2 id="快速生成命令表"><a class="markdownIt-Anchor" href="#快速生成命令表"></a> 快速生成命令表</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<ol type="1">
-<li><a
-target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/b/bdn-blog/posts/addin-xml">自动检查Addin程序中XML格式命令表语法
-- 中国BDN社区-博客 - 中国BDN社区 - Bentley Communities</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/w/chinabdn-wiki/38460/4-addins">第4章、给Addins添加命令
-- 中国BDN社区-威客 - 中国BDN社区 - Bentley Communities</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/b/bdn-blog/posts/learn-microstation-addins-step-by-step-4">Learning
-MicroStation Addins Step by Step 4 - 中国BDN社区-博客 - 中国BDN社区 -
-Bentley Communities</a></li>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/b/bdn-blog/posts/addin-xml">自动检查Addin程序中XML格式命令表语法 - 中国BDN社区-博客 - 中国BDN社区 - Bentley Communities</a></li>
+<li><a target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/w/chinabdn-wiki/38460/4-addins">第4章、给Addins添加命令 - 中国BDN社区-威客 - 中国BDN社区 - Bentley Communities</a></li>
+<li><a target="_blank" rel="noopener" href="https://communities.bentley.com/communities/other_communities/bdn_other_communities/b/bdn-blog/posts/learn-microstation-addins-step-by-step-4">Learning MicroStation Addins Step by Step 4 - 中国BDN社区-博客 - 中国BDN社区 - Bentley Communities</a></li>
 </ol>
 
     </div>
@@ -562,13 +501,13 @@ Bentley Communities</a></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

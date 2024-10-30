@@ -19,19 +19,23 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文介绍基于 Ubuntu 20.04 安装 Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。">
+    <meta name="description" content="本文介绍基于 Ubuntu 20.04 安装 Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JitsiMeet Ubuntu 安装及负载均衡配置">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/3K7WKHR.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文介绍基于 Ubuntu 20.04 安装 Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。">
+<meta property="og:description" content="本文介绍基于 Ubuntu 20.04 安装 Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231102154852501.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20231106111136879.png">
 <meta property="article:published_time" content="2023-11-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-11-01T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Jitsi-meet">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/3K7WKHR.html">
@@ -91,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E8%BF%9E%E6%8E%A5-ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">ssh 连接 Ubuntu 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jitsi-meet-%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">Jitsi-meet 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text">安装环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%AE%8C%E5%85%A8%E9%99%90%E5%AE%9A%E5%9F%9F%E5%90%8Dfqdn%E5%8F%AF%E9%80%89"><span class="nav-number">3.2.</span> <span class="nav-text">设置完全限定域名（FQDN）可选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-prosody-%E5%8C%85"><span class="nav-number">3.3.</span> <span class="nav-text">添加 Prosody 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-jitsi-%E5%8C%85"><span class="nav-number">3.4.</span> <span class="nav-text">添加 Jitsi 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">3.5.</span> <span class="nav-text">设置防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-jitsi-meet"><span class="nav-number">3.6.</span> <span class="nav-text">安装 Jitsi Meet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nat-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.7.</span> <span class="nav-text">NAT 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6"><span class="nav-number">3.8.</span> <span class="nav-text">修改系统限制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%8F%82%E4%BC%9A%E6%97%B6%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">配置参会时输入用户名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt-%E6%8E%88%E6%9D%83"><span class="nav-number">5.</span> <span class="nav-text">jwt 授权</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-jwt"><span class="nav-number">5.1.</span> <span class="nav-text">配置 JWT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E8%AE%BF%E5%AE%A2%E8%BF%9B%E5%85%A5"><span class="nav-number">5.2.</span> <span class="nav-text">允许访客进入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83"><span class="nav-number">6.</span> <span class="nav-text">添加事件回调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">6.1.</span> <span class="nav-text">插件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="nav-number">6.2.</span> <span class="nav-text">插件修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%B8%A2%E5%87%BA%E7%94%A8%E6%88%B7%E5%8A%9F%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">添加踢出用户功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">8.</span> <span class="nav-text">视频负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87-1"><span class="nav-number">8.1.</span> <span class="nav-text">安装环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-jitsi-videobridge2"><span class="nav-number">8.2.</span> <span class="nav-text">安装 jitsi-videobridge2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-sip-%E9%85%8D%E7%BD%AE"><span class="nav-number">8.3.</span> <span class="nav-text">修改 sip 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-sctp-%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.4.</span> <span class="nav-text">使用 Sctp 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3"><span class="nav-number">8.5.</span> <span class="nav-text">同时修改端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99-1"><span class="nav-number">8.6.</span> <span class="nav-text">设置防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="nav-number">8.7.</span> <span class="nav-text">重启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="nav-number">8.8.</span> <span class="nav-text">查看日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-octo"><span class="nav-number">9.</span> <span class="nav-text">配置 OCTO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-octo"><span class="nav-number">9.1.</span> <span class="nav-text">打开 octo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E6%A1%A5%E9%85%8D%E7%BD%AE%E9%80%82%E9%85%8D"><span class="nav-number">9.2.</span> <span class="nav-text">视频桥配置适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1-1"><span class="nav-number">9.3.</span> <span class="nav-text">重启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E8%8A%82%E5%8F%82%E8%80%83"><span class="nav-number">9.4.</span> <span class="nav-text">本节参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number">10.</span> <span class="nav-text">配置文件路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">11.</span> <span class="nav-text">其它</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">12.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text"> 名词解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-%E8%BF%9E%E6%8E%A5-ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text"> ssh 连接 Ubuntu 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jitsi-meet-%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text"> Jitsi-meet 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text"> 安装环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%AE%8C%E5%85%A8%E9%99%90%E5%AE%9A%E5%9F%9F%E5%90%8Dfqdn%E5%8F%AF%E9%80%89"><span class="nav-number">3.2.</span> <span class="nav-text"> 设置完全限定域名（FQDN）可选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-prosody-%E5%8C%85"><span class="nav-number">3.3.</span> <span class="nav-text"> 添加 Prosody 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-jitsi-%E5%8C%85"><span class="nav-number">3.4.</span> <span class="nav-text"> 添加 Jitsi 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">3.5.</span> <span class="nav-text"> 设置防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-jitsi-meet"><span class="nav-number">3.6.</span> <span class="nav-text"> 安装 Jitsi Meet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nat-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.7.</span> <span class="nav-text"> NAT 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6"><span class="nav-number">3.8.</span> <span class="nav-text"> 修改系统限制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%8F%82%E4%BC%9A%E6%97%B6%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text"> 配置参会时输入用户名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt-%E6%8E%88%E6%9D%83"><span class="nav-number">5.</span> <span class="nav-text"> jwt 授权</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-jwt"><span class="nav-number">5.1.</span> <span class="nav-text"> 配置 JWT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E8%AE%BF%E5%AE%A2%E8%BF%9B%E5%85%A5"><span class="nav-number">5.2.</span> <span class="nav-text"> 允许访客进入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83"><span class="nav-number">6.</span> <span class="nav-text"> 添加事件回调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">6.1.</span> <span class="nav-text"> 插件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="nav-number">6.2.</span> <span class="nav-text"> 插件修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%B8%A2%E5%87%BA%E7%94%A8%E6%88%B7%E5%8A%9F%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text"> 添加踢出用户功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">8.</span> <span class="nav-text"> 视频负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87-2"><span class="nav-number">8.1.</span> <span class="nav-text"> 安装环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-jitsi-videobridge2"><span class="nav-number">8.2.</span> <span class="nav-text"> 安装  jitsi-videobridge2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-sip-%E9%85%8D%E7%BD%AE"><span class="nav-number">8.3.</span> <span class="nav-text"> 修改 sip 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-sctp-%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.4.</span> <span class="nav-text"> 使用 Sctp 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3"><span class="nav-number">8.5.</span> <span class="nav-text"> 同时修改端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99-2"><span class="nav-number">8.6.</span> <span class="nav-text"> 设置防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="nav-number">8.7.</span> <span class="nav-text"> 重启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="nav-number">8.8.</span> <span class="nav-text"> 查看日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-octo"><span class="nav-number">9.</span> <span class="nav-text"> 配置 OCTO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-octo"><span class="nav-number">9.1.</span> <span class="nav-text"> 打开 octo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E6%A1%A5%E9%85%8D%E7%BD%AE%E9%80%82%E9%85%8D"><span class="nav-number">9.2.</span> <span class="nav-text"> 视频桥配置适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1-2"><span class="nav-number">9.3.</span> <span class="nav-text"> 重启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E8%8A%82%E5%8F%82%E8%80%83"><span class="nav-number">9.4.</span> <span class="nav-text"> 本节参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number">10.</span> <span class="nav-text"> 配置文件路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">11.</span> <span class="nav-text"> 其它</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">12.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -279,87 +283,92 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img data-src="https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true" /></p>
-<p>本文介绍基于 Ubuntu 20.04 安装
-Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。</p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="https://github.com/jitsi/jicofo/raw/master/doc/diagram.png?raw=true" alt="" /></p>
+<p>本文介绍基于 Ubuntu 20.04 安装 Jitsi-meet，同时实现多个视屏桥的负载均衡。本文只记录安装步骤，安装原理请自行阅读下面的参考文章。</p>
 <span id="more"></span>
-<h2 id="名词解释">名词解释</h2>
+<h2 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h2>
 <p>MUC：Multi User Chat</p>
-<h2 id="ssh-连接-ubuntu-服务器">ssh 连接 Ubuntu 服务器</h2>
+<h2 id="ssh-连接-ubuntu-服务器"><a class="markdownIt-Anchor" href="#ssh-连接-ubuntu-服务器"></a> ssh 连接 Ubuntu 服务器</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh username@ipInLAN</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：</span></span><br><span class="line">ssh yourUserName@<span class="number">192.168</span>.<span class="number">1.1</span></span><br></pre></td></tr></table></figure>
-<h2 id="jitsi-meet-安装">Jitsi-meet 安装</h2>
+<h2 id="jitsi-meet-安装"><a class="markdownIt-Anchor" href="#jitsi-meet-安装"></a> Jitsi-meet 安装</h2>
 <blockquote>
 <p>下列命令中，位于一个代码块中的命令行可以整体复制并运行。</p>
 </blockquote>
-<h3 id="安装环境准备">安装环境准备</h3>
+<h3 id="安装环境准备"><a class="markdownIt-Anchor" href="#安装环境准备"></a> 安装环境准备</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retrieve the latest package versions across all repositories</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure support for apt repositories served via HTTPS</span></span><br><span class="line">sudo apt install apt<span class="literal">-transport-https</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Jitsi requires dependencies from Ubuntu&#x27;s universe package repository</span></span><br><span class="line">sudo apt<span class="literal">-add-repository</span> universe</span><br></pre></td></tr></table></figure>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<h3
-id="设置完全限定域名fqdn可选">设置完全限定域名（FQDN）<code>可选</code></h3>
+<h3 id="设置完全限定域名fqdn可选"><a class="markdownIt-Anchor" href="#设置完全限定域名fqdn可选"></a> 设置完全限定域名（FQDN）<code>可选</code></h3>
 <ul>
-<li><p>设置 hostname</p>
-<p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hostnamectl <span class="built_in">set-hostname</span> meet.example.org</span><br></pre></td></tr></table></figure></p></li>
-<li><p>修改 hosts: <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure></p>
+<li>
+<p>设置 hostname</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hostnamectl <span class="built_in">set-hostname</span> meet.example.org</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>修改 hosts:</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure>
 <p>向 hosts 里添加如下内容：</p>
-<p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span> localhost</span><br><span class="line">x.x.x.x meet.example.org</span><br></pre></td></tr></table></figure></p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span> localhost</span><br><span class="line">x.x.x.x meet.example.org</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>x.x.x.x</code> 是公网 IP 地址</p>
-</blockquote></li>
-<li><p>测试是否联通</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping <span class="string">&quot;<span class="variable">$</span>(hostname)&quot;</span></span><br></pre></td></tr></table></figure></li>
+<p><code>x.x.x.x </code> 是公网 IP 地址</p>
+</blockquote>
+</li>
+<li>
+<p>测试是否联通</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping <span class="string">&quot;<span class="variable">$</span>(hostname)&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="添加-prosody-包">添加 Prosody 包</h3>
+<h3 id="添加-prosody-包"><a class="markdownIt-Anchor" href="#添加-prosody-包"></a> 添加 Prosody 包</h3>
 <p><strong>Ubuntu 18.04 and 20.04</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> deb http://packages.prosody.im/debian $(lsb_release -sc) main | sudo <span class="built_in">tee</span> -a /etc/apt/sources.list</span><br><span class="line">wget https://prosody.im/files/prosody-debian-packages.key -O- | sudo apt-key add -</span><br><span class="line">sudo apt install lua5.2</span><br></pre></td></tr></table></figure>
 <p><strong>Ubuntu 22.04</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sL https://prosody.im/files/prosody-debian-packages.key -o /etc/apt/keyrings/prosody-debian-packages.key</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/etc/apt/keyrings/prosody-debian-packages.key] http://packages.prosody.im/debian <span class="subst">$(lsb_release -sc)</span> main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/prosody-debian-packages.list</span><br><span class="line">sudo apt install lua5.2</span><br></pre></td></tr></table></figure>
-<h3 id="添加-jitsi-包">添加 Jitsi 包</h3>
+<h3 id="添加-jitsi-包"><a class="markdownIt-Anchor" href="#添加-jitsi-包"></a> 添加 Jitsi 包</h3>
 <p><strong>Ubuntu 18.04 and 20.04</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c <span class="string">&#x27;gpg --dearmor &gt; /usr/share/keyrings/jitsi-keyring.gpg&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/&#x27;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/jitsi-stable.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
 <p><strong>Ubuntu 22.04</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c <span class="string">&#x27;gpg --dearmor &gt; /usr/share/keyrings/jitsi-keyring.gpg&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/jitsi-stable.list</span><br></pre></td></tr></table></figure>
 <p><strong>更新包</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<h3 id="设置防火墙">设置防火墙</h3>
+<h3 id="设置防火墙"><a class="markdownIt-Anchor" href="#设置防火墙"></a> 设置防火墙</h3>
 <p>防火墙端口简介：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>端口</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>80/tcp</td>
 <td>证书验证与更新接口</td>
 </tr>
-<tr class="even">
+<tr>
 <td>443/tcp</td>
 <td>jitsi 访问接口</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>10000/udp</td>
 <td>Audio/Video 传输</td>
 </tr>
-<tr class="even">
+<tr>
 <td>22/tcp</td>
 <td>ssh</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3478/udp</td>
 <td>用于查找 stun 服务</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5349/tcp</td>
 <td>Audio/Video 交流</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5222/tcp</td>
 <td>xmpp 通信</td>
 </tr>
-<tr class="even">
+<tr>
 <td>9090/tcp</td>
 <td>websocket 视屏桥中继</td>
 </tr>
@@ -369,63 +378,47 @@ id="设置完全限定域名fqdn可选">设置完全限定域名（FQDN）<code>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="number">80</span>/tcp</span><br><span class="line">sudo ufw allow <span class="number">443</span>/tcp</span><br><span class="line">sudo ufw allow <span class="number">10000</span>/udp</span><br><span class="line">sudo ufw allow <span class="number">22</span>/tcp</span><br><span class="line">sudo ufw allow <span class="number">3478</span>/udp</span><br><span class="line">sudo ufw allow <span class="number">5349</span>/tcp</span><br><span class="line">sudo ufw allow <span class="number">5222</span>/tcp</span><br><span class="line">sudo ufw enable</span><br></pre></td></tr></table></figure>
 <p>设置完后查看状态：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status verbose</span><br></pre></td></tr></table></figure>
-<h3 id="安装-jitsi-meet">安装 Jitsi Meet</h3>
+<h3 id="安装-jitsi-meet"><a class="markdownIt-Anchor" href="#安装-jitsi-meet"></a> 安装 Jitsi Meet</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># jitsi-meet installation</span></span><br><span class="line">sudo apt install jitsi<span class="literal">-meet</span></span><br></pre></td></tr></table></figure>
-<p>在安装的过程中，会让你选择证书，若处于 NAT 中，且前端还有一层 Nginx
-时，可以使用自签名证书。</p>
-<h3 id="nat-设置">NAT 设置</h3>
-<p>机器位于 NAT
-之后，需要打开<code>/etc/jitsi/videobridge/sip-communicator.properties</code>文件：</p>
+<p>在安装的过程中，会让你选择证书，若处于 NAT 中，且前端还有一层 Nginx 时，可以使用自签名证书。</p>
+<h3 id="nat-设置"><a class="markdownIt-Anchor" href="#nat-设置"></a> NAT 设置</h3>
+<p>机器位于 NAT 之后，需要打开<code>/etc/jitsi/videobridge/sip-communicator.properties</code>文件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/videobridge/sip<span class="literal">-communicator</span>.properties</span><br></pre></td></tr></table></figure>
 <p>添加以下设置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=&lt;Local.IP.Address&gt;</span><br><span class="line">org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=&lt;Public.IP.Address&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>参考：<a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/want-to-replace-url-for-stun-mapping-harvester-addresses/126954/3?u=galens">want-to-replace-url-for-stun-mapping-harvester-addresses</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://community.jitsi.org/t/want-to-replace-url-for-stun-mapping-harvester-addresses/126954/3?u=galens">want-to-replace-url-for-stun-mapping-harvester-addresses</a></p>
 </blockquote>
-<h3 id="修改系统限制">修改系统限制</h3>
+<h3 id="修改系统限制"><a class="markdownIt-Anchor" href="#修改系统限制"></a> 修改系统限制</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/systemd/system.conf</span><br></pre></td></tr></table></figure>
 <p>修改为：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DefaultLimitNOFILE=<span class="number">65000</span></span><br><span class="line">DefaultLimitNPROC=<span class="number">65000</span></span><br><span class="line">DefaultTasksMax=<span class="number">65000</span></span><br></pre></td></tr></table></figure>
 <p>查看修改结果：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl show <span class="literal">--property</span> DefaultLimitNPROC</span><br><span class="line">systemctl show <span class="literal">--property</span> DefaultLimitNOFILE</span><br><span class="line">systemctl show <span class="literal">--property</span> DefaultTasksMax</span><br></pre></td></tr></table></figure>
-<p>若没有生效，需要重启系统 <code>sudo reboot</code> 或者重启守护进程
-<code>systemctl daemon-reexec</code>：</p>
+<p>若没有生效，需要重启系统 <code>sudo reboot</code> 或者重启守护进程 <code>systemctl daemon-reexec</code>：</p>
 <p>到这一步，即可通过域名进行访问</p>
-<h2 id="配置参会时输入用户名">配置参会时输入用户名</h2>
+<h2 id="配置参会时输入用户名"><a class="markdownIt-Anchor" href="#配置参会时输入用户名"></a> 配置参会时输入用户名</h2>
 <p>打开配置文件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/yourDomain<span class="literal">-config</span>.js</span><br></pre></td></tr></table></figure>
-<p>在第 570 行左右，找到 <code>requireDisplayName</code>，将其修改为
-<code>true</code>。</p>
+<p>在第 570 行左右，找到 <code>requireDisplayName</code>，将其修改为 <code>true</code>。</p>
 <p>重启 prosody</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl resetart prosody</span><br></pre></td></tr></table></figure>
-<h2 id="jwt-授权">jwt 授权</h2>
-<p>为了方便使用 <a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe">IFrame
-API</a>
-的方式与现有的系统集成，需要配置会议授权，方便对会议进行管理。</p>
-<h3 id="配置-jwt">配置 JWT</h3>
+<h2 id="jwt-授权"><a class="markdownIt-Anchor" href="#jwt-授权"></a> jwt 授权</h2>
+<p>为了方便使用 <a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe">IFrame API</a> 的方式与现有的系统集成，需要配置会议授权，方便对会议进行管理。</p>
+<h3 id="配置-jwt"><a class="markdownIt-Anchor" href="#配置-jwt"></a> 配置 JWT</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt<span class="literal">-get</span> install jitsi<span class="literal">-meet-tokens</span></span><br></pre></td></tr></table></figure>
 <p>安装过程中，会要求输入 ApplicationId 和 Secret：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231102154852501.png"
-alt="image-20231102154852501" />
-<figcaption aria-hidden="true">image-20231102154852501</figcaption>
-</figure>
-<p>生成 token 有格式要求，见：<a
-target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md#token-structure">lib-jitsi-meet/doc/tokens.md</a></p>
-<p>生成 token 后，可以在 url 中添加 <code>jwt=xxx</code>
-来进行测试。</p>
-<h3 id="允许访客进入">允许访客进入</h3>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231102154852501.png" alt="image-20231102154852501" /></p>
+<p>生成 token 有格式要求，见：<a target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md#token-structure">lib-jitsi-meet/doc/tokens.md</a></p>
+<p>生成 token 后，可以在 url 中添加 <code>jwt=xxx</code> 来进行测试。</p>
+<h3 id="允许访客进入"><a class="markdownIt-Anchor" href="#允许访客进入"></a> 允许访客进入</h3>
 <p>打开配置文件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/prosody/conf.d/meet.mydomain.com.cfg.lua</span><br></pre></td></tr></table></figure>
-<p>向 <code>VirtualHost "jitmeet.example.com"</code> 中添加
-<code>allow_empty_token = true</code>：</p>
+<p>向 <code>VirtualHost &quot;jitmeet.example.com&quot;</code> 中添加 <code>allow_empty_token = true</code>：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">VirtualHost <span class="string">&quot;jitmeet.example.com&quot;</span></span><br><span class="line">    authentication    = <span class="string">&quot;token&quot;</span>;</span><br><span class="line">    app_id            = <span class="string">&quot;example_app_id&quot;</span>;         <span class="literal">--</span> application identifier</span><br><span class="line">    app_secret        = <span class="string">&quot;example_app_secret&quot;</span>;     <span class="literal">--</span> application secret known only to your token</span><br><span class="line">                                                  <span class="literal">--</span> generator and the plugin</span><br><span class="line">    allow_empty_token = true;                     <span class="literal">--</span> tokens are verified only <span class="keyword">if</span> they are supplied by the client</span><br></pre></td></tr></table></figure>
-<h2 id="添加事件回调">添加事件回调</h2>
-<p>为了实现现有系统获取会议的创建结束信息，需要在 jitsi-meet
-中添加事件回调到既有的系统中。</p>
-<h3 id="插件配置">插件配置</h3>
+<h2 id="添加事件回调"><a class="markdownIt-Anchor" href="#添加事件回调"></a> 添加事件回调</h2>
+<p>为了实现现有系统获取会议的创建结束信息，需要在 jitsi-meet 中添加事件回调到既有的系统中。</p>
+<h3 id="插件配置"><a class="markdownIt-Anchor" href="#插件配置"></a> 插件配置</h3>
 <p><strong>下载插件：</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/jitsi<span class="literal">-meet</span>/prosody<span class="literal">-plugins</span>/</span><br><span class="line">sudo <span class="built_in">wget</span> <span class="literal">-O</span> mod_event_sync_component.lua https://raw.githubusercontent.com/jitsi<span class="literal">-contrib</span>/prosody<span class="literal">-plugins</span>/main/event_sync/mod_event_sync_component.lua</span><br></pre></td></tr></table></figure>
 <p><strong>启用插件：</strong></p>
@@ -435,81 +428,70 @@ target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blo
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Component <span class="string">&quot;event_sync.meet.mydomain.com&quot;</span> <span class="string">&quot;event_sync_component&quot;</span></span><br><span class="line">    muc_component = <span class="string">&quot;conference.meet.mydomain.com&quot;</span></span><br><span class="line">    api_prefix = <span class="string">&quot;http://your.api.server/api&quot;</span></span><br></pre></td></tr></table></figure>
 <p>注意：<code>api_prefix 末尾没有 / 号</code></p>
 <blockquote>
-<p>更多配置，参考：<a
-target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#optional-config">prosody-plugins/event_sync/README.md
-at main · jitsi-contrib/prosody-plugins (github.com)</a></p>
+<p>更多配置，参考：<a target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#optional-config">prosody-plugins/event_sync/README.md at main · jitsi-contrib/prosody-plugins (github.com)</a></p>
 </blockquote>
 <p>回调的 api 为：<code>http://your.api.server/api/events/xx</code></p>
 <p><strong>重启 prosody：</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart prosody</span><br></pre></td></tr></table></figure>
-<h3 id="插件修改">插件修改</h3>
-<p>由于允许访客访问，原插件没有返回用户的
-display_name，当用户通过网址进入时，无法确定用户的身份，因此需要返回用户自己设置的
-display_name 供回调服务器处理。</p>
+<h3 id="插件修改"><a class="markdownIt-Anchor" href="#插件修改"></a> 插件修改</h3>
+<p>由于允许访客访问，原插件没有返回用户的 display_name，当用户通过网址进入时，无法确定用户的身份，因此需要返回用户自己设置的 display_name 供回调服务器处理。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/jitsi<span class="literal">-meet</span>/prosody<span class="literal">-plugins</span>/mod_event_sync_component.lua</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p><strong>修改 occupant_joined：</strong></p>
+<ol>
+<li>
+<p><strong>修改 occupant_joined：</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到 occupant_joined(约在 289 行) 函数</span></span><br><span class="line"><span class="comment">-- 将</span></span><br><span class="line"><span class="keyword">local</span> occupant_data = room_data:on_occupant_joined(occupant_jid, event.origin);</span><br><span class="line"><span class="comment">-- 修改为</span></span><br><span class="line"><span class="keyword">local</span> occupant_data = room_data:on_occupant_joined(occupant_jid, event);</span><br></pre></td></tr></table></figure>
 <p><strong>修改 EventData:on_occupant_joined：</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到 EventData:on_occupant_joined(约在 144 行) 函数,修改为如下代码：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EventData:on_occupant_joined</span><span class="params">(occupant_jid, event)</span></span></span><br><span class="line">    <span class="keyword">local</span> event_origin = event.origin</span><br><span class="line">    <span class="keyword">local</span> user_context = event_origin.jitsi_meet_context_user <span class="keyword">or</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- get displayName</span></span><br><span class="line">    <span class="keyword">local</span> display_name = event.occupant:get_presence():get_child_text(<span class="string">&#x27;nick&#x27;</span>, <span class="string">&#x27;http://jabber.org/protocol/nick&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- N.B. we only store user details on join and assume they don&#x27;t change throughout the duration of the meeting</span></span><br><span class="line">    <span class="keyword">local</span> occupant_data = &#123;</span><br><span class="line">        occupant_jid = occupant_jid,</span><br><span class="line">        name = user_context.name,</span><br><span class="line">        id = user_context.id,</span><br><span class="line">        email = user_context.email,</span><br><span class="line">        joined_at = now(),</span><br><span class="line">        left_at = <span class="literal">nil</span>,</span><br><span class="line">        display_name = display_name,</span><br><span class="line">        nick = event.occupant.nick,</span><br><span class="line">        role = event.occupant.role,</span><br><span class="line">        stable_id = event.occupant.stable_id,</span><br><span class="line">        bare_jid = event.occupant.bare_jid</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">self</span>.occupants[occupant_jid] = occupant_data;</span><br><span class="line">    <span class="built_in">self</span>.active[occupant_jid] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> occupant_data;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></li>
-<li><p>重启 prosody</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart prosody</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到 EventData:on_occupant_joined(约在 144 行) 函数,修改为如下代码：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EventData:on_occupant_joined</span><span class="params">(occupant_jid, event)</span></span></span><br><span class="line">    <span class="keyword">local</span> event_origin = event.origin</span><br><span class="line">    <span class="keyword">local</span> user_context = event_origin.jitsi_meet_context_user <span class="keyword">or</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- get displayName</span></span><br><span class="line">    <span class="keyword">local</span> display_name = event.occupant:get_presence():get_child_text(<span class="string">&#x27;nick&#x27;</span>, <span class="string">&#x27;http://jabber.org/protocol/nick&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- N.B. we only store user details on join and assume they don&#x27;t change throughout the duration of the meeting</span></span><br><span class="line">    <span class="keyword">local</span> occupant_data = &#123;</span><br><span class="line">        occupant_jid = occupant_jid,</span><br><span class="line">        name = user_context.name,</span><br><span class="line">        id = user_context.id,</span><br><span class="line">        email = user_context.email,</span><br><span class="line">        joined_at = now(),</span><br><span class="line">        left_at = <span class="literal">nil</span>,</span><br><span class="line">        display_name = display_name,</span><br><span class="line">        nick = event.occupant.nick,</span><br><span class="line">        role = event.occupant.role,</span><br><span class="line">        stable_id = event.occupant.stable_id,</span><br><span class="line">        bare_jid = event.occupant.bare_jid</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">self</span>.occupants[occupant_jid] = occupant_data;</span><br><span class="line">    <span class="built_in">self</span>.active[occupant_jid] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> occupant_data;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重启 prosody</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart prosody</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="添加踢出用户功能">添加踢出用户功能</h2>
+<h2 id="添加踢出用户功能"><a class="markdownIt-Anchor" href="#添加踢出用户功能"></a> 添加踢出用户功能</h2>
 <p>当用户加入后，检测是否有同名用户，若有，则踢出存在的同名用户</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 在顶部添加导入</span></span><br><span class="line"><span class="keyword">local</span> st = <span class="built_in">require</span> <span class="string">&quot;util.stanza&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找到 function occupant_joined(event) 方法，在 `room_data:on_occupant_joined` 之后添加如下代码</span></span><br><span class="line"><span class="keyword">for</span> _, occupant <span class="keyword">in</span> room:each_occupant() <span class="keyword">do</span>        </span><br><span class="line">    <span class="keyword">local</span> pr = occupant:get_presence();</span><br><span class="line">    <span class="keyword">local</span> displayName = pr:get_child_text(</span><br><span class="line">            <span class="string">&#x27;nick&#x27;</span>, <span class="string">&#x27;http://jabber.org/protocol/nick&#x27;</span>);        </span><br><span class="line">    <span class="keyword">if</span> displayName == occupant_data.display_name <span class="keyword">and</span> occupant.nick~=occupant_data.nick <span class="keyword">then</span></span><br><span class="line">        <span class="comment">-- 获取原用户的角色, 若为moderator, 则将新用户设置为moderator</span></span><br><span class="line">        <span class="keyword">local</span> oldRole = room:get_role(occupant.nick);</span><br><span class="line">        room:set_role(<span class="literal">true</span>, occupant.nick, <span class="literal">nil</span>);</span><br><span class="line">        <span class="keyword">if</span> oldRole == <span class="string">&#x27;moderator&#x27;</span> <span class="keyword">then</span></span><br><span class="line">            room:set_role(<span class="literal">true</span>, occupant_data.occupant_jid, <span class="string">&#x27;moderator&#x27;</span>);</span><br><span class="line">            room:set_affiliation(<span class="literal">true</span>, occupant_data.occupant_jid, <span class="string">&#x27;owner&#x27;</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    		room:set_role(<span class="literal">true</span>, occupant.nick, <span class="literal">nil</span>);</span><br><span class="line">        <span class="built_in">module</span>:<span class="built_in">log</span>(<span class="string">&#x27;info&#x27;</span>, <span class="string">&#x27;踢出用户 %s kicked %s from %s&#x27;</span>,displayName, occupant.nick, room.jid);            </span><br><span class="line">         <span class="comment">-- 发送 kickParticipant 命令</span></span><br><span class="line">        <span class="keyword">local</span> presence = st.presence(&#123;</span><br><span class="line">            to = occupant.jid,</span><br><span class="line">            from = room.jid,</span><br><span class="line">            <span class="built_in">type</span> = <span class="string">&quot;unavailable&quot;</span></span><br><span class="line">        &#125;):tag(<span class="string">&quot;status&quot;</span>):text(<span class="string">&quot;你已被移出房间 &quot;</span> .. room.jid):up();</span><br><span class="line">        <span class="built_in">module</span>:send(presence);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>参考：<a
-target="_blank" rel="noopener" href="https://modules.prosody.im/mod_http_muc_kick.html">mod_http_muc_kick
-- Prosody Community Modules</a></p>
-<h2 id="视频负载均衡">视频负载均衡</h2>
-<h3 id="安装环境准备-1">安装环境准备</h3>
-<p>在另一台主机上执行 <a href="#安装环境准备">安装环境准备</a> 和 <a
-href="添加%20Jitsi%20包">添加 Jitsi 包</a></p>
-<h3 id="安装-jitsi-videobridge2">安装 jitsi-videobridge2</h3>
+<p>参考：<a target="_blank" rel="noopener" href="https://modules.prosody.im/mod_http_muc_kick.html">mod_http_muc_kick - Prosody Community Modules</a></p>
+<h2 id="视频负载均衡"><a class="markdownIt-Anchor" href="#视频负载均衡"></a> 视频负载均衡</h2>
+<h3 id="安装环境准备-2"><a class="markdownIt-Anchor" href="#安装环境准备-2"></a> 安装环境准备</h3>
+<p>在另一台主机上执行 <a href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">安装环境准备</a> 和 [添加 Jitsi 包](添加 Jitsi 包)</p>
+<h3 id="安装-jitsi-videobridge2"><a class="markdownIt-Anchor" href="#安装-jitsi-videobridge2"></a> 安装  jitsi-videobridge2</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install jitsi<span class="literal">-videobridge2</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改-sip-配置">修改 sip 配置</h3>
+<h3 id="修改-sip-配置"><a class="markdownIt-Anchor" href="#修改-sip-配置"></a> 修改 sip 配置</h3>
 <p>分别修改主服务器、视频服务器的配置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/jitsi/videobridge/sip<span class="literal">-communicator</span>.properties</span><br></pre></td></tr></table></figure>
 <p>禁用主服务器的证书验证：</p>
-<p>向 <code>/etc/jitsi/videobridge/sip-communicator.properties</code>
-添加如下配置</p>
+<p>向 <code> /etc/jitsi/videobridge/sip-communicator.properties</code> 添加如下配置</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.jitsi.videobridge.xmpp.user.shard.DISABLE_CERTIFICATE_VERIFICATION=true</span><br></pre></td></tr></table></figure>
 <p>将主服务器的 sip 配置复制到负载均衡服务器</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">org.ice4j.ice.harvest.DISABLE_AWS_HARVESTER=true</span><br><span class="line">org.ice4j.ice.harvest.STUN_MAPPING_HARVESTER_ADDRESSES=meet<span class="literal">-jit-si-turnrelay</span>.jitsi.net:<span class="number">443</span></span><br><span class="line">org.jitsi.videobridge.ENABLE_STATISTICS=true</span><br><span class="line">org.jitsi.videobridge.STATISTICS_TRANSPORT=muc</span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.HOSTNAME=<span class="number">192.168</span>.<span class="number">23.20</span> <span class="comment"># 此处为主服务所在的 ip</span></span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.DOMAIN=auth.yourdomain</span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.USERNAME=jvb</span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.PASSWORD=siBYPh4z</span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.MUC_JIDS=JvbBrewery@internal.yourdomain</span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.MUC_NICKNAME=<span class="number">8705</span>d9ca<span class="literal">-4031-4080-8435-78d1f5f3025e</span> <span class="comment"># 此处值应唯一，不与其它服务冲突</span></span><br><span class="line">org.jitsi.videobridge.xmpp.user.shard.DISABLE_CERTIFICATE_VERIFICATION=true</span><br><span class="line">org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=<span class="number">192.168</span>.<span class="number">23.20</span></span><br><span class="line">org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=<span class="number">223</span>.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
-<h3 id="使用-sctp-模式">使用 Sctp 模式</h3>
+<h3 id="使用-sctp-模式"><a class="markdownIt-Anchor" href="#使用-sctp-模式"></a> 使用 Sctp 模式</h3>
 <p>增加视频桥后，连接时会报错：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231106111136879.png"
-alt="image-20231106111136879" />
-<figcaption aria-hidden="true">image-20231106111136879</figcaption>
-</figure>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231106111136879.png" alt="image-20231106111136879" /></p>
 <p>有两种方式可以解决，本文采用最简单的方式即 Sctp 方式：</p>
 <p>编辑文件</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/videobridge/jvb.conf</span><br></pre></td></tr></table></figure>
 <p>在 <code>videobridge</code>修改如下内容：</p>
-<ol type="1">
+<ol>
 <li>允许 sctp</li>
 <li>关闭 websocket</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">sctp <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// Whether SCTP data channels are enabled.</span></span><br><span class="line">  enabled=<span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">stats <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// The interval at which stats are gathered.</span></span><br><span class="line">  interval = <span class="number">5</span> seconds</span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">websockets <span class="punctuation">&#123;</span></span><br><span class="line">  enabled=<span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  server-id=<span class="string">&quot;default-id&quot;</span></span><br><span class="line">  <span class="comment">// Whether to negotiate WebSocket compression (permessage-deflate)</span></span><br><span class="line">  enable-compression = <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"></span><br><span class="line">          </span><br><span class="line">  <span class="comment">// Optional, even when &#x27;enabled&#x27; is set to true</span></span><br><span class="line">  #tls=<span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="comment">// The domains used when advertising a colibri-ws URL. Must be set when enabled = true</span></span><br><span class="line">  domains= <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line">  <span class="comment">// The domain used when advertising a colibri-relay-ws URL. If empty defaults to the value of `domains`.</span></span><br><span class="line">  relay-domains = <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="同时修改端口">同时修改端口</h3>
-<p>本配置位于 NAT 内，只有一个公网出口，为了不与其它 jitsi-videobridge2
-冲突，修改连接端口。</p>
+<h3 id="同时修改端口"><a class="markdownIt-Anchor" href="#同时修改端口"></a> 同时修改端口</h3>
+<p>本配置位于 NAT 内，只有一个公网出口，为了不与其它 jitsi-videobridge2 冲突，修改连接端口。</p>
 <blockquote>
 <p>使用 sctp 后，不需要修改 websocket 端口</p>
 </blockquote>
-<h3 id="设置防火墙-1">设置防火墙</h3>
+<h3 id="设置防火墙-2"><a class="markdownIt-Anchor" href="#设置防火墙-2"></a> 设置防火墙</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="number">22</span>/tcp</span><br><span class="line">sudo ufw allow <span class="number">10000</span>/udp <span class="comment"># 如果是在 NAT 后面，此处的修改要与其它主机的 jitsi-videobridge2 端口不一样</span></span><br><span class="line">sudo ufw enable</span><br></pre></td></tr></table></figure>
-<h3 id="重启服务">重启服务</h3>
+<h3 id="重启服务"><a class="markdownIt-Anchor" href="#重启服务"></a> 重启服务</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jitsi<span class="literal">-videobridge2</span> restart</span><br></pre></td></tr></table></figure>
-<h3 id="查看日志">查看日志</h3>
-<p>通过查看日志，可以了解 jitsi-videobridge2
-启动情况，并根据日志记录排查错误问题。</p>
+<h3 id="查看日志"><a class="markdownIt-Anchor" href="#查看日志"></a> 查看日志</h3>
+<p>通过查看日志，可以了解 jitsi-videobridge2 启动情况，并根据日志记录排查错误问题。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cat</span> /var/log/jitsi/jvb.log</span><br></pre></td></tr></table></figure>
-<h2 id="配置-octo">配置 OCTO</h2>
-<p>当配置多个视频桥后，它只能对多个会议进行负载均衡，无法对单个会议生效。因此需要配置
-OCTO 来达到这一目的。</p>
-<h3 id="打开-octo">打开 octo</h3>
+<h2 id="配置-octo"><a class="markdownIt-Anchor" href="#配置-octo"></a> 配置 OCTO</h2>
+<p>当配置多个视频桥后，它只能对多个会议进行负载均衡，无法对单个会议生效。因此需要配置 OCTO 来达到这一目的。</p>
+<h3 id="打开-octo"><a class="markdownIt-Anchor" href="#打开-octo"></a> 打开 octo</h3>
 <p>编辑文件</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/jicofo/jicofo.conf</span><br></pre></td></tr></table></figure>
 <p>增改如下内容：</p>
@@ -519,7 +501,7 @@ OCTO 来达到这一目的。</p>
 <li>RegionBasedBridgeSelectionStrategy：按地区选择视频桥</li>
 <li>SplitBridgeSelectionStrategy：总是使用不同的视频桥，主要用于测试</li>
 </ul>
-<h3 id="视频桥配置适配">视频桥配置适配</h3>
+<h3 id="视频桥配置适配"><a class="markdownIt-Anchor" href="#视频桥配置适配"></a> 视频桥配置适配</h3>
 <p>打开所有视屏桥服务器如下文件</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/videobridge/sip<span class="literal">-communicator</span>.properties</span><br></pre></td></tr></table></figure>
 <p>分别增加如下配置</p>
@@ -530,121 +512,108 @@ OCTO 来达到这一目的。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/jitsi/videobridge/jvb.conf</span><br></pre></td></tr></table></figure>
 <p>高 sctp 中增加 <code>sctp-datachannels = true</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sctp <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// Whether SCTP data channels are enabled.</span></span><br><span class="line">  enabled=<span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Whether bridge-to-bridge communication should use SCTP datachannels (as opposed to websockets)</span></span><br><span class="line">  sctp-datachannels = <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="重启服务-1">重启服务</h3>
+<h3 id="重启服务-2"><a class="markdownIt-Anchor" href="#重启服务-2"></a> 重启服务</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service jicofo restart</span><br><span class="line">sudo service jitsi<span class="literal">-videobridge2</span> restart</span><br></pre></td></tr></table></figure>
-<h3 id="本节参考">本节参考</h3>
-<ol type="1">
-<li><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/blob/master/doc/relay.md">jitsi-videobridge/doc/relay.md
-at master · jitsi/jitsi-videobridge (github.com)</a></li>
+<h3 id="本节参考"><a class="markdownIt-Anchor" href="#本节参考"></a> 本节参考</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/blob/master/doc/relay.md">jitsi-videobridge/doc/relay.md at master · jitsi/jitsi-videobridge (github.com)</a></li>
 </ol>
-<h2 id="配置文件路径">配置文件路径</h2>
+<h2 id="配置文件路径"><a class="markdownIt-Anchor" href="#配置文件路径"></a> 配置文件路径</h2>
 <table>
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>路径</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>/etc/prosody/conf.avail/[your-domain].cfg.lua</td>
 <td>域配置</td>
 </tr>
-<tr class="even">
+<tr>
 <td>/etc/jitsi/meet/[your-domain]-config.js</td>
 <td>jitsi 系统配置</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>/etc/jitsi/videobridge/config</td>
 <td>videobridge 配置文件</td>
 </tr>
-<tr class="even">
+<tr>
 <td>/etc/jitsi/videobridge/sip-communicator.properties</td>
 <td>sip 配置文件</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>/var/log/prosody</td>
 <td>prosody 日志位置</td>
 </tr>
-<tr class="even">
+<tr>
 <td>/var/log/jitsi/jvb.log</td>
 <td>jvb 日志位置</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>/var/log/jitsi/jicofo.log</td>
 <td>jicofo 日志位置</td>
 </tr>
-<tr class="even">
+<tr>
 <td>/usr/share/jitsi-meet/prosody-plugins/mod_event_sync_component.lua</td>
 <td>even_sync 插件位置</td>
 </tr>
 </tbody>
 </table>
-<h2 id="其它">其它</h2>
-<p>如果需要额外的功能，可以通过安装 prosody 模块来实现，详见：<a
-target="_blank" rel="noopener" href="https://modules.prosody.im/index.html">Prosody Community
-Modules</a></p>
-<h2 id="参考">参考</h2>
+<h2 id="其它"><a class="markdownIt-Anchor" href="#其它"></a> 其它</h2>
+<p>如果需要额外的功能，可以通过安装 prosody 模块来实现，详见：<a target="_blank" rel="noopener" href="https://modules.prosody.im/index.html">Prosody Community Modules</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
-<ol type="1">
-<li><p><a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-quickstart">Self-Hosting
-Guide - Debian/Ubuntu server | Jitsi Meet</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/tree/master/doc">jitsi-videobridge/doc
-at master · jitsi/jitsi-videobridge (github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">lib-jitsi-meet/doc/tokens.md
-at master · jitsi/lib-jitsi-meet (github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#event-sync">prosody-plugins/event_sync/README.md
-at main · jitsi-contrib/prosody-plugins (github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-configuration/">Configuration
-| Jitsi Meet</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://doganbros.com/blog/Scaling-Up-Your-Jitsi-with-Jitsi-Bridges">Scaling
-Up Your Jitsi with Jitsi Bridges (doganbros.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/how-to-add-another-videobridge-getting-error-when-adding-a-new-video-bridge-to-the-standalone-setup/122635">How
-to add another videobridge. Getting error when adding a new video bridge
-to the standalone setup - Install &amp; Config - Jitsi Community Forum -
-developers &amp; users</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/want-to-replace-url-for-stun-mapping-harvester-addresses/126954">Want
-to replace url for STUN MAPPING HARVESTER ADDRESSES? - Install &amp;
-Config - Jitsi Community Forum - developers &amp; users</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/how-to-add-another-videobridge-getting-error-when-adding-a-new-video-bridge-to-the-standalone-setup/122635/26?u=galens">disable
-websockets to the bridge and use sctp</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/blob/master/doc/web-sockets.md">jitsi-videobridge/doc/web-sockets.md
-at master · jitsi/jitsi-videobridge (github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/is-port-9090-required-for-jvb-with-websockets/86854">Is
-port 9090 required for JVB with Websockets? - Install &amp; Config -
-Jitsi Community Forum - developers &amp; users</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/need-to-test-that-whether-its-working-or-not-after-enabling-octo-octo-configuration/53063">Need
-to test that whether it's working or not after enabling OCTO / OCTO
-configuration - Install &amp; Config - Jitsi Community Forum -
-developers &amp; users</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://github.com/jitsi/jicofo/blob/master/jicofo-selector/src/main/resources/reference.conf#L337">jicofo/jicofo-selector/src/main/resources/reference.conf
-at master · jitsi/jicofo (github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://gist.github.com/facsiaginsa/5360f4f84cc575586ee4dda7f0580bad">This
-is tutorial to configure octo feature on jitsi.
-(github.com)</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/working-multi-jitsi-meet-multi-videobridge-setup/24704/27?u=galens">working-multi-jitsi-meet-multi-videobridge-setup</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://community.jitsi.org/t/tutorial-jibri-overview-troubleshooting-tips-tricks-solve-your-jibri-problems-quickly/86054">tutorial-jibri-overview-troubleshooting-tips-tricks-solve-your-jibri-problems-quickly</a></p></li>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-quickstart">Self-Hosting Guide - Debian/Ubuntu server | Jitsi Meet</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/tree/master/doc">jitsi-videobridge/doc at master · jitsi/jitsi-videobridge (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">lib-jitsi-meet/doc/tokens.md at master · jitsi/lib-jitsi-meet (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#event-sync">prosody-plugins/event_sync/README.md at main · jitsi-contrib/prosody-plugins (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-configuration/">Configuration | Jitsi Meet</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://doganbros.com/blog/Scaling-Up-Your-Jitsi-with-Jitsi-Bridges">Scaling Up Your Jitsi with Jitsi Bridges (doganbros.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/how-to-add-another-videobridge-getting-error-when-adding-a-new-video-bridge-to-the-standalone-setup/122635">How to add another videobridge. Getting error when adding a new video bridge to the standalone setup - Install &amp; Config - Jitsi Community Forum - developers &amp; users</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/want-to-replace-url-for-stun-mapping-harvester-addresses/126954">Want to replace url for STUN MAPPING HARVESTER ADDRESSES? - Install &amp; Config - Jitsi Community Forum - developers &amp; users</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/how-to-add-another-videobridge-getting-error-when-adding-a-new-video-bridge-to-the-standalone-setup/122635/26?u=galens">disable websockets to the bridge and use sctp</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-videobridge/blob/master/doc/web-sockets.md">jitsi-videobridge/doc/web-sockets.md at master · jitsi/jitsi-videobridge (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/is-port-9090-required-for-jvb-with-websockets/86854">Is port 9090 required for JVB with Websockets? - Install &amp; Config - Jitsi Community Forum - developers &amp; users</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/need-to-test-that-whether-its-working-or-not-after-enabling-octo-octo-configuration/53063">Need to test that whether it’s working or not after enabling OCTO / OCTO configuration - Install &amp; Config - Jitsi Community Forum - developers &amp; users</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/jitsi/jicofo/blob/master/jicofo-selector/src/main/resources/reference.conf#L337">jicofo/jicofo-selector/src/main/resources/reference.conf at master · jitsi/jicofo (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/facsiaginsa/5360f4f84cc575586ee4dda7f0580bad">This is tutorial to configure octo feature on jitsi. (github.com)</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/working-multi-jitsi-meet-multi-videobridge-setup/24704/27?u=galens">working-multi-jitsi-meet-multi-videobridge-setup</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://community.jitsi.org/t/tutorial-jibri-overview-troubleshooting-tips-tricks-solve-your-jibri-problems-quickly/86054">tutorial-jibri-overview-troubleshooting-tips-tricks-solve-your-jibri-problems-quickly</a></p>
+</li>
 </ol>
 
     </div>
@@ -749,13 +718,13 @@ target="_blank" rel="noopener" href="https://community.jitsi.org/t/tutorial-jibr
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

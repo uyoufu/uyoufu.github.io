@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="网站使用了 Let&#39;s Encrypt 数字证书，随着 DST Root CA X3 根证书于 2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG Root X1），导致在访问网站时提示网站不安全或者无法访问。">
+    <meta name="description" content="网站使用了 Let’s Encrypt 数字证书，随着 DST Root CA X3 根证书于 2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG Root X1），导致在访问网站时提示网站不安全或者无法访问。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="电脑无法更新Let&#39;sEncrypt根证书的解决办法">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2021/G2SGMF.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="网站使用了 Let&#39;s Encrypt 数字证书，随着 DST Root CA X3 根证书于 2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG Root X1），导致在访问网站时提示网站不安全或者无法访问。">
+<meta property="og:description" content="网站使用了 Let’s Encrypt 数字证书，随着 DST Root CA X3 根证书于 2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG Root X1），导致在访问网站时提示网站不安全或者无法访问。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/01/20/GwV9IXjN7JdEMmB.png">
 <meta property="article:published_time" content="2021-10-08T16:00:00.000Z">
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%87%BA%E7%8E%B0%E6%98%AF%E6%A0%B9%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">如何判断出现是根证书问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%A0%B9%E8%AF%81%E4%B9%A6"><span class="nav-number">2.</span> <span class="nav-text">手动更新根证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E8%AF%81%E4%B9%A6"><span class="nav-number">3.</span> <span class="nav-text">导出证书</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%87%BA%E7%8E%B0%E6%98%AF%E6%A0%B9%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 如何判断出现是根证书问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%A0%B9%E8%AF%81%E4%B9%A6"><span class="nav-number">2.</span> <span class="nav-text"> 手动更新根证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E8%AF%81%E4%B9%A6"><span class="nav-number">3.</span> <span class="nav-text"> 导出证书</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -287,20 +287,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>网站使用了 Let's Encrypt 数字证书，随着 DST Root CA X3 根证书于
-2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG
-Root X1），导致在访问网站时提示网站不安全或者无法访问。</p>
+    <div class="post-body" itemprop="articleBody"><p>网站使用了 Let’s Encrypt 数字证书，随着 DST Root CA X3 根证书于 2021年09月30日过期，有的电脑可能会无法将网站的根证书更新到新的根节点（ISRG Root X1），导致在访问网站时提示网站不安全或者无法访问。</p>
 <span id="more"></span>
-<h2 id="如何判断出现是根证书问题">如何判断出现是根证书问题</h2>
-<p>在浏览器中打开【证书窗口】，切换到【证书路径】，查看证书路径中根节点的状态。如果没有更新的话，根节点为
-DST Root CA X3。</p>
-<h2 id="手动更新根证书">手动更新根证书</h2>
-<p>先在正常使用的电脑上面导出 ISRG Root X1
-证书，然后在有问题的电脑中导入即可。</p>
-<p>如果在 mmc 中导入证书无效时，可以通过 IE
-进行导入。具体导入方法见视频：https://youtu.be/scaPxbWy_2E</p>
-<h2 id="导出证书">导出证书</h2>
-<p><img data-src="https://s2.loli.net/2022/01/20/GwV9IXjN7JdEMmB.png" /></p>
+<h2 id="如何判断出现是根证书问题"><a class="markdownIt-Anchor" href="#如何判断出现是根证书问题"></a> 如何判断出现是根证书问题</h2>
+<p>在浏览器中打开【证书窗口】，切换到【证书路径】，查看证书路径中根节点的状态。如果没有更新的话，根节点为 DST Root CA X3。</p>
+<h2 id="手动更新根证书"><a class="markdownIt-Anchor" href="#手动更新根证书"></a> 手动更新根证书</h2>
+<p>先在正常使用的电脑上面导出 ISRG Root X1 证书，然后在有问题的电脑中导入即可。</p>
+<p>如果在 mmc 中导入证书无效时，可以通过 IE 进行导入。具体导入方法见视频：<a target="_blank" rel="noopener" href="https://youtu.be/scaPxbWy_2E">https://youtu.be/scaPxbWy_2E</a></p>
+<h2 id="导出证书"><a class="markdownIt-Anchor" href="#导出证书"></a> 导出证书</h2>
+<p><img data-src="https://s2.loli.net/2022/01/20/GwV9IXjN7JdEMmB.png" alt="" /></p>
 
     </div>
 
@@ -403,13 +398,13 @@ DST Root CA X3。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

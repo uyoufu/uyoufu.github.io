@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="进行 Bentley 系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对 ORD 的环境变量进行系统的归纳。">
+    <meta name="description" content="进行 Bentley 系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对 ORD 的环境变量进行系统的归纳。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ORD 环境变量汇总">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2020/2HMJJW9.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="进行 Bentley 系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对 ORD 的环境变量进行系统的归纳。">
+<meta property="og:description" content="进行 Bentley 系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对 ORD 的环境变量进行系统的归纳。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-04-13T15:31:13.397Z">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,8 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#system-environment-category"><span class="nav-number">1.</span> <span class="nav-text">System Environment Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration-category"><span class="nav-number">2.</span> <span class="nav-text">Configuration Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#all-lists-only"><span class="nav-number">3.</span> <span class="nav-text">ALL lists only</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#primary-search-path-category"><span class="nav-number">4.</span> <span class="nav-text">Primary Search Path Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printing-category"><span class="nav-number">5.</span> <span class="nav-text">Printing Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-category"><span class="nav-number">6.</span> <span class="nav-text">Cell Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seed-category"><span class="nav-number">7.</span> <span class="nav-text">Seed Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tempbackup-category"><span class="nav-number">8.</span> <span class="nav-text">Temp&#x2F;Backup Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#colors-category"><span class="nav-number">9.</span> <span class="nav-text">Colors Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#symbology-category"><span class="nav-number">10.</span> <span class="nav-text">Symbology Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-operation-category"><span class="nav-number">11.</span> <span class="nav-text">System Operation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#renderingimage-category"><span class="nav-number">12.</span> <span class="nav-text">Rendering&#x2F;Image Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#database-category"><span class="nav-number">13.</span> <span class="nav-text">Database Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-files-category"><span class="nav-number">14.</span> <span class="nav-text">Data Files Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quickvision-category"><span class="nav-number">15.</span> <span class="nav-text">QuickVision Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dgnapps-category"><span class="nav-number">16.</span> <span class="nav-text">DGNAPPS Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application-load-category"><span class="nav-number">17.</span> <span class="nav-text">Application Load Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dwgdxf-search-path"><span class="nav-number">18.</span> <span class="nav-text">DWG&#x2F;DXF Search Path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cgm-translation-category"><span class="nav-number">19.</span> <span class="nav-text">CGM-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iges-translation-category"><span class="nav-number">20.</span> <span class="nav-text">IGES-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#workspace-category"><span class="nav-number">21.</span> <span class="nav-text">Workspace Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-category"><span class="nav-number">22.</span> <span class="nav-text">Tags Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ole-server-category"><span class="nav-number">23.</span> <span class="nav-text">OLE Server Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#engineering-links-category"><span class="nav-number">24.</span> <span class="nav-text">Engineering Links Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-translation-category"><span class="nav-number">25.</span> <span class="nav-text">Step-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spelling-category"><span class="nav-number">26.</span> <span class="nav-text">Spelling Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#levels-category"><span class="nav-number">27.</span> <span class="nav-text">Levels Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-history-category"><span class="nav-number">28.</span> <span class="nav-text">Design History Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#protection-category"><span class="nav-number">29.</span> <span class="nav-text">Protection Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#security-category"><span class="nav-number">30.</span> <span class="nav-text">Security Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference-category"><span class="nav-number">31.</span> <span class="nav-text">Reference Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#standards-checker-category"><span class="nav-number">32.</span> <span class="nav-text">Standards Checker Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file-save-category"><span class="nav-number">33.</span> <span class="nav-text">File Save Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#raster-category"><span class="nav-number">34.</span> <span class="nav-text">Raster Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clash-detection-category"><span class="nav-number">35.</span> <span class="nav-text">Clash Detection Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markup-category"><span class="nav-number">36.</span> <span class="nav-text">Markup Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macro-recorder-category"><span class="nav-number">37.</span> <span class="nav-text">Macro Recorder Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tables-category"><span class="nav-number">38.</span> <span class="nav-text">Tables Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reports-category"><span class="nav-number">39.</span> <span class="nav-text">Reports Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#point-cloud-category"><span class="nav-number">40.</span> <span class="nav-text">Point Cloud Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geographic-coordinate-system-category"><span class="nav-number">41.</span> <span class="nav-text">Geographic Coordinate
-System Category</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#system-environment-category"><span class="nav-number">1.</span> <span class="nav-text"> System Environment Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration-category"><span class="nav-number">2.</span> <span class="nav-text"> Configuration Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#all-lists-only"><span class="nav-number">3.</span> <span class="nav-text"> ALL lists only</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#primary-search-path-category"><span class="nav-number">4.</span> <span class="nav-text"> Primary Search Path Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printing-category"><span class="nav-number">5.</span> <span class="nav-text"> Printing Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-category"><span class="nav-number">6.</span> <span class="nav-text"> Cell Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seed-category"><span class="nav-number">7.</span> <span class="nav-text"> Seed Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tempbackup-category"><span class="nav-number">8.</span> <span class="nav-text"> Temp&#x2F;Backup Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#colors-category"><span class="nav-number">9.</span> <span class="nav-text"> Colors Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#symbology-category"><span class="nav-number">10.</span> <span class="nav-text"> Symbology Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-operation-category"><span class="nav-number">11.</span> <span class="nav-text"> System Operation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#renderingimage-category"><span class="nav-number">12.</span> <span class="nav-text"> Rendering&#x2F;Image Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#database-category"><span class="nav-number">13.</span> <span class="nav-text"> Database Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-files-category"><span class="nav-number">14.</span> <span class="nav-text"> Data Files Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quickvision-category"><span class="nav-number">15.</span> <span class="nav-text"> QuickVision Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dgnapps-category"><span class="nav-number">16.</span> <span class="nav-text"> DGNAPPS Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application-load-category"><span class="nav-number">17.</span> <span class="nav-text"> Application Load Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dwgdxf-search-path"><span class="nav-number">18.</span> <span class="nav-text"> DWG&#x2F;DXF Search Path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cgm-translation-category"><span class="nav-number">19.</span> <span class="nav-text"> CGM-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iges-translation-category"><span class="nav-number">20.</span> <span class="nav-text"> IGES-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#workspace-category"><span class="nav-number">21.</span> <span class="nav-text"> Workspace Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-category"><span class="nav-number">22.</span> <span class="nav-text"> Tags Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ole-server-category"><span class="nav-number">23.</span> <span class="nav-text"> OLE Server Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#engineering-links-category"><span class="nav-number">24.</span> <span class="nav-text"> Engineering Links Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-translation-category"><span class="nav-number">25.</span> <span class="nav-text"> Step-Translation Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spelling-category"><span class="nav-number">26.</span> <span class="nav-text"> Spelling Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#levels-category"><span class="nav-number">27.</span> <span class="nav-text"> Levels Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-history-category"><span class="nav-number">28.</span> <span class="nav-text"> Design History Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#protection-category"><span class="nav-number">29.</span> <span class="nav-text"> Protection Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#security-category"><span class="nav-number">30.</span> <span class="nav-text"> Security Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference-category"><span class="nav-number">31.</span> <span class="nav-text"> Reference Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#standards-checker-category"><span class="nav-number">32.</span> <span class="nav-text"> Standards Checker Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file-save-category"><span class="nav-number">33.</span> <span class="nav-text"> File Save Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#raster-category"><span class="nav-number">34.</span> <span class="nav-text"> Raster Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clash-detection-category"><span class="nav-number">35.</span> <span class="nav-text"> Clash Detection Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markup-category"><span class="nav-number">36.</span> <span class="nav-text"> Markup Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macro-recorder-category"><span class="nav-number">37.</span> <span class="nav-text"> Macro Recorder Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tables-category"><span class="nav-number">38.</span> <span class="nav-text"> Tables Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reports-category"><span class="nav-number">39.</span> <span class="nav-text"> Reports Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#point-cloud-category"><span class="nav-number">40.</span> <span class="nav-text"> Point Cloud Category</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geographic-coordinate-system-category"><span class="nav-number">41.</span> <span class="nav-text"> Geographic Coordinate System Category</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +156,7 @@ System Category</span></a></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +167,7 @@ System Category</span></a></li></ol></div>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -286,23 +285,14 @@ System Category</span></a></li></ol></div>
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>进行 Bentley
-系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对
-ORD 的环境变量进行系统的归纳。</p>
+    <div class="post-body" itemprop="articleBody"><p>进行 Bentley 系列产品修改化自定时，首先需要对环境变量进行配置，将特定的环境变量指向自定义的位置，所以在此处对 ORD 的环境变量进行系统的归纳。</p>
 <span id="more"></span>
 <hr />
-<h2 id="system-environment-category">System Environment Category</h2>
+<h2 id="system-environment-category"><a class="markdownIt-Anchor" href="#system-environment-category"></a> System Environment Category</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 14%" />
-<col style="width: 36%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -311,35 +301,35 @@ ORD 的环境变量进行系统的归纳。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_CONFIG</td>
 <td>Filename</td>
 <td>Main Configuration File</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>RSC_COMP</td>
 <td>Command Line</td>
 <td>Resource Compiler Command Line</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MDL_COMP</td>
 <td>Command Line</td>
 <td>MDL Compiler Command Line</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>BMAKE_OPT</td>
 <td>Command Line</td>
 <td>BMAKE Options</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DEBUGMDLHEAP</td>
 <td>Keyword</td>
 <td>Extended Malloc</td>
@@ -349,18 +339,11 @@ ORD 的环境变量进行系统的归纳。</p>
 </tbody>
 </table>
 <hr />
-<h2 id="configuration-category">Configuration Category</h2>
+<h2 id="configuration-category"><a class="markdownIt-Anchor" href="#configuration-category"></a> Configuration Category</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 10%" />
-<col style="width: 50%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -369,455 +352,455 @@ ORD 的环境变量进行系统的归纳。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_TEMPLATEEXTENDER_APPS</td>
 <td>Filelist</td>
 <td>Element Template Extender Applications</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_USERPREF_APPS</td>
 <td>Filelist</td>
 <td>User Preference Applications</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MSDIR</td>
 <td>Directory</td>
 <td>$[_USTN_PRODUCT_NAME] Dir</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MSLOCAL</td>
 <td>Directory</td>
 <td>$[_USTN_PRODUCT_NAME] Dir (Local)</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_DEFUSERINTNAME</td>
 <td>Directory</td>
 <td>Default Interface Subdirectory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_USERINTNAME</td>
 <td>Directory</td>
 <td>Interface Subdirectory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_USERINTROOT</td>
 <td>Directory</td>
 <td>Interface Root Dir</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_USERINT</td>
 <td>Directory</td>
 <td>Interface Base Data Dir</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETNAME</td>
 <td>Base Name</td>
 <td>Base WorkSet Name</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_USERCFG</td>
 <td>Filename</td>
 <td>User Configuration File</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_USERNAME</td>
 <td>Base Name</td>
 <td>Base User Name</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_USERDESCR</td>
 <td>Keyword</td>
 <td>User Description</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_USER</td>
 <td>Directory</td>
 <td>User Configuration Files</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETDGNWS</td>
 <td>Search Path</td>
 <td>WorkSet full path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETSDGNWSROOT</td>
 <td>Search Path</td>
 <td>WorkSets file root directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_TEMPLATEWORKSETNAME</td>
 <td>Search Path</td>
 <td>WorkSpace template</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_TEMPLATEWORKSPACENAME</td>
 <td>Search Path</td>
 <td>WorkSpace template</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETDGNWSTEMPLATE</td>
 <td>Search Path</td>
 <td>WorkSpace template</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETTEMPLATE</td>
 <td>Search Path</td>
 <td>WorkSet template</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSPACECFG</td>
 <td>Search Path</td>
 <td>WorkSpace configuration</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSPACELABEL</td>
 <td>Search Path</td>
 <td>WorkSpace label</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSPACENAME</td>
 <td>Search Path</td>
 <td>WorkSpace name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSPACEROOT</td>
 <td>Search Path</td>
 <td>WorkSpace Root Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSPACESROOT</td>
 <td>Search Path</td>
 <td>WorkSpaces Root Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSPACESTANDARDS</td>
 <td>Search Path</td>
 <td>WorkSpaces standards</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSPACETEMPLATE</td>
 <td>Search Path</td>
 <td>WorkSpace template file</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETSTANDARDSDIRNAME</td>
 <td>Search Path</td>
 <td>WorkSet Standards Files Directory Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETSTANDARDS</td>
 <td>Search Path</td>
 <td>WorkSet Standards Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETDGNSDIRNAME</td>
 <td>Search Path</td>
 <td>Design Files Directory Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETDGNS</td>
 <td>Search Path</td>
 <td>Design Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETROOT</td>
 <td>Directory</td>
 <td>WorkSet Root Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETSROOT</td>
 <td>Directory</td>
 <td>WorkSets Root Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_DATABASE</td>
 <td>Directory</td>
 <td>Database Configuration Files</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_ORGANIZATION</td>
 <td>Directory</td>
 <td>Organization Configuration Files</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_APPL</td>
 <td>Directory</td>
 <td>Application Config Files</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_CONFIGURATION</td>
 <td>Directory</td>
 <td>Configuration Root Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_SYSTEMROOT</td>
 <td>Directory</td>
 <td>Workspace System Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_SYSTEM</td>
 <td>Directory</td>
 <td>System Configuration Files</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_DATABASECFG</td>
 <td>Filename</td>
 <td>Database Configuration File</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_DATABASENAME</td>
 <td>Base Name</td>
 <td>Database Name</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_VERSION89</td>
 <td>Keyword</td>
 <td>Version Number</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_PLATFORMNAME</td>
 <td>Keyword</td>
 <td>Platform Name</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_WORKDIR</td>
 <td>Directory</td>
 <td>Working Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_HOMEROOT</td>
 <td>Directory</td>
 <td>Local Product-specific Data Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_HOMEPREFS</td>
 <td>Directory</td>
 <td>Local Preferences Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_CAPABILITY_V7</td>
 <td>Keyword</td>
 <td>V7 Workmode Capabilities</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_CAPABILITY_DGN</td>
 <td>Keyword</td>
 <td>DGN Workmode Capabilities</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_CAPABILITY_DWG</td>
 <td>Keyword</td>
 <td>DWG Workmode Capabilities</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_CAPABILITY</td>
 <td>Keyword</td>
 <td>$[_USTN_PRODUCT_NAME] Capabilities</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_BENTLEYROOT</td>
 <td>Directory</td>
 <td>Bentley Root Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSPACESTANDARDSUBDIRS</td>
 <td>Filelist</td>
 <td>WorkSpace Standard Subdirectories</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_WORKSETSTANDARDSUBDIRS</td>
 <td>Filelist</td>
 <td>WorkSet Standard Subdirectories</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MSDIR_INSTALLED</td>
 <td>Directory</td>
 <td>Executable Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_ROOTDIR</td>
 <td>Directory</td>
 <td>Executable Directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_OUTDIRNAME</td>
 <td>Directory</td>
 <td>Output Base Directory Name</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_OUT</td>
 <td>Directory</td>
 <td>Output Base Directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_NEWDGNFILE</td>
 <td>Filelist</td>
 <td>MDL Apps Loaded on New Design File</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_FIRSTDGNFILE</td>
 <td>Filelist</td>
 <td>MDL Apps Loaded on First Design File</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_REQUIREDAPPS</td>
 <td>Filelist</td>
 <td>Required MDL Applications</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_DISPLAYALLCFGVARS</td>
 <td>Boolean</td>
 <td>Config Var Display Flag</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_ENGINENAME</td>
 <td>Keyword</td>
 <td>Foundation Product</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_CUSTOM_CONFIGURATION</td>
 <td>Keyword</td>
 <td>Defines the path of your custom Configuration directory</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>$[_USTN_PRODUCT_CONFIGVARNAME]</td>
 <td>Boolean</td>
 <td>Product</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_INTELNT</td>
 <td>Boolean</td>
 <td>Operating System</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_WINNT</td>
 <td>Boolean</td>
 <td>Operating System</td>
@@ -827,18 +810,11 @@ ORD 的环境变量进行系统的归纳。</p>
 </tbody>
 </table>
 <hr />
-<h2 id="all-lists-only">ALL lists only</h2>
+<h2 id="all-lists-only"><a class="markdownIt-Anchor" href="#all-lists-only"></a> ALL lists only</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 7%" />
-<col style="width: 44%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -847,385 +823,385 @@ ORD 的环境变量进行系统的归纳。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_NAMEDCOMMANDSLIST</td>
 <td>Filelist</td>
 <td>Named Command Definitions XML File List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_PRIMARY_RIBBONRSCLIST</td>
 <td>Filelist</td>
 <td>Primary Ribbon Resource File List</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNINDEXER_PORT</td>
 <td>Keyword</td>
 <td>DGN Indexer port</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ANNOTATIONSCALEPROPAGATION</td>
 <td>Keyword</td>
 <td>Model Annotation Scale Propagation</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_AUTO_UPDATE_FIELDS</td>
 <td>Keyword</td>
 <td>Automatically Update Fields in Active Model</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_NOTEAUTOUPDATE</td>
 <td>Keyword</td>
 <td>Automatically update Note when saving Dimension Style</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DIMLEGACYPOINTORDER</td>
 <td>Keyword</td>
 <td>Use Legacy Datapoint Order for Dimensions</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SHEETDIR</td>
 <td>Directory</td>
 <td>Output directory for sheet files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DRAWINGDIR</td>
 <td>Directory</td>
 <td>Output directory for drawing files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_SYSTEMTABLES</td>
 <td>Directory</td>
 <td>Tables Root Directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_RASTERTABLE</td>
 <td>Directory</td>
 <td>Raster Table Directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_CUSTOMIZEBASEID</td>
 <td>Keyword</td>
 <td>Base Resource Identifier for user customizations</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_RMGR_MAXFILEPTRS</td>
 <td>Keyword</td>
 <td>Resource File Pointers</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>PZIP_OUT</td>
 <td>Directory</td>
 <td>Packager Output Directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SIGNATURE_DELETE_REQUIRES_PRIVATE_KEY</td>
 <td>Boolean</td>
 <td>Must own private key to delete signature?</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SIGNATURE_SHOW_FULL_NAME</td>
 <td>Boolean</td>
 <td>Digital signature full name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SIGNATURE_DISPLAY_UNVERIFIED</td>
 <td>NONE</td>
 <td>Digital signature X</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DATA</td>
 <td>Directory</td>
 <td>Data Files</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_OLDUSERLICENSE</td>
 <td>Filename</td>
 <td>Old User License</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_USERLICENSE</td>
 <td>Filename</td>
 <td>User License</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_PACKAGEFILE</td>
 <td>Filename</td>
 <td>Package File Name</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_EMBEDFILE</td>
 <td>Filename</td>
 <td>Embedded File Name</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_DGNFILE</td>
 <td>Filename</td>
 <td>Current File Name</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_DGNDIR</td>
 <td>Directory</td>
 <td>Current File Directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_HELPNAMESPACE</td>
 <td>Keyword</td>
 <td>Help Namespace</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_HELPLOAD_TOPICPAGE</td>
 <td>Keyword</td>
 <td>Help Topic Page Name Format</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_HELPLOAD_CONTENTSPAGE</td>
 <td>Keyword</td>
 <td>Help Contents Page</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_HELPLOAD_USEBROWSER</td>
 <td>Boolean</td>
 <td>Use Browser for Help</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_WORKSETMISMATCH_ALERT_EXCLUDE_VARS_ALLLEVELS</td>
 <td>Search Path</td>
 <td>Exclusion list for WorkSet Mismatch(All levels)</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_WORKSETMISMATCH_ALERT_EXCLUDE_VARS_WORKSPACELEVEL</td>
 <td>Search Path</td>
 <td>Exclusion list for WorkSet Mismatch(WorkSpace Level and Above)</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_HELPLOAD_APPLICATION</td>
 <td>Keyword</td>
 <td>Application Type that Loads Help</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_LOCALUSERTEMPPATH</td>
 <td>Search Path</td>
 <td>Help Path</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_USERAPPDATAPATH</td>
 <td>Search Path</td>
 <td>Help Path</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_LOCALUSERAPPDATAPATH</td>
 <td>Search Path</td>
 <td>Help Path</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_HELPPATH</td>
 <td>Search Path</td>
 <td>Help Path</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RIGHTLOGICKB</td>
 <td>Keyword</td>
 <td>Right to Left Chars</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_INITAPPS</td>
 <td>Filelist</td>
 <td>Initial MDL Applications</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RSRC</td>
 <td>Filename</td>
 <td>Main Resource</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNOUT</td>
 <td>Directory</td>
 <td>Output Design Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_OPENDESIGNFILEFILTER</td>
 <td>Keyword</td>
 <td>Open Design File Filter</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SMARTSOLID</td>
 <td>Directory</td>
 <td>SmartSolid Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SNAP_TANGENT_POINT_DEFAULT_MODE</td>
 <td>NONE</td>
 <td>Perp/Tan location</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SNAPMODE_SOURCE</td>
 <td>NONE</td>
 <td>Snap mode source</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VIEWATTRIBUTES_PLUGINASSEMBLIES</td>
 <td>NONE</td>
 <td>View Attributes Plugin Assemblies</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTUSER_FULLNAME</td>
 <td>NONE</td>
 <td>CONNECT User Full Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONNECTUSER_LANGUAGE</td>
 <td>NONE</td>
 <td>CONNECT User Language</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTUSER_ORGANIZATION</td>
 <td>NONE</td>
 <td>CONNECT User Organization</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONNECTUSER_COUNTRY</td>
 <td>NONE</td>
 <td>CONNECT User Country</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTUSER_NAME</td>
 <td>NONE</td>
 <td>CONNECT User Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONNECTPROJECT_ASSETTYPE</td>
 <td>NONE</td>
 <td>CONNECT Project Asset Type</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTPROJECT_INDUSTRY</td>
 <td>NONE</td>
 <td>CONNECT Project Industry</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONNECTPROJECT_LOCATION</td>
 <td>NONE</td>
 <td>CONNECT Project Location</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTPROJECT_STATUS</td>
 <td>NONE</td>
 <td>CONNECT Project Status</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONNECTPROJECT_NUMBER</td>
 <td>NONE</td>
 <td>CONNECT Project Number</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONNECTPROJECT_NAME</td>
 <td>NONE</td>
 <td>CONNECT Project Name</td>
@@ -1235,18 +1211,11 @@ ORD 的环境变量进行系统的归纳。</p>
 </tbody>
 </table>
 <hr />
-<h2 id="primary-search-path-category">Primary Search Path Category</h2>
+<h2 id="primary-search-path-category"><a class="markdownIt-Anchor" href="#primary-search-path-category"></a> Primary Search Path Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 7%" />
-<col style="width: 58%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -1255,218 +1224,217 @@ ORD 的环境变量进行系统的归纳。</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_DETAILINGSYMBOLSTYLES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available DetailingSymbol Styles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNLIBLIST_LINESTYLES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available LineStyles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_DRAWINGSEEDS</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available DrawingSeeds.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNLIBLIST_DISPLAYSTYLES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available Display Styles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_DIMENSIONSTYLES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available Dimension Styles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNLIBLIST_TEXTSTYLES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available Text Styles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_TEXTFAVORITES</td>
 <td>Filelist</td>
 <td>Process the DGNLIBs for available Text favorites.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SEED_LINKSET_PATH</td>
 <td>Search Path</td>
 <td>Link Set Seed File Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_COMMONAPPDATAPATH</td>
 <td>Filelist</td>
-<td>Defines the full path to the file directory containing application
-data for all users</td>
+<td>Defines the full path to the file directory containing application data for all users</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ECFRAMEWORK_SCHEMAS</td>
 <td>Filelist</td>
 <td>ECSchema Search Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_PRINTING</td>
 <td>Filelist</td>
 <td>DGN Library List for Print Styles.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNLIBLIST_LINKS</td>
 <td>Filelist</td>
 <td>DGN Library List for Link Set files.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DGNLIBLIST_RENDER</td>
 <td>Filelist</td>
 <td>DGN Library List for Rendering tasks.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNLIBLIST</td>
 <td>Filelist</td>
 <td>DGN Library List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DEF</td>
 <td>Search Path</td>
 <td>Design Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RFDIR</td>
 <td>Search Path</td>
 <td>References</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_MDLAPPS</td>
 <td>Search Path</td>
 <td>Visible MDL Applications</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MDL</td>
 <td>Search Path</td>
 <td>MDL Applications</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_ADDINPATH</td>
 <td>Search Path</td>
 <td>AddIns</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ADDIN_DEPENDENCYPATH</td>
 <td>Search Path</td>
 <td>AddIn Dependencies</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RSRCPATH</td>
 <td>Search Path</td>
 <td>Resource Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GUIDGNLIBLIST</td>
 <td>Filelist</td>
 <td>User Interface DGN Library List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LIBRARY_PATH</td>
 <td>Search Path</td>
 <td>Library Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>RDL_DIR</td>
 <td>Search Path</td>
 <td>Redline Location</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>DWGRDL_DIR</td>
 <td>Search Path</td>
 <td>DWG Redline Location</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_FILTER_LIB_DIR</td>
 <td>Search Path</td>
 <td>Filter Library Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LINFILELIST</td>
 <td>Filelist</td>
 <td>LIN File Path</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ICONRSCLIST</td>
 <td>Search Path</td>
 <td>Icon Resource File List</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_ICONLIBRARYLIST</td>
 <td>Search Path</td>
 <td>Icon Library List</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ICONPATH</td>
 <td>Search Path</td>
 <td>Icon Path</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PERSONALDGNLIB</td>
 <td>Filename</td>
 <td>Users Personal DGNLIB</td>
@@ -1476,18 +1444,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="printing-category">Printing Category</h2>
+<h2 id="printing-category"><a class="markdownIt-Anchor" href="#printing-category"></a> Printing Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 10%" />
-<col style="width: 37%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -1496,413 +1457,413 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_PLTCFG_PATH</td>
 <td>Search Path</td>
 <td>Printer Driver Config Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DEFAULT_PLTCFG_FILE</td>
 <td>Filename</td>
 <td>Default Printer Configuration</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_PDF_PLTFILE</td>
 <td>Filename</td>
 <td>Default PDF Printer Config</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_SYSPRT_PLTFILE</td>
 <td>Filename</td>
 <td>Default Windows Printer Config</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_SYSPRT_DEFAULT_PRINTER</td>
 <td>Keyword</td>
 <td>Default Windows Printer Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_SYSPRT_DEFAULT_FORM</td>
 <td>Keyword</td>
 <td>Default Windows Form Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_SYSPRT_DEFAULT_TRAY</td>
 <td>Keyword</td>
 <td>Default Windows Tray Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTFILES</td>
 <td>Directory</td>
 <td>Print Output Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PRINTDEF_PATH</td>
 <td>Search Path</td>
 <td>Print Definition Search Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PENTABLE</td>
 <td>Search Path</td>
 <td>Pen Table Search Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGNSCRIPT_PATH</td>
 <td>Search Path</td>
 <td>Design Script Search Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PROPFILTER_PATH</td>
 <td>Search Path</td>
 <td>Property Filter Search Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_PREVIEW_USABLEAREACOLOR</td>
 <td>Keyword</td>
 <td>Preview Usable Area Color</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_PREVIEW_PLOTBOXCOLOR</td>
 <td>Keyword</td>
 <td>Preview Plot Rectangle Color</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_PREVIEW_PLOTFENCECOLOR</td>
 <td>Keyword</td>
 <td>Preview Plot Fence Color</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_UNLOADONCLOSE</td>
 <td>Keyword</td>
 <td>Unload Print Dialog on Close</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_CLOSE_AFTER_PLOT</td>
 <td>Keyword</td>
 <td>Close Print Dialog After Plot</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_ENABLE_SCALE_CLIPPING</td>
 <td>Keyword</td>
 <td>Enable Scale Clipping</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_ENABLE_PRESERVE_SCALE</td>
 <td>Keyword</td>
 <td>Enable Preserve Scale</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_ENABLE_AUTO_ROTATE</td>
 <td>Keyword</td>
 <td>Enable Automatic Rotation</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_ENABLE_AUTO_ORIENT</td>
 <td>Keyword</td>
 <td>Enable Automatic Orientation</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_AREA_PRIORITY</td>
 <td>Keyword</td>
 <td>Print Area Priority</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_FORM_SCALE_PRIORITY</td>
 <td>Keyword</td>
 <td>Form Scale Priority</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_SET_LAYOUT_FROM_SHEET</td>
 <td>Keyword</td>
 <td>Honor Sheet Layout Info</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_SET_PLOT_STYLE_TABLE_FROM_SHEET</td>
 <td>Keyword</td>
 <td>Honor Sheet Plot Style Table</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_MAX_ON_NEW_AREA</td>
 <td>Keyword</td>
 <td>Maximize on New Print Area</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_AUTO_FIT_VIEW</td>
 <td>Keyword</td>
 <td>Automatically Fit View</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_SHOW_BASIC_LAYOUT_CONTROLS</td>
 <td>Keyword</td>
 <td>Basic Layout Controls</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_ALLOW_FORM_SIZE_EDIT</td>
 <td>Keyword</td>
 <td>Allow Form Size Edits</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_SHOW_PRINT_STATUS</td>
 <td>Keyword</td>
 <td>Show Print Status Dialog</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_THUMBNAIL_PREVIEW_TIMEOUT</td>
 <td>Keyword</td>
 <td>Thumbnail Preview Timeout</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_SHOW_ACCURATE_PREVIEW_ROTATION</td>
 <td>Keyword</td>
 <td>Preview Accurate Rotation</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_SET_UNITS_FROM_SHEET</td>
 <td>Keyword</td>
 <td>Set Units from Sheet</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_KEEPVIEWFLAGSONFENCECHANGE</td>
 <td>Boolean</td>
 <td>Keep View Flags on New Fence</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLOTDLG_DEF_PENTABLE</td>
 <td>Filename</td>
 <td>Default Pen Table</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTDLG_ENABLE_SAVE_CONFIG</td>
 <td>Keyword</td>
 <td>Enable Save Configuration</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLTDLG_DISABLE_PREFERENCES_DIALOG</td>
 <td>Keyword</td>
 <td>Disable Plotdlg Preferences</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_SCALE_METHOD</td>
 <td>Keyword</td>
 <td>Scale Method</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PENTABLE_IMPORTEMPTYSECTIONS</td>
 <td>Boolean</td>
 <td>Import Empty Pen Table Sections</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PENTABLE_DISABLECOLOR</td>
 <td>Boolean</td>
 <td>Pen Table Disable Color</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PENTABLE_SLOTNUM_MATCH_APPLIES_TO_CHILD</td>
 <td>Keyword</td>
 <td>Pen Table Slot Number Match</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PENTABLE_SEARCH_LEVEL_LIBRARIES</td>
 <td>Keyword</td>
 <td>Pen Table Search Level Libs</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PENTABLE_IMPORTCTB_NOPENMAP</td>
 <td>Boolean</td>
 <td>Pen Table Import Pen Maps</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLTFILE_EDITOR</td>
 <td>Filename</td>
 <td>Printer Configuration Editor</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PENTABLE_EDITOR</td>
 <td>Filename</td>
 <td>Pen Table Editor</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGNSCRIPT_EDITOR</td>
 <td>Filename</td>
 <td>Design Script Editor</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_INVERT_WHITE_COLORS</td>
 <td>Keyword</td>
 <td>Invert White-to-Black Colors</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_ABBREVIATE_BORDER_FILENAME</td>
 <td>Keyword</td>
 <td>Abbreviate Border Filename</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_AUTOAREA_RESULT_LIMIT</td>
 <td>Keyword</td>
 <td>Automatic Area Result Limit</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_AUTOAREA_SORT_MODE</td>
 <td>Keyword</td>
 <td>Automatic Area Sort Order</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_ENGINE_CMDLINE_ARGS</td>
 <td>Keyword</td>
 <td>Engine Command-Line Arguments</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_ENABLE_VARIABLE_DEFINITION_MODE</td>
 <td>Keyword</td>
 <td>Use Variable Print Definitions</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PRINTORGANIZER_OPEN_DGN_READWRITE</td>
 <td>Keyword</td>
 <td>Open Designs Read-Write</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PRINTERLIST_VISIBILITY</td>
 <td>Keyword</td>
 <td>Printer List Visibility</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PRINTERLIST_SYSPRINTERS</td>
 <td>Keyword</td>
 <td>Printer List System Printers</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_ACCTVAR_ABBREV_LEN</td>
 <td>Keyword</td>
 <td>Accounting Var Abbrev Length</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLT_DEFAULT_PRINTDEF_NAME_EXPRESSION</td>
 <td>Keyword</td>
 <td>Default print definition name expression</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PLT_DEFAULT_OUTPUT_FILENAME_EXPRESSION</td>
 <td>Keyword</td>
 <td>Default output file name expression</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PLOT_VISEDGE_OVERRIDES</td>
 <td>NONE</td>
 <td>Plotting Visible Edge Overrides</td>
@@ -1912,18 +1873,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="cell-category">Cell Category</h2>
+<h2 id="cell-category"><a class="markdownIt-Anchor" href="#cell-category"></a> Cell Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 14%" />
-<col style="width: 33%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -1932,49 +1886,49 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_CELL</td>
 <td>Search Path</td>
 <td>Cell Library Directories</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CELLLIST</td>
 <td>Filelist</td>
 <td>Cell Library List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CELLSELECTORDIR</td>
 <td>Directory</td>
 <td>Cell Selector Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CELLSELECTOR</td>
 <td>Filename</td>
 <td>Cell Selector File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CELLOUT</td>
 <td>Directory</td>
 <td>Output Cell Libraries</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MENU</td>
 <td>Filename</td>
 <td>Menu Cells</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RESOLVESCNAMECONFLICTS</td>
 <td>Keyword</td>
 <td>Shared Cell Name Conflicts</td>
@@ -1984,18 +1938,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="seed-category">Seed Category</h2>
+<h2 id="seed-category"><a class="markdownIt-Anchor" href="#seed-category"></a> Seed Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 12%" />
-<col style="width: 42%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2004,203 +1951,203 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_SEED_LINKSET_NAME</td>
 <td>Keyword</td>
 <td>Link Set Name</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SEED_LINKSET_FILE_NAME</td>
 <td>Filename</td>
 <td>Link Set Seed File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_INPUT_CONFIGXMLSEED</td>
 <td>Filename</td>
 <td>Touch Gesture Assignments Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BUTTONMENUSEED</td>
 <td>Filename</td>
 <td>Button Assignments Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_FKEYMNUSEED</td>
 <td>Filename</td>
 <td>Function Key Assignments Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_KEYBOARDSHORTCUTSSEED</td>
 <td>Filename</td>
 <td>Keyboard Shortcuts Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PERSONALDGNLIBSEED</td>
 <td>Filename</td>
 <td>Personal DGNLIB Seed</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VIEWGROUPSEED</td>
 <td>Filename</td>
 <td>View Group Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VIEWGROUPSEEDNAME</td>
 <td>Keyword</td>
 <td>View Group Seed</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DWGSEED</td>
 <td>Filename</td>
 <td>DWG Seed File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGSEED_OVERRIDE</td>
 <td>Filename</td>
 <td>DWG Seed File Override</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SEEDFILES</td>
 <td>Search Path</td>
 <td>Seed File Location</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGNSEED</td>
 <td>Filename</td>
 <td>Default Design File Seed</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_TRANSEED</td>
 <td>Filename</td>
 <td>Default Translation Seed</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_TRANSEED_OVERRIDE</td>
 <td>Filename</td>
 <td>Translation Seed Override</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CELL_SEEDFILE</td>
 <td>Filename</td>
 <td>Cell Library Seed File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SHEETSEED</td>
 <td>Filename</td>
 <td>Drawing Sheet Seed File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GROUPPANELPREFSEED</td>
 <td>Filename</td>
 <td>Group Panel Preference Seed</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_TASKDIALOGPREFSEED</td>
 <td>Filename</td>
 <td>Task Navigation Dialog Preference Seed</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DOCKINGPREFSEED</td>
 <td>Filename</td>
 <td>Dialog Docking Preference Seed</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_USERPREFSEED</td>
 <td>Filename</td>
 <td>User Preference Seed</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DRAWINGMODELSEED</td>
 <td>Filename</td>
 <td>Drawing Model Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DRAWINGMODELSEEDNAME</td>
 <td>Keyword</td>
 <td>Drawing Model Seed</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGNMODELSEED</td>
 <td>Filename</td>
 <td>Design Model Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGNMODELSEEDNAME</td>
 <td>Keyword</td>
 <td>Design Model Seed</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SHEETMODELSEED</td>
 <td>Filename</td>
 <td>Sheet Model Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SHEETMODELSEEDNAME</td>
 <td>Keyword</td>
 <td>Sheet Model Seed</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DWGSHEETMODELSEED</td>
 <td>Filename</td>
 <td>DWG Sheet Model Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGSHEETMODELSEEDNAME</td>
 <td>Keyword</td>
 <td>DWG Sheet Model Seed</td>
@@ -2210,18 +2157,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="tempbackup-category">Temp/Backup Category</h2>
+<h2 id="tempbackup-category"><a class="markdownIt-Anchor" href="#tempbackup-category"></a> Temp/Backup Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 9%" />
-<col style="width: 50%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2230,49 +2170,49 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>DGNDBFILEIO_CACHE_MAX_FILES</td>
 <td>Directory</td>
 <td>Maximum number of files in dgndb extraction cache.</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DGNDBFILEIO_CACHE_MAX_SIZE</td>
 <td>Directory</td>
 <td>Maximum size of dgndb extraction cache in MB.</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWG_BACKUP</td>
 <td>Directory</td>
 <td>Directory for DWG backup files.</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_NO_DWG_BACKUP</td>
 <td>Boolean</td>
 <td>Turn off DWG .bak files</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BACKUP</td>
 <td>Directory</td>
 <td>Backup Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_TMP</td>
 <td>Directory</td>
 <td>Temporary Files</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SCR</td>
 <td>Directory</td>
 <td>Scratch Files</td>
@@ -2282,18 +2222,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="colors-category">Colors Category</h2>
+<h2 id="colors-category"><a class="markdownIt-Anchor" href="#colors-category"></a> Colors Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 11%" />
-<col style="width: 35%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2302,35 +2235,35 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_DEFCTBL</td>
 <td>Filename</td>
 <td>Default Color Table</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RMENCTBL</td>
 <td>Filename</td>
 <td>Right Menu Color Table</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LMENCTBL</td>
 <td>Filename</td>
 <td>Left Menu Color Table</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_COLORBOOK_LIBRARIES</td>
 <td>Filelist</td>
 <td>Colorbook Library List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SYSTEM_COLORBOOKS</td>
 <td>Directory</td>
 <td>System Color Books Directory</td>
@@ -2340,18 +2273,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="symbology-category">Symbology Category</h2>
+<h2 id="symbology-category"><a class="markdownIt-Anchor" href="#symbology-category"></a> Symbology Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 13%" />
-<col style="width: 35%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2360,21 +2286,21 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_FONTCONFIGFILE</td>
 <td>Search Path</td>
 <td>Font Configuration File Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_FONTPATH</td>
 <td>Search Path</td>
 <td>Font Directories</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SYMBRSRC</td>
 <td>Filelist</td>
 <td>Symbology Resources</td>
@@ -2384,18 +2310,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="system-operation-category">System Operation Category</h2>
+<h2 id="system-operation-category"><a class="markdownIt-Anchor" href="#system-operation-category"></a> System Operation Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 9%" />
-<col style="width: 45%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2404,322 +2323,322 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_FAST_LEGACY_WIREFRAME</td>
 <td>Boolean</td>
 <td>Disable SmartSolid Silhouettes</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_COMPRESS_OPTIONS</td>
 <td>Keyword</td>
 <td>Compress Options Selections</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_KEYBOARDSHORTCUTSUSERORDER</td>
 <td>Boolean</td>
 <td>Keyboard Shortcuts User Order</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_KEYBOARDSHORTCUTSEXPAND</td>
 <td>Boolean</td>
 <td>Keyboard Shortcuts User Order</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_KEYBOARDSHORTCUTS</td>
 <td>Filename</td>
 <td>User Keyboard Shortcuts</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BUTTONMENU</td>
 <td>Filename</td>
 <td>Button Menu</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_FKEYMNU</td>
 <td>Filename</td>
 <td>Function Key Menu</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SAVEMENU</td>
 <td>Filename</td>
 <td>Attached Menus</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_APPMEN</td>
 <td>Search Path</td>
 <td>Application Menus</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_FILEHISTORY</td>
 <td>Keyword</td>
 <td>File History</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_READONLY</td>
 <td>Boolean</td>
 <td>Read Only</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_WORKMODE</td>
 <td>Keyword</td>
 <td>Work Mode</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_OPENV7</td>
 <td>Keyword</td>
 <td>Open V7 files</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_OPENDWGAEC</td>
 <td>Keyword</td>
 <td>Open DWG AEC files</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DISABLE_FILE_ICONS</td>
 <td>Boolean</td>
 <td>Disable File Open Icons</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SOURCENAME_PROPERTY</td>
 <td>Keyword</td>
 <td>Save the SOURCE file property</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_IDLETIMEOUT</td>
 <td>Keyword</td>
 <td>Exit $[_USTN_PRODUCT_NAME] when idle</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_POPUPDIALOGCLOSEDELAY</td>
 <td>Keyword</td>
 <td>Popup Dialog Close Delay</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEGACYTOOLMAPLIST</td>
 <td>Filelist</td>
 <td>Path to files that contain Tool Mapping data.</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_FULLPATHINTITLEBAR</td>
 <td>Keyword</td>
 <td>Full Path in Title Bar</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_NO_VIEW_ANIMATION</td>
 <td>Keyword</td>
 <td>Disable Tile/Cascade Animation</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_COMMONITEMDIALOG</td>
 <td>Boolean</td>
 <td>Common Item Dialog from Microsoft</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VIEWAUTORESIZE</td>
 <td>Keyword</td>
 <td>View Resize Behavior</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GRAYGROUPHEADERBACKGROUND</td>
 <td>Boolean</td>
 <td>Gray Color for Group Headers</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_UPDATESPLITBUTTONLABELTOSELECTED</td>
 <td>Boolean</td>
 <td>Update Split Button Label to Selected</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GROUPPOPUPFADEKEYTIPS</td>
 <td>Boolean</td>
 <td>Ribbon Group Popup Fade KeyTips</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RIBBON_NUMEXPANDEDTASKGROUPS</td>
 <td>Keyword</td>
 <td>Number of expanded ribbon groups on Active Task tab</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RIBBON_MAXBUTTONLABELCHARS</td>
 <td>Keyword</td>
 <td>Maximum characters for a ribbon button label</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CURSORPROMPT</td>
 <td>Boolean</td>
 <td>Cursor Prompt</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_AUTOUPDATETEXTITEMSSLOWER</td>
 <td>Boolean</td>
 <td>AutoUpdate speed for Text items</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_AUTOUPDATETEXTITEMSSUPPORT</td>
 <td>Boolean</td>
 <td>AutoUpdate feature for Text items</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_TOOLSETTINGSIGNORETITLEFORWIDTH</td>
 <td>Boolean</td>
 <td>Tool Settings Ignore Title when Determining Width</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_INPUT_CONFIGXML</td>
 <td>Filename</td>
 <td>Default Touch Gesture Configuration</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DEFAULT_MAINTASKPATH</td>
 <td>Keyword</td>
 <td>Default Main Task</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VIEWTOOLBOX3D</td>
 <td>Keyword</td>
 <td>View window toolbox for 3D</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VIEWTOOLBOX2D</td>
 <td>Keyword</td>
 <td>View window toolbox for 2D</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_GROUPPOPUPFALLBACKWORKFLOW_3D</td>
 <td>Keyword</td>
 <td>3D Fall-back Workflow for pop-up group processing</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GROUPPOPUPFALLBACKWORKFLOW_2D</td>
 <td>Keyword</td>
 <td>2D Fall-back Workflow for pop-up group processing</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RIBBONCOMPONENTPROVIDERS</td>
 <td>Filelist</td>
 <td>Ribbon Component Providers AddIn List</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RIBBONXML</td>
 <td>Filelist</td>
 <td>Ribbon XML File List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RIBBONPREFSSEED</td>
 <td>Filelist</td>
 <td>Ribbon Preferences Seed File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RIBBONPREFS</td>
 <td>Filelist</td>
 <td>Ribbon Preferences File</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RIBBONRSCLIST</td>
 <td>Filelist</td>
 <td>Ribbon Resource File List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RIBBONDIR</td>
 <td>Search Path</td>
 <td>Base Path for Ribbon Definitions</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VISEDGE_OVERRIDES</td>
 <td>NONE</td>
 <td>Visible Edge Overrides</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VISEDGE_DEFAULTS</td>
 <td>NONE</td>
 <td>Visible Edge Overrides</td>
@@ -2729,18 +2648,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="renderingimage-category">Rendering/Image Category</h2>
+<h2 id="renderingimage-category"><a class="markdownIt-Anchor" href="#renderingimage-category"></a> Rendering/Image Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 13%" />
-<col style="width: 34%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2749,98 +2661,98 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_MATERIAL</td>
 <td>Search Path</td>
 <td>Material Palettes</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PATTERN</td>
 <td>Search Path</td>
 <td>Pattern Maps</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BUMP</td>
 <td>Search Path</td>
 <td>Bump Maps</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_IMAGE</td>
 <td>Search Path</td>
 <td>Images</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_IMAGEOUT</td>
 <td>Directory</td>
 <td>Image Output</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SHADOWMAP</td>
 <td>Directory</td>
 <td>Shadow Maps</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LIGHTING</td>
 <td>Search Path</td>
 <td>IES Lighting Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LIGHTLIST</td>
 <td>Filelist</td>
 <td>Predefined Light Sources</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_IMAGE_EDITOR</td>
 <td>Filename</td>
 <td>Image Editor</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MATERIAL_PREVIEW_BACKGROUND</td>
 <td>Filename</td>
 <td>Material Preview Background</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_FILTEREDCODECS</td>
 <td>Filename</td>
 <td>Filtered DirectShow Codecs</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RENDERV7MATERIALS</td>
 <td>Boolean</td>
 <td>V7 Material Compatibility</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DISABLE_RPCBROWSER</td>
 <td>Boolean</td>
 <td>Disable RPC Thumbnail Browser</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RPCDIR</td>
 <td>Directory</td>
 <td>RPC Search Path</td>
@@ -2850,18 +2762,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="database-category">Database Category</h2>
+<h2 id="database-category"><a class="markdownIt-Anchor" href="#database-category"></a> Database Category</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 13%" />
-<col style="width: 35%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2870,42 +2775,42 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_UDLDIR</td>
 <td>Search Path</td>
 <td>Universal Data Link directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ORACLE_HOME</td>
 <td>Search Path</td>
 <td>Oracle Home</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DBASE</td>
 <td>Search Path</td>
 <td>Database Files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SERVER</td>
 <td>Filename</td>
 <td>Server Loader</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DBEXT</td>
 <td>Filename</td>
 <td>Database Server</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LINKTYPE</td>
 <td>Keyword</td>
 <td>Database Linkages</td>
@@ -2915,18 +2820,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="data-files-category">Data Files Category</h2>
+<h2 id="data-files-category"><a class="markdownIt-Anchor" href="#data-files-category"></a> Data Files Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 10%" />
-<col style="width: 41%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -2935,84 +2833,84 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_CUSTOMSHEETSIZEDEF</td>
 <td>Filename</td>
 <td>Sheet Size Definitions</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CUSTOMSCALEDEF</td>
 <td>Filename</td>
 <td>Scales Definitions</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CUSTOMUNITDEF</td>
 <td>Filename</td>
 <td>Unit Definitions for Upgrading to V8</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_HTMLDGNDIR</td>
 <td>Directory</td>
 <td>HTML Template Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_WMS_SERVERS_SEED</td>
 <td>Filename</td>
 <td>Seed file for MS_WMS_SERVERS file</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_WMS_SERVERS</td>
 <td>Filename</td>
 <td>Web Map Service servers</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DATETIMEFORMATS</td>
 <td>Filename</td>
 <td>Standard Date Time formats</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SETTINGSOUTDIR</td>
 <td>Directory</td>
 <td>Settings Output Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_SETTINGSDIR</td>
 <td>Directory</td>
 <td>Settings Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REMAP_CSVFILE</td>
 <td>Filename</td>
 <td>Remap CSV File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BSILOG_CONFIG_FILE</td>
 <td>Filename</td>
 <td>Logging config file</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BSILOG_ENABLE</td>
 <td>Boolean</td>
 <td>Enable diagnostic logging</td>
@@ -3022,18 +2920,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="quickvision-category">QuickVision Category</h2>
+<h2 id="quickvision-category"><a class="markdownIt-Anchor" href="#quickvision-category"></a> QuickVision Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 8%" />
-<col style="width: 44%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3042,14 +2933,14 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>QV_DISABLE_D3D11</td>
 <td>Boolean</td>
 <td>Disables Direct3D Version 11</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>QV_DISABLE_HARDWARE</td>
 <td>Boolean</td>
 <td>Disables Graphics Hardware Acceleration</td>
@@ -3059,18 +2950,11 @@ data for all users</td>
 </tbody>
 </table>
 <hr />
-<h2 id="dgnapps-category">DGNAPPS Category</h2>
+<h2 id="dgnapps-category"><a class="markdownIt-Anchor" href="#dgnapps-category"></a> DGNAPPS Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 7%" />
-<col style="width: 56%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3079,15 +2963,14 @@ data for all users</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>_USTN_FIRSTDGNAPPS</td>
 <td>Filelist</td>
-<td>Allows you to add applications that load on MicroStation
-startup</td>
+<td>Allows you to add applications that load on MicroStation startup</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DGNAPPS</td>
 <td>Filelist</td>
 <td>Design File Applications</td>
@@ -3097,18 +2980,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="application-load-category">Application Load Category</h2>
+<h2 id="application-load-category"><a class="markdownIt-Anchor" href="#application-load-category"></a> Application Load Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 10%" />
-<col style="width: 33%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3117,21 +2993,21 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_MDLSTUB_LOAD</td>
 <td>Filelist</td>
 <td>MDL Application Stub-load</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_XCOMMAND_APPS</td>
 <td>Filelist</td>
 <td>XCommand Table Auto-load</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CMDTABLE_LOAD</td>
 <td>Filelist</td>
 <td>Key-in Table Auto-load</td>
@@ -3141,18 +3017,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="dwgdxf-search-path">DWG/DXF Search Path</h2>
+<h2 id="dwgdxf-search-path"><a class="markdownIt-Anchor" href="#dwgdxf-search-path"></a> DWG/DXF Search Path</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 11%" />
-<col style="width: 38%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3161,63 +3030,63 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_DWG_COMMANDPREFIX</td>
 <td>Keyword</td>
 <td>DWG Command Prefix.</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DWG_PGPFILE</td>
 <td>Filename</td>
 <td>PGP Command Alias file.</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGSETTINGSFILE</td>
 <td>Filename</td>
 <td>DWG Settings File.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DWGSYSTEMDATA</td>
 <td>Directory</td>
 <td>System DWG Data Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGDATA</td>
 <td>Directory</td>
 <td>DWG Data Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BLOCKLIST</td>
 <td>Filelist</td>
 <td>AutoCAD Block List</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGFONTPATH</td>
 <td>Directory</td>
 <td>AutoCAD SHX Font Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_ACADDIR</td>
 <td>Directory</td>
 <td>AutoCAD Program Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWG_FIELD_2005FORMATTING</td>
 <td>Keyword</td>
 <td>Force AutoCAD 2005 field format</td>
@@ -3227,18 +3096,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="cgm-translation-category">CGM-Translation Category</h2>
+<h2 id="cgm-translation-category"><a class="markdownIt-Anchor" href="#cgm-translation-category"></a> CGM-Translation Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 12%" />
-<col style="width: 32%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3247,42 +3109,42 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_CGMIN</td>
 <td>Directory</td>
 <td>CGM Input Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CGMOUT</td>
 <td>Directory</td>
 <td>CGM Output Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CGMLOG</td>
 <td>Directory</td>
 <td>CGM Log Files.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CGMTABLES</td>
 <td>Directory</td>
 <td>CGM Configuration Tables</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_CGMINSET</td>
 <td>Filename</td>
 <td>CGMIN Settings File.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CGMOUTSET</td>
 <td>Filename</td>
 <td>CGMOUT Settings File.</td>
@@ -3292,18 +3154,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="iges-translation-category">IGES-Translation Category</h2>
+<h2 id="iges-translation-category"><a class="markdownIt-Anchor" href="#iges-translation-category"></a> IGES-Translation Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 12%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3312,35 +3167,35 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_IGESIN</td>
 <td>Directory</td>
 <td>IGES Input Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_IGESOUT</td>
 <td>Directory</td>
 <td>IGES Output Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_IGESLOG</td>
 <td>Directory</td>
 <td>IGES Log Files.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_IGESINSET</td>
 <td>Filename</td>
 <td>IGESIN Settings File.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_IGESOUTSET</td>
 <td>Filename</td>
 <td>IGESOUT Settings File.</td>
@@ -3350,18 +3205,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="workspace-category">Workspace Category</h2>
+<h2 id="workspace-category"><a class="markdownIt-Anchor" href="#workspace-category"></a> Workspace Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 9%" />
-<col style="width: 53%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3370,28 +3218,28 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>_USTN_WORKSETCFG</td>
 <td>Filename</td>
 <td>WorkSet Configuration</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_USERPREF</td>
 <td>Filename</td>
 <td>User Preference Resource</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>_USTN_UIPATH</td>
 <td>Search Path</td>
 <td>User Interface</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>_USTN_DISALLOW_NOWORKSET</td>
 <td>Search Path</td>
 <td>If on, the No WorkSet option in the Work page will be hidden</td>
@@ -3401,18 +3249,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="tags-category">Tags Category</h2>
+<h2 id="tags-category"><a class="markdownIt-Anchor" href="#tags-category"></a> Tags Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3421,21 +3262,21 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_TAGOUTPUT</td>
 <td>Directory</td>
 <td>Tag Output</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_TAGREPORTS</td>
 <td>Directory</td>
 <td>Tag Reports</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_TAGTEMPLATES</td>
 <td>Directory</td>
 <td>Tag Templates</td>
@@ -3445,18 +3286,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="ole-server-category">OLE Server Category</h2>
+<h2 id="ole-server-category"><a class="markdownIt-Anchor" href="#ole-server-category"></a> OLE Server Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 9%" />
-<col style="width: 37%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3465,14 +3299,14 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_OLE_RETAIN_CONTROL_SIZE</td>
 <td>Boolean</td>
 <td>Retain display size of object</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_OLESERVE_EMBED_REFFILES</td>
 <td>Keyword</td>
 <td>Embed References</td>
@@ -3482,18 +3316,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="engineering-links-category">Engineering Links Category</h2>
+<h2 id="engineering-links-category"><a class="markdownIt-Anchor" href="#engineering-links-category"></a> Engineering Links Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 12%" />
-<col style="width: 33%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3502,84 +3329,84 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_WEBLIB_HISTORY</td>
 <td>Filename</td>
 <td>Weblib history</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BOOKMARKS_IMAGE</td>
 <td>Filename</td>
 <td>Image bookmarks</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BOOKMARKS_RSC</td>
 <td>Filename</td>
 <td>Resource bookmarks</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BOOKMARKS_ARCHIVE</td>
 <td>Filename</td>
 <td>Archive bookmarks</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BOOKMARKS_CELL</td>
 <td>Filename</td>
 <td>Cell library bookmarks</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_BOOKMARKS_DGN</td>
 <td>Filename</td>
 <td>DGN bookmarks</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_WEBKIOSKMODE</td>
 <td>Keyword</td>
 <td>Kiosk mode</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_WEBTYPESFILE</td>
 <td>Filename</td>
 <td>Special filetype handling</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_WEBFILES_DIR</td>
 <td>Directory</td>
 <td>Weblib local storage</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_WEBDOWNLOADDIR</td>
 <td>Directory</td>
 <td>Download directory</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_BROWSERMAKECHILDWINDOW</td>
 <td>Boolean</td>
 <td>Reparent Browser</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_USEEXTERNALBROWSER</td>
 <td>Keyword</td>
 <td>External browser name</td>
@@ -3589,18 +3416,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="step-translation-category">Step-Translation Category</h2>
+<h2 id="step-translation-category"><a class="markdownIt-Anchor" href="#step-translation-category"></a> Step-Translation Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 12%" />
-<col style="width: 32%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3609,21 +3429,21 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_STEPOUT</td>
 <td>Directory</td>
 <td>Step Output Directory.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_STEPLOG</td>
 <td>Directory</td>
 <td>Step Log Files.</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_ROSEDB</td>
 <td>Directory</td>
 <td>Rose database directory.</td>
@@ -3633,18 +3453,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="spelling-category">Spelling Category</h2>
+<h2 id="spelling-category"><a class="markdownIt-Anchor" href="#spelling-category"></a> Spelling Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 12%" />
-<col style="width: 32%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3653,14 +3466,14 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_SPELLINGUSERDICTIONARY</td>
 <td>Filename</td>
 <td>Spelling User Dictionary</td>
 <td>YES</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SPELLINGDICTIONARYPATH</td>
 <td>Directory</td>
 <td>Spelling Dictionaries</td>
@@ -3670,18 +3483,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="levels-category">Levels Category</h2>
+<h2 id="levels-category"><a class="markdownIt-Anchor" href="#levels-category"></a> Levels Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 8%" />
-<col style="width: 41%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3690,119 +3496,119 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_DO_NOT_OVERRIDE_DESIGN_LEVELS_IN_SHEET</td>
 <td>Keyword</td>
 <td>Level Property Overrides in Sheet and Drawing Models</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_DISPLAY_FORMAT</td>
 <td>Keyword</td>
 <td>Level Display Format</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_EDIT_NESTED_ATTACHMENT_LEVELS</td>
 <td>Keyword</td>
 <td>Edit Nested Attachment Levels</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_ALLOW_LIBRARY_LEVEL_EDIT</td>
 <td>Keyword</td>
 <td>Edit Unused Library Levels</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_LOAD_ATTACHMENT_FILTERS</td>
 <td>Keyword</td>
 <td>Load Attachment Level Filters</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_EDIT_ATTRIBUTE_LIST</td>
 <td>Keyword</td>
 <td>Control Level Attributes Edit</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_SYNC_ATTRIBUTE_LIST</td>
 <td>Keyword</td>
 <td>Control Level Attributes Sync</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_AUTO_SYNC_ATTRIBUTE_LIST</td>
 <td>Keyword</td>
 <td>Level Attribute Auto Synch.</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_SEED_LEVEL_NAME</td>
 <td>Keyword</td>
 <td>Seed Level Name</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_CREATE_FROM_SEED_ATTRIBUTE_LIST</td>
 <td>Keyword</td>
 <td>Seed Level Attributes to use</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_UPDATE_KEEP_UNUSED_LIBRARY_LEVELS</td>
 <td>Keyword</td>
 <td>Keep Unused Library Levels</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_PICKER_WIDTH</td>
 <td>Keyword</td>
 <td>Attributes Level Picker Width</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_LEVEL_SYNCH_BYLEVEL</td>
 <td>Keyword</td>
 <td>Synch Symbology to ByLevel on Level Change</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_LEVEL_LIB_DIR</td>
 <td>Search Path</td>
 <td>Level Library Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_V7TOV8_CSVNAME</td>
 <td>Filename</td>
 <td>V7 to V8 Level CSV File</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_V7_LEVEL_NAME_PREFIX</td>
 <td>Keyword</td>
 <td>V7 to V8 Level Name Prefix</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_V7TOV8_DELETE_UNUSED_LEVELS</td>
 <td>Keyword</td>
 <td>V7 to V8 Delete Unused Levels</td>
@@ -3812,18 +3618,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="design-history-category">Design History Category</h2>
+<h2 id="design-history-category"><a class="markdownIt-Anchor" href="#design-history-category"></a> Design History Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 6%" />
-<col style="width: 42%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3832,56 +3631,56 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_DESIGN_HISTORY_COMMIT_ON_SAVE</td>
 <td>Boolean</td>
 <td>Commit on save</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGN_HISTORY_COMMIT_ON_CLOSE</td>
 <td>NONE</td>
 <td>Commit before close</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGN_HISTORY_COMMIT_ON_MODEL_SWITCH</td>
 <td>Boolean</td>
 <td>Commit on model switch</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGN_HISTORY_OWNERSHIP_WARNING</td>
 <td>Boolean</td>
 <td>Confirm when taking ownership</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGN_HISTORY_COLORS</td>
 <td>NONE</td>
 <td>Colors</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGN_HISTORY_REVISION_NUMBER_FORMAT</td>
 <td>Keyword</td>
 <td>Revision number display format</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DESIGN_HISTORY</td>
 <td>Keyword</td>
 <td>Design History capabilities</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DESIGN_HISTORY_COMMIT_DOC_PROPERTIES</td>
 <td>Boolean</td>
 <td>Include document properties in design history?</td>
@@ -3891,18 +3690,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="protection-category">Protection Category</h2>
+<h2 id="protection-category"><a class="markdownIt-Anchor" href="#protection-category"></a> Protection Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 8%" />
-<col style="width: 36%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3911,49 +3703,49 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_PROTECTION_ENABLE</td>
 <td>Keyword</td>
 <td>Enable file protection</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PROTECTION_V8_COMPATIBILITY</td>
 <td>Keyword</td>
 <td>Limit encryption strength</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PROTECTION_LICENSE_ENABLE</td>
 <td>Keyword</td>
 <td>Control license creation</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PROTECTION_PASSWORD_MIXED</td>
 <td>Keyword</td>
 <td>Password letters and numbers?</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PROTECTION_PASSWORD_MINIMUM</td>
 <td>Keyword</td>
 <td>Minimum length of password</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_PROTECTION_NOENCRYPT_THUMBNAIL</td>
 <td>Keyword</td>
 <td>Do NOT encrypt file thumbnail?</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_PROTECTION_NOENCRYPT_PROPERTIES</td>
 <td>Keyword</td>
 <td>Do NOT encrypt file properties?</td>
@@ -3963,18 +3755,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="security-category">Security Category</h2>
+<h2 id="security-category"><a class="markdownIt-Anchor" href="#security-category"></a> Security Category</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 9%" />
-<col style="width: 34%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -3983,14 +3768,14 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_SECURITY_LEVEL</td>
 <td>Keyword</td>
 <td>Security level</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_SECURITY_SPC</td>
 <td>Keyword</td>
 <td>Software Publishing Certs</td>
@@ -4000,18 +3785,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="reference-category">Reference Category</h2>
+<h2 id="reference-category"><a class="markdownIt-Anchor" href="#reference-category"></a> Reference Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4020,98 +3798,98 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_REF_MASTERFILELAST_SHEET</td>
 <td>Keyword</td>
 <td>Sheet Model Update Sequence</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_MASTERFILELAST_DRAWING</td>
 <td>Keyword</td>
 <td>Drawing Model Update Sequence</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_REF_MASTERFILELAST_DESIGN</td>
 <td>Keyword</td>
 <td>Design Model Update Sequence</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_MAXNESTDEPTH</td>
 <td>Keyword</td>
 <td>Maximum Reference Nesting Depth</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_REF_DEFAULTATTACHDIRECTORY</td>
 <td>Directory</td>
 <td>Default Attachment Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_DEFAULTSETTINGS</td>
 <td>Keyword</td>
 <td>Default Attachment Settings</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DISALLOWFULLREFPATH</td>
 <td>Keyword</td>
 <td>Disallow Full Ref Path</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_NO_CVE_LOAD</td>
 <td>Keyword</td>
 <td>Disable loading of CVE references</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_REF_ENABLE_LEGACY_VISEDGES</td>
 <td>Keyword</td>
-<td>Enable Visible Edges "Legacy" Option</td>
+<td>Enable Visible Edges “Legacy” Option</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_NEWLEVELDISPLAY</td>
 <td>Keyword</td>
 <td>New Level Display</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_NEST_COLORADJUSTMENT</td>
 <td>Keyword</td>
 <td>Nested Reference Color Adjustment</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_REF_DONTHILITEFORMANIP</td>
 <td>Keyword</td>
 <td>Hiliting References for Manipulation</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_REF_VISEDGE_ATTACH_STATE</td>
 <td>NONE</td>
 <td>Reference Visible Edges default Attachment State</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_CVE_VISEDGE_OVERRIDES</td>
 <td>NONE</td>
 <td>CVE Visible Edge Overrides</td>
@@ -4121,18 +3899,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="standards-checker-category">Standards Checker Category</h2>
+<h2 id="standards-checker-category"><a class="markdownIt-Anchor" href="#standards-checker-category"></a> Standards Checker Category</h2>
 <hr />
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 9%" />
-<col style="width: 42%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4141,35 +3912,35 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_STANDARDSCHECKER_SETTINGSFILE</td>
 <td>Filename</td>
 <td>Required Standards Checker Settings File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_STANDARDSCHECKER_SETTINGSNAME</td>
 <td>NONE</td>
 <td>Required Standards Checker Named Settings</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_STANDARDSCHECKER_OUT</td>
 <td>Directory</td>
 <td>Standards Checker Report Directory</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_STANDARDSCHECKER_STYLESHEET</td>
 <td>Filename</td>
 <td>Standards Checker Style Sheet</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_STANDARDSCHECKER_APPS</td>
 <td>Filelist</td>
 <td>Standards Checker Applications</td>
@@ -4179,18 +3950,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="file-save-category">File Save Category</h2>
+<h2 id="file-save-category"><a class="markdownIt-Anchor" href="#file-save-category"></a> File Save Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 9%" />
-<col style="width: 37%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4199,49 +3963,49 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_DGNAUTOSAVE</td>
 <td>Keyword</td>
 <td>Design File Auto-Save</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_V7AUTOSAVE</td>
 <td>Keyword</td>
 <td>V7 Design File Auto-Save</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_V7AUTOSAVE_NODIALOG</td>
 <td>Keyword</td>
 <td>V7 Auto-Save Dialog</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_V7BACKUPV8</td>
 <td>Keyword</td>
 <td>V7 create backup in V8 format</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_DWGAUTOSAVE</td>
 <td>Keyword</td>
 <td>DWG/DXF File Auto-Save</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_DWGAUTOSAVE_NODIALOG</td>
 <td>Keyword</td>
 <td>DWG/DXF Auto-Save Dialog</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_EVE_VISEDGE_OVERRIDES</td>
 <td>NONE</td>
 <td>Export Visible Edge Overrides</td>
@@ -4251,18 +4015,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="raster-category">Raster Category</h2>
+<h2 id="raster-category"><a class="markdownIt-Anchor" href="#raster-category"></a> Raster Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 6%" />
-<col style="width: 48%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4271,105 +4028,105 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_IMG_STRETCH</td>
 <td>Boolean</td>
 <td>Set contrast stretch filtering for IMG file format</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_IMG_CHANNELS</td>
 <td>NONE</td>
 <td>Set band to channel mapping for IMG file format</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_DISABLE_IPPCONNECTION</td>
 <td>NONE</td>
 <td>Disable default server port</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_VIEWSAVEASDWG</td>
 <td>NONE</td>
 <td>Define view for DWG file</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_COMMONGEOREFFILEFORMATS</td>
 <td>NONE</td>
-<td>'Common Geo Ref Raster Formats' File Filter</td>
+<td>‘Common Geo Ref Raster Formats’ File Filter</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_COMMONFILEFORMATS</td>
 <td>NONE</td>
-<td>'Common Raster Formats' File Filter</td>
+<td>‘Common Raster Formats’ File Filter</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_TIFFINVERT</td>
 <td>NONE</td>
 <td>Invert monochrome tiff</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_NOSHARING</td>
 <td>NONE</td>
 <td>Create .sharing.tmp files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_NO_DETACH_CONFIRM</td>
 <td>NONE</td>
 <td>Display alert dialog upon raster detach</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_EPSGTABLE_PATH</td>
 <td>NONE</td>
 <td>Set path to EPSG table</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_DEFAULTSISTER</td>
 <td>NONE</td>
 <td>Set default sister file</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_DEFAULTSCALE</td>
 <td>NONE</td>
 <td>Set default scale</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_1BIT_WORKMODE</td>
 <td>NONE</td>
 <td>Harmonize monochrome raster display</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_RASTER_DEFAULT_LEVEL</td>
 <td>NONE</td>
 <td>Set default display level</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_RASTER_TRANSPARENCY</td>
 <td>NONE</td>
 <td>Set transparency</td>
@@ -4379,18 +4136,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="clash-detection-category">Clash Detection Category</h2>
+<h2 id="clash-detection-category"><a class="markdownIt-Anchor" href="#clash-detection-category"></a> Clash Detection Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 8%" />
-<col style="width: 37%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4399,28 +4149,21 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_INVALID_FIELD_INDICATOR_STRING</td>
 <td>Keyword</td>
-<td>Display "null" instead of "####"</td>
+<td>Display “null” instead of “####”</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="markup-category">Markup Category</h2>
+<h2 id="markup-category"><a class="markdownIt-Anchor" href="#markup-category"></a> Markup Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 13%" />
-<col style="width: 34%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4429,42 +4172,42 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_MARKUP_HIDE_AUDIT_COMMENTS</td>
 <td>Boolean</td>
 <td>Hide Markup Audit Comments</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MARKUPVIEWRESOLUTION</td>
 <td>NONE</td>
 <td>Markup View Resolution</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_MARKUPSHEETSEEDNAME</td>
 <td>NONE</td>
 <td>Markup Template Sheet</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MARKUPSHEETSEED</td>
 <td>Filename</td>
 <td>Markup Template File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_MARKUPSETTINGS</td>
 <td>Filename</td>
 <td>Markup Customization Settings</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MARKUPPATH</td>
 <td>Search Path</td>
 <td>Markup Path</td>
@@ -4474,18 +4217,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="macro-recorder-category">Macro Recorder Category</h2>
+<h2 id="macro-recorder-category"><a class="markdownIt-Anchor" href="#macro-recorder-category"></a> Macro Recorder Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 12%" />
-<col style="width: 42%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4494,42 +4230,42 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_MACRONEWFILEDIRECTORY</td>
 <td>Directory</td>
 <td>Directory to create new BMR macros in</td>
 <td>NO</td>
 <td>NO</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_MACRO</td>
 <td>Search Path</td>
 <td>Search path for BMR macro files</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VBASAVEONRUN</td>
 <td>Keyword</td>
 <td>Automatically save VBA projects</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VBAAUTOLOADPROJECTS</td>
 <td>Filename</td>
 <td>Names of standard projects</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_VBASEARCHDIRECTORIES</td>
 <td>Search Path</td>
 <td>Directories to search for VBA projects</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_VBANEWPROJECTDIRECTORY</td>
 <td>Directory</td>
 <td>Directory for new projects</td>
@@ -4539,18 +4275,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="tables-category">Tables Category</h2>
+<h2 id="tables-category"><a class="markdownIt-Anchor" href="#tables-category"></a> Tables Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4559,7 +4288,7 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_TABLE_INPUT</td>
 <td>Directory</td>
 <td>Table Input</td>
@@ -4569,18 +4298,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="reports-category">Reports Category</h2>
+<h2 id="reports-category"><a class="markdownIt-Anchor" href="#reports-category"></a> Reports Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4589,7 +4311,7 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_REPORT_OUTPUT</td>
 <td>Directory</td>
 <td>Report Output</td>
@@ -4599,18 +4321,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="point-cloud-category">Point Cloud Category</h2>
+<h2 id="point-cloud-category"><a class="markdownIt-Anchor" href="#point-cloud-category"></a> Point Cloud Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 4%" />
-<col style="width: 43%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4619,7 +4334,7 @@ startup</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_POINTCLOUD_LAS_NBIT_COLOR</td>
 <td>NONE</td>
 <td>Point Cloud LAS File Color Treatment</td>
@@ -4629,19 +4344,11 @@ startup</td>
 </tbody>
 </table>
 <hr />
-<h2 id="geographic-coordinate-system-category">Geographic Coordinate
-System Category</h2>
+<h2 id="geographic-coordinate-system-category"><a class="markdownIt-Anchor" href="#geographic-coordinate-system-category"></a> Geographic Coordinate System Category</h2>
 <hr />
 <table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 9%" />
-<col style="width: 34%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Configuration Variable Name</th>
 <th>Type</th>
 <th>Short Description</th>
@@ -4650,35 +4357,35 @@ System Category</h2>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>MS_GEOCOORDINATE_USERLIBRARIES</td>
 <td>Filelist</td>
 <td>User-defined GCS Dictionaries</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GEOCOORDINATE_REPROJECTIONSETTINGS</td>
 <td>Directory</td>
 <td>Reprojection Settings</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_GEOCOORDINATE_REFSETTINGS</td>
 <td>Directory</td>
 <td>Reference Reprojection Settings</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MS_GEOCOORDINATE_FAVORITESFILES</td>
 <td>Filename</td>
 <td>GCS Favorites File</td>
 <td>NO</td>
 <td>YES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MS_GEOCOORDINATE_DATA</td>
 <td>Directory</td>
 <td>GeoCoordinate Data Files</td>
@@ -4789,13 +4496,13 @@ System Category</h2>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

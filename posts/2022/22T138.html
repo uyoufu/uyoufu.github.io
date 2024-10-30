@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">1.</span> <span class="nav-text">连接客户端时报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5"><span class="nav-number">2.</span> <span class="nav-text">签名验证失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AEbucket%E8%A2%AB%E6%8B%92%E7%BB%9D"><span class="nav-number">3.</span> <span class="nav-text">访问bucket被拒绝</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">1.</span> <span class="nav-text"> 连接客户端时报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5"><span class="nav-number">2.</span> <span class="nav-text"> 签名验证失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AEbucket%E8%A2%AB%E6%8B%92%E7%BB%9D"><span class="nav-number">3.</span> <span class="nav-text"> 访问bucket被拒绝</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -292,33 +292,34 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文总结了在 .NetCore 中使用 Minio 的过程中遇到的一些问题。</p>
 <span id="more"></span>
-<h2 id="连接客户端时报错">连接客户端时报错</h2>
+<h2 id="连接客户端时报错"><a class="markdownIt-Anchor" href="#连接客户端时报错"></a> 连接客户端时报错</h2>
 <p>在连接客户端时，报错：<code>Minio.Exceptions.InvalidEndpointException: MinIO API responded with message=No path allowed in endpoint.</code></p>
 <p>连接代码为：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MinioClient minioClient = <span class="keyword">new</span> MinioClient(<span class="string">&quot;https://XXXX:9000&quot;</span>,accessKey:<span class="string">&quot;Q3AM3UQ867SPQQA43P2F&quot;</span>,secretKey:<span class="string">&quot;zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG&quot;</span>).WithSSL();</span><br></pre></td></tr></table></figure>
 <p><strong>解决方法：</strong></p>
 <p>把 url 的前缀 <code>https://</code> 去掉即可。</p>
-<h2 id="签名验证失败">签名验证失败</h2>
-<p>在使用 <code>minioClient</code>时，报错：
-<code>MinIO API responded with message=The request signature we calculated does not match the signature you provided. Check your key and signing method.</code></p>
+<h2 id="签名验证失败"><a class="markdownIt-Anchor" href="#签名验证失败"></a> 签名验证失败</h2>
+<p>在使用 <code>minioClient</code>时，报错： <code>MinIO API responded with message=The request signature we calculated does not match the signature you provided. Check your key and signing method.</code></p>
 <p><strong>解决办法：</strong></p>
-<p>出现这种问题的原因是 minio 在校验 signature 是否有效的时候，必须从
-http header 里面获取 host，而我们这里没有对 header
-作必要的处理。如果源请求未携带这个头，则 minio 处无法获取请求头中的
-host。</p>
+<p>出现这种问题的原因是 minio 在校验 signature 是否有效的时候，必须从 http header 里面获取 host，而我们这里没有对 header 作必要的处理。如果源请求未携带这个头，则 minio 处无法获取请求头中的 host。</p>
 <p>可以在 nginx 中添加如下配置解决：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">location /</span><br><span class="line">&#123;</span><br><span class="line">     proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">     proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">     proxy_set_header Host $http_host;</span><br><span class="line"></span><br><span class="line">     proxy_connect_timeout 300;</span><br><span class="line">     # Default is HTTP/1, keepalive is only enabled in HTTP/1.1</span><br><span class="line">     proxy_http_version 1.1;</span><br><span class="line">     proxy_set_header Connection &quot;&quot;;</span><br><span class="line">     proxy_pass http://localhost:9000;</span><br><span class="line">     chunked_transfer_encoding off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考：</p>
-<ol type="1">
-<li><p>http://www.dreamwu.com/post-2068.html</p></li>
-<li><p>https://docs.min.io/docs/setup-nginx-proxy-with-minio.html</p></li>
-<li><p>https://segmentfault.com/a/1190000019422246</p></li>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="http://www.dreamwu.com/post-2068.html">http://www.dreamwu.com/post-2068.html</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://docs.min.io/docs/setup-nginx-proxy-with-minio.html">https://docs.min.io/docs/setup-nginx-proxy-with-minio.html</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019422246">https://segmentfault.com/a/1190000019422246</a></p>
+</li>
 </ol>
 </blockquote>
-<h2 id="访问bucket被拒绝">访问bucket被拒绝</h2>
-<p>当调用 <code>BucketExistsAsync("public")</code>
-时，报错：<code>MinIO API responded with message=Access denied on the resource: public/.</code></p>
+<h2 id="访问bucket被拒绝"><a class="markdownIt-Anchor" href="#访问bucket被拒绝"></a> 访问bucket被拒绝</h2>
+<p>当调用 <code>BucketExistsAsync(&quot;public&quot;)</code> 时，报错：<code>MinIO API responded with message=Access denied on the resource: public/.</code></p>
 <p><strong>解决办法：</strong></p>
 
     </div>
@@ -423,13 +424,13 @@ host。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

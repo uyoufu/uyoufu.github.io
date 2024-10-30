@@ -19,19 +19,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点（&#x2F;）开始的倒置的树状结构   linux2bfile2bsystem2bhierarchy  文件系统的最顶层是由根目录开始的，系统使用 &#x2F; 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。">
+    <meta name="description" content="在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点（&#x2F;）开始的倒置的树状结构  文件系统的最顶层是由根目录开始的，系统使用 &#x2F; 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 FHS 规范 Linux 目录使用">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/3AYYNM8.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点（&#x2F;）开始的倒置的树状结构   linux2bfile2bsystem2bhierarchy  文件系统的最顶层是由根目录开始的，系统使用 &#x2F; 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。">
+<meta property="og:description" content="在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点（&#x2F;）开始的倒置的树状结构  文件系统的最顶层是由根目录开始的，系统使用 &#x2F; 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg">
 <meta property="article:published_time" content="2023-12-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-12-25T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="FHS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2023/3AYYNM8.html">
@@ -91,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E5%AE%9E%E8%B7%B5"><span class="nav-number">2.</span> <span class="nav-text">目录实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text"> 目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E5%AE%9E%E8%B7%B5"><span class="nav-number">2.</span> <span class="nav-text"> 目录实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +170,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -279,285 +281,212 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在 Linux 或 Unix
-操作系统中，所有的文件和目录都被组织成以一个根节点（/）开始的倒置的树状结构</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg"
-alt="linux2bfile2bsystem2bhierarchy" />
-<figcaption
-aria-hidden="true">linux2bfile2bsystem2bhierarchy</figcaption>
-</figure>
-<p>文件系统的最顶层是由根目录开始的，系统使用 <strong>/</strong>
-来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。</p>
+    <div class="post-body" itemprop="articleBody"><p>在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点（/）开始的倒置的树状结构</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/linux2bfile2bsystem2bhierarchy.jpg" alt="linux2bfile2bsystem2bhierarchy" /></p>
+<p>文件系统的最顶层是由根目录开始的，系统使用 <strong>/</strong> 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。</p>
 <span id="more"></span>
-<p>在Linux文件系统中有两个特殊的目录，一个用户所在的工作目录，也叫当前目录，可以使用一个点
-<strong>.</strong>
-来表示；另一个是当前目录的上一级目录，也叫父目录，可以使用两个点
-<strong>..</strong> 来表示。</p>
+<p>在Linux文件系统中有两个特殊的目录，一个用户所在的工作目录，也叫当前目录，可以使用一个点 <strong>.</strong> 来表示；另一个是当前目录的上一级目录，也叫父目录，可以使用两个点 <strong>…</strong> 来表示。</p>
 <ul>
 <li>. ：代表当前的目录，也可以使用 ./ 来表示；</li>
-<li>.. ：代表上一层目录，也可以 ../ 来代表。</li>
+<li>… ：代表上一层目录，也可以 …/ 来代表。</li>
 </ul>
-<p>如果一个目录或文件名以一个点 .
-开始，表示这个目录或文件是一个隐藏目录或文件(如：.bashrc)。即以默认方式查找时，不显示该目录或文件。</p>
-<h2 id="目录结构">目录结构</h2>
+<p>如果一个目录或文件名以一个点 . 开始，表示这个目录或文件是一个隐藏目录或文件(如：.bashrc)。即以默认方式查找时，不显示该目录或文件。</p>
+<h2 id="目录结构"><a class="markdownIt-Anchor" href="#目录结构"></a> 目录结构</h2>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>目录</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>/</code></td>
-<td><em>第一层次结构</em> 的根、 整个文件系统层次结构的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/根目录">根目录</a>。</td>
+<td><em>第一层次结构</em> 的根、 整个文件系统层次结构的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%9B%AE%E5%BD%95">根目录</a>。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/bin/</code></td>
-<td>需要在<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/單用戶模式">单用户模式</a>可用的必要命令（<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/可执行文件">可执行文件</a>）；面向所有用户，<em>例如</em>：
-<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cat_(Unix)">cat</a>、 <a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Ls">ls</a>、 <a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cp_(Unix)">cp</a>。</td>
+<td>需要在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%96%AE%E7%94%A8%E6%88%B6%E6%A8%A1%E5%BC%8F">单用户模式</a>可用的必要命令（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">可执行文件</a>）；面向所有用户，<em>例如</em>： <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cat_(Unix)">cat</a>、 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Ls">ls</a>、 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cp_(Unix)">cp</a>。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/boot/</code></td>
-<td><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/引导程序">引导程序</a>文件，<em>例如：</em>
-<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/内核">kernel</a>、<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Initrd">initrd</a>；时常是一个单独的分区[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-8">8]</a></td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F">引导程序</a>文件，<em>例如：</em> <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%86%85%E6%A0%B8">kernel</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Initrd">initrd</a>；时常是一个单独的分区[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-8">8]</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/dev/</code></td>
-<td>英文 device，必要<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/设备文件系统">设备</a>,
-<em>例如：</em><code>/dev/null</code>.</td>
+<td>英文 device，必要<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">设备</a>, <em>例如：</em><code>/dev/null</code>.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/etc/</code></td>
-<td>特定主机，系统范围内的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/配置文件">配置文件</a>。关于这个名称目前有争议。在贝尔实验室关于UNIX
-实现文档的早期版本中，/etc 被称为<em><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/等等">etcetera</a></em>， [<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-9">9]</a>
-这是由于过去此目录中存放所有不属于别处的所有东西（然而，FHS限制/etc只能存放静态配置文件，不能包含二进制文件）。
-[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-10">10]</a>
-自从早期文档出版以来，目录名称已被以各种方式重新称呼。最近的解释包括<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/逆向首字母缩略词">逆向首字母缩略词</a>如："可编辑的文本配置"（英文
-"Editable Text Configuration"）或"扩展工具箱"（英文 "Extended Tool
-Chest"）。 [<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-11">11]</a></td>
+<td>特定主机，系统范围内的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a>。关于这个名称目前有争议。在贝尔实验室关于UNIX 实现文档的早期版本中，/etc 被称为*<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%AD%89%E7%AD%89">etcetera</a>*， [<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-9">9]</a> 这是由于过去此目录中存放所有不属于别处的所有东西（然而，FHS限制/etc只能存放静态配置文件，不能包含二进制文件）。 [<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-10">10]</a> 自从早期文档出版以来，目录名称已被以各种方式重新称呼。最近的解释包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%86%E5%90%91%E9%A6%96%E5%AD%97%E6%AF%8D%E7%BC%A9%E7%95%A5%E8%AF%8D">逆向首字母缩略词</a>如：“可编辑的文本配置”（英文 “Editable Text Configuration”）或&quot;扩展工具箱&quot;（英文 “Extended Tool Chest”）。 [<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-11">11]</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/etc/opt/</code></td>
 <td><code>/opt/</code>的配置文件</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/etc/X11/</code></td>
-<td><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X_Window系统">X窗口系统</a>(版本11)的配置文件</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X_Window%E7%B3%BB%E7%BB%9F">X窗口系统</a>(版本11)的配置文件</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/etc/sgml/</code></td>
 <td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SGML">SGML</a>的配置文件</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/etc/xml/</code></td>
 <td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/XML">XML</a>的配置文件</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/home/</code></td>
-<td>用户的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/家目录">家目录</a>，包含保存的文件、个人设置等，一般为单独的分区。</td>
+<td>用户的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%B6%E7%9B%AE%E5%BD%95">家目录</a>，包含保存的文件、个人设置等，一般为单独的分区。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/lib/</code></td>
-<td><code>/bin/</code> 和 <code>/sbin/</code>中二进制文件必要的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/函式庫">库</a>文件。</td>
+<td><code>/bin/</code> 和 <code>/sbin/</code>中二进制文件必要的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%87%BD%E5%BC%8F%E5%BA%AB">库</a>文件。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/media/</code></td>
-<td>可移除媒体(如<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CD-ROM">CD-ROM</a>)的挂载点
-(在FHS-2.3中出现)。</td>
+<td>可移除媒体(如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CD-ROM">CD-ROM</a>)的挂载点 (在FHS-2.3中出现)。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/mnt/</code></td>
-<td>临时<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/挂载">挂载</a>的文件系统。</td>
+<td>临时<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8C%82%E8%BD%BD">挂载</a>的文件系统。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/opt/</code></td>
-<td>可选<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/应用软件">应用软件</a> 和
-<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/软件包">包</a>。[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-12">12]</a></td>
+<td>可选<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a> 和 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E5%8C%85">包</a>。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-12">12]</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/proc/</code></td>
-<td>虚拟<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统">文件系统</a>，将<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/内核">内核</a>与<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/进程">进程</a>状态归档为文本文件。<em>例如：</em>uptime、
-network。在Linux中，对应<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Procfs">Procfs</a>格式挂载。</td>
+<td>虚拟<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统</a>，将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%86%85%E6%A0%B8">内核</a>与<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9B%E7%A8%8B">进程</a>状态归档为文本文件。*例如：*uptime、 network。在Linux中，对应<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Procfs">Procfs</a>格式挂载。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/root/</code></td>
-<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/超级用户">超级用户</a>的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/家目录">家目录</a></td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7">超级用户</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%B6%E7%9B%AE%E5%BD%95">家目录</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/sbin/</code></td>
 <td>必要的系统二进制文件，<em>例如：</em> init、 ip、 mount。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/srv/</code></td>
-<td>站点的具体<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/数据">数据</a>，由系统提供。</td>
+<td>站点的具体<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE">数据</a>，由系统提供。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/tmp/</code></td>
-<td>临时文件(参见
-<code>/var/tmp</code>)，在系统重启时目录中文件不会被保留。</td>
+<td>临时文件(参见 <code>/var/tmp</code>)，在系统重启时目录中文件不会被保留。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/usr/</code></td>
-<td>命名(Unix Software
-Resource)，用于存储只读用户数据的<em>第二层级目录</em>；
-包含绝大多数的(<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/多用户">多</a>)用户工具和应用程序[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-13">13]</a>。</td>
+<td>命名(Unix Software Resource)，用于存储只读用户数据的<em>第二层级目录</em>； 包含绝大多数的(<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E6%88%B7">多</a>)用户工具和应用程序[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-13">13]</a>。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/usr/bin/</code></td>
-<td>非必要<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/可执行文件">可执行文件</a> (在<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/單用戶模式">单用户模式</a>中不需要)；面向所有用户。</td>
+<td>非必要<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">可执行文件</a> (在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%96%AE%E7%94%A8%E6%88%B6%E6%A8%A1%E5%BC%8F">单用户模式</a>中不需要)；面向所有用户。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/usr/include/</code></td>
-<td>标准<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/头文件">包含文件</a>。</td>
+<td>标准<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%B4%E6%96%87%E4%BB%B6">包含文件</a>。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/usr/lib/</code></td>
-<td><code>/usr/bin/</code>和<code>/usr/sbin/</code>中二进制文件的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/库">库</a>。</td>
+<td><code>/usr/bin/</code>和<code>/usr/sbin/</code>中二进制文件的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BA%93">库</a>。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/usr/sbin/</code></td>
-<td>非必要的系统二进制文件，<em>例如：</em>大量<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/网络服务">网络服务</a>的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/守护进程">守护进程</a>。仅超级管理员可用。</td>
+<td>非必要的系统二进制文件，*例如：*大量<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1">网络服务</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B">守护进程</a>。仅超级管理员可用。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/usr/share/</code></td>
-<td><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/体系结构">体系结构</a>无关（共享）数据。</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84">体系结构</a>无关（共享）数据。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/usr/src/</code></td>
-<td><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/源代码">源代码</a>,<em>例如:</em>内核源代码及其头文件。</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%BA%90%E4%BB%A3%E7%A0%81">源代码</a>,*例如:*内核源代码及其头文件。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/usr/X11R6/</code></td>
-<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X_Window系统">X窗口系统</a>
-版本 11, Release 6.</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X_Window%E7%B3%BB%E7%BB%9F">X窗口系统</a> 版本 11, Release 6.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/usr/local/</code></td>
-<td>本地数据的<em>第三层次</em>，
-具体到本台主机。通常而言有进一步的子目录，
-<em>例如：</em><code>bin/</code>、<code>lib/</code>、<code>share/</code>.[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-14">14]</a></td>
+<td>本地数据的<em>第三层次</em>， 具体到本台主机。通常而言有进一步的子目录， <em>例如：</em><code>bin/</code>、<code>lib/</code>、<code>share/</code>.[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-14">14]</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/var/</code></td>
 <td>变量文件——在正常运行的系统中其内容不断变化的文件，如日志，脱机文件和临时电子邮件文件。有时是一个单独的分区。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/var/cache/</code></td>
 <td>应用程序缓存数据。这些数据是在本地生成的一个耗时的I/O或计算结果。应用程序必须能够再生或恢复数据。缓存的文件可以被删除而不导致数据丢失。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/var/lib/</code></td>
-<td>状态信息。 由程序在运行时维护的持久性数据。
-<em>例如：</em>数据库、包装的系统元数据等。</td>
+<td>状态信息。 由程序在运行时维护的持久性数据。 *例如：*数据库、包装的系统元数据等。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/var/lock/</code></td>
 <td>锁文件，一类跟踪当前使用中资源的文件。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/var/log/</code></td>
 <td>日志文件，包含大量日志文件，为了防止日志占满根分区，生产环境中一般是单独分区。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/var/mail/</code></td>
-<td>用户的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/电子邮箱">电子邮箱</a>。</td>
+<td>用户的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%B5%E5%AD%90%E9%82%AE%E7%AE%B1">电子邮箱</a>。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/var/run/</code></td>
-<td>自最后一次启动以来运行中的系统的信息，<em>例如：</em>当前登录的用户和运行中的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/守护进程">守护进程</a>、一些守护进程的pid文件、socket文件。现已经被/run代替[<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准#cite_note-15">15]</a>。</td>
+<td>自最后一次启动以来运行中的系统的信息，*例如：*当前登录的用户和运行中的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B">守护进程</a>、一些守护进程的pid文件、socket文件。现已经被/run代替[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86#cite_note-15">15]</a>。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/var/spool/</code></td>
-<td>等待处理的任务的<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=脱机文件&amp;action=edit&amp;redlink=1">脱机文件</a>，<em>例如：</em>打印队列和未读的邮件。</td>
+<td>等待处理的任务的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%84%B1%E6%9C%BA%E6%96%87%E4%BB%B6&amp;action=edit&amp;redlink=1">脱机文件</a>，*例如：*打印队列和未读的邮件。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/var/spool/mail/</code></td>
 <td>用户的邮箱(不鼓励的存储位置)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/var/tmp/</code></td>
 <td>在系统重启过程中可以保留的临时文件。</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>/run/</code></td>
 <td>代替/var/run目录。</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>/lost-found</code></td>
 <td>这个目录平时是空的，当系统非正常关机而留下的“无家可归”的文件便会储存在这里</td>
 </tr>
 </tbody>
 </table>
-<h2 id="目录实践">目录实践</h2>
-<ol type="1">
-<li><p>网站、FTP 存放位置</p>
-<p>在 Linux 文件系统中，<code>/srv</code>
-目录是用来存放服务器特定的数据的。</p>
+<h2 id="目录实践"><a class="markdownIt-Anchor" href="#目录实践"></a> 目录实践</h2>
+<ol>
+<li>
+<p>网站、FTP 存放位置</p>
+<p>在 Linux 文件系统中，<code>/srv</code> 目录是用来存放服务器特定的数据的。</p>
 <ul>
-<li><p><code>/srv/www</code> 来保存网站的 HTML 和相关文件</p></li>
-<li><p><code>/srv/ftp</code> 来存放 FTP 的文件</p></li>
-</ul></li>
-<li><p>自己编写的程序存放位置</p>
+<li>
+<p><code>/srv/www</code> 来保存网站的 HTML 和相关文件</p>
+</li>
+<li>
+<p><code>/srv/ftp</code> 来存放 FTP 的文件</p>
+</li>
+</ul>
+</li>
+<li>
+<p>自己编写的程序存放位置</p>
 <ul>
 <li><code>/usr/local/bin</code>：用于存放用户编译的可执行文件，这些文件对所有用户都可用。</li>
 <li><code>/usr/local/sbin</code>：用于存放用户编译的系统管理程序，这些程序通常只对超级用户可用。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-<h2 id="参考">参考</h2>
-<p><a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/文件系统层次结构标准">文件系统层次结构标准
-- 维基百科，自由的百科全书 (wikipedia.org)</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-system-contents.html">Linux
-系统目录结构 | 菜鸟教程 (runoob.com)</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86">文件系统层次结构标准 - 维基百科，自由的百科全书 (wikipedia.org)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-system-contents.html">Linux 系统目录结构 | 菜鸟教程 (runoob.com)</a></p>
 
     </div>
 
@@ -627,8 +556,8 @@ target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-system-c
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/316DJB8.html" rel="next" title="Ubuntu 中安装 Docker">
-                  Ubuntu 中安装 Docker <i class="fa fa-angle-right"></i>
+                <a href="/posts/2023/1MJYA7T.html" rel="next" title="为 APT 配置代理">
+                  为 APT 配置代理 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -661,13 +590,13 @@ target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-system-c
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

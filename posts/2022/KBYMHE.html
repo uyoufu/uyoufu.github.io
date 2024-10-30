@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="会话 Session Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod 进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，这个单行事务中对于数据、索引、oplog 的修改都是原子性的。 MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session 会话中多个请求共享一个上">
+    <meta name="description" content="会话 Session Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod 进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，这个单行事务中对于数据、索引、oplog 的修改都是原子性的。 MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session 会话中多个请求共享一个上下文，为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb 事务的使用及注意事项">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/KBYMHE.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="会话 Session Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod 进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，这个单行事务中对于数据、索引、oplog 的修改都是原子性的。 MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session 会话中多个请求共享一个上">
+<meta property="og:description" content="会话 Session Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod 进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，这个单行事务中对于数据、索引、oplog 的修改都是原子性的。 MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session 会话中多个请求共享一个上下文，为">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-10T16:00:00.000Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D-session"><span class="nav-number">1.</span> <span class="nav-text">会话 Session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">事务函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-%E4%B8%AD%E4%BA%8B%E5%8A%A1%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">Nodejs 中事务实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogoose-%E4%B8%AD%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">mogoose 中支持事务的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D-session"><span class="nav-number">1.</span> <span class="nav-text"> 会话 Session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text"> 事务函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-%E4%B8%AD%E4%BA%8B%E5%8A%A1%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text"> Nodejs 中事务实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mogoose-%E4%B8%AD%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text"> mogoose 中支持事务的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text"> 注意事项</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -290,47 +290,52 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="会话-session">会话 Session</h2>
-<p>Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod
-进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，<strong>这个单行事务中对于数据、索引、oplog
-的修改都是原子性的</strong>。</p>
-<p>MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session
-会话中多个请求共享一个上下文，为多文档事务实现提供了基础。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="会话-session"><a class="markdownIt-Anchor" href="#会话-session"></a> 会话 Session</h2>
+<p>Session 是 MongoDB 3.6 之后引入的概念，在以前的版本中，Mongod 进程中的每一个请求会创建一个上下文（OperationContext），可以理解为一个单行事务，<strong>这个单行事务中对于数据、索引、oplog 的修改都是原子性的</strong>。</p>
+<p>MongoDB 3.6 之后的 Session 本质上也是一个上下文，在这个 Session 会话中多个请求共享一个上下文，为多文档事务实现提供了基础。</p>
 <span id="more"></span>
-<h2 id="事务函数">事务函数</h2>
+<h2 id="事务函数"><a class="markdownIt-Anchor" href="#事务函数"></a> 事务函数</h2>
 <ul>
-<li><p><strong>startTransaction()</strong></p>
-<p>开启一个新的事务，之后即可进行 CRUD 操作。</p></li>
-<li><p><strong>commitTransaction()</strong></p>
-<p>提交事务保存数据，在提交之前事务中的变更的数据对外是不可见的。</p></li>
-<li><p><strong>abortTransaction()</strong></p>
-<p>事务回滚，例如，一部分数据更新失败，对已修改过的数据也进行回滚。</p></li>
-<li><p><strong>endSession()</strong></p>
-<p>结束本次会话。</p></li>
+<li>
+<p><strong>startTransaction()</strong></p>
+<p>开启一个新的事务，之后即可进行 CRUD 操作。</p>
+</li>
+<li>
+<p><strong>commitTransaction()</strong></p>
+<p>提交事务保存数据，在提交之前事务中的变更的数据对外是不可见的。</p>
+</li>
+<li>
+<p><strong>abortTransaction()</strong></p>
+<p>事务回滚，例如，一部分数据更新失败，对已修改过的数据也进行回滚。</p>
+</li>
+<li>
+<p><strong>endSession()</strong></p>
+<p>结束本次会话。</p>
+</li>
 </ul>
-<h2 id="nodejs-中事务实例">Nodejs 中事务实例</h2>
+<h2 id="nodejs-中事务实例"><a class="markdownIt-Anchor" href="#nodejs-中事务实例"></a> Nodejs 中事务实例</h2>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = <span class="built_in">require</span>(<span class="string">&#x27;./db&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">testTransaction</span> = <span class="keyword">async</span> (<span class="params">goodId</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> client = <span class="keyword">await</span> db.<span class="title function_">dbInstance</span>();</span><br><span class="line">  <span class="keyword">const</span> transactionOptions = &#123;</span><br><span class="line">    <span class="attr">readConcern</span>: &#123; <span class="attr">level</span>: <span class="string">&#x27;majority&#x27;</span> &#125;,</span><br><span class="line">    <span class="attr">writeConcern</span>: &#123; <span class="attr">w</span>: <span class="string">&#x27;majority&#x27;</span> &#125;,</span><br><span class="line">    <span class="attr">readPreference</span>: <span class="string">&#x27;primary&#x27;</span>,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> session = client.<span class="title function_">startSession</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;事务状态：&#x27;</span>, session.<span class="property">transaction</span>.<span class="property">state</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    session.<span class="title function_">startTransaction</span>(transactionOptions);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;事务状态：&#x27;</span>, session.<span class="property">transaction</span>.<span class="property">state</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> goodsColl = <span class="keyword">await</span> client.<span class="title function_">db</span>(<span class="string">&#x27;test&#x27;</span>).<span class="title function_">collection</span>(<span class="string">&#x27;goods&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> orderGoodsColl = <span class="keyword">await</span> client.<span class="title function_">db</span>(<span class="string">&#x27;test&#x27;</span>).<span class="title function_">collection</span>(<span class="string">&#x27;order_goods&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> &#123; stock, price &#125; = <span class="keyword">await</span> goodsColl.<span class="title function_">findOne</span>(&#123; goodId &#125;, &#123; session &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;事务状态：&#x27;</span>, session.<span class="property">transaction</span>.<span class="property">state</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (stock &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;库存不足&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> goodsColl.<span class="title function_">updateOne</span>(&#123; goodId &#125;, &#123;</span><br><span class="line">        <span class="attr">$inc</span>: &#123; <span class="attr">stock</span>: -<span class="number">1</span> &#125; <span class="comment">// 库存减 1</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">await</span> orderGoodsColl.<span class="title function_">insertOne</span>(&#123; <span class="attr">id</span>: <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">1000</span>),  goodId, price  &#125;, &#123; session &#125;);</span><br><span class="line">    <span class="keyword">await</span> session.<span class="title function_">commitTransaction</span>();</span><br><span class="line">  &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[MongoDB transaction] ERROR: <span class="subst">$&#123;err&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">await</span> session.<span class="title function_">abortTransaction</span>();</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">await</span> session.<span class="title function_">endSession</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;事务状态：&#x27;</span>, session.<span class="property">transaction</span>.<span class="property">state</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">testTransaction</span>(<span class="string">&#x27;g1000&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>运行测试结果：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node index</span><br><span class="line">事务状态： NO_TRANSACTION</span><br><span class="line">事务状态： STARTING_TRANSACTION</span><br><span class="line">事务状态： TRANSACTION_IN_PROGRESS</span><br><span class="line">事务状态： TRANSACTION_COMMITTED</span><br></pre></td></tr></table></figure>
-<h2 id="mogoose-中支持事务的方法">mogoose 中支持事务的方法</h2>
+<h2 id="mogoose-中支持事务的方法"><a class="markdownIt-Anchor" href="#mogoose-中支持事务的方法"></a> mogoose 中支持事务的方法</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>说明</th>
 <th>方法名</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>新建文档</td>
 <td>create(docs,options)</td>
 <td>一定要传入数组，使用它的重载方法</td>
 </tr>
 </tbody>
 </table>
-<h2 id="注意事项">注意事项</h2>
-<ol type="1">
+<h2 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h2>
+<ol>
 <li>在事务中，只能使用事务语句进行操作，不能与普通语句混用</li>
 </ol>
 
@@ -436,13 +441,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,19 +19,24 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="https:&#x2F;&#x2F;min.io&#x2F;  本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
+    <meta name="description" content="本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 中安装 MinIO 作为静态资源服务">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3PMWKNV.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="https:&#x2F;&#x2F;min.io&#x2F;  本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
+<meta property="og:description" content="本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20240927171130390.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20240927171643219.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/image-20240927180156357.png">
 <meta property="article:published_time" content="2022-04-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-09-26T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="MinIO">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3PMWKNV.html">
@@ -91,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E5%AE%89%E8%A3%85-minio"><span class="nav-number">1.</span> <span class="nav-text">docker-compose 安装 MinIO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-nginx"><span class="nav-number">2.</span> <span class="nav-text">配置 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minio-%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81"><span class="nav-number">3.</span> <span class="nav-text">MinIO 创建静态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%AF%BB%E5%86%99%E7%94%A8%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text">增加读写用户</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E5%AE%89%E8%A3%85-minio"><span class="nav-number">1.</span> <span class="nav-text"> docker-compose 安装 MinIO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-nginx"><span class="nav-number">2.</span> <span class="nav-text"> 配置 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minio-%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81"><span class="nav-number">3.</span> <span class="nav-text"> MinIO 创建静态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%AF%BB%E5%86%99%E7%94%A8%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text"> 增加读写用户</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -269,7 +274,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.2k</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -286,75 +291,50 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><figure>
-<img data-src="https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true"
-alt="https://min.io/" />
-<figcaption aria-hidden="true">https://min.io/</figcaption>
-</figure>
-<p>本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO
-作为静态资源服务的流程。基于
-MinIO，可以满足图床、静态存储、对象存储等应用场景。</p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg?sanitize=true" alt="https://min.io/" /></p>
+<p>本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。</p>
 <span id="more"></span>
-<h2 id="docker-compose-安装-minio">docker-compose 安装 MinIO</h2>
+<h2 id="docker-compose-安装-minio"><a class="markdownIt-Anchor" href="#docker-compose-安装-minio"></a> docker-compose 安装 MinIO</h2>
 <blockquote>
 <p>本文使用的 Docker 版本为：Docker version 27.3.1, build ce12230</p>
 </blockquote>
 <p><code>docker-compose.yml</code> 内容如下：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 高版本的 docker-compose 会自动配置 version, 此处为空</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">minio:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">minio/minio</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">51080</span><span class="string">:9000</span> <span class="comment"># api 端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">51180</span><span class="string">:9001</span> <span class="comment"># 控制台端口</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_USER:</span> <span class="string">root</span>    <span class="comment"># 管理后台用户名</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_PASSWORD:</span> <span class="string">root_password</span> <span class="comment"># 管理后台密码，最小8个字符</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/data:/data</span>               <span class="comment"># 映射当前目录下的data目录至容器内/data目录</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/config:/root/.minio/</span>     <span class="comment"># 映射配置目录</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">server</span> <span class="string">--console-address</span> <span class="string">&#x27;:9001&#x27;</span> <span class="string">/data</span>  <span class="comment"># 指定容器中的目录 /data</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">nginx_network</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">nginx_network:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>将上述内容保存为 <code>docker-compose.yml</code>
-文件，然后在目录中执行 <code>docker compose up -d</code> 运行实例。</p>
-<h2 id="配置-nginx">配置 nginx</h2>
-<p>一台服务器可能有多个服务，因此将 nginx 独立成一个单独的
-docker-compose，其它容器通过 <code>nginx_network</code> 与 nginx
-容器相连。</p>
+<p>将上述内容保存为 <code>docker-compose.yml</code> 文件，然后在目录中执行 <code>docker compose up -d</code> 运行实例。</p>
+<h2 id="配置-nginx"><a class="markdownIt-Anchor" href="#配置-nginx"></a> 配置 nginx</h2>
+<p>一台服务器可能有多个服务，因此将 nginx 独立成一个单独的 docker-compose，其它容器通过 <code>nginx_network</code> 与 nginx 容器相连。</p>
 <p>nginx 的 docker-compose.yml 如下：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/cert:/etc/nginx/cert</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/conf.d:/etc/nginx/conf.d</span> <span class="comment"># 每个服务的 nginx 配置单独成一个 `*.conf` 文件放到 conf.d 目录中，nginx 会自动加载</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NGINX_PORT=80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="comment"># privileged: true</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">nginx_network</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">nginx_network:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>minio 的 nginx 配置为（文件路径
-<code>xxx/data/conf.d/minio.conf</code>）：</p>
+<p>minio 的 nginx 配置为（文件路径 <code>xxx/data/conf.d/minio.conf</code>）：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">upstream</span> minio_upstream &#123;</span><br><span class="line">    <span class="comment"># minio 为主机名，在 docker-compose 中定义的，端口为 docker 中 MinIO 的端口</span></span><br><span class="line">    <span class="attribute">server</span> minio:<span class="number">9000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="comment"># 域名与端口</span></span><br><span class="line">    <span class="attribute">server_name</span> obs.uamazing.cn;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;    </span><br><span class="line"></span><br><span class="line">    <span class="comment"># ssl</span></span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/nginx/cert/uamazing.cn_ecc/uamazing.cn.cer;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/nginx/cert/uamazing.cn_ecc/uamazing.cn.key;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span> TLSv1.<span class="number">3</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:!MD5;</span><br><span class="line">    <span class="comment"># 强制 https</span></span><br><span class="line">    <span class="attribute">add_header</span> Strict-Transport-Security <span class="string">&quot;max-age=31536000&quot;</span>;</span><br><span class="line">    <span class="comment"># 其它 ssl 优化</span></span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">2m</span>;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">1h</span>;</span><br><span class="line">    <span class="attribute">ssl_session_tickets</span> <span class="literal">off</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 不限制文件大小</span></span><br><span class="line">    <span class="attribute">client_max_body_size</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment"># 禁用了代理缓冲, 提升速度</span></span><br><span class="line">    <span class="attribute">proxy_buffering</span> <span class="literal">off</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">access_log</span> /var/log/nginx/proxy_access.log main;</span><br><span class="line">    <span class="attribute">error_log</span> /var/log/nginx/proxy_error.log <span class="literal">info</span>;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="comment"># 设置多个 HTTP 头部来传递客户端的真实 IP 地址、请求的原始协议和主机名等信息</span></span><br><span class="line">        <span class="comment"># 这些头部对于后端服务器处理请求、记录日志和进行安全审计非常重要</span></span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-NginX-Proxy <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">proxy_connect_timeout</span> <span class="number">3600</span>;</span><br><span class="line">        <span class="attribute">proxy_read_timeout</span> <span class="number">3600</span>;</span><br><span class="line">        <span class="attribute">proxy_send_timeout</span> <span class="number">3600</span>;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        <span class="attribute">chunked_transfer_encoding</span> <span class="literal">off</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://minio_upstream;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="minio-创建静态">MinIO 创建静态</h2>
+<h2 id="minio-创建静态"><a class="markdownIt-Anchor" href="#minio-创建静态"></a> MinIO 创建静态</h2>
 <p>为了实现图床功能，可以在 MinIO 中创建一个 public 仓库来实现。</p>
 <p>具体步骤如下：</p>
-<ol type="1">
-<li><p>使用<strong>管理端口</strong>登陆 MinIO</p></li>
-<li><p>创建 Bucket</p>
-<p>通过【Buckets/Create Bucket
-+】来创建一个新的存储桶，输入存储桶的名称，示例中为
-<code>public</code>，最终结果如下图所示：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171130390.png"
-alt="image-20240927171130390.png" />
-<figcaption aria-hidden="true">image-20240927171130390.png</figcaption>
-</figure></li>
-<li><p>修改 <code>public</code> Bucket 的访问策略</p>
-<p>单击【Access
-Policy】后面的铅笔图标，将其从【Priave】修改为【Public】，单击应用【Set】应用</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171643219.png"
-alt="image-20240927171643219" />
-<figcaption aria-hidden="true">image-20240927171643219</figcaption>
-</figure>
-<p>由于 Public 策略允许查看 Bucket
-某个目录下的文件列表，因此要对该权限进行禁用。将访问策略从【Public】改成【Custom】，然后移除
-<code>Statement.Action</code> 中的 <code>s3:ListBucket</code> 和
-<code>s3:ListBucketMultipartUploads</code>，最终结果如下：</p>
+<ol>
+<li>
+<p>使用<strong>管理端口</strong>登陆 MinIO</p>
+</li>
+<li>
+<p>创建 Bucket</p>
+<p>通过【Buckets/Create Bucket +】来创建一个新的存储桶，输入存储桶的名称，示例中为 <code>public</code>，最终结果如下图所示：</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171130390.png" alt="image-20240927171130390.png" /></p>
+</li>
+<li>
+<p>修改 <code>public</code> Bucket 的访问策略</p>
+<p>单击【Access Policy】后面的铅笔图标，将其从【Priave】修改为【Public】，单击应用【Set】应用</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171643219.png" alt="image-20240927171643219" /></p>
+<p>由于 Public 策略允许查看 Bucket 某个目录下的文件列表，因此要对该权限进行禁用。将访问策略从【Public】改成【Custom】，然后移除 <code>Statement.Action</code> 中的 <code>s3:ListBucket</code> 和 <code>s3:ListBucketMultipartUploads</code>，最终结果如下：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2012-10-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Statement&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Principal&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;AWS&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;*&quot;</span></span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;s3:GetBucketLocation&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Principal&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;AWS&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;*&quot;</span></span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;s3:AbortMultipartUpload&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;s3:DeleteObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;s3:GetObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;s3:ListMultipartUploadParts&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;s3:PutObject&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public/*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>单击【Set】进行应用。</p></li>
+<p>单击【Set】进行应用。</p>
+</li>
 </ol>
-<h2 id="增加读写用户">增加读写用户</h2>
-<p>若要在程序中向 <code>public</code> 桶中上传文件，需要创建一个具有读写
-<code>public</code> 目录权限的 Access Key。</p>
-<p>打开
-<code>Restict beyond user policy</code>，修改为下列权限策略：</p>
+<h2 id="增加读写用户"><a class="markdownIt-Anchor" href="#增加读写用户"></a> 增加读写用户</h2>
+<p>若要在程序中向 <code>public</code> 桶中上传文件，需要创建一个具有读写 <code>public</code> 目录权限的 Access Key。</p>
+<p>打开 <code>Restict beyond user policy</code>，修改为下列权限策略：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2012-10-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Statement&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;s3:*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public/*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>最终结果如下图所示：</p>
-<figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927180156357.png"
-alt="image-20240927180156357" />
-<figcaption aria-hidden="true">image-20240927180156357</figcaption>
-</figure>
-<p>添加完成后，即可在程序中使用该 Access Key 和 Secrect Key
-进行上传操作。</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927180156357.png" alt="image-20240927180156357" /></p>
+<p>添加完成后，即可在程序中使用该 Access Key 和 Secrect Key 进行上传操作。</p>
 
     </div>
 
@@ -458,13 +438,13 @@ alt="image-20240927180156357" />
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

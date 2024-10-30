@@ -19,18 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
+    <meta name="description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="esxi 配置 RDM 直通">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2024/C906NX.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
+<meta property="og:description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/663633-20201116124312837-1811611023.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/663633-20201115215942694-527202518.png">
+<meta property="og:image" content="https://obs.uamazing.cn:52443/public/files/images/663633-20201115220620408-1544774039.png">
 <meta property="article:published_time" content="2024-09-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-09-22T16:00:00.000Z">
 <meta property="article:author" content="明不知昔">
 <meta property="article:tag" content="esxi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://obs.uamazing.cn:52443/public/files/images/663633-20201116124312837-1811611023.png">
 
 
 <link rel="canonical" href="https://galens.uamazing.cn/posts/2024/C906NX.html">
@@ -90,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">243</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">450</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -141,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rdm-%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">RDM 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-ssh"><span class="nav-number">2.</span> <span class="nav-text">开启 ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E7%A1%AC%E7%9B%98%E4%BD%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">查找硬盘位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B4%E9%80%9A"><span class="nav-number">4.</span> <span class="nav-text">配置直通</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rdm-%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> RDM 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-ssh"><span class="nav-number">2.</span> <span class="nav-text"> 开启 ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E7%A1%AC%E7%9B%98%E4%BD%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 查找硬盘位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B4%E9%80%9A"><span class="nav-number">4.</span> <span class="nav-text"> 配置直通</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">450</span>
+          <span class="site-state-item-count">452</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -167,7 +171,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">243</span>
+        <span class="site-state-item-count">244</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -261,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>794</span>
+      <span>795</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -278,28 +282,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和
-PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。</p>
+    <div class="post-body" itemprop="articleBody"><p>esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。</p>
 <span id="more"></span>
-<h2 id="rdm-简介">RDM 简介</h2>
-<p>RDM
-直通通过创建一个指向物理存储设备的映射文件来实现允许虚拟机直接访问物理存储设备。</p>
-<h2 id="开启-ssh">开启 ssh</h2>
-<p>在 esxi 的 web 管理界面中，通过 【主机(右键)/服务/启用安全 Shell
-(SSH)】打开 ssh。如下图所示：</p>
-<p><img data-src="https://img2020.cnblogs.com/blog/663633/202011/663633-20201116124312837-1811611023.png" /></p>
-<h2 id="查找硬盘位置">查找硬盘位置</h2>
-<ol type="1">
-<li><p>查找 esxi 系统所在盘的位置</p>
+<h2 id="rdm-简介"><a class="markdownIt-Anchor" href="#rdm-简介"></a> RDM 简介</h2>
+<p>RDM 直通通过创建一个指向物理存储设备的映射文件来实现允许虚拟机直接访问物理存储设备。</p>
+<h2 id="开启-ssh"><a class="markdownIt-Anchor" href="#开启-ssh"></a> 开启 ssh</h2>
+<p>在 esxi 的 web 管理界面中，通过 【主机(右键)/服务/启用安全 Shell (SSH)】打开 ssh。如下图所示：</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201116124312837-1811611023.png" alt="" /></p>
+<h2 id="查找硬盘位置"><a class="markdownIt-Anchor" href="#查找硬盘位置"></a> 查找硬盘位置</h2>
+<ol>
+<li>
+<p>查找 esxi 系统所在盘的位置</p>
 <p>如下图所示：</p>
-<p><img data-src="https://img2020.cnblogs.com/blog/663633/202011/663633-20201115215942694-527202518.png" /></p>
-<p>位置为：<code>/vmfs/volumes/5fb14c74-5da1723a-c6a0-00e15a680bd8</code></p></li>
-<li><p>查找要直通的硬盘所在路径</p>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201115215942694-527202518.png" alt="" /></p>
+<p>位置为：<code>/vmfs/volumes/5fb14c74-5da1723a-c6a0-00e15a680bd8</code></p>
+</li>
+<li>
+<p>查找要直通的硬盘所在路径</p>
 <p>如下图所示：</p>
-<p><img data-src="https://img2020.cnblogs.com/blog/663633/202011/663633-20201115220620408-1544774039.png" /></p>
-<p>路径为：<code>/vmfs/devices/disks/t10.ATA_____ST500LT0122D9WS142___________________________________S0V2PJJG</code></p></li>
+<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201115220620408-1544774039.png" alt="" />)</p>
+<p>路径为：<code>/vmfs/devices/disks/t10.ATA_____ST500LT0122D9WS142___________________________________S0V2PJJG</code></p>
+</li>
 </ol>
-<h2 id="配置直通">配置直通</h2>
+<h2 id="配置直通"><a class="markdownIt-Anchor" href="#配置直通"></a> 配置直通</h2>
 <p>打开 powershell 或者任意终端，逐行输入下列命令进行配置：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 esxi 所在系统盘</span></span><br><span class="line"><span class="built_in">cd</span> /vmfs/volumes/5fb14c74-5da1723a-c6a0-00e15a680bd8</span><br><span class="line"><span class="comment"># 创建直通映射文件保存目录</span></span><br><span class="line"><span class="comment"># 在默认存储空间根目录下创建一个名为 dms.store 的目录用来存放直通镜像文件.vmdk的文件夹</span></span><br><span class="line"><span class="built_in">mkdir</span> dms.store</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建直通映射</span></span><br><span class="line">vmkfstools -z /vmfs/devices/disks/t10.ATA_____ST500LT0122D9WS142___________________________________S0V2PJJG /vmfs/volumes/5fb14c74-5da1723a-c6a0-00e15a680bd8/dms.store/hdd1.vmdk</span><br><span class="line"><span class="comment"># 至此，直通配置完成</span></span><br><span class="line"><span class="comment"># 新建虚拟机时【添加硬盘】，选择 `dms.store/hdd1.vmdk` 即可</span></span><br></pre></td></tr></table></figure>
 
@@ -370,6 +375,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/2024/1XYHCAM.html" rel="next" title="使用 VSCode 远程开发最佳实践">
+                  使用 VSCode 远程开发最佳实践 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -401,13 +409,13 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">836k</span>
+    <span title="站点总字数">842k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:40</span>
+    <span title="站点阅读时长">12:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

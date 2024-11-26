@@ -6,15 +6,116 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-10-21T16:00:00.000Z</updated>
+  <updated>2024-11-26T03:22:31.916Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
-    <name>明不知昔</name>
+    <name>李有福呀</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Docker 部署 AdguardHome</title>
+    <link href="https://galens.uamazing.cn/posts/2024/AC0WPY.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/AC0WPY.html</id>
+    <published>2024-11-25T16:00:00.000Z</published>
+    <updated>2024-11-26T03:22:31.916Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中通过 Docker 部署 AdguardHome 实现 DNS
+解析和广告过滤。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="Adguard" scheme="https://galens.uamazing.cn/categories/Software/Adguard/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="AdguardHome" scheme="https://galens.uamazing.cn/tags/AdguardHome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>掌握设计原则，打磨编程基本功</title>
+    <link href="https://galens.uamazing.cn/posts/2024/3D3WTKJ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/3D3WTKJ.html</id>
+    <published>2024-11-08T16:00:00.000Z</published>
+    <updated>2024-11-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;随着开发经验的增加，总感觉自己的代码风格有些混乱，同时伴随着一些困惑，如：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;功能扩展性差，经常需要被重构&lt;/li&gt;
+&lt;li&gt;编码时无法对设计模式进行灵活使用&lt;/li&gt;
+&lt;li&gt;代码不够优雅&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;虽然代码风格见人见智，但是好的代码，总会让人眼前一亮，&lt;strong&gt;低耦合、高内聚、高复用、易扩展、易维护&lt;/strong&gt;，于己于人，都是一份优雅。&lt;/p&gt;
+&lt;p&gt;作者从入门开始，就开始阅读设计模式，有系统地研读过，也有零零散散看过其他人的心得，但总是不能达到天人合一，运用自如的状态。今朝又心有所动，于是下定决心，稳扎稳打，以愚公移山之劲，重学设计模式，打磨编程基本功。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="DesignPattern" scheme="https://galens.uamazing.cn/categories/Develop/DesignPattern/"/>
+    
+    
+    <category term="设计模式" scheme="https://galens.uamazing.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB使用 Docker 配置单节点副本集</title>
+    <link href="https://galens.uamazing.cn/posts/2024/M96VZZ.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/M96VZZ.html</id>
+    <published>2024-11-05T16:00:00.000Z</published>
+    <updated>2024-11-05T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为了快速搭建 MongoDB 副本集开发环境，可以使用 Docker
+快速启动一个单节点副本集。&lt;/p&gt;
+&lt;p&gt;docker-compose 配置如下：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    
+    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
+    
+    <category term="Mongodb" scheme="https://galens.uamazing.cn/categories/Develop/Database/Mongodb/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>家庭服务器被网络攻击后, 日均下载流量 2T</title>
+    <link href="https://galens.uamazing.cn/posts/2024/HPDBE7.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/HPDBE7.html</id>
+    <published>2024-11-03T16:00:00.000Z</published>
+    <updated>2024-11-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;近日，发现家里网络非常慢，但是测速时，速度又很正常，于是进后台看看看，一看不要紧，看了后吓一跳，好家伙，网络被攻击了，最近几天日均下载量高达
+2T。&lt;/p&gt;
+&lt;p&gt;不禁生起一阵感慨，裸奔的网络太凶险了！&lt;/p&gt;
+&lt;p&gt;大致的原因是这样的，在此做一个记录，与大家共警！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="essay" scheme="https://galens.uamazing.cn/categories/essay/"/>
+    
+    <category term="2024年" scheme="https://galens.uamazing.cn/categories/essay/2024%E5%B9%B4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Windows 中配置无线网络唤醒(wowlan)</title>
@@ -65,9 +166,9 @@
     <category term="VSCode" scheme="https://galens.uamazing.cn/categories/Software/VSCode/"/>
     
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
     <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
     
   </entry>
   
@@ -435,109 +536,6 @@ alt=&quot;image-20240222222605912&quot; /&gt;
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
     
     <category term="on-my-zsh" scheme="https://galens.uamazing.cn/tags/on-my-zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 安装 docker-compose</title>
-    <link href="https://galens.uamazing.cn/posts/2024/20F723F.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/20F723F.html</id>
-    <published>2024-01-09T16:00:00.000Z</published>
-    <updated>2024-01-09T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍如何在 Linux 环境中安装 docker-compose。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="docker-compose" scheme="https://galens.uamazing.cn/tags/docker-compose/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode 远程 Linux 后, 使用 Docker 插件报错Permission denied</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2H0WTET.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2H0WTET.html</id>
-    <published>2024-01-08T16:00:00.000Z</published>
-    <updated>2024-01-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;VSCode SSH 连接 Linux 后，使用 Docker 插件时报错：&lt;/p&gt;
-&lt;p&gt;permission denied while trying to connect to the Docker daemon socket
-at unix:///var/run/docker.sock: Get
-&quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json&quot;: dial unix
-/var/run/docker.sock: connect: permission denied&lt;/p&gt;
-&lt;p&gt;这是由于用户的权限不够，按下列方法修改权限即可：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 开源 UI 管理工具比选及安装</title>
-    <link href="https://galens.uamazing.cn/posts/2024/T4KD3R.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/T4KD3R.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文通过比选目前开源的 Docker GUI 管理工具，结合 Linux
-服务器的特点，最终选择安装 &lt;a
-href=&quot;https://github.com/jesseduffield/lazydocker#installation&quot;&gt;jesseduffield/lazydocker&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/categories/System/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 免密码 ssh 登陆 Linux</title>
-    <link href="https://galens.uamazing.cn/posts/2024/3942YAQ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/3942YAQ.html</id>
-    <published>2024-01-07T16:00:00.000Z</published>
-    <updated>2024-01-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="ssh" scheme="https://galens.uamazing.cn/tags/ssh/"/>
     
   </entry>
   

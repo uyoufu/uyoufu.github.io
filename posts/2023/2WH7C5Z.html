@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0-rc1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="image-20230625233244755  jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 docker 中安装和使用 jitsi。本文主要以 Ubuntu 为例，若是 Windows，建议使用 wsl 进行安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JitsiMeet Docker 安装及负载均衡配置">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2023/2WH7C5Z.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="image-20230625233244755  jitsi 是一款开源的视屏会议软件，最大支持 75 人同时在线。本文将介绍如何在 docker 中安装和使用 jitsi。本文主要以 Ubuntu 为例，若是 Windows，建议使用 wsl 进行安装。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-07T16:00:00.000Z">
+<meta property="article:author" content="李有福呀">
+<meta property="article:tag" content="Software">
+<meta property="article:tag" content="Jitsi">
+<meta property="article:tag" content="galens">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2023/2WH7C5Z.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2023/2WH7C5Z.html","path":"posts/2023/2WH7C5Z.html","title":"JitsiMeet Docker 安装及负载均衡配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JitsiMeet Docker 安装及负载均衡配置 | 星辰大海</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">星辰大海</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">122</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">454</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="nav-number">1.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-jitsi-meet"><span class="nav-number">2.</span> <span class="nav-text">安装 Jitsi-meet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-.env-%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">修改 .env 进行自定义配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-jwt-%E6%8E%88%E6%9D%83"><span class="nav-number">4.</span> <span class="nav-text">配置 jwt 授权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="nav-number">5.1.</span> <span class="nav-text">插件位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E6%9F%A5%E6%89%BE"><span class="nav-number">5.2.</span> <span class="nav-text">插件查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2"><span class="nav-number">6.</span> <span class="nav-text">设置用户角色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mod_token_affiliation-%E6%8F%92%E4%BB%B6"><span class="nav-number">6.1.</span> <span class="nav-text">mod_token_affiliation 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">6.1.1.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="nav-number">6.1.2.</span> <span class="nav-text">启用插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88-2"><span class="nav-number">6.2.</span> <span class="nav-text">方案 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">6.2.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E6%8F%92%E4%BB%B6-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">启用插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83"><span class="nav-number">7.</span> <span class="nav-text">添加事件回调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-1"><span class="nav-number">7.1.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="nav-number">7.2.</span> <span class="nav-text">插件修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E8%BF%94%E5%9B%9E-display_name"><span class="nav-number">7.2.1.</span> <span class="nav-text">回调返回 display_name</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%95%E7%82%B9%E5%8F%82%E4%BC%9A%E5%8A%9F%E8%83%BD"><span class="nav-number">7.2.2.</span> <span class="nav-text">添加单点参会功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E6%8F%92%E4%BB%B6-2"><span class="nav-number">7.3.</span> <span class="nav-text">启用插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3"><span class="nav-number">8.</span> <span class="nav-text">打开防火墙端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">9.</span> <span class="nav-text">配置端口转发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">配置 nginx 反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-iframe-%E9%9B%86%E6%88%90%E8%BF%9B%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F"><span class="nav-number">11.</span> <span class="nav-text">通过 IFrame 集成进现有系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jitsi-%E7%9B%B8%E5%85%B3%E9%95%9C%E5%83%8F%E7%AE%80%E4%BB%8B"><span class="nav-number">12.</span> <span class="nav-text">jitsi 相关镜像简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">13.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李有福呀"
+      src="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+  <p class="site-author-name" itemprop="name">李有福呀</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">454</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">122</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">244</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener me" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/2WH7C5Z.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+      <meta itemprop="name" content="李有福呀">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JitsiMeet Docker 安装及负载均衡配置 | 星辰大海">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JitsiMeet Docker 安装及负载均衡配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-06-25T00:00:00+08:00">2023-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-11-08 00:00:00" itemprop="dateModified" datetime="2024-11-08T00:00:00+08:00">2024-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software/JitsiMeet/" itemprop="url" rel="index"><span itemprop="name">JitsiMeet</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>11 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><figure>
+<img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230625233244755.png"
+alt="image-20230625233244755" />
+<figcaption aria-hidden="true">image-20230625233244755</figcaption>
+</figure>
+<p>jitsi 是一款开源的视屏会议软件，最大支持 75
+人同时在线。本文将介绍如何在 docker 中安装和使用 jitsi。本文主要以
+Ubuntu 为例，若是 Windows，建议使用 wsl 进行安装。</p>
+<span id="more"></span>
+<h2 id="安装-docker">安装 Docker</h2>
+<p>Windows: 下载 <a
+target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Download Docker
+Desktop | Docker</a> 进行安装</p>
+<p>Ubuntu: <a
+target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker
+Engine on Ubuntu</a></p>
+<h2 id="安装-jitsi-meet">安装 Jitsi-meet</h2>
+<p>本节主要参考：<a
+target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker/">Self-Hosting
+Guide - Docker | Jitsi Meet</a></p>
+<ol type="1">
+<li><p>下载最新发布版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找最新版本下载地址，然后使用 wget 下载</span></span><br><span class="line"><span class="comment"># 下载后的文件可能没有后缀，需要使用 mv 添加一个 `.zip` 后缀</span></span><br><span class="line">wget $(curl -s https://api.github.com/repos/jitsi/docker-jitsi-meet/releases/latest | grep <span class="string">&#x27;zip&#x27;</span> | <span class="built_in">cut</span> -d\&quot; -f4)</span><br></pre></td></tr></table></figure></li>
+<li><p>解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;filename&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>配置 <code>.env</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制示例配置</span></span><br><span class="line"><span class="built_in">cp</span> env.example .<span class="built_in">env</span></span><br></pre></td></tr></table></figure></li>
+<li><p>设置强密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux 中，在 .env 目录中执行</span></span><br><span class="line"><span class="comment"># 若执行报错，主检查 ./gen-passwords.sh 的结束符是否为 LF</span></span><br><span class="line"><span class="comment"># 可以通过 cat ./gen-passwords.sh -ne 查看结束符，若为 ^M$ 为则 CRLF，若为 $ 则是 LF </span></span><br><span class="line">bash ./gen-passwords.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>创建所需的 <code>CONFIG</code> 目录</p>
+<p><strong>Linux</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.jitsi-meet-cfg/&#123;web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Windows</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> web,transcripts,prosody/config,prosody/prosody<span class="literal">-plugins-custom</span>,jicofo,jvb,jigasi,jibri | % &#123; mkdir <span class="string">&quot;~/.jitsi-meet-cfg/<span class="variable">$_</span>&quot;</span> &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>启动服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure></li>
+<li><p>浏览器访问 <a
+target="_blank" rel="noopener" href="https://localhost:8443/"><code>https://localhost:8443</code></a></p></li>
+</ol>
+<p>下面将介绍如何进行生产环境配置，修改完成后，需要再次执行以下命令重新应用配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker compose down</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+<h2 id="修改-.env-进行自定义配置">修改 .env 进行自定义配置</h2>
+<p>编辑 .env 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改内容如下：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改 Docker 对外暴露的端口</span></span><br><span class="line"><span class="comment"># Exposed HTTP port</span></span><br><span class="line">HTTP_PORT=<span class="number">7080</span></span><br><span class="line"><span class="comment"># Exposed HTTPS port</span></span><br><span class="line">HTTPS_PORT=<span class="number">7043</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改访问的网址</span></span><br><span class="line"><span class="comment"># Public URL for the web service (required)</span></span><br><span class="line"><span class="comment"># 如果是本机测试，不要添加协议，但要添加端口，如下</span></span><br><span class="line"><span class="comment"># PUBLIC_URL=192.168.3.240:7043</span></span><br><span class="line"><span class="comment"># 若是外部地址非 443 端口，需要自行添加</span></span><br><span class="line">PUBLIC_URL=https://yourdomain</span><br><span class="line"></span><br><span class="line"><span class="comment"># 容器主机的 IP, 当服务器位于 NAT 环境时，需要配置</span></span><br><span class="line"><span class="comment"># 特别注意，要同时配置容器 host ip 和 public ip</span></span><br><span class="line">JVB_ADVERTISE_IPS=<span class="number">192.168</span>.<span class="number">23.12</span>,public<span class="literal">-ip</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 jwt 认证</span></span><br><span class="line"><span class="comment"># Enable authentication</span></span><br><span class="line">ENABLE_AUTH=<span class="number">1</span></span><br><span class="line"><span class="comment"># 创建房间后，其他人只需要输入房间名称即可进入</span></span><br><span class="line"><span class="comment"># Enable guest access</span></span><br><span class="line">ENABLE_GUESTS=<span class="number">1</span></span><br><span class="line"><span class="comment"># Select authentication type: internal, jwt, ldap or matrix</span></span><br><span class="line">AUTH_TYPE=jwt</span><br><span class="line"><span class="comment"># JWT authentication</span></span><br><span class="line"><span class="comment"># Application identifier</span></span><br><span class="line">JWT_APP_ID=my_jitsi_app_id</span><br><span class="line"><span class="comment"># Application secret known only to your token generator</span></span><br><span class="line">JWT_APP_SECRET=my_jitsi_app_secret</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消自动赋予 owner</span></span><br><span class="line">ENABLE_AUTO_OWNER=false</span><br></pre></td></tr></table></figure>
+<p>所有 .env 的配置，可在以下地方查到：</p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/docker-jitsi-meet/blob/master/jicofo/rootfs/defaults/jicofo.conf">docker-jitsi-meet/jicofo/rootfs/defaults/jicofo.conf</a></p>
+<h2 id="配置-jwt-授权">配置 jwt 授权</h2>
+<p>jitsi 默认任何人都可以创建房间，为了使自建的 jitsi
+资源不被恶意使用，需要限制创建房间的权限。</p>
+<p>通过 <a href="#修改%20.env%20配置文件">修改 .env 配置文件</a>
+来添加权限认证，当 <code>ENABLE_AUTH=1</code> 后，只有有合法正确的
+<code>jwt</code> 值时，才可以新建房间。</p>
+<p>具体的 <code>.env</code> 配置如下</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Select authentication type: internal, jwt, ldap or matrix</span></span><br><span class="line"><span class="attr">AUTH_TYPE</span>=<span class="string">jwt</span></span><br><span class="line"><span class="comment"># JWT authentication</span></span><br><span class="line"><span class="comment"># Application identifier</span></span><br><span class="line"><span class="attr">JWT_APP_ID</span>=<span class="string">my_jitsi_app_id</span></span><br><span class="line"><span class="comment"># Application secret known only to your token generator</span></span><br><span class="line"><span class="attr">JWT_APP_SECRET</span>=<span class="string">my_jitsi_app_secret</span></span><br></pre></td></tr></table></figure>
+<p>在生成 jwt 时，payload 内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https:/gravatar.com/avatar/abc123&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jdoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abcd:a1b2c3-d4e5f6-0abc1-23de-abcdef01fedcba&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;affiliation&quot;</span><span class="punctuation">:</span> <span class="string">&quot;owner or member&quot;</span><span class="punctuation">,</span> <span class="comment">// 需要使用 mod_token_affiliation 插件</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a123-123-456-789&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_app_id&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.jitsi.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_room or *&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;moderator&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// 需要使用 mod_token_moderation 插件</span></span><br><span class="line">  <span class="attr">&quot;nbf&quot;</span><span class="punctuation">:</span> <span class="number">1664475176</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1695998576</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>可以通过 <a target="_blank" rel="noopener" href="https://jwt.io/#debugger-io">JSON Web Tokens -
+jwt.io</a> 来生成 token，然后在 url 后面添加 <code>jwt=your-token</code>
+参数来传递授权进行使用。</p>
+<p>例如：<code>https://your-domain/room-name?jwt=your-token</code></p>
+<h2 id="插件">插件</h2>
+<h3 id="插件位置">插件位置</h3>
+<p>从 <code>docker-compose.yml</code> 文件中可知，自定义插件被挂载到了
+<code>$&#123;CONFIG&#125;/prosody/prosody-plugins-custom</code>
+中，<code>$(CONFIG)</code> 默认值为 <code>~/.jitsi-meet-cfg</code>。</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241108110315365.png"
+alt="image-20241108110315365" />
+<figcaption aria-hidden="true">image-20241108110315365</figcaption>
+</figure>
+<p>因此，可以将自定义插件保存到
+<code>~/.jitsi-meet-cfg/prosody/prosody-plugins-custom</code>。</p>
+<h3 id="插件查找">插件查找</h3>
+<p>当功能不满足要求时，可以从以下地址查找插件实现：</p>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins">jitsi-contrib/prosody-plugins:
+Prosody plugins for Jitsi</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins</a></li>
+<li>在 github 上搜索 <code>jitsi mod</code></li>
+</ol>
+<h2 id="设置用户角色">设置用户角色</h2>
+<p>jitsi 默认所有使用 token
+加入会议的用户都有主持人，为了更好地管理会议，可以使用插件通过 token 的
+payloads 来分配所属角色。</p>
+<p>目前找到两个插件皆可实现该功能，但测试下来，都有一些 bug :</p>
+<ol type="1">
+<li><p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/tree/main/token_affiliation">prosody-plugins/token_affiliation</a></p>
+<p>这个插件通过在用户加入会议后，再次修改角色来实现权限控制，但它存在滞后性，经常用户加入会议后，提示为主持人，然后才被修改为普通成员</p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://github.com/H2-invent/jitsi-token-moderation-plugin/blob/master/mod_token_moderation.lua">jitsi-token-moderation-plugin/mod_token_moderation.lua</a></p>
+<p>这个插件通过重写 <code>set_affiliation</code> 方法来实现控制</p>
+<p>但是会议中，无法为其它用户分配主持人角色</p></li>
+</ol>
+<p>经权衡，最终选择方案 2</p>
+<h3 id="mod_token_affiliation-插件">mod_token_affiliation 插件</h3>
+<h4 id="插件安装">插件安装</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.jitsi-meet-cfg/prosody/prosody-plugins-custom</span><br><span class="line"><span class="comment"># 下载</span></span><br><span class="line">wget -O mod_token_affiliation.lua https://raw.githubusercontent.com/jitsi-contrib/prosody-plugins/main/token_affiliation/mod_token_affiliation.lua</span><br></pre></td></tr></table></figure>
+<h4 id="启用插件">启用插件</h4>
+<p>打开 <code>.env</code> 文件，添加如下内容：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消自动赋予 owner</span></span><br><span class="line"><span class="attr">ENABLE_AUTO_OWNER</span>=<span class="string">false</span></span><br><span class="line"><span class="comment"># 启用组件，多个组件之间使用 , 号分隔</span></span><br><span class="line"><span class="comment"># token_verification 是系统默认的组件</span></span><br><span class="line"><span class="attr">XMPP_MUC_MODULES</span>=<span class="string">token_verification,token_affiliation</span></span><br></pre></td></tr></table></figure>
+<p>生成 token 时，向 <code>content.user</code> 中添加 affiliation
+字段，示例如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;myapp&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;myapp&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.mydomain.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iat&quot;</span><span class="punctuation">:</span> <span class="number">1601366000</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1601366180</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;myname&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;myname@mydomain.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;affiliation&quot;</span><span class="punctuation">:</span> <span class="string">&quot;owner&quot;</span> <span class="comment">// 选项: owner、member、空 </span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="方案-2">方案 2</h3>
+<h4 id="安装插件">安装插件</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.jitsi-meet-cfg/prosody/prosody-plugins-custom</span><br><span class="line"><span class="comment"># 下载</span></span><br><span class="line">wget https://raw.githubusercontent.com/nvonahsen/jitsi-token-moderation-plugin/refs/heads/master/mod_token_moderation.lua</span><br></pre></td></tr></table></figure>
+<h4 id="启用插件-1">启用插件</h4>
+<p>打开 <code>.env</code> 文件，添加如下内容：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用组件，多个组件之间使用 , 号分隔</span></span><br><span class="line"><span class="attr">XMPP_MUC_MODULES</span>=<span class="string">token_moderation</span></span><br></pre></td></tr></table></figure>
+<p>生成 token 时，添加 moderator 字段，示例如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https:/gravatar.com/avatar/abc123&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jdoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abcd:a1b2c3-d4e5f6-0abc1-23de-abcdef01fedcba&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;affiliation&quot;</span><span class="punctuation">:</span> <span class="string">&quot;owner or member&quot;</span><span class="punctuation">,</span> <span class="comment">// 需要使用 mod_token_affiliation 插件</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a123-123-456-789&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;aud&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iss&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_app_id&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;meet.jitsi.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;room&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_room or *&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;moderator&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// 需要使用 mod_token_moderation 插件</span></span><br><span class="line">  <span class="attr">&quot;nbf&quot;</span><span class="punctuation">:</span> <span class="number">1664475176</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1695998576</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加事件回调">添加事件回调</h2>
+<p>本节主要参考：<a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#event-sync">prosody-plugins/event_sync</a></p>
+<p>jitis meet 使用 prosody 进行即时通讯，诸多业务都可以使用 prosody
+插件来实现，本节使用<a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#event-sync">event_sync/mod_event_sync_component.lua</a>
+插件来实现事件回调</p>
+<p>为了接入既有系统，需要获取会议的创建结束信息，通过该插件来添加事件回调到既有的系统中。</p>
+<h3 id="插件安装-1">插件安装</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入自定义插件库</span></span><br><span class="line"><span class="built_in">cd</span> ~/.jitsi-meet-cfg/prosody/prosody-plugins-custom</span><br><span class="line"><span class="comment"># 下载插件</span></span><br><span class="line">wget -O mod_event_sync_component.lua https://raw.githubusercontent.com/jitsi-contrib/prosody-plugins/main/event_sync/mod_event_sync_component.lua</span><br></pre></td></tr></table></figure>
+<h3 id="插件修改">插件修改</h3>
+<blockquote>
+<p>可以使用 vscode 远程服务器后对文件进行修改</p>
+</blockquote>
+<h4 id="回调返回-display_name">回调返回 display_name</h4>
+<p>原插件没有返回用户的
+display_name，当用户通过网址进入时，无法确定用户的身份，因此需要返回用户自己设置的
+display_name 供回调服务器处理。</p>
+<p><strong>修改 occupant_joined 调用：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到 occupant_joined 函数调用位置</span></span><br><span class="line"><span class="comment">-- 将</span></span><br><span class="line"><span class="keyword">local</span> occupant_data = room_data:on_occupant_joined(occupant_jid, event.origin);</span><br><span class="line"><span class="comment">-- 修改为</span></span><br><span class="line"><span class="keyword">local</span> occupant_data = room_data:on_occupant_joined(occupant_jid, event);</span><br></pre></td></tr></table></figure>
+<p><strong>修改 EventData:on_occupant_joined 函数：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找到 EventData:on_occupant_joined 函数,修改为如下代码：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EventData:on_occupant_joined</span><span class="params">(occupant_jid, event)</span></span></span><br><span class="line">    <span class="keyword">local</span> event_origin = event.origin</span><br><span class="line">    <span class="keyword">local</span> user_context = event_origin.jitsi_meet_context_user <span class="keyword">or</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- get displayName</span></span><br><span class="line">    <span class="keyword">local</span> display_name = event.occupant:get_presence():get_child_text(<span class="string">&#x27;nick&#x27;</span>, <span class="string">&#x27;http://jabber.org/protocol/nick&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- N.B. we only store user details on join and assume they don&#x27;t change throughout the duration of the meeting</span></span><br><span class="line">    <span class="keyword">local</span> occupant_data = &#123;</span><br><span class="line">        occupant_jid = occupant_jid,</span><br><span class="line">        name = user_context.name,</span><br><span class="line">        id = user_context.id,</span><br><span class="line">        email = user_context.email,</span><br><span class="line">        joined_at = now(),</span><br><span class="line">        left_at = <span class="literal">nil</span>,</span><br><span class="line">        display_name = display_name</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">self</span>.occupants[occupant_jid] = occupant_data;</span><br><span class="line">    <span class="built_in">self</span>.active[occupant_jid] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> occupant_data;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加单点参会功能">添加单点参会功能</h4>
+<blockquote>
+<p>可选，实践下来不太好用</p>
+</blockquote>
+<p>本节参考：<a
+target="_blank" rel="noopener" href="https://modules.prosody.im/mod_http_muc_kick.html">mod_http_muc_kick
+- Prosody Community Modules</a></p>
+<p>当用户加入后，检测是否有同名用户，若有，则踢出存在的同名用户，保证同一时间，只有一个同名用户参会</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1. 在顶部添加导入</span></span><br><span class="line"><span class="keyword">local</span> st = <span class="built_in">require</span> <span class="string">&quot;util.stanza&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2. 找到 function occupant_joined(event) 方法，在 `local occupant_data = room_data:on_occupant_joined(occupant_jid, event);` 之后添加如下代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _, occupant <span class="keyword">in</span> room:each_occupant() <span class="keyword">do</span>        </span><br><span class="line">    <span class="keyword">local</span> pr = occupant:get_presence();</span><br><span class="line">    <span class="keyword">local</span> displayName = pr:get_child_text(</span><br><span class="line">            <span class="string">&#x27;nick&#x27;</span>, <span class="string">&#x27;http://jabber.org/protocol/nick&#x27;</span>);        </span><br><span class="line">    <span class="keyword">if</span> displayName == occupant_data.display_name <span class="keyword">and</span> occupant.nick~=occupant_data.nick <span class="keyword">then</span></span><br><span class="line">        <span class="comment">-- 获取原用户的角色, 若为moderator, 则将新用户设置为moderator</span></span><br><span class="line">        <span class="keyword">local</span> oldRole = room:get_role(occupant.nick);</span><br><span class="line">        room:set_role(<span class="literal">true</span>, occupant.nick, <span class="literal">nil</span>);</span><br><span class="line">        <span class="keyword">if</span> oldRole == <span class="string">&#x27;moderator&#x27;</span> <span class="keyword">then</span></span><br><span class="line">            room:set_role(<span class="literal">true</span>, occupant_data.occupant_jid, <span class="string">&#x27;moderator&#x27;</span>);</span><br><span class="line">            room:set_affiliation(<span class="literal">true</span>, occupant_data.occupant_jid, <span class="string">&#x27;owner&#x27;</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    		room:set_role(<span class="literal">true</span>, occupant.nick, <span class="literal">nil</span>);</span><br><span class="line">        <span class="built_in">module</span>:<span class="built_in">log</span>(<span class="string">&#x27;info&#x27;</span>, <span class="string">&#x27;踢出用户 %s kicked %s from %s&#x27;</span>,displayName, occupant.nick, room.jid);            </span><br><span class="line">         <span class="comment">-- 发送 kickParticipant 命令</span></span><br><span class="line">        <span class="keyword">local</span> presence = st.presence(&#123;</span><br><span class="line">            to = occupant.jid,</span><br><span class="line">            from = room.jid,</span><br><span class="line">            <span class="built_in">type</span> = <span class="string">&quot;unavailable&quot;</span></span><br><span class="line">        &#125;):tag(<span class="string">&quot;status&quot;</span>):text(<span class="string">&quot;你已被移出房间 &quot;</span> .. room.jid):up();</span><br><span class="line">        <span class="built_in">module</span>:send(presence);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="启用插件-2">启用插件</h3>
+<p>向 <code>~/.jitsi-meet-cfg/prosody/config/conf.d</code> 目录中添加以
+<code>.cfg.lua</code> 为后缀的配置文件，配置文件格式参考
+<code>~/.jitsi-meet-cfg/prosody/config/prosody.cfg.lua</code>。</p>
+<p><code>~/.jitsi-meet-cfg/prosody/config/prosody.cfg.lua</code> 是
+prosody 的配置入口文件，conf.d 目录中任何 <code>.cfg.lua</code>
+都会被包含在这个配置中。</p>
+<p>每个插件建议都新建一个配置文件，保证配置独立。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入到配置目录</span></span><br><span class="line"><span class="built_in">cd</span> ~/.jitsi-meet-cfg/prosody/config/conf.d</span><br><span class="line"><span class="comment"># 创建 event_sync.cfg.lua 配置</span></span><br><span class="line">sudo <span class="built_in">touch</span> event_sync.cfg.lua</span><br></pre></td></tr></table></figure>
+<p>编辑 <code>sudo vim event_sync.cfg.lua</code>
+配置，添加如下内容：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Component <span class="string">&quot;event_sync.meet.jitsi&quot;</span> <span class="string">&quot;event_sync_component&quot;</span></span><br><span class="line">    muc_component = <span class="string">&quot;conference.meet.jitsi&quot;</span></span><br><span class="line">    api_prefix = <span class="string">&quot;http://your.api.server/api&quot;</span></span><br></pre></td></tr></table></figure>
+<p>注意：<code>api_prefix 末尾没有 / 号</code></p>
+<blockquote>
+<p>更多配置，参考：<a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#optional-config">prosody-plugins/event_sync/README.md</a></p>
+</blockquote>
+<p>该组件回调的 api
+为：<code>post http://your.api.server/api/events/xx</code></p>
+<p>触发的事件回调如下：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> URL_EVENT_ROOM_CREATED = api_prefix..<span class="string">&#x27;/events/room/created&#x27;</span>;</span><br><span class="line"><span class="keyword">local</span> URL_EVENT_ROOM_DESTROYED = api_prefix..<span class="string">&#x27;/events/room/destroyed&#x27;</span>;</span><br><span class="line"><span class="keyword">local</span> URL_EVENT_OCCUPANT_JOINED = api_prefix..<span class="string">&#x27;/events/occupant/joined&#x27;</span>;</span><br><span class="line"><span class="keyword">local</span> URL_EVENT_OCCUPANT_LEFT = api_prefix..<span class="string">&#x27;/events/occupant/left&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="打开防火墙端口">打开防火墙端口</h2>
+<p>docker-jitsi-meeting 中的通信结构如下图所示</p>
+<p><img data-src="https://jitsi.github.io/handbook/assets/images/docker-jitsi-meet-afafdf87fea30a2fa6412baa4a3f8248.png" /></p>
+<ul>
+<li><p><code>80,443/tcp</code> 是 UI 的 web 端口</p>
+<p>80,443 通过 <a href="#修改%20.env%20配置文件">修改 .env 配置文件</a>
+章节进行指定，本文中分别修改为：7080，7043</p></li>
+<li><p><code>10000/udp</code> 是 RTP media 端口，即 Jitsi Vedio Bridge
+使用的端口</p></li>
+</ul>
+<p>通过以下命令新建防火墙入站规则：</p>
+<p><strong>windows 中：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开放 tcp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-tcp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="number">7043</span>,<span class="number">7080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开放 udp</span></span><br><span class="line">netsh advfirewall firewall add rule name=jitsi<span class="literal">-meeting-udp</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=UDP localport=<span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p><strong>ubuntu 中：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 7043,7080/tcp</span><br><span class="line">sudo ufw allow 10000/udp</span><br></pre></td></tr></table></figure>
+<h2 id="配置端口转发">配置端口转发</h2>
+<p>若服务器位于 NAT 中，需要在 NAT 中配置端口转发，将外网的
+<code>80/tcp,443/tcp,10000/udp</code>
+端口分别转发到服务器对应的端口上。</p>
+<h2 id="配置-nginx-反向代理">配置 nginx 反向代理</h2>
+<p>有时候外网的<code>80,443</code> 被 nginx 占用了，我们需要设置 nginx
+反向代理 jitsi，此时需要将 <code>10000/udp</code> 转发到 docker
+所在服务器，然后在 nginx 中添加如下设置：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nginx.conf 主文件</span></span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> mime.types;</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># http_servers/jitsi.conf</span></span><br><span class="line">	<span class="comment"># jitsi 会议配置</span></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">443</span> ssl;</span><br><span class="line">        <span class="attribute">server_name</span>  yourdomain;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_certificate</span>      F:/encrypt/keys/root/fullchain.pem;</span><br><span class="line">        <span class="attribute">ssl_certificate_key</span>  F:/encrypt/keys/root/privkey.pem;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_session_cache</span>    shared:SSL:<span class="number">1m</span>;</span><br><span class="line">        <span class="attribute">ssl_session_timeout</span>  <span class="number">5m</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;</span><br><span class="line">        <span class="attribute">ssl_prefer_server_ciphers</span>  <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> / &#123;			</span><br><span class="line">            <span class="attribute">proxy_pass</span>   https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_connect_timeout</span> <span class="number">600</span>;</span><br><span class="line">            <span class="attribute">proxy_read_timeout</span> <span class="number">600</span>;			</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;	   </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> /xmpp-websocket &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> /colibri-ws &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> https://192.168.23.12:7043;</span><br><span class="line">            <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	</span><br><span class="line">        <span class="attribute">add_header</span> Access-Control-Allow-Origin <span class="string">&quot;*&quot;</span>;</span><br><span class="line">        <span class="attribute">default_type</span> <span class="string">&#x27;text/html&#x27;</span>;</span><br><span class="line">        <span class="attribute">charset</span> utf-<span class="number">8</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>完成上述步骤的设置后，即可通过 <code>https://yourdomain</code>
+来进行访问了</p>
+<h2 id="通过-iframe-集成进现有系统">通过 IFrame 集成进现有系统</h2>
+<p>可以使用 IFrame API与现有系统进行集成。</p>
+<ol type="1">
+<li><p>加载 <code>external_api</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;https://&lt;your-domain&gt;/external_api.js&#x27;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>实例化 api</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api = <span class="keyword">new</span> <span class="title class_">JitsiMeetExternalAPI</span>(domain, options)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>domain 不带协议号（https/http）</li>
+<li>options 见 <a
+target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe#creating-the-jitsi-meet-api-object">IFrame
+API | Jitsi Meet</a></li>
+</ul></li>
+</ol>
+<h2 id="jitsi-相关镜像简介">jitsi 相关镜像简介</h2>
+<ul>
+<li><p><strong>base</strong></p>
+<p>Debian stable base image with the S6 Overlay for process control and
+the Jitsi repositories enabled. All other images are based on this
+one.</p></li>
+<li><p><strong>base-java</strong></p>
+<p>Same as the above, plus Java (OpenJDK).</p></li>
+<li><p><strong>web</strong></p>
+<blockquote>
+<p>Jitsi Meet web UI, served with nginx.</p>
+</blockquote>
+<p>Jitsi Meet 的 web 界面</p></li>
+<li><p><strong>prosody</strong></p>
+<blockquote>
+<p>Prosody, the XMPP server.</p>
+</blockquote>
+<p>用于即时通讯的开源库</p></li>
+<li><p><strong>jicofo</strong></p>
+<p>Jicofo, the XMPP focus component.</p></li>
+<li><p><strong>jvb</strong></p>
+<blockquote>
+<p>Jitsi Videobridge, the video router.</p>
+</blockquote>
+<p>Jitsi 的视屏中转中心，处理视屏流的分发</p></li>
+<li><p><strong>jigasi</strong></p>
+<p>Jigasi, the SIP (audio only) gateway.</p></li>
+<li><p><strong>jibri</strong></p>
+<p>Jibri, the broadcasting infrastructure.</p></li>
+</ul>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此致以诚挚谢意！</p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/docker-jitsi-meet">jitsi/docker-jitsi-meet:
+Jitsi Meet on Docker</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-docker/">Self-Hosting
+Guide - Docker | Jitsi Meet</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">lib-jitsi-meet/doc/tokens.md
+at master · jitsi/lib-jitsi-meet · GitHub</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi-contrib/prosody-plugins/blob/main/event_sync/README.md#event-sync">prosody-plugins/event_sync/README.md
+at main · jitsi-contrib/prosody-plugins · GitHub</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe/#creating-the-jitsi-meet-api-object">IFrame
+API | Jitsi Meet</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://meetrix.io/blog/webrtc/jitsi/jitsi_meet_front_end_customization.html">A
+tutorial on how to customize the Jitsi meet front end -
+Meetrix.IO</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md">JSON
+Web Token (JWT) authentication Prosody plugin</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/jitsi/jitsi-meet/tree/master/resources/prosody-plugins">jitsi-meet/resources/prosody-plugins</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.8x8.com/jaas/docs/api-keys-jwt">The Jitsi
+JSON Web Token (JWT)</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="李有福呀 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="李有福呀 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </span>
+
+          <img class="social-item-img" src="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Software/" rel="tag"><i class="fa fa-tag"></i> Software</a>
+              <a href="/tags/Jitsi/" rel="tag"><i class="fa fa-tag"></i> Jitsi</a>
+              <a href="/tags/galens/" rel="tag"><i class="fa fa-tag"></i> galens</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2023/3R4JKDX.html" rel="prev" title="Docker 设置代理">
+                  <i class="fa fa-angle-left"></i> Docker 设置代理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2023/3G78E45.html" rel="next" title="JitsiMeet 进行压力测试">
+                  JitsiMeet 进行压力测试 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李有福呀</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">837k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">12:41</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js","integrity":"sha256-stuqcu2FrjYCXDOytWFA5SoUE/r3nkp6gTglzNSlavU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"81b365bd1bb4980c7bbff18db8fe429d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

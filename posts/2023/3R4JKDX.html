@@ -19,16 +19,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在 windows 中使用 docker 拉取镜像时，有时候国内镜像源无法使用，需要使用 docker 官方的镜像源这时需要给 docker 设置代理来提升下载速度。 本文记录了在 docker desktop 中设置代理的方法和注意事项。">
+    <meta name="description" content="在使用 docker 拉取镜像时，有时候国内镜像源无法使用，需要使用 docker 官方的镜像源这时需要给 docker 设置代理来提升下载速度。 本文记录了 docker desktop 和 linux 中设置代理的方法和注意事项。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 设置代理">
 <meta property="og:url" content="https://galens.uamazing.cn/posts/2023/3R4JKDX.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="在 windows 中使用 docker 拉取镜像时，有时候国内镜像源无法使用，需要使用 docker 官方的镜像源这时需要给 docker 设置代理来提升下载速度。 本文记录了在 docker desktop 中设置代理的方法和注意事项。">
+<meta property="og:description" content="在使用 docker 拉取镜像时，有时候国内镜像源无法使用，需要使用 docker 官方的镜像源这时需要给 docker 设置代理来提升下载速度。 本文记录了 docker desktop 和 linux 中设置代理的方法和注意事项。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-06-20T16:00:00.000Z">
-<meta property="article:author" content="明不知昔">
+<meta property="article:author" content="李有福呀">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="galens">
 <meta name="twitter:card" content="summary">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">122</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">454</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -129,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -142,27 +142,28 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows"><span class="nav-number">1.</span> <span class="nav-text">windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux"><span class="nav-number">2.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="明不知昔"
-      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-  <p class="site-author-name" itemprop="name">明不知昔</p>
+    <img class="site-author-image" itemprop="image" alt="李有福呀"
+      src="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+  <p class="site-author-name" itemprop="name">李有福呀</p>
   <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">452</span>
+          <span class="site-state-item-count">454</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -212,8 +213,8 @@
     <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/3R4JKDX.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+      <meta itemprop="name" content="李有福呀">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -261,7 +262,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>223</span>
+      <span>688</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -278,12 +279,12 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在 windows 中使用 docker
-拉取镜像时，有时候国内镜像源无法使用，需要使用 docker
+    <div class="post-body" itemprop="articleBody"><p>在使用 docker 拉取镜像时，有时候国内镜像源无法使用，需要使用 docker
 官方的镜像源这时需要给 docker 设置代理来提升下载速度。</p>
-<p>本文记录了在 docker desktop 中设置代理的方法和注意事项。</p>
+<p>本文记录了 docker desktop 和 linux 中设置代理的方法和注意事项。</p>
 <span id="more"></span>
-<p><strong>设置方法：</strong></p>
+<h2 id="windows">windows</h2>
+<p>windows 中使用 docker desktop 进行设置，具体方法如下：</p>
 <p>在【设置】-&gt;【Resources】-&gt;【Proxies】来设置代理，如下图所示：</p>
 <figure>
 <img data-src="https://cdn.jsdelivr.net/gh/GalensGan/objects-storage/images/image-20230621154906732.png"
@@ -292,6 +293,15 @@ alt="image-20230621154906732" />
 </figure>
 <p><strong>特别注意：</strong></p>
 <p>在设置代理地址时，<code>不需要前面的协议(http://或https://)</code></p>
+<h2 id="linux">Linux</h2>
+<p>本文以 Ubuntu 举例说明。</p>
+<p>docker pull 和 docker build/docker run 使用代理的方式不一样！</p>
+<p>docker pull 的代理被 systemd 接管，所以需要设置 systemd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增或编辑 docker 守护进程的代理配置</span></span><br><span class="line">sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向文件中添加如下内容</span></span><br><span class="line">[Service]</span><br><span class="line">Environment=<span class="string">&quot;HTTP_PROXY=http://127.0.0.1:8123&quot;</span></span><br><span class="line">Environment=<span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:8123&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启生效</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2>
+<p>本文参考以下文章，在此致以诚挚谢意！</p>
+<p><a target="_blank" rel="noopener" href="https://neucrack.com/p/286">docker
+设置代理，以及国内加速镜像设置-次世代BUG池</a></p>
 
     </div>
 
@@ -307,11 +317,11 @@ alt="image-20230621154906732" />
   </button>
   <div class="post-reward">
       <div>
-        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="李有福呀 微信">
         <span>微信</span>
       </div>
       <div>
-        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="李有福呀 支付宝">
         <span>支付宝</span>
       </div>
 
@@ -361,8 +371,8 @@ alt="image-20230621154906732" />
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2023/9Q7N69.html" rel="next" title="JitsiMeet docker 部署及设置 jw 授权">
-                  JitsiMeet docker 部署及设置 jw 授权 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2023/2WH7C5Z.html" rel="next" title="JitsiMeet Docker 安装及负载均衡配置">
+                  JitsiMeet Docker 安装及负载均衡配置 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -388,14 +398,14 @@ alt="image-20230621154906732" />
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="author" itemprop="copyrightHolder">李有福呀</span>
   </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">838k</span>
+    <span title="站点总字数">837k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

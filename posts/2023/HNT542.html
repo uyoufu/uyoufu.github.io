@@ -27,11 +27,11 @@
 <meta property="og:description" content="为了能够在 Docker 中使用 GPU 进行加速，Nvidia 开发了 nvidia-docker 对 Container 进行封装，使得 Docker 容器可以调用 GPU 进行加速。现在 nvidia-docker 已被归档，官方推荐使用 nvidia-container-toolkit。 本文将介绍如何在 Linux 中安装 nvidia-container-toolkit。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-26T16:00:00.000Z">
-<meta property="article:author" content="明不知昔">
+<meta property="article:modified_time" content="2024-11-06T16:00:00.000Z">
+<meta property="article:author" content="李有福呀">
 <meta property="article:tag" content="Docker">
-<meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
 
 
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">121</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">452</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">244</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">122</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">454</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,29 +143,29 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvidia-%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">安装 Nvidia 驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvidia-container-toolkit"><span class="nav-number">2.</span> <span class="nav-text">安装 NVIDIA Container
-Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-docker"><span class="nav-number">3.</span> <span class="nav-text">配置 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-containerd"><span class="nav-number">4.</span> <span class="nav-text">配置 Containerd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E9%85%8D%E7%BD%AE-gpu"><span class="nav-number">6.</span> <span class="nav-text">docker compose 配置 GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95-docker-%E5%AE%B9%E5%99%A8-gpu-%E7%8A%B6%E6%80%81"><span class="nav-number">7.</span> <span class="nav-text">测试 Docker 容器 GPU 状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">关系理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvidia-%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">安装 Nvidia 驱动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%BA%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.</span> <span class="nav-text">查看机器环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8"><span class="nav-number">2.1.1.</span> <span class="nav-text">升级内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-gcc"><span class="nav-number">2.1.2.</span> <span class="nav-text">升级 gcc</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%A9%B1%E5%8A%A8%E7%89%88%E6%9C%AC"><span class="nav-number">2.2.</span> <span class="nav-text">查看驱动版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%8E%9F%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.3.</span> <span class="nav-text">卸载原驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.4.</span> <span class="nav-text">安装驱动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9"><span class="nav-number">2.4.1.</span> <span class="nav-text">版本选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.2.</span> <span class="nav-text">开始安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvidia-container-toolkit"><span class="nav-number">3.</span> <span class="nav-text">安装 NVIDIA Container
+Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-docker"><span class="nav-number">4.</span> <span class="nav-text">配置 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-containerd"><span class="nav-number">5.</span> <span class="nav-text">配置 Containerd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">6.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-%E9%85%8D%E7%BD%AE-gpu"><span class="nav-number">7.</span> <span class="nav-text">docker compose 配置 GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95-docker-%E5%AE%B9%E5%99%A8-gpu-%E7%8A%B6%E6%80%81"><span class="nav-number">8.</span> <span class="nav-text">测试 Docker 容器 GPU 状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-%E6%8E%92%E6%9F%A5"><span class="nav-number">9.</span> <span class="nav-text">bug 排查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E5%90%8E%E5%A4%B1%E6%95%88"><span class="nav-number">9.1.</span> <span class="nav-text">重启后失效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="明不知昔"
-      src="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-  <p class="site-author-name" itemprop="name">明不知昔</p>
+    <img class="site-author-image" itemprop="image" alt="李有福呀"
+      src="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+  <p class="site-author-name" itemprop="name">李有福呀</p>
   <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">452</span>
+          <span class="site-state-item-count">454</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -215,8 +215,8 @@ Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href
     <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2023/HNT542.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/02/13/nA5l6TkJMgNmtxr.png">
-      <meta itemprop="name" content="明不知昔">
+      <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+      <meta itemprop="name" content="李有福呀">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -245,6 +245,13 @@ Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-11-07 00:00:00" itemprop="dateModified" datetime="2024-11-07T00:00:00+08:00">2024-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
@@ -264,14 +271,14 @@ Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
+      <span>5.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -292,32 +299,98 @@ target="_blank" rel="noopener" href="https://github.com/NVIDIA/nvidia-container-
 <p>注：本文所使用的显卡为 RTX4080</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="安装-nvidia-驱动">安装 Nvidia 驱动</h2>
+<h2 id="关系理解">关系理解</h2>
+<p>在 Ubuntu 的 Docker 中使用 GPU 时，需要在 host
+主机中安装两个环境：</p>
 <ol type="1">
-<li><p>查看驱动版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/driver/nvidia/version</span><br></pre></td></tr></table></figure>
-<p>若提示没有该文件，则说明没有驱动。否则会显示驱动版本：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NVRM version: NVIDIA UNIX x86_64 Kernel Module  535.129.03  Thu Oct 19 18:56:32 UTC 2023</span><br><span class="line">GCC version:  gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)</span><br></pre></td></tr></table></figure></li>
-<li><p>安装驱动</p>
-<p>由于 4080 不支 <code>--gpgpu</code> 驱动，因此此处安装通用驱动</p>
-<p>查看可安装驱动：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ubuntu-drivers list</span><br></pre></td></tr></table></figure>
-<p>使用推荐方式安装：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ubuntu-drivers install</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>若显卡支持，可以添加 <code>--gpgpu</code> 参数即可</p>
-</blockquote>
-<p>安装工具包：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看驱动版本</span></span><br><span class="line">cat /proc/driver/nvidia/version</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">若是 --gpgpu 版本，还需要根据驱动版本安装工具包，下面的 535 为主版本号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sudo apt install nvidia-utils-535-server</span></span><br></pre></td></tr></table></figure></li>
+<li>Nvidia 驱动</li>
+<li>NVIDIA Container Toolkit</li>
 </ol>
-<p>输入 <code>nvidia-smi</code> 来查看显卡状态，正常显示如下：</p>
+<p>其关系如下图所示：</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/ngidia-container-toolkit.png"
+alt="ngidia-container-toolkit" />
+<figcaption aria-hidden="true">ngidia-container-toolkit</figcaption>
+</figure>
+<p>Nvidia 驱动决定了可使用的 cuda 最大版本号，如下图右上角所示。</p>
+<p>如图所示：</p>
 <figure>
 <img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231227172857700.png"
 alt="image-20231227172857700" />
 <figcaption aria-hidden="true">image-20231227172857700</figcaption>
 </figure>
-<p>若要卸载驱动，执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge remove &#x27;*nvidia*$&#123;DRIVER_BRANCH&#125;*&#x27;</span><br><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+<h2 id="安装-nvidia-驱动">安装 Nvidia 驱动</h2>
+<h3 id="查看机器环境">查看机器环境</h3>
+<ol type="1">
+<li><p>查看发行版信息：</p>
+<p><code>lsb_release -a</code></p></li>
+<li><p>查看内核版本：</p>
+<p><code>uname -r</code></p></li>
+<li><p>查看默认 GCC 版本：</p>
+<p><code>gcc --version</code></p></li>
+<li><p>查看 GLIBC 版本：</p>
+<p><code>ldd --version</code></p></li>
+</ol>
+<p>支持的 linux 版本如下：</p>
+<p><a
+target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#id11">Native
+Linux Distribution Support in CUDA 12.6 Update 3</a></p>
+<p>若版本不满足要求，可以按下列方式进行升级，下文将以 Ubuntu 22.04.3
+为例。</p>
+<blockquote>
+<p>注意：升级内核有风险，请谨慎操作！</p>
+</blockquote>
+<h4 id="升级内核">升级内核</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">apt-cache search linux-image</span><br><span class="line"><span class="comment"># 安装指定版本内核</span></span><br><span class="line">sudo apt install linux-image-5.4.0-42-generic linux-headers-5.4.0-42-generic</span><br><span class="line"><span class="comment"># 更新 GRUB 配置</span></span><br><span class="line">sudo update-grub</span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
+<h4 id="升级-gcc">升级 gcc</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 gcc12</span></span><br><span class="line">sudo apt-get install gcc-12 g++-12</span><br><span class="line"><span class="comment"># 设置为默认版本</span></span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 110 --slave /usr/bin/g++ g++ /usr/bin/g++-12</span><br><span class="line"><span class="comment"># 修改 gcc 的优先级</span></span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100</span><br><span class="line"><span class="comment"># 减小原来 gcc 的优先级</span></span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50</span><br><span class="line"><span class="comment"># 选择默认的 gcc</span></span><br><span class="line">sudo update-alternatives --config gcc</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+<h3 id="查看驱动版本">查看驱动版本</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/driver/nvidia/version</span><br></pre></td></tr></table></figure>
+<p>若提示没有该文件，则说明没有驱动。否则会显示驱动版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NVRM version: NVIDIA UNIX x86_64 Kernel Module  535.154.05  Thu Dec 28 15:37:48 UTC 2023</span><br><span class="line">GCC version:  gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)</span><br></pre></td></tr></table></figure>
+<h3 id="卸载原驱动">卸载原驱动</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DRIVER_BRANCH=535.216.01</span><br><span class="line">sudo apt --purge remove <span class="string">&quot;*nvidia*<span class="variable">$&#123;DRIVER_BRANCH&#125;</span>*&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装驱动">安装驱动</h3>
+<blockquote>
+<p>RTX 4080 不支持 server 类型的驱动</p>
+</blockquote>
+<p>查看可安装驱动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers list</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入上述命令后，可能会报错：<code>ERROR:root:aplay command not found</code>，安装一下
+<code>sudo apt install alsa-utils</code>
+即可，这是一个声音驱动工具包。</p>
+</blockquote>
+<h4 id="版本选择">版本选择</h4>
+<p>使用 <code>ubuntu-drivers list</code> 命令后，输出结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜ /home/xby ubuntu-drivers list --gpgpu</span><br><span class="line">nvidia-driver-535</span><br><span class="line">nvidia-driver-550</span><br><span class="line">nvidia-driver-535-server</span><br><span class="line">nvidia-driver-545-open</span><br><span class="line">nvidia-driver-535-server-open</span><br><span class="line">nvidia-driver-550-open</span><br><span class="line">nvidia-driver-535-open</span><br><span class="line">nvidia-driver-545</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>server</p>
+<p>这是一个专门为服务器设计的驱动程序，提供了针对服务器硬件和应用程序的优化</p></li>
+<li><p>open</p>
+<p>开源版本的 NVIDIA 驱动</p></li>
+<li><p>通用的驱动</p></li>
+</ul>
+<p>各个版本历史渊源详见 <a
+target="_blank" rel="noopener" href="https://minetest.top/archives/1724743569668">如何优雅地在ubuntu中安装nvidia驱动</a></p>
+<h4 id="开始安装">开始安装</h4>
+<ol type="1">
+<li><p>使用推荐方式安装默认版本</p>
+<p><code>sudo ubuntu-drivers install --gpgpu</code></p>
+<blockquote>
+<p>这种方式安装的驱动不是最新版本</p>
+</blockquote></li>
+<li><p>安装指定版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下列版本二选一</span></span><br><span class="line"><span class="comment"># 服务器版本</span></span><br><span class="line">sudo ubuntu-drivers install --gpgpu nvidia:550-server</span><br><span class="line"><span class="comment"># 通用版本</span></span><br><span class="line">sudo ubuntu-drivers install --gpgpu nvidia:550</span><br></pre></td></tr></table></figure></li>
+<li><p>查看驱动版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看驱动版本</span></span><br><span class="line"><span class="built_in">cat</span> /proc/driver/nvidia/version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若是 --gpgpu 版本，还需要根据驱动版本安装工具包，下面的 550 为主版本号</span></span><br><span class="line">sudo apt install nvidia-utils-550-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过版本安装的 nvidia-smi 工具，没有后缀 -server</span></span><br><span class="line">sudo apt install nvidia-utils-550</span><br></pre></td></tr></table></figure>
+<p>输入 <code>nvidia-smi</code> 来查看显卡状态，正常显示如下：</p>
+<figure>
+<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20231227172857700.png"
+alt="image-20231227172857700" />
+<figcaption aria-hidden="true">image-20231227172857700</figcaption>
+</figure></li>
+</ol>
 <h2 id="安装-nvidia-container-toolkit">安装 NVIDIA Container
 Toolkit</h2>
 <ol type="1">
@@ -357,6 +430,13 @@ GPU，都需要添加这个参数</p>
 <h2 id="测试-docker-容器-gpu-状态">测试 Docker 容器 GPU 状态</h2>
 <p>进入到容器后，执行 <code>nvidia-smi</code>，若成功显示 GPU
 信息，则说明 docker 容器成功访问到了 GPU。</p>
+<h2 id="bug-排查">bug 排查</h2>
+<h3 id="重启后失效">重启后失效</h3>
+<p>重启后，执行 <code>nvidia-smi</code>，发现 driver 没有启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  /home/xby nvidia-smi</span><br><span class="line">NVIDIA-SMI has failed because it couldn<span class="string">&#x27;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.</span></span><br><span class="line"><span class="string">➜  /home/xby sudo ubuntu-drivers install --gpgpu nvidia:550</span></span><br><span class="line"><span class="string">nvidia-headless-no-dkms-550</span></span><br><span class="line"><span class="string">None</span></span><br><span class="line"><span class="string">All the available drivers are already installed.</span></span><br><span class="line"><span class="string">➜  /home/xby gcc --version</span></span><br><span class="line"><span class="string">gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0</span></span><br><span class="line"><span class="string">Copyright (C) 2021 Free Software Foundation, Inc.</span></span><br><span class="line"><span class="string">This is free software; see the source for copying conditions.  There is NO</span></span><br><span class="line"><span class="string">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span></span><br></pre></td></tr></table></figure>
+<p>从上面可以看出，问题出在
+<code>nvidia-headless-no-dkms-550</code>，通过排查，怀疑是
+<code>gcc</code> 版本问题，参考</p>
 <h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
 <p><a
@@ -392,11 +472,11 @@ documentation</a></p>
   </button>
   <div class="post-reward">
       <div>
-        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="明不知昔 微信">
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="李有福呀 微信">
         <span>微信</span>
       </div>
       <div>
-        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="明不知昔 支付宝">
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="李有福呀 支付宝">
         <span>支付宝</span>
       </div>
 
@@ -434,8 +514,8 @@ documentation</a></p>
 
           <div class="post-tags">
               <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
-              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
               <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
           </div>
 
         
@@ -474,14 +554,14 @@ documentation</a></p>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">明不知昔</span>
+    <span class="author" itemprop="copyrightHolder">李有福呀</span>
   </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">838k</span>
+    <span title="站点总字数">837k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

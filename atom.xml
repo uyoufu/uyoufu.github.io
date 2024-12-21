@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2024-11-26T03:22:31.916Z</updated>
+  <updated>2024-12-07T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ElasticSearch Docker 部署</title>
+    <link href="https://galens.uamazing.cn/posts/2024/2087YCV.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/2087YCV.html</id>
+    <published>2024-12-08T16:00:00.000Z</published>
+    <updated>2024-12-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp
+分词器提高中文分词效果。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ElasticSearch" scheme="https://galens.uamazing.cn/categories/Software/ElasticSearch/"/>
+    
+    
+    <category term="ElasticSearch" scheme="https://galens.uamazing.cn/tags/ElasticSearch/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Docker 部署 AdguardHome</title>
@@ -73,12 +95,16 @@
     <link href="https://galens.uamazing.cn/posts/2024/M96VZZ.html"/>
     <id>https://galens.uamazing.cn/posts/2024/M96VZZ.html</id>
     <published>2024-11-05T16:00:00.000Z</published>
-    <updated>2024-11-05T16:00:00.000Z</updated>
+    <updated>2024-12-04T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;为了快速搭建 MongoDB 副本集开发环境，可以使用 Docker
 快速启动一个单节点副本集。&lt;/p&gt;
-&lt;p&gt;docker-compose 配置如下：&lt;/p&gt;</summary>
+&lt;p&gt;实现方式有两种：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;直接使用 docker-compose 完成&lt;/li&gt;
+&lt;li&gt;手动配置&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -110,9 +136,9 @@
     
     
     
-    <category term="essay" scheme="https://galens.uamazing.cn/categories/essay/"/>
+    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
     
-    <category term="2024年" scheme="https://galens.uamazing.cn/categories/essay/2024%E5%B9%B4/"/>
+    <category term="2024年" scheme="https://galens.uamazing.cn/categories/Essay/2024%E5%B9%B4/"/>
     
     
   </entry>
@@ -513,29 +539,6 @@ alt=&quot;image-20240222222605912&quot; /&gt;
     
     
     <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>on-my-zsh 中显示绝对路径</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2KMYJ38.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2KMYJ38.html</id>
-    <published>2024-01-10T16:00:00.000Z</published>
-    <updated>2024-01-10T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本篇文章将介绍如何修改 on-my-zsh 主题，使其显示绝对路径。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/tags/Linux/"/>
-    
-    <category term="on-my-zsh" scheme="https://galens.uamazing.cn/tags/on-my-zsh/"/>
     
   </entry>
   

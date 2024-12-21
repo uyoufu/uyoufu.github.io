@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0-rc1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp 分词器提高中文分词效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch Docker 部署">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+<meta property="og:site_name" content="星辰大海">
+<meta property="og:description" content="本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp 分词器提高中文分词效果。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-07T16:00:00.000Z">
+<meta property="article:author" content="李有福呀">
+<meta property="article:tag" content="ElasticSearch">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/2087YCV.html","path":"posts/2024/2087YCV.html","title":"ElasticSearch Docker 部署"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ElasticSearch Docker 部署 | 星辰大海</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">星辰大海</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生万事须自为，跬步江山即寥廓</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">245</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">123</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">455</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-elasticsearch"><span class="nav-number">1.</span> <span class="nav-text">什么是 ElasticSearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">Docker 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text">启动 docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81"><span class="nav-number">3.2.</span> <span class="nav-text">设置用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-kibana"><span class="nav-number">3.3.</span> <span class="nav-text">配置 kibana</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80-kibana"><span class="nav-number">3.3.1.</span> <span class="nav-text">打开 kibana</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90-enrollment-token"><span class="nav-number">3.3.2.</span> <span class="nav-text">生成 enrollment token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">3.3.3.</span> <span class="nav-text">获取验证码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%88%86%E8%AF%8D%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">配置分词插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8%E5%AF%B9%E6%AF%94"><span class="nav-number">4.1.</span> <span class="nav-text">中文分词器对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanlp-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">4.2.</span> <span class="nav-text">HanLP 插件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%88%86%E8%AF%8D%E5%99%A8"><span class="nav-number">4.2.1.</span> <span class="nav-text">下载分词器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%88%86%E8%AF%8D%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.2.2.</span> <span class="nav-text">下载分词模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%88%86%E8%AF%8D%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">修改默认分词器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="nav-number">5.1.</span> <span class="nav-text">创建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E7%B4%A2%E5%BC%95%E5%88%9B%E5%BB%BA%E9%BB%98%E8%AE%A4%E5%88%86%E8%AF%8D%E5%99%A8"><span class="nav-number">5.2.</span> <span class="nav-text">为索引创建默认分词器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-api_key"><span class="nav-number">6.</span> <span class="nav-text">生成 API_KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-%E8%BF%9E%E6%8E%A5"><span class="nav-number">7.</span> <span class="nav-text">python 连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8-kibana-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">常用 kibana 控制台命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">9.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李有福呀"
+      src="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+  <p class="site-author-name" itemprop="name">李有福呀</p>
+  <div class="site-description" itemprop="description">人生万事须自为，跬步江山即寥廓</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">455</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">245</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/galensgan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;galensgan" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/08760e791f9e" title="简  书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;08760e791f9e" rel="noopener me" target="_blank"><i class="fa fa-book-reader fa-fw"></i>简  书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
+      <meta itemprop="name" content="李有福呀">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星辰大海">
+      <meta itemprop="description" content="人生万事须自为，跬步江山即寥廓">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ElasticSearch Docker 部署 | 星辰大海">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ElasticSearch Docker 部署
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-09 00:00:00" itemprop="dateCreated datePublished" datetime="2024-12-09T00:00:00+08:00">2024-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-08 00:00:00" itemprop="dateModified" datetime="2024-12-08T00:00:00+08:00">2024-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software/ElasticSearch/" itemprop="url" rel="index"><span itemprop="name">ElasticSearch</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp
+分词器提高中文分词效果。</p>
+<span id="more"></span>
+<h2 id="什么是-elasticsearch">什么是 ElasticSearch</h2>
+<p>以下是官方原文：</p>
+<p>Elasticsearch 是一个开源的分布式 RESTful
+搜索和分析引擎、可扩展的数据存储和向量数据库，能够解决不断涌现出的各种用例。作为
+Elastic Stack 的核心，Elasticsearch
+会集中存储您的数据，让您飞快完成搜索，微调相关性，进行强大的分析，并轻松缩放规模。</p>
+<h2 id="docker-部署">Docker 部署</h2>
+<p>以下为完整的 docker compose 文件，包括：</p>
+<ul>
+<li>ElasticSearch</li>
+<li>Kibana</li>
+</ul>
+<p>docker compose 文件如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">elastic-search:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">docker.elastic.co/elasticsearch/elasticsearch:8.12.0</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">elastic-search</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9200</span><span class="string">:9200</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9300</span><span class="string">:9300</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="comment"># - ./data/config:/usr/share/elasticsearch/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/data:/usr/share/elasticsearch/data</span> <span class="comment"># 数据文件</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/plugins:/usr/share/elasticsearch/plugins</span> <span class="comment"># 插件文件</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;cluster.name=elasticsearch&quot;</span> <span class="comment">#设置集群名称为elasticsearch</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;ES_JAVA_OPTS=-Xms1G -Xmx1G&quot;</span> <span class="comment">#设置使用jvm内存大小，设置ES的初始内存和最大内存，否则导致过大启动不了ES</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;discovery.type=single-node&quot;</span> <span class="comment"># 单节点</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&quot;1000:0&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">kibana:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">kibana:8.12.0</span> <span class="comment"># 与 elastic-search 版本保持一致</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">kibana</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">elastic-search</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9301</span><span class="string">:5601</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>创建默认配置文件
+<code>./data/config/elasticsearch.yml</code>，内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.name:</span> <span class="string">&quot;docker-cluster&quot;</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装步骤">安装步骤</h2>
+<h3 id="启动-docker-容器">启动 docker 容器</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为挂载容器设置权限，这一步非常重要，否则 es 会启动失败</span></span><br><span class="line"><span class="comment"># 这里的 1000:1000 是 Elasticsearch 容器中 elasticsearch 用户的 UID 和 GID</span></span><br><span class="line"><span class="built_in">mkdir</span> -p data/&#123;data,config,plugin&#125;</span><br><span class="line">sudo <span class="built_in">chown</span> -R 1000:0 ./data</span><br><span class="line">sudo <span class="built_in">chmod</span> -R 777 ./data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 放行端口</span></span><br><span class="line">sudo ufw allow 9200,9300,9301/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制容器内容的需要挂载的配置文件</span></span><br><span class="line">docker <span class="built_in">cp</span> -a elastic-search:/usr/share/elasticsearch/config data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开 config 的目录挂载，然后重新启动</span></span><br><span class="line"><span class="comment"># 这是为了方便挂载 config 目录，若直接挂载，es 初始化会有问题</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+<h3 id="设置用户名和密码">设置用户名和密码</h3>
+<p>按如下步骤设置用户名和密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个命令会依次为 elastic, kibana, logstash_system,beats_system 四个用户设置密码</span></span><br><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-setup-passwords interactive</span><br></pre></td></tr></table></figure>
+<p>还有一个更简单的方式，直接重置 <code>elastic</code> 用户的密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-reset-password -u elastic -s</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209164442267.png"
+alt="image-20241209164442267" />
+<figcaption aria-hidden="true">image-20241209164442267</figcaption>
+</figure>
+<p>此处密码一定要保存好。</p>
+<p>若要重置为指定密码，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-reset-password -u elastic -i</span><br></pre></td></tr></table></figure>
+<p>完整命令帮助如下：</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209164847822.png"
+alt="image-20241209164847822" />
+<figcaption aria-hidden="true">image-20241209164847822</figcaption>
+</figure>
+<h3 id="配置-kibana">配置 kibana</h3>
+<h4 id="打开-kibana">打开 kibana</h4>
+<p>使用浏览器打开 kibana</p>
+<p>地址为：<code>http://docker-host-ip:9301</code></p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209105942826.png"
+alt="image-20241209105942826" />
+<figcaption aria-hidden="true">image-20241209105942826</figcaption>
+</figure>
+<blockquote>
+<p>右下角提示，需要配置 publicBaseUrl，由于是内网使用，可以不用管它</p>
+</blockquote>
+<h4 id="生成-enrollment-token">生成 enrollment token</h4>
+<p>远程到 docker 宿主机，执行以下命令获取：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-create-enrollment-token --scope kibana</span><br></pre></td></tr></table></figure>
+<p>结果如图所示：</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163029414.png"
+alt="image-20241209163029414" />
+<figcaption aria-hidden="true">image-20241209163029414</figcaption>
+</figure>
+<p>将 token 复制到输入框后，点确认。</p>
+<h4 id="获取验证码">获取验证码</h4>
+<p>上一步之后，会弹出验证码弹窗：</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163236791.png"
+alt="image-20241209163236791" />
+<figcaption aria-hidden="true">image-20241209163236791</figcaption>
+</figure>
+<p>使用如下命令获取验证码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it kibana bin/kibana-verification-code</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163443586.png"
+alt="image-20241209163443586" />
+<figcaption aria-hidden="true">image-20241209163443586</figcaption>
+</figure>
+<p>输入之后，等待配置完成。</p>
+<h2 id="配置分词插件">配置分词插件</h2>
+<h3 id="中文分词器对比">中文分词器对比</h3>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18244417/article/details/109717745">Elasticsearch
+常见分词器对比区别</a></p>
+<p>最终选择 <a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">hankcs/HanLP:
+中文分词</a> 作为分词器。</p>
+<h3 id="hanlp-插件安装">HanLP 插件安装</h3>
+<p>本节主要参考：<a
+target="_blank" rel="noopener" href="https://github.com/p3psi-boo/elasticsearch-analysis-hanlp-8.x">p3psi-boo/elasticsearch-analysis-hanlp-8.x</a></p>
+<p>配置与测试可以在 <code>/app/dev_tools#/console</code>
+开发者工具中进行</p>
+<h4 id="下载分词器">下载分词器</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入到插件目录</span></span><br><span class="line"><span class="built_in">cd</span> data/plugins</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载分词器插件</span></span><br><span class="line"><span class="comment"># 可以使用 export https_proxy=http://127.0.0.1:8087 为 wget 配置代理</span></span><br><span class="line">wget https://github.com/p3psi-boo/elasticsearch-analysis-hanlp-8.x/releases/download/v1.0.0/elasticsearch-analysis-hanlp.zip -O analysis-hanlp.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压并删除</span></span><br><span class="line">unzip analysis-hanlp.zip &amp;&amp; <span class="built_in">rm</span> analysis-hanlp.zip</span><br></pre></td></tr></table></figure>
+<h4 id="下载分词模型">下载分词模型</h4>
+<p>analysis-hanlp
+插件下载完成后，还需要下载分词模型，接着上一步继续操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> analysis-hanlp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载模型</span></span><br><span class="line">wget https://file.hankcs.com/hanlp/data-for-1.7.5.zip</span><br><span class="line"><span class="comment"># 解压到 data 目录并删除</span></span><br><span class="line">unzip data-for-1.7.5.zip &amp;&amp; <span class="built_in">rm</span> data-for-1.7.5.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 elastic-search 容器</span></span><br><span class="line">docker restart elastic-search</span><br></pre></td></tr></table></figure>
+<h2 id="修改默认分词器">修改默认分词器</h2>
+<p>打开 kibana 的控制台 <a
+target="_blank" rel="noopener" href="http://192.168.23.30:9301/app/dev_tools#/console">Console - Dev
+Tools - Elastic</a>，在里面输入执行命令或者直接通过 http 请求接口。</p>
+<p>本节主要参考：<a
+target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/specify-analyzer.html#specify-index-time-default-analyzer">Specify
+an analyzer</a></p>
+<h3 id="创建索引">创建索引</h3>
+<p>以下参数会创建一个 search-iepc-document 索引并设置 hanlp
+为默认分词器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建索引</span></span><br><span class="line">PUT /search-iepc-document</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;settings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;number_of_shards&quot;</span>: 1,</span><br><span class="line">    <span class="string">&quot;number_of_replicas&quot;</span>: 1,</span><br><span class="line">    <span class="string">&quot;analysis&quot;</span>: &#123;</span><br><span class="line">      <span class="comment"># 自定义token器</span></span><br><span class="line">      <span class="string">&quot;tokenizer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;hanlp_tokenizer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;hanlp&quot;</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_config&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_dictionary&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_number_quantifier_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_place_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_organization_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_stop_dictionary&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;analyzer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;default&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>],</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;hanlp_analyzer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span>,</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;mappings&quot;</span>: &#123;</span><br><span class="line">    <span class="comment"># 包含两个字段</span></span><br><span class="line">    <span class="string">&quot;properties&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;fileId&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="为索引创建默认分词器">为索引创建默认分词器</h3>
+<p>若要修改设置，可以先关闭索引，然后更新设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭服务</span></span><br><span class="line">POST search-iepc-document/_close</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开服务</span></span><br><span class="line">POST search-iepc-document/_open</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认分词器</span></span><br><span class="line">PUT search-iepc-document/_settings</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;settings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;analysis&quot;</span>: &#123;</span><br><span class="line">      <span class="comment"># 定义 tokenizer</span></span><br><span class="line">      <span class="string">&quot;tokenizer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;hanlp_tokenizer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;hanlp&quot;</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_config&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_dictionary&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_number_quantifier_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_place_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_organization_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_stop_dictionary&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment"># 定义 analyzer</span></span><br><span class="line">      <span class="string">&quot;analyzer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;default&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>],</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;hanlp_analyzer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span>,</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成-api_key">生成 API_KEY</h2>
+<p>为了能够通过 API 调用，需要生成一个 API_KEY。</p>
+<p>访问 Kibana 这个页面进行生成：<a
+target="_blank" rel="noopener" href="http://192.168.23.30:9301/app/management/security/api_keys/">http://host:9301/app/management/security/api_keys</a></p>
+<p>更加详细的权限控制参考：<a
+target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/8.12/security-api-create-api-key.html#security-api-create-api-key-request-body">Create
+API key API</a></p>
+<p>在配置时，建议启用受限权限：</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241210103304902.png"
+alt="image-20241210103304902" />
+<figcaption aria-hidden="true">image-20241210103304902</figcaption>
+</figure>
+<h2 id="python-连接">python 连接</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> elasticsearch <span class="keyword">import</span> Elasticsearch</span><br><span class="line"></span><br><span class="line">client = Elasticsearch(</span><br><span class="line">    <span class="string">&quot;https://192.168.23.30:9200&quot;</span>,</span><br><span class="line">    api_key=<span class="string">&quot;T0xWJRucldVOHM6MwTUJVLWJfS33lJeSkZQcE1Z3xVFBDUQ==&quot;</span>,</span><br><span class="line">    <span class="comment"># verify_certs=False, # 关闭证书验证, 开发中可以启用</span></span><br><span class="line">    ca_certs=<span class="string">&quot;certs/elastic-search.crt&quot;</span>, <span class="comment"># 证书从 elastic-search 容器中的 config/certs 中复制</span></span><br><span class="line">    ssl_assert_hostname=<span class="literal">False</span>,  <span class="comment"># 禁用主机名验证</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="常用-kibana-控制台命令">常用 kibana 控制台命令</h2>
+<p>以下命令可直接在 kibana 的控制台 <a
+target="_blank" rel="noopener" href="http://192.168.23.30:9301/app/dev_tools#/console">/app/dev_tools#/console</a>
+中使用</p>
+<figure>
+<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241210104240909.png"
+alt="image-20241210104240909" />
+<figcaption aria-hidden="true">image-20241210104240909</figcaption>
+</figure>
+<p>详情如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看分词效果</span></span><br><span class="line">GET _analyze</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;analyzer&quot;</span>: <span class="string">&quot;hanlp&quot;</span>,</span><br><span class="line">  <span class="string">&quot;text&quot;</span>: <span class="string">&quot;受弯构件在进行正截面抗弯承载力计算。美国,|=阿拉斯加州发生8.0级地震&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建索引</span></span><br><span class="line">PUT /search-iepc-document</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;settings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;number_of_shards&quot;</span>: 1,</span><br><span class="line">    <span class="string">&quot;number_of_replicas&quot;</span>: 0,</span><br><span class="line">    <span class="string">&quot;analysis&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;tokenizer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;hanlp_tokenizer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;hanlp&quot;</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_config&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_dictionary&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_number_quantifier_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_place_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_organization_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_stop_dictionary&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;analyzer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;default&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>],</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;hanlp_analyzer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span>,</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;mappings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;properties&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;fileId&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认分词器</span></span><br><span class="line">PUT search-iepc-document/_settings</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;settings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;analysis&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;tokenizer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;hanlp_tokenizer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;hanlp&quot;</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_config&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_custom_dictionary&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_number_quantifier_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_place_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_organization_recognize&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="string">&quot;enable_stop_dictionary&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&quot;analyzer&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;default&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>],</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;hanlp_analyzer&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;tokenizer&quot;</span>: <span class="string">&quot;hanlp_tokenizer&quot;</span>,</span><br><span class="line">          <span class="string">&quot;filter&quot;</span>: [<span class="string">&quot;lowercase&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">POST search-iepc-document/_analyze</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;text&quot;</span>: <span class="string">&quot;受弯构件在进行正截面抗弯承载力计算。美国,|=阿拉斯加州发生8.0级地震&quot;</span>,</span><br><span class="line">  <span class="string">&quot;analyzer&quot;</span>: <span class="string">&quot;hanlp_analyzer&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭服务</span></span><br><span class="line">POST search-iepc-document/_close</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开服务</span></span><br><span class="line">POST search-iepc-document/_open</span><br><span class="line"></span><br><span class="line">POST search-iepc-document/_analyze</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;text&quot;</span>: <span class="string">&quot;HanLP是面向生产环境的自然语言处理工具包。2021年HanLPv2.1为生产环境带来次世代最先进的多语种NLP技术。HanLP只做我们认为正确、先进的事情，而不一定是流行、权威的事情。晓美焰来到北京立方庭参观自然语义科技公司。当下雨天地面积水分外严重。总统普京与特朗普通电话讨论美国太空探索技术公司。采用优等生鲜肉，欢迎新老师生前来就餐。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;analyzer&quot;</span>: <span class="string">&quot;hanlp_analyzer&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按内容搜索</span></span><br><span class="line">POST search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>:&#123;</span><br><span class="line">    <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: <span class="string">&quot;桥梁 支座 要求&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;size&quot;</span>: 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复杂查询</span></span><br><span class="line"><span class="comment"># 按内容搜索</span></span><br><span class="line">POST search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;term&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;fileId&quot;</span>: <span class="string">&quot;1713859954114&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ], </span><br><span class="line">      <span class="string">&quot;must&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;content&quot;</span>: <span class="string">&quot;混凝土压杆承载力设计值如何计算&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;highlight&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;fields&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;content&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>:<span class="string">&quot;plain&quot;</span>,</span><br><span class="line">          <span class="string">&quot;order&quot;</span>: <span class="string">&quot;score&quot;</span>,</span><br><span class="line">          <span class="string">&quot;number_of_fragments&quot;</span>: 3</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一般通用查询</span></span><br><span class="line">POST search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;must&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;content&quot;</span>: <span class="string">&quot;混凝土压杆承载力设计值如何计算&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;highlight&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;fields&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;content&quot;</span>:&#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>:<span class="string">&quot;plain&quot;</span>,</span><br><span class="line">          <span class="string">&quot;order&quot;</span>: <span class="string">&quot;score&quot;</span>,</span><br><span class="line">          <span class="string">&quot;number_of_fragments&quot;</span>: 3</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按词出现的先后顺序查找</span></span><br><span class="line">POST search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;match_phrase&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: <span class="string">&quot;抗裂验算 全预应力 混凝土&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按先后顺序查询</span></span><br><span class="line">POST search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>:&#123;</span><br><span class="line">    <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;query&quot;</span>: <span class="string">&quot;抗裂验算 全预应力 混凝土&quot;</span>,</span><br><span class="line">        <span class="string">&quot;operator&quot;</span>: <span class="string">&quot;and&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 id 查找数据</span></span><br><span class="line">GET search-iepc/_doc/66150b2166d66170065f78d2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定id的数据</span></span><br><span class="line">POST search-iepc/_delete_by_query</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;ids&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;values&quot;</span>: [<span class="string">&quot;661f97cb2d1b78567953f85e&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找但不评分</span></span><br><span class="line">GET search-iepc/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>:&#123;</span><br><span class="line">    <span class="string">&quot;constant_score&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>:&#123;</span><br><span class="line">         <span class="string">&quot;term&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;fileId&quot;</span>: 1713488916377</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 fileId 查找删除数据</span></span><br><span class="line">POST search-iepc/_delete_by_query</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>:&#123;</span><br><span class="line">    <span class="string">&quot;constant_score&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>:&#123;</span><br><span class="line">         <span class="string">&quot;term&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;fileId&quot;</span>: 1713431812754</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空所有</span></span><br><span class="line">POST search-iepc/_delete_by_query</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;match_all&quot;</span>:&#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结语">结语</h2>
+<p>上面的安装方式使用了
+elasticsearch-analysis-hanlp，这种方式有个弊端，无法快速迭代分词器。</p>
+<p>后期若有升级需要，可以将 hanlp
+独立成服务，然后制作一个网络分词器插件进行调用。</p>
+<h2 id="参考">参考</h2>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html">Elasticsearch
+Guide 8.16</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html">Install
+Elasticsearch with Docker</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/edisonwd/hanlp-jupyterlab-docker">edisonwd/hanlp-jupyterlab-docker</a></li>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/r/walterinsh/hanlp">walterinsh/hanlp
+- Docker Image | Docker Hub</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/KennFalcon/elasticsearch-analysis-hanlp">中文分词器：KennFalcon/elasticsearch-analysis-hanlp:
+HanLP Analyzer for Elasticsearch (github.com)</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://i.loli.net/2021/08/13/JOw9cxomhBAZFW8.png" alt="李有福呀 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="https://i.loli.net/2021/08/13/U2s7gKn1zRw3uP4.png" alt="李有福呀 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </span>
+
+          <img class="social-item-img" src="https://i.loli.net/2021/08/13/QMRtHE2b4czd7OA.jpg">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.jianshu.com/u/08760e791f9e">
+            <span class="icon">
+              <i class="fa fa-book-reader"></i>
+            </span>
+
+            <span class="label">简书</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ElasticSearch/" rel="tag"><i class="fa fa-tag"></i> ElasticSearch</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2024/AC0WPY.html" rel="prev" title="使用 Docker 部署 AdguardHome">
+                  <i class="fa fa-angle-left"></i> 使用 Docker 部署 AdguardHome
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李有福呀</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">850k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">12:53</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js","integrity":"sha256-stuqcu2FrjYCXDOytWFA5SoUE/r3nkp6gTglzNSlavU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"9f67daac78a9ace150016ef7d73c2f82"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

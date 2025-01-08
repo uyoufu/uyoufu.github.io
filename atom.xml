@@ -259,9 +259,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
     
   </entry>
   
@@ -282,9 +282,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
     
   </entry>
   
@@ -361,11 +361,11 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <category term="Web" scheme="https://galens.uamazing.cn/categories/Develop/Web/"/>
     
     
-    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
-    
     <category term="SSL" scheme="https://galens.uamazing.cn/tags/SSL/"/>
     
     <category term="Let&#39;s Encrypt" scheme="https://galens.uamazing.cn/tags/Let-s-Encrypt/"/>
+    
+    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     

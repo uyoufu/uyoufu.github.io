@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2025-01-06T16:00:00.000Z</updated>
+  <updated>2025-02-24T06:10:46.859Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一张彩票引发服务器宕机一整天</title>
+    <link href="https://galens.uamazing.cn/posts/2025/1QGRPD8.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/1QGRPD8.html</id>
+    <published>2025-02-22T16:00:00.000Z</published>
+    <updated>2025-02-24T06:10:46.859Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&quot;No zuo no
+die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝对离奇的事情，一张彩票居然导致我的服务器宕机了一整天，事后回想起来，还是忍俊不禁。&lt;/p&gt;
+&lt;p&gt;实情的经过是这样的...&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
+    
+    <category term="2025年" scheme="https://galens.uamazing.cn/categories/Essay/2025%E5%B9%B4/"/>
+    
+    
+    <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次小孩住院吸取的教训</title>
+    <link href="https://galens.uamazing.cn/posts/2025/1C4RGF0.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/1C4RGF0.html</id>
+    <published>2025-02-20T16:00:00.000Z</published>
+    <updated>2025-02-24T10:51:24.374Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天，小孩因连续高烧住院了，通过这个次住院经历，我学习到了一些诊断经验，也趟了一些住院的坑，在此总结反思，吸取教训，以此自勉。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
+    
+    <category term="2025年" scheme="https://galens.uamazing.cn/categories/Essay/2025%E5%B9%B4/"/>
+    
+    
+    <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>MySql 创建用户并设置访问权限</title>
@@ -259,9 +303,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -282,9 +326,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -486,54 +530,6 @@ alt=&quot;image-20240222222605912&quot; /&gt;
     <category term="二维码" scheme="https://galens.uamazing.cn/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
     
     <category term="挪车码" scheme="https://galens.uamazing.cn/tags/%E6%8C%AA%E8%BD%A6%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu Nvidia 显卡驱动突然不识别</title>
-    <link href="https://galens.uamazing.cn/posts/2024/NZP006.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/NZP006.html</id>
-    <published>2024-01-29T16:00:00.000Z</published>
-    <updated>2024-01-29T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Ubuntu 安装 Nvidia 驱动后，有一天突然就无法识别到驱动了，使用
-&lt;code&gt;nvidia-smi&lt;/code&gt; 查看状态显示：&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Failed to initialize NVML: Driver/library version mismatch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NVML ibrary version: 535.154&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;出现这个的原因是因为驱动驱动更新后，kernel mod 的 Nvidia driver
-的版本没有更新。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
-    
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
-    
-    <category term="Nvidia" scheme="https://galens.uamazing.cn/tags/Nvidia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代理和镜像源配置方式汇总</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2625AHG.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2625AHG.html</id>
-    <published>2024-01-16T16:00:00.000Z</published>
-    <updated>2024-01-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录工作中用到的软件的代理或镜像配置方式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    
-    <category term="proxy" scheme="https://galens.uamazing.cn/tags/proxy/"/>
-    
-    <category term="registry" scheme="https://galens.uamazing.cn/tags/registry/"/>
     
   </entry>
   

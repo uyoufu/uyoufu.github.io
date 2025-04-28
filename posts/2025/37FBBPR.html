@@ -19,28 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。">
+    <meta name="description" content="本文介绍如何在 FreeCAD 中创建 BSplineCurve。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows 免密码 ssh 登陆 Linux">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/3942YAQ.html">
+<meta property="og:title" content="FreeCAD 创建 BSplineCurve">
+<meta property="og:url" content="https://galens.uamazing.cn/posts/2025/37FBBPR.html">
 <meta property="og:site_name" content="星辰大海">
-<meta property="og:description" content="本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。">
+<meta property="og:description" content="本文介绍如何在 FreeCAD 中创建 BSplineCurve。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-07T16:00:00.000Z">
+<meta property="article:published_time" content="2025-03-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-04T01:25:14.629Z">
 <meta property="article:author" content="李有福呀">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="ssh">
+<meta property="article:tag" content="FreeCAD">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/3942YAQ.html">
+<link rel="canonical" href="https://galens.uamazing.cn/posts/2025/37FBBPR.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/3942YAQ.html","path":"posts/2024/3942YAQ.html","title":"Windows 免密码 ssh 登陆 Linux"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2025/37FBBPR.html","path":"posts/2025/37FBBPR.html","title":"FreeCAD 创建 BSplineCurve"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Windows 免密码 ssh 登陆 Linux | 星辰大海</title>
+<title>FreeCAD 创建 BSplineCurve | 星辰大海</title>
   
 
 
@@ -92,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">245</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">125</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">457</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">247</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">127</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">461</span></a></li><li class="menu-item menu-item-导航"><a href="/navigation/" rel="section"><i class="fa fa-globe fa-fw"></i>导航</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-number">1.</span> <span class="nav-text">生成密钥对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0-linux-%E8%B4%A6%E6%88%B7"><span class="nav-number">2.</span> <span class="nav-text">将公钥添加到 Linux 账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9F"><span class="nav-number">3.</span> <span class="nav-text">验证是否添加成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E7%84%B6%E6%97%A0%E6%B3%95%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">依然无法免密码登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bsplinecurve"><span class="nav-number">1.</span> <span class="nav-text">BSplineCurve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#beziercurve"><span class="nav-number">2.</span> <span class="nav-text">BezierCurve</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">457</span>
+          <span class="site-state-item-count">461</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">125</span>
+        <span class="site-state-item-count">127</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">245</span>
+        <span class="site-state-item-count">247</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -211,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/3942YAQ.html">
+    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2025/37FBBPR.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
@@ -224,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Windows 免密码 ssh 登陆 Linux | 星辰大海">
+      <meta itemprop="name" content="FreeCAD 创建 BSplineCurve | 星辰大海">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Windows 免密码 ssh 登陆 Linux
+          FreeCAD 创建 BSplineCurve
         </h1>
 
         <div class="post-meta-container">
@@ -239,8 +238,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-01-08 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-08T00:00:00+08:00">2024-01-08</time>
+      <time title="创建时间：2025-03-04 00:00:00 / 修改时间：09:25:14" itemprop="dateCreated datePublished" datetime="2025-03-04T00:00:00+08:00">2025-03-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,11 +248,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/System/" itemprop="url" rel="index"><span itemprop="name">System</span></a>
+          <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/System/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+          <a href="/categories/Software/FreeCAD/" itemprop="url" rel="index"><span itemprop="name">FreeCAD</span></a>
         </span>
     </span>
 
@@ -263,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>586</span>
+      <span>562</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -280,37 +280,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本文将介绍如何在 Windows 配置 SSH 免密登陆 Linux。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文介绍如何在 FreeCAD 中创建 BSplineCurve。</p>
 <span id="more"></span>
-<h2 id="生成密钥对">生成密钥对</h2>
-<p>打开 <code>cmd</code> 或者
-<code>Powershell</code>，按下列步骤操作：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这条命令用于生成密钥</span></span><br><span class="line"><span class="comment"># 随后一路回车，当看到一幅矩形图生成，那么密钥生成成功</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa</span><br></pre></td></tr></table></figure>
-<h2 id="将公钥添加到-linux-账户">将公钥添加到 Linux 账户</h2>
-<p>打开 <code>Powershell</code>，执行下列命令：</p>
-<p><strong>Powershell</strong>：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Content</span> ~\.ssh\id_rsa.pub | ssh username@host <span class="string">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="验证是否添加成功">验证是否添加成功</h2>
-<p>cmd 下输入 <code>ssh username@host uname</code> 如果看到输出Linux
-表示添加成功。</p>
-<p>同样可以直接输入 <code>ssh username@host</code>
-这时可以看到不用输入密码即可登录 Linux 了。</p>
-<h2 id="依然无法免密码登录">依然无法免密码登录</h2>
-<p>添加key之后还是需要输入密码,主要排查方法是
-<code>ssh username@host -vvv</code> 输出debug信息，或者remote机器使用
-<code>cat /var/log/secure</code> 查看日志</p>
-<p>可能的原因是:</p>
-<ul>
-<li><p>目录权限问题</p>
-<p>远程目录.ssh 和.ssh 目录下的文件的权限需要分别设置700和600</p></li>
-<li><p>找不到密钥</p>
-<p>ssh登录命令添加参数 <code>-i C:\User\name\.ssh\id_rsa</code>
-手动指定密钥文件</p></li>
-</ul>
-<h2 id="参考">参考</h2>
-<p>本文参考以下文章，在此致以诚挚谢意！</p>
-<p><a
-target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1960726">windows免密码ssh登录linux</a></p>
+<h2 id="bsplinecurve">BSplineCurve</h2>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> FreeCAD <span class="keyword">import</span> Base</span><br><span class="line"><span class="keyword">import</span> Part</span><br><span class="line">V = Base.Vector</span><br><span class="line">poles = [V(-<span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>),V(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>),V(<span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>),V(<span class="number">2</span>, -<span class="number">2</span>, <span class="number">0</span>),V(<span class="number">0</span>, -<span class="number">2</span>, <span class="number">1</span>),V(-<span class="number">2</span>, -<span class="number">2</span>, <span class="number">0</span>)]</span><br><span class="line"><span class="comment"># non-periodic spline</span></span><br><span class="line">n=Part.BSplineCurve()</span><br><span class="line">n.buildFromPoles(poles)</span><br><span class="line">Part.show(n.toShape())</span><br><span class="line"><span class="comment"># periodic spline</span></span><br><span class="line">n=Part.BSplineCurve()</span><br><span class="line">n.buildFromPoles(poles, <span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 保存到文件</span></span><br><span class="line">Part.show(n.toShape())</span><br></pre></td></tr></table></figure>
+<h2 id="beziercurve">BezierCurve</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> FreeCAD <span class="keyword">import</span> Base</span><br><span class="line"><span class="keyword">import</span> Part</span><br><span class="line">p1 = Base.Vector(-<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">p2 = Base.Vector(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.2</span>)</span><br><span class="line">p3 = Base.Vector(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0.4</span>)</span><br><span class="line">p4 = Base.Vector(<span class="number">0</span>, -<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">bc = Part.BezierCurve()</span><br><span class="line">bc.setPoles([p1, p2, p3, p4])</span><br><span class="line">curveShape = bc.toShape()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -367,21 +343,20 @@ target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-              <a href="/tags/ssh/" rel="tag"><i class="fa fa-tag"></i> ssh</a>
+              <a href="/tags/FreeCAD/" rel="tag"><i class="fa fa-tag"></i> FreeCAD</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2024/1P1XSQ7.html" rel="prev" title="丝滑高效的zsh配置清单">
-                  <i class="fa fa-angle-left"></i> 丝滑高效的zsh配置清单
+                <a href="/posts/2025/7CTYV9.html" rel="prev" title="Scoop, 超好用的个人/企业软件管家">
+                  <i class="fa fa-angle-left"></i> Scoop, 超好用的个人/企业软件管家
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2024/T4KD3R.html" rel="next" title="Docker 开源 UI 管理工具比选及安装">
-                  Docker 开源 UI 管理工具比选及安装 <i class="fa fa-angle-right"></i>
+                <a href="/posts/2025/260BG7A.html" rel="next" title="FreeCAD 为对象添加纹理">
+                  FreeCAD 为对象添加纹理 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -414,13 +389,13 @@ target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">856k</span>
+    <span title="站点总字数">863k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12:59</span>
+    <span title="站点阅读时长">13:04</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -475,7 +450,7 @@ target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d2c9c57ff7dc5e13d8722477b22ec898"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7f78f90435bcc7bdc0f18004f3b750ad"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 <!-- hexo injector body_end start -->

@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2025-02-24T06:10:46.859Z</updated>
+  <updated>2025-03-11T06:31:16.343Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,11 +17,83 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FreeCAD 为对象添加纹理</title>
+    <link href="https://galens.uamazing.cn/posts/2025/260BG7A.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/260BG7A.html</id>
+    <published>2025-03-10T16:00:00.000Z</published>
+    <updated>2025-03-11T06:31:16.343Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;未完成...&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="FreeCAD" scheme="https://galens.uamazing.cn/categories/Software/FreeCAD/"/>
+    
+    
+    <category term="FreeCAD" scheme="https://galens.uamazing.cn/tags/FreeCAD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FreeCAD 创建 BSplineCurve</title>
+    <link href="https://galens.uamazing.cn/posts/2025/37FBBPR.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/37FBBPR.html</id>
+    <published>2025-03-03T16:00:00.000Z</published>
+    <updated>2025-03-04T01:25:14.629Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 FreeCAD 中创建 BSplineCurve。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="FreeCAD" scheme="https://galens.uamazing.cn/categories/Software/FreeCAD/"/>
+    
+    
+    <category term="FreeCAD" scheme="https://galens.uamazing.cn/tags/FreeCAD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scoop, 超好用的个人/企业软件管家</title>
+    <link href="https://galens.uamazing.cn/posts/2025/7CTYV9.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/7CTYV9.html</id>
+    <published>2025-02-24T16:00:00.000Z</published>
+    <updated>2025-02-25T05:39:43.445Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;推荐指数：⭐⭐⭐⭐⭐&lt;/p&gt;
+&lt;p&gt;本期推荐一款超级好用的软件安装管家：开源免费、无任何广告打扰、可一键安装和卸载。&lt;/p&gt;
+&lt;p&gt;它就是</summary>
+        
+      
+    
+    
+    
+    <category term="Apps" scheme="https://galens.uamazing.cn/categories/Apps/"/>
+    
+    
+    <category term="Apps" scheme="https://galens.uamazing.cn/tags/Apps/"/>
+    
+    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一张彩票引发服务器宕机一整天</title>
     <link href="https://galens.uamazing.cn/posts/2025/1QGRPD8.html"/>
     <id>https://galens.uamazing.cn/posts/2025/1QGRPD8.html</id>
     <published>2025-02-22T16:00:00.000Z</published>
-    <updated>2025-02-24T06:10:46.859Z</updated>
+    <updated>2025-02-24T10:52:36.063Z</updated>
     
     
     <summary type="html">&lt;p&gt;&quot;No zuo no
@@ -44,7 +116,7 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     <link href="https://galens.uamazing.cn/posts/2025/1C4RGF0.html"/>
     <id>https://galens.uamazing.cn/posts/2025/1C4RGF0.html</id>
     <published>2025-02-20T16:00:00.000Z</published>
-    <updated>2025-02-24T10:51:24.374Z</updated>
+    <updated>2025-02-24T10:52:36.063Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天，小孩因连续高烧住院了，通过这个次住院经历，我学习到了一些诊断经验，也趟了一些住院的坑，在此总结反思，吸取教训，以此自勉。&lt;/p&gt;</summary>
@@ -303,32 +375,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 入门资料整理</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
-    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -354,6 +403,29 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ComfyUI 入门资料整理</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
     
   </entry>
   
@@ -443,93 +515,6 @@ cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
     <category term="Progress" scheme="https://galens.uamazing.cn/tags/Progress/"/>
     
     <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建和发布 NuGet 包</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2CAZW8Q.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2CAZW8Q.html</id>
-    <published>2024-02-23T16:00:00.000Z</published>
-    <updated>2024-08-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;NuGet 是适用于 .NET 的包管理器。
-它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet
-客户端工具可生成这些库并将其作为“包”。&lt;/p&gt;
-&lt;p&gt;本文简要记录了如何创建 NuGet 包并发布。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="Nuget" scheme="https://galens.uamazing.cn/categories/Software/Nuget/"/>
-    
-    
-    <category term="DotNET" scheme="https://galens.uamazing.cn/tags/DotNET/"/>
-    
-    <category term="NuGet" scheme="https://galens.uamazing.cn/tags/NuGet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Microstation 中坐标变换</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1EMPAND.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1EMPAND.html</id>
-    <published>2024-02-23T16:00:00.000Z</published>
-    <updated>2024-02-23T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在进行矩阵转换时，谨记如下公式： &lt;span class=&quot;math display&quot;&gt;&#92;[
-&#92;begin{aligned}
-M_{world} &#92;cdot P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
-&#92;because M_{world} &amp;amp;= E &#92;&#92;
-&#92;therefore P_{world} &amp;amp;= M_{local} &#92;cdot P_{local} &#92;&#92;
-&#92;end{aligned}
-&#92;]&lt;/span&gt; &lt;span class=&quot;math inline&quot;&gt;&#92;(M&#92;)&lt;/span&gt;
-可以叫做坐标系的度量矩阵，将某个坐标系统转到另一个坐标系，是在原坐标系的值上左乘新坐标系度量矩阵的逆。&lt;/p&gt;
-&lt;p&gt;在理解 MS 中各个对象返回的 &lt;code&gt;DTransform&lt;/code&gt;
-含义时，先弄明白谁是度量矩阵，另一个是它的逆，就很好理解了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="几何变换" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/"/>
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/tags/Bentley/"/>
-    
-    <category term="二次开发" scheme="https://galens.uamazing.cn/tags/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用草料二维码免费生成挪车码</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2Z6NVCZ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2Z6NVCZ.html</id>
-    <published>2024-02-21T16:00:00.000Z</published>
-    <updated>2024-02-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;figure&gt;
-&lt;img data-src=&quot;https://obs.uamazing.cn:52443/public/files/images/image-20240222222605912.png&quot;
-alt=&quot;image-20240222222605912&quot; /&gt;
-&lt;figcaption aria-hidden=&quot;true&quot;&gt;image-20240222222605912&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;一些车主为了方便挪车，往往会在车上留下自己的电话，方便其他人及时与自己取得联系。直接展示电话号码的形式，会使号码非常容易泄露，从而遭受广告骚扰。&lt;/p&gt;
-&lt;p&gt;因此，可以将挪车信息转换成二维码的形式，避免电话号码直接曝光，从而保护隐私。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tricks" scheme="https://galens.uamazing.cn/categories/Tricks/"/>
-    
-    
-    <category term="二维码" scheme="https://galens.uamazing.cn/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
-    
-    <category term="挪车码" scheme="https://galens.uamazing.cn/tags/%E6%8C%AA%E8%BD%A6%E7%A0%81/"/>
     
   </entry>
   

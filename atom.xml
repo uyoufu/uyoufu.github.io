@@ -6,7 +6,7 @@
   <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
   
   <link href="https://galens.uamazing.cn/"/>
-  <updated>2025-03-11T06:31:16.343Z</updated>
+  <updated>2025-05-08T16:00:00.000Z</updated>
   <id>https://galens.uamazing.cn/</id>
   
   <author>
@@ -17,11 +17,79 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在 Docker 中安装 pure-ftpd 并配置虚拟用户</title>
+    <link href="https://galens.uamazing.cn/posts/2025/3YCE81Q.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/3YCE81Q.html</id>
+    <published>2025-05-08T16:00:00.000Z</published>
+    <updated>2025-05-08T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍如何在 Docker 中安装
+pure-ftpd，然后配置多个虚拟用户，实现对同一目录的读写权限控制。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    
+    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    
+    <category term="pure-ftpd" scheme="https://galens.uamazing.cn/tags/pure-ftpd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 扩容 Swap</title>
+    <link href="https://galens.uamazing.cn/posts/2025/3QSYEQ7.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/3QSYEQ7.html</id>
+    <published>2025-05-07T16:00:00.000Z</published>
+    <updated>2025-05-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Swap 是 Linux
+系统中的一种虚拟内存，用于在物理内存不足时扩展可用内存。本文将介绍如何在
+Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    
+    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    
+    <category term="Swap" scheme="https://galens.uamazing.cn/tags/Swap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 中使用 rsync 同步文件</title>
+    <link href="https://galens.uamazing.cn/posts/2025/14AF74D.html"/>
+    <id>https://galens.uamazing.cn/posts/2025/14AF74D.html</id>
+    <published>2025-04-28T16:00:00.000Z</published>
+    <updated>2025-04-28T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;rsync 是 Unix
+下的一款应用软件，它能同步更新两处计算机的文件与目录，并适当利用差分编码以减少数据传输量，可以实现增量同步。&lt;/p&gt;
+&lt;p&gt;本文介绍如何在 windows 安装 rsync 并同步到 linux 中。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    
+    <category term="rsync" scheme="https://galens.uamazing.cn/tags/rsync/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FreeCAD 为对象添加纹理</title>
     <link href="https://galens.uamazing.cn/posts/2025/260BG7A.html"/>
     <id>https://galens.uamazing.cn/posts/2025/260BG7A.html</id>
     <published>2025-03-10T16:00:00.000Z</published>
-    <updated>2025-03-11T06:31:16.343Z</updated>
+    <updated>2025-04-28T23:47:53.010Z</updated>
     
     
     <summary type="html">&lt;p&gt;未完成...&lt;/p&gt;</summary>
@@ -42,7 +110,7 @@
     <link href="https://galens.uamazing.cn/posts/2025/37FBBPR.html"/>
     <id>https://galens.uamazing.cn/posts/2025/37FBBPR.html</id>
     <published>2025-03-03T16:00:00.000Z</published>
-    <updated>2025-03-04T01:25:14.629Z</updated>
+    <updated>2025-04-28T23:47:53.010Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍如何在 FreeCAD 中创建 BSplineCurve。&lt;/p&gt;</summary>
@@ -63,7 +131,7 @@
     <link href="https://galens.uamazing.cn/posts/2025/7CTYV9.html"/>
     <id>https://galens.uamazing.cn/posts/2025/7CTYV9.html</id>
     <published>2025-02-24T16:00:00.000Z</published>
-    <updated>2025-02-25T05:39:43.445Z</updated>
+    <updated>2025-04-28T23:47:53.010Z</updated>
     
     
       
@@ -375,9 +443,32 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
     
     
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
+  </entry>
+  
+  <entry>
+    <title>ComfyUI 入门资料整理</title>
+    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
+    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <published>2024-05-22T16:00:00.000Z</published>
+    <updated>2024-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    
+    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    
+    
     <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    
+    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
     
   </entry>
   
@@ -403,118 +494,6 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 入门资料整理</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
-    
-    
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
-    
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纯 css 实现 placehoder 效果</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2YJ7VJZ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2YJ7VJZ.html</id>
-    <published>2024-05-10T16:00:00.000Z</published>
-    <updated>2024-05-10T16:00:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;如何使用 CSS 实现当内容为空时，显示 placeholder 呢？&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;html&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/categories/Develop/CSS/"/>
-    
-    
-    <category term="CSS" scheme="https://galens.uamazing.cn/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 中使用 acme.sh 申请泛域名证书</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2TMXKG9.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2TMXKG9.html</id>
-    <published>2024-04-08T16:00:00.000Z</published>
-    <updated>2024-04-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文将介绍如何在 Ubuntu 系统中使用 &lt;code&gt;acme.sh&lt;/code&gt; 通过
-cloudflare 的 api 方式申请泛域名。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
-    
-    <category term="Web" scheme="https://galens.uamazing.cn/categories/Develop/Web/"/>
-    
-    
-    <category term="SSL" scheme="https://galens.uamazing.cn/tags/SSL/"/>
-    
-    <category term="Let&#39;s Encrypt" scheme="https://galens.uamazing.cn/tags/Let-s-Encrypt/"/>
-    
-    <category term="acme" scheme="https://galens.uamazing.cn/tags/acme/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Microstation 中实现非阻塞进度条</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2MEYC7T.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2MEYC7T.html</id>
-    <published>2024-03-07T16:00:00.000Z</published>
-    <updated>2024-03-07T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在进行 Microstation
-二开时，若在代码执行耗时任务，则可能会导致界面出现假死的情况，此时窗体无法拖动、进度条也无法更新。&lt;/p&gt;
-&lt;p&gt;由于 Microstation
-的非线程安全问题，代码必须在主线程上执行，但进度条位于主线程上，因此进度必定会卡死，这是一个矛盾的问题。&lt;/p&gt;
-&lt;p&gt;有两种方法来解决这个问题。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Bentley" scheme="https://galens.uamazing.cn/categories/Bentley/"/>
-    
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/"/>
-    
-    <category term="Progress" scheme="https://galens.uamazing.cn/categories/Bentley/Develop/Progress/"/>
-    
-    
-    <category term="Microstation" scheme="https://galens.uamazing.cn/tags/Microstation/"/>
-    
-    <category term="Progress" scheme="https://galens.uamazing.cn/tags/Progress/"/>
-    
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
     
   </entry>
   

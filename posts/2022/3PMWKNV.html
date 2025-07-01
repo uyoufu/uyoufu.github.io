@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="https:&#x2F;&#x2F;min.io&#x2F;  本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 中安装 MinIO 作为静态资源服务">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2022/3PMWKNV.html">
+<meta property="og:url" content="https://uyoufu.uzoncloud.com/posts/2022/3PMWKNV.html">
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="https:&#x2F;&#x2F;min.io&#x2F;  本文主要记录在 Ubuntu 24.04 x64 上使用 Docker 安装 MinIO 作为静态资源服务的流程。基于 MinIO，可以满足图床、静态存储、对象存储等应用场景。">
 <meta property="og:locale" content="zh_CN">
@@ -34,10 +34,10 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2022/3PMWKNV.html">
+<link rel="canonical" href="https://uyoufu.uzoncloud.com/posts/2022/3PMWKNV.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2022/3PMWKNV.html","path":"posts/2022/3PMWKNV.html","title":"Docker 中安装 MinIO 作为静态资源服务"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://uyoufu.uzoncloud.com/posts/2022/3PMWKNV.html","path":"posts/2022/3PMWKNV.html","title":"Docker 中安装 MinIO 作为静态资源服务"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Docker 中安装 MinIO 作为静态资源服务 | 星辰大海</title>
@@ -211,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2022/3PMWKNV.html">
+    <link itemprop="mainEntityOfPage" href="https://uyoufu.uzoncloud.com/posts/2022/3PMWKNV.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
@@ -323,7 +323,7 @@ docker-compose，其它容器通过 <code>nginx_network</code> 与 nginx
 +】来创建一个新的存储桶，输入存储桶的名称，示例中为
 <code>public</code>，最终结果如下图所示：</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171130390.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20240927171130390.png"
 alt="image-20240927171130390.png" />
 <figcaption aria-hidden="true">image-20240927171130390.png</figcaption>
 </figure></li>
@@ -331,7 +331,7 @@ alt="image-20240927171130390.png" />
 <p>单击【Access
 Policy】后面的铅笔图标，将其从【Priave】修改为【Public】，单击应用【Set】应用</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927171643219.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20240927171643219.png"
 alt="image-20240927171643219" />
 <figcaption aria-hidden="true">image-20240927171643219</figcaption>
 </figure>
@@ -352,7 +352,7 @@ key，详见下图。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2012-10-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Statement&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;s3:*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;arn:aws:s3:::public/*&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>最终结果如下图所示：</p>
 <figure>
-<img data-src="https://obs.uamazing.cn:52443/public/files/images/image-20240927180156357.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20240927180156357.png"
 alt="image-20240927180156357" />
 <figcaption aria-hidden="true">image-20240927180156357</figcaption>
 </figure>
@@ -464,13 +464,13 @@ alt="image-20240927180156357" />
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">866k</span>
+    <span title="站点总字数">867k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13:07</span>
+    <span title="站点阅读时长">13:08</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>星辰大海</title>
-  <icon>https://galens.uamazing.cn/icon.png</icon>
+  <icon>https://uyoufu.uzoncloud.com/icon.png</icon>
   <subtitle>人生万事须自为，跬步江山即寥廓</subtitle>
-  <link href="https://galens.uamazing.cn/atom.xml" rel="self"/>
+  <link href="https://uyoufu.uzoncloud.com/atom.xml" rel="self"/>
   
-  <link href="https://galens.uamazing.cn/"/>
+  <link href="https://uyoufu.uzoncloud.com/"/>
   <updated>2025-05-08T16:00:00.000Z</updated>
-  <id>https://galens.uamazing.cn/</id>
+  <id>https://uyoufu.uzoncloud.com/</id>
   
   <author>
     <name>李有福呀</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>在 Docker 中安装 pure-ftpd 并配置虚拟用户</title>
-    <link href="https://galens.uamazing.cn/posts/2025/3YCE81Q.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/3YCE81Q.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html</id>
     <published>2025-05-08T16:00:00.000Z</published>
     <updated>2025-05-08T16:00:00.000Z</updated>
     
@@ -29,19 +29,19 @@ pure-ftpd，然后配置多个虚拟用户，实现对同一目录的读写权�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
-    <category term="pure-ftpd" scheme="https://galens.uamazing.cn/tags/pure-ftpd/"/>
+    <category term="pure-ftpd" scheme="https://uyoufu.uzoncloud.com/tags/pure-ftpd/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu 扩容 Swap</title>
-    <link href="https://galens.uamazing.cn/posts/2025/3QSYEQ7.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/3QSYEQ7.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/3QSYEQ7.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/3QSYEQ7.html</id>
     <published>2025-05-07T16:00:00.000Z</published>
     <updated>2025-05-07T16:00:00.000Z</updated>
     
@@ -52,21 +52,21 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
     
     
     
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
     
-    <category term="Linux" scheme="https://galens.uamazing.cn/categories/System/Linux/"/>
+    <category term="Linux" scheme="https://uyoufu.uzoncloud.com/categories/System/Linux/"/>
     
     
-    <category term="Ubuntu" scheme="https://galens.uamazing.cn/tags/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://uyoufu.uzoncloud.com/tags/Ubuntu/"/>
     
-    <category term="Swap" scheme="https://galens.uamazing.cn/tags/Swap/"/>
+    <category term="Swap" scheme="https://uyoufu.uzoncloud.com/tags/Swap/"/>
     
   </entry>
   
   <entry>
     <title>Windows 中使用 rsync 同步文件</title>
-    <link href="https://galens.uamazing.cn/posts/2025/14AF74D.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/14AF74D.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/14AF74D.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/14AF74D.html</id>
     <published>2025-04-28T16:00:00.000Z</published>
     <updated>2025-04-28T16:00:00.000Z</updated>
     
@@ -77,17 +77,17 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
     
-    <category term="rsync" scheme="https://galens.uamazing.cn/tags/rsync/"/>
+    <category term="rsync" scheme="https://uyoufu.uzoncloud.com/tags/rsync/"/>
     
   </entry>
   
   <entry>
     <title>FreeCAD 为对象添加纹理</title>
-    <link href="https://galens.uamazing.cn/posts/2025/260BG7A.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/260BG7A.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/260BG7A.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/260BG7A.html</id>
     <published>2025-03-10T16:00:00.000Z</published>
     <updated>2025-04-28T23:47:53.010Z</updated>
     
@@ -96,19 +96,19 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="FreeCAD" scheme="https://galens.uamazing.cn/categories/Software/FreeCAD/"/>
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/categories/Software/FreeCAD/"/>
     
     
-    <category term="FreeCAD" scheme="https://galens.uamazing.cn/tags/FreeCAD/"/>
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/tags/FreeCAD/"/>
     
   </entry>
   
   <entry>
     <title>FreeCAD 创建 BSplineCurve</title>
-    <link href="https://galens.uamazing.cn/posts/2025/37FBBPR.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/37FBBPR.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html</id>
     <published>2025-03-03T16:00:00.000Z</published>
     <updated>2025-04-28T23:47:53.010Z</updated>
     
@@ -117,51 +117,48 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="FreeCAD" scheme="https://galens.uamazing.cn/categories/Software/FreeCAD/"/>
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/categories/Software/FreeCAD/"/>
     
     
-    <category term="FreeCAD" scheme="https://galens.uamazing.cn/tags/FreeCAD/"/>
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/tags/FreeCAD/"/>
     
   </entry>
   
   <entry>
     <title>Scoop, 超好用的个人/企业软件管家</title>
-    <link href="https://galens.uamazing.cn/posts/2025/7CTYV9.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/7CTYV9.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/7CTYV9.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/7CTYV9.html</id>
     <published>2025-02-24T16:00:00.000Z</published>
-    <updated>2025-04-28T23:47:53.010Z</updated>
+    <updated>2025-07-01T05:25:33.799Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
 &lt;p&gt;推荐指数：⭐⭐⭐⭐⭐&lt;/p&gt;
 &lt;p&gt;本期推荐一款超级好用的软件安装管家：开源免费、无任何广告打扰、可一键安装和卸载。&lt;/p&gt;
-&lt;p&gt;它就是</summary>
-        
-      
+&lt;p&gt;它就是 &lt;a
+href=&quot;https://github.com/ScoopInstaller/Scoop&quot;&gt;Scoop&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Scoop 在 Github 上拥有 21.4k star，开源协议为
+MIT。它不仅适用于个人，同样适用于中小企业的软件管理。个人用户可以通过它快速查找、安装和卸载软件，网管可以通过提供统一的软件仓库，统一软件分发，提升网络安全。&lt;/p&gt;</summary>
     
     
     
-    <category term="Apps" scheme="https://galens.uamazing.cn/categories/Apps/"/>
+    <category term="Apps" scheme="https://uyoufu.uzoncloud.com/categories/Apps/"/>
     
     
-    <category term="Apps" scheme="https://galens.uamazing.cn/tags/Apps/"/>
+    <category term="Apps" scheme="https://uyoufu.uzoncloud.com/tags/Apps/"/>
     
-    <category term="galens" scheme="https://galens.uamazing.cn/tags/galens/"/>
+    <category term="galens" scheme="https://uyoufu.uzoncloud.com/tags/galens/"/>
     
   </entry>
   
   <entry>
     <title>一张彩票引发服务器宕机一整天</title>
-    <link href="https://galens.uamazing.cn/posts/2025/1QGRPD8.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/1QGRPD8.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/1QGRPD8.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/1QGRPD8.html</id>
     <published>2025-02-22T16:00:00.000Z</published>
-    <updated>2025-02-24T10:52:36.063Z</updated>
+    <updated>2025-07-01T05:25:33.812Z</updated>
     
     
     <summary type="html">&lt;p&gt;&quot;No zuo no
@@ -170,40 +167,40 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
+    <category term="Essay" scheme="https://uyoufu.uzoncloud.com/categories/Essay/"/>
     
-    <category term="2025年" scheme="https://galens.uamazing.cn/categories/Essay/2025%E5%B9%B4/"/>
+    <category term="2025年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2025%E5%B9%B4/"/>
     
     
-    <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://uyoufu.uzoncloud.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
-    <title>记一次小孩住院吸取的教训</title>
-    <link href="https://galens.uamazing.cn/posts/2025/1C4RGF0.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/1C4RGF0.html</id>
+    <title>记一次小孩住院经验总结</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/2EC5R3Z.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/2EC5R3Z.html</id>
     <published>2025-02-20T16:00:00.000Z</published>
-    <updated>2025-02-24T10:52:36.063Z</updated>
+    <updated>2025-07-01T05:25:33.812Z</updated>
     
     
-    <summary type="html">&lt;p&gt;今天，小孩因连续高烧住院了，通过这个次住院经历，我学习到了一些诊断经验，也趟了一些住院的坑，在此总结反思，吸取教训，以此自勉。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;今天，小孩因连续高烧住院了，通过这个次住院经历，我学习到了一些诊断经验，也趟了一些住院的坑，在此总结反思，以此自勉。&lt;/p&gt;</summary>
     
     
     
-    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
+    <category term="Essay" scheme="https://uyoufu.uzoncloud.com/categories/Essay/"/>
     
-    <category term="2025年" scheme="https://galens.uamazing.cn/categories/Essay/2025%E5%B9%B4/"/>
+    <category term="2025年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2025%E5%B9%B4/"/>
     
     
-    <category term="生活" scheme="https://galens.uamazing.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://uyoufu.uzoncloud.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>MySql 创建用户并设置访问权限</title>
-    <link href="https://galens.uamazing.cn/posts/2025/3HBSA6A.html"/>
-    <id>https://galens.uamazing.cn/posts/2025/3HBSA6A.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/3HBSA6A.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/3HBSA6A.html</id>
     <published>2025-01-06T16:00:00.000Z</published>
     <updated>2025-01-06T16:00:00.000Z</updated>
     
@@ -213,19 +210,19 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="MySql" scheme="https://galens.uamazing.cn/categories/Software/MySql/"/>
+    <category term="MySql" scheme="https://uyoufu.uzoncloud.com/categories/Software/MySql/"/>
     
     
-    <category term="MySql" scheme="https://galens.uamazing.cn/tags/MySql/"/>
+    <category term="MySql" scheme="https://uyoufu.uzoncloud.com/tags/MySql/"/>
     
   </entry>
   
   <entry>
     <title>ElasticSearch Docker 部署</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2087YCV.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2087YCV.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html</id>
     <published>2024-12-08T16:00:00.000Z</published>
     <updated>2024-12-07T16:00:00.000Z</updated>
     
@@ -235,21 +232,21 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="ElasticSearch" scheme="https://galens.uamazing.cn/categories/Software/ElasticSearch/"/>
+    <category term="ElasticSearch" scheme="https://uyoufu.uzoncloud.com/categories/Software/ElasticSearch/"/>
     
     
-    <category term="ElasticSearch" scheme="https://galens.uamazing.cn/tags/ElasticSearch/"/>
+    <category term="ElasticSearch" scheme="https://uyoufu.uzoncloud.com/tags/ElasticSearch/"/>
     
   </entry>
   
   <entry>
     <title>使用 Docker 部署 AdguardHome</title>
-    <link href="https://galens.uamazing.cn/posts/2024/AC0WPY.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/AC0WPY.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/AC0WPY.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/AC0WPY.html</id>
     <published>2024-11-25T16:00:00.000Z</published>
-    <updated>2024-11-26T03:22:31.916Z</updated>
+    <updated>2025-07-01T05:25:33.779Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍如何在 Ubuntu 中通过 Docker 部署 AdguardHome 实现 DNS
@@ -257,21 +254,21 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="Adguard" scheme="https://galens.uamazing.cn/categories/Software/Adguard/"/>
+    <category term="Adguard" scheme="https://uyoufu.uzoncloud.com/categories/Software/Adguard/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
-    <category term="AdguardHome" scheme="https://galens.uamazing.cn/tags/AdguardHome/"/>
+    <category term="AdguardHome" scheme="https://uyoufu.uzoncloud.com/tags/AdguardHome/"/>
     
   </entry>
   
   <entry>
     <title>掌握设计原则，打磨编程基本功</title>
-    <link href="https://galens.uamazing.cn/posts/2024/3D3WTKJ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/3D3WTKJ.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/3D3WTKJ.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/3D3WTKJ.html</id>
     <published>2024-11-08T16:00:00.000Z</published>
     <updated>2024-11-08T16:00:00.000Z</updated>
     
@@ -287,19 +284,19 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
     
-    <category term="DesignPattern" scheme="https://galens.uamazing.cn/categories/Develop/DesignPattern/"/>
+    <category term="DesignPattern" scheme="https://uyoufu.uzoncloud.com/categories/Develop/DesignPattern/"/>
     
     
-    <category term="设计模式" scheme="https://galens.uamazing.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://uyoufu.uzoncloud.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB使用 Docker 配置单节点副本集</title>
-    <link href="https://galens.uamazing.cn/posts/2024/M96VZZ.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/M96VZZ.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/M96VZZ.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/M96VZZ.html</id>
     <published>2024-11-05T16:00:00.000Z</published>
     <updated>2024-12-04T16:00:00.000Z</updated>
     
@@ -314,23 +311,23 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Develop" scheme="https://galens.uamazing.cn/categories/Develop/"/>
+    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
     
-    <category term="Database" scheme="https://galens.uamazing.cn/categories/Develop/Database/"/>
+    <category term="Database" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Database/"/>
     
-    <category term="Mongodb" scheme="https://galens.uamazing.cn/categories/Develop/Database/Mongodb/"/>
+    <category term="Mongodb" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Database/Mongodb/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
-    <category term="MongoDB" scheme="https://galens.uamazing.cn/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://uyoufu.uzoncloud.com/tags/MongoDB/"/>
     
   </entry>
   
   <entry>
     <title>家庭服务器被网络攻击后, 日均下载流量 2T</title>
-    <link href="https://galens.uamazing.cn/posts/2024/HPDBE7.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/HPDBE7.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/HPDBE7.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/HPDBE7.html</id>
     <published>2024-11-03T16:00:00.000Z</published>
     <updated>2024-11-01T16:00:00.000Z</updated>
     
@@ -342,17 +339,17 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Essay" scheme="https://galens.uamazing.cn/categories/Essay/"/>
+    <category term="Essay" scheme="https://uyoufu.uzoncloud.com/categories/Essay/"/>
     
-    <category term="2024年" scheme="https://galens.uamazing.cn/categories/Essay/2024%E5%B9%B4/"/>
+    <category term="2024年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2024%E5%B9%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>Windows 中配置无线网络唤醒(wowlan)</title>
-    <link href="https://galens.uamazing.cn/posts/2024/3QV9Z7H.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/3QV9Z7H.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/3QV9Z7H.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/3QV9Z7H.html</id>
     <published>2024-10-21T16:00:00.000Z</published>
     <updated>2024-10-21T16:00:00.000Z</updated>
     
@@ -364,21 +361,21 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
     
-    <category term="Windows" scheme="https://galens.uamazing.cn/categories/System/Windows/"/>
+    <category term="Windows" scheme="https://uyoufu.uzoncloud.com/categories/System/Windows/"/>
     
     
-    <category term="Windows" scheme="https://galens.uamazing.cn/tags/Windows/"/>
+    <category term="Windows" scheme="https://uyoufu.uzoncloud.com/tags/Windows/"/>
     
-    <category term="wowlan" scheme="https://galens.uamazing.cn/tags/wowlan/"/>
+    <category term="wowlan" scheme="https://uyoufu.uzoncloud.com/tags/wowlan/"/>
     
   </entry>
   
   <entry>
     <title>使用 VSCode 远程开发最佳实践</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1XYHCAM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1XYHCAM.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/1XYHCAM.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/1XYHCAM.html</id>
     <published>2024-10-15T16:00:00.000Z</published>
     <updated>2024-10-15T16:00:00.000Z</updated>
     
@@ -393,21 +390,21 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/categories/Software/VSCode/"/>
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/categories/Software/VSCode/"/>
     
     
-    <category term="Docker" scheme="https://galens.uamazing.cn/tags/Docker/"/>
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
-    <category term="VSCode" scheme="https://galens.uamazing.cn/tags/VSCode/"/>
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/tags/VSCode/"/>
     
   </entry>
   
   <entry>
     <title>esxi 配置 RDM 直通</title>
-    <link href="https://galens.uamazing.cn/posts/2024/C906NX.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/C906NX.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/C906NX.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/C906NX.html</id>
     <published>2024-09-22T16:00:00.000Z</published>
     <updated>2024-09-22T16:00:00.000Z</updated>
     
@@ -417,19 +414,19 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     
-    <category term="System" scheme="https://galens.uamazing.cn/categories/System/"/>
+    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
     
-    <category term="ESXI" scheme="https://galens.uamazing.cn/categories/System/ESXI/"/>
+    <category term="ESXI" scheme="https://uyoufu.uzoncloud.com/categories/System/ESXI/"/>
     
     
-    <category term="esxi" scheme="https://galens.uamazing.cn/tags/esxi/"/>
+    <category term="esxi" scheme="https://uyoufu.uzoncloud.com/tags/esxi/"/>
     
   </entry>
   
   <entry>
     <title>ComfyUI 节点介绍</title>
-    <link href="https://galens.uamazing.cn/posts/2024/2TKH0W3.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/2TKH0W3.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/2TKH0W3.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/2TKH0W3.html</id>
     <published>2024-05-26T16:00:00.000Z</published>
     <updated>2024-05-26T16:00:00.000Z</updated>
     
@@ -438,21 +435,21 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/tags/ComfyUI/"/>
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
     
   </entry>
   
   <entry>
     <title>ComfyUI 入门资料整理</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1189BHM.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1189BHM.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/1189BHM.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/1189BHM.html</id>
     <published>2024-05-22T16:00:00.000Z</published>
     <updated>2024-05-22T16:00:00.000Z</updated>
     
@@ -461,21 +458,21 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/tags/ComfyUI/"/>
+    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/tags/ComfyUI/"/>
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
     
   </entry>
   
   <entry>
     <title>StableDiffusion 专有名词理解</title>
-    <link href="https://galens.uamazing.cn/posts/2024/1HAPA4N.html"/>
-    <id>https://galens.uamazing.cn/posts/2024/1HAPA4N.html</id>
+    <link href="https://uyoufu.uzoncloud.com/posts/2024/1HAPA4N.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2024/1HAPA4N.html</id>
     <published>2024-05-22T16:00:00.000Z</published>
     <updated>2024-05-22T16:00:00.000Z</updated>
     
@@ -488,12 +485,12 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     
     
     
-    <category term="Software" scheme="https://galens.uamazing.cn/categories/Software/"/>
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
     
-    <category term="ComfyUI" scheme="https://galens.uamazing.cn/categories/Software/ComfyUI/"/>
+    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
     
     
-    <category term="SD" scheme="https://galens.uamazing.cn/tags/SD/"/>
+    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
     
   </entry>
   

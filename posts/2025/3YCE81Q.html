@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文介绍如何在 Docker 中安装 pure-ftpd，然后配置多个虚拟用户，实现对同一目录的读写权限控制。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Docker 中安装 pure-ftpd 并配置虚拟用户">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2025/3YCE81Q.html">
+<meta property="og:url" content="https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html">
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文介绍如何在 Docker 中安装 pure-ftpd，然后配置多个虚拟用户，实现对同一目录的读写权限控制。">
 <meta property="og:locale" content="zh_CN">
@@ -34,10 +34,10 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2025/3YCE81Q.html">
+<link rel="canonical" href="https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2025/3YCE81Q.html","path":"posts/2025/3YCE81Q.html","title":"在 Docker 中安装 pure-ftpd 并配置虚拟用户"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html","path":"posts/2025/3YCE81Q.html","title":"在 Docker 中安装 pure-ftpd 并配置虚拟用户"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>在 Docker 中安装 pure-ftpd 并配置虚拟用户 | 星辰大海</title>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">容器启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E6%9D%83%E9%99%90%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-number">2.</span> <span class="nav-text">添加不同权限的用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">容器启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E6%9D%83%E9%99%90%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-number">2.</span> <span class="nav-text">添加不同权限的用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">3.</span> <span class="nav-text">其它</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -211,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2025/3YCE81Q.html">
+    <link itemprop="mainEntityOfPage" href="https://uyoufu.uzoncloud.com/posts/2025/3YCE81Q.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
@@ -259,14 +259,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -298,6 +298,9 @@ pure-ftpd，然后配置多个虚拟用户，实现对同一目录的读写权�
 <li><p>创建数据目录并设置权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /data/share</span><br><span class="line"><span class="comment"># 将目录所有者改为 ftpadmin</span></span><br><span class="line"><span class="built_in">chown</span> ftpadmin:ftpgroup /data/share -R</span><br><span class="line"><span class="comment"># 将目录设置仅所有者可读, 这样，ftpuser 对于目录 /data/share 只有读和执行权限，从而保证虚拟用户 user 只读</span></span><br><span class="line"><span class="built_in">chmod</span> 755 /data/share</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h2 id="其它">其它</h2>
+<p>当使用 <code>docker compose up -d</code> 重建容器后，需要进入容器执行
+<code>pure-pw mkdb</code> 命令，否则登录时会报 503 错误。</p>
 <h2 id="参考">参考</h2>
 <p>本文参考以下文章，在此致以诚挚谢意！</p>
 <ol type="1">
@@ -410,13 +413,13 @@ Docker Pure-ftpd Server</a></p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">866k</span>
+    <span title="站点总字数">867k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13:07</span>
+    <span title="站点阅读时长">13:08</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

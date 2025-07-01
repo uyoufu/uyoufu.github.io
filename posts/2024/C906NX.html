@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="esxi 配置 RDM 直通">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/C906NX.html">
+<meta property="og:url" content="https://uyoufu.uzoncloud.com/posts/2024/C906NX.html">
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和 PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。">
 <meta property="og:locale" content="zh_CN">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/C906NX.html">
+<link rel="canonical" href="https://uyoufu.uzoncloud.com/posts/2024/C906NX.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/C906NX.html","path":"posts/2024/C906NX.html","title":"esxi 配置 RDM 直通"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://uyoufu.uzoncloud.com/posts/2024/C906NX.html","path":"posts/2024/C906NX.html","title":"esxi 配置 RDM 直通"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>esxi 配置 RDM 直通 | 星辰大海</title>
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/C906NX.html">
+    <link itemprop="mainEntityOfPage" href="https://uyoufu.uzoncloud.com/posts/2024/C906NX.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
@@ -288,16 +288,16 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
 <h2 id="开启-ssh">开启 ssh</h2>
 <p>在 esxi 的 web 管理界面中，通过 【主机(右键)/服务/启用安全 Shell
 (SSH)】打开 ssh。如下图所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201116124312837-1811611023.png" /></p>
+<p><img data-src="https://oss.uzoncloud.com:2234/public/files/images/663633-20201116124312837-1811611023.png" /></p>
 <h2 id="查找硬盘位置">查找硬盘位置</h2>
 <ol type="1">
 <li><p>查找 esxi 系统所在盘的位置</p>
 <p>如下图所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201115215942694-527202518.png" /></p>
+<p><img data-src="https://oss.uzoncloud.com:2234/public/files/images/663633-20201115215942694-527202518.png" /></p>
 <p>位置为：<code>/vmfs/volumes/5fb14c74-5da1723a-c6a0-00e15a680bd8</code></p></li>
 <li><p>查找要直通的硬盘所在路径</p>
 <p>如下图所示：</p>
-<p><img data-src="https://obs.uamazing.cn:52443/public/files/images/663633-20201115220620408-1544774039.png" />)</p>
+<p><img data-src="https://oss.uzoncloud.com:2234/public/files/images/663633-20201115220620408-1544774039.png" />)</p>
 <p>路径为：<code>/vmfs/devices/disks/t10.ATA_____ST500LT0122D9WS142___________________________________S0V2PJJG</code></p></li>
 </ol>
 <h2 id="配置直通">配置直通</h2>
@@ -405,13 +405,13 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">866k</span>
+    <span title="站点总字数">867k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13:07</span>
+    <span title="站点阅读时长">13:08</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

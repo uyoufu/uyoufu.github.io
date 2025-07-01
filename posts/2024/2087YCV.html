@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"galens.uamazing.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp 分词器提高中文分词效果。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch Docker 部署">
-<meta property="og:url" content="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+<meta property="og:url" content="https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html">
 <meta property="og:site_name" content="星辰大海">
 <meta property="og:description" content="本文简要记录如何使用 Docker 部署 ElasticSearch，并安装 hanlp 分词器提高中文分词效果。">
 <meta property="og:locale" content="zh_CN">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+<link rel="canonical" href="https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://galens.uamazing.cn/posts/2024/2087YCV.html","path":"posts/2024/2087YCV.html","title":"ElasticSearch Docker 部署"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html","path":"posts/2024/2087YCV.html","title":"ElasticSearch Docker 部署"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>ElasticSearch Docker 部署 | 星辰大海</title>
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://galens.uamazing.cn/posts/2024/2087YCV.html">
+    <link itemprop="mainEntityOfPage" href="https://uyoufu.uzoncloud.com/posts/2024/2087YCV.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2024/11/25/u2D39o7gUdpNrkO.webp">
@@ -315,7 +315,7 @@ Elastic Stack 的核心，Elasticsearch
 <p>还有一个更简单的方式，直接重置 <code>elastic</code> 用户的密码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-reset-password -u elastic -s</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209164442267.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209164442267.png"
 alt="image-20241209164442267" />
 <figcaption aria-hidden="true">image-20241209164442267</figcaption>
 </figure>
@@ -324,7 +324,7 @@ alt="image-20241209164442267" />
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-reset-password -u elastic -i</span><br></pre></td></tr></table></figure>
 <p>完整命令帮助如下：</p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209164847822.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209164847822.png"
 alt="image-20241209164847822" />
 <figcaption aria-hidden="true">image-20241209164847822</figcaption>
 </figure>
@@ -333,7 +333,7 @@ alt="image-20241209164847822" />
 <p>使用浏览器打开 kibana</p>
 <p>地址为：<code>http://docker-host-ip:9301</code></p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209105942826.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209105942826.png"
 alt="image-20241209105942826" />
 <figcaption aria-hidden="true">image-20241209105942826</figcaption>
 </figure>
@@ -345,7 +345,7 @@ alt="image-20241209105942826" />
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it elastic-search bin/elasticsearch-create-enrollment-token --scope kibana</span><br></pre></td></tr></table></figure>
 <p>结果如图所示：</p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163029414.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209163029414.png"
 alt="image-20241209163029414" />
 <figcaption aria-hidden="true">image-20241209163029414</figcaption>
 </figure>
@@ -353,14 +353,14 @@ alt="image-20241209163029414" />
 <h4 id="获取验证码">获取验证码</h4>
 <p>上一步之后，会弹出验证码弹窗：</p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163236791.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209163236791.png"
 alt="image-20241209163236791" />
 <figcaption aria-hidden="true">image-20241209163236791</figcaption>
 </figure>
 <p>使用如下命令获取验证码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it kibana bin/kibana-verification-code</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241209163443586.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241209163443586.png"
 alt="image-20241209163443586" />
 <figcaption aria-hidden="true">image-20241209163443586</figcaption>
 </figure>
@@ -406,7 +406,7 @@ target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsear
 API key API</a></p>
 <p>在配置时，建议启用受限权限：</p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241210103304902.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241210103304902.png"
 alt="image-20241210103304902" />
 <figcaption aria-hidden="true">image-20241210103304902</figcaption>
 </figure>
@@ -417,7 +417,7 @@ alt="image-20241210103304902" />
 target="_blank" rel="noopener" href="http://192.168.23.30:9301/app/dev_tools#/console">/app/dev_tools#/console</a>
 中使用</p>
 <figure>
-<img data-src="https://oss.223434.xyz:2234/public/files/images/image-20241210104240909.png"
+<img data-src="https://oss.uzoncloud.com:2234/public/files/images/image-20241210104240909.png"
 alt="image-20241210104240909" />
 <figcaption aria-hidden="true">image-20241210104240909</figcaption>
 </figure>
@@ -546,13 +546,13 @@ HanLP Analyzer for Elasticsearch (github.com)</a></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">866k</span>
+    <span title="站点总字数">867k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13:07</span>
+    <span title="站点阅读时长">13:08</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

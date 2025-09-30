@@ -6,7 +6,7 @@
   <link href="https://uyoufu.uzoncloud.com/atom.xml" rel="self"/>
   
   <link href="https://uyoufu.uzoncloud.com/"/>
-  <updated>2025-05-08T16:00:00.000Z</updated>
+  <updated>2025-09-29T16:00:00.000Z</updated>
   <id>https://uyoufu.uzoncloud.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EggJS 异步获取流时可能导致进程堵塞</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/2PHGC5W.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/2PHGC5W.html</id>
+    <published>2025-09-29T16:00:00.000Z</published>
+    <updated>2025-09-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 eggjs
+中异步向其它服务请求文件流时，出现异步始终等待，导致请求阻塞问题。通过排查，发现是由于
+&lt;code&gt;await&lt;/code&gt;
+请求后，流无法被消费，流没有消费完，请求会继续等待，从而陷入了逻辑循环。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
+    
+    <category term="Javascript" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Javascript/"/>
+    
+    <category term="Nodejs" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Javascript/Nodejs/"/>
+    
+    
+    <category term="EggJS" scheme="https://uyoufu.uzoncloud.com/tags/EggJS/"/>
+    
+    <category term="NodeJS" scheme="https://uyoufu.uzoncloud.com/tags/NodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WSL2 中 Docker 突然无法通过代理拉取镜像问题排查</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/1EE38XM.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/1EE38XM.html</id>
+    <published>2025-07-31T16:00:00.000Z</published>
+    <updated>2025-07-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;作者机器为 win11，最近将 Docker Desktop 升级到了 v4.43.2
+版本，然后就出现一个很奇怪的问题：代理是正常的，但是 Docker
+就是连接不上，拉取镜像时，直接报错 connect: connection refused。&lt;/p&gt;
+&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 拉取镜像&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker pull redis&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 报错：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Using&lt;/span&gt; default tag: latest&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Error response from daemon: Get &lt;span class=&quot;string&quot;&gt;&amp;quot;https://registry-1.docker.io/v2/&amp;quot;&lt;/span&gt;: proxyconnect tcp: dial tcp &lt;span class=&quot;number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;7890&lt;/span&gt;: connect: connection refused&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
+    
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/categories/System/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>在 Docker 中安装 pure-ftpd 并配置虚拟用户</title>
@@ -440,57 +492,9 @@ PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通�
     <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
     
     
-    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/tags/ComfyUI/"/>
-    
     <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 入门资料整理</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/1189BHM.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/1189BHM.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文收集 ComfyUI 相关的学习资料，按学习的进度先后进行排序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
-    
     
     <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/tags/ComfyUI/"/>
-    
-    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StableDiffusion 专有名词理解</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/1HAPA4N.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/1HAPA4N.html</id>
-    <published>2024-05-22T16:00:00.000Z</published>
-    <updated>2024-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文对 SD 和 ComfyUI
-中的一些名词进行解释，按文末参考文章中出现的先后顺序进行排列。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文主要采用 GPT 进行解释。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
-    
-    
-    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
     
   </entry>
   

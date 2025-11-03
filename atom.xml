@@ -6,7 +6,7 @@
   <link href="https://uyoufu.uzoncloud.com/atom.xml" rel="self"/>
   
   <link href="https://uyoufu.uzoncloud.com/"/>
-  <updated>2025-09-29T16:00:00.000Z</updated>
+  <updated>2025-10-29T16:00:00.000Z</updated>
   <id>https://uyoufu.uzoncloud.com/</id>
   
   <author>
@@ -15,6 +15,133 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu 扩容 docker 目录挂载的逻辑卷</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/3Z47PR7.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/3Z47PR7.html</id>
+    <published>2025-10-29T16:00:00.000Z</published>
+    <updated>2025-10-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;服务器将 &lt;code&gt;/var/lib/docker&lt;/code&gt;
+挂载到了一个卷上，方便对数据进行集中管理，某天发现该卷使用空间已达
+100%，在使用了 &lt;code&gt;docker image prune -a&lt;/code&gt;
+清除无效镜像无果后，只能对其扩容。&lt;/p&gt;
+&lt;p&gt;本文将介绍如何将其它逻辑卷上的空间扩容到 docker 所在的卷上。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
+    
+    <category term="Linux" scheme="https://uyoufu.uzoncloud.com/categories/System/Linux/"/>
+    
+    
+    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://uyoufu.uzoncloud.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Html 页面打印时无法自定义 Margin 修改边距</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/HCV0MC.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/HCV0MC.html</id>
+    <published>2025-10-27T16:00:00.000Z</published>
+    <updated>2025-10-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为了实现 HTML 页面打印成 PDF 的功能，在后端使用 Playwright
+调用浏览器进行打印，在开发中发现，不论怎么修改 &lt;code&gt;margin&lt;/code&gt;
+参数，页面始终没有变化。&lt;/p&gt;
+&lt;p&gt;经过一翻排查，发现是 &lt;code&gt;@page&lt;/code&gt; css 规则限制了的原因。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
+    
+    <category term="HTML" scheme="https://uyoufu.uzoncloud.com/categories/Develop/HTML/"/>
+    
+    
+    <category term="HTML" scheme="https://uyoufu.uzoncloud.com/tags/HTML/"/>
+    
+    <category term="Playwright" scheme="https://uyoufu.uzoncloud.com/tags/Playwright/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 中使用 APScheduler 配置异步任务</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/298WWWS.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/298WWWS.html</id>
+    <published>2025-10-23T16:00:00.000Z</published>
+    <updated>2025-10-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Python 开发中，经常需要执行一些定时任务，本文对比了
+&lt;code&gt;APScheduler&lt;/code&gt;、&lt;code&gt;Celery&lt;/code&gt;、&lt;code&gt;Celery&lt;/code&gt;
+三个定时库，最终选择 &lt;code&gt;APScheduler&lt;/code&gt; 作为定时器框架。&lt;/p&gt;
+&lt;p&gt;本文主要介绍如何在 FastApi
+中集成异步的定时任务，同时列出自己配置过程中遇到的坑点。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
+    
+    <category term="Python" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Python/"/>
+    
+    <category term="Base" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Python/Base/"/>
+    
+    
+    <category term="Python" scheme="https://uyoufu.uzoncloud.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FreeCAD Assembly4 桥梁组装最优实践</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/2Q4WCJB.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/2Q4WCJB.html</id>
+    <published>2025-10-19T16:00:00.000Z</published>
+    <updated>2025-10-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为了基于 FreeCAD
+实现桥梁参数化构件的复用，通过对比当前比较受欢迎的几种组装方案：Assembly、A2Plus，Assembly4，最终选择
+Assembly4 作为组装技术基座。&lt;/p&gt;
+&lt;p&gt;本文将介绍在 Assembly4 工作台下，桥梁结构组装的最优实践。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
+    
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/categories/Software/FreeCAD/"/>
+    
+    
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/tags/FreeCAD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FreeCAD 中 ConfigurationTable 与 VarSet 的在参数化中的应用及对比</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/KA40NG.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/KA40NG.html</id>
+    <published>2025-10-14T16:00:00.000Z</published>
+    <updated>2025-10-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;FreeCAD
+中的参数化功能很强大，其中的表达式可以使用任意对象上的字段作为参数，本文将介绍主流的参数定义方式
+Configuration Table 和 VarSet 的应用及对比。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
+    
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/categories/Software/FreeCAD/"/>
+    
+    
+    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/tags/FreeCAD/"/>
+    
+  </entry>
   
   <entry>
     <title>EggJS 异步获取流时可能导致进程堵塞</title>
@@ -133,27 +260,6 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
     
     
     <category term="rsync" scheme="https://uyoufu.uzoncloud.com/tags/rsync/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FreeCAD 为对象添加纹理</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2025/260BG7A.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2025/260BG7A.html</id>
-    <published>2025-03-10T16:00:00.000Z</published>
-    <updated>2025-04-28T23:47:53.010Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;未完成...&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
-    
-    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/categories/Software/FreeCAD/"/>
-    
-    
-    <category term="FreeCAD" scheme="https://uyoufu.uzoncloud.com/tags/FreeCAD/"/>
     
   </entry>
   
@@ -395,106 +501,6 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     
     <category term="2024年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2024%E5%B9%B4/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 中配置无线网络唤醒(wowlan)</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/3QV9Z7H.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/3QV9Z7H.html</id>
-    <published>2024-10-21T16:00:00.000Z</published>
-    <updated>2024-10-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文仅对无线网络唤醒(简称wowlan)做一个配置记录，具体的教程见本文的参考文章。&lt;/p&gt;
-&lt;p&gt;网络上关于无线网唤醒的文章，99%
-的都是关于有线的，无线的至今还没发现成功过。&lt;/p&gt;
-&lt;p&gt;作者以实践证明，无线网络唤醒是可以的！&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
-    
-    <category term="Windows" scheme="https://uyoufu.uzoncloud.com/categories/System/Windows/"/>
-    
-    
-    <category term="Windows" scheme="https://uyoufu.uzoncloud.com/tags/Windows/"/>
-    
-    <category term="wowlan" scheme="https://uyoufu.uzoncloud.com/tags/wowlan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 VSCode 远程开发最佳实践</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/1XYHCAM.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/1XYHCAM.html</id>
-    <published>2024-10-15T16:00:00.000Z</published>
-    <updated>2024-10-15T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;首先分析一下，为什么要远程开发？本人认为远程开发主要有以下优点：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;&lt;p&gt;一处搭建，多处使用&lt;/p&gt;
-&lt;p&gt;只需要在远程机上搭建好开发环境，在任何电脑上都可以进行开发，非常便利&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;开发环境隔离，可以在不同的开发环境之间快速切换&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;对本机性能要求低&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
-    
-    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/categories/Software/VSCode/"/>
-    
-    
-    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
-    
-    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/tags/VSCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>esxi 配置 RDM 直通</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/C906NX.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/C906NX.html</id>
-    <published>2024-09-22T16:00:00.000Z</published>
-    <updated>2024-09-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;esxi 硬盘直通有两种方式，分别是 RDM（Raw Device Mapping） 直通和
-PCIe（PCIe ） 直通。本文介绍如何通过 ssh 配置 esxi 硬盘直通。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="System" scheme="https://uyoufu.uzoncloud.com/categories/System/"/>
-    
-    <category term="ESXI" scheme="https://uyoufu.uzoncloud.com/categories/System/ESXI/"/>
-    
-    
-    <category term="esxi" scheme="https://uyoufu.uzoncloud.com/tags/esxi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ComfyUI 节点介绍</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/2TKH0W3.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/2TKH0W3.html</id>
-    <published>2024-05-26T16:00:00.000Z</published>
-    <updated>2024-05-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文总结了对 SD ComfyUI 中的一些节点的理解，以便灵活运用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
-    
-    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/categories/Software/ComfyUI/"/>
-    
-    
-    <category term="SD" scheme="https://uyoufu.uzoncloud.com/tags/SD/"/>
-    
-    <category term="ComfyUI" scheme="https://uyoufu.uzoncloud.com/tags/ComfyUI/"/>
     
   </entry>
   

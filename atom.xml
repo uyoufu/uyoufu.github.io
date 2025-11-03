@@ -264,6 +264,32 @@ Ubuntu 上增加 Swap 大小。&lt;/p&gt;</summary>
   </entry>
   
   <entry>
+    <title>VSCode 为 eggjs 配置远程调试</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/1KK88PR.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/1KK88PR.html</id>
+    <published>2025-04-16T16:00:00.000Z</published>
+    <updated>2025-04-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 VSCode 中为 eggjs 配置远程调试。&lt;/p&gt;
+&lt;p&gt;笔者的开发框架是这样的：源码位于 wsl 中，然后将源代码挂载到 Docker
+容器内部，容器负责开发环境的运行。在开发时，使用 VSCode 远程到
+wsl，然后打开源码目录进行开发。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
+    
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/categories/Software/VSCode/"/>
+    
+    
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/tags/VSCode/"/>
+    
+    <category term="eggjs" scheme="https://uyoufu.uzoncloud.com/tags/eggjs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FreeCAD 创建 BSplineCurve</title>
     <link href="https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html"/>
     <id>https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html</id>
@@ -479,28 +505,6 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
     <category term="MongoDB" scheme="https://uyoufu.uzoncloud.com/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>家庭服务器被网络攻击后, 日均下载流量 2T</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/HPDBE7.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/HPDBE7.html</id>
-    <published>2024-11-03T16:00:00.000Z</published>
-    <updated>2024-11-01T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;近日，发现家里网络非常慢，但是测速时，速度又很正常，于是进后台看看看，一看不要紧，看了后吓一跳，好家伙，网络被攻击了，最近几天日均下载量高达
-2T。&lt;/p&gt;
-&lt;p&gt;不禁生起一阵感慨，裸奔的网络太凶险了！&lt;/p&gt;
-&lt;p&gt;大致的原因是这样的，在此做一个记录，与大家共警！&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Essay" scheme="https://uyoufu.uzoncloud.com/categories/Essay/"/>
-    
-    <category term="2024年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2024%E5%B9%B4/"/>
-    
     
   </entry>
   

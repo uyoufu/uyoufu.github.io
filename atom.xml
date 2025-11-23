@@ -6,7 +6,7 @@
   <link href="https://uyoufu.uzoncloud.com/atom.xml" rel="self"/>
   
   <link href="https://uyoufu.uzoncloud.com/"/>
-  <updated>2025-10-29T16:00:00.000Z</updated>
+  <updated>2025-11-22T16:00:00.000Z</updated>
   <id>https://uyoufu.uzoncloud.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在加油站遭遇假优惠活动</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/34TZ2J9.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/34TZ2J9.html</id>
+    <published>2025-11-22T16:00:00.000Z</published>
+    <updated>2025-11-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天加油的时候，遇到加油站推荐参加 “双十一”
+活动，耐不住工作人员热情推销，恍惚间就下单了，然后事后冷静下来，仔细一盘算，居然是个坑。&lt;/p&gt;
+&lt;p&gt;本文特此记录，吃一堑，长一智，以此自省。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Essay" scheme="https://uyoufu.uzoncloud.com/categories/Essay/"/>
+    
+    <category term="2025年" scheme="https://uyoufu.uzoncloud.com/categories/Essay/2025%E5%B9%B4/"/>
+    
+    
+    <category term="生活" scheme="https://uyoufu.uzoncloud.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu 扩容 docker 目录挂载的逻辑卷</title>
@@ -40,6 +63,8 @@
     <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
     <category term="Ubuntu" scheme="https://uyoufu.uzoncloud.com/tags/Ubuntu/"/>
+    
+    <category term="uyoufu" scheme="https://uyoufu.uzoncloud.com/tags/uyoufu/"/>
     
   </entry>
   
@@ -290,6 +315,32 @@ wsl，然后打开源码目录进行开发。&lt;/p&gt;</summary>
   </entry>
   
   <entry>
+    <title>VSCode 为 midwayjs 配置远程调试</title>
+    <link href="https://uyoufu.uzoncloud.com/posts/2025/GJ9ABG.html"/>
+    <id>https://uyoufu.uzoncloud.com/posts/2025/GJ9ABG.html</id>
+    <published>2025-04-16T16:00:00.000Z</published>
+    <updated>2025-04-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文将介绍如何在 VSCode 中为 midwayjs 配置远程调试。&lt;/p&gt;
+&lt;p&gt;笔者的开发框架是这样的：源码位于 wsl 中，然后将源代码挂载到 Docker
+容器内部，容器负责开发环境的运行。在开发时，使用 VSCode 远程到
+wsl，然后打开源码目录进行开发。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://uyoufu.uzoncloud.com/categories/Software/"/>
+    
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/categories/Software/VSCode/"/>
+    
+    
+    <category term="VSCode" scheme="https://uyoufu.uzoncloud.com/tags/VSCode/"/>
+    
+    <category term="midwayjs" scheme="https://uyoufu.uzoncloud.com/tags/midwayjs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FreeCAD 创建 BSplineCurve</title>
     <link href="https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html"/>
     <id>https://uyoufu.uzoncloud.com/posts/2025/37FBBPR.html</id>
@@ -332,8 +383,6 @@ MIT。它不仅适用于个人，同样适用于中小企业的软件管理。�
     
     
     <category term="Apps" scheme="https://uyoufu.uzoncloud.com/tags/Apps/"/>
-    
-    <category term="galens" scheme="https://uyoufu.uzoncloud.com/tags/galens/"/>
     
   </entry>
   
@@ -446,65 +495,6 @@ die&quot;，今天算是被狠狠地教育了一顿，今天发生了一件绝�
     <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
     
     <category term="AdguardHome" scheme="https://uyoufu.uzoncloud.com/tags/AdguardHome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>掌握设计原则，打磨编程基本功</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/3D3WTKJ.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/3D3WTKJ.html</id>
-    <published>2024-11-08T16:00:00.000Z</published>
-    <updated>2024-11-08T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;随着开发经验的增加，总感觉自己的代码风格有些混乱，同时伴随着一些困惑，如：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;功能扩展性差，经常需要被重构&lt;/li&gt;
-&lt;li&gt;编码时无法对设计模式进行灵活使用&lt;/li&gt;
-&lt;li&gt;代码不够优雅&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;虽然代码风格见人见智，但是好的代码，总会让人眼前一亮，&lt;strong&gt;低耦合、高内聚、高复用、易扩展、易维护&lt;/strong&gt;，于己于人，都是一份优雅。&lt;/p&gt;
-&lt;p&gt;作者从入门开始，就开始阅读设计模式，有系统地研读过，也有零零散散看过其他人的心得，但总是不能达到天人合一，运用自如的状态。今朝又心有所动，于是下定决心，稳扎稳打，以愚公移山之劲，重学设计模式，打磨编程基本功。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
-    
-    <category term="DesignPattern" scheme="https://uyoufu.uzoncloud.com/categories/Develop/DesignPattern/"/>
-    
-    
-    <category term="设计模式" scheme="https://uyoufu.uzoncloud.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB使用 Docker 配置单节点副本集</title>
-    <link href="https://uyoufu.uzoncloud.com/posts/2024/M96VZZ.html"/>
-    <id>https://uyoufu.uzoncloud.com/posts/2024/M96VZZ.html</id>
-    <published>2024-11-05T16:00:00.000Z</published>
-    <updated>2024-12-04T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;为了快速搭建 MongoDB 副本集开发环境，可以使用 Docker
-快速启动一个单节点副本集。&lt;/p&gt;
-&lt;p&gt;实现方式有两种：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;直接使用 docker-compose 完成&lt;/li&gt;
-&lt;li&gt;手动配置&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Develop" scheme="https://uyoufu.uzoncloud.com/categories/Develop/"/>
-    
-    <category term="Database" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Database/"/>
-    
-    <category term="Mongodb" scheme="https://uyoufu.uzoncloud.com/categories/Develop/Database/Mongodb/"/>
-    
-    
-    <category term="Docker" scheme="https://uyoufu.uzoncloud.com/tags/Docker/"/>
-    
-    <category term="MongoDB" scheme="https://uyoufu.uzoncloud.com/tags/MongoDB/"/>
     
   </entry>
   

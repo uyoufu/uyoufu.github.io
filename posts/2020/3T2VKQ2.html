@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0-rc1">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -14,10 +14,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"uyoufu.uzoncloud.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="概述 log4net 是 .Net 下一个非常优秀的开源日志记录组件。log4net 记录日志的功能非常强大。它可以将日志分不同的等级，以不同的格式，输出到不同的媒介。本文主要是介绍如何在 Visual Studio 中使用 log4net 快速创建系统日志，如何扩展以输出自定义字段。">
 <meta property="og:type" content="article">
@@ -50,12 +50,41 @@
 
 
 
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
-<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="星辰大海" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -92,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">251</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">127</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">467</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">252</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">127</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">469</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">一个简单的使用实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log4net%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">Log4net的主要组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appenders"><span class="nav-number">3.1.</span> <span class="nav-text">Appenders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filters"><span class="nav-number">3.2.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layouts"><span class="nav-number">3.3.</span> <span class="nav-text">Layouts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loggers"><span class="nav-number">3.4.</span> <span class="nav-text">Loggers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-renders"><span class="nav-number">3.5.</span> <span class="nav-text">Object Renders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repository"><span class="nav-number">3.6.</span> <span class="nav-text">Repository</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90"><span class="nav-number">4.1.</span> <span class="nav-text">配置文件构成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#log4net"><span class="nav-number">4.1.1.</span> <span class="nav-text">&lt;log4net&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#root"><span class="nav-number">4.1.2.</span> <span class="nav-text">&lt;root&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#logger"><span class="nav-number">4.1.3.</span> <span class="nav-text">&lt;logger&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#appender"><span class="nav-number">4.1.4.</span> <span class="nav-text">&lt;appender&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">4.1.5.</span> <span class="nav-text">&lt;layout&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">4.1.6.</span> <span class="nav-text">&lt;filter&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">4.1.7.</span> <span class="nav-text">&lt;param&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appender-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">&lt;appender&gt; 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E5%9B%9E%E6%BB%9A%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.1.</span> <span class="nav-text">写入回滚文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E5%85%A5sql%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.2.2.</span> <span class="nav-text">写入SQL数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logger%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">&lt;logger&gt;配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text">关联配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text">如何记录日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log4net%E7%9A%84%E7%AE%80%E5%8D%95%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text">Log4net的简单扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E9%87%8D%E5%86%99%E5%B8%83%E5%B1%80layout%E8%BE%93%E5%87%BA%E4%BC%A0%E5%85%A5%E7%9A%84-message%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">6.1.</span> <span class="nav-text">通过重写布局Layout输出传入的
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">一个简单的使用实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log4net%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">Log4net的主要组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appenders"><span class="nav-number">3.1.</span> <span class="nav-text">Appenders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filters"><span class="nav-number">3.2.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layouts"><span class="nav-number">3.3.</span> <span class="nav-text">Layouts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loggers"><span class="nav-number">3.4.</span> <span class="nav-text">Loggers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-renders"><span class="nav-number">3.5.</span> <span class="nav-text">Object Renders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repository"><span class="nav-number">3.6.</span> <span class="nav-text">Repository</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90"><span class="nav-number">4.1.</span> <span class="nav-text">配置文件构成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#log4net"><span class="nav-number">4.1.1.</span> <span class="nav-text">&lt;log4net&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#root"><span class="nav-number">4.1.2.</span> <span class="nav-text">&lt;root&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#logger"><span class="nav-number">4.1.3.</span> <span class="nav-text">&lt;logger&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#appender"><span class="nav-number">4.1.4.</span> <span class="nav-text">&lt;appender&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">4.1.5.</span> <span class="nav-text">&lt;layout&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">4.1.6.</span> <span class="nav-text">&lt;filter&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">4.1.7.</span> <span class="nav-text">&lt;param&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appender-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">&lt;appender&gt; 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E5%9B%9E%E6%BB%9A%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.1.</span> <span class="nav-text">写入回滚文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E5%85%A5sql%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.2.2.</span> <span class="nav-text">写入SQL数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logger%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">&lt;logger&gt;配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text">关联配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text">如何记录日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log4net%E7%9A%84%E7%AE%80%E5%8D%95%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text">Log4net的简单扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E9%87%8D%E5%86%99%E5%B8%83%E5%B1%80layout%E8%BE%93%E5%87%BA%E4%BC%A0%E5%85%A5%E7%9A%84-message%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">6.1.</span> <span class="nav-text">通过重写布局Layout输出传入的
 message对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E5%86%99-layout-%E7%B1%BB"><span class="nav-number">6.1.1.</span> <span class="nav-text">重写 Layout 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">6.1.2.</span> <span class="nav-text">配置相应的配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">6.1.3.</span> <span class="nav-text">程序中如何使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E9%87%8D%E6%96%B0%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3%E6%9D%A5%E5%A2%9E%E5%8A%A0%E8%BE%93%E5%85%A5%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">通过重新实现ILog接口来增加输入的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E5%86%99logimpllogmanager%E7%B1%BB%E5%8F%8A%E5%AE%9E%E7%8E%B0ilog%E6%8E%A5%E5%8F%A3"><span class="nav-number">6.2.1.</span> <span class="nav-text">重写LogImpl，LogManager类及实现ILog接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">配置相应的配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">程序中如何使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E6%B3%A8"><span class="nav-number">8.</span> <span class="nav-text">附注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#patterlayout%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E8%A1%A8"><span class="nav-number">8.1.</span> <span class="nav-text">PatterLayout格式化字符表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.2.</span> <span class="nav-text">Layout类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mylogimpl%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.3.</span> <span class="nav-text">MyLogImpl类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mylogmanager%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.4.</span> <span class="nav-text">MyLogManager类代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#imylog%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">8.5.</span> <span class="nav-text">IMyLog类代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
@@ -159,7 +188,7 @@ message对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-l
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">467</span>
+          <span class="site-state-item-count">469</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -170,7 +199,7 @@ message对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-l
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">251</span>
+        <span class="site-state-item-count">252</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -319,7 +348,7 @@ target="_blank" rel="noopener" href="https://logging.apache.org/log4net/release/
 log4net – Apache log4net Manual: Configuration - Apache
 log4net</a></p></li>
 <li><p>使用</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        log.Info(<span class="string">&quot;Hello logging world!&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Hit enter&quot;</span>);</span><br><span class="line">        Console.ReadLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] <span class="keyword">args</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        log.Info(<span class="string">&quot;Hello logging world!&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Hit enter&quot;</span>);</span><br><span class="line">        Console.ReadLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就将信息同时输出到控制台和写入到文件名为 “Logs-file.txt”
 的文件中，也可以定义为绝对路径，配置如：<code>&lt;param name="File" value="C:/log-file.txt" /&gt;</code>
 就写入C盘根目录下log-file.txt文件中。</p></li>
@@ -427,16 +456,16 @@ Logger。</p>
 个方法（Debug,Inof,Warn,Error,Fatal）分别对不同的日志等级记录日志。这 5
 个方法还有 5 个重载。以 Debug 为例说明一下，其它的和它差不多。</p>
 <p>ILog中对Debug方法的定义如下：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message, Exception ex</span>)</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Debug</span>(<span class="params"><span class="built_in">object</span> message, Exception ex</span>)</span>;</span><br></pre></td></tr></table></figure>
 <p>还有一个布尔属性：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> IsDebugEnabled &#123; <span class="keyword">get</span>; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> IsDebugEnabled &#123; <span class="keyword">get</span>; &#125;</span><br></pre></td></tr></table></figure>
 <p>如果使用 Debug(object message, Exception ex)，则无论 Layout
 中是否定义了 %exception，默认配置下日志都会输出 Exception。包括
 Exception 的 Message 和 Trace。如果使用 Debug(object
 message)，则日志是不会输出 Exception。</p>
 <p>最后还要说一个 LogManager 类，它用来管理所有的 Logger。它的 GetLogger
 静态方法，可以获得配置文件中相应的 Logger：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4net.ILog log = log4net.LogManager.GetLogger(<span class="string">&quot;logger-name&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4net.ILog log = log4net.LogManager.GetLogger(<span class="string">&quot;logger-name&quot;</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="object-renders">Object Renders</h3>
 <p>它将告诉 logger 如何把一个对象转化为一个字符串记录到日志里。（ILog
 中定义的接口接收的参数是 Object，而不是 String。）</p>
@@ -451,7 +480,7 @@ Layout）。这时 logger 就会知道如何把 Orange 记录到日志中了。<
 <h3 id="配置文件构成">配置文件构成</h3>
 <p>主要有两大部分，一是申明一个名为 “log4net“
 的自定义配置节，如下所示：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;configSections&gt;</span><br><span class="line">&lt;section name=<span class="string">&quot;log4net&quot;</span></span><br><span class="line">    type=<span class="string">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;</span> /&gt;</span><br><span class="line">&lt;/configSections&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;configSections&gt;</span><br><span class="line">&lt;section name=<span class="string">&quot;log4net&quot;</span></span><br><span class="line">    type=<span class="string">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;</span> /&gt;</span><br><span class="line">&lt;/configSections&gt;</span><br></pre></td></tr></table></figure>
 <p>二是 <code>&lt;log4net&gt;</code>
 节的具体配置，这是下面要重点说明的。</p>
 <h4 id="log4net"><code>&lt;log4net&gt;</code></h4>
@@ -809,12 +838,12 @@ ConfigFileExtension 属性一起使用。</p>
 <p>如果 ConfigFile 和 ConfigFileExtension
 都没有设置，则使用应用程序的配置文件 App.config（Web.config）。</p>
 <p>可以在项目的AssemblyInfo.cs文件里添加以下的语句：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 监视默认的配置文件，App.exe.config   </span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监视配置文件，App.exe.log4net。</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(ConfigFileExtension = <span class="string">&quot;log4net&quot;</span>, Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用配置文件 log4net.config，不监视改变。注意 log4net.config 文件的目录，BS 程序在站点目录 \ 下，CS 则在应用程序启动目录下，如调试时在 /bin/Debug 下，一般将文件属性的文件输出目录调为 \ 始终复制即可</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(ConfigFile = <span class="string">&quot;log4net.config&quot;</span>)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用配置文件 App.exe.config ，不监视改变</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator()</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 监视默认的配置文件，App.exe.config   </span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监视配置文件，App.exe.log4net。</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(ConfigFileExtension = <span class="string">&quot;log4net&quot;</span>, Watch = true)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用配置文件 log4net.config，不监视改变。注意 log4net.config 文件的目录，BS 程序在站点目录 \ 下，CS 则在应用程序启动目录下，如调试时在 /bin/Debug 下，一般将文件属性的文件输出目录调为 \ 始终复制即可</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator(ConfigFile = <span class="string">&quot;log4net.config&quot;</span>)</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用配置文件 App.exe.config ，不监视改变</span></span><br><span class="line">[<span class="meta">assembly: log4net.Config.XmlConfigurator()</span>]</span><br></pre></td></tr></table></figure>
 <p>也可以在 Global.asax 的 Application_Start 里或者是 Program.cs 中的
 Main 方法中添加，注意这里一定是绝对路径，如下所示：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在BS程序下，使用自定义的配置文件log4net.xml，使用Server.MapPath(&quot;~&quot;) + //@&quot;/log4net.xml”来取得路径。/log4net.xml为相对于站点的路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ConfigureAndWatch()相当于Configure(Watch = true)</span></span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> System.IO.FileInfo(Server.MapPath(<span class="string">&quot;~&quot;</span>) + <span class="string">@&quot;/log4net.xml&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是在CS程序下，可以用以下方法获得：</span></span><br><span class="line"><span class="built_in">string</span> assemblyFilePath = Assembly.GetExecutingAssembly().Location;</span><br><span class="line"><span class="built_in">string</span> assemblyDirPath = Path.GetDirectoryName(assemblyFilePath);</span><br><span class="line"><span class="built_in">string</span> configFilePath = assemblyDirPath + <span class="string">&quot; //log4net.xml&quot;</span>;</span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> FileInfo(configFilePath));</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是在BS程序下，使用自定义的配置文件log4net.xml，使用Server.MapPath(&quot;~&quot;) + //@&quot;/log4net.xml”来取得路径。/log4net.xml为相对于站点的路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ConfigureAndWatch()相当于Configure(Watch = true)</span></span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> System.IO.FileInfo(Server.MapPath(<span class="string">&quot;~&quot;</span>) + <span class="string">@&quot;/log4net.xml&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是在CS程序下，可以用以下方法获得：</span></span><br><span class="line"><span class="built_in">string</span> assemblyFilePath = Assembly.GetExecutingAssembly().Location;</span><br><span class="line"><span class="built_in">string</span> assemblyDirPath = Path.GetDirectoryName(assemblyFilePath);</span><br><span class="line"><span class="built_in">string</span> configFilePath = assemblyDirPath + <span class="string">&quot; //log4net.xml&quot;</span>;</span><br><span class="line">log4net.Config.XmlConfigurator.ConfigureAndWatch(<span class="keyword">new</span> FileInfo(configFilePath));</span><br></pre></td></tr></table></figure>
 <p>或直接使用绝对路径：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用自定义的配置文件，直接绝对路径为：c:/log4net.config</span></span><br><span class="line">log4net.Config.XmlConfigurator.Configure(<span class="keyword">new</span> System.IO.FileInfo(<span class="string">@&quot;c:/log4net.config&quot;</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用自定义的配置文件，直接绝对路径为：c:/log4net.config</span></span><br><span class="line">log4net.Config.XmlConfigurator.Configure(<span class="keyword">new</span> System.IO.FileInfo(<span class="string">@&quot;c:/log4net.config&quot;</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="如何记录日志">如何记录日志</h2>
 <p>Log4net使用很方便，先申明一个封装类ILog 的对象，如下：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4net.ILog log = log4net.LogManager.GetLogger(<span class="string">&quot;ReflectionLayout&quot;</span>);</span><br></pre></td></tr></table></figure>
@@ -1295,13 +1324,13 @@ target="_blank" rel="noopener" href="http://files.cnblogs.com/longshizhong/使�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">879k</span>
+    <span title="站点总字数">881k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13:19</span>
+    <span title="站点阅读时长">13:21</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -1322,63 +1351,10 @@ target="_blank" rel="noopener" href="http://files.cnblogs.com/longshizhong/使�
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
-  <script src="/js/third-party/tags/mermaid.js"></script>
-
-
-
-
-
-  
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"059c7f0e6e96ff3bf5b8de320f26f708"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"galensgan","repo":"blog-comments","client_id":"63ece14861c297420892","client_secret":"731f0c050c35a3afee5aed41ca386decc768a3f0","admin_user":"galensgan","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","body":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"059c7f0e6e96ff3bf5b8de320f26f708"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
 
-<!-- hexo injector body_end start -->
-  <script>
-  const CODE_CONFIG = {
-    beautify: undefined,
-    highlightCopy: undefined,
-    highlightLang: undefined,
-    highlightHeightLimit: undefined,
-    isHighlightShrink: undefined,
-    copy: {
-      success: 'undefined',
-      error: 'undefined',
-      noSupport: 'undefined',
-    }
-  };
-  console.log(
-    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
-    "color: #fff; background: #5f5f5f",
-    "color: #fff; background: #80c8f8",
-    ""
-  );
-  </script>
-  <!-- hexo injector body_end end --></body>
+</body>
 </html>
